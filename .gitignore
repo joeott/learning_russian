@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+*.log
+.venv/
+__pycache__/
+.ruff_cache/
+# secrets — never commit
+.env
+.env.*
+# regenerable copy of web/assets/audio (rebuilt by `zastolom build anki`)
+anki/media/

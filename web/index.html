@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>За столо́м — Russian for Kadriya's Family</title>
+  <meta name="description" content="A 16-day crash course to hold your own at a St. Petersburg family table." />
+  <meta name="theme-color" content="#7d1416" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icon-180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <a class="brand" href="#/home" aria-label="Home">
+        <span class="brand__mark">★</span>
+        <span class="brand__title">ЗА&nbsp;СТОЛО́М</span>
+        <span class="brand__sub">at the table</span>
+      </a>
+      <div class="countdown" id="countdown" title="Days until June 15">
+        <span class="countdown__num" id="cd-num">–</span>
+        <span class="countdown__label">days to<br>15 June</span>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Sections">
+      <a href="#/home" data-tab="home">01 · Home</a>
+      <a href="#/learn" data-tab="learn">02 · Learn</a>
+      <a href="#/quiz" data-tab="quiz">03 · Drill</a>
+      <a href="#/plan" data-tab="plan">04 · Plan</a>
+    </nav>
+  </header>
+
+  <main id="view" class="view" tabindex="-1"><!-- rendered by app.js --></main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="content.js"></script>
+  <script src="audio.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

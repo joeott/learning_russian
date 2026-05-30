@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="За столом app icon">
+  <rect width="512" height="512" fill="#7d1416"/>
+  <path d="M512 0 L512 200 L312 0 Z" fill="#16202e"/>
+  <!-- amber star -->
+  <g transform="translate(256 196)">
+    <path fill="#d8972c" d="M0 -110 L33 -34 L114 -34 L49 16 L74 96 L0 48 L-74 96 L-49 16 L-114 -34 L-33 -34 Z"/>
+  </g>
+  <!-- raised glass (toast) -->
+  <g fill="none" stroke="#f3e9d2" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M196 300 L210 410 Q210 430 256 430 Q302 430 302 410 L316 300 Z"/>
+    <line x1="256" y1="430" x2="256" y2="470"/>
+    <line x1="214" y1="470" x2="298" y2="470"/>
+  </g>
+  <rect x="196" y="300" width="120" height="34" fill="#b51f23" opacity="0.9"/>
+</svg>

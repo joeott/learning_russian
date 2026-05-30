@@ -1,0 +1,215 @@
+# AI Speaking-Tutor Role-Play Protocol
+
+> **For:** Joe — English speaker, lawyer, reads Cyrillic, rusty from 2020–21 lessons.
+> **Mission:** Be understood and understand at Kadriya's family dinner in St. Petersburg on **June 15, 2026** (secular family, they drink & toast).
+> **What this is:** A reusable script for turning Claude (or any capable AI) into a live speaking partner. Speaking is your bottleneck, not reading — so this protocol is biased hard toward *talking time* and *gentle recasting* over grammar lectures.
+> **Pairs with:** `content/content.json` (109 verified phrases), `schedule/16_day_plan.md` (the tutor days are 1, 4, 8, 9, 11), the Anki deck, and the printable cheat sheet.
+
+---
+
+## ⚠️ Three things the tutor MUST get right (these come from the verified research)
+
+1. **You do NOT call them "тёща / тесть" to their faces.** Those are *referential* words (how people describe the relationship). You **greet and address the parents** with `Здра́вствуйте` + their **и́мя + о́тчество** (first name + patronymic) + **вы**. The tutor *plays* the тёща/тесть; you *address* them as `[Имя́ О́тчество]`. → Get the real patronymics from Kadriya and slot them in.
+2. **Never «На здоро́вье» as a toast.** That's a reply to "thank you." Toasts use **За + accusative**: `За встре́чу!`, `За ва́ше здоро́вье!`, `За роди́телей!`. The tutor must recast immediately if you reach for «На здоровье».
+3. **Hold the male forms.** You are male, so: `рад` (not рада), `Я наéлся` (not наелась), `Я о́чень рад быть здесь`. The tutor corrects any feminine ending.
+
+---
+
+## How to start a session — copy-paste kickoff prompt
+
+Paste this to Claude at the top of each session. Edit the two bracketed lines, then tell it which **Scenario number** you want.
+
+```
+You are my Russian speaking tutor. Context: I'm an English-speaking American
+lawyer, male. I read Cyrillic but I'm rusty and my stress/vowel-reduction is
+weak. In a few days I'm meeting my wife Kadriya's family at a dinner in
+St. Petersburg — secular family, they drink and toast. I want to SPEAK as much
+as possible. My level: rebuilding from beginner.
+
+Rules for you:
+1. Speak mostly Russian, formal "вы", short natural sentences. Give an English
+   gloss in (parentheses) ONLY for a phrase you think is new to me.
+2. Bias toward my talking time. Keep your turns short; make me produce.
+3. When I make an error, RECAST (say it back correctly in passing) and continue
+   — do not stop to lecture. Only give an explicit rule if I make the SAME
+   error twice, and keep it to one line.
+4. Fix male/female forms (I'm male: рад, наелся), and never let me use
+   «На здоровье» as a toast — recast to «За + ...». Address forms: I greet the
+   parents with «Здравствуйте» + their name+patronymic + «вы», NOT «тёща/тесть».
+5. Target my pronunciation: word STRESS, unstressed о→[a], soft consonants,
+   and -ого/-его → spoken [-ova]. When I mangle a key word, have me repeat it
+   2–3 times in isolation, then in the sentence.
+6. Stay warm and encouraging. End each session with: 3 things I did well, and
+   the 1–2 phrases to drill next.
+
+Today run: SCENARIO [number] — see below. Start by setting the scene in one
+line, then speak to me in character. If I'm totally lost I'll type "help" and
+you may give me the line in Russian + English; I'll repeat it.
+```
+
+**Optional voice mode:** if using a voice-capable client, add: *"Speak your Russian turns aloud at ~70% normal speed; speed up as I improve."*
+
+---
+
+## Correction Rubric — how the tutor should correct
+
+**Default = recast, not explicit.** Speaking fluency dies when you stop every sentence to explain a case ending. So:
+
+| Situation | Tutor does |
+|---|---|
+| Minor error (ending, word order, a reduced vowel) | **Recast**: weave the correct version into the reply naturally and move on. `— Я живу в Америка. — А, вы живёте в Аме́рике, понятно. А где именно?` No commentary. |
+| Same error **twice** | **One-line explicit rule**, then back to speaking. *"After в, location takes -е: в Аме́рике."* |
+| Communication-breaking error (wrong word, lost meaning) | Brief clarify in Russian; if still stuck, allow English once, then re-say in Russian and have Joe repeat. |
+| Wrong register (ты to an elder, «На здоровье» toast, feminine form) | **Always correct explicitly but kindly** — these are the high-stakes ones. One line, then continue. |
+| Pronunciation/stress miss on a key phrase | Stop briefly, **drill it** (see below), then resume. |
+
+**When English is allowed.** Joe may type `help` for a line, or `что это?` / "what was that?" for a gloss. The tutor gives English sparingly — a gloss or a one-line rule — never a paragraph. Target: **80%+ of the exchange in Russian** by the simulation scenarios.
+
+**How to drill pronunciation/stress.** When Joe mangles a key word: (1) tutor says the word slowly, marking the stressed syllable; (2) Joe repeats it 2–3× in isolation; (3) Joe says it inside the full phrase; (4) move on. Don't drill every word — only the load-bearing ones for the dinner.
+
+**How to escalate difficulty.** Start slow and scaffolded; raise the bar as Joe succeeds:
+- Slower speech → normal speed.
+- Glosses on everything → glosses only on new words → no glosses.
+- One question at a time → follow-up questions → an unexpected tangent ("off-script").
+- Quiet → background noise simulation (Scenario 7/8) — mirrors a loud St. Petersburg table.
+
+**Keep it encouraging.** Russians will adore that he's *trying*. Tutor praises specifically ("your stress on `прия́тно` was perfect"), normalizes errors, and never piles on. Every session ends with 3 wins + 1–2 drill targets.
+
+---
+
+## Pronunciation focus (Joe reads Cyrillic but stress/reduction is weak)
+
+The tutor should actively target these four — they're what make Cyrillic-readers sound off:
+
+1. **Word stress.** Russian stress is unpredictable and *moves* the vowel sounds around it. The tutor flags the stressed syllable on any hard word. Reference the stress marks already in `content.json` (e.g. `О́чень прия́тно`, `Спаси́бо большо́е`).
+2. **Unstressed о → [a].** `Хорошо́` = [ha-ra-**shó**] (both unstressed о's reduce). `Спаси́бо` = [spa-**sí**-ba]. This is the single biggest tell.
+3. **Soft consonants.** `тесть` [tyest'], `дочь` [doch'], `день` [dyen'] — the softening (ь / е,и,ю,я) changes the consonant. Tutor models the soft glide.
+4. **-ого / -его → spoken [-ova] / [-eva].** The г is **written г but pronounced [v]**, *and* the unstressed о still reduces — so `прия́тного` → [pri-**yát**-na-va], `сего́дня` → [si-**vód**-nya]. (Not a flat "[-ovo]": reduction applies to the unstressed vowels too.)
+
+---
+
+## The 8 Role-Play Scenarios (increasing difficulty)
+
+Run them in order over your study days. Each says: **Goal · the Russian the tutor uses · what you should produce (with content.json IDs) · success criteria.** All "expected responses" are phrases already in your deck — don't invent new Russian, lean on what you've drilled.
+
+---
+
+### Scenario 1 — The doorway greeting (maps to Schedule Day 1)
+**Goal:** Walk in, greet the elders correctly, survive the first 20 seconds.
+**Tutor (in character as the father-in-law opening the door):**
+`Здра́вствуйте! Проходи́те, проходи́те! Как добра́лись?`
+**You produce:**
+- `Здра́вствуйте, [Имя́ О́тчество]!` (greeting + their name+patronymic — NOT "тёща/тесть") — `firs001`
+- `О́чень прия́тно` / `Рад познако́миться` (male рад) — `firs006`, `firs008`
+- `Спаси́бо, что пригласи́ли` — `firs010`
+**Success:** You greet using `Здра́вствуйте` + the placeholder name+patronymic and **вы**, with eye contact, no English. You did NOT say "тёща/тесть" to their face.
+
+---
+
+### Scenario 2 — Introduce yourself + "I'm still learning"
+**Goal:** Say who you are and disarm the room by flagging your level early — your best safety net.
+**Tutor:** `Как вас зову́т? Вы говори́те по-ру́сски?`
+**You produce:**
+- `Меня́ зову́т Джо` — `firs005`
+- `Я ещё учу́ ру́сский` / `Я немно́го говорю́ по-ру́сски` — `poli009`, `smal006`
+- `Я о́чень рад быть здесь` (male рад) — `firs011` *(flagged: rehearse with Kadriya)*
+**Success:** You deploy "I'm still learning Russian" naturally and unembarrassed; correct male form `рад`.
+
+---
+
+### Scenario 3 — Accept food & compliment the cook
+**Goal:** Praise the тёща's cooking, accept/decline more without rudeness.
+**Tutor (as the mother-in-law, ladling food):** `Попро́буйте! Ещё? Бу́дете борщ?`
+**You produce:**
+- `О́чень вку́сно!` / `Мне о́чень нра́вится` — `food002`, `food005`
+- `Мо́жно ещё?` (accept) or `Спаси́бо, не на́до` / `Я наéлся` (decline, male -лся) — `food007`, `food008`, `food006`
+- `Спаси́бо, бы́ло о́чень вку́сно` (after the meal) — `food004`
+**Success:** You compliment specifically, and you can decline a *third* helping politely without breaking warmth.
+
+---
+
+### Scenario 4 — Propose a toast (maps to Schedule Day 9)
+**Goal:** Stand-ready with a short, warm toast. This lands huge.
+**Tutor (raising a glass):** `Дава́йте вы́пьем! Джо, ска́жете тост?`
+**You produce (pick one, then clink — eye contact):**
+- `Я хочу́ сказа́ть тост за …` → `За встре́чу!` / `За знако́мство!` — `toas012`, `toas001`, `toas002`
+- `За ва́ше здоро́вье!` / `За роди́телей!` / `За хозя́йку!` — `toas006`, `toas003`, `toas004`
+**Tutor watches for:** if you say «На здоро́вье» → recast to `За здоро́вье!` immediately.
+**Success:** A complete toast with `За + …`, eye contact on the clink, no «На здоровье», correct stress on the toast noun.
+
+---
+
+### Scenario 5 — Answer the questions relatives fire at you (maps to Day 5/10 listening)
+**Goal:** Decode the rapid questions and answer in short, true sentences.
+**Tutor asks, one at a time, then faster:** `Отку́да вы?` · `Кем вы рабо́таете?` · `Как вы познако́мились?` · `Как вам Росси́я?`
+**You produce:**
+- `Я из Аме́рики` / `Я из шта́та Миссу́ри` — `smal002`, `smal003` *(rehearse Missouri with Kadriya)*
+- `Я юри́ст` (general — not адвокат) — `smal001`
+- `Мы познако́мились …` — `smal005`
+- `Хорошо́, спаси́бо` / `Норма́льно` / `Мне о́чень нра́вится` — `smal007`, `smal008`, `food005`
+**Success:** You catch the **key verb** in each question and answer the right one (not your wife's question). Rescue lines ready: `Повтори́те, пожа́луйста`, `Поме́дленнее, пожа́луйста` (`poli010`, `poli011`).
+
+---
+
+### Scenario 6 — Small talk: how you met Kadriya (maps to Schedule Days 7–8)
+**Goal:** Deliver a 2–3 sentence "how we met" story, then field a follow-up.
+**Tutor:** `Расскажи́те, как вы познако́мились?` then a follow-up like `А когда́ э́то бы́ло?` / `Где вы живёте сейча́с?`
+**You produce:**
+- `Мы познако́мились …` + your rehearsed script (built on Schedule Day 7 with Kadriya) — `smal005`
+- `Я живу́ в Аме́рике` — `smal004`
+- The table-winner when it fits: `Я люблю́ ва́шу дочь` — `fami019`
+**Success:** Story flows from memory; you handle ONE unscripted follow-up without freezing (circumlocute or use a rescue line).
+
+---
+
+### Scenario 7 — "Things go off-script" recovery drill
+**Goal:** Build calm when you don't understand. This is the real skill for game day.
+**Tutor:** deliberately speaks a bit too fast, uses an unknown word, or asks something random (`Вы лю́бите футбо́л?`, an idiom, an aside to "your wife"). No glosses.
+**You produce (the rescue toolkit — drill until automatic):**
+- `Извини́те` / `Прости́те` — `poli004`, `poli005`
+- `Я не понима́ю` — `poli012`
+- `Повтори́те, пожа́луйста` — `poli010`
+- `Поме́дленнее, пожа́луйста` — `poli011`
+- `Как по-ру́сски …?` — `poli017`
+- and the anchor: `Я ещё учу́ ру́сский` — `poli009`
+**Success:** When lost, you reach for a Russian rescue line (not silence, not English) and the conversation recovers. Tutor confirms you stayed in Russian.
+
+---
+
+### Scenario 8 — Full-dinner simulation (maps to Schedule Day 11; rehearse live Day 15)
+**Goal:** Stitch it all together under realistic pressure.
+**Tutor runs ~10 minutes, in character, escalating:** opens the door → seats you → offers food → asks 2–3 questions → invites a toast → throws ONE off-script curveball → winds down with `Спаси́бо, что пришли́`.
+**Optional difficulty:** add background-noise mode ("imagine music and side chatter"), per Schedule Day 12.
+**You produce:** the full arc — greet (S1) → introduce + "still learning" (S2) → eat & compliment (S3) → answer questions (S5) → tell the story (S6) → toast (S4) → recover from the curveball (S7) → `Спаси́бо, бы́ло о́чень вку́сно` and `До свида́ния` (`food004`, `firs012`).
+**Success:** You get through the whole dinner in **~80% Russian**, correct register/forms, at least one warm toast and one specific compliment, and you recover from the curveball without panic.
+
+---
+
+## Session templates
+
+### ⏱ Daily 10-minute session (busy-lawyer days)
+1. **0:00–1:00** — Paste kickoff prompt, name today's scenario (rotate 1→7).
+2. **1:00–8:00** — Run that ONE scenario, fast turns, you talking most of the time. Tutor recasts, doesn't lecture.
+3. **8:00–10:00** — Tutor gives 3 wins + 1–2 drill phrases. You repeat those phrases aloud 3× each.
+> *No new material on 10-minute days* — just protect and reactivate (matches the schedule's 10-min fallback).
+
+### ⏱ Weekend 30–45-minute session (Sat/Sun)
+1. **0–5 min** — Warm-up: tutor fires 5 quick recognition questions (Scenario 5 listening) for your ear.
+2. **5–15 min** — Two scenarios back-to-back (e.g. S3 food + S4 toast), with pronunciation drills on the load-bearing words.
+3. **15–30 min** — **Full or partial dinner simulation (Scenario 8)**, escalating speed; add background-noise mode in the final week.
+4. **30–40 min** — Tutor debrief: your top 3 wins, your 3 weakest phrases ("leeches") → write these on the physical cheat sheet.
+5. **40–45 min** — Cool-down: re-say your "how we met" story (S6) once, smoothly, for confidence.
+
+---
+
+## Rehearse THESE with Kadriya (not researchable / personal — AI can't verify)
+
+The AI tutor can drill everything except the personal pieces. Lock these with your wife before game day:
+
+- **The parents' actual name + patronymic** and the exact address form (replace the `[Имя́ О́тчество]` placeholder). This is the #1 item.
+- `Я о́чень рад быть здесь` ("I'm very glad to be here") — confirm it sounds natural vs. a more idiomatic line. *(flagged MED confidence)*
+- `Переда́йте, пожа́луйста …` ("please pass …") — confirm register feels right at the table. *(flagged MED)*
+- `Я из шта́та Миссу́ри` — confirm how she'd pronounce/decline "Missouri." *(flagged MED)*
+- Family-specific toasting customs (vodka vs. wine, who toasts first, whether they stand).
+
+> Schedule note: Days 7, 15, and 16 are explicitly your *live rehearsal with Kadriya* days — use them to validate these flagged items, then bring them back into the AI role-play.
