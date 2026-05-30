@@ -175,9 +175,8 @@ add(
     "first_contact",
     "Разреши́те предста́виться",
     "Allow me to introduce myself",
-    "very formal: [raz-re-shí-tye pred-stá-vi-tsa]",
+    "formal/ceremonial: [raz-re-shí-tye pred-stá-vi-tsa] — «Меня́ зову́т…» is the warmer everyday option",
     3,
-    conf="med",
     tags=["intro"],
 )
 add(
@@ -190,13 +189,11 @@ add(
 )
 add(
     "first_contact",
-    "Я о́чень рад быть здесь",
-    "I'm very glad to be here",
-    "male form рад",
+    "Спаси́бо, что приня́ли",
+    "Thank you for having me",
+    "warmer than 'glad to be here' (a calque): [spa-sí-ba shto prí-nya-li] — при́няли stress on 1st syllable",
     2,
-    gender="m",
-    conf="med",
-    rehearse=True,
+    note="Idiomatic guest gratitude — Russians thank the hosts for receiving them.",
 )
 add(
     "first_contact", "До свида́ния", "Goodbye", "[da svi-dá-ni-ya]", 2, tags=["greeting"]
@@ -259,9 +256,8 @@ add(
     "politeness",
     "Как по-ру́сски …?",
     "How do you say … in Russian?",
-    "[kak pa-rús-ski]",
+    "[kak pa-rús-ski] — also «Как э́то бу́дет по-ру́сски?»",
     3,
-    conf="med",
 )
 
 # --- TOASTS ---  (pattern: За + accusative = "to / for …")
@@ -369,14 +365,19 @@ add(
     note="Referential; address her by name+patronymic.",
 )
 add("family", "зять", "son-in-law (= what YOU are to them)", "[zyat']", 2)
-add("family", "шу́рин", "wife's brother (your brother-in-law)", "[shú-rin]", 3)
 add(
     "family",
-    "своя́ченица",
-    "wife's sister (your sister-in-law)",
-    "[sva-yá-che-ni-tsa]",
+    "шу́рин",
+    "wife's brother (your brother-in-law)",
+    "[shú-rin] — everyday: «брат жены́»",
     3,
-    conf="med",
+)
+add(
+    "family",
+    "сестра́ жены́",
+    "wife's sister (your sister-in-law)",
+    "[se-strá zhe-ný] — what people actually say; the formal kinship term is своя́ченица",
+    3,
 )
 add("family", "ма́ма", "mom", "[má-ma]", 2)
 add("family", "па́па", "dad", "[pá-pa]", 2)
@@ -428,12 +429,10 @@ add(
 )
 add(
     "food",
-    "Переда́йте, пожа́луйста …",
-    "Please pass …",
-    "[pe-re-dáy-tye pa-zhá-lus-ta]",
+    "Переда́йте, пожа́луйста, хлеб",
+    "Please pass the bread",
+    "[pe-re-dáy-tye pa-zhá-lus-ta] — swap хлеб for any dish",
     3,
-    conf="med",
-    rehearse=True,
 )
 add("food", "Мо́жно ча́ю?", "May I have some tea?", "[mózh-na chá-yu]", 3)
 add("food", "борщ", "borscht (beet soup)", "[borshch]", 3, recognize=True)
@@ -457,10 +456,8 @@ add(
     "smalltalk",
     "Я из шта́та Миссу́ри",
     "I'm from the state of Missouri",
-    "confirm pronunciation with Kadriya",
+    "[ya is shtá-ta mis-sú-ri] — Миссу́ри is indeclinable; bare «Я из Миссу́ри» works too",
     3,
-    conf="med",
-    rehearse=True,
 )
 add(
     "smalltalk",
@@ -537,10 +534,9 @@ add(
     "listening",
     "Бу́дете …?",
     "Will you have …? (offering)",
-    "[bú-dye-tye]",
+    "[bú-dye-tye] — e.g. «Бу́дете чай?»",
     3,
     recognize=True,
-    conf="med",
 )
 
 # --- CORE VERBS (reactivation; я / вы present) ---
