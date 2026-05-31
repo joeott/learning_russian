@@ -243,6 +243,33 @@ async function assertLessonLockedRecognition(page, baseUrl) {
     if (promptedStage.lessonNumber > expected.lessonNumber) {
       throw new Error(`Lesson lock violated: ${promptedStage.id} in ${stageKey} is lesson ${promptedStage.lessonNumber}, expected <= ${expected.lessonNumber}`);
     }
+    const sourceLesson = await page.evaluate(({ stage, itemId }) => {
+      const DATA = window.CONTENT_DATA;
+      const items = DATA.items || [];
+      const sourceCardByStage = {
+        cloze: DATA.cloze_cards || [],
+        dictation: DATA.dictation_cards || [],
+        stress: DATA.stress_cards || [],
+        pronounce: DATA.pronunciation_cards || [],
+        backtranslate: DATA.backtranslation_cards || [],
+        contrast: DATA.contrast_cards || [],
+      };
+      if (sourceCardByStage[stage]) {
+        const card = sourceCardByStage[stage].find((c) => c.id === itemId);
+        if (!card) return null;
+        const source = items.find((it) => it.id === card.item_id);
+        return source ? source.lesson_number : null;
+      }
+      if (stage === "roleplay") {
+        const source = items.find((it) => it.id === itemId);
+        return source ? source.lesson_number : null;
+      }
+      const source = items.find((it) => it.id === itemId);
+      return source ? source.lesson_number : null;
+    }, { stage: stageKey, itemId: promptedStage.id });
+    if (Number.isFinite(sourceLesson) && sourceLesson > expected.lessonNumber) {
+      throw new Error(`Lesson source mismatch: ${promptedStage.id} in ${stageKey} uses source lesson ${sourceLesson}, expected <= ${expected.lessonNumber}`);
+    }
   }
 
   await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });

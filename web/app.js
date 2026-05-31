@@ -22,6 +22,7 @@
   const LESSONS = (CURRICULUM.lessons || []).slice().sort((a, b) => a.lesson_number - b.lesson_number);
   const MOD_BY_ID = Object.fromEntries(MODULES.map(m => [m.id, m]));
   const LESSON_BY_ID = Object.fromEntries(LESSONS.map(l => [l.lesson_id, l]));
+  const ITEMS_BY_ID = Object.fromEntries(ITEMS.map((it) => [it.id, it]));
   const TARGET = MISSION.target_date ? new Date(MISSION.target_date + "T00:00:00") : new Date(2026, 5, 15);
   const ERROR_TYPES = DATA.error_types || [];
   const ERROR_BY_ID = Object.fromEntries(ERROR_TYPES.map(e => [e.id, e]));
@@ -436,7 +437,8 @@
     return `<div class="repairbox rise"><div><h3>Repair queue</h3><p>Logged mistakes are grouped into targeted repair drills.</p></div><div class="repairgrid">${cards}</div></div>`;
   }
   function scenarioForItem(id) {
-    return SCENARIOS.find(s => (s.required_items || []).includes(id));
+    const limit = activeLesson().lesson_number || 99;
+    return SCENARIOS.find(s => (s.lesson_number || 0) <= limit && (s.required_items || []).includes(id));
   }
   function tutorCardForItem(id) {
     const s = scenarioForItem(id);
@@ -477,29 +479,45 @@
     const n = activeLesson().lesson_number || 99;
     return items.filter(i => !i.lesson_number || i.lesson_number <= n);
   }
-  function unlockedClozeCards(cards) {
+  function activeLessonStageCards(cards) {
     const n = activeLesson().lesson_number || 99;
-    return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
+    return cards.filter((card) => {
+      if (!card || !card.item_id) return false;
+      const source = ITEMS_BY_ID[card.item_id];
+      if (!source) return false;
+      const lessonNumber = card.lesson_number != null ? card.lesson_number : source.lesson_number;
+      return lessonNumber != null && lessonNumber <= n;
+    });
+  }
+  function activeRoleplayItemIds() {
+    const n = activeLesson().lesson_number || 99;
+    return new Set(
+      SCENARIOS.filter(s => (s.lesson_number || 0) <= n)
+        .flatMap(s => s.required_items || [])
+    );
+  }
+  function unlockedClozeCards(cards) {
+    return activeLessonStageCards(cards);
   }
   function unlockedDictationCards(cards) {
-    const n = activeLesson().lesson_number || 99;
-    return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
+    return activeLessonStageCards(cards);
   }
   function unlockedStressCards(cards) {
-    const n = activeLesson().lesson_number || 99;
-    return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
+    return activeLessonStageCards(cards);
   }
   function unlockedPronunciationCards(cards) {
-    const n = activeLesson().lesson_number || 99;
-    return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
+    return activeLessonStageCards(cards);
   }
   function unlockedBacktranslationCards(cards) {
-    const n = activeLesson().lesson_number || 99;
-    return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
+    return activeLessonStageCards(cards);
   }
   function unlockedContrastCards(cards) {
     const n = activeLesson().lesson_number || 99;
-    return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
+    return cards.filter((card) => {
+      const item = ITEMS_BY_ID[card.item_id];
+      const lessonNumber = card.lesson_number != null ? card.lesson_number : (item && item.lesson_number);
+      return lessonNumber != null && lessonNumber <= n;
+    });
   }
   function practiceItem(id) {
     return ITEMS.find(i => i.id === id) || CLOZE_CARDS.find(c => c.id === id) || DICTATION_CARDS.find(c => c.id === id) || STRESS_CARDS.find(c => c.id === id) || PRONUNCIATION_CARDS.find(c => c.id === id) || BACKTRANSLATION_CARDS.find(c => c.id === id) || CONTRAST_CARDS.find(c => c.id === id);
@@ -789,7 +807,7 @@
     if (stageKey === "contrast") return unlockedContrastCards(CONTRAST_CARDS);
     if (stageKey === "listen") return items.filter(i => i.syllables >= 1);
     if (stageKey === "roleplay" && SCENARIOS.length) {
-      const scenarioIds = new Set(SCENARIOS.flatMap(s => s.required_items || []));
+      const scenarioIds = activeRoleplayItemIds();
       return items.filter(i => scenarioIds.has(i.id));
     }
     if (stageKey === "roleplay") return items.filter(i => i.priority <= 2 && (i.ru_plain.includes(" ") || i.tags.includes("toast")));
