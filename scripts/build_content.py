@@ -257,6 +257,10 @@ ROLEPLAY_CRITERIA = {
         "label": "answers calendar/weather prompts",
         "error_type": "forgot_phrase",
     },
+    "talks_about_winter_activities": {
+        "label": "talks about winter words and riding/skating/skiing activities",
+        "error_type": "case_or_inflection",
+    },
     "handles_numbers_quantities": {
         "label": "handles numbers, months, prices, and quantities",
         "error_type": "case_or_inflection",
@@ -800,6 +804,35 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "winter_activities_checkin",
+        "setting": "Winter words and seasonal activities",
+        "goal": "Recognize original-guide winter words and answer simple questions about sledding, skating, skiing, snowboarding, and walks in the snow.",
+        "required_items": [
+            "seas001",
+            "seas002",
+            "seas003",
+            "seas004",
+            "seas005",
+            "seas006",
+            "seas007",
+            "seas008",
+            "seas009",
+            "seas010",
+            "seas011",
+            "seas012",
+            "seas013",
+            "seas014",
+            "seas015",
+            "seas016",
+        ],
+        "success_criteria": [
+            "talks_about_winter_activities",
+            "answers_calendar_weather",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
         "id": "numbers_quantities_checkin",
         "setting": "Numbers, prices, months, and quantities",
         "goal": "Recognize and answer original-guide quantity questions about time, cost, months, people, hours, and years.",
@@ -1311,6 +1344,13 @@ MODULES = [
         "☀️",
     ),
     (
+        "seasonal_activities",
+        "Winter & Seasonal Activities",
+        "Original-guide winter words and ката́ться-на activities for easy small talk.",
+        2,
+        "⛸️",
+    ),
+    (
         "numbers_quantities",
         "Numbers & Quantities",
         "Original-guide quantities: prices, months, hours worked, years, and headcounts.",
@@ -1468,6 +1508,12 @@ MODULE_STRUCTURES = {
         "phrase:weather_answer",
         "phrase:calendar_question",
         "grammar:time_expression",
+    ],
+    "seasonal_activities": [
+        "lexical:winter_vocab",
+        "phrase:seasonal_activity",
+        "grammar:katatsya_na_instrumental",
+        "phrase:snow_smalltalk",
     ],
     "numbers_quantities": [
         "lexical:months",
@@ -2294,6 +2340,146 @@ add(
     "[na vy-had-nýh]",
     3,
     tags=["calendar"],
+)
+
+# --- WINTER & SEASONAL ACTIVITIES (original-guide winter/кататься lane) ---
+add(
+    "seasonal_activities",
+    "зима́",
+    "winter",
+    "[zi-má]",
+    3,
+    recognize=True,
+    tags=["winter", "season"],
+)
+add(
+    "seasonal_activities",
+    "снег",
+    "snow",
+    "[snyek]",
+    3,
+    recognize=True,
+    tags=["winter", "weather"],
+)
+add(
+    "seasonal_activities",
+    "снежи́нка",
+    "snowflake",
+    "[sni-zhýn-ka]",
+    3,
+    recognize=True,
+    tags=["winter", "weather"],
+)
+add(
+    "seasonal_activities",
+    "снегови́к",
+    "snowman",
+    "[sni-ga-vík]",
+    3,
+    recognize=True,
+    tags=["winter", "weather"],
+)
+add(
+    "seasonal_activities",
+    "снегопа́д",
+    "snowfall",
+    "[sni-ga-pát]",
+    3,
+    recognize=True,
+    tags=["winter", "weather"],
+)
+add(
+    "seasonal_activities",
+    "моро́з",
+    "frost / hard cold",
+    "[ma-rós]",
+    3,
+    recognize=True,
+    tags=["winter", "cold"],
+)
+add(
+    "seasonal_activities",
+    "Дед Моро́з",
+    "Ded Moroz / Grandfather Frost",
+    "[dyed ma-rós]",
+    3,
+    recognize=True,
+    tags=["winter", "holiday", "culture"],
+)
+add(
+    "seasonal_activities",
+    "Снегу́рочка",
+    "Snegurochka / Snow Maiden",
+    "[sni-gú-rach-ka]",
+    3,
+    recognize=True,
+    tags=["winter", "holiday", "culture"],
+)
+add(
+    "seasonal_activities",
+    "Я ката́юсь на са́нках.",
+    "I go sledding.",
+    "[ya ka-tá-yus' na sán-kah]",
+    2,
+    tags=["winter", "activity", "katatsya"],
+)
+add(
+    "seasonal_activities",
+    "Я ката́юсь на конька́х.",
+    "I go skating.",
+    "[ya ka-tá-yus' na kan'-káh]",
+    2,
+    tags=["winter", "activity", "katatsya"],
+)
+add(
+    "seasonal_activities",
+    "Я ката́юсь на лы́жах.",
+    "I ski.",
+    "[ya ka-tá-yus' na lý-zhah]",
+    2,
+    tags=["winter", "activity", "katatsya"],
+)
+add(
+    "seasonal_activities",
+    "Я ката́юсь на бо́рде.",
+    "I snowboard.",
+    "[ya ka-tá-yus' na bór-de]",
+    3,
+    tags=["winter", "activity", "snowboard", "katatsya"],
+)
+add(
+    "seasonal_activities",
+    "Мы ката́емся на го́рке.",
+    "We ride down the hill.",
+    "[my ka-tá-yem-sya na gór-ke]",
+    3,
+    tags=["winter", "activity", "katatsya"],
+)
+add(
+    "seasonal_activities",
+    "Она́ ката́ется на лы́жах.",
+    "She skis.",
+    "[a-ná ka-tá-yet-sya na lý-zhah]",
+    3,
+    recognize=True,
+    tags=["winter", "activity", "katatsya", "listening"],
+)
+add(
+    "seasonal_activities",
+    "Вы ката́етесь на лы́жах?",
+    "Do you ski? (formal/plural)",
+    "[vy ka-tá-ye-tyes' na lý-zhah]",
+    2,
+    recognize=True,
+    tags=["winter", "activity", "question", "listening"],
+)
+add(
+    "seasonal_activities",
+    "Мы гуля́ли в па́рке и смотре́ли на снег.",
+    "We walked in the park and looked at the snow.",
+    "[my gu-lyá-li f pár-ke i smat-ryé-li na snyek]",
+    3,
+    tags=["winter", "park", "past_tense"],
 )
 
 # --- NUMBERS & QUANTITIES (prices, months, hours, and headcounts) ---

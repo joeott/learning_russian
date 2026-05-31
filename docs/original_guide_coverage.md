@@ -6,7 +6,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 ## Current generated course
 
 - Source of truth: `scripts/build_content.py`
-- Generated content: 420 items across 24 modules, plus 60 generated conjugation drills
+- Generated content: 436 items across 25 modules, 39 role-play scenarios, plus 60 generated conjugation drills
 - Strongest coverage today:
   - greetings and first contact
   - politeness and repair phrases
@@ -15,6 +15,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
   - food/table compliments and requests
   - common and native-speed family check-in questions
   - calendar and weather small talk
+  - winter vocabulary and seasonal `ката́ться на ...` activity patterns from the saved guide
   - numbers, months, prices, hours worked, years, and headcounts
   - practical adverbs, pace repair, and weather adjective agreement
   - daily-routine, time-of-day answers, and a short `Мой день` story mode
@@ -41,6 +42,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 | Calendar, days, dates | `source/ekaterina_guide.md:303-317`, `source/ekaterina_guide.md:668-679`, `source/ekaterina_guide.md:820-850`, `source/ekaterina_guide.md:2070`, `source/ekaterina_guide.md:2247`, `source/research/numbers_quantities.md` | Covered by `calendar_weather` basics plus month recognition in `numbers_quantities` | Later: add only live birthday/date lines after Kadriya confirms exact dates. |
 | Numbers, prices, time, and quantities | `source/ekaterina_guide.md:236`, `source/ekaterina_guide.md:823-824`, `source/ekaterina_guide.md:987-989`, `source/ekaterina_guide.md:1023-1025`, `source/ekaterina_guide.md:1205-1211`, `source/ekaterina_guide.md:1335`, `source/ekaterina_guide.md:1471-1493`, `source/ekaterina_guide.md:2518`, `source/research/numbers_quantities.md` | Covered by `numbers_quantities` cards and a dedicated role-play scenario | Later: add exact birthday/date production only when the date facts are confirmed. |
 | Weather and outside conditions | `source/ekaterina_guide.md:840-850`, `source/ekaterina_guide.md:897-910`, `source/ekaterina_guide.md:1799-1803` | Covered by `calendar_weather` basics | Later: add adjective-agreement contrast only if it improves spoken answers. |
+| Winter and seasonal activities | `source/ekaterina_guide.md:120-153`, `source/ekaterina_guide.md:991`, `source/ekaterina_guide.md:1945`, `source/research/winter_activities.md` | Covered by `seasonal_activities` cards and a dedicated winter/activity role-play scenario for `зима`, snow words, `Дед Мороз`, `Снегурочка`, and `ката́ться на ...` patterns | Keep this as light family small talk; do not expand into sports detail unless it appears in live conversation. |
 | Budva/Montenegro trip logistics | `source/ekaterina_guide.md:1461-1467`, `source/ekaterina_guide.md:1501`, `source/ekaterina_guide.md:1969`, `source/ekaterina_guide.md:2031-2043`, `source/research/budva_travel.md` | Covered by `travel_budva` basics, including airport arrival and hotel check-in/out variants | Later: add only Kadriya-confirmed local wording or transport-specific variants. |
 | Daily routine and time of day | `source/ekaterina_guide.md:1113-1120`, `source/ekaterina_guide.md:1198-1212`, `source/ekaterina_guide.md:1366-1368`, `source/ekaterina_guide.md:1378-1399`, `source/research/daily_routine.md` | Covered by `daily_routine` basics plus a short original-guide `Мой день` story mode | Later: tune the personal cooking joke only after rehearsal with Kadriya. |
 | Hobbies, leisure, and places | `source/ekaterina_guide.md:66-67`, `source/ekaterina_guide.md:87`, `source/ekaterina_guide.md:889-895`, `source/ekaterina_guide.md:1114-1120`, `source/ekaterina_guide.md:1235-1237`, `source/ekaterina_guide.md:1945-1947`, `source/ekaterina_guide.md:2045`, `source/ekaterina_guide.md:2532`, `source/ekaterina_guide.md:2549-2555`, `source/ekaterina_guide.md:2585-2605`, `source/research/leisure_places.md` | Covered by `leisure_places` cards and a dedicated hobbies/places role-play scenario | Later: add only specific family hobbies Joe actually hears. |

@@ -88,7 +88,7 @@ The tutor should actively target these four — they're what make Cyrillic-reade
 
 ---
 
-## The 38 Role-Play Scenarios (increasing difficulty)
+## The 39 Role-Play Scenarios (increasing difficulty)
 
 Run them in order over your study days. Each says: **Goal · the Russian the tutor uses · what you should produce (with content.json IDs) · success criteria.** All "expected responses" are phrases already in your deck — don't invent new Russian, lean on what you've drilled.
 
@@ -277,97 +277,103 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 **You produce:** short answers from the `calendar_weather` module: today/yesterday/tomorrow weather, day names, and `на выходны́х`.
 **Success:** You answer in short Russian without switching to English and keep stress clear on `сего́дня`, `пого́да`, and the day names.
 
-### Scenario 23 — Numbers, prices, months, and quantities (id: numbers_quantities_checkin)
+### Scenario 23 — Winter words and seasonal activities (id: winter_activities_checkin)
+**Goal:** Recognize source-guide winter words and answer simple `ката́ться на ...` activity prompts.
+**Tutor:** asks about `зима́`, `снег`, `моро́з`, `Дед Моро́з`, `Снегу́рочка`, and whether you ski/skate/sled/snowboard.
+**You produce:** short answers from `seasonal_activities`: `Я ката́юсь на са́нках`, `Я ката́юсь на конька́х`, `Я ката́юсь на лы́жах`, `Я ката́юсь на бо́рде`, `Мы ката́емся на го́рке`, and `Мы гуля́ли в па́рке и смотре́ли на снег`.
+**Success:** You keep the `ката́ться на ...` pattern automatic, recognize winter words without needing to produce all of them, and use repair lines if the activity follow-up gets too fast.
+
+### Scenario 24 — Numbers, prices, months, and quantities (id: numbers_quantities_checkin)
 **Goal:** Survive source-guide number questions about time, cost, months, people, hours, and years.
 **Tutor:** asks `Ско́лько сто́ит?`, `Ско́лько сейча́с вре́мени?`, `Како́й сейча́с ме́сяц?`, `Ско́лько бы́ло челове́к?`, and one hours-worked prompt.
 **You produce:** either the exact known pattern (`Сейча́с три двена́дцать`, `Бы́ло се́мьдесят челове́к`) or a repair line before guessing.
 **Success:** You recognize the question type, keep stress on number words clear, and do not freeze when a quantity appears inside a family/work/travel prompt.
 
-### Scenario 24 — Quick descriptions and pace repair (id: adverb_adjective_survival)
+### Scenario 25 — Quick descriptions and pace repair (id: adverb_adjective_survival)
 **Goal:** Use original-guide adverbs and weather adjectives in short spoken answers.
 **Tutor:** asks whether something is interesting, difficult, convenient, important, too fast, and what the weather is like.
 **You produce:** compact lines from `adverbs_adjectives`: `Э́то о́чень интере́сно`, `Э́то немно́го тру́дно`, `Э́то не о́чень удо́бно`, `Ме́дленно, пожа́луйста`, and one `Пого́да ...` adjective line.
 **Success:** You keep answers short and distinguish adverbs like `со́лнечно` from feminine adjective lines like `Пого́да со́лнечная`.
 
-### Scenario 25 — Hobbies, home, and leisure places (id: leisure_places_checkin)
+### Scenario 26 — Hobbies, home, and leisure places (id: leisure_places_checkin)
 **Goal:** Answer dinner-safe questions about music, films, cats, home, parks, stadiums, cinema, and museums.
 **Tutor:** asks what you do when you are not working, what music or films you like, what Kadriya likes, and where people play/watch things.
 **You produce:** short answers from `leisure_places`, especially `Я люблю́ игра́ть на гита́ре`, `Я слу́шаю му́зыку`, `Кадри́я лю́бит рисова́ть`, and one place line.
 **Success:** You keep `игра́ть на` for instruments and `игра́ть в` for sports/games, and you avoid long English hobby explanations.
 
-### Scenario 26 — Can, want, need, and permission (id: modal_ability_survival)
+### Scenario 27 — Can, want, need, and permission (id: modal_ability_survival)
 **Goal:** Use source-guide modal patterns for what you can do, know how to do, want, need, and may or may not do.
 **Tutor:** asks short prompts around `мо́жно`, `нельзя́`, `на́до`, `ну́жно`, `могу́`, `уме́ю`, `хочу́`, and `до́лжен`.
 **You produce:** compact answers like `Мне ну́жно бо́льше вре́мени`, `Я хочу́ говори́ть по-ру́сски`, or a recognition gloss for permission/prohibition questions.
 **Success:** You distinguish `могу́` from `уме́ю`, use repair instead of guessing, and keep the personal `до́лжен гото́вить ча́ще` joke rehearsed-only.
 
-### Scenario 27 — Describing family members (id: physical_description_family)
+### Scenario 28 — Describing family members (id: physical_description_family)
 **Goal:** Answer simple original-guide questions about what someone looks like.
 **Tutor:** asks `Как он вы́глядит?`, `Как она́ вы́глядит?`, and short follow-ups about height, eyes, hair, face, smile, and resemblance.
 **You produce:** short answers from `physical_description`: `Он высо́кий`, `Она́ сре́днего ро́ста`, `У него́ ка́рие глаза́`, `У неё коро́ткие прямы́е во́лосы`, `У неё краси́вая улы́бка`, and `Он похо́ж на па́пу`.
 **Success:** You keep adjective agreement with the noun you are describing, avoid over-describing real relatives unless Kadriya has confirmed the details, and recover with repair lines if the follow-up is too fast.
 
-### Scenario 28 — Health and feeling unwell (id: health_feelings_checkin)
+### Scenario 29 — Health and feeling unwell (id: health_feelings_checkin)
 **Goal:** Handle basic health/tiredness check-ins without giving a long medical explanation.
 **Tutor:** asks `Как вы себя́ чу́вствуете?`, `Ты заболе́л?`, `Что у тебя́ боли́т?`, and one contrast line with `боле́ть за`.
 **You produce:** short answers from `health_feelings`: `Я не о́чень хорошо́ себя́ чу́вствую`, `Я ещё не зна́ю`, `Наде́юсь, что нет`, `У меня́ боли́т голова́`, `Я ча́сто устаю́`, `Я хочу́ спать`, and recognition of `Я боле́ю за Кардина́лов`.
 **Success:** You answer briefly, keep `у меня́ боли́т ...` automatic, distinguish `боле́ю` from `боле́ю за`, and use repair lines instead of attempting medical detail.
 
-### Scenario 29 — Past week, trips, and what happened (id: past_week_events_checkin)
+### Scenario 30 — Past week, trips, and what happened (id: past_week_events_checkin)
 **Goal:** Answer recurring original-guide past-event questions without switching to English.
 **Tutor:** asks `Что ты де́лал на про́шлой неде́ле?`, `Где ты был на про́шлой неде́ле?`, `Что вы там де́лали?`, `Куда́ ты лета́л?`, `Э́то была́ хоро́шая пое́здка?`, `Хоро́шие но́вости?`, and one `Что случи́лось?`
 **You produce:** short answers from `past_events`: `На про́шлой неде́ле я был в Вирджи́нии`, `Мы говори́ли о би́знесе`, `Мы гуля́ли и смотре́ли достопримеча́тельности`, `Мы лета́ли в Ри́чмонд и в Чика́го`, `Пое́здка была́ о́чень хоро́шая`, `Мы обсуди́ли би́знес`, and one sensitive recognition-only police/car line if prompted.
 **Success:** You keep male `я был`, plural `мы ...ли`, and the story short; police/car-theft details stay low-priority and recognition-first.
 
-### Scenario 30 — Home, chores, homework, and shopping (id: home_chores_shopping_checkin)
+### Scenario 31 — Home, chores, homework, and shopping (id: home_chores_shopping_checkin)
 **Goal:** Answer source-guide daily-life prompts about cleaning at home, cats/dishes/trash, homework, the store, and help.
 **Tutor:** asks `Что вы де́лали на вы́ходных?`, `У тебя́ бы́ло вре́мя на дома́шнее зада́ние?`, `Где магази́н?`, `Ско́лько сто́ит арбу́з?`, and one help/chores follow-up.
 **You produce:** short answers from `home_life`: `На вы́ходных мы убира́ли дом`, `Я убира́ю за кота́ми`, `Я мо́ю посу́ду`, `Я выношу́ му́сор`, `У меня́ не́ было вре́мени на дома́шнее зада́ние`, `Сего́дня я был в магази́не`, `Я купи́л арбу́з`, and `Помоги́те, пожа́луйста`.
 **Success:** You keep home-life answers short, use repair lines before overexplaining, and keep the personal family-cleaning joke rehearsed-only.
 
-### Scenario 31 — Pronouns and possession (id: pronouns_possession_checkin)
+### Scenario 32 — Pronouns and possession (id: pronouns_possession_checkin)
 **Goal:** Use source-guide pronouns and possessives in short family/home/work phrases.
 **Tutor:** asks cue questions around `мой/моя/моё/мои`, `его/её/наш/ваш`, `У меня`, `У нас`, and `У вас`.
 **You produce:** short answers from `pronouns_possession`: `Э́то мой дом`, `Э́то моя́ жена́`, `Э́то моё люби́мое ме́сто`, `Э́то мои́ коты́`, `Вот моя́ визи́тка`, `У меня́ есть два кота́`, `У нас бы́ло мно́го госте́й`, and `У вас есть вре́мя?`.
 **Success:** You match the possessive to the owned noun, keep `у меня/у нас/у вас` automatic, and use repair lines instead of explaining grammar.
 
-### Scenario 32 — Budva trip check-in (id: budva_trip_checkin)
+### Scenario 33 — Budva trip check-in (id: budva_trip_checkin)
 **Goal:** Talk about arriving in Budva, the hotel, the sea, and simple plans without overexplaining.
 **Tutor:** asks travel prompts around `Бу́два`, `Черного́рия`, hotel/taxi logistics, beach, sea, and dinner plans.
 **You produce:** short answers from the `travel_budva` module: `Мы е́дем в Бу́дву`, `Мы бу́дем в Бу́две`, `Где на́ш о́тель?`, `Где пляж?`, and one simple plan.
 **Success:** You keep the case switch clear between `в Бу́дву` and `в Бу́две`, stay in Russian, and recover with repair lines if needed.
 
-### Scenario 33 — Daily routine check-in (id: daily_routine_checkin)
+### Scenario 34 — Daily routine check-in (id: daily_routine_checkin)
 **Goal:** Answer original-guide `Мой день` questions about eating, working, resting, and evening routine.
 **Tutor:** asks `Когда́ вы обе́даете?`, `Когда́ вы у́жинаете?`, `Когда́ вы рабо́таете?`, `Когда́ вы отдыха́ете?`, and `Что ты сего́дня де́лал?`
 **You produce:** short answers from the `daily_routine` module: lunch/day, dinner/evening, work morning/evening, rest evening, and one worked-today answer.
 **Success:** You use `у́тром`, `днём`, and `ве́чером` without switching to English and keep `рабо́таю` / `рабо́тал` distinct.
 
-### Scenario 34 — My day mini-story (id: daily_routine_story)
+### Scenario 35 — My day mini-story (id: daily_routine_story)
 **Goal:** Tell a short version of the original-guide `Мой день` essay.
 **Tutor:** asks for a one-minute story about morning, work, and evening, then interrupts once with `А пото́м?` or `Что ты де́лаешь на рабо́те?`
 **You produce:** four to six linked lines from `daily_routine`: early morning, coffee/guitar, work at ten, client problems/calls/court, and after-work dinner.
 **Success:** You keep the story short, use `у́тром` / `по́сле` / `по́сле рабо́ты`, and only use the cooking-more-often joke if Kadriya has rehearsed it with you.
 
-### Scenario 35 — Work and clients check-in (id: work_business_checkin)
+### Scenario 36 — Work and clients check-in (id: work_business_checkin)
 **Goal:** Answer predictable lawyer/work questions while keeping the explanation short and beginner-safe.
 **Tutor:** asks `Кем вы рабо́таете?`, `У вас мно́го клие́нтов?`, `У вас мно́го дел?`, `Ты сего́дня о́чень за́нят?`, and one court/client follow-up.
 **You produce:** `Я юри́ст`, `У меня́ своя́ компа́ния`, `Да, у меня́ мно́го клие́нтов`, `Да, у меня́ мно́го дел`, and one short today-work sentence.
 **Success:** You do not overexplain legal details; you answer, pause, and use repair lines if the follow-up is too fast.
 
-### Scenario 36 — Holiday and family plans (id: holiday_celebration_checkin)
+### Scenario 37 — Holiday and family plans (id: holiday_celebration_checkin)
 **Goal:** Answer original-guide Christmas/Thanksgiving/family-plan prompts in simple Russian.
 **Tutor:** asks `Каки́е пла́ны на Рождество́?`, `Как вы с Кадри́ей отпра́здновали Рождество́?`, `Ско́лько дней вы бу́дете в О́регоне?`, and `Что вы де́лали на День Благодаре́ния?`
 **You produce:** one short holiday plan, one family celebration answer, and one Thanksgiving dinner answer from the `celebrations` module.
 **Success:** You keep the story to one or two sentences and recover with repair lines instead of trying a long holiday narrative.
 
-### Scenario 37 — Cultural extras recognition (id: cultural_bonus_recognition)
+### Scenario 38 — Cultural extras recognition (id: cultural_bonus_recognition)
 **Goal:** Recognize source-guide proverbs and lawyer jokes without trying to perform them.
 **Tutor:** plays or says one proverb/joke line at a time and asks for the rough English meaning.
 **You produce:** recognition only: identify whether it is a proverb, idiom, or lawyer joke, then give the approximate meaning in English.
 **Success:** You recognize the familiar lines and use repair phrases if the proverb is too fast; do not try to be funny in Russian unless Kadriya has rehearsed it with you.
 
-### Scenario 38 — Airport and hotel arrival (id: budva_airport_hotel_checkin)
+### Scenario 39 — Airport and hotel arrival (id: budva_airport_hotel_checkin)
 **Goal:** Handle airport and hotel arrival basics without switching to English.
 **Tutor:** asks fast practical prompts around `аэропо́рт`, `бага́ж`, passport, baggage claim, hotel reservation, room, key, elevator, and check-out.
 **You produce:** short survival lines from `travel_budva`: `Вот мой па́спорт`, `Я хочу́ сда́ть бага́ж`, `Где выда́ча багажа́?`, `У меня́ есть брони́рование`, `Ключ, пожа́луйста`, and one check-in/check-out question.
