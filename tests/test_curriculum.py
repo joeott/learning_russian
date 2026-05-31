@@ -29,12 +29,14 @@ class CurriculumBoundaryTests(unittest.TestCase):
         self.assertEqual(len(boundary["item_ids"]), 13)
         self.assertIn("phrase:greeting", boundary["structures"])
 
-    def test_default_lesson_unlocks_all_items(self) -> None:
+    def test_default_lesson_unlocks_first_lesson_only(self) -> None:
         boundary = lesson_boundary(self.content)
-        self.assertEqual(len(boundary["item_ids"]), len(self.content["items"]))
+        first_lesson = self.content["curriculum"]["lessons"][0]["lesson_id"]
         self.assertEqual(
             boundary["lesson_id"], self.content["curriculum"]["default_lesson_id"]
         )
+        self.assertEqual(boundary["lesson_id"], first_lesson)
+        self.assertEqual(len(boundary["item_ids"]), 13)
 
     def test_boundaries_are_cumulative(self) -> None:
         lesson_two = lesson_boundary(self.content, "family_visit_002")

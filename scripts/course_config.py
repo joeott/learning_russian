@@ -42,7 +42,7 @@ DEFAULT_COURSE = {
         "preferred_voice_name": "Elena (Warm, Calm & Clear)",
     },
     "curriculum": {
-        "default_lesson_id": "family_visit_008",
+        "default_lesson_id": "family_visit_001",
     },
 }
 

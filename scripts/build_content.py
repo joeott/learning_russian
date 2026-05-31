@@ -962,7 +962,7 @@ def build_curriculum(course: dict, modules: list[dict], items: list[dict]) -> di
         prior_lesson_id = lesson_id
     lesson_ids = {lesson["lesson_id"] for lesson in lessons}
     if default_lesson_id not in lesson_ids:
-        default_lesson_id = lessons[-1]["lesson_id"] if lessons else ""
+        default_lesson_id = lessons[0]["lesson_id"] if lessons else ""
     return {
         "model": "lesson_locked_i_plus_1",
         "default_lesson_id": default_lesson_id,

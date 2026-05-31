@@ -23,9 +23,10 @@ def lesson_boundary(content: dict, lesson_id: str | None = None) -> dict:
             "structures": set(),
         }
 
-    target_id = (
-        lesson_id or curriculum.get("default_lesson_id") or lessons[-1]["lesson_id"]
-    )
+    if lesson_id:
+        target_id = lesson_id
+    else:
+        target_id = curriculum.get("default_lesson_id") or lessons[0]["lesson_id"]
     lessons_by_id = lesson_by_id(curriculum)
     if target_id not in lessons_by_id:
         raise KeyError(f"unknown lesson_id: {target_id}")

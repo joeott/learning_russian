@@ -35,7 +35,7 @@ window.CONTENT_DATA = {
       "preferred_voice_name": "Elena (Warm, Calm & Clear)"
     },
     "curriculum": {
-      "default_lesson_id": "family_visit_008"
+      "default_lesson_id": "family_visit_001"
     }
   },
   "meta": {
@@ -59,7 +59,7 @@ window.CONTENT_DATA = {
   },
   "curriculum": {
     "model": "lesson_locked_i_plus_1",
-    "default_lesson_id": "family_visit_008",
+    "default_lesson_id": "family_visit_001",
     "lessons": [
       {
         "lesson_id": "family_visit_001",

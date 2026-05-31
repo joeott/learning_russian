@@ -78,7 +78,10 @@
       const saved = localStorage.getItem(LESSON_KEY);
       if (saved && LESSON_BY_ID[saved]) return saved;
     } catch (e) {}
-    return CURRICULUM.default_lesson_id || (LESSONS.length ? LESSONS[LESSONS.length - 1].lesson_id : "");
+    if (CURRICULUM.default_lesson_id && LESSON_BY_ID[CURRICULUM.default_lesson_id]) {
+      return CURRICULUM.default_lesson_id;
+    }
+    return LESSONS.length ? LESSONS[0].lesson_id : "";
   }
   function saveLessonBoundary() { try { localStorage.setItem(LESSON_KEY, activeLessonId); } catch (e) {} }
   function loadAnalyticsHistory() {
