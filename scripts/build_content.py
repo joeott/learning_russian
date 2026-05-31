@@ -892,6 +892,13 @@ MODULES = [
         "💼",
     ),
     (
+        "legal_recognition",
+        "Legal Words (Recognition)",
+        "Recognition-only legal terms from the guide so deeper work questions are less jarring.",
+        3,
+        "⚖️",
+    ),
+    (
         "celebrations",
         "Holidays & Plans",
         "Original-guide Christmas, Thanksgiving, and family-plan small talk.",
@@ -970,6 +977,11 @@ MODULE_STRUCTURES = {
         "phrase:work_identity",
         "phrase:client_case_answer",
         "grammar:past_masculine_work",
+    ],
+    "legal_recognition": [
+        "lexical:legal_vocab",
+        "skill:listening_question_recognition",
+        "strategy:recognition_only",
     ],
     "celebrations": [
         "lexical:holiday_vocab",
@@ -1829,6 +1841,135 @@ add(
     3,
     gender="m",
     tags=["work", "business"],
+)
+
+# --- LEGAL WORDS (recognition-only work vocabulary) ---
+add(
+    "legal_recognition",
+    "суд",
+    "court",
+    "[sut]",
+    3,
+    recognize=True,
+    tags=["legal", "court"],
+)
+add(
+    "legal_recognition",
+    "судья́",
+    "judge",
+    "[su-d'yá]",
+    3,
+    recognize=True,
+    tags=["legal", "court"],
+)
+add(
+    "legal_recognition",
+    "слу́шание",
+    "hearing",
+    "[slú-sha-ni-ye]",
+    3,
+    recognize=True,
+    tags=["legal", "court"],
+)
+add(
+    "legal_recognition",
+    "де́ло",
+    "case / matter",
+    "[dyé-la]",
+    3,
+    recognize=True,
+    tags=["legal", "case"],
+)
+add(
+    "legal_recognition",
+    "клие́нт",
+    "client",
+    "[kli-yént]",
+    3,
+    recognize=True,
+    tags=["legal", "client"],
+)
+add(
+    "legal_recognition",
+    "страхо́вка",
+    "insurance",
+    "[stra-hóf-ka]",
+    3,
+    recognize=True,
+    tags=["legal", "insurance"],
+)
+add(
+    "legal_recognition",
+    "мирно́е соглаше́ние",
+    "settlement agreement",
+    "[mir-nó-ye sa-gla-shé-ni-ye]",
+    3,
+    recognize=True,
+    tags=["legal", "settlement"],
+)
+add(
+    "legal_recognition",
+    "суде́бное де́ло",
+    "court case / lawsuit",
+    "[su-dyéb-na-ye dyé-la]",
+    3,
+    recognize=True,
+    tags=["legal", "court", "case"],
+)
+add(
+    "legal_recognition",
+    "тра́вма",
+    "injury",
+    "[tráv-ma]",
+    3,
+    recognize=True,
+    tags=["legal", "injury"],
+)
+add(
+    "legal_recognition",
+    "клевета́",
+    "defamation",
+    "[kle-ve-tá]",
+    3,
+    recognize=True,
+    tags=["legal"],
+)
+add("legal_recognition", "зако́н", "law", "[za-kón]", 3, recognize=True, tags=["legal"])
+add(
+    "legal_recognition",
+    "пра́во",
+    "law / right",
+    "[prá-va]",
+    3,
+    recognize=True,
+    tags=["legal"],
+)
+add(
+    "legal_recognition",
+    "прокуро́р",
+    "prosecutor",
+    "[pra-ku-rór]",
+    3,
+    recognize=True,
+    tags=["legal", "court"],
+)
+add(
+    "legal_recognition",
+    "защи́тник",
+    "defender / defense lawyer",
+    "[za-shchít-nik]",
+    3,
+    recognize=True,
+    tags=["legal", "court"],
+)
+add(
+    "legal_recognition",
+    "пове́стка",
+    "summons / subpoena",
+    "[pa-vyés-tka]",
+    3,
+    recognize=True,
+    tags=["legal", "court"],
 )
 
 # --- HOLIDAYS & PLANS (original-guide celebration lane) ---
