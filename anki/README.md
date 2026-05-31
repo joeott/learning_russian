@@ -1,15 +1,18 @@
 # Anki Deck — Russian for Meeting Kadriya's Family
 
 `russian_family_visit.txt` is a TAB-separated Anki import file (109 cards across
-8 modules). It is generated deterministically from `../content/content.json` by
-`../scripts/build_anki.py`. **Edit the JSON, then re-run the script — never hand-edit the .txt.**
+8 modules). `russian_family_visit_contextual.txt` is a companion import with
+typed cloze, dictation, stress, pronunciation, back-translation, contrast, and
+scenario cards generated from the same verified phrases. Both are generated
+deterministically from `../content/content.json` by `../scripts/build_anki.py`.
+**Edit the source content/build scripts, then rebuild — never hand-edit the .txt files.**
 
 ```bash
 cd /Users/joe/Projects/learning_russian
 python3 scripts/build_anki.py
 ```
 
-The file format:
+The base file format:
 - `#separator:tab` — fields are split on TAB (Russian glosses contain commas, so CSV is wrong)
 - `#html:true` — the Russian field is wrapped in `<div>` so it renders large
 - `#columns:English  Russian  Pronunciation  Note  Tags`
@@ -23,6 +26,18 @@ The file format:
 | **Tags** | module id, `p1`/`p2`/`p3`, `recognize` | filtering |
 
 The goal is **speaking**, so the default direction is **English → Russian** (you read the English, say the Russian out loud, then flip to check).
+
+The contextual file uses:
+
+- `#columns:CardType  SourceId  Prompt  Answer  Audio  Context  Tags`
+- `CardType` values such as `cloze`, `dictation`, `stress`, `pronunciation`,
+  `backtranslation`, `contrast`, and `scenario`
+- tags like `type_dictation`, `source_food006`, `p1`, and module names so
+  siblings can be filtered, buried, or suspended by type
+
+Import the base deck first. Treat the contextual deck as optional add-on cards:
+enable the types that support the current study phase, and bury related siblings
+so one phrase does not crowd the same review day.
 
 ---
 
@@ -169,7 +184,12 @@ phrases you'll actually rehearse out loud.
     search `tag:p1`, build it, and grind those greetings/politeness/rescue lines
     until automatic. Then add `p2` (toasts, family, food), then `p3` (extras).
   - Module tags also work for focused sessions, e.g. `tag:toasts` before a
-    dinner, `tag:listening` to train your ear for questions.
+  dinner, `tag:listening` to train your ear for questions.
+- **Contextual siblings:** if you import `russian_family_visit_contextual.txt`,
+  start with `tag:type_dictation` and `tag:type_pronunciation` for oral work, or
+  `tag:type_cloze` and `tag:type_backtranslation` for sentence-level recall.
+  Keep Anki's sibling burying on so one source phrase does not appear in several
+  forms in the same session.
 
 ---
 
