@@ -79,6 +79,31 @@ function normalizeTextForMatch(value) {
     .toLowerCase();
 }
 
+function stripDecorations(value) {
+  const text = normalizeTextForMatch(value);
+  return text
+    .replace(/[\u{1F300}-\u{1FAFF}]/gu, "")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function tokenMatchNeedle(needle, candidate) {
+  const needleTokens = stripDecorations(needle)
+    .split(" ")
+    .filter(Boolean)
+    .filter((token) => token.length > 1 && !["open", "go", "start", "show"].includes(token));
+  if (!needleTokens.length) {
+    return false;
+  }
+  const candidateTokens = new Set(stripDecorations(candidate).split(" ").filter(Boolean));
+  if (!candidateTokens.size) {
+    return false;
+  }
+  const shared = needleTokens.filter((token) => candidateTokens.has(token));
+  return shared.length >= Math.min(1, needleTokens.length) && shared.length >= Math.ceil(needleTokens.length / 2);
+}
+
 function makeLooseTextPattern(value) {
   return normalizeTextForMatch(value).split(/\s+/).map(escapeRegex).join("\\s+");
 }
@@ -96,13 +121,15 @@ async function clickByText(page, clickText, logs) {
       const aria = el.getAttribute("aria-label") || "";
       const placeholder = el.getAttribute("placeholder") || "";
       const value = el.getAttribute("value") || "";
-      return [primary, aria, placeholder, value].filter(Boolean);
+      const href = el.getAttribute("href") || "";
+      return [primary, aria, placeholder, value, href].filter(Boolean);
     });
     const matches = texts.some((text) => {
       const normalized = normalizeTextForMatch(text);
       return normalized === directNeedle || normalized.includes(directNeedle) || directNeedle.includes(normalized);
     });
-    if (!matches) {
+    const tokenMatch = tokenMatchNeedle(cleanText, texts.join(" "));
+    if (!matches && !tokenMatch) {
       continue;
     }
     try {
@@ -176,13 +203,15 @@ async function clickByText(page, clickText, logs) {
           el.getAttribute("aria-label") || "",
           el.getAttribute("placeholder") || "",
           el.getAttribute("value") || "",
+          el.getAttribute("href") || "",
         ].filter(Boolean);
       });
       const matchesNeedle = candidateTexts.some((text) => {
         const normalized = normalizeTextForMatch(text);
         return normalized === fallbackNeedle || normalized.includes(fallbackNeedle) || fallbackNeedle.includes(normalized);
       });
-      if (!matchesNeedle) continue;
+      const tokenMatch = tokenMatchNeedle(cleanText, candidateTexts.join(" "));
+      if (!matchesNeedle && !tokenMatch) continue;
       try {
         const visible = await candidate.isVisible().catch(() => true);
         if (!visible) {
