@@ -161,18 +161,19 @@
     if (!RU_VOICE) toast("No Russian voice installed — using default");
     speechSynthesis.speak(u);
   }
-  function speak(item) {
+  function speak(item, opts) {
     if (!item) return;
+    opts = opts || {};
     if (AUDIO && AUDIO_IDS.has(item.id)) {
       try {
         if (curAudio) { curAudio.pause(); }
         if ("speechSynthesis" in window) speechSynthesis.cancel();
         curAudio = new Audio(AUDIO.base + item.id + ".mp3");
-        curAudio.play().catch(() => speakTTS(item)); // autoplay/format fallback
+        curAudio.play().catch(() => { if (!opts.quiet) speakTTS(item); });
         return;
       } catch (e) { /* fall through */ }
     }
-    speakTTS(item);
+    if (!opts.quiet) speakTTS(item);
   }
 
   /* ---------- badges ---------- */
@@ -300,7 +301,7 @@
         <button class="iconbtn" onclick="ZS.known()" aria-label="Mark known" title="Mark as stuck">✓</button>
         <button class="iconbtn" onclick="ZS.next()" aria-label="Next">›</button>
       </div>`;
-    speak(it); // auto-play on show (audio-first)
+    speak(it, { quiet: true }); // try native audio, but do not show autoplay-blocked TTS warnings
   }
 
   /* ====================================================================
