@@ -28,7 +28,7 @@ On the home screen: tap **Learn** → start with the red **P1** cards (that's th
 |---|------|---------------|-------|
 | 1 | **The web app** | Daily lessons + staged drills: recognise, recall, cloze, dictation, stress, pronounce, back-translation, contrast, produce, listen, role-play. | [`web/`](web/) — serve & open |
 | 2 | **AI tutor** | Live spoken role-play — Claude plays your тёща/тесть and corrects you. Highest-leverage thing you can do for a *speaking* goal. | [`tutor/roleplay_protocol.md`](tutor/roleplay_protocol.md) |
-| 3 | **Anki deck** | Spaced repetition on your phone — a 436-card base deck plus optional contextual cloze/dictation/stress/pronunciation/scenario siblings. | [`anki/`](anki/) — see its README to import |
+| 3 | **Anki deck** | Spaced repetition on your phone — a 452-card base deck plus optional contextual cloze/dictation/stress/pronunciation/scenario siblings. | [`anki/`](anki/) — see its README to import |
 | 4 | **Cheat sheet** | One printable "table survival sheet" for your pocket on the day. | [`printable/cheatsheet.html`](printable/cheatsheet.html) → Print / Save as PDF |
 | 5 | **16-day plan** | Day-by-day schedule, risk-first, light weekdays / heavy weekends, with a 10-minute fallback. | [`schedule/16_day_plan.md`](schedule/16_day_plan.md) |
 | 6 | **Resources** | Curated, verified videos / podcasts / apps for listening practice. | [`RESOURCES.md`](RESOURCES.md) |

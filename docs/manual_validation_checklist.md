@@ -11,7 +11,7 @@ open http://localhost:8000/web/#/learn
 ## Preflight
 
 - [ ] `npm run check:js` passes.
-- [ ] `tools/zastolom verify` passes with 436 audio files and 436 Anki rows.
+- [ ] `tools/zastolom verify` passes with 452 audio files and 452 Anki rows.
 - [ ] `tools/zastolom test` passes.
 - [ ] `tools/zastolom browser http://127.0.0.1:8000/web/#/learn --desktop --fail-on-errors` passes.
 - [ ] `tools/zastolom preflight http://127.0.0.1:8000/web/#/learn --mobile --offline` passes.
@@ -19,9 +19,10 @@ open http://localhost:8000/web/#/learn
 
 ## Learn Screen
 
-- [ ] Open `#/learn` and confirm the curriculum lock shows 436 total phrases across 25 modules.
+- [ ] Open `#/learn` and confirm the curriculum lock shows 452 total phrases across 26 modules.
 - [ ] Select `Pronouns & Possession` and confirm 16 cards are available.
 - [ ] Select `Winter & Seasonal Activities` and confirm 16 cards are available.
+- [ ] Select `Question Words & Connectors` and confirm 16 cards are available.
 - [ ] Move through previous/next, play, mark-known, module filter, and P1/P2/P3 filters.
 - [ ] Toggle `Hide English`; English and pronunciation helper blur, then reveal on hover/tap.
 - [ ] Test readback speeds: `0.65x`, `0.85x`, `1x`, `1.15x`, and `1.3x`.
@@ -45,8 +46,12 @@ open http://localhost:8000/web/#/learn
 
 - [ ] Reload the app and confirm known/stuck/progress state persists locally.
 - [ ] Visit Home and confirm readiness, delayed recall, due reviews, role-play pass rate, repair focus, and history panels render.
+- [ ] Visit Home and confirm Mission Ability, Grammar Control, n+1 Fit, Friction Index, current bottleneck, and adaptive recommendations render.
+- [ ] Open `#/drill`, click `Adaptive next drill`, and confirm it routes to the recommended stage.
 - [ ] Optional Postgres sync: start Postgres, run `npm run db:migrate`, then `npm run sync:serve`.
 - [ ] In DevTools, set `localStorage.setItem("zastolom.russian_family_visit.v2.sync_api", "http://127.0.0.1:8787")`, reload, complete a card, and confirm `/api/learning/state?learner_id=joe` returns the event-backed state.
+- [ ] Confirm `/api/learning/metrics?learner_id=joe` returns `missionAbility`, `grammarControl`, `nPlusOneFit`, and rating rows.
+- [ ] Confirm `/api/learning/recommendations?learner_id=joe&limit=20` returns item/stage recommendations with `rescue`, `n+1`, `consolidate`, or `too_easy` buckets.
 - [ ] Confirm no microphone recordings or sonograph buffers are persisted to Postgres.
 
 ## Offline And Installability
@@ -58,9 +63,10 @@ open http://localhost:8000/web/#/learn
 
 ## Content And Study Coverage
 
-- [ ] Confirm `docs/original_guide_coverage.md` reports 436 items, 25 modules, 39 scenarios, and 60 conjugation drills.
+- [ ] Confirm `docs/original_guide_coverage.md` reports 452 items, 26 modules, 40 scenarios, and 60 conjugation drills.
 - [ ] Confirm the new `source/research/pronouns_possession.md` provenance file exists.
 - [ ] Spot-check the new pronoun cards for stress marks, English gloss, audio, and tags.
+- [ ] Spot-check the new question-word/connectors cards for stress marks, English gloss, audio, and tags.
 - [ ] Spot-check Budva travel, health, family, work, and home-life modules for mission fit.
 - [ ] Confirm rehearse-only sensitive lines are still marked and not treated as default production lines.
 
@@ -69,6 +75,7 @@ open http://localhost:8000/web/#/learn
 - [ ] Start at Home and show readiness/statistics.
 - [ ] Go to Learn, select `First Contact`, play a card, and show speed controls.
 - [ ] Select `Pronouns & Possession`, show the new lane, record a phrase, play it back, and open `Sonograph`.
+- [ ] Select `Question Words & Connectors`, play `Почему́?`, `потому́ что`, and `поэ́тому`.
 - [ ] Select `Winter & Seasonal Activities`, play one winter vocabulary card and one `ката́ться на ...` activity card.
 - [ ] Select `Core Verbs`, click `Conjugate`, and show the mini conjugation panel.
 - [ ] Go to Drill and show the 12-stage training path.

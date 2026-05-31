@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 import http from "node:http";
 import pg from "pg";
+import { createRequire } from "node:module";
 
 const PORT = Number(process.env.ZASTOLOM_SYNC_PORT || 8787);
 const LEARNER_ID = process.env.ZASTOLOM_LEARNER_ID || "joe";
 const DATABASE_URL = process.env.DATABASE_URL;
+const require = createRequire(import.meta.url);
+const METRICS = require("./learning_metrics.cjs");
 
 if (!DATABASE_URL) {
   console.error("DATABASE_URL is required");
@@ -46,6 +49,194 @@ async function ensureDevice(client, learnerId, deviceId, userAgent) {
   );
 }
 
+async function loadRatings(client, learnerId) {
+  const ratings = METRICS.emptyRatings();
+  const skillRows = await client.query(
+    `SELECT skill_key, rating, attempts, correct, assisted_correct, confidence, last_attempt_at
+     FROM learning_skill_ratings
+     WHERE learner_id = $1`,
+    [learnerId]
+  );
+  const itemRows = await client.query(
+    `SELECT item_id, stage_key, difficulty, attempts, lapses, last_expected_success, updated_at
+     FROM learning_item_stage_ratings
+     WHERE learner_id = $1`,
+    [learnerId]
+  );
+  for (const row of skillRows.rows) {
+    ratings.skills[row.skill_key] = {
+      skill_key: row.skill_key,
+      rating: Number(row.rating),
+      attempts: Number(row.attempts || 0),
+      correct: Number(row.correct || 0),
+      assisted_correct: Number(row.assisted_correct || 0),
+      confidence: Number(row.confidence || 0),
+      last_attempt_at: row.last_attempt_at ? row.last_attempt_at.toISOString() : "",
+    };
+  }
+  for (const row of itemRows.rows) {
+    ratings.items[`${row.item_id}:${row.stage_key}`] = {
+      item_id: row.item_id,
+      stage_key: row.stage_key,
+      difficulty: Number(row.difficulty),
+      attempts: Number(row.attempts || 0),
+      lapses: Number(row.lapses || 0),
+      last_expected_success: Number(row.last_expected_success || 0),
+      updated_at: row.updated_at ? row.updated_at.toISOString() : "",
+    };
+  }
+  return ratings;
+}
+
+async function persistRatings(client, learnerId, ratings) {
+  for (const row of Object.values(ratings.skills || {})) {
+    await client.query(
+      `INSERT INTO learning_skill_ratings (
+        learner_id, skill_key, rating, attempts, correct, assisted_correct,
+        confidence, last_attempt_at, updated_at
+      )
+      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,now())
+      ON CONFLICT (learner_id, skill_key) DO UPDATE SET
+        rating = EXCLUDED.rating,
+        attempts = EXCLUDED.attempts,
+        correct = EXCLUDED.correct,
+        assisted_correct = EXCLUDED.assisted_correct,
+        confidence = EXCLUDED.confidence,
+        last_attempt_at = EXCLUDED.last_attempt_at,
+        updated_at = now()`,
+      [
+        learnerId,
+        row.skill_key,
+        row.rating,
+        row.attempts || 0,
+        row.correct || 0,
+        row.assisted_correct || 0,
+        row.confidence || 0,
+        row.last_attempt_at || null,
+      ]
+    );
+  }
+  for (const row of Object.values(ratings.items || {})) {
+    await client.query(
+      `INSERT INTO learning_item_stage_ratings (
+        learner_id, item_id, stage_key, difficulty, attempts, lapses,
+        last_expected_success, updated_at
+      )
+      VALUES ($1,$2,$3,$4,$5,$6,$7,now())
+      ON CONFLICT (learner_id, item_id, stage_key) DO UPDATE SET
+        difficulty = EXCLUDED.difficulty,
+        attempts = EXCLUDED.attempts,
+        lapses = EXCLUDED.lapses,
+        last_expected_success = EXCLUDED.last_expected_success,
+        updated_at = now()`,
+      [
+        learnerId,
+        row.item_id,
+        row.stage_key,
+        row.difficulty,
+        row.attempts || 0,
+        row.lapses || 0,
+        row.last_expected_success || 0,
+      ]
+    );
+  }
+}
+
+function metricRollup(ratings, recentAttempts) {
+  const snapshot = METRICS.metricSnapshot(ratings);
+  const rows = recentAttempts || [];
+  const nPlusOne = rows.filter(row => {
+    const expected = row.payload && row.payload.adaptive ? Number(row.payload.adaptive.expected_success || 0) : 0;
+    return expected >= METRICS.TARGET_LOW && expected <= METRICS.TARGET_HIGH;
+  }).length;
+  const friction = rows.filter(row =>
+    !row.ok ||
+    row.assisted ||
+    (row.latency_ms && row.latency_ms > METRICS.targetLatency(row.stage_key))
+  ).length;
+  return Object.assign(snapshot, {
+    nPlusOneFit: rows.length ? Math.round(nPlusOne / rows.length * 100) : 0,
+    frictionIndex: rows.length ? Math.round(friction / rows.length * 100) : 0,
+  });
+}
+
+async function processAttemptRatings(learnerId, events) {
+  if (!events.length) return { processed: 0 };
+  const client = await pool.connect();
+  try {
+    await client.query("BEGIN");
+    const ratings = await loadRatings(client, learnerId);
+    let processed = 0;
+    for (const event of events) {
+      const marker = await client.query(
+        `INSERT INTO learning_rating_events (event_id, learner_id)
+         VALUES ($1, $2)
+         ON CONFLICT (event_id) DO NOTHING`,
+        [event.event_id, learnerId]
+      );
+      if (!marker.rowCount) continue;
+      const payload = event.payload || {};
+      METRICS.applyAttempt(ratings, {
+        item_id: event.item_id,
+        stage_key: event.stage_key,
+        ok: !!event.ok,
+        assisted: !!event.assisted,
+        latency_ms: Number(event.latency_ms || 0),
+        meta: payload.item_meta || {},
+        at: event.client_created_at || new Date().toISOString(),
+      });
+      processed += 1;
+    }
+    await persistRatings(client, learnerId, ratings);
+    const recent = await client.query(
+      `SELECT ok, assisted, latency_ms, stage_key, payload
+       FROM learning_attempts
+       WHERE learner_id = $1
+       ORDER BY client_created_at DESC, received_at DESC
+       LIMIT 200`,
+      [learnerId]
+    );
+    const rollup = metricRollup(ratings, recent.rows);
+    await client.query(
+      `INSERT INTO learning_metric_snapshots (
+        learner_id, snapshot_date, mission_ability, grammar_control,
+        listening_discrimination, production_control, n_plus_one_fit,
+        friction_index, confidence, payload
+      )
+      VALUES ($1,current_date,$2,$3,$4,$5,$6,$7,$8,$9)
+      ON CONFLICT (learner_id, snapshot_date) DO UPDATE SET
+        mission_ability = EXCLUDED.mission_ability,
+        grammar_control = EXCLUDED.grammar_control,
+        listening_discrimination = EXCLUDED.listening_discrimination,
+        production_control = EXCLUDED.production_control,
+        n_plus_one_fit = EXCLUDED.n_plus_one_fit,
+        friction_index = EXCLUDED.friction_index,
+        confidence = EXCLUDED.confidence,
+        payload = EXCLUDED.payload,
+        updated_at = now()`,
+      [
+        learnerId,
+        rollup.missionAbility,
+        rollup.grammarControl,
+        rollup.listeningDiscrimination,
+        rollup.productionControl,
+        rollup.nPlusOneFit,
+        rollup.frictionIndex,
+        rollup.confidence,
+        rollup,
+      ]
+    );
+    await client.query("COMMIT");
+    return { processed };
+  } catch (error) {
+    await client.query("ROLLBACK");
+    if (error.code === "42P01") return { processed: 0, warning: "learning metrics migration has not been applied" };
+    throw error;
+  } finally {
+    client.release();
+  }
+}
+
 async function insertEvents(req, res) {
   const body = await readJson(req);
   const learnerId = body.learner_id || LEARNER_ID;
@@ -57,6 +248,7 @@ async function insertEvents(req, res) {
     await client.query("BEGIN");
     await ensureDevice(client, learnerId, deviceId, req.headers["user-agent"]);
     let inserted = 0;
+    const insertedEvents = [];
     for (const event of events) {
       if (!event || !event.event_id || !event.item_id || !event.stage_key) continue;
       const result = await client.query(
@@ -86,6 +278,7 @@ async function insertEvents(req, res) {
         ]
       );
       inserted += result.rowCount;
+      if (result.rowCount) insertedEvents.push(Object.assign({}, event, { course_id: event.course_id || "russian_family_visit" }));
     }
     await client.query(
       `INSERT INTO sync_cursors (learner_id, device_id, last_event_id)
@@ -95,13 +288,75 @@ async function insertEvents(req, res) {
       [learnerId, deviceId, events.length ? events[events.length - 1].event_id : null]
     );
     await client.query("COMMIT");
-    json(res, 200, { ok: true, received: events.length, inserted });
+    const ratings = await processAttemptRatings(learnerId, insertedEvents);
+    json(res, 200, { ok: true, received: events.length, inserted, ratings });
   } catch (error) {
     await client.query("ROLLBACK");
     json(res, 500, { error: error.message });
   } finally {
     client.release();
   }
+}
+
+async function metrics(req, res) {
+  const url = new URL(req.url, `http://${req.headers.host}`);
+  const learnerId = url.searchParams.get("learner_id") || LEARNER_ID;
+  const client = await pool.connect();
+  try {
+    const ratings = await loadRatings(client, learnerId);
+    const recent = await client.query(
+      `SELECT ok, assisted, latency_ms, stage_key, payload
+       FROM learning_attempts
+       WHERE learner_id = $1
+       ORDER BY client_created_at DESC, received_at DESC
+       LIMIT 200`,
+      [learnerId]
+    );
+    const rollup = metricRollup(ratings, recent.rows);
+    json(res, 200, {
+      learner_id: learnerId,
+      metrics: rollup,
+      skills: Object.values(ratings.skills || {}).sort((a, b) => a.rating - b.rating).slice(0, 50),
+      items: Object.values(ratings.items || {}).sort((a, b) => b.difficulty - a.difficulty).slice(0, 50),
+    });
+  } finally {
+    client.release();
+  }
+}
+
+async function recommendations(req, res) {
+  const url = new URL(req.url, `http://${req.headers.host}`);
+  const learnerId = url.searchParams.get("learner_id") || LEARNER_ID;
+  const limit = Math.max(1, Math.min(100, Number(url.searchParams.get("limit") || 20)));
+  const rows = await pool.query(
+    `SELECT item_id, stage_key, difficulty, attempts, lapses, last_expected_success, updated_at
+     FROM learning_item_stage_ratings
+     WHERE learner_id = $1
+     ORDER BY
+       CASE
+         WHEN last_expected_success < 0.55 THEN 0
+         WHEN last_expected_success BETWEEN 0.58 AND 0.78 THEN 1
+         WHEN last_expected_success < 0.90 THEN 2
+         ELSE 3
+       END,
+       lapses DESC,
+       updated_at ASC
+     LIMIT $2`,
+    [learnerId, limit]
+  );
+  json(res, 200, {
+    learner_id: learnerId,
+    recommendations: rows.rows.map(row => ({
+      item_id: row.item_id,
+      stage_key: row.stage_key,
+      difficulty: Number(row.difficulty),
+      attempts: Number(row.attempts || 0),
+      lapses: Number(row.lapses || 0),
+      expected_success: Number(row.last_expected_success || 0),
+      bucket: METRICS.bucket(Number(row.last_expected_success || 0)),
+      updated_at: row.updated_at,
+    })),
+  });
 }
 
 async function insertSnapshot(req, res) {
@@ -187,6 +442,8 @@ const server = http.createServer(async (req, res) => {
     if (req.method === "POST" && req.url === "/api/learning/events") return insertEvents(req, res);
     if (req.method === "POST" && req.url === "/api/learning/snapshots") return insertSnapshot(req, res);
     if (req.method === "GET" && req.url.startsWith("/api/learning/state")) return state(req, res);
+    if (req.method === "GET" && req.url.startsWith("/api/learning/metrics")) return metrics(req, res);
+    if (req.method === "GET" && req.url.startsWith("/api/learning/recommendations")) return recommendations(req, res);
     json(res, 404, { error: "not found" });
   } catch (error) {
     json(res, 500, { error: error.message });

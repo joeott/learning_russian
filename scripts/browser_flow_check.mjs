@@ -130,7 +130,7 @@ async function assertOfflinePackCachesCore(page, baseUrl) {
   await page.getByRole("button", { name: /^Core course$/i }).click();
   await page.waitForFunction(() => {
     const text = (document.querySelector("#offlineStatus")?.innerText || "").toLowerCase();
-    return text.includes("core 8/8");
+    return text.includes("core 9/9");
   });
 }
 

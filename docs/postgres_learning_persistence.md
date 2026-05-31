@@ -12,6 +12,9 @@ learning.
 - item id, stage, lesson, scenario, success/failure, assisted status
 - latency, due date, error type, repair focus, and role-play criteria payloads
 - daily readiness snapshots
+- adaptive Elo-style learner skill ratings
+- adaptive item/stage difficulty ratings
+- daily metric snapshots for mission ability, grammar control, n+1 fit, and friction
 
 Audio recordings and sonograph data are intentionally not persisted.
 
@@ -50,6 +53,35 @@ location.reload();
 - `GET /api/health`
 - `POST /api/learning/events`
 - `GET /api/learning/state?learner_id=joe`
+- `GET /api/learning/metrics?learner_id=joe`
+- `GET /api/learning/recommendations?learner_id=joe&limit=20`
 - `POST /api/learning/snapshots`
 
 Events are idempotent by `event_id`, so retrying a failed sync is safe.
+
+## Adaptive metrics
+
+The browser asset `web/learning_metrics.js` and the sync-server copy
+`scripts/learning_metrics.cjs` use the same Elo-style math. Each graded attempt
+updates:
+
+- learner skill ratings such as `stage:listen`, `structure:grammar:*`, and
+  `mission:core`
+- item/stage difficulty such as `firs001:produce`
+- an expected-success estimate used to place work into `rescue`, `n+1`,
+  `consolidate`, or `too_easy`
+
+The target growth band is `0.58–0.78` predicted success. The app treats that as
+the operational version of `n+1`: still mostly comprehensible, but just above
+the learner's current automatic control.
+
+The published metrics are internal learning signals, not official CEFR/ACTFL
+certifications:
+
+- `missionAbility`: weighted ability across mission-critical structures
+- `grammarControl`: rating across grammar and verb structures
+- `listeningDiscrimination`: listening/dictation ability
+- `productionControl`: produce/back-translate/role-play ability
+- `nPlusOneFit`: share of recent attempts in the target growth band
+- `frictionIndex`: share of recent attempts with a miss, assistance, or slow
+  latency

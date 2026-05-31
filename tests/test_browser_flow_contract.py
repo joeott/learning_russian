@@ -22,7 +22,7 @@ class BrowserFlowContractTests(unittest.TestCase):
             "--offline",
             "assertOfflinePackCachesCore",
             "zastolom-offline-pack",
-            "core 8/8",
+            "core 9/9",
             "offline-pack",
             "assertLessonLockedRecognition",
             "Practice is constrained to Lesson 1",

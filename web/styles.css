@@ -160,6 +160,13 @@ body {
 .analyticsgrid strong { display:block; font-family: var(--font-display); color: var(--red); font-size: 1.6rem; line-height: 1; }
 .analyticsgrid small { font-size: .82rem; }
 .analyticsgrid span { display:block; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .05em; font-size: .66rem; color: var(--ink-soft); line-height: 1.15; }
+.adaptivebox { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items:start; }
+.adaptivebox__next { grid-column: 1 / -1; border-top: 2px solid var(--cream-line); padding-top: 10px; color: var(--ink-soft); font-size: .9rem; }
+.adaptivebox__next strong { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .05em; color: var(--ink); }
+.adaptivequeue { display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; margin-top: 8px; }
+.adaptivequeue button { text-align:left; border:2px solid var(--ink); background: var(--paper); border-radius: var(--radius); padding: 8px 10px; box-shadow: var(--shadow-sm); cursor:pointer; font:inherit; color:inherit; }
+.adaptivequeue button:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow); }
+.adaptivequeue span { display:block; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .06em; font-size:.66rem; color: var(--red); }
 .trendbox {
   display:grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 16px; align-items:center;
   background: var(--paper); border:2px solid var(--ink); border-radius: var(--radius);
@@ -297,6 +304,7 @@ body {
 /* ---------- Quiz ---------- */
 .stagegrid { display:grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 10px; }
 .stagecard { background: var(--paper-2); border:2px solid var(--ink); border-radius: var(--radius); padding: 12px; box-shadow: var(--shadow-sm); cursor:pointer; transition: transform .1s, box-shadow .1s; text-align:left; font:inherit; color:inherit; }
+.stagecard--adaptive { display:block; width:100%; margin: 0 0 10px; background: var(--amber); }
 .stagecard:hover { transform: translate(-3px,-3px); box-shadow: var(--shadow); }
 .stagecard__n { font-family:var(--font-display); font-weight:700; font-size:1.45rem; color: var(--red); line-height:1; }
 .stagecard__t { font-family:var(--font-display); font-weight:600; text-transform:uppercase; letter-spacing:.04em; margin:6px 0 3px; }

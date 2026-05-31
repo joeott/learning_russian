@@ -32,6 +32,7 @@
   const ROLEPLAY_CRITERIA = DATA.roleplay_criteria || {};
   const SCENARIOS = DATA.scenarios || [];
   const TUTOR_BY_SCENARIO = Object.fromEntries(TUTOR_CARDS.map(c => [c.scenario_id, c]));
+  const METRICS = window.ZASTOLOM_METRICS || null;
   const STAGE_KEYS = ["recognition", "recall", "conjugate", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"];
   const LEGACY_STAGE = { production: "produce", listening: "listen" };
   const SCENARIO_INDEX = Object.create(null);
@@ -70,12 +71,14 @@
   const LESSON_KEY = KEY + ".lesson_boundary";
   const HISTORY_KEY = KEY + ".analytics_history";
   const LEARN_RATE_KEY = KEY + ".learn_audio_rate";
+  const ADAPTIVE_KEY = KEY + ".adaptive_ratings";
   const SYNC_QUEUE_KEY = KEY + ".sync_queue";
   const DEVICE_KEY = KEY + ".device_id";
   const SYNC_API_KEY = KEY + ".sync_api";
   const LEARNER_ID = (COURSE.learner_profile && COURSE.learner_profile.id) || "joe";
   const SYNC_API = window.ZASTOLOM_SYNC_API || localStorage.getItem(SYNC_API_KEY) || "";
   let store = load();
+  let adaptiveRatings = loadAdaptiveRatings();
   let activeLessonId = loadLessonBoundary();
   function load() {
     try {
@@ -121,6 +124,17 @@
   }
   function saveLearnRate(value) {
     try { localStorage.setItem(LEARN_RATE_KEY, String(value)); } catch (e) {}
+  }
+  function loadAdaptiveRatings() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(ADAPTIVE_KEY)) || {};
+      return parsed && parsed.version ? parsed : (METRICS ? METRICS.emptyRatings() : { version: 1, skills: {}, items: {} });
+    } catch (e) {
+      return METRICS ? METRICS.emptyRatings() : { version: 1, skills: {}, items: {} };
+    }
+  }
+  function saveAdaptiveRatings() {
+    try { localStorage.setItem(ADAPTIVE_KEY, JSON.stringify(adaptiveRatings)); } catch (e) {}
   }
   function deviceId() {
     try {
@@ -436,6 +450,82 @@
       averageResponseMs: averageResponseMs(),
     };
   }
+  function adaptiveStats() {
+    if (!METRICS) return {
+      missionAbility: 1500,
+      grammarControl: 1500,
+      listeningDiscrimination: 1500,
+      productionControl: 1500,
+      confidence: 0,
+      bottlenecks: [],
+      nPlusOneFit: 0,
+      frictionIndex: 0,
+    };
+    const snapshot = METRICS.metricSnapshot(adaptiveRatings);
+    const recent = [];
+    STAGE_KEYS.forEach(stageKey => {
+      stagePool(stageKey).forEach(it => {
+        const st = stageState(it.id, stageKey);
+        if (!st || !st.seen) return;
+        const adaptive = adaptiveItemState(it.id, stageKey);
+        recent.push({
+          expected: adaptive.expected,
+          lapses: st.lapses || 0,
+          assisted: st.last_assistance || 0,
+          latency: st.last_latency_ms || 0,
+          targetLatency: METRICS.targetLatency(stageKey),
+        });
+      });
+    });
+    const nPlusOne = recent.filter(row => row.expected >= METRICS.TARGET_LOW && row.expected <= METRICS.TARGET_HIGH).length;
+    const friction = recent.filter(row => row.lapses > 0 || row.assisted > 0 || (row.latency && row.latency > row.targetLatency)).length;
+    return Object.assign(snapshot, {
+      nPlusOneFit: recent.length ? Math.round(nPlusOne / recent.length * 100) : 0,
+      frictionIndex: recent.length ? Math.round(friction / recent.length * 100) : 0,
+    });
+  }
+  function skillLabel(key) {
+    return String(key || "")
+      .replace(/^structure:/, "")
+      .replace(/^stage:/, "stage: ")
+      .replace(/^mission:/, "mission: ")
+      .replace(/[:_]/g, " ");
+  }
+  function adaptiveRecommendations(limit) {
+    if (!METRICS) return [];
+    const rows = STAGE_KEYS.flatMap(stageKey => stagePool(stageKey).map(it => {
+      const st = stageState(it.id, stageKey);
+      const adaptive = adaptiveItemState(it.id, stageKey);
+      const due = isDue(st);
+      const bucketRank = { rescue: 0, "n+1": 1, consolidate: 2, too_easy: 3 }[adaptive.bucket] || 4;
+      const dueRank = due ? 0 : 1;
+      const priority = it.priority || adaptive.meta.priority || 3;
+      return { item: it, stageKey, st, adaptive, due, sort: [dueRank, bucketRank, priority, Math.abs(adaptive.expected - 0.68)] };
+    }));
+    return rows.sort((a, b) => {
+      for (let i = 0; i < a.sort.length; i++) if (a.sort[i] !== b.sort[i]) return a.sort[i] - b.sort[i];
+      return a.item.id.localeCompare(b.item.id);
+    }).slice(0, limit || 8);
+  }
+  function adaptivePanelHtml(stats) {
+    const recs = adaptiveRecommendations(4);
+    const bottleneck = stats.bottlenecks && stats.bottlenecks.length ? skillLabel(stats.bottlenecks[0].skill_key) : "not enough attempts yet";
+    return `<div class="analyticsbox rise adaptivebox">
+      <div><h3>Adaptive progress model</h3><p>Elo-style ability and item difficulty estimates choose practice in the n+1 band: hard enough to grow, not so hard it collapses.</p></div>
+      <div class="analyticsgrid">
+        <div><strong>${stats.missionAbility}</strong><span>mission ability</span></div>
+        <div><strong>${stats.grammarControl}</strong><span>grammar control</span></div>
+        <div><strong>${stats.nPlusOneFit}<small>%</small></strong><span>n+1 fit</span></div>
+        <div><strong>${stats.frictionIndex}<small>%</small></strong><span>friction index</span></div>
+        <div><strong>${stats.listeningDiscrimination}</strong><span>listening rating</span></div>
+        <div><strong>${stats.productionControl}</strong><span>production rating</span></div>
+      </div>
+      <div class="adaptivebox__next">
+        <strong>Current bottleneck:</strong> ${escapeHtml(bottleneck)}
+        ${recs.length ? `<div class="adaptivequeue">${recs.map(row => `<button onclick="location.hash='#/quiz/${row.stageKey}'"><span>${escapeHtml(METRICS.bucketLabel(row.adaptive.bucket))}</span>${escapeHtml(row.item.en || row.item.title || row.item.id)}</button>`).join("")}</div>` : ""}
+      </div>
+    </div>`;
+  }
   function todayKey() { return new Date().toISOString().slice(0, 10); }
   function analyticsSnapshot(metrics) {
     const snapshot = {
@@ -732,6 +822,57 @@
   function practiceItem(id) {
     return ITEMS.find(i => i.id === id) || CLOZE_CARDS.find(c => c.id === id) || DICTATION_CARDS.find(c => c.id === id) || STRESS_CARDS.find(c => c.id === id) || PRONUNCIATION_CARDS.find(c => c.id === id) || BACKTRANSLATION_CARDS.find(c => c.id === id) || CONTRAST_CARDS.find(c => c.id === id) || VERB_DRILL_CARDS.find(c => c.id === id);
   }
+  function sourceItemFor(item) {
+    if (!item) return null;
+    return ITEMS_BY_ID[item.item_id] || ITEMS_BY_ID[item.id] || item;
+  }
+  function itemMeta(id, stageKey) {
+    const item = practiceItem(id) || {};
+    const source = sourceItemFor(item) || {};
+    const structures = new Set([].concat(source.structures || [], item.structures || []));
+    const allowedErrorTypes = new Set([].concat(source.allowed_error_types || source.error_types || [], item.allowed_error_types || item.error_types || []));
+    return {
+      item_id: id,
+      source_item_id: source.id || item.item_id || id,
+      stage_key: stageKey,
+      module: source.module || item.module || "",
+      priority: source.priority || item.priority || 3,
+      lesson_id: source.lesson_id || item.lesson_id || "",
+      lesson_number: source.lesson_number || item.lesson_number || null,
+      structures: Array.from(structures).filter(Boolean),
+      allowed_error_types: Array.from(allowedErrorTypes).filter(Boolean),
+    };
+  }
+  function adaptiveItemState(id, stageKey) {
+    const meta = itemMeta(id, stageKey);
+    const itemKey = `${id}:${stageKey}`;
+    const itemRating = adaptiveRatings.items && adaptiveRatings.items[itemKey];
+    const skillKeys = METRICS ? METRICS.eventSkillKeys(meta, stageKey) : [];
+    const ability = skillKeys.length ? skillKeys.reduce((sum, key) => {
+      const row = adaptiveRatings.skills && adaptiveRatings.skills[key];
+      return sum + (row ? row.rating : METRICS.DEFAULT_RATING);
+    }, 0) / skillKeys.length : (METRICS ? METRICS.DEFAULT_RATING : 1500);
+    const difficulty = itemRating ? itemRating.difficulty : (METRICS ? METRICS.baseDifficulty(stageKey, meta.priority) : 1500);
+    const expected = METRICS ? METRICS.expectedSuccess(ability, difficulty) : 0.5;
+    const bucket = METRICS ? METRICS.bucket(expected) : "n+1";
+    return { meta, itemKey, skillKeys, ability, difficulty, expected, bucket };
+  }
+  function applyAdaptiveAttempt(id, stageKey, ok, opts, latencyMs) {
+    if (!METRICS) return null;
+    const meta = itemMeta(id, stageKey);
+    const result = METRICS.applyAttempt(adaptiveRatings, {
+      item_id: id,
+      stage_key: stageKey,
+      ok,
+      assisted: !!(opts && opts.assisted),
+      latency_ms: latencyMs || 0,
+      meta,
+      at: new Date().toISOString(),
+    });
+    adaptiveRatings = result.ratings;
+    saveAdaptiveRatings();
+    return Object.assign({ meta }, result);
+  }
   function lessonLockHtml() {
     if (!LESSONS.length) return "";
     const lesson = activeLesson();
@@ -872,6 +1013,7 @@
   function renderHome() {
     const op = overallProgress();
     const a = analytics();
+    const adaptive = adaptiveStats();
     const history = analyticsSnapshot(a);
     const roleSignals = roleplayFailureSignals();
     const repairFocusRows = repairFocusSummary();
@@ -923,6 +1065,7 @@
           <div><strong>${formatLatency(a.averageResponseMs)}</strong><span>avg response time</span></div>
         </div>
       </div>
+      ${adaptivePanelHtml(adaptive)}
       ${repairProfileHtml(repairFocusRows)}
       ${roleplaySignalsHtml(roleSignals)}
       ${analyticsHistoryHtml(history)}
@@ -1250,6 +1393,7 @@
     }).join("");
   }
   function renderQuizMenu() {
+    const topAdaptive = adaptiveRecommendations(1)[0];
     const cards = STAGES.map(s => {
       const p = stageProgress(s.key);
       return `<button class="stagecard rise" onclick="location.hash='#/quiz/${s.key}'">
@@ -1265,6 +1409,12 @@
       ${lessonLockHtml()}
       <div class="mastery rise">${masteryRings()}</div>
       <div class="callout">Each round is 10 questions: due reviews first, fragile high-priority phrases next, new cards only after the review load is under control.</div>
+      <button class="stagecard stagecard--adaptive rise" onclick="ZS.startAdaptive()">
+        <div class="stagecard__n">n+1</div>
+        <div class="stagecard__t">Adaptive next drill</div>
+        <div class="stagecard__d">${topAdaptive ? `Start ${escapeHtml(topAdaptive.stageKey)} on ${escapeHtml(topAdaptive.item.en || topAdaptive.item.id)} · ${escapeHtml(METRICS ? METRICS.bucketLabel(topAdaptive.adaptive.bucket) : topAdaptive.adaptive.bucket)}` : "Builds after your first attempts."}</div>
+        <div class="stagecard__bar"><span style="width:${topAdaptive ? Math.round(topAdaptive.adaptive.expected * 100) : 0}%"></span></div>
+      </button>
       <div class="stagegrid">${cards}</div>
       ${repairQueueHtml()}`;
   }
@@ -1305,6 +1455,11 @@
     recordChunks = [];
   }
   function renderQuizRun(stageKey) {
+    if (stageKey === "adaptive") {
+      const rec = adaptiveRecommendations(1)[0];
+      location.hash = rec ? `#/quiz/${rec.stageKey}` : "#/quiz/recognition";
+      return;
+    }
     const stage = STAGES.find(s => s.key === stageKey);
     if (!stage) { location.hash = "#/quiz"; return; }
     if (!quiz || quiz.stageKey !== stageKey) {
@@ -1313,7 +1468,15 @@
       const ranked = pool.slice().sort((a, b) => {
         const as = stageScore(a, stageKey);
         const bs = stageScore(b, stageKey);
+        const aa = METRICS ? adaptiveItemState(a.id, stageKey) : null;
+        const ba = METRICS ? adaptiveItemState(b.id, stageKey) : null;
+        const ar = aa ? ({ rescue: 0, "n+1": 1, consolidate: 2, too_easy: 3 }[aa.bucket] || 4) : 0;
+        const br = ba ? ({ rescue: 0, "n+1": 1, consolidate: 2, too_easy: 3 }[ba.bucket] || 4) : 0;
         for (let i = 0; i < as.length; i++) if (as[i] !== bs[i]) return as[i] - bs[i];
+        if (ar !== br) return ar - br;
+        if (aa && ba && Math.abs(aa.expected - 0.68) !== Math.abs(ba.expected - 0.68)) {
+          return Math.abs(aa.expected - 0.68) - Math.abs(ba.expected - 0.68);
+        }
         return a.id.localeCompare(b.id);
       });
       const head = ranked.slice(0, 16);
@@ -1456,6 +1619,7 @@
     const st = stageRec(id, stageKey);
     const r = store[id];
     const latencyMs = opts.latency_ms || (quiz && quiz.questionStartedAt ? Date.now() - quiz.questionStartedAt : 0);
+    const adaptive = applyAdaptiveAttempt(id, stageKey, ok, opts, latencyMs);
     const wasDelayedReview = (st.seen || 0) > 0 && isDue(st);
     r.seen++;
     r.last_seen_at = new Date().toISOString();
@@ -1519,6 +1683,7 @@
     }
     if (!opts.assisted) st.due_at = nextDue(st, ok);
     save();
+    const meta = adaptive ? adaptive.meta : itemMeta(id, stageKey);
     queueSyncEvent({
       item_id: id,
       stage_key: stageKey,
@@ -1526,10 +1691,19 @@
       assisted: !!opts.assisted,
       latency_ms: latencyMs || 0,
       error_type: errorType || "",
-      lesson_id: (practiceItem(id) || {}).lesson_id || "",
+      lesson_id: meta.lesson_id || "",
       scenario_id: opts.roleplay ? opts.roleplay.scenario_id || "" : "",
       due_at: st.due_at || "",
       payload: {
+        adaptive: adaptive ? {
+          expected_success: adaptive.expected,
+          outcome: adaptive.outcome,
+          bucket: adaptive.bucket,
+          skill_keys: adaptive.skill_keys,
+          item_difficulty: adaptive.item.difficulty,
+        } : null,
+        item_meta: meta,
+        assistance_level: opts.listen_ladder ? opts.listen_ladder.assistance : (opts.assisted ? 1 : 0),
         listen_ladder: opts.listen_ladder || null,
         roleplay: opts.roleplay || null,
         repair_focus: st.last_repair_focus || "",
@@ -1674,7 +1848,7 @@
     </div>`;
   }
   function coreOfflineUrls() {
-    return ["./", "./index.html", "./styles.css", "./app.js", "./content.js", "./audio.js", "./manifest.webmanifest", "./assets/icon.svg"];
+    return ["./", "./index.html", "./styles.css", "./app.js", "./learning_metrics.js", "./content.js", "./audio.js", "./manifest.webmanifest", "./assets/icon.svg"];
   }
   function p1AudioIds() {
     return ITEMS.filter(i => i.priority === 1 && AUDIO_IDS.has(i.id)).map(i => i.id);
@@ -1728,6 +1902,10 @@
         payload: { active_lesson_id: id },
       });
       router();
+    },
+    startAdaptive() {
+      const rec = adaptiveRecommendations(1)[0];
+      location.hash = rec ? `#/quiz/${rec.stageKey}` : "#/quiz/recognition";
     },
     toggleEn() { learnState.hideEn = !learnState.hideEn; renderLearn(); },
     setLearnRate(rate) {

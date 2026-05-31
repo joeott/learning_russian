@@ -261,6 +261,10 @@ ROLEPLAY_CRITERIA = {
         "label": "talks about winter words and riding/skating/skiing activities",
         "error_type": "case_or_inflection",
     },
+    "recognizes_question_words_connectors": {
+        "label": "recognizes core question words and connector words",
+        "error_type": "listening_misparse",
+    },
     "handles_numbers_quantities": {
         "label": "handles numbers, months, prices, and quantities",
         "error_type": "case_or_inflection",
@@ -833,6 +837,34 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "question_words_connectors_checkin",
+        "setting": "Question words and connector words",
+        "goal": "Recognize the original-guide glue words that make fast family questions understandable: who, what, where, why, here/there, because, therefore, and quantity modifiers.",
+        "required_items": [
+            "ques001",
+            "ques002",
+            "ques003",
+            "ques004",
+            "ques005",
+            "ques006",
+            "ques007",
+            "ques008",
+            "ques009",
+            "ques010",
+            "ques011",
+            "ques012",
+            "ques013",
+            "ques014",
+            "ques015",
+            "ques016",
+        ],
+        "success_criteria": [
+            "recognizes_question_words_connectors",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
         "id": "numbers_quantities_checkin",
         "setting": "Numbers, prices, months, and quantities",
         "goal": "Recognize and answer original-guide quantity questions about time, cost, months, people, hours, and years.",
@@ -1351,6 +1383,13 @@ MODULES = [
         "⛸️",
     ),
     (
+        "question_words",
+        "Question Words & Connectors",
+        "Original-guide glue words: who/what/where/why, here/there, because, therefore, and quantity modifiers.",
+        2,
+        "❓",
+    ),
+    (
         "numbers_quantities",
         "Numbers & Quantities",
         "Original-guide quantities: prices, months, hours worked, years, and headcounts.",
@@ -1514,6 +1553,12 @@ MODULE_STRUCTURES = {
         "phrase:seasonal_activity",
         "grammar:katatsya_na_instrumental",
         "phrase:snow_smalltalk",
+    ],
+    "question_words": [
+        "lexical:question_words",
+        "lexical:deictics",
+        "discourse:cause_connector",
+        "lexical:quantity_modifiers",
     ],
     "numbers_quantities": [
         "lexical:months",
@@ -2480,6 +2525,146 @@ add(
     "[my gu-lyá-li f pár-ke i smat-ryé-li na snyek]",
     3,
     tags=["winter", "park", "past_tense"],
+)
+
+# --- QUESTION WORDS & CONNECTORS (original-guide glue words) ---
+add(
+    "question_words", "Кто?", "Who?", "[kto]", 2, recognize=True, tags=["question_word"]
+)
+add(
+    "question_words",
+    "Что?",
+    "What?",
+    "[shto]",
+    2,
+    recognize=True,
+    tags=["question_word"],
+)
+add(
+    "question_words",
+    "Где?",
+    "Where? / Where at?",
+    "[gdye]",
+    2,
+    recognize=True,
+    tags=["question_word", "place"],
+)
+add(
+    "question_words",
+    "Куда́?",
+    "Where to?",
+    "[ku-dá]",
+    2,
+    recognize=True,
+    tags=["question_word", "direction"],
+)
+add(
+    "question_words",
+    "Отку́да?",
+    "Where from?",
+    "[at-kú-da]",
+    2,
+    recognize=True,
+    tags=["question_word", "direction"],
+)
+add(
+    "question_words",
+    "Когда́?",
+    "When?",
+    "[kag-dá]",
+    2,
+    recognize=True,
+    tags=["question_word", "time"],
+)
+add(
+    "question_words",
+    "Почему́?",
+    "Why?",
+    "[pa-chi-mú]",
+    2,
+    recognize=True,
+    tags=["question_word", "cause"],
+)
+add(
+    "question_words",
+    "Заче́м?",
+    "What for?",
+    "[za-chém]",
+    3,
+    recognize=True,
+    tags=["question_word", "purpose"],
+)
+add(
+    "question_words",
+    "Како́й / кака́я / како́е / каки́е?",
+    "What kind? / Which? (masc/fem/neut/plural)",
+    "[ka-kóy / ka-ká-ya / ka-kó-ye / ka-kí-ye]",
+    2,
+    recognize=True,
+    tags=["question_word", "adjective_agreement"],
+)
+add(
+    "question_words",
+    "здесь / тут",
+    "here",
+    "[zdyes' / tut]",
+    2,
+    recognize=True,
+    tags=["place", "deictic"],
+)
+add(
+    "question_words",
+    "там",
+    "there",
+    "[tam]",
+    2,
+    recognize=True,
+    tags=["place", "deictic"],
+)
+add(
+    "question_words",
+    "потому́ что",
+    "because",
+    "[pa-ta-mú shta]",
+    2,
+    recognize=True,
+    tags=["connector", "cause"],
+)
+add(
+    "question_words",
+    "поэ́тому",
+    "that's why / therefore",
+    "[pa-é-ta-mu]",
+    2,
+    recognize=True,
+    tags=["connector", "cause"],
+)
+add(
+    "question_words",
+    "коне́чно",
+    "of course",
+    "[ka-nyésh-na]",
+    2,
+    recognize=True,
+    tags=["connector", "agreement"],
+)
+add(
+    "question_words",
+    "мно́го / ма́ло",
+    "a lot / not much",
+    "[mnó-ga / má-la]",
+    3,
+    recognize=True,
+    tags=["quantity"],
+)
+add(
+    "question_words",
+    "немно́го / чуть-чу́ть",
+    "a little / a tiny bit",
+    "[nem-nó-ga / chut'-chút']",
+    3,
+    recognize=True,
+    tags=["quantity"],
 )
 
 # --- NUMBERS & QUANTITIES (prices, months, hours, and headcounts) ---
