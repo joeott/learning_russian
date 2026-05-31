@@ -269,6 +269,14 @@ ROLEPLAY_CRITERIA = {
         "label": "talks about Budva naturally",
         "error_type": "forgot_phrase",
     },
+    "answers_daily_routine": {
+        "label": "answers daily-routine prompts",
+        "error_type": "forgot_phrase",
+    },
+    "uses_day_parts": {
+        "label": "uses morning/day/evening words",
+        "error_type": "case_or_inflection",
+    },
 }
 
 CONTRAST_SETS = [
@@ -701,6 +709,31 @@ SCENARIOS = [
             "uses_repair_lines",
         ],
     },
+    {
+        "id": "daily_routine_checkin",
+        "setting": "Everyday family check-in",
+        "goal": "Answer simple questions about eating, working, resting, and the evening routine.",
+        "required_items": [
+            "dail004",
+            "dail005",
+            "dail006",
+            "dail007",
+            "dail008",
+            "dail009",
+            "dail010",
+            "dail011",
+            "dail012",
+            "dail013",
+            "dail014",
+            "dail015",
+        ],
+        "success_criteria": [
+            "answers_daily_routine",
+            "uses_day_parts",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
 ]
 
 
@@ -780,6 +813,13 @@ MODULES = [
         "☀️",
     ),
     (
+        "daily_routine",
+        "Daily Routine",
+        "Original-guide 'Мой день' phrases: eat, work, rest, homework, and evening plans.",
+        2,
+        "🕰️",
+    ),
+    (
         "travel_budva",
         "Budva Trip",
         "Montenegro travel phrases for airport, hotel, beach, and old-town plans.",
@@ -838,6 +878,12 @@ MODULE_STRUCTURES = {
         "lexical:days_of_week",
         "phrase:weather_answer",
         "phrase:calendar_question",
+        "grammar:time_expression",
+    ],
+    "daily_routine": [
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "grammar:when_question",
         "grammar:time_expression",
     ],
     "travel_budva": [
@@ -1411,6 +1457,150 @@ add(
     "[na vy-had-nýh]",
     3,
     tags=["calendar"],
+)
+
+# --- DAILY ROUTINE (original-guide "Мой день" lane) ---
+add(
+    "daily_routine",
+    "До́брое у́тро.",
+    "Good morning.",
+    "[dób-ra-ye ú-tra]",
+    2,
+    tags=["greeting", "day_part"],
+)
+add(
+    "daily_routine",
+    "До́брый день.",
+    "Good afternoon.",
+    "[dób-ryy dyen']",
+    2,
+    tags=["greeting", "day_part"],
+)
+add(
+    "daily_routine",
+    "До́брый ве́чер.",
+    "Good evening.",
+    "[dób-ryy vyé-cher]",
+    2,
+    tags=["greeting", "day_part"],
+)
+add(
+    "daily_routine",
+    "Когда́ вы обе́даете?",
+    "When do you have lunch?",
+    "[kag-dá vy a-byé-da-ye-tye]",
+    2,
+    recognize=True,
+    tags=["routine", "question", "food"],
+)
+add(
+    "daily_routine",
+    "Я обе́даю днём.",
+    "I have lunch during the day.",
+    "[ya a-byé-da-yu dnyom]",
+    2,
+    tags=["routine", "food", "day_part"],
+)
+add(
+    "daily_routine",
+    "Когда́ вы у́жинаете?",
+    "When do you have dinner?",
+    "[kag-dá vy ú-zhi-na-ye-tye]",
+    2,
+    recognize=True,
+    tags=["routine", "question", "food"],
+)
+add(
+    "daily_routine",
+    "Я у́жинаю ве́чером.",
+    "I have dinner in the evening.",
+    "[ya ú-zhi-na-yu vyé-che-ram]",
+    2,
+    tags=["routine", "food", "day_part"],
+)
+add(
+    "daily_routine",
+    "Когда́ вы рабо́таете?",
+    "When do you work?",
+    "[kag-dá vy ra-bó-ta-ye-tye]",
+    2,
+    recognize=True,
+    tags=["routine", "question", "work"],
+)
+add(
+    "daily_routine",
+    "Я рабо́таю у́тром и ве́чером.",
+    "I work in the morning and evening.",
+    "[ya ra-bó-ta-yu ú-tram i vyé-che-ram]",
+    2,
+    tags=["routine", "work", "day_part"],
+)
+add(
+    "daily_routine",
+    "Когда́ вы отдыха́ете?",
+    "When do you rest?",
+    "[kag-dá vy at-dy-há-ye-tye]",
+    2,
+    recognize=True,
+    tags=["routine", "question"],
+)
+add(
+    "daily_routine",
+    "Обы́чно я отдыха́ю ве́чером.",
+    "Usually I rest in the evening.",
+    "[a-bých-na ya at-dy-há-yu vyé-che-ram]",
+    2,
+    tags=["routine", "day_part"],
+)
+add(
+    "daily_routine",
+    "Что ты сего́дня де́лал?",
+    "What did you do today?",
+    "[shto ty si-vód-nya dyé-lal]",
+    2,
+    recognize=True,
+    tags=["routine", "question", "listening"],
+)
+add(
+    "daily_routine",
+    "Мы еди́м и смо́трим телеви́зор.",
+    "We eat and watch TV.",
+    "[my yi-dím i smót-rim ti-li-ví-zar]",
+    2,
+    tags=["routine", "evening"],
+)
+add(
+    "daily_routine",
+    "Я начина́ю рабо́тать в де́сять утра́.",
+    "I start working at ten in the morning.",
+    "[ya na-chi-ná-yu ra-bó-tat' v dyé-syat' u-trá]",
+    2,
+    tags=["routine", "work", "time"],
+)
+add(
+    "daily_routine",
+    "Обы́чно я рабо́таю семь часо́в.",
+    "Usually I work seven hours.",
+    "[a-bých-na ya ra-bó-ta-yu syem' cha-sóf]",
+    2,
+    tags=["routine", "work", "time"],
+)
+add(
+    "daily_routine",
+    "У меня́ есть вре́мя до десяти́.",
+    "I have time until ten.",
+    "[u mi-nyá yest' vryé-mya da di-si-tí]",
+    3,
+    tags=["routine", "time"],
+)
+add(
+    "daily_routine",
+    "Сего́дня я рабо́тал четы́ре часа́.",
+    "Today I worked four hours.",
+    "[si-vód-nya ya ra-bó-tal chi-tý-re cha-sá]",
+    3,
+    gender="m",
+    tags=["routine", "work", "time"],
 )
 
 # --- BUDVA TRIP (Montenegro travel lane) ---

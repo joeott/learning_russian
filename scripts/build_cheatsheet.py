@@ -45,6 +45,7 @@ def main():
         "smalltalk",
         "listening",
         "calendar_weather",
+        "daily_routine",
         "travel_budva",
         "verbs",
     ]

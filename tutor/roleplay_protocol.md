@@ -271,6 +271,12 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 **You produce:** short answers from the `travel_budva` module: `Мы е́дем в Бу́дву`, `Мы бу́дем в Бу́две`, `Где на́ш о́тель?`, `Где пляж?`, and one simple plan.
 **Success:** You keep the case switch clear between `в Бу́дву` and `в Бу́две`, stay in Russian, and recover with repair lines if needed.
 
+### Scenario 22 — Daily routine check-in (id: daily_routine_checkin)
+**Goal:** Answer original-guide `Мой день` questions about eating, working, resting, and evening routine.
+**Tutor:** asks `Когда́ вы обе́даете?`, `Когда́ вы у́жинаете?`, `Когда́ вы рабо́таете?`, `Когда́ вы отдыха́ете?`, and `Что ты сего́дня де́лал?`
+**You produce:** short answers from the `daily_routine` module: lunch/day, dinner/evening, work morning/evening, rest evening, and one worked-today answer.
+**Success:** You use `у́тром`, `днём`, and `ве́чером` without switching to English and keep `рабо́таю` / `рабо́тал` distinct.
+
 ---
 
 ## Session templates

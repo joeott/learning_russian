@@ -6,7 +6,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 ## Current generated course
 
 - Source of truth: `scripts/build_content.py`
-- Generated content: 142 items across 10 modules
+- Generated content: 159 items across 11 modules
 - Strongest coverage today:
   - greetings and first contact
   - politeness and repair phrases
@@ -15,6 +15,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
   - food/table compliments and requests
   - common listening questions
   - calendar and weather small talk
+  - daily-routine and time-of-day answers
   - Budva/Montenegro trip logistics and simple place descriptions
   - a small core-verb reactivation set
 
@@ -27,7 +28,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 | Calendar, days, dates | `source/ekaterina_guide.md:303-317`, `source/ekaterina_guide.md:668-679`, `source/ekaterina_guide.md:820-850` | Covered by `calendar_weather` basics | Later: add dates/months only if they support actual travel/family prompts. |
 | Weather and outside conditions | `source/ekaterina_guide.md:840-850`, `source/ekaterina_guide.md:897-910`, `source/ekaterina_guide.md:1799-1803` | Covered by `calendar_weather` basics | Later: add adjective-agreement contrast only if it improves spoken answers. |
 | Budva/Montenegro trip logistics | `source/ekaterina_guide.md:1461-1467`, `source/ekaterina_guide.md:1501`, `source/ekaterina_guide.md:1969`, `source/ekaterina_guide.md:2031-2043`, `source/research/budva_travel.md` | Covered by `travel_budva` basics | Later: add airport-specific and hotel-check-in variants only if they are rehearsed with Kadriya. |
-| Daily routine and time of day | `source/ekaterina_guide.md:1378-1399`, `source/ekaterina_guide.md:1154-1157`, `source/ekaterina_guide.md:1217-1220` | Missing as a named module | Add a `daily_routine` module: morning/day/evening, eat lunch/dinner, work, rest, homework. |
+| Daily routine and time of day | `source/ekaterina_guide.md:1113-1120`, `source/ekaterina_guide.md:1198-1212`, `source/ekaterina_guide.md:1366-1368`, `source/ekaterina_guide.md:1378-1399`, `source/research/daily_routine.md` | Covered by `daily_routine` basics | Later: add fuller “my day” storytelling only if short-answer drills are already automatic. |
 | Work, clients, business | `source/ekaterina_guide.md:820-839`, `source/ekaterina_guide.md:977-987`, `source/ekaterina_guide.md:1782-1803` | Partial: "lawyer" and smalltalk basics | Add short lawyer/work answers and listening prompts for occupation, busy week, and clients. |
 | Holidays and celebrations | `source/ekaterina_guide.md:891-930`, `source/ekaterina_guide.md:981-987` | Partial: toast module only | Add a holiday/celebration scenario for family-table small talk. |
 | Idioms and proverbs | `source/ekaterina_guide.md:582-591`, `source/ekaterina_guide.md:864-881` | Missing | Keep as recognition-only bonus unless Kadriya verifies high value for the visit. |
@@ -37,9 +38,9 @@ iterations can close the real beginner-course gaps without inventing Russian.
 
 ## Priority order for remaining build-out
 
-1. `daily_routine`: turns guide exercises into useful answers about work, food, rest, and the day.
-2. `work_business`: lets Joe answer predictable questions about being a lawyer without overexplaining.
-3. `holiday_celebration`: handles Christmas/holiday prompts and family-table storytelling.
+1. `work_business`: lets Joe answer predictable questions about being a lawyer without overexplaining.
+2. `holiday_celebration`: handles Christmas/holiday prompts and family-table storytelling.
+3. Fuller `daily_routine` story mode if the short answers are already automatic.
 4. Airport/hotel variants for Budva if Kadriya confirms they are useful.
 5. Recognition-only bonus deck: idioms, proverbs, and legal jokes after the mission-critical modules are green.
 

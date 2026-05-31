@@ -54,10 +54,11 @@ window.CONTENT_DATA = {
       "smalltalk": 9,
       "listening": 9,
       "calendar_weather": 19,
+      "daily_routine": 17,
       "travel_budva": 14,
       "verbs": 10
     },
-    "total_items": 142
+    "total_items": 159
   },
   "curriculum": {
     "model": "lesson_locked_i_plus_1",
@@ -760,6 +761,160 @@ window.CONTENT_DATA = {
       {
         "lesson_id": "family_visit_009",
         "lesson_number": 9,
+        "module": "daily_routine",
+        "title": "Daily Routine",
+        "introduced_lexemes": [
+          "в",
+          "вечер",
+          "вечером",
+          "время",
+          "вы",
+          "делал",
+          "день",
+          "десяти",
+          "десять",
+          "днём",
+          "до",
+          "доброе",
+          "доброе утро.",
+          "добрый",
+          "добрый вечер.",
+          "добрый день.",
+          "едим",
+          "есть",
+          "и",
+          "когда",
+          "когда вы обедаете?",
+          "когда вы отдыхаете?",
+          "когда вы работаете?",
+          "когда вы ужинаете?",
+          "меня",
+          "мы",
+          "мы едим и смотрим телевизор.",
+          "начинаю",
+          "обедаете",
+          "обедаю",
+          "обычно",
+          "обычно я отдыхаю вечером.",
+          "обычно я работаю семь часов.",
+          "отдыхаете",
+          "отдыхаю",
+          "работаете",
+          "работал",
+          "работать",
+          "работаю",
+          "сегодня",
+          "сегодня я работал четыре часа.",
+          "семь",
+          "смотрим",
+          "телевизор",
+          "ты",
+          "у",
+          "у меня есть время до десяти.",
+          "ужинаете",
+          "ужинаю",
+          "утра",
+          "утро",
+          "утром",
+          "часа",
+          "часов",
+          "четыре",
+          "что",
+          "что ты сегодня делал?",
+          "я",
+          "я начинаю работать в десять утра.",
+          "я обедаю днём.",
+          "я работаю утром и вечером.",
+          "я ужинаю вечером."
+        ],
+        "active_vocab": [
+          "в",
+          "вечер",
+          "вечером",
+          "время",
+          "день",
+          "десяти",
+          "десять",
+          "днём",
+          "до",
+          "доброе",
+          "доброе утро.",
+          "добрый",
+          "добрый вечер.",
+          "добрый день.",
+          "едим",
+          "есть",
+          "и",
+          "меня",
+          "мы",
+          "мы едим и смотрим телевизор.",
+          "начинаю",
+          "обедаю",
+          "обычно",
+          "обычно я отдыхаю вечером.",
+          "обычно я работаю семь часов.",
+          "отдыхаю",
+          "работал",
+          "работать",
+          "работаю",
+          "сегодня",
+          "сегодня я работал четыре часа.",
+          "семь",
+          "смотрим",
+          "телевизор",
+          "у",
+          "у меня есть время до десяти.",
+          "ужинаю",
+          "утра",
+          "утро",
+          "утром",
+          "часа",
+          "часов",
+          "четыре",
+          "я",
+          "я начинаю работать в десять утра.",
+          "я обедаю днём.",
+          "я работаю утром и вечером.",
+          "я ужинаю вечером."
+        ],
+        "passive_vocab": [
+          "вы",
+          "делал",
+          "когда",
+          "когда вы обедаете?",
+          "когда вы отдыхаете?",
+          "когда вы работаете?",
+          "когда вы ужинаете?",
+          "обедаете",
+          "отдыхаете",
+          "работаете",
+          "сегодня",
+          "ты",
+          "ужинаете",
+          "что",
+          "что ты сегодня делал?"
+        ],
+        "introduced_structures": [
+          "grammar:time_expression",
+          "grammar:when_question",
+          "lexical:day_parts",
+          "morphology:gendered_short_form",
+          "phrase:greeting",
+          "phrase:routine_answer",
+          "skill:listening_question_recognition"
+        ],
+        "allowed_error_types": [
+          "gendered_form",
+          "listening_misparse",
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_008"
+        ]
+      },
+      {
+        "lesson_id": "family_visit_010",
+        "lesson_number": 10,
         "module": "travel_budva",
         "title": "Budva Trip",
         "introduced_lexemes": [
@@ -880,12 +1035,12 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_008"
+          "family_visit_009"
         ]
       },
       {
-        "lesson_id": "family_visit_010",
-        "lesson_number": 10,
+        "lesson_id": "family_visit_011",
+        "lesson_number": 11,
         "module": "verbs",
         "title": "Core Verbs (reactivation)",
         "introduced_lexemes": [
@@ -962,7 +1117,7 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_009"
+          "family_visit_010"
         ]
       }
     ]
@@ -1033,12 +1188,20 @@ window.CONTENT_DATA = {
       "order": 7
     },
     {
+      "id": "daily_routine",
+      "title": "Daily Routine",
+      "why": "Original-guide 'Мой день' phrases: eat, work, rest, homework, and evening plans.",
+      "priority": 2,
+      "icon": "🕰️",
+      "order": 8
+    },
+    {
       "id": "travel_budva",
       "title": "Budva Trip",
       "why": "Montenegro travel phrases for airport, hotel, beach, and old-town plans.",
       "priority": 2,
       "icon": "🧳",
-      "order": 8
+      "order": 9
     },
     {
       "id": "verbs",
@@ -1046,7 +1209,7 @@ window.CONTENT_DATA = {
       "why": "High-frequency verbs from Ekaterina's guide — я / вы forms.",
       "priority": 3,
       "icon": "⚙️",
-      "order": 9
+      "order": 10
     }
   ],
   "items": [
@@ -6632,6 +6795,900 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "dail001",
+      "module": "daily_routine",
+      "ru": "До́брое у́тро.",
+      "ru_plain": "Доброе утро.",
+      "en": "Good morning.",
+      "hint": "[dób-ra-ye ú-tra]",
+      "priority": 2,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "greeting",
+        "day_part"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "доброе",
+        "доброе утро.",
+        "утро"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail002",
+      "module": "daily_routine",
+      "ru": "До́брый день.",
+      "ru_plain": "Добрый день.",
+      "en": "Good afternoon.",
+      "hint": "[dób-ryy dyen']",
+      "priority": 2,
+      "syllables": 3,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "greeting",
+        "day_part"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "день",
+        "добрый",
+        "добрый день."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail003",
+      "module": "daily_routine",
+      "ru": "До́брый ве́чер.",
+      "ru_plain": "Добрый вечер.",
+      "en": "Good evening.",
+      "hint": "[dób-ryy vyé-cher]",
+      "priority": 2,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "greeting",
+        "day_part"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вечер",
+        "добрый",
+        "добрый вечер."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail004",
+      "module": "daily_routine",
+      "ru": "Когда́ вы обе́даете?",
+      "ru_plain": "Когда вы обедаете?",
+      "en": "When do you have lunch?",
+      "hint": "[kag-dá vy a-byé-da-ye-tye]",
+      "priority": 2,
+      "syllables": 8,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "routine",
+        "question",
+        "food"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы обедаете?",
+        "обедаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail005",
+      "module": "daily_routine",
+      "ru": "Я обе́даю днём.",
+      "ru_plain": "Я обедаю днём.",
+      "en": "I have lunch during the day.",
+      "hint": "[ya a-byé-da-yu dnyom]",
+      "priority": 2,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "food",
+        "day_part"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "днём",
+        "обедаю",
+        "я",
+        "я обедаю днём."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail006",
+      "module": "daily_routine",
+      "ru": "Когда́ вы у́жинаете?",
+      "ru_plain": "Когда вы ужинаете?",
+      "en": "When do you have dinner?",
+      "hint": "[kag-dá vy ú-zhi-na-ye-tye]",
+      "priority": 2,
+      "syllables": 8,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "routine",
+        "question",
+        "food"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы ужинаете?",
+        "ужинаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail007",
+      "module": "daily_routine",
+      "ru": "Я у́жинаю ве́чером.",
+      "ru_plain": "Я ужинаю вечером.",
+      "en": "I have dinner in the evening.",
+      "hint": "[ya ú-zhi-na-yu vyé-che-ram]",
+      "priority": 2,
+      "syllables": 8,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "food",
+        "day_part"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вечером",
+        "ужинаю",
+        "я",
+        "я ужинаю вечером."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail008",
+      "module": "daily_routine",
+      "ru": "Когда́ вы рабо́таете?",
+      "ru_plain": "Когда вы работаете?",
+      "en": "When do you work?",
+      "hint": "[kag-dá vy ra-bó-ta-ye-tye]",
+      "priority": 2,
+      "syllables": 8,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "routine",
+        "question",
+        "work"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы работаете?",
+        "работаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail009",
+      "module": "daily_routine",
+      "ru": "Я рабо́таю у́тром и ве́чером.",
+      "ru_plain": "Я работаю утром и вечером.",
+      "en": "I work in the morning and evening.",
+      "hint": "[ya ra-bó-ta-yu ú-tram i vyé-che-ram]",
+      "priority": 2,
+      "syllables": 11,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "work",
+        "day_part"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вечером",
+        "и",
+        "работаю",
+        "утром",
+        "я",
+        "я работаю утром и вечером."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail010",
+      "module": "daily_routine",
+      "ru": "Когда́ вы отдыха́ете?",
+      "ru_plain": "Когда вы отдыхаете?",
+      "en": "When do you rest?",
+      "hint": "[kag-dá vy at-dy-há-ye-tye]",
+      "priority": 2,
+      "syllables": 8,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "routine",
+        "question"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы отдыхаете?",
+        "отдыхаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail011",
+      "module": "daily_routine",
+      "ru": "Обы́чно я отдыха́ю ве́чером.",
+      "ru_plain": "Обычно я отдыхаю вечером.",
+      "en": "Usually I rest in the evening.",
+      "hint": "[a-bých-na ya at-dy-há-yu vyé-che-ram]",
+      "priority": 2,
+      "syllables": 11,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "day_part"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вечером",
+        "обычно",
+        "обычно я отдыхаю вечером.",
+        "отдыхаю",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail012",
+      "module": "daily_routine",
+      "ru": "Что ты сего́дня де́лал?",
+      "ru_plain": "Что ты сегодня делал?",
+      "en": "What did you do today?",
+      "hint": "[shto ty si-vód-nya dyé-lal]",
+      "priority": 2,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "routine",
+        "question",
+        "listening"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "делал",
+        "сегодня",
+        "ты",
+        "что",
+        "что ты сегодня делал?"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail013",
+      "module": "daily_routine",
+      "ru": "Мы еди́м и смо́трим телеви́зор.",
+      "ru_plain": "Мы едим и смотрим телевизор.",
+      "en": "We eat and watch TV.",
+      "hint": "[my yi-dím i smót-rim ti-li-ví-zar]",
+      "priority": 2,
+      "syllables": 10,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "evening"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "едим",
+        "и",
+        "мы",
+        "мы едим и смотрим телевизор.",
+        "смотрим",
+        "телевизор"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail014",
+      "module": "daily_routine",
+      "ru": "Я начина́ю рабо́тать в де́сять утра́.",
+      "ru_plain": "Я начинаю работать в десять утра.",
+      "en": "I start working at ten in the morning.",
+      "hint": "[ya na-chi-ná-yu ra-bó-tat' v dyé-syat' u-trá]",
+      "priority": 2,
+      "syllables": 12,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "work",
+        "time"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "в",
+        "десять",
+        "начинаю",
+        "работать",
+        "утра",
+        "я",
+        "я начинаю работать в десять утра."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail015",
+      "module": "daily_routine",
+      "ru": "Обы́чно я рабо́таю семь часо́в.",
+      "ru_plain": "Обычно я работаю семь часов.",
+      "en": "Usually I work seven hours.",
+      "hint": "[a-bých-na ya ra-bó-ta-yu syem' cha-sóf]",
+      "priority": 2,
+      "syllables": 11,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "work",
+        "time"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "обычно",
+        "обычно я работаю семь часов.",
+        "работаю",
+        "семь",
+        "часов",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail016",
+      "module": "daily_routine",
+      "ru": "У меня́ есть вре́мя до десяти́.",
+      "ru_plain": "У меня есть время до десяти.",
+      "en": "I have time until ten.",
+      "hint": "[u mi-nyá yest' vryé-mya da di-si-tí]",
+      "priority": 3,
+      "syllables": 10,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "time"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "время",
+        "десяти",
+        "до",
+        "есть",
+        "меня",
+        "у",
+        "у меня есть время до десяти."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail017",
+      "module": "daily_routine",
+      "ru": "Сего́дня я рабо́тал четы́ре часа́.",
+      "ru_plain": "Сегодня я работал четыре часа.",
+      "en": "Today I worked four hours.",
+      "hint": "[si-vód-nya ya ra-bó-tal chi-tý-re cha-sá]",
+      "priority": 3,
+      "syllables": 12,
+      "conf": "high",
+      "gender": "m",
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "work",
+        "time"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "lexemes": [
+        "работал",
+        "сегодня",
+        "сегодня я работал четыре часа.",
+        "часа",
+        "четыре",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "morphology:gendered_short_form",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
       "id": "trav001",
       "module": "travel_budva",
       "ru": "Мы е́дем в Бу́дву.",
@@ -6676,10 +7733,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6727,10 +7784,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6778,10 +7835,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6831,10 +7888,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6880,10 +7937,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6935,10 +7992,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6987,10 +8044,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -7039,10 +8096,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -7090,10 +8147,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -7140,10 +8197,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -7189,10 +8246,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -7240,10 +8297,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -7289,10 +8346,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -7339,10 +8396,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -7384,10 +8441,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7429,10 +8486,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7474,10 +8531,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7519,10 +8576,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7564,10 +8621,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7609,10 +8666,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7654,10 +8711,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7699,10 +8756,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7744,10 +8801,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7789,10 +8846,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     }
   ],
@@ -10627,11 +11684,735 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "cloze_dail001_01",
+      "item_id": "dail001",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брое у́тро.",
+      "ru_plain": "Доброе утро.",
+      "prompt_ru": "____ утро.",
+      "answer": "Доброе",
+      "accepted_answers": [
+        "До́брое",
+        "Доброе"
+      ],
+      "en": "Good morning.",
+      "priority": 2,
+      "lexemes": [
+        "доброе",
+        "доброе утро.",
+        "утро"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "day_part",
+        "greeting"
+      ]
+    },
+    {
+      "id": "cloze_dail002_01",
+      "item_id": "dail002",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брый день.",
+      "ru_plain": "Добрый день.",
+      "prompt_ru": "____ день.",
+      "answer": "Добрый",
+      "accepted_answers": [
+        "До́брый",
+        "Добрый"
+      ],
+      "en": "Good afternoon.",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "добрый",
+        "добрый день."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "day_part",
+        "greeting"
+      ]
+    },
+    {
+      "id": "cloze_dail003_01",
+      "item_id": "dail003",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брый ве́чер.",
+      "ru_plain": "Добрый вечер.",
+      "prompt_ru": "____ вечер.",
+      "answer": "Добрый",
+      "accepted_answers": [
+        "До́брый",
+        "Добрый"
+      ],
+      "en": "Good evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечер",
+        "добрый",
+        "добрый вечер."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "day_part",
+        "greeting"
+      ]
+    },
+    {
+      "id": "cloze_dail004_01",
+      "item_id": "dail004",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы обе́даете?",
+      "ru_plain": "Когда вы обедаете?",
+      "prompt_ru": "Когда вы ____?",
+      "answer": "обедаете",
+      "accepted_answers": [
+        "обе́даете",
+        "обедаете"
+      ],
+      "en": "When do you have lunch?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы обедаете?",
+        "обедаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "food",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "cloze_dail005_01",
+      "item_id": "dail005",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я обе́даю днём.",
+      "ru_plain": "Я обедаю днём.",
+      "prompt_ru": "Я ____ днём.",
+      "answer": "обедаю",
+      "accepted_answers": [
+        "обе́даю",
+        "обедаю"
+      ],
+      "en": "I have lunch during the day.",
+      "priority": 2,
+      "lexemes": [
+        "днём",
+        "обедаю",
+        "я",
+        "я обедаю днём."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "day_part",
+        "food",
+        "routine"
+      ]
+    },
+    {
+      "id": "cloze_dail006_01",
+      "item_id": "dail006",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы у́жинаете?",
+      "ru_plain": "Когда вы ужинаете?",
+      "prompt_ru": "Когда вы ____?",
+      "answer": "ужинаете",
+      "accepted_answers": [
+        "у́жинаете",
+        "ужинаете"
+      ],
+      "en": "When do you have dinner?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы ужинаете?",
+        "ужинаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "food",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "cloze_dail007_01",
+      "item_id": "dail007",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я у́жинаю ве́чером.",
+      "ru_plain": "Я ужинаю вечером.",
+      "prompt_ru": "Я ужинаю ____.",
+      "answer": "вечером",
+      "accepted_answers": [
+        "ве́чером",
+        "вечером"
+      ],
+      "en": "I have dinner in the evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "ужинаю",
+        "я",
+        "я ужинаю вечером."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "day_part",
+        "food",
+        "routine"
+      ]
+    },
+    {
+      "id": "cloze_dail008_01",
+      "item_id": "dail008",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы рабо́таете?",
+      "ru_plain": "Когда вы работаете?",
+      "prompt_ru": "Когда вы ____?",
+      "answer": "работаете",
+      "accepted_answers": [
+        "рабо́таете",
+        "работаете"
+      ],
+      "en": "When do you work?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы работаете?",
+        "работаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "question",
+        "routine",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_dail009_01",
+      "item_id": "dail009",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я рабо́таю у́тром и ве́чером.",
+      "ru_plain": "Я работаю утром и вечером.",
+      "prompt_ru": "Я ____ утром и вечером.",
+      "answer": "работаю",
+      "accepted_answers": [
+        "рабо́таю",
+        "работаю"
+      ],
+      "en": "I work in the morning and evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "и",
+        "работаю",
+        "утром",
+        "я",
+        "я работаю утром и вечером."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "day_part",
+        "routine",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_dail010_01",
+      "item_id": "dail010",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы отдыха́ете?",
+      "ru_plain": "Когда вы отдыхаете?",
+      "prompt_ru": "Когда вы ____?",
+      "answer": "отдыхаете",
+      "accepted_answers": [
+        "отдыха́ете",
+        "отдыхаете"
+      ],
+      "en": "When do you rest?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы отдыхаете?",
+        "отдыхаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "cloze_dail011_01",
+      "item_id": "dail011",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я отдыха́ю ве́чером.",
+      "ru_plain": "Обычно я отдыхаю вечером.",
+      "prompt_ru": "Обычно я ____ вечером.",
+      "answer": "отдыхаю",
+      "accepted_answers": [
+        "отдыха́ю",
+        "отдыхаю"
+      ],
+      "en": "Usually I rest in the evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "обычно",
+        "обычно я отдыхаю вечером.",
+        "отдыхаю",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "day_part",
+        "routine"
+      ]
+    },
+    {
+      "id": "cloze_dail012_01",
+      "item_id": "dail012",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Что ты сего́дня де́лал?",
+      "ru_plain": "Что ты сегодня делал?",
+      "prompt_ru": "Что ты ____ делал?",
+      "answer": "сегодня",
+      "accepted_answers": [
+        "сего́дня",
+        "сегодня"
+      ],
+      "en": "What did you do today?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "сегодня",
+        "ты",
+        "что",
+        "что ты сегодня делал?"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "listening",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "cloze_dail013_01",
+      "item_id": "dail013",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы еди́м и смо́трим телеви́зор.",
+      "ru_plain": "Мы едим и смотрим телевизор.",
+      "prompt_ru": "Мы едим и смотрим ____.",
+      "answer": "телевизор",
+      "accepted_answers": [
+        "телеви́зор",
+        "телевизор"
+      ],
+      "en": "We eat and watch TV.",
+      "priority": 2,
+      "lexemes": [
+        "едим",
+        "и",
+        "мы",
+        "мы едим и смотрим телевизор.",
+        "смотрим",
+        "телевизор"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "evening",
+        "routine"
+      ]
+    },
+    {
+      "id": "cloze_dail014_01",
+      "item_id": "dail014",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я начина́ю рабо́тать в де́сять утра́.",
+      "ru_plain": "Я начинаю работать в десять утра.",
+      "prompt_ru": "Я начинаю ____ в десять утра.",
+      "answer": "работать",
+      "accepted_answers": [
+        "рабо́тать",
+        "работать"
+      ],
+      "en": "I start working at ten in the morning.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "десять",
+        "начинаю",
+        "работать",
+        "утра",
+        "я",
+        "я начинаю работать в десять утра."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "routine",
+        "time",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_dail015_01",
+      "item_id": "dail015",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я рабо́таю семь часо́в.",
+      "ru_plain": "Обычно я работаю семь часов.",
+      "prompt_ru": "Обычно я ____ семь часов.",
+      "answer": "работаю",
+      "accepted_answers": [
+        "рабо́таю",
+        "работаю"
+      ],
+      "en": "Usually I work seven hours.",
+      "priority": 2,
+      "lexemes": [
+        "обычно",
+        "обычно я работаю семь часов.",
+        "работаю",
+        "семь",
+        "часов",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "routine",
+        "time",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_dail016_01",
+      "item_id": "dail016",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "У меня́ есть вре́мя до десяти́.",
+      "ru_plain": "У меня есть время до десяти.",
+      "prompt_ru": "У меня есть время до ____.",
+      "answer": "десяти",
+      "accepted_answers": [
+        "десяти",
+        "десяти́"
+      ],
+      "en": "I have time until ten.",
+      "priority": 3,
+      "lexemes": [
+        "время",
+        "десяти",
+        "до",
+        "есть",
+        "меня",
+        "у",
+        "у меня есть время до десяти."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "routine",
+        "time"
+      ]
+    },
+    {
+      "id": "cloze_dail017_01",
+      "item_id": "dail017",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Сего́дня я рабо́тал четы́ре часа́.",
+      "ru_plain": "Сегодня я работал четыре часа.",
+      "prompt_ru": "____ я работал четыре часа.",
+      "answer": "Сегодня",
+      "accepted_answers": [
+        "Сего́дня",
+        "Сегодня"
+      ],
+      "en": "Today I worked four hours.",
+      "priority": 3,
+      "lexemes": [
+        "работал",
+        "сегодня",
+        "сегодня я работал четыре часа.",
+        "часа",
+        "четыре",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "morphology:gendered_short_form",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "routine",
+        "time",
+        "work"
+      ]
+    },
+    {
       "id": "cloze_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "prompt_ru": "Мы едем в ____.",
@@ -10671,8 +12452,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "prompt_ru": "Мы будем в ____.",
@@ -10712,8 +12493,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "prompt_ru": "Мы ____ в Будве.",
@@ -10753,8 +12534,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "prompt_ru": "Где наш ____?",
@@ -10796,8 +12577,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "prompt_ru": "____ такси?",
@@ -10835,8 +12616,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "prompt_ru": "____ ехать до отеля?",
@@ -10880,8 +12661,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "prompt_ru": "Где ____?",
@@ -10921,8 +12702,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "prompt_ru": "Я хочу ____ у моря.",
@@ -10963,8 +12744,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "prompt_ru": "Старый город очень ____.",
@@ -11004,8 +12785,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "prompt_ru": "Море очень ____.",
@@ -11044,8 +12825,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "prompt_ru": "Мы ____.",
@@ -11083,8 +12864,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "prompt_ru": "Мы здесь с ____.",
@@ -11123,8 +12904,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "prompt_ru": "Счёт, ____.",
@@ -11162,8 +12943,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "prompt_ru": "Мы хотим ____.",
@@ -11202,8 +12983,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "prompt_ru": "хочу / ____",
@@ -11238,8 +13019,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "prompt_ru": "могу / ____",
@@ -11274,8 +13055,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "prompt_ru": "говорю / ____",
@@ -11310,8 +13091,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "prompt_ru": "понимаю / ____",
@@ -11346,8 +13127,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "prompt_ru": "люблю / ____",
@@ -11382,8 +13163,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "prompt_ru": "работаю / ____",
@@ -11418,8 +13199,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "prompt_ru": "живу / ____",
@@ -11453,8 +13234,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "prompt_ru": "ем / ____",
@@ -11489,8 +13270,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "prompt_ru": "пью / ____",
@@ -11524,8 +13305,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "prompt_ru": "знаю / ____",
@@ -15916,11 +17697,759 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "dict_dail001_01",
+      "item_id": "dail001",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брое у́тро.",
+      "ru_plain": "Доброе утро.",
+      "accepted_answers": [
+        "До́брое у́тро.",
+        "Доброе утро."
+      ],
+      "en": "Good morning.",
+      "priority": 2,
+      "lexemes": [
+        "доброе",
+        "доброе утро.",
+        "утро"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "dictation",
+        "greeting"
+      ]
+    },
+    {
+      "id": "dict_dail002_01",
+      "item_id": "dail002",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брый день.",
+      "ru_plain": "Добрый день.",
+      "accepted_answers": [
+        "До́брый день.",
+        "Добрый день."
+      ],
+      "en": "Good afternoon.",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "добрый",
+        "добрый день."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "dictation",
+        "greeting"
+      ]
+    },
+    {
+      "id": "dict_dail003_01",
+      "item_id": "dail003",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брый ве́чер.",
+      "ru_plain": "Добрый вечер.",
+      "accepted_answers": [
+        "До́брый ве́чер.",
+        "Добрый вечер."
+      ],
+      "en": "Good evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечер",
+        "добрый",
+        "добрый вечер."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "dictation",
+        "greeting"
+      ]
+    },
+    {
+      "id": "dict_dail004_01",
+      "item_id": "dail004",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы обе́даете?",
+      "ru_plain": "Когда вы обедаете?",
+      "accepted_answers": [
+        "Когда вы обедаете?",
+        "Когда́ вы обе́даете?"
+      ],
+      "en": "When do you have lunch?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы обедаете?",
+        "обедаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "food",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "dict_dail005_01",
+      "item_id": "dail005",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я обе́даю днём.",
+      "ru_plain": "Я обедаю днём.",
+      "accepted_answers": [
+        "Я обе́даю днём.",
+        "Я обедаю днём."
+      ],
+      "en": "I have lunch during the day.",
+      "priority": 2,
+      "lexemes": [
+        "днём",
+        "обедаю",
+        "я",
+        "я обедаю днём."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "dictation",
+        "food",
+        "routine"
+      ]
+    },
+    {
+      "id": "dict_dail006_01",
+      "item_id": "dail006",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы у́жинаете?",
+      "ru_plain": "Когда вы ужинаете?",
+      "accepted_answers": [
+        "Когда вы ужинаете?",
+        "Когда́ вы у́жинаете?"
+      ],
+      "en": "When do you have dinner?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы ужинаете?",
+        "ужинаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "food",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "dict_dail007_01",
+      "item_id": "dail007",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я у́жинаю ве́чером.",
+      "ru_plain": "Я ужинаю вечером.",
+      "accepted_answers": [
+        "Я у́жинаю ве́чером.",
+        "Я ужинаю вечером."
+      ],
+      "en": "I have dinner in the evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "ужинаю",
+        "я",
+        "я ужинаю вечером."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "dictation",
+        "food",
+        "routine"
+      ]
+    },
+    {
+      "id": "dict_dail008_01",
+      "item_id": "dail008",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы рабо́таете?",
+      "ru_plain": "Когда вы работаете?",
+      "accepted_answers": [
+        "Когда вы работаете?",
+        "Когда́ вы рабо́таете?"
+      ],
+      "en": "When do you work?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы работаете?",
+        "работаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "question",
+        "routine",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_dail009_01",
+      "item_id": "dail009",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я рабо́таю у́тром и ве́чером.",
+      "ru_plain": "Я работаю утром и вечером.",
+      "accepted_answers": [
+        "Я рабо́таю у́тром и ве́чером.",
+        "Я работаю утром и вечером."
+      ],
+      "en": "I work in the morning and evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "и",
+        "работаю",
+        "утром",
+        "я",
+        "я работаю утром и вечером."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "dictation",
+        "routine",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_dail010_01",
+      "item_id": "dail010",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы отдыха́ете?",
+      "ru_plain": "Когда вы отдыхаете?",
+      "accepted_answers": [
+        "Когда вы отдыхаете?",
+        "Когда́ вы отдыха́ете?"
+      ],
+      "en": "When do you rest?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы отдыхаете?",
+        "отдыхаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "dict_dail011_01",
+      "item_id": "dail011",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я отдыха́ю ве́чером.",
+      "ru_plain": "Обычно я отдыхаю вечером.",
+      "accepted_answers": [
+        "Обы́чно я отдыха́ю ве́чером.",
+        "Обычно я отдыхаю вечером."
+      ],
+      "en": "Usually I rest in the evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "обычно",
+        "обычно я отдыхаю вечером.",
+        "отдыхаю",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "dictation",
+        "routine"
+      ]
+    },
+    {
+      "id": "dict_dail012_01",
+      "item_id": "dail012",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Что ты сего́дня де́лал?",
+      "ru_plain": "Что ты сегодня делал?",
+      "accepted_answers": [
+        "Что ты сего́дня де́лал?",
+        "Что ты сегодня делал?"
+      ],
+      "en": "What did you do today?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "сегодня",
+        "ты",
+        "что",
+        "что ты сегодня делал?"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "listening",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "dict_dail013_01",
+      "item_id": "dail013",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы еди́м и смо́трим телеви́зор.",
+      "ru_plain": "Мы едим и смотрим телевизор.",
+      "accepted_answers": [
+        "Мы еди́м и смо́трим телеви́зор.",
+        "Мы едим и смотрим телевизор."
+      ],
+      "en": "We eat and watch TV.",
+      "priority": 2,
+      "lexemes": [
+        "едим",
+        "и",
+        "мы",
+        "мы едим и смотрим телевизор.",
+        "смотрим",
+        "телевизор"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "evening",
+        "routine"
+      ]
+    },
+    {
+      "id": "dict_dail014_01",
+      "item_id": "dail014",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я начина́ю рабо́тать в де́сять утра́.",
+      "ru_plain": "Я начинаю работать в десять утра.",
+      "accepted_answers": [
+        "Я начина́ю рабо́тать в де́сять утра́.",
+        "Я начинаю работать в десять утра."
+      ],
+      "en": "I start working at ten in the morning.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "десять",
+        "начинаю",
+        "работать",
+        "утра",
+        "я",
+        "я начинаю работать в десять утра."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "routine",
+        "time",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_dail015_01",
+      "item_id": "dail015",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я рабо́таю семь часо́в.",
+      "ru_plain": "Обычно я работаю семь часов.",
+      "accepted_answers": [
+        "Обы́чно я рабо́таю семь часо́в.",
+        "Обычно я работаю семь часов."
+      ],
+      "en": "Usually I work seven hours.",
+      "priority": 2,
+      "lexemes": [
+        "обычно",
+        "обычно я работаю семь часов.",
+        "работаю",
+        "семь",
+        "часов",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "routine",
+        "time",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_dail016_01",
+      "item_id": "dail016",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "У меня́ есть вре́мя до десяти́.",
+      "ru_plain": "У меня есть время до десяти.",
+      "accepted_answers": [
+        "У меня есть время до десяти.",
+        "У меня́ есть вре́мя до десяти́."
+      ],
+      "en": "I have time until ten.",
+      "priority": 3,
+      "lexemes": [
+        "время",
+        "десяти",
+        "до",
+        "есть",
+        "меня",
+        "у",
+        "у меня есть время до десяти."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "routine",
+        "time"
+      ]
+    },
+    {
+      "id": "dict_dail017_01",
+      "item_id": "dail017",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Сего́дня я рабо́тал четы́ре часа́.",
+      "ru_plain": "Сегодня я работал четыре часа.",
+      "accepted_answers": [
+        "Сего́дня я рабо́тал четы́ре часа́.",
+        "Сегодня я работал четыре часа."
+      ],
+      "en": "Today I worked four hours.",
+      "priority": 3,
+      "lexemes": [
+        "работал",
+        "сегодня",
+        "сегодня я работал четыре часа.",
+        "часа",
+        "четыре",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "morphology:gendered_short_form",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "routine",
+        "time",
+        "work"
+      ]
+    },
+    {
       "id": "dict_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "accepted_answers": [
@@ -15962,8 +18491,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "accepted_answers": [
@@ -16005,8 +18534,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "accepted_answers": [
@@ -16048,8 +18577,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "accepted_answers": [
@@ -16091,8 +18620,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "accepted_answers": [
@@ -16132,8 +18661,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "accepted_answers": [
@@ -16177,8 +18706,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "accepted_answers": [
@@ -16218,8 +18747,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "accepted_answers": [
@@ -16262,8 +18791,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "accepted_answers": [
@@ -16305,8 +18834,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "accepted_answers": [
@@ -16347,8 +18876,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "accepted_answers": [
@@ -16388,8 +18917,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "accepted_answers": [
@@ -16430,8 +18959,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "accepted_answers": [
@@ -16471,8 +19000,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "accepted_answers": [
@@ -16513,8 +19042,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "accepted_answers": [
@@ -16551,8 +19080,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "accepted_answers": [
@@ -16589,8 +19118,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "accepted_answers": [
@@ -16627,8 +19156,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "accepted_answers": [
@@ -16665,8 +19194,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "accepted_answers": [
@@ -16703,8 +19232,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "accepted_answers": [
@@ -16741,8 +19270,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "accepted_answers": [
@@ -16779,8 +19308,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "accepted_answers": [
@@ -16817,8 +19346,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "accepted_answers": [
@@ -16854,8 +19383,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "accepted_answers": [
@@ -21181,11 +23710,785 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "stress_dail001_01",
+      "item_id": "dail001",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брое у́тро.",
+      "ru_plain": "Доброе утро.",
+      "options": [
+        "До́брое у́тро.",
+        "До́брое утро.",
+        "Добро́е утро.",
+        "Доброе́ утро."
+      ],
+      "answer": "До́брое у́тро.",
+      "en": "Good morning.",
+      "priority": 2,
+      "lexemes": [
+        "доброе",
+        "доброе утро.",
+        "утро"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day_part",
+        "greeting",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail002_01",
+      "item_id": "dail002",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брый день.",
+      "ru_plain": "Добрый день.",
+      "options": [
+        "До́брый день.",
+        "Добры́й день.",
+        "Добрый де́нь."
+      ],
+      "answer": "До́брый день.",
+      "en": "Good afternoon.",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "добрый",
+        "добрый день."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day_part",
+        "greeting",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail003_01",
+      "item_id": "dail003",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брый ве́чер.",
+      "ru_plain": "Добрый вечер.",
+      "options": [
+        "До́брый ве́чер.",
+        "До́брый вечер.",
+        "Добры́й вечер.",
+        "Добрый ве́чер."
+      ],
+      "answer": "До́брый ве́чер.",
+      "en": "Good evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечер",
+        "добрый",
+        "добрый вечер."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day_part",
+        "greeting",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail004_01",
+      "item_id": "dail004",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы обе́даете?",
+      "ru_plain": "Когда вы обедаете?",
+      "options": [
+        "Ко́гда вы обедаете?",
+        "Когда вы́ обедаете?",
+        "Когда́ вы обе́даете?",
+        "Когда́ вы обедаете?"
+      ],
+      "answer": "Когда́ вы обе́даете?",
+      "en": "When do you have lunch?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы обедаете?",
+        "обедаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "food",
+        "question",
+        "routine",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail005_01",
+      "item_id": "dail005",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я обе́даю днём.",
+      "ru_plain": "Я обедаю днём.",
+      "options": [
+        "Я о́бедаю днём.",
+        "Я обе́даю днём.",
+        "Я обеда́ю днём.",
+        "Я́ обедаю днём."
+      ],
+      "answer": "Я обе́даю днём.",
+      "en": "I have lunch during the day.",
+      "priority": 2,
+      "lexemes": [
+        "днём",
+        "обедаю",
+        "я",
+        "я обедаю днём."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day_part",
+        "food",
+        "routine",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail006_01",
+      "item_id": "dail006",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы у́жинаете?",
+      "ru_plain": "Когда вы ужинаете?",
+      "options": [
+        "Ко́гда вы ужинаете?",
+        "Когда вы́ ужинаете?",
+        "Когда́ вы у́жинаете?",
+        "Когда́ вы ужинаете?"
+      ],
+      "answer": "Когда́ вы у́жинаете?",
+      "en": "When do you have dinner?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы ужинаете?",
+        "ужинаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "food",
+        "question",
+        "routine",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail007_01",
+      "item_id": "dail007",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я у́жинаю ве́чером.",
+      "ru_plain": "Я ужинаю вечером.",
+      "options": [
+        "Я у́жинаю ве́чером.",
+        "Я у́жинаю вечером.",
+        "Я ужи́наю вечером.",
+        "Я́ ужинаю вечером."
+      ],
+      "answer": "Я у́жинаю ве́чером.",
+      "en": "I have dinner in the evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "ужинаю",
+        "я",
+        "я ужинаю вечером."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day_part",
+        "food",
+        "routine",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail008_01",
+      "item_id": "dail008",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы рабо́таете?",
+      "ru_plain": "Когда вы работаете?",
+      "options": [
+        "Ко́гда вы работаете?",
+        "Когда вы́ работаете?",
+        "Когда́ вы рабо́таете?",
+        "Когда́ вы работаете?"
+      ],
+      "answer": "Когда́ вы рабо́таете?",
+      "en": "When do you work?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы работаете?",
+        "работаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "question",
+        "routine",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_dail009_01",
+      "item_id": "dail009",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я рабо́таю у́тром и ве́чером.",
+      "ru_plain": "Я работаю утром и вечером.",
+      "options": [
+        "Я ра́ботаю утром и вечером.",
+        "Я рабо́таю у́тром и ве́чером.",
+        "Я рабо́таю утром и вечером.",
+        "Я́ работаю утром и вечером."
+      ],
+      "answer": "Я рабо́таю у́тром и ве́чером.",
+      "en": "I work in the morning and evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "и",
+        "работаю",
+        "утром",
+        "я",
+        "я работаю утром и вечером."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day_part",
+        "routine",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_dail010_01",
+      "item_id": "dail010",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы отдыха́ете?",
+      "ru_plain": "Когда вы отдыхаете?",
+      "options": [
+        "Ко́гда вы отдыхаете?",
+        "Когда вы́ отдыхаете?",
+        "Когда́ вы отдыха́ете?",
+        "Когда́ вы отдыхаете?"
+      ],
+      "answer": "Когда́ вы отдыха́ете?",
+      "en": "When do you rest?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы отдыхаете?",
+        "отдыхаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "question",
+        "routine",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail011_01",
+      "item_id": "dail011",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я отдыха́ю ве́чером.",
+      "ru_plain": "Обычно я отдыхаю вечером.",
+      "options": [
+        "О́бычно я отдыхаю вечером.",
+        "Обы́чно я отдыха́ю ве́чером.",
+        "Обы́чно я отдыхаю вечером.",
+        "Обычно́ я отдыхаю вечером."
+      ],
+      "answer": "Обы́чно я отдыха́ю ве́чером.",
+      "en": "Usually I rest in the evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "обычно",
+        "обычно я отдыхаю вечером.",
+        "отдыхаю",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day_part",
+        "routine",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail012_01",
+      "item_id": "dail012",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Что ты сего́дня де́лал?",
+      "ru_plain": "Что ты сегодня делал?",
+      "options": [
+        "Что ты се́годня делал?",
+        "Что ты сего́дня де́лал?",
+        "Что ты́ сегодня делал?",
+        "Что́ ты сегодня делал?"
+      ],
+      "answer": "Что ты сего́дня де́лал?",
+      "en": "What did you do today?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "сегодня",
+        "ты",
+        "что",
+        "что ты сегодня делал?"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "listening",
+        "question",
+        "routine",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail013_01",
+      "item_id": "dail013",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы еди́м и смо́трим телеви́зор.",
+      "ru_plain": "Мы едим и смотрим телевизор.",
+      "options": [
+        "Мы е́дим и смотрим телевизор.",
+        "Мы еди́м и смо́трим телеви́зор.",
+        "Мы еди́м и смотрим телевизор.",
+        "Мы́ едим и смотрим телевизор."
+      ],
+      "answer": "Мы еди́м и смо́трим телеви́зор.",
+      "en": "We eat and watch TV.",
+      "priority": 2,
+      "lexemes": [
+        "едим",
+        "и",
+        "мы",
+        "мы едим и смотрим телевизор.",
+        "смотрим",
+        "телевизор"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "evening",
+        "routine",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail014_01",
+      "item_id": "dail014",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я начина́ю рабо́тать в де́сять утра́.",
+      "ru_plain": "Я начинаю работать в десять утра.",
+      "options": [
+        "Я на́чинаю работать в десять утра.",
+        "Я начи́наю работать в десять утра.",
+        "Я начина́ю рабо́тать в де́сять утра́.",
+        "Я́ начинаю работать в десять утра."
+      ],
+      "answer": "Я начина́ю рабо́тать в де́сять утра́.",
+      "en": "I start working at ten in the morning.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "десять",
+        "начинаю",
+        "работать",
+        "утра",
+        "я",
+        "я начинаю работать в десять утра."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "routine",
+        "stress_drill",
+        "time",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_dail015_01",
+      "item_id": "dail015",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я рабо́таю семь часо́в.",
+      "ru_plain": "Обычно я работаю семь часов.",
+      "options": [
+        "О́бычно я работаю семь часов.",
+        "Обы́чно я рабо́таю семь часо́в.",
+        "Обы́чно я работаю семь часов.",
+        "Обычно́ я работаю семь часов."
+      ],
+      "answer": "Обы́чно я рабо́таю семь часо́в.",
+      "en": "Usually I work seven hours.",
+      "priority": 2,
+      "lexemes": [
+        "обычно",
+        "обычно я работаю семь часов.",
+        "работаю",
+        "семь",
+        "часов",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "routine",
+        "stress_drill",
+        "time",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_dail016_01",
+      "item_id": "dail016",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "У меня́ есть вре́мя до десяти́.",
+      "ru_plain": "У меня есть время до десяти.",
+      "options": [
+        "У ме́ня есть время до десяти.",
+        "У меня́ есть вре́мя до десяти́.",
+        "У меня́ есть время до десяти.",
+        "У́ меня есть время до десяти."
+      ],
+      "answer": "У меня́ есть вре́мя до десяти́.",
+      "en": "I have time until ten.",
+      "priority": 3,
+      "lexemes": [
+        "время",
+        "десяти",
+        "до",
+        "есть",
+        "меня",
+        "у",
+        "у меня есть время до десяти."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "routine",
+        "stress_drill",
+        "time"
+      ]
+    },
+    {
+      "id": "stress_dail017_01",
+      "item_id": "dail017",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Сего́дня я рабо́тал четы́ре часа́.",
+      "ru_plain": "Сегодня я работал четыре часа.",
+      "options": [
+        "Се́годня я работал четыре часа.",
+        "Сего́дня я рабо́тал четы́ре часа́.",
+        "Сего́дня я работал четыре часа.",
+        "Сегодня́ я работал четыре часа."
+      ],
+      "answer": "Сего́дня я рабо́тал четы́ре часа́.",
+      "en": "Today I worked four hours.",
+      "priority": 3,
+      "lexemes": [
+        "работал",
+        "сегодня",
+        "сегодня я работал четыре часа.",
+        "часа",
+        "четыре",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "morphology:gendered_short_form",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "routine",
+        "stress_drill",
+        "time",
+        "work"
+      ]
+    },
+    {
       "id": "stress_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "options": [
@@ -21228,8 +24531,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "options": [
@@ -21272,8 +24575,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "options": [
@@ -21316,8 +24619,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "options": [
@@ -21362,8 +24665,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "options": [
@@ -21404,8 +24707,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "options": [
@@ -21452,8 +24755,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "options": [
@@ -21497,8 +24800,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "options": [
@@ -21541,8 +24844,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "options": [
@@ -21584,8 +24887,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "options": [
@@ -21626,8 +24929,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "options": [
@@ -21668,8 +24971,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "options": [
@@ -21711,8 +25014,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "options": [
@@ -21750,8 +25053,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "options": [
@@ -21789,8 +25092,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "options": [
@@ -21828,8 +25131,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "options": [
@@ -21867,8 +25170,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "options": [
@@ -21906,8 +25209,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "options": [
@@ -21945,8 +25248,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "options": [
@@ -21984,8 +25287,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "options": [
@@ -22023,8 +25326,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "options": [
@@ -27108,11 +30411,871 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "pron_dail001_01",
+      "item_id": "dail001",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брое у́тро.",
+      "ru_plain": "Доброе утро.",
+      "en": "Good morning.",
+      "priority": 2,
+      "lexemes": [
+        "доброе",
+        "доброе утро.",
+        "утро"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "greeting",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_dail002_01",
+      "item_id": "dail002",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брый день.",
+      "ru_plain": "Добрый день.",
+      "en": "Good afternoon.",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "добрый",
+        "добрый день."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "greeting",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_dail003_01",
+      "item_id": "dail003",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брый ве́чер.",
+      "ru_plain": "Добрый вечер.",
+      "en": "Good evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечер",
+        "добрый",
+        "добрый вечер."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "greeting",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_dail004_01",
+      "item_id": "dail004",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы обе́даете?",
+      "ru_plain": "Когда вы обедаете?",
+      "en": "When do you have lunch?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы обедаете?",
+        "обедаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "food",
+        "pronunciation",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "pron_dail005_01",
+      "item_id": "dail005",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я обе́даю днём.",
+      "ru_plain": "Я обедаю днём.",
+      "en": "I have lunch during the day.",
+      "priority": 2,
+      "lexemes": [
+        "днём",
+        "обедаю",
+        "я",
+        "я обедаю днём."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "food",
+        "pronunciation",
+        "routine"
+      ]
+    },
+    {
+      "id": "pron_dail006_01",
+      "item_id": "dail006",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы у́жинаете?",
+      "ru_plain": "Когда вы ужинаете?",
+      "en": "When do you have dinner?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы ужинаете?",
+        "ужинаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "food",
+        "pronunciation",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "pron_dail007_01",
+      "item_id": "dail007",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я у́жинаю ве́чером.",
+      "ru_plain": "Я ужинаю вечером.",
+      "en": "I have dinner in the evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "ужинаю",
+        "я",
+        "я ужинаю вечером."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "food",
+        "pronunciation",
+        "routine"
+      ]
+    },
+    {
+      "id": "pron_dail008_01",
+      "item_id": "dail008",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы рабо́таете?",
+      "ru_plain": "Когда вы работаете?",
+      "en": "When do you work?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы работаете?",
+        "работаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "question",
+        "routine",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_dail009_01",
+      "item_id": "dail009",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я рабо́таю у́тром и ве́чером.",
+      "ru_plain": "Я работаю утром и вечером.",
+      "en": "I work in the morning and evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "и",
+        "работаю",
+        "утром",
+        "я",
+        "я работаю утром и вечером."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "pronunciation",
+        "routine",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_dail010_01",
+      "item_id": "dail010",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы отдыха́ете?",
+      "ru_plain": "Когда вы отдыхаете?",
+      "en": "When do you rest?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы отдыхаете?",
+        "отдыхаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "pron_dail011_01",
+      "item_id": "dail011",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я отдыха́ю ве́чером.",
+      "ru_plain": "Обычно я отдыхаю вечером.",
+      "en": "Usually I rest in the evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "обычно",
+        "обычно я отдыхаю вечером.",
+        "отдыхаю",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day_part",
+        "pronunciation",
+        "routine"
+      ]
+    },
+    {
+      "id": "pron_dail012_01",
+      "item_id": "dail012",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Что ты сего́дня де́лал?",
+      "ru_plain": "Что ты сегодня делал?",
+      "en": "What did you do today?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "сегодня",
+        "ты",
+        "что",
+        "что ты сегодня делал?"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "listening",
+        "pronunciation",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "pron_dail013_01",
+      "item_id": "dail013",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы еди́м и смо́трим телеви́зор.",
+      "ru_plain": "Мы едим и смотрим телевизор.",
+      "en": "We eat and watch TV.",
+      "priority": 2,
+      "lexemes": [
+        "едим",
+        "и",
+        "мы",
+        "мы едим и смотрим телевизор.",
+        "смотрим",
+        "телевизор"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "evening",
+        "pronunciation",
+        "routine"
+      ]
+    },
+    {
+      "id": "pron_dail014_01",
+      "item_id": "dail014",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я начина́ю рабо́тать в де́сять утра́.",
+      "ru_plain": "Я начинаю работать в десять утра.",
+      "en": "I start working at ten in the morning.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "десять",
+        "начинаю",
+        "работать",
+        "утра",
+        "я",
+        "я начинаю работать в десять утра."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "routine",
+        "time",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_dail015_01",
+      "item_id": "dail015",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я рабо́таю семь часо́в.",
+      "ru_plain": "Обычно я работаю семь часов.",
+      "en": "Usually I work seven hours.",
+      "priority": 2,
+      "lexemes": [
+        "обычно",
+        "обычно я работаю семь часов.",
+        "работаю",
+        "семь",
+        "часов",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "routine",
+        "time",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_dail016_01",
+      "item_id": "dail016",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "У меня́ есть вре́мя до десяти́.",
+      "ru_plain": "У меня есть время до десяти.",
+      "en": "I have time until ten.",
+      "priority": 3,
+      "lexemes": [
+        "время",
+        "десяти",
+        "до",
+        "есть",
+        "меня",
+        "у",
+        "у меня есть время до десяти."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "routine",
+        "time"
+      ]
+    },
+    {
+      "id": "pron_dail017_01",
+      "item_id": "dail017",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Сего́дня я рабо́тал четы́ре часа́.",
+      "ru_plain": "Сегодня я работал четыре часа.",
+      "en": "Today I worked four hours.",
+      "priority": 3,
+      "lexemes": [
+        "работал",
+        "сегодня",
+        "сегодня я работал четыре часа.",
+        "часа",
+        "четыре",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "morphology:gendered_short_form",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "routine",
+        "time",
+        "work"
+      ]
+    },
+    {
       "id": "pron_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "en": "We're going to Budva.",
@@ -27160,8 +31323,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "en": "We'll be in Montenegro.",
@@ -27209,8 +31372,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "en": "We'll be in Budva.",
@@ -27258,8 +31421,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "en": "Where is our hotel?",
@@ -27309,8 +31472,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "en": "Can we get a taxi?",
@@ -27356,8 +31519,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "en": "How long is the ride to the hotel?",
@@ -27409,8 +31572,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "en": "Where is the beach?",
@@ -27459,8 +31622,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "en": "I want to walk by the sea.",
@@ -27509,8 +31672,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "en": "The old town is very beautiful.",
@@ -27558,8 +31721,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "en": "The sea is very beautiful.",
@@ -27606,8 +31769,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "en": "We're relaxing / on vacation.",
@@ -27653,8 +31816,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "en": "We're here with family.",
@@ -27702,8 +31865,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "en": "The check, please.",
@@ -27749,8 +31912,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "en": "We want to have dinner.",
@@ -27797,8 +31960,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "en": "I want / you (pl/formal) want — хоте́ть",
@@ -27841,8 +32004,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "en": "I can / you can — мочь",
@@ -27885,8 +32048,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "en": "I speak / you speak — говори́ть",
@@ -27929,8 +32092,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "en": "I understand / you understand — понима́ть",
@@ -27973,8 +32136,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "en": "I love / you love — люби́ть",
@@ -28017,8 +32180,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "en": "I work / you work — рабо́тать",
@@ -28061,8 +32224,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "en": "I live / you live — жить",
@@ -28105,8 +32268,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "en": "I eat / you eat — есть",
@@ -28149,8 +32312,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "en": "I drink / you drink — пить",
@@ -28193,8 +32356,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "en": "I know / you know — знать",
@@ -32843,11 +37006,803 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "back_dail001_01",
+      "item_id": "dail001",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брое у́тро.",
+      "ru_plain": "Доброе утро.",
+      "accepted_answers": [
+        "До́брое у́тро.",
+        "Доброе утро."
+      ],
+      "en": "Good morning.",
+      "priority": 2,
+      "lexemes": [
+        "доброе",
+        "доброе утро.",
+        "утро"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day_part",
+        "greeting"
+      ]
+    },
+    {
+      "id": "back_dail002_01",
+      "item_id": "dail002",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брый день.",
+      "ru_plain": "Добрый день.",
+      "accepted_answers": [
+        "До́брый день.",
+        "Добрый день."
+      ],
+      "en": "Good afternoon.",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "добрый",
+        "добрый день."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day_part",
+        "greeting"
+      ]
+    },
+    {
+      "id": "back_dail003_01",
+      "item_id": "dail003",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "До́брый ве́чер.",
+      "ru_plain": "Добрый вечер.",
+      "accepted_answers": [
+        "До́брый ве́чер.",
+        "Добрый вечер."
+      ],
+      "en": "Good evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечер",
+        "добрый",
+        "добрый вечер."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:greeting",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day_part",
+        "greeting"
+      ]
+    },
+    {
+      "id": "back_dail004_01",
+      "item_id": "dail004",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы обе́даете?",
+      "ru_plain": "Когда вы обедаете?",
+      "accepted_answers": [
+        "Когда вы обедаете?",
+        "Когда́ вы обе́даете?"
+      ],
+      "en": "When do you have lunch?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы обедаете?",
+        "обедаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "food",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "back_dail005_01",
+      "item_id": "dail005",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я обе́даю днём.",
+      "ru_plain": "Я обедаю днём.",
+      "accepted_answers": [
+        "Я обе́даю днём.",
+        "Я обедаю днём."
+      ],
+      "en": "I have lunch during the day.",
+      "priority": 2,
+      "lexemes": [
+        "днём",
+        "обедаю",
+        "я",
+        "я обедаю днём."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day_part",
+        "food",
+        "routine"
+      ]
+    },
+    {
+      "id": "back_dail006_01",
+      "item_id": "dail006",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы у́жинаете?",
+      "ru_plain": "Когда вы ужинаете?",
+      "accepted_answers": [
+        "Когда вы ужинаете?",
+        "Когда́ вы у́жинаете?"
+      ],
+      "en": "When do you have dinner?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы ужинаете?",
+        "ужинаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "food",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "back_dail007_01",
+      "item_id": "dail007",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я у́жинаю ве́чером.",
+      "ru_plain": "Я ужинаю вечером.",
+      "accepted_answers": [
+        "Я у́жинаю ве́чером.",
+        "Я ужинаю вечером."
+      ],
+      "en": "I have dinner in the evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "ужинаю",
+        "я",
+        "я ужинаю вечером."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day_part",
+        "food",
+        "routine"
+      ]
+    },
+    {
+      "id": "back_dail008_01",
+      "item_id": "dail008",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы рабо́таете?",
+      "ru_plain": "Когда вы работаете?",
+      "accepted_answers": [
+        "Когда вы работаете?",
+        "Когда́ вы рабо́таете?"
+      ],
+      "en": "When do you work?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы работаете?",
+        "работаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "question",
+        "routine",
+        "work"
+      ]
+    },
+    {
+      "id": "back_dail009_01",
+      "item_id": "dail009",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я рабо́таю у́тром и ве́чером.",
+      "ru_plain": "Я работаю утром и вечером.",
+      "accepted_answers": [
+        "Я рабо́таю у́тром и ве́чером.",
+        "Я работаю утром и вечером."
+      ],
+      "en": "I work in the morning and evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "и",
+        "работаю",
+        "утром",
+        "я",
+        "я работаю утром и вечером."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day_part",
+        "routine",
+        "work"
+      ]
+    },
+    {
+      "id": "back_dail010_01",
+      "item_id": "dail010",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Когда́ вы отдыха́ете?",
+      "ru_plain": "Когда вы отдыхаете?",
+      "accepted_answers": [
+        "Когда вы отдыхаете?",
+        "Когда́ вы отдыха́ете?"
+      ],
+      "en": "When do you rest?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "когда",
+        "когда вы отдыхаете?",
+        "отдыхаете"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "back_dail011_01",
+      "item_id": "dail011",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я отдыха́ю ве́чером.",
+      "ru_plain": "Обычно я отдыхаю вечером.",
+      "accepted_answers": [
+        "Обы́чно я отдыха́ю ве́чером.",
+        "Обычно я отдыхаю вечером."
+      ],
+      "en": "Usually I rest in the evening.",
+      "priority": 2,
+      "lexemes": [
+        "вечером",
+        "обычно",
+        "обычно я отдыхаю вечером.",
+        "отдыхаю",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day_part",
+        "routine"
+      ]
+    },
+    {
+      "id": "back_dail012_01",
+      "item_id": "dail012",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Что ты сего́дня де́лал?",
+      "ru_plain": "Что ты сегодня делал?",
+      "accepted_answers": [
+        "Что ты сего́дня де́лал?",
+        "Что ты сегодня делал?"
+      ],
+      "en": "What did you do today?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "сегодня",
+        "ты",
+        "что",
+        "что ты сегодня делал?"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "listening",
+        "question",
+        "routine"
+      ]
+    },
+    {
+      "id": "back_dail013_01",
+      "item_id": "dail013",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы еди́м и смо́трим телеви́зор.",
+      "ru_plain": "Мы едим и смотрим телевизор.",
+      "accepted_answers": [
+        "Мы еди́м и смо́трим телеви́зор.",
+        "Мы едим и смотрим телевизор."
+      ],
+      "en": "We eat and watch TV.",
+      "priority": 2,
+      "lexemes": [
+        "едим",
+        "и",
+        "мы",
+        "мы едим и смотрим телевизор.",
+        "смотрим",
+        "телевизор"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "evening",
+        "routine"
+      ]
+    },
+    {
+      "id": "back_dail014_01",
+      "item_id": "dail014",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я начина́ю рабо́тать в де́сять утра́.",
+      "ru_plain": "Я начинаю работать в десять утра.",
+      "accepted_answers": [
+        "Я начина́ю рабо́тать в де́сять утра́.",
+        "Я начинаю работать в десять утра."
+      ],
+      "en": "I start working at ten in the morning.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "десять",
+        "начинаю",
+        "работать",
+        "утра",
+        "я",
+        "я начинаю работать в десять утра."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "routine",
+        "time",
+        "work"
+      ]
+    },
+    {
+      "id": "back_dail015_01",
+      "item_id": "dail015",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я рабо́таю семь часо́в.",
+      "ru_plain": "Обычно я работаю семь часов.",
+      "accepted_answers": [
+        "Обы́чно я рабо́таю семь часо́в.",
+        "Обычно я работаю семь часов."
+      ],
+      "en": "Usually I work seven hours.",
+      "priority": 2,
+      "lexemes": [
+        "обычно",
+        "обычно я работаю семь часов.",
+        "работаю",
+        "семь",
+        "часов",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "routine",
+        "time",
+        "work"
+      ]
+    },
+    {
+      "id": "back_dail016_01",
+      "item_id": "dail016",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "У меня́ есть вре́мя до десяти́.",
+      "ru_plain": "У меня есть время до десяти.",
+      "accepted_answers": [
+        "У меня есть время до десяти.",
+        "У меня́ есть вре́мя до десяти́."
+      ],
+      "en": "I have time until ten.",
+      "priority": 3,
+      "lexemes": [
+        "время",
+        "десяти",
+        "до",
+        "есть",
+        "меня",
+        "у",
+        "у меня есть время до десяти."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "routine",
+        "time"
+      ]
+    },
+    {
+      "id": "back_dail017_01",
+      "item_id": "dail017",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Сего́дня я рабо́тал четы́ре часа́.",
+      "ru_plain": "Сегодня я работал четыре часа.",
+      "accepted_answers": [
+        "Сего́дня я рабо́тал четы́ре часа́.",
+        "Сегодня я работал четыре часа."
+      ],
+      "en": "Today I worked four hours.",
+      "priority": 3,
+      "lexemes": [
+        "работал",
+        "сегодня",
+        "сегодня я работал четыре часа.",
+        "часа",
+        "четыре",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "morphology:gendered_short_form",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "routine",
+        "time",
+        "work"
+      ]
+    },
+    {
       "id": "back_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "accepted_answers": [
@@ -32891,8 +37846,8 @@ window.CONTENT_DATA = {
       "id": "back_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "accepted_answers": [
@@ -32936,8 +37891,8 @@ window.CONTENT_DATA = {
       "id": "back_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "accepted_answers": [
@@ -32981,8 +37936,8 @@ window.CONTENT_DATA = {
       "id": "back_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "accepted_answers": [
@@ -33028,8 +37983,8 @@ window.CONTENT_DATA = {
       "id": "back_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "accepted_answers": [
@@ -33071,8 +38026,8 @@ window.CONTENT_DATA = {
       "id": "back_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "accepted_answers": [
@@ -33120,8 +38075,8 @@ window.CONTENT_DATA = {
       "id": "back_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "accepted_answers": [
@@ -33165,8 +38120,8 @@ window.CONTENT_DATA = {
       "id": "back_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "accepted_answers": [
@@ -33211,8 +38166,8 @@ window.CONTENT_DATA = {
       "id": "back_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "accepted_answers": [
@@ -33256,8 +38211,8 @@ window.CONTENT_DATA = {
       "id": "back_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "accepted_answers": [
@@ -33300,8 +38255,8 @@ window.CONTENT_DATA = {
       "id": "back_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "accepted_answers": [
@@ -33343,8 +38298,8 @@ window.CONTENT_DATA = {
       "id": "back_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "accepted_answers": [
@@ -33387,8 +38342,8 @@ window.CONTENT_DATA = {
       "id": "back_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "accepted_answers": [
@@ -33430,8 +38385,8 @@ window.CONTENT_DATA = {
       "id": "back_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "accepted_answers": [
@@ -33474,8 +38429,8 @@ window.CONTENT_DATA = {
       "id": "back_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "accepted_answers": [
@@ -33514,8 +38469,8 @@ window.CONTENT_DATA = {
       "id": "back_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "accepted_answers": [
@@ -33554,8 +38509,8 @@ window.CONTENT_DATA = {
       "id": "back_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "accepted_answers": [
@@ -33594,8 +38549,8 @@ window.CONTENT_DATA = {
       "id": "back_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "accepted_answers": [
@@ -33634,8 +38589,8 @@ window.CONTENT_DATA = {
       "id": "back_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "accepted_answers": [
@@ -33674,8 +38629,8 @@ window.CONTENT_DATA = {
       "id": "back_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "accepted_answers": [
@@ -33714,8 +38669,8 @@ window.CONTENT_DATA = {
       "id": "back_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "accepted_answers": [
@@ -33754,8 +38709,8 @@ window.CONTENT_DATA = {
       "id": "back_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "accepted_answers": [
@@ -33794,8 +38749,8 @@ window.CONTENT_DATA = {
       "id": "back_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "accepted_answers": [
@@ -33833,8 +38788,8 @@ window.CONTENT_DATA = {
       "id": "back_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "accepted_answers": [
@@ -38342,8 +43297,8 @@ window.CONTENT_DATA = {
     {
       "id": "tutor_verb_fluency_check",
       "scenario_id": "verb_fluency_check",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "setting": "Core verb fluency",
       "goal": "Produce core verbs under real interview-style pressure.",
       "learner_role": "guest",
@@ -38437,7 +43392,8 @@ window.CONTENT_DATA = {
         "family_visit_007",
         "family_visit_008",
         "family_visit_009",
-        "family_visit_010"
+        "family_visit_010",
+        "family_visit_011"
       ],
       "allowed_item_ids": [
         "firs001",
@@ -38558,6 +43514,23 @@ window.CONTENT_DATA = {
         "cale017",
         "cale018",
         "cale019",
+        "dail001",
+        "dail002",
+        "dail003",
+        "dail004",
+        "dail005",
+        "dail006",
+        "dail007",
+        "dail008",
+        "dail009",
+        "dail010",
+        "dail011",
+        "dail012",
+        "dail013",
+        "dail014",
+        "dail015",
+        "dail016",
+        "dail017",
         "trav001",
         "trav002",
         "trav003",
@@ -38601,8 +43574,10 @@ window.CONTENT_DATA = {
         "ваше",
         "вашу",
         "вечер",
+        "вечером",
         "вкусно",
         "воскресенье",
+        "время",
         "встречу",
         "вторник",
         "вчера",
@@ -38619,23 +43594,31 @@ window.CONTENT_DATA = {
         "давайте выпьем за это!",
         "дедушка",
         "день",
+        "десяти",
+        "десять",
         "дети",
         "джо",
         "дна",
+        "днём",
         "до",
         "до дна",
         "до свидания",
         "доброе",
         "доброе утро",
+        "доброе утро.",
         "добрый",
         "добрый вечер",
+        "добрый вечер.",
         "добрый день",
+        "добрый день.",
         "дождь",
         "дочь",
         "едем",
+        "едим",
         "едите",
         "ем",
         "ем / едите",
+        "есть",
         "ещё",
         "жена",
         "жены",
@@ -38665,6 +43648,7 @@ window.CONTENT_DATA = {
         "знаю / знаете",
         "зовут",
         "зять",
+        "и",
         "идёт",
         "идёт дождь.",
         "идёт снег.",
@@ -38700,6 +43684,7 @@ window.CONTENT_DATA = {
         "мы будем в будве.",
         "мы будем в черногории.",
         "мы едем в будву.",
+        "мы едим и смотрим телевизор.",
         "мы здесь с семьёй.",
         "мы отдыхаем.",
         "мы познакомились …",
@@ -38708,6 +43693,7 @@ window.CONTENT_DATA = {
         "на выходных",
         "надо",
         "наелся",
+        "начинаю",
         "не",
         "немного",
         "нет",
@@ -38715,8 +43701,13 @@ window.CONTENT_DATA = {
         "нормально",
         "ночи",
         "нравится",
+        "обедаю",
         "облачно",
+        "обычно",
+        "обычно я отдыхаю вечером.",
+        "обычно я работаю семь часов.",
         "отдыхаем",
+        "отдыхаю",
         "отлично",
         "очень",
         "очень вкусно!",
@@ -38752,6 +43743,8 @@ window.CONTENT_DATA = {
         "пьёте",
         "пятница",
         "работаете",
+        "работал",
+        "работать",
         "работаю",
         "работаю / работаете",
         "рад",
@@ -38770,12 +43763,15 @@ window.CONTENT_DATA = {
         "сегодня солнечно.",
         "сегодня тепло.",
         "сегодня холодно.",
+        "сегодня я работал четыре часа.",
+        "семь",
         "семью",
         "семья",
         "семьёй",
         "сестра",
         "сестра жены",
         "сказать",
+        "смотрим",
         "снег",
         "солнечно",
         "спасибо",
@@ -38794,12 +43790,17 @@ window.CONTENT_DATA = {
         "счёт, пожалуйста.",
         "сын",
         "такси",
+        "телевизор",
         "тепло",
         "тесть",
         "тост",
         "тёща",
         "у",
+        "у меня есть время до десяти.",
+        "ужинаю",
+        "утра",
         "утро",
+        "утром",
         "учу",
         "хлеб",
         "хозяев",
@@ -38811,9 +43812,12 @@ window.CONTENT_DATA = {
         "хотите",
         "хочу",
         "хочу / хотите",
+        "часа",
+        "часов",
         "чаю",
         "черногории",
         "четверг",
+        "четыре",
         "что",
         "штата",
         "шурин",
@@ -38826,9 +43830,13 @@ window.CONTENT_DATA = {
         "я из штата миссури",
         "я люблю вашу дочь",
         "я наелся",
+        "я начинаю работать в десять утра.",
         "я не понимаю",
         "я немного говорю по-русски",
+        "я обедаю днём.",
         "я понимаю",
+        "я работаю утром и вечером.",
+        "я ужинаю вечером.",
         "я хочу погулять у моря.",
         "я хочу сказать тост за …",
         "я юрист"
@@ -38848,6 +43856,7 @@ window.CONTENT_DATA = {
         "где пляж?",
         "говорите",
         "дела",
+        "делал",
         "день",
         "до",
         "ехать",
@@ -38863,11 +43872,18 @@ window.CONTENT_DATA = {
         "какой сегодня день недели?",
         "кем",
         "кем вы работаете?",
+        "когда",
+        "когда вы обедаете?",
+        "когда вы отдыхаете?",
+        "когда вы работаете?",
+        "когда вы ужинаете?",
         "на",
         "наш",
         "недели",
         "нравится",
+        "обедаете",
         "оливье",
+        "отдыхаете",
         "отель",
         "отеля",
         "откуда",
@@ -38884,8 +43900,12 @@ window.CONTENT_DATA = {
         "сколько",
         "сколько ехать до отеля?",
         "там",
+        "ты",
+        "ужинаете",
         "улице",
-        "чай"
+        "чай",
+        "что",
+        "что ты сегодня делал?"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -38895,7 +43915,9 @@ window.CONTENT_DATA = {
         "grammar:prepositional_place",
         "grammar:present_first_person",
         "grammar:time_expression",
+        "grammar:when_question",
         "lexical:core_verbs",
+        "lexical:day_parts",
         "lexical:days_of_week",
         "lexical:kinship_terms",
         "lexical:travel_vocab",
@@ -38912,6 +43934,7 @@ window.CONTENT_DATA = {
         "phrase:place_description",
         "phrase:polite_decline",
         "phrase:repair",
+        "phrase:routine_answer",
         "phrase:table_toast",
         "phrase:toast_za_accusative",
         "phrase:travel_logistics",
@@ -38934,7 +43957,7 @@ window.CONTENT_DATA = {
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Core verb fluency — Produce core verbs under real interview-style pressure.\nCurriculum boundary: Lesson 10 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- хочу / хотите — I want / you (pl/formal) want — хоте́ть\n- могу / можете — I can / you can — мочь\n- говорю / говорите — I speak / you speak — говори́ть\n- понимаю / понимаете — I understand / you understand — понима́ть\n- люблю / любите — I love / you love — люби́ть\n- работаю / работаете — I work / you work — рабо́тать\n- живу / живёте — I live / you live — жить\n- ем / едите — I eat / you eat — есть\n- пью / пьёте — I drink / you drink — пить\n- знаю / знаете — I know / you know — знать\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Core verb fluency — Produce core verbs under real interview-style pressure.\nCurriculum boundary: Lesson 11 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- хочу / хотите — I want / you (pl/formal) want — хоте́ть\n- могу / можете — I can / you can — мочь\n- говорю / говорите — I speak / you speak — говори́ть\n- понимаю / понимаете — I understand / you understand — понима́ть\n- люблю / любите — I love / you love — люби́ть\n- работаю / работаете — I work / you work — рабо́тать\n- живу / живёте — I live / you live — жить\n- ем / едите — I eat / you eat — есть\n- пью / пьёте — I drink / you drink — пить\n- знаю / знаете — I know / you know — знать\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
       "id": "tutor_extended_family_family_tree",
@@ -40454,8 +45477,8 @@ window.CONTENT_DATA = {
     {
       "id": "tutor_budva_trip_checkin",
       "scenario_id": "budva_trip_checkin",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "setting": "Budva family trip",
       "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
       "learner_role": "guest",
@@ -40544,6 +45567,650 @@ window.CONTENT_DATA = {
       "success_criteria": [
         "handles_travel_logistics",
         "talks_about_budva",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "allowed_lesson_ids": [
+        "family_visit_001",
+        "family_visit_002",
+        "family_visit_003",
+        "family_visit_004",
+        "family_visit_005",
+        "family_visit_006",
+        "family_visit_007",
+        "family_visit_008",
+        "family_visit_009",
+        "family_visit_010"
+      ],
+      "allowed_item_ids": [
+        "firs001",
+        "firs002",
+        "firs003",
+        "firs004",
+        "firs005",
+        "firs006",
+        "firs007",
+        "firs008",
+        "firs009",
+        "firs010",
+        "firs011",
+        "firs012",
+        "firs013",
+        "poli001",
+        "poli002",
+        "poli003",
+        "poli004",
+        "poli005",
+        "poli006",
+        "poli007",
+        "poli008",
+        "poli009",
+        "poli010",
+        "poli011",
+        "poli012",
+        "poli013",
+        "poli014",
+        "poli015",
+        "poli016",
+        "poli017",
+        "toas001",
+        "toas002",
+        "toas003",
+        "toas004",
+        "toas005",
+        "toas006",
+        "toas007",
+        "toas008",
+        "toas009",
+        "toas010",
+        "toas011",
+        "toas012",
+        "toas013",
+        "toas014",
+        "toas015",
+        "toas016",
+        "fami001",
+        "fami002",
+        "fami003",
+        "fami004",
+        "fami005",
+        "fami006",
+        "fami007",
+        "fami008",
+        "fami009",
+        "fami010",
+        "fami011",
+        "fami012",
+        "fami013",
+        "fami014",
+        "fami015",
+        "fami016",
+        "fami017",
+        "fami018",
+        "fami019",
+        "food001",
+        "food002",
+        "food003",
+        "food004",
+        "food005",
+        "food006",
+        "food007",
+        "food008",
+        "food009",
+        "food010",
+        "food011",
+        "food012",
+        "food013",
+        "food014",
+        "food015",
+        "food016",
+        "smal001",
+        "smal002",
+        "smal003",
+        "smal004",
+        "smal005",
+        "smal006",
+        "smal007",
+        "smal008",
+        "smal009",
+        "list001",
+        "list002",
+        "list003",
+        "list004",
+        "list005",
+        "list006",
+        "list007",
+        "list008",
+        "list009",
+        "cale001",
+        "cale002",
+        "cale003",
+        "cale004",
+        "cale005",
+        "cale006",
+        "cale007",
+        "cale008",
+        "cale009",
+        "cale010",
+        "cale011",
+        "cale012",
+        "cale013",
+        "cale014",
+        "cale015",
+        "cale016",
+        "cale017",
+        "cale018",
+        "cale019",
+        "dail001",
+        "dail002",
+        "dail003",
+        "dail004",
+        "dail005",
+        "dail006",
+        "dail007",
+        "dail008",
+        "dail009",
+        "dail010",
+        "dail011",
+        "dail012",
+        "dail013",
+        "dail014",
+        "dail015",
+        "dail016",
+        "dail017",
+        "trav001",
+        "trav002",
+        "trav003",
+        "trav004",
+        "trav005",
+        "trav006",
+        "trav007",
+        "trav008",
+        "trav009",
+        "trav010",
+        "trav011",
+        "trav012",
+        "trav013",
+        "trav014"
+      ],
+      "active_vocab": [
+        "америке",
+        "америки",
+        "аппетита",
+        "бабушка",
+        "бокал",
+        "большое",
+        "брат",
+        "будве",
+        "будву",
+        "будем",
+        "будем здоровы!",
+        "будет",
+        "было",
+        "в",
+        "ваше",
+        "вашу",
+        "вечер",
+        "вечером",
+        "вкусно",
+        "воскресенье",
+        "время",
+        "встречу",
+        "вторник",
+        "вчера",
+        "вчера было солнечно.",
+        "выпьем",
+        "выходных",
+        "говорю",
+        "город",
+        "да",
+        "да, немного",
+        "давайте",
+        "давайте выпьем за это!",
+        "дедушка",
+        "день",
+        "десяти",
+        "десять",
+        "дети",
+        "джо",
+        "дна",
+        "днём",
+        "до",
+        "до дна",
+        "до свидания",
+        "доброе",
+        "доброе утро",
+        "доброе утро.",
+        "добрый",
+        "добрый вечер",
+        "добрый вечер.",
+        "добрый день",
+        "добрый день.",
+        "дождь",
+        "дочь",
+        "едем",
+        "едим",
+        "есть",
+        "ещё",
+        "жена",
+        "жены",
+        "живу",
+        "за",
+        "за ваше здоровье!",
+        "за встречу!",
+        "за здоровье!",
+        "за знакомство!",
+        "за любовь!",
+        "за молодых!",
+        "за родителей!",
+        "за семью!",
+        "за хозяев!",
+        "за хозяйку!",
+        "завтра",
+        "завтра будет тепло.",
+        "здесь",
+        "здоровы",
+        "здоровье",
+        "здравствуйте",
+        "знакомство",
+        "зовут",
+        "зять",
+        "и",
+        "идёт",
+        "идёт дождь.",
+        "идёт снег.",
+        "из",
+        "извините",
+        "как",
+        "как по-русски …?",
+        "красивое",
+        "красивый",
+        "люблю",
+        "любовь",
+        "мама",
+        "меня",
+        "меня зовут джо",
+        "миссури",
+        "мне",
+        "мне очень нравится",
+        "можно",
+        "можно ещё?",
+        "можно такси?",
+        "можно чаю?",
+        "молодых",
+        "море",
+        "море очень красивое.",
+        "моря",
+        "муж",
+        "мы",
+        "мы будем в будве.",
+        "мы будем в черногории.",
+        "мы едем в будву.",
+        "мы едим и смотрим телевизор.",
+        "мы здесь с семьёй.",
+        "мы отдыхаем.",
+        "мы познакомились …",
+        "мы хотим поужинать.",
+        "на",
+        "на выходных",
+        "надо",
+        "наелся",
+        "начинаю",
+        "не",
+        "немного",
+        "нет",
+        "нет, спасибо",
+        "нормально",
+        "ночи",
+        "нравится",
+        "обедаю",
+        "облачно",
+        "обычно",
+        "обычно я отдыхаю вечером.",
+        "обычно я работаю семь часов.",
+        "отдыхаем",
+        "отдыхаю",
+        "отлично",
+        "очень",
+        "очень вкусно!",
+        "очень приятно",
+        "папа",
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "по",
+        "повторите",
+        "повторите, пожалуйста",
+        "погулять",
+        "пожалуйста",
+        "познакомились",
+        "познакомиться",
+        "помедленнее",
+        "помедленнее, пожалуйста",
+        "понедельник",
+        "понимаю",
+        "понятно",
+        "поужинать",
+        "представиться",
+        "пригласили",
+        "приняли",
+        "приятно",
+        "приятно познакомиться",
+        "приятного",
+        "приятного аппетита!",
+        "простите",
+        "пятница",
+        "работал",
+        "работать",
+        "работаю",
+        "рад",
+        "рад познакомиться",
+        "разрешите",
+        "разрешите представиться",
+        "родителей",
+        "родители",
+        "русски",
+        "русский",
+        "рюмка",
+        "с",
+        "свидания",
+        "сегодня",
+        "сегодня облачно.",
+        "сегодня солнечно.",
+        "сегодня тепло.",
+        "сегодня холодно.",
+        "сегодня я работал четыре часа.",
+        "семь",
+        "семью",
+        "семья",
+        "семьёй",
+        "сестра",
+        "сестра жены",
+        "сказать",
+        "смотрим",
+        "снег",
+        "солнечно",
+        "спасибо",
+        "спасибо большое",
+        "спасибо, было очень вкусно",
+        "спасибо, не надо",
+        "спасибо, что пригласили",
+        "спасибо, что приняли",
+        "спокойной",
+        "спокойной ночи",
+        "среда",
+        "старый",
+        "старый город очень красивый.",
+        "суббота",
+        "счёт",
+        "счёт, пожалуйста.",
+        "сын",
+        "такси",
+        "телевизор",
+        "тепло",
+        "тесть",
+        "тост",
+        "тёща",
+        "у",
+        "у меня есть время до десяти.",
+        "ужинаю",
+        "утра",
+        "утро",
+        "утром",
+        "учу",
+        "хлеб",
+        "хозяев",
+        "хозяйку",
+        "холодно",
+        "хорошо",
+        "хорошо, спасибо",
+        "хотим",
+        "хочу",
+        "часа",
+        "часов",
+        "чаю",
+        "черногории",
+        "четверг",
+        "четыре",
+        "что",
+        "штата",
+        "шурин",
+        "это",
+        "юрист",
+        "я",
+        "я ещё учу русский",
+        "я живу в америке",
+        "я из америки",
+        "я из штата миссури",
+        "я люблю вашу дочь",
+        "я наелся",
+        "я начинаю работать в десять утра.",
+        "я не понимаю",
+        "я немного говорю по-русски",
+        "я обедаю днём.",
+        "я понимаю",
+        "я работаю утром и вечером.",
+        "я ужинаю вечером.",
+        "я хочу погулять у моря.",
+        "я хочу сказать тост за …",
+        "я юрист"
+      ],
+      "passive_vocab": [
+        "блины",
+        "борщ",
+        "будете",
+        "будете …?",
+        "вам",
+        "вам нравится …?",
+        "водка",
+        "вы",
+        "вы говорите по-русски?",
+        "где",
+        "где наш отель?",
+        "где пляж?",
+        "говорите",
+        "дела",
+        "делал",
+        "день",
+        "до",
+        "ехать",
+        "ещё",
+        "как",
+        "как вам россия?",
+        "как вы познакомились?",
+        "как дела?",
+        "как там на улице?",
+        "какая",
+        "какая сегодня погода?",
+        "какой",
+        "какой сегодня день недели?",
+        "кем",
+        "кем вы работаете?",
+        "когда",
+        "когда вы обедаете?",
+        "когда вы отдыхаете?",
+        "когда вы работаете?",
+        "когда вы ужинаете?",
+        "на",
+        "наш",
+        "недели",
+        "нравится",
+        "обедаете",
+        "оливье",
+        "отдыхаете",
+        "отель",
+        "отеля",
+        "откуда",
+        "откуда вы?",
+        "пельмени",
+        "пляж",
+        "по",
+        "погода",
+        "познакомились",
+        "работаете",
+        "россия",
+        "русски",
+        "сегодня",
+        "сколько",
+        "сколько ехать до отеля?",
+        "там",
+        "ты",
+        "ужинаете",
+        "улице",
+        "чай",
+        "что",
+        "что ты сегодня делал?"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "discourse:politeness",
+        "grammar:formal_question",
+        "grammar:prepositional_place",
+        "grammar:present_first_person",
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "lexical:days_of_week",
+        "lexical:kinship_terms",
+        "lexical:travel_vocab",
+        "morphology:gendered_short_form",
+        "phrase:calendar_question",
+        "phrase:compliment_food",
+        "phrase:family_affection",
+        "phrase:food_offer",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:host_question",
+        "phrase:introduction",
+        "phrase:personal_origin",
+        "phrase:place_description",
+        "phrase:polite_decline",
+        "phrase:repair",
+        "phrase:routine_answer",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative",
+        "phrase:travel_logistics",
+        "phrase:weather_answer",
+        "phrase:work_identity",
+        "phrase:yes_no",
+        "register:formal_you",
+        "register:name_patronymic",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "listening_misparse",
+        "register",
+        "stress"
+      ],
+      "correction_policy": [
+        "Minor error: recast briefly and continue the role-play.",
+        "Repeated error: give one short rule, then return to Russian practice.",
+        "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
+        "Communication-breaking error: clarify in English, provide the verified model, then retry."
+      ],
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Budva family trip — Talk about arriving in Budva, the hotel, the sea, and simple plans.\nCurriculum boundary: Lesson 10 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Мы едем в Будву. — We're going to Budva.\n- Мы будем в Черногории. — We'll be in Montenegro.\n- Мы будем в Будве. — We'll be in Budva.\n- Где наш отель? — Where is our hotel?\n- Можно такси? — Can we get a taxi?\n- Сколько ехать до отеля? — How long is the ride to the hotel?\n- Где пляж? — Where is the beach?\n- Я хочу погулять у моря. — I want to walk by the sea.\n- Старый город очень красивый. — The old town is very beautiful.\n- Мы здесь с семьёй. — We're here with family.\n- Счёт, пожалуйста. — The check, please.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+    },
+    {
+      "id": "tutor_daily_routine_checkin",
+      "scenario_id": "daily_routine_checkin",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "setting": "Everyday family check-in",
+      "goal": "Answer simple questions about eating, working, resting, and the evening routine.",
+      "learner_role": "guest",
+      "tutor_role": "host family member",
+      "required_items": [
+        "dail004",
+        "dail005",
+        "dail006",
+        "dail007",
+        "dail008",
+        "dail009",
+        "dail010",
+        "dail011",
+        "dail012",
+        "dail013",
+        "dail014",
+        "dail015"
+      ],
+      "required_phrases": [
+        {
+          "id": "dail004",
+          "ru": "Когда́ вы обе́даете?",
+          "ru_plain": "Когда вы обедаете?",
+          "en": "When do you have lunch?"
+        },
+        {
+          "id": "dail005",
+          "ru": "Я обе́даю днём.",
+          "ru_plain": "Я обедаю днём.",
+          "en": "I have lunch during the day."
+        },
+        {
+          "id": "dail006",
+          "ru": "Когда́ вы у́жинаете?",
+          "ru_plain": "Когда вы ужинаете?",
+          "en": "When do you have dinner?"
+        },
+        {
+          "id": "dail007",
+          "ru": "Я у́жинаю ве́чером.",
+          "ru_plain": "Я ужинаю вечером.",
+          "en": "I have dinner in the evening."
+        },
+        {
+          "id": "dail008",
+          "ru": "Когда́ вы рабо́таете?",
+          "ru_plain": "Когда вы работаете?",
+          "en": "When do you work?"
+        },
+        {
+          "id": "dail009",
+          "ru": "Я рабо́таю у́тром и ве́чером.",
+          "ru_plain": "Я работаю утром и вечером.",
+          "en": "I work in the morning and evening."
+        },
+        {
+          "id": "dail010",
+          "ru": "Когда́ вы отдыха́ете?",
+          "ru_plain": "Когда вы отдыхаете?",
+          "en": "When do you rest?"
+        },
+        {
+          "id": "dail011",
+          "ru": "Обы́чно я отдыха́ю ве́чером.",
+          "ru_plain": "Обычно я отдыхаю вечером.",
+          "en": "Usually I rest in the evening."
+        },
+        {
+          "id": "dail012",
+          "ru": "Что ты сего́дня де́лал?",
+          "ru_plain": "Что ты сегодня делал?",
+          "en": "What did you do today?"
+        },
+        {
+          "id": "dail013",
+          "ru": "Мы еди́м и смо́трим телеви́зор.",
+          "ru_plain": "Мы едим и смотрим телевизор.",
+          "en": "We eat and watch TV."
+        },
+        {
+          "id": "dail014",
+          "ru": "Я начина́ю рабо́тать в де́сять утра́.",
+          "ru_plain": "Я начинаю работать в десять утра.",
+          "en": "I start working at ten in the morning."
+        },
+        {
+          "id": "dail015",
+          "ru": "Обы́чно я рабо́таю семь часо́в.",
+          "ru_plain": "Обычно я работаю семь часов.",
+          "en": "Usually I work seven hours."
+        }
+      ],
+      "success_criteria": [
+        "answers_daily_routine",
+        "uses_day_parts",
         "stays_in_russian",
         "uses_repair_lines"
       ],
@@ -40677,20 +46344,23 @@ window.CONTENT_DATA = {
         "cale017",
         "cale018",
         "cale019",
-        "trav001",
-        "trav002",
-        "trav003",
-        "trav004",
-        "trav005",
-        "trav006",
-        "trav007",
-        "trav008",
-        "trav009",
-        "trav010",
-        "trav011",
-        "trav012",
-        "trav013",
-        "trav014"
+        "dail001",
+        "dail002",
+        "dail003",
+        "dail004",
+        "dail005",
+        "dail006",
+        "dail007",
+        "dail008",
+        "dail009",
+        "dail010",
+        "dail011",
+        "dail012",
+        "dail013",
+        "dail014",
+        "dail015",
+        "dail016",
+        "dail017"
       ],
       "active_vocab": [
         "америке",
@@ -40700,8 +46370,6 @@ window.CONTENT_DATA = {
         "бокал",
         "большое",
         "брат",
-        "будве",
-        "будву",
         "будем",
         "будем здоровы!",
         "будет",
@@ -40710,8 +46378,10 @@ window.CONTENT_DATA = {
         "ваше",
         "вашу",
         "вечер",
+        "вечером",
         "вкусно",
         "воскресенье",
+        "время",
         "встречу",
         "вторник",
         "вчера",
@@ -40719,27 +46389,33 @@ window.CONTENT_DATA = {
         "выпьем",
         "выходных",
         "говорю",
-        "город",
         "да",
         "да, немного",
         "давайте",
         "давайте выпьем за это!",
         "дедушка",
         "день",
+        "десяти",
+        "десять",
         "дети",
         "джо",
         "дна",
+        "днём",
         "до",
         "до дна",
         "до свидания",
         "доброе",
         "доброе утро",
+        "доброе утро.",
         "добрый",
         "добрый вечер",
+        "добрый вечер.",
         "добрый день",
+        "добрый день.",
         "дождь",
         "дочь",
-        "едем",
+        "едим",
+        "есть",
         "ещё",
         "жена",
         "жены",
@@ -40757,13 +46433,13 @@ window.CONTENT_DATA = {
         "за хозяйку!",
         "завтра",
         "завтра будет тепло.",
-        "здесь",
         "здоровы",
         "здоровье",
         "здравствуйте",
         "знакомство",
         "зовут",
         "зять",
+        "и",
         "идёт",
         "идёт дождь.",
         "идёт снег.",
@@ -40771,8 +46447,6 @@ window.CONTENT_DATA = {
         "извините",
         "как",
         "как по-русски …?",
-        "красивое",
-        "красивый",
         "люблю",
         "любовь",
         "мама",
@@ -40783,25 +46457,17 @@ window.CONTENT_DATA = {
         "мне очень нравится",
         "можно",
         "можно ещё?",
-        "можно такси?",
         "можно чаю?",
         "молодых",
-        "море",
-        "море очень красивое.",
-        "моря",
         "муж",
         "мы",
-        "мы будем в будве.",
-        "мы будем в черногории.",
-        "мы едем в будву.",
-        "мы здесь с семьёй.",
-        "мы отдыхаем.",
+        "мы едим и смотрим телевизор.",
         "мы познакомились …",
-        "мы хотим поужинать.",
         "на",
         "на выходных",
         "надо",
         "наелся",
+        "начинаю",
         "не",
         "немного",
         "нет",
@@ -40809,8 +46475,12 @@ window.CONTENT_DATA = {
         "нормально",
         "ночи",
         "нравится",
+        "обедаю",
         "облачно",
-        "отдыхаем",
+        "обычно",
+        "обычно я отдыхаю вечером.",
+        "обычно я работаю семь часов.",
+        "отдыхаю",
         "отлично",
         "очень",
         "очень вкусно!",
@@ -40821,7 +46491,6 @@ window.CONTENT_DATA = {
         "по",
         "повторите",
         "повторите, пожалуйста",
-        "погулять",
         "пожалуйста",
         "познакомились",
         "познакомиться",
@@ -40830,7 +46499,6 @@ window.CONTENT_DATA = {
         "понедельник",
         "понимаю",
         "понятно",
-        "поужинать",
         "представиться",
         "пригласили",
         "приняли",
@@ -40840,6 +46508,9 @@ window.CONTENT_DATA = {
         "приятного аппетита!",
         "простите",
         "пятница",
+        "работал",
+        "работать",
+        "работаю",
         "рад",
         "рад познакомиться",
         "разрешите",
@@ -40849,19 +46520,20 @@ window.CONTENT_DATA = {
         "русски",
         "русский",
         "рюмка",
-        "с",
         "свидания",
         "сегодня",
         "сегодня облачно.",
         "сегодня солнечно.",
         "сегодня тепло.",
         "сегодня холодно.",
+        "сегодня я работал четыре часа.",
+        "семь",
         "семью",
         "семья",
-        "семьёй",
         "сестра",
         "сестра жены",
         "сказать",
+        "смотрим",
         "снег",
         "солнечно",
         "спасибо",
@@ -40873,19 +46545,19 @@ window.CONTENT_DATA = {
         "спокойной",
         "спокойной ночи",
         "среда",
-        "старый",
-        "старый город очень красивый.",
         "суббота",
-        "счёт",
-        "счёт, пожалуйста.",
         "сын",
-        "такси",
+        "телевизор",
         "тепло",
         "тесть",
         "тост",
         "тёща",
         "у",
+        "у меня есть время до десяти.",
+        "ужинаю",
+        "утра",
         "утро",
+        "утром",
         "учу",
         "хлеб",
         "хозяев",
@@ -40893,11 +46565,12 @@ window.CONTENT_DATA = {
         "холодно",
         "хорошо",
         "хорошо, спасибо",
-        "хотим",
         "хочу",
+        "часа",
+        "часов",
         "чаю",
-        "черногории",
         "четверг",
+        "четыре",
         "что",
         "штата",
         "шурин",
@@ -40910,10 +46583,13 @@ window.CONTENT_DATA = {
         "я из штата миссури",
         "я люблю вашу дочь",
         "я наелся",
+        "я начинаю работать в десять утра.",
         "я не понимаю",
         "я немного говорю по-русски",
+        "я обедаю днём.",
         "я понимаю",
-        "я хочу погулять у моря.",
+        "я работаю утром и вечером.",
+        "я ужинаю вечером.",
         "я хочу сказать тост за …",
         "я юрист"
       ],
@@ -40927,14 +46603,10 @@ window.CONTENT_DATA = {
         "водка",
         "вы",
         "вы говорите по-русски?",
-        "где",
-        "где наш отель?",
-        "где пляж?",
         "говорите",
         "дела",
+        "делал",
         "день",
-        "до",
-        "ехать",
         "ещё",
         "как",
         "как вам россия?",
@@ -40947,17 +46619,20 @@ window.CONTENT_DATA = {
         "какой сегодня день недели?",
         "кем",
         "кем вы работаете?",
+        "когда",
+        "когда вы обедаете?",
+        "когда вы отдыхаете?",
+        "когда вы работаете?",
+        "когда вы ужинаете?",
         "на",
-        "наш",
         "недели",
         "нравится",
+        "обедаете",
         "оливье",
-        "отель",
-        "отеля",
+        "отдыхаете",
         "откуда",
         "откуда вы?",
         "пельмени",
-        "пляж",
         "по",
         "погода",
         "познакомились",
@@ -40965,22 +46640,24 @@ window.CONTENT_DATA = {
         "россия",
         "русски",
         "сегодня",
-        "сколько",
-        "сколько ехать до отеля?",
         "там",
+        "ты",
+        "ужинаете",
         "улице",
-        "чай"
+        "чай",
+        "что",
+        "что ты сегодня делал?"
       ],
       "structures": [
         "culture:toast_etiquette",
         "discourse:politeness",
         "grammar:formal_question",
-        "grammar:prepositional_place",
         "grammar:present_first_person",
         "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
         "lexical:days_of_week",
         "lexical:kinship_terms",
-        "lexical:travel_vocab",
         "morphology:gendered_short_form",
         "phrase:calendar_question",
         "phrase:compliment_food",
@@ -40991,12 +46668,11 @@ window.CONTENT_DATA = {
         "phrase:host_question",
         "phrase:introduction",
         "phrase:personal_origin",
-        "phrase:place_description",
         "phrase:polite_decline",
         "phrase:repair",
+        "phrase:routine_answer",
         "phrase:table_toast",
         "phrase:toast_za_accusative",
-        "phrase:travel_logistics",
         "phrase:weather_answer",
         "phrase:work_identity",
         "phrase:yes_no",
@@ -41017,7 +46693,7 @@ window.CONTENT_DATA = {
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Budva family trip — Talk about arriving in Budva, the hotel, the sea, and simple plans.\nCurriculum boundary: Lesson 9 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Мы едем в Будву. — We're going to Budva.\n- Мы будем в Черногории. — We'll be in Montenegro.\n- Мы будем в Будве. — We'll be in Budva.\n- Где наш отель? — Where is our hotel?\n- Можно такси? — Can we get a taxi?\n- Сколько ехать до отеля? — How long is the ride to the hotel?\n- Где пляж? — Where is the beach?\n- Я хочу погулять у моря. — I want to walk by the sea.\n- Старый город очень красивый. — The old town is very beautiful.\n- Мы здесь с семьёй. — We're here with family.\n- Счёт, пожалуйста. — The check, please.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Everyday family check-in — Answer simple questions about eating, working, resting, and the evening routine.\nCurriculum boundary: Lesson 9 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Когда вы обедаете? — When do you have lunch?\n- Я обедаю днём. — I have lunch during the day.\n- Когда вы ужинаете? — When do you have dinner?\n- Я ужинаю вечером. — I have dinner in the evening.\n- Когда вы работаете? — When do you work?\n- Я работаю утром и вечером. — I work in the morning and evening.\n- Когда вы отдыхаете? — When do you rest?\n- Обычно я отдыхаю вечером. — Usually I rest in the evening.\n- Что ты сегодня делал? — What did you do today?\n- Мы едим и смотрим телевизор. — We eat and watch TV.\n- Я начинаю работать в десять утра. — I start working at ten in the morning.\n- Обычно я работаю семь часов. — Usually I work seven hours.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     }
   ],
   "contrast_cards": [
@@ -41626,6 +47302,14 @@ window.CONTENT_DATA = {
     "talks_about_budva": {
       "label": "talks about Budva naturally",
       "error_type": "forgot_phrase"
+    },
+    "answers_daily_routine": {
+      "label": "answers daily-routine prompts",
+      "error_type": "forgot_phrase"
+    },
+    "uses_day_parts": {
+      "label": "uses morning/day/evening words",
+      "error_type": "case_or_inflection"
     }
   },
   "contrast_sets": [
@@ -42012,8 +47696,8 @@ window.CONTENT_DATA = {
         "answers_personalized_questions",
         "uses_formal_greeting"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11
     },
     {
       "id": "extended_family_family_tree",
@@ -42132,6 +47816,33 @@ window.CONTENT_DATA = {
       "success_criteria": [
         "handles_travel_logistics",
         "talks_about_budva",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10
+    },
+    {
+      "id": "daily_routine_checkin",
+      "setting": "Everyday family check-in",
+      "goal": "Answer simple questions about eating, working, resting, and the evening routine.",
+      "required_items": [
+        "dail004",
+        "dail005",
+        "dail006",
+        "dail007",
+        "dail008",
+        "dail009",
+        "dail010",
+        "dail011",
+        "dail012",
+        "dail013",
+        "dail014",
+        "dail015"
+      ],
+      "success_criteria": [
+        "answers_daily_routine",
+        "uses_day_parts",
         "stays_in_russian",
         "uses_repair_lines"
       ],
