@@ -278,6 +278,154 @@ async function checkStage(page, baseUrl, stageKey, interact) {
   }
 }
 
+
+async function stageStateFor(page, itemId, stageKey) {
+  return await page.evaluate(({ itemId, stageKey }) => {
+    const ns = window.CONTENT_DATA.course.storage_namespace;
+    const store = JSON.parse(localStorage.getItem(ns) || "{}");
+    const st = store[itemId] && store[itemId].stages && store[itemId].stages[stageKey];
+    return {
+      seen: (st && st.seen) || 0,
+      correct: (st && st.correct) || 0,
+      success: (st && st.success_sessions) || 0,
+      mastered: !!(st && st.mastered),
+    };
+  }, { itemId, stageKey });
+}
+
+async function assertDictationAcceptedResponse(page, baseUrl) {
+  await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
+  await page.waitForTimeout(120);
+  await page.goto(withHash(baseUrl, "#/quiz/dictation"), { waitUntil: "networkidle" });
+  await page.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 5000 });
+
+  const dictationCard = await page.locator(".quiz").evaluate((el) => ({
+    itemId: el.dataset.itemId,
+  }));
+  if (!dictationCard.itemId) {
+    throw new Error("Dictation card missing item id for accepted-answer verification");
+  }
+
+  const cardData = await page.evaluate((itemId) => {
+    const card = (window.CONTENT_DATA.dictation_cards || []).find((c) => c.id === itemId);
+    if (!card) return null;
+    const accepted = (card.accepted_answers && card.accepted_answers[0]) || card.ru_plain || card.ru;
+    return {
+      itemId: card.id,
+      accepted,
+      en: card.en || "",
+    };
+  }, dictationCard.itemId);
+  if (!cardData || !cardData.accepted) {
+    throw new Error(`Dictation accepted-answer metadata missing for ${dictationCard.itemId}`);
+  }
+
+  const before = await stageStateFor(page, cardData.itemId, "dictation");
+  await page.locator("#dictIn").fill(cardData.accepted);
+  await page.getByRole("button", { name: /^Check$/i }).click();
+  await page.waitForTimeout(250);
+
+  const stillOpen = await page.locator("#dictIn").count();
+  if (stillOpen && await page.locator("#qfeedback").innerText() !== "") {
+    const nextBtn = page.getByRole("button", { name: /^Next/i });
+    if (await nextBtn.count()) {
+      await nextBtn.first().click();
+      await page.waitForTimeout(150);
+      await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
+      await page.waitForTimeout(120);
+      await page.goto(withHash(baseUrl, "#/quiz/dictation"), { waitUntil: "networkidle" });
+      await page.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 5000 });
+      await page.locator("#dictIn").fill(cardData.accepted);
+      await page.getByRole("button", { name: /^Check$/i }).click();
+      await page.waitForTimeout(250);
+    }
+  }
+
+  const after = await stageStateFor(page, cardData.itemId, "dictation");
+  if (after.correct <= before.correct) {
+    throw new Error(`Dictation accepted response did not increase correct count for ${cardData.itemId}: ${before.correct} -> ${after.correct}`);
+  }
+  await page.waitForTimeout(120);
+  const nextBtn = page.getByRole("button", { name: /^Next/i });
+  if (await nextBtn.count()) {
+    await nextBtn.first().click();
+  }
+}
+
+async function assertBacktranslateAcceptedResponse(page, baseUrl) {
+  await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
+  await page.waitForTimeout(120);
+  await page.goto(withHash(baseUrl, "#/quiz/backtranslate"), { waitUntil: "networkidle" });
+  await page.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 5000 });
+
+  const backCard = await page.locator(".quiz").evaluate((el) => ({
+    itemId: el.dataset.itemId,
+  }));
+  if (!backCard.itemId) {
+    throw new Error("Back-translation card missing item id for accepted-answer verification");
+  }
+
+  const cardData = await page.evaluate((itemId) => {
+    const card = (window.CONTENT_DATA.backtranslation_cards || []).find((c) => c.id === itemId);
+    if (!card) return null;
+    const accepted = (card.accepted_answers && card.accepted_answers[0]) || card.ru_plain || card.ru;
+    return {
+      itemId: card.id,
+      accepted,
+      en: card.en || "",
+    };
+  }, backCard.itemId);
+  if (!cardData || !cardData.accepted) {
+    throw new Error(`Back-translation accepted-answer metadata missing for ${backCard.itemId}`);
+  }
+
+  const before = await stageStateFor(page, cardData.itemId, "backtranslate");
+  const enNote = cardData.en || "";
+  await page.locator("#btEn").fill(enNote);
+  await page.getByRole("button", { name: /Hide Russian/i }).click();
+  await page.locator("#btStep2").waitFor({ state: "visible", timeout: 5000 });
+  await page.locator("#btRu").fill(cardData.accepted);
+  await page.getByRole("button", { name: /^Check$/i }).click();
+  await page.waitForTimeout(250);
+
+  if (await page.locator("#btRu").count()) {
+    const nextBtn = page.getByRole("button", { name: /^Next/i });
+    if (await nextBtn.count()) {
+      await nextBtn.first().click();
+      await page.waitForTimeout(150);
+      await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
+      await page.waitForTimeout(120);
+      await page.goto(withHash(baseUrl, "#/quiz/backtranslate"), { waitUntil: "networkidle" });
+      await page.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 5000 });
+      const retriedCard = await page.locator(".quiz").evaluate((el) => el.dataset.itemId);
+      if (retriedCard === cardData.itemId) {
+        const retriedData = await page.evaluate((itemId) => {
+          const card = (window.CONTENT_DATA.backtranslation_cards || []).find((c) => c.id === itemId);
+          if (!card) return null;
+          return (card.accepted_answers && card.accepted_answers[0]) || card.ru_plain || card.ru;
+        }, cardData.itemId);
+        if (retriedData) {
+          await page.locator("#btEn").fill(enNote);
+          await page.getByRole("button", { name: /Hide Russian/i }).click();
+          await page.locator("#btStep2").waitFor({ state: "visible", timeout: 5000 });
+          await page.locator("#btRu").fill(retriedData);
+          await page.getByRole("button", { name: /^Check$/i }).click();
+          await page.waitForTimeout(250);
+        }
+      }
+    }
+  }
+
+  const after = await stageStateFor(page, cardData.itemId, "backtranslate");
+  if (after.correct <= before.correct) {
+    throw new Error(`Back-translation accepted response did not increase correct count for ${cardData.itemId}: ${before.correct} -> ${after.correct}`);
+  }
+  const nextBtn = page.getByRole("button", { name: /^Next/i });
+  if (await nextBtn.count()) {
+    await nextBtn.first().click();
+  }
+}
+
 async function assertDueFirstOrdering(page, baseUrl, { stageKey, dueItemId }) {
   if (!dueItemId) {
     throw new Error("adaptive-ordering requires a due item id");
@@ -513,6 +661,8 @@ export async function runFlowCheck(opts) {
       await checkRepairFocusState(page, "dictation");
     });
     completed.push("dictation");
+    await assertDictationAcceptedResponse(page, opts.url);
+    completed.push("dictation-accepted");
 
     await checkStage(page, opts.url, "stress", async () => {
       await page.locator(".opt").first().click();
@@ -533,6 +683,8 @@ export async function runFlowCheck(opts) {
       await checkRepairFocusState(page, "backtranslate");
     });
     completed.push("backtranslate");
+    await assertBacktranslateAcceptedResponse(page, opts.url);
+    completed.push("backtranslate-accepted");
 
     await checkStage(page, opts.url, "contrast", async () => {
       await page.locator(".opt").first().click();

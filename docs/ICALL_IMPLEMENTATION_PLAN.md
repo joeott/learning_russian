@@ -72,6 +72,11 @@ Latest completed slice: role-play tutor integration is now browser-verified.
 The flow checker now asserts the lesson-constrained tutor panel opens from role-play,
 checks the rendered lesson boundary text, and validates that the item-level
 `tutor_prompt_opens` counter persists to localStorage.
+Latest completed slice: browser flow now also verifies accepted-answer recovery for
+dictation and back-translation drills. Flow assertions now confirm that submitting
+card-level accepted answers increments stage-correct counters before continuing,
+providing end-to-end coverage for productive oral/translation recovery as well as
+error-repair paths.
 
 - add more high-variability listening variants beyond the current deterministic
   room-noise transformation,
