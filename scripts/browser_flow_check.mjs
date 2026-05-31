@@ -262,10 +262,137 @@ async function assertLessonLockedRecognition(page, baseUrl) {
 async function checkStage(page, baseUrl, stageKey, interact) {
   await page.goto(withHash(baseUrl, `#/quiz/${stageKey}`), { waitUntil: "networkidle" });
   await page.waitForTimeout(250);
+  const hasQuiz = await page.locator(".quiz").count();
+  if (!hasQuiz) {
+    await page.waitForTimeout(250);
+    const headerText = await page.locator("#view").innerText();
+    if (!headerText.toLowerCase().includes(`${stageKey} — done`) && !headerText.toLowerCase().includes("done")) {
+      throw new Error(`${stageKey} did not render a drill question or completion screen`);
+    }
+    return;
+  }
   await interact();
   await page.waitForTimeout(200);
   if (!(await stageSeen(page, stageKey))) {
     throw new Error(`${stageKey} did not update stage mastery/latency state`);
+  }
+}
+
+async function assertDueFirstOrdering(page, baseUrl, { stageKey, dueItemId }) {
+  if (!dueItemId) {
+    throw new Error("adaptive-ordering requires a due item id");
+  }
+  const seed = await page.evaluate(({ stage, dueItemIdValue }) => {
+    const ns = window.CONTENT_DATA.course.storage_namespace;
+    const lessons = window.CONTENT_DATA.curriculum.lessons || [];
+    const lessonNumber = (lessons[0] || {}).lesson_number || 1;
+    const cards = window.CONTENT_DATA.items.filter((it) => it.lesson_number <= lessonNumber);
+    const now = Date.now();
+    const store = JSON.parse(localStorage.getItem(ns) || "{}");
+    cards.forEach((it) => {
+      const existing = store[it.id] || { seen: 0, correct: 0, errors: {}, stages: {} };
+      const isDue = it.id === dueItemIdValue;
+      existing.seen = Math.max(existing.seen || 0, 1);
+      existing.correct = existing.correct || 0;
+      existing.stages = existing.stages || {};
+      existing.stages[stage] = {
+        seen: 1,
+        correct: 1,
+        success_sessions: 1,
+        due_at: isDue ? new Date(now - 60_000).toISOString() : new Date(now + 24 * 60 * 60 * 1000).toISOString(),
+        stability: 1,
+        difficulty: 5,
+        retrievability: isDue ? 0.9 : 0.4,
+        lapses: 0,
+        last_grade: isDue ? "good" : "",
+        last_error_type: "",
+        last_seen_at: new Date(now).toISOString(),
+        delayed_attempts: 0,
+        delayed_success: 0,
+        mastered: false,
+      };
+      store[it.id] = existing;
+    });
+    localStorage.setItem(ns, JSON.stringify(store));
+    return { lessonNumber, cardCount: cards.length };
+  }, { stage: stageKey, dueItemIdValue: dueItemId });
+
+  await page.evaluate(() => {
+    if (!window.__orderedRandom) {
+      window.__orderedRandom = Math.random;
+    }
+    Math.random = () => 0.999;
+  });
+
+  try {
+    const select = page.locator(".lessonlock select");
+    await select.selectOption({ index: 0 });
+    await page.reload({ waitUntil: "networkidle" });
+    await page.evaluate(() => {
+      if (!window.__orderedRandom) {
+        window.__orderedRandom = Math.random;
+      }
+      Math.random = () => 0.999;
+    });
+    await page.goto(withHash(baseUrl, "#/quiz/produce"), { waitUntil: "networkidle" });
+    await page.goto(withHash(baseUrl, `#/quiz/${stageKey}`), { waitUntil: "networkidle" });
+    await page.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 5000 });
+
+    const actual = await page.locator(".quiz").evaluate((el) => el.dataset.itemId);
+    const expected = await page.evaluate(({ stage, seedLessonNumber }) => {
+      const { items = [] } = window.CONTENT_DATA;
+      const ns = window.CONTENT_DATA.course.storage_namespace;
+      const pool = items.filter((it) => it.lesson_number <= seedLessonNumber).filter(Boolean);
+      const store = JSON.parse(localStorage.getItem(ns) || "{}");
+      const isDue = (it) => {
+        const state = store[it.id] && store[it.id].stages && store[it.id].stages[stage];
+        return !state || !state.due_at || new Date(state.due_at) <= new Date();
+      };
+      const score = (it) => {
+        const state = store[it.id] && store[it.id].stages && store[it.id].stages[stage];
+        const due = isDue(it) ? 0 : 1;
+        const lapses = state ? state.lapses || 0 : 0;
+        const correct = state ? state.correct || 0 : 0;
+        return [due, it.priority, correct - lapses];
+      };
+      const ranked = pool.slice().sort((a, b) => {
+        const as = score(a);
+        const bs = score(b);
+        for (let i = 0; i < as.length; i++) if (as[i] !== bs[i]) return as[i] - bs[i];
+        return a.id.localeCompare(b.id);
+      });
+      const shuffle = (a) => {
+        a = a.slice();
+        for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+      };
+      const head = ranked.slice(0, 16);
+      const q = shuffle(head).slice(0, Math.min(10, head.length));
+      return q.map((item) => ({
+        id: item.id,
+        due: isDue(item),
+      }));
+    }, { stage: stageKey, seedLessonNumber: seed.lessonNumber });
+
+    if (!expected.length) {
+      throw new Error(`adaptive-ordering could not compute expected order for stage ${stageKey}`);
+    }
+    if (!expected[0].due) {
+      throw new Error(`adaptive-ordering expected due item first in ${stageKey}, got non-due ${expected[0].id}`);
+    }
+    if (actual !== expected[0].id) {
+      throw new Error(`adaptive-ordering mismatch for ${stageKey}: rendered ${actual}, expected ${expected[0].id}`);
+    }
+  } finally {
+    await page.evaluate(() => {
+      if (window.__orderedRandom) {
+        Math.random = window.__orderedRandom;
+        window.__orderedRandom = null;
+      }
+    });
   }
 }
 
@@ -312,6 +439,8 @@ export async function runFlowCheck(opts) {
 
     await assertLessonLockedRecognition(page, opts.url);
     completed.push("lesson-lock");
+    await assertDueFirstOrdering(page, opts.url, { stageKey: "recognition", dueItemId: "firs002" });
+    completed.push("adaptive-ordering");
 
     await checkStage(page, opts.url, "recognition", async () => {
       await page.locator(".opt").first().click();
