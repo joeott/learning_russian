@@ -69,6 +69,53 @@ function escapeRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+async function clickByText(page, clickText, logs) {
+  const cleanText = String(clickText || "").trim();
+  if (!cleanText) {
+    return false;
+  }
+  const patterns = [
+    { label: "exact", locator: () => page.getByText(cleanText, { exact: true }) },
+    { label: "link exact", locator: () => page.getByRole("link", { name: cleanText, exact: true }) },
+    { label: "button exact", locator: () => page.getByRole("button", { name: cleanText, exact: true }) },
+    {
+      label: "fuzzy",
+      locator: () => page.getByText(new RegExp(escapeRegex(cleanText), "i")),
+    },
+    {
+      label: "link fuzzy",
+      locator: () => page.getByRole("link", { name: new RegExp(escapeRegex(cleanText), "i") }),
+    },
+    {
+      label: "button fuzzy",
+      locator: () => page.getByRole("button", { name: new RegExp(escapeRegex(cleanText), "i") }),
+    },
+  ];
+
+  for (const { label, locator } of patterns) {
+    try {
+      const candidate = locator();
+      const count = await candidate.count();
+      if (count <= 0) continue;
+      const target = candidate.first();
+      const visible = await target.isVisible().catch(() => true);
+      if (!visible) {
+        logs.push({ type: "controller", text: `${label} candidate not visible for '${cleanText}', trying fallback` });
+      }
+      await target.scrollIntoViewIfNeeded();
+      await target.click();
+      logs.push({ type: "controller", text: `clicked '${cleanText}' via ${label} (${count} match) -> ${await target.evaluate((el) => (el.innerText || "").trim().slice(0, 120))}` });
+      return true;
+    } catch (err) {
+      logs.push({
+        type: "controller",
+        text: `${label} click attempt failed for '${cleanText}': ${(err && err.message) ? err.message : String(err)}`,
+      });
+    }
+  }
+  return false;
+}
+
 const VIEWPORTS = {
   desktop: { width: 1280, height: 900 },
   mobile: { width: 390, height: 844 },
@@ -125,27 +172,26 @@ export async function runInspection(opts) {
       await page.waitForTimeout(opts.waitMs);
       const before = await inspectPage(page, `${viewportName}-before`, opts.out);
       const steps = [];
-      for (const [index, clickText] of opts.clickTexts.entries()) {
-        const step = { clickText };
-        try {
-          const exact = page.getByText(clickText, { exact: true });
-          await exact.click();
-        } catch (exactErr) {
-          logs.push({ type: "controller", text: `exact click miss: ${clickText}` });
-          try {
-            const loose = page.getByText(new RegExp(escapeRegex(clickText), "i"));
-            await loose.click();
-          } catch (looseErr) {
-            logs.push({ type: "controller", text: `loose click miss: ${clickText} (${(looseErr && looseErr.message) || looseErr})` });
-            step.error = `Could not click '${clickText}'`;
-            steps.push(step);
-            continue;
-          }
+    for (const [index, clickText] of opts.clickTexts.entries()) {
+      const step = { clickText };
+      try {
+        const clicked = await clickByText(page, clickText, logs);
+        if (!clicked) {
+          logs.push({ type: "controller", text: `Could not click '${clickText}'` });
+          step.error = `Could not click '${clickText}'`;
+          steps.push(step);
+          continue;
         }
-        await page.waitForTimeout(opts.waitMs);
-        step.snapshot = await inspectPage(page, `${viewportName}-step-${index + 1}`, opts.out);
+      } catch (err) {
+        logs.push({ type: "controller", text: `click error for '${clickText}': ${(err && err.message) || err}` });
+        step.error = `Could not click '${clickText}'`;
         steps.push(step);
+        continue;
       }
+      await page.waitForTimeout(opts.waitMs);
+      step.snapshot = await inspectPage(page, `${viewportName}-step-${index + 1}`, opts.out);
+      steps.push(step);
+    }
       results.push({ viewport: viewportName, url: opts.url, before, steps, after: steps.length ? steps[steps.length - 1].snapshot : null, logs });
       await page.close();
     }
