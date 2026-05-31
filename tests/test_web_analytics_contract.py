@@ -63,6 +63,8 @@ class WebAnalyticsContractTests(unittest.TestCase):
             "inferredErrorType",
             "repairFocusHtml",
             "Repair focus:",
+            "last_repair_focus",
+            "repair_focus_counts",
             "ERROR_BY_ID",
             "case_or_inflection",
             "gendered_form",

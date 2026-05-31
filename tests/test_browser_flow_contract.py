@@ -35,6 +35,8 @@ class BrowserFlowContractTests(unittest.TestCase):
             "roleplay",
             "localStorage.clear",
             "stageSeen",
+            "stageRepairFocusSeen",
+            "checkRepairFocusState",
             "roleplayCriteriaMissed",
             "AVG RESPONSE TIME",
             "repair focus:",

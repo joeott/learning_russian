@@ -76,6 +76,17 @@ async function stageSeen(page, stageKey) {
   }, stageKey);
 }
 
+async function stageRepairFocusSeen(page, stageKey) {
+  return await page.evaluate((key) => {
+    const ns = window.CONTENT_DATA.course.storage_namespace;
+    const store = JSON.parse(localStorage.getItem(ns) || "{}");
+    return Object.values(store).some((rec) => {
+      const st = rec && rec.stages && rec.stages[key];
+      return st && st.last_repair_focus && st.repair_focus_counts && rec.repair_focus_counts;
+    });
+  }, stageKey);
+}
+
 async function roleplayCriteriaMissed(page) {
   return await page.evaluate(() => {
     const ns = window.CONTENT_DATA.course.storage_namespace;
@@ -134,6 +145,12 @@ async function checkRepairFocus(page) {
   await page.waitForFunction(() => document.body.innerText.toLowerCase().includes("repair focus:"));
 }
 
+async function checkRepairFocusState(page, stageKey) {
+  if (!(await stageRepairFocusSeen(page, stageKey))) {
+    throw new Error(`${stageKey} did not persist repair focus state`);
+  }
+}
+
 export async function runFlowCheck(opts) {
   const { chromium } = await importPlaywright();
   await fs.mkdir(opts.out, { recursive: true });
@@ -179,6 +196,7 @@ export async function runFlowCheck(opts) {
       await page.locator("#clozeIn").fill("x");
       await page.getByRole("button", { name: /^Check$/i }).click();
       await checkRepairFocus(page);
+      await checkRepairFocusState(page, "cloze");
     });
     completed.push("cloze");
 
@@ -186,6 +204,7 @@ export async function runFlowCheck(opts) {
       await page.locator("#dictIn").fill("x");
       await page.getByRole("button", { name: /^Check$/i }).click();
       await checkRepairFocus(page);
+      await checkRepairFocusState(page, "dictation");
     });
     completed.push("dictation");
 
@@ -205,6 +224,7 @@ export async function runFlowCheck(opts) {
       await page.locator("#btRu").fill("x");
       await page.getByRole("button", { name: /^Check$/i }).click();
       await checkRepairFocus(page);
+      await checkRepairFocusState(page, "backtranslate");
     });
     completed.push("backtranslate");
 
@@ -217,6 +237,7 @@ export async function runFlowCheck(opts) {
       await page.locator("#prodIn").fill("x");
       await page.getByRole("button", { name: /^Check$/i }).click();
       await checkRepairFocus(page);
+      await checkRepairFocusState(page, "produce");
     });
     completed.push("produce");
 

@@ -61,11 +61,11 @@ offline pronunciation record/compare practice, contextual Anki export, offline
 readiness checks, an explicit listening ladder with speed and room-noise passes,
 criterion-aware role-play outcomes with cumulative repair signals,
 delayed-recall analytics, response-latency tracking, local readiness history,
-immediate taxonomy-based repair focus on wrong answers, and a browser flow
-verifier for lesson-locking plus the core Home -> Learn -> Drill -> Cloze ->
-Dictation -> Back-translation -> Role-play journey, including every drill stage.
-The next foundations should broaden oral transfer without weakening the
-guardrails:
+immediate taxonomy-based repair focus on wrong answers with persisted
+repair-focus history, and a browser flow verifier for lesson-locking plus the
+core Home -> Learn -> Drill -> Cloze -> Dictation -> Back-translation ->
+Role-play journey, including every drill stage. The next foundations should
+broaden oral transfer without weakening the guardrails:
 
 - add more high-variability listening variants beyond the current deterministic
   room-noise transformation,
