@@ -295,6 +295,40 @@
       return n + (st && st.last_roleplay_missed ? st.last_roleplay_missed.length : 0);
     }, 0);
   }
+  function roleplayFailureSignals() {
+    const counts = {};
+    stagePool("roleplay").forEach(it => {
+      const st = stageState(it.id, "roleplay");
+      (st && st.last_roleplay_missed ? st.last_roleplay_missed : []).forEach(criterionId => {
+        const criterion = ROLEPLAY_CRITERIA[criterionId] || {};
+        const key = criterionId;
+        counts[key] = counts[key] || {
+          id: key,
+          label: criterion.label || criterionId,
+          errorType: criterion.error_type || "forgot_phrase",
+          count: 0,
+        };
+        counts[key].count += 1;
+      });
+    });
+    return Object.values(counts)
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))
+      .slice(0, 4);
+  }
+  function roleplaySignalsHtml(signals) {
+    const rows = signals.length ? signals.map(row => `<div class="signals__row">
+      <strong>${escapeHtml(row.label)}</strong>
+      <span>${row.count} missed · ${escapeHtml((ERROR_BY_ID[row.errorType] && ERROR_BY_ID[row.errorType].label) || row.errorType)}</span>
+      <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.startRepair('${escapeHtml(row.errorType)}')">Repair</button>
+    </div>`).join("") : `<div class="signals__empty">No missed role-play criteria logged yet. Run a role-play round and self-rate it.</div>`;
+    return `<div class="signals rise">
+      <div>
+        <h3>Role-play failure signals</h3>
+        <p>Recent missed scenario criteria become targeted repair drills.</p>
+      </div>
+      <div class="signals__list">${rows}</div>
+    </div>`;
+  }
   function repairStageFor(errorType) {
     if (errorType === "listening_misparse") return "dictation";
     if (errorType === "stress") return "stress";
@@ -553,6 +587,7 @@
     const op = overallProgress();
     const a = analytics();
     const history = analyticsSnapshot(a);
+    const roleSignals = roleplayFailureSignals();
     const d = daysLeft();
     const mods = MODULES.map((m, i) => {
       const p = moduleProgress(m.id);
@@ -600,6 +635,7 @@
           <div><strong>${fragileItems().length}</strong><span>fragile high-priority phrases</span></div>
         </div>
       </div>
+      ${roleplaySignalsHtml(roleSignals)}
       ${analyticsHistoryHtml(history)}
 
       <div class="section-head"><span class="section-head__num">★</span><span class="section-head__title">The Table, module by module</span>
