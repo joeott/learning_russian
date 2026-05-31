@@ -229,6 +229,24 @@ This is a museum.	<div style="font-size:2em">Э́то музе́й.</div>[sound:
 There I look at paintings and sculptures.	<div style="font-size:2em">Там я смотрю́ карти́ны и скульпту́ры.</div>[sound:zastolom_leis019.mp3]	[tam ya smat-ryú kar-tí-ny i skul'p-tú-ry]	(focus: understand when heard)	leisure_places p3 recognize
 We walked in the park.	<div style="font-size:2em">Мы гуля́ли в па́рке.</div>[sound:zastolom_leis020.mp3]	[my gu-lyá-li f pár-kye]		leisure_places p3
 We rested and listened to music.	<div style="font-size:2em">Мы отдыха́ли и слу́шали му́зыку.</div>[sound:zastolom_leis021.mp3]	[my at-dy-há-li i slú-sha-li mú-zy-ku]		leisure_places p3
+What does he look like?	<div style="font-size:2em">Как он вы́глядит?</div>[sound:zastolom_phys001.mp3]	[kak on vý-glya-dit]	(focus: understand when heard)	physical_description p2 recognize
+What does she look like?	<div style="font-size:2em">Как она́ вы́глядит?</div>[sound:zastolom_phys002.mp3]	[kak a-ná vý-glya-dit]	(focus: understand when heard)	physical_description p2 recognize
+He is tall.	<div style="font-size:2em">Он высо́кий.</div>[sound:zastolom_phys003.mp3]	[on vy-só-kiy]		physical_description p2
+She is of medium height.	<div style="font-size:2em">Она́ сре́днего ро́ста.</div>[sound:zastolom_phys004.mp3]	[a-ná sréd-ni-va ró-sta]		physical_description p2
+He is a head taller than me.	<div style="font-size:2em">Он на́ голову вы́ше меня́.</div>[sound:zastolom_phys005.mp3]	[on ná go-la-vu vý-she mi-nyá]		physical_description p3
+He has brown eyes.	<div style="font-size:2em">У него́ ка́рие глаза́.</div>[sound:zastolom_phys006.mp3]	[u ni-vó ká-ri-ye gla-zá]		physical_description p2
+She has blue eyes.	<div style="font-size:2em">У неё голубы́е глаза́.</div>[sound:zastolom_phys007.mp3]	[u ni-yó ga-lu-bý-ye gla-zá]		physical_description p2
+He has long curly hair.	<div style="font-size:2em">У него́ дли́нные вью́щиеся во́лосы.</div>[sound:zastolom_phys008.mp3]	[u ni-vó dlín-ny-ye vyú-shchi-ye vó-la-sy]		physical_description p3
+She has short straight hair.	<div style="font-size:2em">У неё коро́ткие прямы́е во́лосы.</div>[sound:zastolom_phys009.mp3]	[u ni-yó ka-rót-ki-ye pryá-my-ye vó-la-sy]		physical_description p3
+He has red hair.	<div style="font-size:2em">У него́ ры́жие во́лосы.</div>[sound:zastolom_phys010.mp3]	[u ni-vó rý-zhi-ye vó-la-sy]		physical_description p3
+She has chestnut-brown hair.	<div style="font-size:2em">У неё кашта́новые во́лосы.</div>[sound:zastolom_phys011.mp3]	[u ni-yó kash-tá-na-vy-ye vó-la-sy]		physical_description p3
+He has a narrow face.	<div style="font-size:2em">У него́ у́зкое лицо́.</div>[sound:zastolom_phys012.mp3]	[u ni-vó úz-ka-ye li-tsó]		physical_description p3
+She has a beautiful smile.	<div style="font-size:2em">У неё краси́вая улы́бка.</div>[sound:zastolom_phys013.mp3]	[u ni-yó kra-sí-va-ya u-lýb-ka]		physical_description p2
+He has a kind look.	<div style="font-size:2em">У него́ до́брый взгляд.</div>[sound:zastolom_phys014.mp3]	[u ni-vó dób-ryy vzglyad]		physical_description p3
+She has a welcoming smile.	<div style="font-size:2em">У неё приве́тливая улы́бка.</div>[sound:zastolom_phys015.mp3]	[u ni-yó pri-vyét-li-va-ya u-lýb-ka]		physical_description p3
+He looks like his dad.	<div style="font-size:2em">Он похо́ж на па́пу.</div>[sound:zastolom_phys016.mp3]	[on pa-hózh na pá-pu]		physical_description p2
+She looks like her mom.	<div style="font-size:2em">Она́ похо́жа на ма́му.</div>[sound:zastolom_phys017.mp3]	[a-ná pa-hó-zha na má-mu]		physical_description p2
+He has a big long nose.	<div style="font-size:2em">У него́ большо́й дли́нный нос.</div>[sound:zastolom_phys018.mp3]	[u ni-vó bal'-shóy dlín-nyy nos]	(focus: understand when heard)	physical_description p3 recognize
 I can dance.	<div style="font-size:2em">Я могу́ танцева́ть.</div>[sound:zastolom_moda001.mp3]	[ya ma-gú tan-tsi-vát']	мочь = can / have the possibility.	modal_ability p3
 I don't know how to dance salsa.	<div style="font-size:2em">Я не уме́ю танцева́ть са́льсу.</div>[sound:zastolom_moda002.mp3]	[ya nye u-myé-yu tan-tsi-vát' sál'-su]	уме́ть = know how / have the skill.	modal_ability p3
 I know how to dance salsa.	<div style="font-size:2em">Я зна́ю, как танцева́ть са́льсу.</div>[sound:zastolom_moda003.mp3]	[ya zná-yu kak tan-tsi-vát' sál'-su]	(focus: understand when heard)	modal_ability p3 recognize

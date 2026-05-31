@@ -293,6 +293,10 @@ ROLEPLAY_CRITERIA = {
         "label": "talks about hobbies, home, and leisure places",
         "error_type": "forgot_phrase",
     },
+    "describes_people_appearance": {
+        "label": "describes people with simple appearance phrases",
+        "error_type": "case_or_inflection",
+    },
     "uses_modal_survival": {
         "label": "uses can, know-how, want, need, and permission patterns",
         "error_type": "case_or_inflection",
@@ -896,6 +900,36 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "physical_description_family",
+        "setting": "Describing family members",
+        "goal": "Answer simple questions about what someone looks like using height, eyes, hair, face, smile, and resemblance phrases from the original guide.",
+        "required_items": [
+            "phys001",
+            "phys002",
+            "phys003",
+            "phys004",
+            "phys005",
+            "phys006",
+            "phys007",
+            "phys008",
+            "phys009",
+            "phys010",
+            "phys011",
+            "phys012",
+            "phys013",
+            "phys014",
+            "phys015",
+            "phys016",
+            "phys017",
+            "phys018",
+        ],
+        "success_criteria": [
+            "describes_people_appearance",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
         "id": "budva_trip_checkin",
         "setting": "Budva family trip",
         "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
@@ -1173,6 +1207,13 @@ MODULES = [
         "🎸",
     ),
     (
+        "physical_description",
+        "Appearance & People",
+        "Original-guide person-description lane: height, eyes, hair, smile, face, and family resemblance.",
+        2,
+        "👤",
+    ),
+    (
         "modal_ability",
         "Can, Want & Need",
         "Original-guide modal survival: can, know how, want, need, allowed, not allowed, and should.",
@@ -1292,6 +1333,12 @@ MODULE_STRUCTURES = {
         "lexical:places",
         "phrase:leisure_answer",
         "grammar:igrat_v_na",
+    ],
+    "physical_description": [
+        "lexical:appearance_vocab",
+        "phrase:appearance_question",
+        "grammar:adjective_agreement",
+        "phrase:family_resemblance",
     ],
     "modal_ability": [
         "grammar:modal_verbs",
@@ -2821,6 +2868,155 @@ add(
     "[my at-dy-há-li i slú-sha-li mú-zy-ku]",
     3,
     tags=["leisure", "music"],
+)
+
+# --- APPEARANCE & PEOPLE (original-guide physical-description lane) ---
+add(
+    "physical_description",
+    "Как он вы́глядит?",
+    "What does he look like?",
+    "[kak on vý-glya-dit]",
+    2,
+    recognize=True,
+    tags=["appearance", "question", "listening"],
+)
+add(
+    "physical_description",
+    "Как она́ вы́глядит?",
+    "What does she look like?",
+    "[kak a-ná vý-glya-dit]",
+    2,
+    recognize=True,
+    tags=["appearance", "question", "listening"],
+)
+add(
+    "physical_description",
+    "Он высо́кий.",
+    "He is tall.",
+    "[on vy-só-kiy]",
+    2,
+    tags=["appearance", "height"],
+)
+add(
+    "physical_description",
+    "Она́ сре́днего ро́ста.",
+    "She is of medium height.",
+    "[a-ná sréd-ni-va ró-sta]",
+    2,
+    tags=["appearance", "height"],
+)
+add(
+    "physical_description",
+    "Он на́ голову вы́ше меня́.",
+    "He is a head taller than me.",
+    "[on ná go-la-vu vý-she mi-nyá]",
+    3,
+    tags=["appearance", "height", "comparison"],
+)
+add(
+    "physical_description",
+    "У него́ ка́рие глаза́.",
+    "He has brown eyes.",
+    "[u ni-vó ká-ri-ye gla-zá]",
+    2,
+    tags=["appearance", "eyes"],
+)
+add(
+    "physical_description",
+    "У неё голубы́е глаза́.",
+    "She has blue eyes.",
+    "[u ni-yó ga-lu-bý-ye gla-zá]",
+    2,
+    tags=["appearance", "eyes"],
+)
+add(
+    "physical_description",
+    "У него́ дли́нные вью́щиеся во́лосы.",
+    "He has long curly hair.",
+    "[u ni-vó dlín-ny-ye vyú-shchi-ye vó-la-sy]",
+    3,
+    tags=["appearance", "hair"],
+)
+add(
+    "physical_description",
+    "У неё коро́ткие прямы́е во́лосы.",
+    "She has short straight hair.",
+    "[u ni-yó ka-rót-ki-ye pryá-my-ye vó-la-sy]",
+    3,
+    tags=["appearance", "hair"],
+)
+add(
+    "physical_description",
+    "У него́ ры́жие во́лосы.",
+    "He has red hair.",
+    "[u ni-vó rý-zhi-ye vó-la-sy]",
+    3,
+    tags=["appearance", "hair"],
+)
+add(
+    "physical_description",
+    "У неё кашта́новые во́лосы.",
+    "She has chestnut-brown hair.",
+    "[u ni-yó kash-tá-na-vy-ye vó-la-sy]",
+    3,
+    tags=["appearance", "hair"],
+)
+add(
+    "physical_description",
+    "У него́ у́зкое лицо́.",
+    "He has a narrow face.",
+    "[u ni-vó úz-ka-ye li-tsó]",
+    3,
+    tags=["appearance", "face"],
+)
+add(
+    "physical_description",
+    "У неё краси́вая улы́бка.",
+    "She has a beautiful smile.",
+    "[u ni-yó kra-sí-va-ya u-lýb-ka]",
+    2,
+    tags=["appearance", "smile"],
+)
+add(
+    "physical_description",
+    "У него́ до́брый взгляд.",
+    "He has a kind look.",
+    "[u ni-vó dób-ryy vzglyad]",
+    3,
+    tags=["appearance", "face"],
+)
+add(
+    "physical_description",
+    "У неё приве́тливая улы́бка.",
+    "She has a welcoming smile.",
+    "[u ni-yó pri-vyét-li-va-ya u-lýb-ka]",
+    3,
+    tags=["appearance", "smile"],
+)
+add(
+    "physical_description",
+    "Он похо́ж на па́пу.",
+    "He looks like his dad.",
+    "[on pa-hózh na pá-pu]",
+    2,
+    tags=["appearance", "family", "resemblance"],
+)
+add(
+    "physical_description",
+    "Она́ похо́жа на ма́му.",
+    "She looks like her mom.",
+    "[a-ná pa-hó-zha na má-mu]",
+    2,
+    tags=["appearance", "family", "resemblance"],
+)
+add(
+    "physical_description",
+    "У него́ большо́й дли́нный нос.",
+    "He has a big long nose.",
+    "[u ni-vó bal'-shóy dlín-nyy nos]",
+    3,
+    recognize=True,
+    tags=["appearance", "face", "listening"],
 )
 
 # --- CAN, WANT & NEED (modal survival patterns) ---
