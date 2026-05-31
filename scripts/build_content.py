@@ -290,6 +290,37 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "lawyer_small_talk",
+        "setting": "Lawyer / Missouri small talk",
+        "goal": "Answer profile questions naturally and keep the lawyer details safe.",
+        "required_items": ["smal001", "smal002", "smal003", "poli009"],
+        "success_criteria": [
+            "answers_host_questions",
+            "handles_follow_up",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "noisy_table",
+        "setting": "Noisy table role-play",
+        "goal": "Recover and keep confidence when relatives speak quickly around table noise.",
+        "required_items": [
+            "list002",
+            "list003",
+            "list005",
+            "list006",
+            "poli010",
+            "poli011",
+            "poli012",
+        ],
+        "success_criteria": [
+            "answers_host_questions",
+            "stays_in_russian",
+            "recovers_from_unknown",
+            "uses_repair_lines",
+        ],
+    },
+    {
         "id": "how_we_met",
         "setting": "How we met",
         "goal": "Tell a short, confident story and answer one follow-up.",

@@ -19,6 +19,7 @@ class BrowserFlowContractTests(unittest.TestCase):
             "#/home",
             "#/learn",
             "#/plan",
+            "--offline",
             "assertOfflinePackCachesCore",
             "zastolom-offline-pack",
             "core 8/8",
@@ -26,7 +27,7 @@ class BrowserFlowContractTests(unittest.TestCase):
             "assertLessonLockedRecognition",
             "Practice is constrained to Lesson 1",
             "PHRASES UNLOCKED",
-            "prompted.lesson_number > expected.lessonNumber",
+            "prompted.lessonNumber > expected.lessonNumber",
             "data-item-id",
             "data-lesson-number",
             "dataset.itemId",
@@ -51,6 +52,10 @@ class BrowserFlowContractTests(unittest.TestCase):
             "stageRepairFocusSeen",
             "checkRepairFocusState",
             "assertRoleplayTutorPanel",
+            "Role-play card missing scenario binding",
+            "listening ladder",
+            "Listening control missing",
+            "dataset.scenarioId",
             "assertDictationAcceptedResponse",
             "assertBacktranslateAcceptedResponse",
             "dictation-accepted",
@@ -80,6 +85,8 @@ class BrowserFlowContractTests(unittest.TestCase):
             "browser_flow_check.mjs",
             'sub.add_parser("flow")',
             'elif args.cmd == "flow"',
+            'fl.add_argument("--offline"',
+            'pr.add_argument("--offline"',
         ):
             self.assertIn(token, self.cli)
 
