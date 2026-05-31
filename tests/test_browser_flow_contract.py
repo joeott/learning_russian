@@ -49,6 +49,7 @@ class BrowserFlowContractTests(unittest.TestCase):
             "stageSeen",
             "stageRepairFocusSeen",
             "checkRepairFocusState",
+            "assertRoleplayTutorPanel",
             "roleplayCriteriaMissed",
             "assertRepairQueueStartsRound",
             "repair queue",
@@ -58,6 +59,9 @@ class BrowserFlowContractTests(unittest.TestCase):
             "REPAIR PROFILE",
             ".repairprofile__row",
             "repair profile did not render persisted repair-focus history",
+            "Role-play tutor button",
+            "tutorPromptText",
+            "curriculum boundary",
             "repair focus:",
             'serviceWorkers: "block"',
         ):

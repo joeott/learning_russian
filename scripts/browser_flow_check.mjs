@@ -406,6 +406,52 @@ async function checkRepairFocusState(page, stageKey) {
   }
 }
 
+async function assertRoleplayTutorPanel(page, baseUrl) {
+  await page.goto(withHash(baseUrl, "#/quiz/roleplay"), { waitUntil: "networkidle" });
+  await page.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 5000 });
+  const roleplayState = await page.locator(".quiz").evaluate((el) => ({
+    itemId: el.dataset.itemId,
+    lessonNumber: Number(el.dataset.lessonNumber || 0),
+  }));
+  if (!roleplayState.itemId) {
+    throw new Error("Role-play card missing item id for tutor setup verification");
+  }
+  const beforeOpenCount = await page.evaluate((itemId) => {
+    const ns = window.CONTENT_DATA.course.storage_namespace;
+    const store = JSON.parse(localStorage.getItem(ns) || "{}");
+    return (store[itemId] && store[itemId].tutor_prompt_opens) || 0;
+  }, roleplayState.itemId);
+  const tutorButton = page.getByRole("button", { name: /Tutor setup/i });
+  if (!(await tutorButton.count())) {
+    throw new Error("Role-play tutor button missing; lesson-constrained tutor prompt unavailable");
+  }
+  await tutorButton.click();
+  await page.waitForFunction(() => {
+    const panel = document.querySelector("#tutorPanel .tutorbox");
+    return panel && panel.innerText.toLowerCase().includes("lesson-constrained ai tutor");
+  }, { timeout: 3000 });
+  const panelText = (await page.locator("#tutorPanel").innerText()).toLowerCase();
+  const promptText = (await page.locator("#tutorPromptText").inputValue()).toLowerCase();
+  const expectedBoundary = `lesson ${roleplayState.lessonNumber || 1}`;
+  if (!panelText.includes(expectedBoundary)) {
+    throw new Error(`Tutor prompt did not include lesson boundary ${expectedBoundary}`);
+  }
+  if (!promptText.includes("curriculum boundary")) {
+    throw new Error("Tutor prompt did not preserve curriculum-boundary constraint");
+  }
+  const afterOpenCount = await page.evaluate((itemId) => {
+    const ns = window.CONTENT_DATA.course.storage_namespace;
+    const store = JSON.parse(localStorage.getItem(ns) || "{}");
+    return (store[itemId] && store[itemId].tutor_prompt_opens) || 0;
+  }, roleplayState.itemId);
+  if (afterOpenCount <= beforeOpenCount) {
+    throw new Error(`Tutor setup did not persist open count for ${roleplayState.itemId}`);
+  }
+  if (!(await page.locator("#tutorPromptText").count())) {
+    throw new Error("Tutor panel did not render raw prompt text");
+  }
+}
+
 export async function runFlowCheck(opts) {
   const { chromium } = await importPlaywright();
   await fs.mkdir(opts.out, { recursive: true });
@@ -507,6 +553,7 @@ export async function runFlowCheck(opts) {
     completed.push("listen");
 
     await checkStage(page, opts.url, "roleplay", async () => {
+      await assertRoleplayTutorPanel(page, opts.url);
       await page.getByRole("button", { name: /Reveal model answer/i }).click();
       await page.getByRole("button", { name: /Needs repair/i }).click();
     });
