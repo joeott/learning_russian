@@ -456,7 +456,20 @@
     save();
   }
   function errorButtons(it) {
-    const ids = (it.error_types && it.error_types.length ? it.error_types : ["forgot_phrase", "stress"]).slice(0, 5);
+    const itemErrors = it.error_types && it.error_types.length ? it.error_types : [];
+    const byStage = {
+      recognition: ["forgot_phrase", "cultural_usage", "register"],
+      recall: ["forgot_phrase", "word_order", "register"],
+      produce: ["forgot_phrase", "stress", "gendered_form", "case_or_inflection", "word_order"],
+      listen: ["listening_misparse", "stress", "vowel_reduction", "forgot_phrase"],
+      roleplay: ["forgot_phrase", "register", "cultural_usage", "gendered_form"],
+    };
+    const preferred = byStage[quiz.stageKey] || ["forgot_phrase"];
+    let ids = preferred
+      .filter(id => id === "forgot_phrase" || itemErrors.includes(id))
+      .filter((id, idx, all) => all.indexOf(id) === idx && ERROR_BY_ID[id])
+      .slice(0, 5);
+    if (!ids.length) ids = ["forgot_phrase"];
     return `<div class="errorpick"><span>What failed?</span>${ids.map(id => `<button class="chip" onclick="ZS.markError('${it.id}','${quiz.stageKey}','${id}')">${escapeHtml((ERROR_BY_ID[id] && ERROR_BY_ID[id].label) || id)}</button>`).join("")}</div>`;
   }
   function showFeedback(ok, it, extra) {
