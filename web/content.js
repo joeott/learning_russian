@@ -54,9 +54,10 @@ window.CONTENT_DATA = {
       "smalltalk": 9,
       "listening": 9,
       "calendar_weather": 19,
+      "travel_budva": 14,
       "verbs": 10
     },
-    "total_items": 128
+    "total_items": 142
   },
   "curriculum": {
     "model": "lesson_locked_i_plus_1",
@@ -759,6 +760,132 @@ window.CONTENT_DATA = {
       {
         "lesson_id": "family_visit_009",
         "lesson_number": 9,
+        "module": "travel_budva",
+        "title": "Budva Trip",
+        "introduced_lexemes": [
+          "будве",
+          "будву",
+          "будем",
+          "в",
+          "где",
+          "где наш отель?",
+          "где пляж?",
+          "город",
+          "до",
+          "едем",
+          "ехать",
+          "здесь",
+          "красивое",
+          "красивый",
+          "можно",
+          "можно такси?",
+          "море",
+          "море очень красивое.",
+          "моря",
+          "мы",
+          "мы будем в будве.",
+          "мы будем в черногории.",
+          "мы едем в будву.",
+          "мы здесь с семьёй.",
+          "мы отдыхаем.",
+          "мы хотим поужинать.",
+          "наш",
+          "отдыхаем",
+          "отель",
+          "отеля",
+          "очень",
+          "пляж",
+          "погулять",
+          "пожалуйста",
+          "поужинать",
+          "с",
+          "семьёй",
+          "сколько",
+          "сколько ехать до отеля?",
+          "старый",
+          "старый город очень красивый.",
+          "счёт",
+          "счёт, пожалуйста.",
+          "такси",
+          "у",
+          "хотим",
+          "хочу",
+          "черногории",
+          "я",
+          "я хочу погулять у моря."
+        ],
+        "active_vocab": [
+          "будве",
+          "будву",
+          "будем",
+          "в",
+          "город",
+          "едем",
+          "здесь",
+          "красивое",
+          "красивый",
+          "можно",
+          "можно такси?",
+          "море",
+          "море очень красивое.",
+          "моря",
+          "мы",
+          "мы будем в будве.",
+          "мы будем в черногории.",
+          "мы едем в будву.",
+          "мы здесь с семьёй.",
+          "мы отдыхаем.",
+          "мы хотим поужинать.",
+          "отдыхаем",
+          "очень",
+          "погулять",
+          "пожалуйста",
+          "поужинать",
+          "с",
+          "семьёй",
+          "старый",
+          "старый город очень красивый.",
+          "счёт",
+          "счёт, пожалуйста.",
+          "такси",
+          "у",
+          "хотим",
+          "хочу",
+          "черногории",
+          "я",
+          "я хочу погулять у моря."
+        ],
+        "passive_vocab": [
+          "где",
+          "где наш отель?",
+          "где пляж?",
+          "до",
+          "ехать",
+          "наш",
+          "отель",
+          "отеля",
+          "пляж",
+          "сколько",
+          "сколько ехать до отеля?"
+        ],
+        "introduced_structures": [
+          "grammar:prepositional_place",
+          "lexical:travel_vocab",
+          "phrase:place_description",
+          "phrase:travel_logistics",
+          "skill:listening_question_recognition"
+        ],
+        "allowed_error_types": [
+          "listening_misparse",
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_008"
+        ]
+      },
+      {
+        "lesson_id": "family_visit_010",
+        "lesson_number": 10,
         "module": "verbs",
         "title": "Core Verbs (reactivation)",
         "introduced_lexemes": [
@@ -835,7 +962,7 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_008"
+          "family_visit_009"
         ]
       }
     ]
@@ -906,12 +1033,20 @@ window.CONTENT_DATA = {
       "order": 7
     },
     {
+      "id": "travel_budva",
+      "title": "Budva Trip",
+      "why": "Montenegro travel phrases for airport, hotel, beach, and old-town plans.",
+      "priority": 2,
+      "icon": "🧳",
+      "order": 8
+    },
+    {
       "id": "verbs",
       "title": "Core Verbs (reactivation)",
       "why": "High-frequency verbs from Ekaterina's guide — я / вы forms.",
       "priority": 3,
       "icon": "⚙️",
-      "order": 8
+      "order": 9
     }
   ],
   "items": [
@@ -6497,6 +6632,720 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "trav001",
+      "module": "travel_budva",
+      "ru": "Мы е́дем в Бу́дву.",
+      "ru_plain": "Мы едем в Будву.",
+      "en": "We're going to Budva.",
+      "hint": "[my yé-dem v búd-vu]",
+      "priority": 2,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "travel",
+        "budva"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "будву",
+        "в",
+        "едем",
+        "мы",
+        "мы едем в будву."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav002",
+      "module": "travel_budva",
+      "ru": "Мы бу́дем в Черного́рии.",
+      "ru_plain": "Мы будем в Черногории.",
+      "en": "We'll be in Montenegro.",
+      "hint": "[my bú-dem f chir-na-gó-ri-i]",
+      "priority": 2,
+      "syllables": 8,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "travel",
+        "montenegro"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "будем",
+        "в",
+        "мы",
+        "мы будем в черногории.",
+        "черногории"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav003",
+      "module": "travel_budva",
+      "ru": "Мы бу́дем в Бу́две.",
+      "ru_plain": "Мы будем в Будве.",
+      "en": "We'll be in Budva.",
+      "hint": "[my bú-dem v búd-vye]",
+      "priority": 2,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "travel",
+        "budva"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "будве",
+        "будем",
+        "в",
+        "мы",
+        "мы будем в будве."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav004",
+      "module": "travel_budva",
+      "ru": "Где на́ш о́тель?",
+      "ru_plain": "Где наш отель?",
+      "en": "Where is our hotel?",
+      "hint": "[gdye nash ó-tel']",
+      "priority": 2,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "hotel",
+        "travel"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "где",
+        "где наш отель?",
+        "наш",
+        "отель"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav005",
+      "module": "travel_budva",
+      "ru": "Мо́жно такси́?",
+      "ru_plain": "Можно такси?",
+      "en": "Can we get a taxi?",
+      "hint": "[mózh-na tak-sí]",
+      "priority": 2,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "taxi",
+        "travel"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "можно",
+        "можно такси?",
+        "такси"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav006",
+      "module": "travel_budva",
+      "ru": "Ско́лько е́хать до о́теля?",
+      "ru_plain": "Сколько ехать до отеля?",
+      "en": "How long is the ride to the hotel?",
+      "hint": "[skól'-ka yé-hat' da ó-te-lya]",
+      "priority": 2,
+      "syllables": 8,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "taxi",
+        "hotel",
+        "travel"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "до",
+        "ехать",
+        "отеля",
+        "сколько",
+        "сколько ехать до отеля?"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav007",
+      "module": "travel_budva",
+      "ru": "Где пляж?",
+      "ru_plain": "Где пляж?",
+      "en": "Where is the beach?",
+      "hint": "[gdye plyazh]",
+      "priority": 2,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "beach",
+        "travel"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "где",
+        "где пляж?",
+        "пляж"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav008",
+      "module": "travel_budva",
+      "ru": "Я хочу́ погуля́ть у мо́ря.",
+      "ru_plain": "Я хочу погулять у моря.",
+      "en": "I want to walk by the sea.",
+      "hint": "[ya ha-chú pa-gu-lyát' u mó-rya]",
+      "priority": 2,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "sea",
+        "plans"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "моря",
+        "погулять",
+        "у",
+        "хочу",
+        "я",
+        "я хочу погулять у моря."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav009",
+      "module": "travel_budva",
+      "ru": "Ста́рый го́род о́чень краси́вый.",
+      "ru_plain": "Старый город очень красивый.",
+      "en": "The old town is very beautiful.",
+      "hint": "[stá-ryy gó-rat ó-chen' kra-sí-vyy]",
+      "priority": 2,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "old_town",
+        "budva"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "город",
+        "красивый",
+        "очень",
+        "старый",
+        "старый город очень красивый."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav010",
+      "module": "travel_budva",
+      "ru": "Мо́ре о́чень краси́вое.",
+      "ru_plain": "Море очень красивое.",
+      "en": "The sea is very beautiful.",
+      "hint": "[mó-re ó-chen' kra-sí-va-ye]",
+      "priority": 2,
+      "syllables": 8,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "sea",
+        "budva"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "красивое",
+        "море",
+        "море очень красивое.",
+        "очень"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav011",
+      "module": "travel_budva",
+      "ru": "Мы отдыха́ем.",
+      "ru_plain": "Мы отдыхаем.",
+      "en": "We're relaxing / on vacation.",
+      "hint": "[my at-dy-há-yem]",
+      "priority": 2,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "plans",
+        "travel"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "мы",
+        "мы отдыхаем.",
+        "отдыхаем"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav012",
+      "module": "travel_budva",
+      "ru": "Мы здесь с семьёй.",
+      "ru_plain": "Мы здесь с семьёй.",
+      "en": "We're here with family.",
+      "hint": "[my zdyes' s sim-yóy]",
+      "priority": 2,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "family",
+        "travel"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "здесь",
+        "мы",
+        "мы здесь с семьёй.",
+        "с",
+        "семьёй"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav013",
+      "module": "travel_budva",
+      "ru": "Счёт, пожа́луйста.",
+      "ru_plain": "Счёт, пожалуйста.",
+      "en": "The check, please.",
+      "hint": "[shchyot pa-zhá-luy-sta]",
+      "priority": 2,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "restaurant",
+        "travel"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "пожалуйста",
+        "счёт",
+        "счёт, пожалуйста."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "trav014",
+      "module": "travel_budva",
+      "ru": "Мы хоти́м поу́жинать.",
+      "ru_plain": "Мы хотим поужинать.",
+      "en": "We want to have dinner.",
+      "hint": "[my ha-tím pa-ú-zhi-nat']",
+      "priority": 2,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "restaurant",
+        "plans"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "мы",
+        "мы хотим поужинать.",
+        "поужинать",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
       "id": "verb001",
       "module": "verbs",
       "ru": "хочу́ / хоти́те",
@@ -6535,10 +7384,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6580,10 +7429,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6625,10 +7474,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6670,10 +7519,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6715,10 +7564,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6760,10 +7609,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6805,10 +7654,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6850,10 +7699,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6895,10 +7744,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     },
     {
@@ -6940,10 +7789,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "prerequisites": [
-        "family_visit_008"
+        "family_visit_009"
       ]
     }
   ],
@@ -9778,11 +10627,583 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "cloze_trav001_01",
+      "item_id": "trav001",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы е́дем в Бу́дву.",
+      "ru_plain": "Мы едем в Будву.",
+      "prompt_ru": "Мы едем в ____.",
+      "answer": "Будву",
+      "accepted_answers": [
+        "Бу́дву",
+        "Будву"
+      ],
+      "en": "We're going to Budva.",
+      "priority": 2,
+      "lexemes": [
+        "будву",
+        "в",
+        "едем",
+        "мы",
+        "мы едем в будву."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "budva",
+        "cloze",
+        "travel"
+      ]
+    },
+    {
+      "id": "cloze_trav002_01",
+      "item_id": "trav002",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы бу́дем в Черного́рии.",
+      "ru_plain": "Мы будем в Черногории.",
+      "prompt_ru": "Мы будем в ____.",
+      "answer": "Черногории",
+      "accepted_answers": [
+        "Черного́рии",
+        "Черногории"
+      ],
+      "en": "We'll be in Montenegro.",
+      "priority": 2,
+      "lexemes": [
+        "будем",
+        "в",
+        "мы",
+        "мы будем в черногории.",
+        "черногории"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "montenegro",
+        "travel"
+      ]
+    },
+    {
+      "id": "cloze_trav003_01",
+      "item_id": "trav003",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы бу́дем в Бу́две.",
+      "ru_plain": "Мы будем в Будве.",
+      "prompt_ru": "Мы ____ в Будве.",
+      "answer": "будем",
+      "accepted_answers": [
+        "бу́дем",
+        "будем"
+      ],
+      "en": "We'll be in Budva.",
+      "priority": 2,
+      "lexemes": [
+        "будве",
+        "будем",
+        "в",
+        "мы",
+        "мы будем в будве."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "budva",
+        "cloze",
+        "travel"
+      ]
+    },
+    {
+      "id": "cloze_trav004_01",
+      "item_id": "trav004",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Где на́ш о́тель?",
+      "ru_plain": "Где наш отель?",
+      "prompt_ru": "Где наш ____?",
+      "answer": "отель",
+      "accepted_answers": [
+        "о́тель",
+        "отель"
+      ],
+      "en": "Where is our hotel?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где наш отель?",
+        "наш",
+        "отель"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "hotel",
+        "travel"
+      ]
+    },
+    {
+      "id": "cloze_trav005_01",
+      "item_id": "trav005",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мо́жно такси́?",
+      "ru_plain": "Можно такси?",
+      "prompt_ru": "____ такси?",
+      "answer": "Можно",
+      "accepted_answers": [
+        "Мо́жно",
+        "Можно"
+      ],
+      "en": "Can we get a taxi?",
+      "priority": 2,
+      "lexemes": [
+        "можно",
+        "можно такси?",
+        "такси"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "taxi",
+        "travel"
+      ]
+    },
+    {
+      "id": "cloze_trav006_01",
+      "item_id": "trav006",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ско́лько е́хать до о́теля?",
+      "ru_plain": "Сколько ехать до отеля?",
+      "prompt_ru": "____ ехать до отеля?",
+      "answer": "Сколько",
+      "accepted_answers": [
+        "Ско́лько",
+        "Сколько"
+      ],
+      "en": "How long is the ride to the hotel?",
+      "priority": 2,
+      "lexemes": [
+        "до",
+        "ехать",
+        "отеля",
+        "сколько",
+        "сколько ехать до отеля?"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "hotel",
+        "taxi",
+        "travel"
+      ]
+    },
+    {
+      "id": "cloze_trav007_01",
+      "item_id": "trav007",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Где пляж?",
+      "ru_plain": "Где пляж?",
+      "prompt_ru": "Где ____?",
+      "answer": "пляж",
+      "accepted_answers": [
+        "пляж"
+      ],
+      "en": "Where is the beach?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где пляж?",
+        "пляж"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "beach",
+        "cloze",
+        "travel"
+      ]
+    },
+    {
+      "id": "cloze_trav008_01",
+      "item_id": "trav008",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я хочу́ погуля́ть у мо́ря.",
+      "ru_plain": "Я хочу погулять у моря.",
+      "prompt_ru": "Я хочу ____ у моря.",
+      "answer": "погулять",
+      "accepted_answers": [
+        "погуля́ть",
+        "погулять"
+      ],
+      "en": "I want to walk by the sea.",
+      "priority": 2,
+      "lexemes": [
+        "моря",
+        "погулять",
+        "у",
+        "хочу",
+        "я",
+        "я хочу погулять у моря."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "plans",
+        "sea"
+      ]
+    },
+    {
+      "id": "cloze_trav009_01",
+      "item_id": "trav009",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ста́рый го́род о́чень краси́вый.",
+      "ru_plain": "Старый город очень красивый.",
+      "prompt_ru": "Старый город очень ____.",
+      "answer": "красивый",
+      "accepted_answers": [
+        "краси́вый",
+        "красивый"
+      ],
+      "en": "The old town is very beautiful.",
+      "priority": 2,
+      "lexemes": [
+        "город",
+        "красивый",
+        "очень",
+        "старый",
+        "старый город очень красивый."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "budva",
+        "cloze",
+        "old_town"
+      ]
+    },
+    {
+      "id": "cloze_trav010_01",
+      "item_id": "trav010",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мо́ре о́чень краси́вое.",
+      "ru_plain": "Море очень красивое.",
+      "prompt_ru": "Море очень ____.",
+      "answer": "красивое",
+      "accepted_answers": [
+        "краси́вое",
+        "красивое"
+      ],
+      "en": "The sea is very beautiful.",
+      "priority": 2,
+      "lexemes": [
+        "красивое",
+        "море",
+        "море очень красивое.",
+        "очень"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "budva",
+        "cloze",
+        "sea"
+      ]
+    },
+    {
+      "id": "cloze_trav011_01",
+      "item_id": "trav011",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы отдыха́ем.",
+      "ru_plain": "Мы отдыхаем.",
+      "prompt_ru": "Мы ____.",
+      "answer": "отдыхаем",
+      "accepted_answers": [
+        "отдыха́ем",
+        "отдыхаем"
+      ],
+      "en": "We're relaxing / on vacation.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "мы отдыхаем.",
+        "отдыхаем"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "plans",
+        "travel"
+      ]
+    },
+    {
+      "id": "cloze_trav012_01",
+      "item_id": "trav012",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы здесь с семьёй.",
+      "ru_plain": "Мы здесь с семьёй.",
+      "prompt_ru": "Мы здесь с ____.",
+      "answer": "семьёй",
+      "accepted_answers": [
+        "семьёй"
+      ],
+      "en": "We're here with family.",
+      "priority": 2,
+      "lexemes": [
+        "здесь",
+        "мы",
+        "мы здесь с семьёй.",
+        "с",
+        "семьёй"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "family",
+        "travel"
+      ]
+    },
+    {
+      "id": "cloze_trav013_01",
+      "item_id": "trav013",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Счёт, пожа́луйста.",
+      "ru_plain": "Счёт, пожалуйста.",
+      "prompt_ru": "Счёт, ____.",
+      "answer": "пожалуйста",
+      "accepted_answers": [
+        "пожа́луйста",
+        "пожалуйста"
+      ],
+      "en": "The check, please.",
+      "priority": 2,
+      "lexemes": [
+        "пожалуйста",
+        "счёт",
+        "счёт, пожалуйста."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "restaurant",
+        "travel"
+      ]
+    },
+    {
+      "id": "cloze_trav014_01",
+      "item_id": "trav014",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы хоти́м поу́жинать.",
+      "ru_plain": "Мы хотим поужинать.",
+      "prompt_ru": "Мы хотим ____.",
+      "answer": "поужинать",
+      "accepted_answers": [
+        "поу́жинать",
+        "поужинать"
+      ],
+      "en": "We want to have dinner.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "мы хотим поужинать.",
+        "поужинать",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "plans",
+        "restaurant"
+      ]
+    },
+    {
       "id": "cloze_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "prompt_ru": "хочу / ____",
@@ -9817,8 +11238,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "prompt_ru": "могу / ____",
@@ -9853,8 +11274,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "prompt_ru": "говорю / ____",
@@ -9889,8 +11310,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "prompt_ru": "понимаю / ____",
@@ -9925,8 +11346,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "prompt_ru": "люблю / ____",
@@ -9961,8 +11382,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "prompt_ru": "работаю / ____",
@@ -9997,8 +11418,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "prompt_ru": "живу / ____",
@@ -10032,8 +11453,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "prompt_ru": "ем / ____",
@@ -10068,8 +11489,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "prompt_ru": "пью / ____",
@@ -10103,8 +11524,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "prompt_ru": "знаю / ____",
@@ -14495,11 +15916,605 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "dict_trav001_01",
+      "item_id": "trav001",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы е́дем в Бу́дву.",
+      "ru_plain": "Мы едем в Будву.",
+      "accepted_answers": [
+        "Мы е́дем в Бу́дву.",
+        "Мы едем в Будву."
+      ],
+      "en": "We're going to Budva.",
+      "priority": 2,
+      "lexemes": [
+        "будву",
+        "в",
+        "едем",
+        "мы",
+        "мы едем в будву."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "budva",
+        "dictation",
+        "travel"
+      ]
+    },
+    {
+      "id": "dict_trav002_01",
+      "item_id": "trav002",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы бу́дем в Черного́рии.",
+      "ru_plain": "Мы будем в Черногории.",
+      "accepted_answers": [
+        "Мы бу́дем в Черного́рии.",
+        "Мы будем в Черногории."
+      ],
+      "en": "We'll be in Montenegro.",
+      "priority": 2,
+      "lexemes": [
+        "будем",
+        "в",
+        "мы",
+        "мы будем в черногории.",
+        "черногории"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "montenegro",
+        "travel"
+      ]
+    },
+    {
+      "id": "dict_trav003_01",
+      "item_id": "trav003",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы бу́дем в Бу́две.",
+      "ru_plain": "Мы будем в Будве.",
+      "accepted_answers": [
+        "Мы бу́дем в Бу́две.",
+        "Мы будем в Будве."
+      ],
+      "en": "We'll be in Budva.",
+      "priority": 2,
+      "lexemes": [
+        "будве",
+        "будем",
+        "в",
+        "мы",
+        "мы будем в будве."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "budva",
+        "dictation",
+        "travel"
+      ]
+    },
+    {
+      "id": "dict_trav004_01",
+      "item_id": "trav004",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Где на́ш о́тель?",
+      "ru_plain": "Где наш отель?",
+      "accepted_answers": [
+        "Где на́ш о́тель?",
+        "Где наш отель?"
+      ],
+      "en": "Where is our hotel?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где наш отель?",
+        "наш",
+        "отель"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "hotel",
+        "travel"
+      ]
+    },
+    {
+      "id": "dict_trav005_01",
+      "item_id": "trav005",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мо́жно такси́?",
+      "ru_plain": "Можно такси?",
+      "accepted_answers": [
+        "Мо́жно такси́?",
+        "Можно такси?"
+      ],
+      "en": "Can we get a taxi?",
+      "priority": 2,
+      "lexemes": [
+        "можно",
+        "можно такси?",
+        "такси"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "taxi",
+        "travel"
+      ]
+    },
+    {
+      "id": "dict_trav006_01",
+      "item_id": "trav006",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ско́лько е́хать до о́теля?",
+      "ru_plain": "Сколько ехать до отеля?",
+      "accepted_answers": [
+        "Ско́лько е́хать до о́теля?",
+        "Сколько ехать до отеля?"
+      ],
+      "en": "How long is the ride to the hotel?",
+      "priority": 2,
+      "lexemes": [
+        "до",
+        "ехать",
+        "отеля",
+        "сколько",
+        "сколько ехать до отеля?"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "hotel",
+        "taxi",
+        "travel"
+      ]
+    },
+    {
+      "id": "dict_trav007_01",
+      "item_id": "trav007",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Где пляж?",
+      "ru_plain": "Где пляж?",
+      "accepted_answers": [
+        "Где пляж?"
+      ],
+      "en": "Where is the beach?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где пляж?",
+        "пляж"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "beach",
+        "dictation",
+        "travel"
+      ]
+    },
+    {
+      "id": "dict_trav008_01",
+      "item_id": "trav008",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я хочу́ погуля́ть у мо́ря.",
+      "ru_plain": "Я хочу погулять у моря.",
+      "accepted_answers": [
+        "Я хочу погулять у моря.",
+        "Я хочу́ погуля́ть у мо́ря."
+      ],
+      "en": "I want to walk by the sea.",
+      "priority": 2,
+      "lexemes": [
+        "моря",
+        "погулять",
+        "у",
+        "хочу",
+        "я",
+        "я хочу погулять у моря."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "plans",
+        "sea"
+      ]
+    },
+    {
+      "id": "dict_trav009_01",
+      "item_id": "trav009",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ста́рый го́род о́чень краси́вый.",
+      "ru_plain": "Старый город очень красивый.",
+      "accepted_answers": [
+        "Ста́рый го́род о́чень краси́вый.",
+        "Старый город очень красивый."
+      ],
+      "en": "The old town is very beautiful.",
+      "priority": 2,
+      "lexemes": [
+        "город",
+        "красивый",
+        "очень",
+        "старый",
+        "старый город очень красивый."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "budva",
+        "dictation",
+        "old_town"
+      ]
+    },
+    {
+      "id": "dict_trav010_01",
+      "item_id": "trav010",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мо́ре о́чень краси́вое.",
+      "ru_plain": "Море очень красивое.",
+      "accepted_answers": [
+        "Мо́ре о́чень краси́вое.",
+        "Море очень красивое."
+      ],
+      "en": "The sea is very beautiful.",
+      "priority": 2,
+      "lexemes": [
+        "красивое",
+        "море",
+        "море очень красивое.",
+        "очень"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "budva",
+        "dictation",
+        "sea"
+      ]
+    },
+    {
+      "id": "dict_trav011_01",
+      "item_id": "trav011",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы отдыха́ем.",
+      "ru_plain": "Мы отдыхаем.",
+      "accepted_answers": [
+        "Мы отдыха́ем.",
+        "Мы отдыхаем."
+      ],
+      "en": "We're relaxing / on vacation.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "мы отдыхаем.",
+        "отдыхаем"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "plans",
+        "travel"
+      ]
+    },
+    {
+      "id": "dict_trav012_01",
+      "item_id": "trav012",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы здесь с семьёй.",
+      "ru_plain": "Мы здесь с семьёй.",
+      "accepted_answers": [
+        "Мы здесь с семьёй."
+      ],
+      "en": "We're here with family.",
+      "priority": 2,
+      "lexemes": [
+        "здесь",
+        "мы",
+        "мы здесь с семьёй.",
+        "с",
+        "семьёй"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "family",
+        "travel"
+      ]
+    },
+    {
+      "id": "dict_trav013_01",
+      "item_id": "trav013",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Счёт, пожа́луйста.",
+      "ru_plain": "Счёт, пожалуйста.",
+      "accepted_answers": [
+        "Счёт, пожа́луйста.",
+        "Счёт, пожалуйста."
+      ],
+      "en": "The check, please.",
+      "priority": 2,
+      "lexemes": [
+        "пожалуйста",
+        "счёт",
+        "счёт, пожалуйста."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "restaurant",
+        "travel"
+      ]
+    },
+    {
+      "id": "dict_trav014_01",
+      "item_id": "trav014",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы хоти́м поу́жинать.",
+      "ru_plain": "Мы хотим поужинать.",
+      "accepted_answers": [
+        "Мы хоти́м поу́жинать.",
+        "Мы хотим поужинать."
+      ],
+      "en": "We want to have dinner.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "мы хотим поужинать.",
+        "поужинать",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "plans",
+        "restaurant"
+      ]
+    },
+    {
       "id": "dict_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "accepted_answers": [
@@ -14536,8 +16551,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "accepted_answers": [
@@ -14574,8 +16589,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "accepted_answers": [
@@ -14612,8 +16627,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "accepted_answers": [
@@ -14650,8 +16665,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "accepted_answers": [
@@ -14688,8 +16703,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "accepted_answers": [
@@ -14726,8 +16741,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "accepted_answers": [
@@ -14764,8 +16779,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "accepted_answers": [
@@ -14802,8 +16817,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "accepted_answers": [
@@ -14839,8 +16854,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "accepted_answers": [
@@ -19166,11 +21181,538 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "stress_trav001_01",
+      "item_id": "trav001",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы е́дем в Бу́дву.",
+      "ru_plain": "Мы едем в Будву.",
+      "options": [
+        "Мы е́дем в Бу́дву.",
+        "Мы е́дем в Будву.",
+        "Мы еде́м в Будву.",
+        "Мы́ едем в Будву."
+      ],
+      "answer": "Мы е́дем в Бу́дву.",
+      "en": "We're going to Budva.",
+      "priority": 2,
+      "lexemes": [
+        "будву",
+        "в",
+        "едем",
+        "мы",
+        "мы едем в будву."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "budva",
+        "stress_drill",
+        "travel"
+      ]
+    },
+    {
+      "id": "stress_trav002_01",
+      "item_id": "trav002",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы бу́дем в Черного́рии.",
+      "ru_plain": "Мы будем в Черногории.",
+      "options": [
+        "Мы бу́дем в Черного́рии.",
+        "Мы бу́дем в Черногории.",
+        "Мы буде́м в Черногории.",
+        "Мы́ будем в Черногории."
+      ],
+      "answer": "Мы бу́дем в Черного́рии.",
+      "en": "We'll be in Montenegro.",
+      "priority": 2,
+      "lexemes": [
+        "будем",
+        "в",
+        "мы",
+        "мы будем в черногории.",
+        "черногории"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "montenegro",
+        "stress_drill",
+        "travel"
+      ]
+    },
+    {
+      "id": "stress_trav003_01",
+      "item_id": "trav003",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы бу́дем в Бу́две.",
+      "ru_plain": "Мы будем в Будве.",
+      "options": [
+        "Мы бу́дем в Бу́две.",
+        "Мы бу́дем в Будве.",
+        "Мы буде́м в Будве.",
+        "Мы́ будем в Будве."
+      ],
+      "answer": "Мы бу́дем в Бу́две.",
+      "en": "We'll be in Budva.",
+      "priority": 2,
+      "lexemes": [
+        "будве",
+        "будем",
+        "в",
+        "мы",
+        "мы будем в будве."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "budva",
+        "stress_drill",
+        "travel"
+      ]
+    },
+    {
+      "id": "stress_trav004_01",
+      "item_id": "trav004",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Где на́ш о́тель?",
+      "ru_plain": "Где наш отель?",
+      "options": [
+        "Где на́ш о́тель?",
+        "Где на́ш отель?",
+        "Где наш о́тель?",
+        "Где́ наш отель?"
+      ],
+      "answer": "Где на́ш о́тель?",
+      "en": "Where is our hotel?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где наш отель?",
+        "наш",
+        "отель"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "hotel",
+        "stress_drill",
+        "travel"
+      ]
+    },
+    {
+      "id": "stress_trav005_01",
+      "item_id": "trav005",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мо́жно такси́?",
+      "ru_plain": "Можно такси?",
+      "options": [
+        "Мо́жно такси?",
+        "Мо́жно такси́?",
+        "Можно та́кси?",
+        "Можно́ такси?"
+      ],
+      "answer": "Мо́жно такси́?",
+      "en": "Can we get a taxi?",
+      "priority": 2,
+      "lexemes": [
+        "можно",
+        "можно такси?",
+        "такси"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "stress_drill",
+        "taxi",
+        "travel"
+      ]
+    },
+    {
+      "id": "stress_trav006_01",
+      "item_id": "trav006",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ско́лько е́хать до о́теля?",
+      "ru_plain": "Сколько ехать до отеля?",
+      "options": [
+        "Ско́лько е́хать до о́теля?",
+        "Ско́лько ехать до отеля?",
+        "Сколько е́хать до отеля?",
+        "Сколько́ ехать до отеля?"
+      ],
+      "answer": "Ско́лько е́хать до о́теля?",
+      "en": "How long is the ride to the hotel?",
+      "priority": 2,
+      "lexemes": [
+        "до",
+        "ехать",
+        "отеля",
+        "сколько",
+        "сколько ехать до отеля?"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "hotel",
+        "stress_drill",
+        "taxi",
+        "travel"
+      ]
+    },
+    {
+      "id": "stress_trav008_01",
+      "item_id": "trav008",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я хочу́ погуля́ть у мо́ря.",
+      "ru_plain": "Я хочу погулять у моря.",
+      "options": [
+        "Я хо́чу погулять у моря.",
+        "Я хочу́ погуля́ть у мо́ря.",
+        "Я хочу́ погулять у моря.",
+        "Я́ хочу погулять у моря."
+      ],
+      "answer": "Я хочу́ погуля́ть у мо́ря.",
+      "en": "I want to walk by the sea.",
+      "priority": 2,
+      "lexemes": [
+        "моря",
+        "погулять",
+        "у",
+        "хочу",
+        "я",
+        "я хочу погулять у моря."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "plans",
+        "sea",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_trav009_01",
+      "item_id": "trav009",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ста́рый го́род о́чень краси́вый.",
+      "ru_plain": "Старый город очень красивый.",
+      "options": [
+        "Ста́рый го́род о́чень краси́вый.",
+        "Ста́рый город очень красивый.",
+        "Стары́й город очень красивый.",
+        "Старый го́род очень красивый."
+      ],
+      "answer": "Ста́рый го́род о́чень краси́вый.",
+      "en": "The old town is very beautiful.",
+      "priority": 2,
+      "lexemes": [
+        "город",
+        "красивый",
+        "очень",
+        "старый",
+        "старый город очень красивый."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "budva",
+        "old_town",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_trav010_01",
+      "item_id": "trav010",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мо́ре о́чень краси́вое.",
+      "ru_plain": "Море очень красивое.",
+      "options": [
+        "Мо́ре о́чень краси́вое.",
+        "Мо́ре очень красивое.",
+        "Море о́чень красивое.",
+        "Море́ очень красивое."
+      ],
+      "answer": "Мо́ре о́чень краси́вое.",
+      "en": "The sea is very beautiful.",
+      "priority": 2,
+      "lexemes": [
+        "красивое",
+        "море",
+        "море очень красивое.",
+        "очень"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "budva",
+        "sea",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_trav011_01",
+      "item_id": "trav011",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы отдыха́ем.",
+      "ru_plain": "Мы отдыхаем.",
+      "options": [
+        "Мы о́тдыхаем.",
+        "Мы отды́хаем.",
+        "Мы отдыха́ем.",
+        "Мы́ отдыхаем."
+      ],
+      "answer": "Мы отдыха́ем.",
+      "en": "We're relaxing / on vacation.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "мы отдыхаем.",
+        "отдыхаем"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "plans",
+        "stress_drill",
+        "travel"
+      ]
+    },
+    {
+      "id": "stress_trav013_01",
+      "item_id": "trav013",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Счёт, пожа́луйста.",
+      "ru_plain": "Счёт, пожалуйста.",
+      "options": [
+        "Счё́т, пожалуйста.",
+        "Счёт, по́жалуйста.",
+        "Счёт, пожа́луйста.",
+        "Счёт, пожалу́йста."
+      ],
+      "answer": "Счёт, пожа́луйста.",
+      "en": "The check, please.",
+      "priority": 2,
+      "lexemes": [
+        "пожалуйста",
+        "счёт",
+        "счёт, пожалуйста."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "restaurant",
+        "stress_drill",
+        "travel"
+      ]
+    },
+    {
+      "id": "stress_trav014_01",
+      "item_id": "trav014",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы хоти́м поу́жинать.",
+      "ru_plain": "Мы хотим поужинать.",
+      "options": [
+        "Мы хо́тим поужинать.",
+        "Мы хоти́м поу́жинать.",
+        "Мы хоти́м поужинать.",
+        "Мы́ хотим поужинать."
+      ],
+      "answer": "Мы хоти́м поу́жинать.",
+      "en": "We want to have dinner.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "мы хотим поужинать.",
+        "поужинать",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "plans",
+        "restaurant",
+        "stress_drill"
+      ]
+    },
+    {
       "id": "stress_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "options": [
@@ -19208,8 +21750,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "options": [
@@ -19247,8 +21789,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "options": [
@@ -19286,8 +21828,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "options": [
@@ -19325,8 +21867,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "options": [
@@ -19364,8 +21906,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "options": [
@@ -19403,8 +21945,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "options": [
@@ -19442,8 +21984,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "options": [
@@ -19481,8 +22023,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "options": [
@@ -24566,11 +27108,697 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "pron_trav001_01",
+      "item_id": "trav001",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы е́дем в Бу́дву.",
+      "ru_plain": "Мы едем в Будву.",
+      "en": "We're going to Budva.",
+      "priority": 2,
+      "lexemes": [
+        "будву",
+        "в",
+        "едем",
+        "мы",
+        "мы едем в будву."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "budva",
+        "pronunciation",
+        "travel"
+      ]
+    },
+    {
+      "id": "pron_trav002_01",
+      "item_id": "trav002",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы бу́дем в Черного́рии.",
+      "ru_plain": "Мы будем в Черногории.",
+      "en": "We'll be in Montenegro.",
+      "priority": 2,
+      "lexemes": [
+        "будем",
+        "в",
+        "мы",
+        "мы будем в черногории.",
+        "черногории"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "montenegro",
+        "pronunciation",
+        "travel"
+      ]
+    },
+    {
+      "id": "pron_trav003_01",
+      "item_id": "trav003",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы бу́дем в Бу́две.",
+      "ru_plain": "Мы будем в Будве.",
+      "en": "We'll be in Budva.",
+      "priority": 2,
+      "lexemes": [
+        "будве",
+        "будем",
+        "в",
+        "мы",
+        "мы будем в будве."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "budva",
+        "pronunciation",
+        "travel"
+      ]
+    },
+    {
+      "id": "pron_trav004_01",
+      "item_id": "trav004",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Где на́ш о́тель?",
+      "ru_plain": "Где наш отель?",
+      "en": "Where is our hotel?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где наш отель?",
+        "наш",
+        "отель"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "hotel",
+        "pronunciation",
+        "travel"
+      ]
+    },
+    {
+      "id": "pron_trav005_01",
+      "item_id": "trav005",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мо́жно такси́?",
+      "ru_plain": "Можно такси?",
+      "en": "Can we get a taxi?",
+      "priority": 2,
+      "lexemes": [
+        "можно",
+        "можно такси?",
+        "такси"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "taxi",
+        "travel"
+      ]
+    },
+    {
+      "id": "pron_trav006_01",
+      "item_id": "trav006",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ско́лько е́хать до о́теля?",
+      "ru_plain": "Сколько ехать до отеля?",
+      "en": "How long is the ride to the hotel?",
+      "priority": 2,
+      "lexemes": [
+        "до",
+        "ехать",
+        "отеля",
+        "сколько",
+        "сколько ехать до отеля?"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "hotel",
+        "pronunciation",
+        "taxi",
+        "travel"
+      ]
+    },
+    {
+      "id": "pron_trav007_01",
+      "item_id": "trav007",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Где пляж?",
+      "ru_plain": "Где пляж?",
+      "en": "Where is the beach?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где пляж?",
+        "пляж"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "beach",
+        "pronunciation",
+        "travel"
+      ]
+    },
+    {
+      "id": "pron_trav008_01",
+      "item_id": "trav008",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я хочу́ погуля́ть у мо́ря.",
+      "ru_plain": "Я хочу погулять у моря.",
+      "en": "I want to walk by the sea.",
+      "priority": 2,
+      "lexemes": [
+        "моря",
+        "погулять",
+        "у",
+        "хочу",
+        "я",
+        "я хочу погулять у моря."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "plans",
+        "pronunciation",
+        "sea"
+      ]
+    },
+    {
+      "id": "pron_trav009_01",
+      "item_id": "trav009",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ста́рый го́род о́чень краси́вый.",
+      "ru_plain": "Старый город очень красивый.",
+      "en": "The old town is very beautiful.",
+      "priority": 2,
+      "lexemes": [
+        "город",
+        "красивый",
+        "очень",
+        "старый",
+        "старый город очень красивый."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "budva",
+        "old_town",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_trav010_01",
+      "item_id": "trav010",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мо́ре о́чень краси́вое.",
+      "ru_plain": "Море очень красивое.",
+      "en": "The sea is very beautiful.",
+      "priority": 2,
+      "lexemes": [
+        "красивое",
+        "море",
+        "море очень красивое.",
+        "очень"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "budva",
+        "pronunciation",
+        "sea"
+      ]
+    },
+    {
+      "id": "pron_trav011_01",
+      "item_id": "trav011",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы отдыха́ем.",
+      "ru_plain": "Мы отдыхаем.",
+      "en": "We're relaxing / on vacation.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "мы отдыхаем.",
+        "отдыхаем"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "plans",
+        "pronunciation",
+        "travel"
+      ]
+    },
+    {
+      "id": "pron_trav012_01",
+      "item_id": "trav012",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы здесь с семьёй.",
+      "ru_plain": "Мы здесь с семьёй.",
+      "en": "We're here with family.",
+      "priority": 2,
+      "lexemes": [
+        "здесь",
+        "мы",
+        "мы здесь с семьёй.",
+        "с",
+        "семьёй"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "family",
+        "pronunciation",
+        "travel"
+      ]
+    },
+    {
+      "id": "pron_trav013_01",
+      "item_id": "trav013",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Счёт, пожа́луйста.",
+      "ru_plain": "Счёт, пожалуйста.",
+      "en": "The check, please.",
+      "priority": 2,
+      "lexemes": [
+        "пожалуйста",
+        "счёт",
+        "счёт, пожалуйста."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "restaurant",
+        "travel"
+      ]
+    },
+    {
+      "id": "pron_trav014_01",
+      "item_id": "trav014",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы хоти́м поу́жинать.",
+      "ru_plain": "Мы хотим поужинать.",
+      "en": "We want to have dinner.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "мы хотим поужинать.",
+        "поужинать",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "plans",
+        "pronunciation",
+        "restaurant"
+      ]
+    },
+    {
       "id": "pron_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "en": "I want / you (pl/formal) want — хоте́ть",
@@ -24613,8 +27841,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "en": "I can / you can — мочь",
@@ -24657,8 +27885,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "en": "I speak / you speak — говори́ть",
@@ -24701,8 +27929,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "en": "I understand / you understand — понима́ть",
@@ -24745,8 +27973,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "en": "I love / you love — люби́ть",
@@ -24789,8 +28017,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "en": "I work / you work — рабо́тать",
@@ -24833,8 +28061,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "en": "I live / you live — жить",
@@ -24877,8 +28105,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "en": "I eat / you eat — есть",
@@ -24921,8 +28149,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "en": "I drink / you drink — пить",
@@ -24965,8 +28193,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "en": "I know / you know — знать",
@@ -29615,11 +32843,639 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "back_trav001_01",
+      "item_id": "trav001",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы е́дем в Бу́дву.",
+      "ru_plain": "Мы едем в Будву.",
+      "accepted_answers": [
+        "Мы е́дем в Бу́дву.",
+        "Мы едем в Будву."
+      ],
+      "en": "We're going to Budva.",
+      "priority": 2,
+      "lexemes": [
+        "будву",
+        "в",
+        "едем",
+        "мы",
+        "мы едем в будву."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "budva",
+        "travel"
+      ]
+    },
+    {
+      "id": "back_trav002_01",
+      "item_id": "trav002",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы бу́дем в Черного́рии.",
+      "ru_plain": "Мы будем в Черногории.",
+      "accepted_answers": [
+        "Мы бу́дем в Черного́рии.",
+        "Мы будем в Черногории."
+      ],
+      "en": "We'll be in Montenegro.",
+      "priority": 2,
+      "lexemes": [
+        "будем",
+        "в",
+        "мы",
+        "мы будем в черногории.",
+        "черногории"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "montenegro",
+        "travel"
+      ]
+    },
+    {
+      "id": "back_trav003_01",
+      "item_id": "trav003",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы бу́дем в Бу́две.",
+      "ru_plain": "Мы будем в Будве.",
+      "accepted_answers": [
+        "Мы бу́дем в Бу́две.",
+        "Мы будем в Будве."
+      ],
+      "en": "We'll be in Budva.",
+      "priority": 2,
+      "lexemes": [
+        "будве",
+        "будем",
+        "в",
+        "мы",
+        "мы будем в будве."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "budva",
+        "travel"
+      ]
+    },
+    {
+      "id": "back_trav004_01",
+      "item_id": "trav004",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Где на́ш о́тель?",
+      "ru_plain": "Где наш отель?",
+      "accepted_answers": [
+        "Где на́ш о́тель?",
+        "Где наш отель?"
+      ],
+      "en": "Where is our hotel?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где наш отель?",
+        "наш",
+        "отель"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "hotel",
+        "travel"
+      ]
+    },
+    {
+      "id": "back_trav005_01",
+      "item_id": "trav005",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мо́жно такси́?",
+      "ru_plain": "Можно такси?",
+      "accepted_answers": [
+        "Мо́жно такси́?",
+        "Можно такси?"
+      ],
+      "en": "Can we get a taxi?",
+      "priority": 2,
+      "lexemes": [
+        "можно",
+        "можно такси?",
+        "такси"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "taxi",
+        "travel"
+      ]
+    },
+    {
+      "id": "back_trav006_01",
+      "item_id": "trav006",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ско́лько е́хать до о́теля?",
+      "ru_plain": "Сколько ехать до отеля?",
+      "accepted_answers": [
+        "Ско́лько е́хать до о́теля?",
+        "Сколько ехать до отеля?"
+      ],
+      "en": "How long is the ride to the hotel?",
+      "priority": 2,
+      "lexemes": [
+        "до",
+        "ехать",
+        "отеля",
+        "сколько",
+        "сколько ехать до отеля?"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "hotel",
+        "taxi",
+        "travel"
+      ]
+    },
+    {
+      "id": "back_trav007_01",
+      "item_id": "trav007",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Где пляж?",
+      "ru_plain": "Где пляж?",
+      "accepted_answers": [
+        "Где пляж?"
+      ],
+      "en": "Where is the beach?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где пляж?",
+        "пляж"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "beach",
+        "travel"
+      ]
+    },
+    {
+      "id": "back_trav008_01",
+      "item_id": "trav008",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я хочу́ погуля́ть у мо́ря.",
+      "ru_plain": "Я хочу погулять у моря.",
+      "accepted_answers": [
+        "Я хочу погулять у моря.",
+        "Я хочу́ погуля́ть у мо́ря."
+      ],
+      "en": "I want to walk by the sea.",
+      "priority": 2,
+      "lexemes": [
+        "моря",
+        "погулять",
+        "у",
+        "хочу",
+        "я",
+        "я хочу погулять у моря."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "plans",
+        "sea"
+      ]
+    },
+    {
+      "id": "back_trav009_01",
+      "item_id": "trav009",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ста́рый го́род о́чень краси́вый.",
+      "ru_plain": "Старый город очень красивый.",
+      "accepted_answers": [
+        "Ста́рый го́род о́чень краси́вый.",
+        "Старый город очень красивый."
+      ],
+      "en": "The old town is very beautiful.",
+      "priority": 2,
+      "lexemes": [
+        "город",
+        "красивый",
+        "очень",
+        "старый",
+        "старый город очень красивый."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "budva",
+        "old_town"
+      ]
+    },
+    {
+      "id": "back_trav010_01",
+      "item_id": "trav010",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мо́ре о́чень краси́вое.",
+      "ru_plain": "Море очень красивое.",
+      "accepted_answers": [
+        "Мо́ре о́чень краси́вое.",
+        "Море очень красивое."
+      ],
+      "en": "The sea is very beautiful.",
+      "priority": 2,
+      "lexemes": [
+        "красивое",
+        "море",
+        "море очень красивое.",
+        "очень"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "budva",
+        "sea"
+      ]
+    },
+    {
+      "id": "back_trav011_01",
+      "item_id": "trav011",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы отдыха́ем.",
+      "ru_plain": "Мы отдыхаем.",
+      "accepted_answers": [
+        "Мы отдыха́ем.",
+        "Мы отдыхаем."
+      ],
+      "en": "We're relaxing / on vacation.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "мы отдыхаем.",
+        "отдыхаем"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "plans",
+        "travel"
+      ]
+    },
+    {
+      "id": "back_trav012_01",
+      "item_id": "trav012",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы здесь с семьёй.",
+      "ru_plain": "Мы здесь с семьёй.",
+      "accepted_answers": [
+        "Мы здесь с семьёй."
+      ],
+      "en": "We're here with family.",
+      "priority": 2,
+      "lexemes": [
+        "здесь",
+        "мы",
+        "мы здесь с семьёй.",
+        "с",
+        "семьёй"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "family",
+        "travel"
+      ]
+    },
+    {
+      "id": "back_trav013_01",
+      "item_id": "trav013",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Счёт, пожа́луйста.",
+      "ru_plain": "Счёт, пожалуйста.",
+      "accepted_answers": [
+        "Счёт, пожа́луйста.",
+        "Счёт, пожалуйста."
+      ],
+      "en": "The check, please.",
+      "priority": 2,
+      "lexemes": [
+        "пожалуйста",
+        "счёт",
+        "счёт, пожалуйста."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "restaurant",
+        "travel"
+      ]
+    },
+    {
+      "id": "back_trav014_01",
+      "item_id": "trav014",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Мы хоти́м поу́жинать.",
+      "ru_plain": "Мы хотим поужинать.",
+      "accepted_answers": [
+        "Мы хоти́м поу́жинать.",
+        "Мы хотим поужинать."
+      ],
+      "en": "We want to have dinner.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "мы хотим поужинать.",
+        "поужинать",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "plans",
+        "restaurant"
+      ]
+    },
+    {
       "id": "back_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "accepted_answers": [
@@ -29658,8 +33514,8 @@ window.CONTENT_DATA = {
       "id": "back_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "accepted_answers": [
@@ -29698,8 +33554,8 @@ window.CONTENT_DATA = {
       "id": "back_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "accepted_answers": [
@@ -29738,8 +33594,8 @@ window.CONTENT_DATA = {
       "id": "back_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "accepted_answers": [
@@ -29778,8 +33634,8 @@ window.CONTENT_DATA = {
       "id": "back_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "accepted_answers": [
@@ -29818,8 +33674,8 @@ window.CONTENT_DATA = {
       "id": "back_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "accepted_answers": [
@@ -29858,8 +33714,8 @@ window.CONTENT_DATA = {
       "id": "back_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "accepted_answers": [
@@ -29898,8 +33754,8 @@ window.CONTENT_DATA = {
       "id": "back_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "accepted_answers": [
@@ -29938,8 +33794,8 @@ window.CONTENT_DATA = {
       "id": "back_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "accepted_answers": [
@@ -29977,8 +33833,8 @@ window.CONTENT_DATA = {
       "id": "back_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "accepted_answers": [
@@ -34486,8 +38342,8 @@ window.CONTENT_DATA = {
     {
       "id": "tutor_verb_fluency_check",
       "scenario_id": "verb_fluency_check",
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9,
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
       "setting": "Core verb fluency",
       "goal": "Produce core verbs under real interview-style pressure.",
       "learner_role": "guest",
@@ -34580,7 +38436,8 @@ window.CONTENT_DATA = {
         "family_visit_006",
         "family_visit_007",
         "family_visit_008",
-        "family_visit_009"
+        "family_visit_009",
+        "family_visit_010"
       ],
       "allowed_item_ids": [
         "firs001",
@@ -34701,6 +38558,20 @@ window.CONTENT_DATA = {
         "cale017",
         "cale018",
         "cale019",
+        "trav001",
+        "trav002",
+        "trav003",
+        "trav004",
+        "trav005",
+        "trav006",
+        "trav007",
+        "trav008",
+        "trav009",
+        "trav010",
+        "trav011",
+        "trav012",
+        "trav013",
+        "trav014",
         "verb001",
         "verb002",
         "verb003",
@@ -34720,6 +38591,8 @@ window.CONTENT_DATA = {
         "бокал",
         "большое",
         "брат",
+        "будве",
+        "будву",
         "будем",
         "будем здоровы!",
         "будет",
@@ -34739,6 +38612,7 @@ window.CONTENT_DATA = {
         "говорите",
         "говорю",
         "говорю / говорите",
+        "город",
         "да",
         "да, немного",
         "давайте",
@@ -34758,6 +38632,7 @@ window.CONTENT_DATA = {
         "добрый день",
         "дождь",
         "дочь",
+        "едем",
         "едите",
         "ем",
         "ем / едите",
@@ -34780,6 +38655,7 @@ window.CONTENT_DATA = {
         "за хозяйку!",
         "завтра",
         "завтра будет тепло.",
+        "здесь",
         "здоровы",
         "здоровье",
         "здравствуйте",
@@ -34796,6 +38672,8 @@ window.CONTENT_DATA = {
         "извините",
         "как",
         "как по-русски …?",
+        "красивое",
+        "красивый",
         "любите",
         "люблю",
         "люблю / любите",
@@ -34811,11 +38689,21 @@ window.CONTENT_DATA = {
         "можете",
         "можно",
         "можно ещё?",
+        "можно такси?",
         "можно чаю?",
         "молодых",
+        "море",
+        "море очень красивое.",
+        "моря",
         "муж",
         "мы",
+        "мы будем в будве.",
+        "мы будем в черногории.",
+        "мы едем в будву.",
+        "мы здесь с семьёй.",
+        "мы отдыхаем.",
         "мы познакомились …",
+        "мы хотим поужинать.",
         "на",
         "на выходных",
         "надо",
@@ -34828,6 +38716,7 @@ window.CONTENT_DATA = {
         "ночи",
         "нравится",
         "облачно",
+        "отдыхаем",
         "отлично",
         "очень",
         "очень вкусно!",
@@ -34838,6 +38727,7 @@ window.CONTENT_DATA = {
         "по",
         "повторите",
         "повторите, пожалуйста",
+        "погулять",
         "пожалуйста",
         "познакомились",
         "познакомиться",
@@ -34848,6 +38738,7 @@ window.CONTENT_DATA = {
         "понимаю",
         "понимаю / понимаете",
         "понятно",
+        "поужинать",
         "представиться",
         "пригласили",
         "приняли",
@@ -34872,6 +38763,7 @@ window.CONTENT_DATA = {
         "русски",
         "русский",
         "рюмка",
+        "с",
         "свидания",
         "сегодня",
         "сегодня облачно.",
@@ -34880,6 +38772,7 @@ window.CONTENT_DATA = {
         "сегодня холодно.",
         "семью",
         "семья",
+        "семьёй",
         "сестра",
         "сестра жены",
         "сказать",
@@ -34894,12 +38787,18 @@ window.CONTENT_DATA = {
         "спокойной",
         "спокойной ночи",
         "среда",
+        "старый",
+        "старый город очень красивый.",
         "суббота",
+        "счёт",
+        "счёт, пожалуйста.",
         "сын",
+        "такси",
         "тепло",
         "тесть",
         "тост",
         "тёща",
+        "у",
         "утро",
         "учу",
         "хлеб",
@@ -34908,10 +38807,12 @@ window.CONTENT_DATA = {
         "холодно",
         "хорошо",
         "хорошо, спасибо",
+        "хотим",
         "хотите",
         "хочу",
         "хочу / хотите",
         "чаю",
+        "черногории",
         "четверг",
         "что",
         "штата",
@@ -34928,6 +38829,7 @@ window.CONTENT_DATA = {
         "я не понимаю",
         "я немного говорю по-русски",
         "я понимаю",
+        "я хочу погулять у моря.",
         "я хочу сказать тост за …",
         "я юрист"
       ],
@@ -34941,9 +38843,14 @@ window.CONTENT_DATA = {
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "где",
+        "где наш отель?",
+        "где пляж?",
         "говорите",
         "дела",
         "день",
+        "до",
+        "ехать",
         "ещё",
         "как",
         "как вам россия?",
@@ -34957,12 +38864,16 @@ window.CONTENT_DATA = {
         "кем",
         "кем вы работаете?",
         "на",
+        "наш",
         "недели",
         "нравится",
         "оливье",
+        "отель",
+        "отеля",
         "откуда",
         "откуда вы?",
         "пельмени",
+        "пляж",
         "по",
         "погода",
         "познакомились",
@@ -34970,6 +38881,8 @@ window.CONTENT_DATA = {
         "россия",
         "русски",
         "сегодня",
+        "сколько",
+        "сколько ехать до отеля?",
         "там",
         "улице",
         "чай"
@@ -34979,11 +38892,13 @@ window.CONTENT_DATA = {
         "discourse:politeness",
         "grammar:formal_question",
         "grammar:formal_second_person",
+        "grammar:prepositional_place",
         "grammar:present_first_person",
         "grammar:time_expression",
         "lexical:core_verbs",
         "lexical:days_of_week",
         "lexical:kinship_terms",
+        "lexical:travel_vocab",
         "morphology:gendered_short_form",
         "phrase:calendar_question",
         "phrase:compliment_food",
@@ -34994,10 +38909,12 @@ window.CONTENT_DATA = {
         "phrase:host_question",
         "phrase:introduction",
         "phrase:personal_origin",
+        "phrase:place_description",
         "phrase:polite_decline",
         "phrase:repair",
         "phrase:table_toast",
         "phrase:toast_za_accusative",
+        "phrase:travel_logistics",
         "phrase:weather_answer",
         "phrase:work_identity",
         "phrase:yes_no",
@@ -35017,7 +38934,7 @@ window.CONTENT_DATA = {
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Core verb fluency — Produce core verbs under real interview-style pressure.\nCurriculum boundary: Lesson 9 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- хочу / хотите — I want / you (pl/formal) want — хоте́ть\n- могу / можете — I can / you can — мочь\n- говорю / говорите — I speak / you speak — говори́ть\n- понимаю / понимаете — I understand / you understand — понима́ть\n- люблю / любите — I love / you love — люби́ть\n- работаю / работаете — I work / you work — рабо́тать\n- живу / живёте — I live / you live — жить\n- ем / едите — I eat / you eat — есть\n- пью / пьёте — I drink / you drink — пить\n- знаю / знаете — I know / you know — знать\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Core verb fluency — Produce core verbs under real interview-style pressure.\nCurriculum boundary: Lesson 10 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- хочу / хотите — I want / you (pl/formal) want — хоте́ть\n- могу / можете — I can / you can — мочь\n- говорю / говорите — I speak / you speak — говори́ть\n- понимаю / понимаете — I understand / you understand — понима́ть\n- люблю / любите — I love / you love — люби́ть\n- работаю / работаете — I work / you work — рабо́тать\n- живу / живёте — I live / you live — жить\n- ем / едите — I eat / you eat — есть\n- пью / пьёте — I drink / you drink — пить\n- знаю / знаете — I know / you know — знать\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
       "id": "tutor_extended_family_family_tree",
@@ -36533,6 +40450,574 @@ window.CONTENT_DATA = {
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
       "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Calendar and weather check-in — Answer the original-guide day and weather questions as easy table small talk.\nCurriculum boundary: Lesson 8 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Какая сегодня погода? — What is the weather like today?\n- Как там на улице? — How is it outside?\n- Сегодня холодно. — Today it's cold.\n- Сегодня тепло. — Today it's warm.\n- Сегодня солнечно. — Today it's sunny.\n- Сегодня облачно. — Today it's cloudy.\n- Вчера было солнечно. — It was sunny yesterday.\n- Завтра будет тепло. — Tomorrow it will be warm.\n- Какой сегодня день недели? — What day of the week is it today?\n- воскресенье — Sunday\n- на выходных — on the weekend\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+    },
+    {
+      "id": "tutor_budva_trip_checkin",
+      "scenario_id": "budva_trip_checkin",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "setting": "Budva family trip",
+      "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
+      "learner_role": "guest",
+      "tutor_role": "host family member",
+      "required_items": [
+        "trav001",
+        "trav002",
+        "trav003",
+        "trav004",
+        "trav005",
+        "trav006",
+        "trav007",
+        "trav008",
+        "trav009",
+        "trav012",
+        "trav013"
+      ],
+      "required_phrases": [
+        {
+          "id": "trav001",
+          "ru": "Мы е́дем в Бу́дву.",
+          "ru_plain": "Мы едем в Будву.",
+          "en": "We're going to Budva."
+        },
+        {
+          "id": "trav002",
+          "ru": "Мы бу́дем в Черного́рии.",
+          "ru_plain": "Мы будем в Черногории.",
+          "en": "We'll be in Montenegro."
+        },
+        {
+          "id": "trav003",
+          "ru": "Мы бу́дем в Бу́две.",
+          "ru_plain": "Мы будем в Будве.",
+          "en": "We'll be in Budva."
+        },
+        {
+          "id": "trav004",
+          "ru": "Где на́ш о́тель?",
+          "ru_plain": "Где наш отель?",
+          "en": "Where is our hotel?"
+        },
+        {
+          "id": "trav005",
+          "ru": "Мо́жно такси́?",
+          "ru_plain": "Можно такси?",
+          "en": "Can we get a taxi?"
+        },
+        {
+          "id": "trav006",
+          "ru": "Ско́лько е́хать до о́теля?",
+          "ru_plain": "Сколько ехать до отеля?",
+          "en": "How long is the ride to the hotel?"
+        },
+        {
+          "id": "trav007",
+          "ru": "Где пляж?",
+          "ru_plain": "Где пляж?",
+          "en": "Where is the beach?"
+        },
+        {
+          "id": "trav008",
+          "ru": "Я хочу́ погуля́ть у мо́ря.",
+          "ru_plain": "Я хочу погулять у моря.",
+          "en": "I want to walk by the sea."
+        },
+        {
+          "id": "trav009",
+          "ru": "Ста́рый го́род о́чень краси́вый.",
+          "ru_plain": "Старый город очень красивый.",
+          "en": "The old town is very beautiful."
+        },
+        {
+          "id": "trav012",
+          "ru": "Мы здесь с семьёй.",
+          "ru_plain": "Мы здесь с семьёй.",
+          "en": "We're here with family."
+        },
+        {
+          "id": "trav013",
+          "ru": "Счёт, пожа́луйста.",
+          "ru_plain": "Счёт, пожалуйста.",
+          "en": "The check, please."
+        }
+      ],
+      "success_criteria": [
+        "handles_travel_logistics",
+        "talks_about_budva",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "allowed_lesson_ids": [
+        "family_visit_001",
+        "family_visit_002",
+        "family_visit_003",
+        "family_visit_004",
+        "family_visit_005",
+        "family_visit_006",
+        "family_visit_007",
+        "family_visit_008",
+        "family_visit_009"
+      ],
+      "allowed_item_ids": [
+        "firs001",
+        "firs002",
+        "firs003",
+        "firs004",
+        "firs005",
+        "firs006",
+        "firs007",
+        "firs008",
+        "firs009",
+        "firs010",
+        "firs011",
+        "firs012",
+        "firs013",
+        "poli001",
+        "poli002",
+        "poli003",
+        "poli004",
+        "poli005",
+        "poli006",
+        "poli007",
+        "poli008",
+        "poli009",
+        "poli010",
+        "poli011",
+        "poli012",
+        "poli013",
+        "poli014",
+        "poli015",
+        "poli016",
+        "poli017",
+        "toas001",
+        "toas002",
+        "toas003",
+        "toas004",
+        "toas005",
+        "toas006",
+        "toas007",
+        "toas008",
+        "toas009",
+        "toas010",
+        "toas011",
+        "toas012",
+        "toas013",
+        "toas014",
+        "toas015",
+        "toas016",
+        "fami001",
+        "fami002",
+        "fami003",
+        "fami004",
+        "fami005",
+        "fami006",
+        "fami007",
+        "fami008",
+        "fami009",
+        "fami010",
+        "fami011",
+        "fami012",
+        "fami013",
+        "fami014",
+        "fami015",
+        "fami016",
+        "fami017",
+        "fami018",
+        "fami019",
+        "food001",
+        "food002",
+        "food003",
+        "food004",
+        "food005",
+        "food006",
+        "food007",
+        "food008",
+        "food009",
+        "food010",
+        "food011",
+        "food012",
+        "food013",
+        "food014",
+        "food015",
+        "food016",
+        "smal001",
+        "smal002",
+        "smal003",
+        "smal004",
+        "smal005",
+        "smal006",
+        "smal007",
+        "smal008",
+        "smal009",
+        "list001",
+        "list002",
+        "list003",
+        "list004",
+        "list005",
+        "list006",
+        "list007",
+        "list008",
+        "list009",
+        "cale001",
+        "cale002",
+        "cale003",
+        "cale004",
+        "cale005",
+        "cale006",
+        "cale007",
+        "cale008",
+        "cale009",
+        "cale010",
+        "cale011",
+        "cale012",
+        "cale013",
+        "cale014",
+        "cale015",
+        "cale016",
+        "cale017",
+        "cale018",
+        "cale019",
+        "trav001",
+        "trav002",
+        "trav003",
+        "trav004",
+        "trav005",
+        "trav006",
+        "trav007",
+        "trav008",
+        "trav009",
+        "trav010",
+        "trav011",
+        "trav012",
+        "trav013",
+        "trav014"
+      ],
+      "active_vocab": [
+        "америке",
+        "америки",
+        "аппетита",
+        "бабушка",
+        "бокал",
+        "большое",
+        "брат",
+        "будве",
+        "будву",
+        "будем",
+        "будем здоровы!",
+        "будет",
+        "было",
+        "в",
+        "ваше",
+        "вашу",
+        "вечер",
+        "вкусно",
+        "воскресенье",
+        "встречу",
+        "вторник",
+        "вчера",
+        "вчера было солнечно.",
+        "выпьем",
+        "выходных",
+        "говорю",
+        "город",
+        "да",
+        "да, немного",
+        "давайте",
+        "давайте выпьем за это!",
+        "дедушка",
+        "день",
+        "дети",
+        "джо",
+        "дна",
+        "до",
+        "до дна",
+        "до свидания",
+        "доброе",
+        "доброе утро",
+        "добрый",
+        "добрый вечер",
+        "добрый день",
+        "дождь",
+        "дочь",
+        "едем",
+        "ещё",
+        "жена",
+        "жены",
+        "живу",
+        "за",
+        "за ваше здоровье!",
+        "за встречу!",
+        "за здоровье!",
+        "за знакомство!",
+        "за любовь!",
+        "за молодых!",
+        "за родителей!",
+        "за семью!",
+        "за хозяев!",
+        "за хозяйку!",
+        "завтра",
+        "завтра будет тепло.",
+        "здесь",
+        "здоровы",
+        "здоровье",
+        "здравствуйте",
+        "знакомство",
+        "зовут",
+        "зять",
+        "идёт",
+        "идёт дождь.",
+        "идёт снег.",
+        "из",
+        "извините",
+        "как",
+        "как по-русски …?",
+        "красивое",
+        "красивый",
+        "люблю",
+        "любовь",
+        "мама",
+        "меня",
+        "меня зовут джо",
+        "миссури",
+        "мне",
+        "мне очень нравится",
+        "можно",
+        "можно ещё?",
+        "можно такси?",
+        "можно чаю?",
+        "молодых",
+        "море",
+        "море очень красивое.",
+        "моря",
+        "муж",
+        "мы",
+        "мы будем в будве.",
+        "мы будем в черногории.",
+        "мы едем в будву.",
+        "мы здесь с семьёй.",
+        "мы отдыхаем.",
+        "мы познакомились …",
+        "мы хотим поужинать.",
+        "на",
+        "на выходных",
+        "надо",
+        "наелся",
+        "не",
+        "немного",
+        "нет",
+        "нет, спасибо",
+        "нормально",
+        "ночи",
+        "нравится",
+        "облачно",
+        "отдыхаем",
+        "отлично",
+        "очень",
+        "очень вкусно!",
+        "очень приятно",
+        "папа",
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "по",
+        "повторите",
+        "повторите, пожалуйста",
+        "погулять",
+        "пожалуйста",
+        "познакомились",
+        "познакомиться",
+        "помедленнее",
+        "помедленнее, пожалуйста",
+        "понедельник",
+        "понимаю",
+        "понятно",
+        "поужинать",
+        "представиться",
+        "пригласили",
+        "приняли",
+        "приятно",
+        "приятно познакомиться",
+        "приятного",
+        "приятного аппетита!",
+        "простите",
+        "пятница",
+        "рад",
+        "рад познакомиться",
+        "разрешите",
+        "разрешите представиться",
+        "родителей",
+        "родители",
+        "русски",
+        "русский",
+        "рюмка",
+        "с",
+        "свидания",
+        "сегодня",
+        "сегодня облачно.",
+        "сегодня солнечно.",
+        "сегодня тепло.",
+        "сегодня холодно.",
+        "семью",
+        "семья",
+        "семьёй",
+        "сестра",
+        "сестра жены",
+        "сказать",
+        "снег",
+        "солнечно",
+        "спасибо",
+        "спасибо большое",
+        "спасибо, было очень вкусно",
+        "спасибо, не надо",
+        "спасибо, что пригласили",
+        "спасибо, что приняли",
+        "спокойной",
+        "спокойной ночи",
+        "среда",
+        "старый",
+        "старый город очень красивый.",
+        "суббота",
+        "счёт",
+        "счёт, пожалуйста.",
+        "сын",
+        "такси",
+        "тепло",
+        "тесть",
+        "тост",
+        "тёща",
+        "у",
+        "утро",
+        "учу",
+        "хлеб",
+        "хозяев",
+        "хозяйку",
+        "холодно",
+        "хорошо",
+        "хорошо, спасибо",
+        "хотим",
+        "хочу",
+        "чаю",
+        "черногории",
+        "четверг",
+        "что",
+        "штата",
+        "шурин",
+        "это",
+        "юрист",
+        "я",
+        "я ещё учу русский",
+        "я живу в америке",
+        "я из америки",
+        "я из штата миссури",
+        "я люблю вашу дочь",
+        "я наелся",
+        "я не понимаю",
+        "я немного говорю по-русски",
+        "я понимаю",
+        "я хочу погулять у моря.",
+        "я хочу сказать тост за …",
+        "я юрист"
+      ],
+      "passive_vocab": [
+        "блины",
+        "борщ",
+        "будете",
+        "будете …?",
+        "вам",
+        "вам нравится …?",
+        "водка",
+        "вы",
+        "вы говорите по-русски?",
+        "где",
+        "где наш отель?",
+        "где пляж?",
+        "говорите",
+        "дела",
+        "день",
+        "до",
+        "ехать",
+        "ещё",
+        "как",
+        "как вам россия?",
+        "как вы познакомились?",
+        "как дела?",
+        "как там на улице?",
+        "какая",
+        "какая сегодня погода?",
+        "какой",
+        "какой сегодня день недели?",
+        "кем",
+        "кем вы работаете?",
+        "на",
+        "наш",
+        "недели",
+        "нравится",
+        "оливье",
+        "отель",
+        "отеля",
+        "откуда",
+        "откуда вы?",
+        "пельмени",
+        "пляж",
+        "по",
+        "погода",
+        "познакомились",
+        "работаете",
+        "россия",
+        "русски",
+        "сегодня",
+        "сколько",
+        "сколько ехать до отеля?",
+        "там",
+        "улице",
+        "чай"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "discourse:politeness",
+        "grammar:formal_question",
+        "grammar:prepositional_place",
+        "grammar:present_first_person",
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "lexical:kinship_terms",
+        "lexical:travel_vocab",
+        "morphology:gendered_short_form",
+        "phrase:calendar_question",
+        "phrase:compliment_food",
+        "phrase:family_affection",
+        "phrase:food_offer",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:host_question",
+        "phrase:introduction",
+        "phrase:personal_origin",
+        "phrase:place_description",
+        "phrase:polite_decline",
+        "phrase:repair",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative",
+        "phrase:travel_logistics",
+        "phrase:weather_answer",
+        "phrase:work_identity",
+        "phrase:yes_no",
+        "register:formal_you",
+        "register:name_patronymic",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "listening_misparse",
+        "register",
+        "stress"
+      ],
+      "correction_policy": [
+        "Minor error: recast briefly and continue the role-play.",
+        "Repeated error: give one short rule, then return to Russian practice.",
+        "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
+        "Communication-breaking error: clarify in English, provide the verified model, then retry."
+      ],
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Budva family trip — Talk about arriving in Budva, the hotel, the sea, and simple plans.\nCurriculum boundary: Lesson 9 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Мы едем в Будву. — We're going to Budva.\n- Мы будем в Черногории. — We'll be in Montenegro.\n- Мы будем в Будве. — We'll be in Budva.\n- Где наш отель? — Where is our hotel?\n- Можно такси? — Can we get a taxi?\n- Сколько ехать до отеля? — How long is the ride to the hotel?\n- Где пляж? — Where is the beach?\n- Я хочу погулять у моря. — I want to walk by the sea.\n- Старый город очень красивый. — The old town is very beautiful.\n- Мы здесь с семьёй. — We're here with family.\n- Счёт, пожалуйста. — The check, please.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     }
   ],
   "contrast_cards": [
@@ -37133,6 +41618,14 @@ window.CONTENT_DATA = {
     "uses_time_words": {
       "label": "uses today/yesterday/tomorrow words",
       "error_type": "case_or_inflection"
+    },
+    "handles_travel_logistics": {
+      "label": "handles travel logistics",
+      "error_type": "forgot_phrase"
+    },
+    "talks_about_budva": {
+      "label": "talks about Budva naturally",
+      "error_type": "forgot_phrase"
     }
   },
   "contrast_sets": [
@@ -37519,8 +42012,8 @@ window.CONTENT_DATA = {
         "answers_personalized_questions",
         "uses_formal_greeting"
       ],
-      "lesson_id": "family_visit_009",
-      "lesson_number": 9
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10
     },
     {
       "id": "extended_family_family_tree",
@@ -37618,6 +42111,32 @@ window.CONTENT_DATA = {
       ],
       "lesson_id": "family_visit_008",
       "lesson_number": 8
+    },
+    {
+      "id": "budva_trip_checkin",
+      "setting": "Budva family trip",
+      "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
+      "required_items": [
+        "trav001",
+        "trav002",
+        "trav003",
+        "trav004",
+        "trav005",
+        "trav006",
+        "trav007",
+        "trav008",
+        "trav009",
+        "trav012",
+        "trav013"
+      ],
+      "success_criteria": [
+        "handles_travel_logistics",
+        "talks_about_budva",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9
     }
   ]
 };

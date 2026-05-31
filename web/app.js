@@ -73,7 +73,7 @@
   const DEVICE_KEY = KEY + ".device_id";
   const SYNC_API_KEY = KEY + ".sync_api";
   const LEARNER_ID = (COURSE.learner_profile && COURSE.learner_profile.id) || "joe";
-  const SYNC_API = window.ZASTOLOM_SYNC_API || localStorage.getItem(SYNC_API_KEY) || "http://127.0.0.1:8787";
+  const SYNC_API = window.ZASTOLOM_SYNC_API || localStorage.getItem(SYNC_API_KEY) || "";
   let store = load();
   let activeLessonId = loadLessonBoundary();
   function load() {
@@ -125,7 +125,7 @@
     try {
       let id = localStorage.getItem(DEVICE_KEY);
       if (!id) {
-        id = (crypto.randomUUID && crypto.randomUUID()) || "dev_" + Date.now() + "_" + Math.random().toString(16).slice(2);
+        id = (window.crypto && crypto.randomUUID && crypto.randomUUID()) || "dev_" + Date.now() + "_" + Math.random().toString(16).slice(2);
         localStorage.setItem(DEVICE_KEY, id);
       }
       return id;
@@ -145,7 +145,7 @@
   function queueSyncEvent(event) {
     const rows = syncQueue();
     rows.push(Object.assign({
-      event_id: (crypto.randomUUID && crypto.randomUUID()) || "evt_" + Date.now() + "_" + Math.random().toString(16).slice(2),
+      event_id: (window.crypto && crypto.randomUUID && crypto.randomUUID()) || "evt_" + Date.now() + "_" + Math.random().toString(16).slice(2),
       learner_id: LEARNER_ID,
       device_id: deviceId(),
       course_id: COURSE.course_id || "russian_family_visit",
@@ -451,7 +451,7 @@
     rows.push(snapshot);
     saveAnalyticsHistory(rows);
     try {
-      fetch(`${SYNC_API}/api/learning/snapshots`, {
+      if (SYNC_API) fetch(`${SYNC_API}/api/learning/snapshots`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ learner_id: LEARNER_ID, snapshot }),

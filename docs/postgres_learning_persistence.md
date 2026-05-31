@@ -37,6 +37,14 @@ The CLI wrapper is:
 DATABASE_URL=postgres://localhost/zastolom tools/zastolom sync-server
 ```
 
+The browser does not contact Postgres by default during demos or offline
+replays. Enable sync explicitly in DevTools once the sync server is running:
+
+```js
+localStorage.setItem("zastolom.russian_family_visit.v2.sync_api", "http://127.0.0.1:8787");
+location.reload();
+```
+
 ## API
 
 - `GET /api/health`

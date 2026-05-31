@@ -261,6 +261,14 @@ ROLEPLAY_CRITERIA = {
         "label": "uses today/yesterday/tomorrow words",
         "error_type": "case_or_inflection",
     },
+    "handles_travel_logistics": {
+        "label": "handles travel logistics",
+        "error_type": "forgot_phrase",
+    },
+    "talks_about_budva": {
+        "label": "talks about Budva naturally",
+        "error_type": "forgot_phrase",
+    },
 }
 
 CONTRAST_SETS = [
@@ -669,6 +677,30 @@ SCENARIOS = [
             "keeps_stress_clear",
         ],
     },
+    {
+        "id": "budva_trip_checkin",
+        "setting": "Budva family trip",
+        "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
+        "required_items": [
+            "trav001",
+            "trav002",
+            "trav003",
+            "trav004",
+            "trav005",
+            "trav006",
+            "trav007",
+            "trav008",
+            "trav009",
+            "trav012",
+            "trav013",
+        ],
+        "success_criteria": [
+            "handles_travel_logistics",
+            "talks_about_budva",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
 ]
 
 
@@ -748,6 +780,13 @@ MODULES = [
         "☀️",
     ),
     (
+        "travel_budva",
+        "Budva Trip",
+        "Montenegro travel phrases for airport, hotel, beach, and old-town plans.",
+        2,
+        "🧳",
+    ),
+    (
         "verbs",
         "Core Verbs (reactivation)",
         "High-frequency verbs from Ekaterina's guide — я / вы forms.",
@@ -800,6 +839,12 @@ MODULE_STRUCTURES = {
         "phrase:weather_answer",
         "phrase:calendar_question",
         "grammar:time_expression",
+    ],
+    "travel_budva": [
+        "lexical:travel_vocab",
+        "phrase:travel_logistics",
+        "phrase:place_description",
+        "grammar:prepositional_place",
     ],
     "verbs": [
         "grammar:present_first_person",
@@ -1366,6 +1411,123 @@ add(
     "[na vy-had-nýh]",
     3,
     tags=["calendar"],
+)
+
+# --- BUDVA TRIP (Montenegro travel lane) ---
+add(
+    "travel_budva",
+    "Мы е́дем в Бу́дву.",
+    "We're going to Budva.",
+    "[my yé-dem v búd-vu]",
+    2,
+    tags=["travel", "budva"],
+)
+add(
+    "travel_budva",
+    "Мы бу́дем в Черного́рии.",
+    "We'll be in Montenegro.",
+    "[my bú-dem f chir-na-gó-ri-i]",
+    2,
+    tags=["travel", "montenegro"],
+)
+add(
+    "travel_budva",
+    "Мы бу́дем в Бу́две.",
+    "We'll be in Budva.",
+    "[my bú-dem v búd-vye]",
+    2,
+    tags=["travel", "budva"],
+)
+add(
+    "travel_budva",
+    "Где на́ш о́тель?",
+    "Where is our hotel?",
+    "[gdye nash ó-tel']",
+    2,
+    recognize=True,
+    tags=["hotel", "travel"],
+)
+add(
+    "travel_budva",
+    "Мо́жно такси́?",
+    "Can we get a taxi?",
+    "[mózh-na tak-sí]",
+    2,
+    tags=["taxi", "travel"],
+)
+add(
+    "travel_budva",
+    "Ско́лько е́хать до о́теля?",
+    "How long is the ride to the hotel?",
+    "[skól'-ka yé-hat' da ó-te-lya]",
+    2,
+    recognize=True,
+    tags=["taxi", "hotel", "travel"],
+)
+add(
+    "travel_budva",
+    "Где пляж?",
+    "Where is the beach?",
+    "[gdye plyazh]",
+    2,
+    recognize=True,
+    tags=["beach", "travel"],
+)
+add(
+    "travel_budva",
+    "Я хочу́ погуля́ть у мо́ря.",
+    "I want to walk by the sea.",
+    "[ya ha-chú pa-gu-lyát' u mó-rya]",
+    2,
+    tags=["sea", "plans"],
+)
+add(
+    "travel_budva",
+    "Ста́рый го́род о́чень краси́вый.",
+    "The old town is very beautiful.",
+    "[stá-ryy gó-rat ó-chen' kra-sí-vyy]",
+    2,
+    tags=["old_town", "budva"],
+)
+add(
+    "travel_budva",
+    "Мо́ре о́чень краси́вое.",
+    "The sea is very beautiful.",
+    "[mó-re ó-chen' kra-sí-va-ye]",
+    2,
+    tags=["sea", "budva"],
+)
+add(
+    "travel_budva",
+    "Мы отдыха́ем.",
+    "We're relaxing / on vacation.",
+    "[my at-dy-há-yem]",
+    2,
+    tags=["plans", "travel"],
+)
+add(
+    "travel_budva",
+    "Мы здесь с семьёй.",
+    "We're here with family.",
+    "[my zdyes' s sim-yóy]",
+    2,
+    tags=["family", "travel"],
+)
+add(
+    "travel_budva",
+    "Счёт, пожа́луйста.",
+    "The check, please.",
+    "[shchyot pa-zhá-luy-sta]",
+    2,
+    tags=["restaurant", "travel"],
+)
+add(
+    "travel_budva",
+    "Мы хоти́м поу́жинать.",
+    "We want to have dinner.",
+    "[my ha-tím pa-ú-zhi-nat']",
+    2,
+    tags=["restaurant", "plans"],
 )
 
 # --- CORE VERBS (reactivation; я / вы present) ---

@@ -265,6 +265,12 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 **You produce:** short answers from the `calendar_weather` module: today/yesterday/tomorrow weather, day names, and `на выходны́х`.
 **Success:** You answer in short Russian without switching to English and keep stress clear on `сего́дня`, `пого́да`, and the day names.
 
+### Scenario 21 — Budva trip check-in (id: budva_trip_checkin)
+**Goal:** Talk about arriving in Budva, the hotel, the sea, and simple plans without overexplaining.
+**Tutor:** asks travel prompts around `Бу́два`, `Черного́рия`, hotel/taxi logistics, beach, sea, and dinner plans.
+**You produce:** short answers from the `travel_budva` module: `Мы е́дем в Бу́дву`, `Мы бу́дем в Бу́две`, `Где на́ш о́тель?`, `Где пляж?`, and one simple plan.
+**Success:** You keep the case switch clear between `в Бу́дву` and `в Бу́две`, stay in Russian, and recover with repair lines if needed.
+
 ---
 
 ## Session templates
