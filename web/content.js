@@ -17226,6 +17226,373 @@ window.CONTENT_DATA = {
       "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Dinner table toast — Raise a safe warm toast without using the wrong formula.\nCurriculum boundary: Lesson 3 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- За встречу! — To our getting together!\n- За знакомство! — To getting to know each other!\n- За ваше здоровье! — To your health! (formal)\n- За здоровье! — To health!\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     }
   ],
+  "contrast_cards": [
+    {
+      "id": "contrast_russian_toast_vs_youre_welcome_toas007",
+      "contrast_set_id": "russian_toast_vs_youre_welcome",
+      "item_id": "toas007",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "title": "Toast vs. you're welcome",
+      "risk": "high",
+      "drill_type": "choose_in_context",
+      "prompt": "To health!",
+      "usage_note": "Use «За здоро́вье!» for a toast. Use «Пожа́луйста» for please / you're welcome.",
+      "options": [
+        {
+          "id": "toas007",
+          "ru": "За здоро́вье!",
+          "ru_plain": "За здоровье!",
+          "en": "To health!"
+        },
+        {
+          "id": "poli003",
+          "ru": "Пожа́луйста",
+          "ru_plain": "Пожалуйста",
+          "en": "Please / You're welcome"
+        }
+      ],
+      "answer_id": "toas007",
+      "ru": "За здоро́вье!",
+      "ru_plain": "За здоровье!",
+      "en": "To health!",
+      "structures": [
+        "culture:toast_etiquette",
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "contrast",
+        "russian_toast_vs_youre_welcome"
+      ]
+    },
+    {
+      "id": "contrast_russian_toast_vs_youre_welcome_poli003",
+      "contrast_set_id": "russian_toast_vs_youre_welcome",
+      "item_id": "poli003",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "title": "Toast vs. you're welcome",
+      "risk": "high",
+      "drill_type": "choose_in_context",
+      "prompt": "Please / You're welcome",
+      "usage_note": "Use «За здоро́вье!» for a toast. Use «Пожа́луйста» for please / you're welcome.",
+      "options": [
+        {
+          "id": "toas007",
+          "ru": "За здоро́вье!",
+          "ru_plain": "За здоровье!",
+          "en": "To health!"
+        },
+        {
+          "id": "poli003",
+          "ru": "Пожа́луйста",
+          "ru_plain": "Пожалуйста",
+          "en": "Please / You're welcome"
+        }
+      ],
+      "answer_id": "poli003",
+      "ru": "Пожа́луйста",
+      "ru_plain": "Пожалуйста",
+      "en": "Please / You're welcome",
+      "structures": [
+        "culture:toast_etiquette",
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "contrast",
+        "russian_toast_vs_youre_welcome"
+      ]
+    },
+    {
+      "id": "contrast_formal_elder_address_firs001",
+      "contrast_set_id": "formal_elder_address",
+      "item_id": "firs001",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "title": "Formal elder address",
+      "risk": "high",
+      "drill_type": "choose_in_context",
+      "prompt": "Hello (formal)",
+      "usage_note": "Use formal «вы» forms and polite repair phrases with parents and elders.",
+      "options": [
+        {
+          "id": "firs001",
+          "ru": "Здра́вствуйте",
+          "ru_plain": "Здравствуйте",
+          "en": "Hello (formal)"
+        },
+        {
+          "id": "poli010",
+          "ru": "Повтори́те, пожа́луйста",
+          "ru_plain": "Повторите, пожалуйста",
+          "en": "Could you repeat, please"
+        },
+        {
+          "id": "poli011",
+          "ru": "Поме́дленнее, пожа́луйста",
+          "ru_plain": "Помедленнее, пожалуйста",
+          "en": "Slower, please"
+        }
+      ],
+      "answer_id": "firs001",
+      "ru": "Здра́вствуйте",
+      "ru_plain": "Здравствуйте",
+      "en": "Hello (formal)",
+      "structures": [
+        "discourse:politeness",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "contrast",
+        "formal_elder_address"
+      ]
+    },
+    {
+      "id": "contrast_formal_elder_address_poli010",
+      "contrast_set_id": "formal_elder_address",
+      "item_id": "poli010",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "title": "Formal elder address",
+      "risk": "high",
+      "drill_type": "choose_in_context",
+      "prompt": "Could you repeat, please",
+      "usage_note": "Use formal «вы» forms and polite repair phrases with parents and elders.",
+      "options": [
+        {
+          "id": "firs001",
+          "ru": "Здра́вствуйте",
+          "ru_plain": "Здравствуйте",
+          "en": "Hello (formal)"
+        },
+        {
+          "id": "poli010",
+          "ru": "Повтори́те, пожа́луйста",
+          "ru_plain": "Повторите, пожалуйста",
+          "en": "Could you repeat, please"
+        },
+        {
+          "id": "poli011",
+          "ru": "Поме́дленнее, пожа́луйста",
+          "ru_plain": "Помедленнее, пожалуйста",
+          "en": "Slower, please"
+        }
+      ],
+      "answer_id": "poli010",
+      "ru": "Повтори́те, пожа́луйста",
+      "ru_plain": "Повторите, пожалуйста",
+      "en": "Could you repeat, please",
+      "structures": [
+        "discourse:politeness",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "contrast",
+        "formal_elder_address"
+      ]
+    },
+    {
+      "id": "contrast_formal_elder_address_poli011",
+      "contrast_set_id": "formal_elder_address",
+      "item_id": "poli011",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "title": "Formal elder address",
+      "risk": "high",
+      "drill_type": "choose_in_context",
+      "prompt": "Slower, please",
+      "usage_note": "Use formal «вы» forms and polite repair phrases with parents and elders.",
+      "options": [
+        {
+          "id": "firs001",
+          "ru": "Здра́вствуйте",
+          "ru_plain": "Здравствуйте",
+          "en": "Hello (formal)"
+        },
+        {
+          "id": "poli010",
+          "ru": "Повтори́те, пожа́луйста",
+          "ru_plain": "Повторите, пожалуйста",
+          "en": "Could you repeat, please"
+        },
+        {
+          "id": "poli011",
+          "ru": "Поме́дленнее, пожа́луйста",
+          "ru_plain": "Помедленнее, пожалуйста",
+          "en": "Slower, please"
+        }
+      ],
+      "answer_id": "poli011",
+      "ru": "Поме́дленнее, пожа́луйста",
+      "ru_plain": "Помедленнее, пожалуйста",
+      "en": "Slower, please",
+      "structures": [
+        "discourse:politeness",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "contrast",
+        "formal_elder_address"
+      ]
+    },
+    {
+      "id": "contrast_male_speaker_forms_firs008",
+      "contrast_set_id": "male_speaker_forms",
+      "item_id": "firs008",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "title": "Joe's male speaker forms",
+      "risk": "high",
+      "drill_type": "contrast_say_aloud",
+      "prompt": "Glad to meet you",
+      "usage_note": "Joe should keep male forms like «рад» and «наелся».",
+      "options": [
+        {
+          "id": "firs008",
+          "ru": "Рад познако́миться",
+          "ru_plain": "Рад познакомиться",
+          "en": "Glad to meet you"
+        },
+        {
+          "id": "food006",
+          "ru": "Я нае́лся",
+          "ru_plain": "Я наелся",
+          "en": "I'm full (I've eaten my fill)"
+        }
+      ],
+      "answer_id": "firs008",
+      "ru": "Рад познако́миться",
+      "ru_plain": "Рад познакомиться",
+      "en": "Glad to meet you",
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "phrase:polite_decline",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "gendered_form",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "contrast",
+        "male_speaker_forms"
+      ]
+    },
+    {
+      "id": "contrast_male_speaker_forms_food006",
+      "contrast_set_id": "male_speaker_forms",
+      "item_id": "food006",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "title": "Joe's male speaker forms",
+      "risk": "high",
+      "drill_type": "contrast_say_aloud",
+      "prompt": "I'm full (I've eaten my fill)",
+      "usage_note": "Joe should keep male forms like «рад» and «наелся».",
+      "options": [
+        {
+          "id": "firs008",
+          "ru": "Рад познако́миться",
+          "ru_plain": "Рад познакомиться",
+          "en": "Glad to meet you"
+        },
+        {
+          "id": "food006",
+          "ru": "Я нае́лся",
+          "ru_plain": "Я наелся",
+          "en": "I'm full (I've eaten my fill)"
+        }
+      ],
+      "answer_id": "food006",
+      "ru": "Я нае́лся",
+      "ru_plain": "Я наелся",
+      "en": "I'm full (I've eaten my fill)",
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "phrase:polite_decline",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "gendered_form",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "contrast",
+        "male_speaker_forms"
+      ]
+    }
+  ],
   "error_types": [
     {
       "id": "stress",

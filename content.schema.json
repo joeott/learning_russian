@@ -121,6 +121,28 @@
         ]
       }
     },
+    "contrast_cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "contrast_set_id",
+          "item_id",
+          "lesson_id",
+          "lesson_number",
+          "title",
+          "prompt",
+          "usage_note",
+          "options",
+          "answer_id",
+          "ru",
+          "ru_plain",
+          "structures",
+          "allowed_error_types"
+        ]
+      }
+    },
     "error_types": { "type": "array" },
     "contrast_sets": { "type": "array" },
     "scenarios": { "type": "array" }
