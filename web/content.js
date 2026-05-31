@@ -57,6 +57,7 @@ window.CONTENT_DATA = {
       "numbers_quantities": 28,
       "adverbs_adjectives": 14,
       "daily_routine": 29,
+      "leisure_places": 21,
       "work_business": 16,
       "legal_recognition": 15,
       "celebrations": 14,
@@ -64,7 +65,7 @@ window.CONTENT_DATA = {
       "travel_budva": 28,
       "verbs": 10
     },
-    "total_items": 299
+    "total_items": 320
   },
   "curriculum": {
     "model": "lesson_locked_i_plus_1",
@@ -1427,6 +1428,183 @@ window.CONTENT_DATA = {
       {
         "lesson_id": "family_visit_012",
         "lesson_number": 12,
+        "module": "leisure_places",
+        "title": "Hobbies & Places",
+        "introduced_lexemes": [
+          "боевики",
+          "в",
+          "гитаре",
+          "гуляли",
+          "дом",
+          "здесь",
+          "здесь мы играем в футбол.",
+          "здесь мы отдыхаем.",
+          "здесь я слушаю и смотрю фильм.",
+          "и",
+          "играем",
+          "играть",
+          "играю",
+          "игры",
+          "кадрия",
+          "кадрия любит рисовать.",
+          "кадрия любит смотреть фильмы о любви.",
+          "картины",
+          "кинотеатр",
+          "когда",
+          "когда я не работаю, я смотрю телевизор.",
+          "котами",
+          "любви",
+          "любит",
+          "люблю",
+          "можно",
+          "музей",
+          "музыку",
+          "мы",
+          "мы гуляли в парке.",
+          "мы играем с нашими котами.",
+          "мы отдыхали и слушали музыку.",
+          "на",
+          "нашими",
+          "не",
+          "немного",
+          "о",
+          "отдыхаем",
+          "отдыхали",
+          "парке",
+          "пианино",
+          "пишу",
+          "работаю",
+          "разные",
+          "рисовать",
+          "с",
+          "скульптуры",
+          "слушали",
+          "слушаю",
+          "смотреть",
+          "смотрю",
+          "спортивные",
+          "стадион",
+          "там",
+          "там можно увидеть разные спортивные игры.",
+          "там я смотрю картины и скульптуры.",
+          "танцевать",
+          "телевизор",
+          "увидеть",
+          "фильм",
+          "фильмы",
+          "футбол",
+          "это",
+          "это дом.",
+          "это кинотеатр.",
+          "это музей.",
+          "это стадион.",
+          "я",
+          "я играю на гитаре и на пианино.",
+          "я люблю играть на гитаре.",
+          "я люблю смотреть боевики.",
+          "я немного люблю танцевать.",
+          "я пишу музыку.",
+          "я слушаю музыку."
+        ],
+        "active_vocab": [
+          "боевики",
+          "в",
+          "гитаре",
+          "гуляли",
+          "здесь",
+          "здесь мы играем в футбол.",
+          "здесь мы отдыхаем.",
+          "здесь я слушаю и смотрю фильм.",
+          "и",
+          "играем",
+          "играть",
+          "играю",
+          "кадрия",
+          "кадрия любит рисовать.",
+          "кадрия любит смотреть фильмы о любви.",
+          "когда",
+          "когда я не работаю, я смотрю телевизор.",
+          "котами",
+          "любви",
+          "любит",
+          "люблю",
+          "музыку",
+          "мы",
+          "мы гуляли в парке.",
+          "мы играем с нашими котами.",
+          "мы отдыхали и слушали музыку.",
+          "на",
+          "нашими",
+          "не",
+          "немного",
+          "о",
+          "отдыхаем",
+          "отдыхали",
+          "парке",
+          "пианино",
+          "пишу",
+          "работаю",
+          "рисовать",
+          "с",
+          "слушали",
+          "слушаю",
+          "смотреть",
+          "смотрю",
+          "танцевать",
+          "телевизор",
+          "фильм",
+          "фильмы",
+          "футбол",
+          "я",
+          "я играю на гитаре и на пианино.",
+          "я люблю играть на гитаре.",
+          "я люблю смотреть боевики.",
+          "я немного люблю танцевать.",
+          "я пишу музыку.",
+          "я слушаю музыку."
+        ],
+        "passive_vocab": [
+          "дом",
+          "и",
+          "игры",
+          "картины",
+          "кинотеатр",
+          "можно",
+          "музей",
+          "разные",
+          "скульптуры",
+          "смотрю",
+          "спортивные",
+          "стадион",
+          "там",
+          "там можно увидеть разные спортивные игры.",
+          "там я смотрю картины и скульптуры.",
+          "увидеть",
+          "это",
+          "это дом.",
+          "это кинотеатр.",
+          "это музей.",
+          "это стадион.",
+          "я"
+        ],
+        "introduced_structures": [
+          "grammar:igrat_v_na",
+          "lexical:hobbies",
+          "lexical:places",
+          "phrase:leisure_answer",
+          "skill:listening_question_recognition"
+        ],
+        "allowed_error_types": [
+          "listening_misparse",
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_011"
+        ]
+      },
+      {
+        "lesson_id": "family_visit_013",
+        "lesson_number": 13,
         "module": "work_business",
         "title": "Work & Clients",
         "introduced_lexemes": [
@@ -1559,12 +1737,12 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_011"
+          "family_visit_012"
         ]
       },
       {
-        "lesson_id": "family_visit_013",
-        "lesson_number": 13,
+        "lesson_id": "family_visit_014",
+        "lesson_number": 14,
         "module": "legal_recognition",
         "title": "Legal Words (Recognition)",
         "introduced_lexemes": [
@@ -1618,12 +1796,12 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_012"
+          "family_visit_013"
         ]
       },
       {
-        "lesson_id": "family_visit_014",
-        "lesson_number": 14,
+        "lesson_id": "family_visit_015",
+        "lesson_number": 15,
         "module": "celebrations",
         "title": "Holidays & Plans",
         "introduced_lexemes": [
@@ -1773,12 +1951,12 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_013"
+          "family_visit_014"
         ]
       },
       {
-        "lesson_id": "family_visit_015",
-        "lesson_number": 15,
+        "lesson_id": "family_visit_016",
+        "lesson_number": 16,
         "module": "cultural_bonus",
         "title": "Cultural Extras (Recognition)",
         "introduced_lexemes": [
@@ -1909,12 +2087,12 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_014"
+          "family_visit_015"
         ]
       },
       {
-        "lesson_id": "family_visit_016",
-        "lesson_number": 16,
+        "lesson_id": "family_visit_017",
+        "lesson_number": 17,
         "module": "travel_budva",
         "title": "Budva Trip",
         "introduced_lexemes": [
@@ -2108,12 +2286,12 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_015"
+          "family_visit_016"
         ]
       },
       {
-        "lesson_id": "family_visit_017",
-        "lesson_number": 17,
+        "lesson_id": "family_visit_018",
+        "lesson_number": 18,
         "module": "verbs",
         "title": "Core Verbs (reactivation)",
         "introduced_lexemes": [
@@ -2190,7 +2368,7 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_016"
+          "family_visit_017"
         ]
       }
     ]
@@ -2285,12 +2463,20 @@ window.CONTENT_DATA = {
       "order": 10
     },
     {
+      "id": "leisure_places",
+      "title": "Hobbies & Places",
+      "why": "Dinner-safe small talk from the guide: music, films, home, cats, parks, stadiums, cinema, and museums.",
+      "priority": 2,
+      "icon": "🎸",
+      "order": 11
+    },
+    {
       "id": "work_business",
       "title": "Work & Clients",
       "why": "Short lawyer/work answers from the guide: clients, cases, court, and being busy.",
       "priority": 2,
       "icon": "💼",
-      "order": 11
+      "order": 12
     },
     {
       "id": "legal_recognition",
@@ -2298,7 +2484,7 @@ window.CONTENT_DATA = {
       "why": "Recognition-only legal terms from the guide so deeper work questions are less jarring.",
       "priority": 3,
       "icon": "⚖️",
-      "order": 12
+      "order": 13
     },
     {
       "id": "celebrations",
@@ -2306,7 +2492,7 @@ window.CONTENT_DATA = {
       "why": "Original-guide Christmas, Thanksgiving, and family-plan small talk.",
       "priority": 3,
       "icon": "🎄",
-      "order": 13
+      "order": 14
     },
     {
       "id": "cultural_bonus",
@@ -2314,7 +2500,7 @@ window.CONTENT_DATA = {
       "why": "Recognition-only proverbs, idioms, and lawyer jokes from the saved guide.",
       "priority": 3,
       "icon": "🎭",
-      "order": 14
+      "order": 15
     },
     {
       "id": "travel_budva",
@@ -2322,7 +2508,7 @@ window.CONTENT_DATA = {
       "why": "Montenegro travel phrases for airport, hotel, beach, and old-town plans.",
       "priority": 2,
       "icon": "🧳",
-      "order": 15
+      "order": 16
     },
     {
       "id": "verbs",
@@ -2330,7 +2516,7 @@ window.CONTENT_DATA = {
       "why": "High-frequency verbs from Ekaterina's guide — я / вы forms.",
       "priority": 3,
       "icon": "⚙️",
-      "order": 16
+      "order": 17
     }
   ],
   "items": [
@@ -12584,6 +12770,1104 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "leis001",
+      "module": "leisure_places",
+      "ru": "Когда́ я не рабо́таю, я смотрю́ телеви́зор.",
+      "ru_plain": "Когда я не работаю, я смотрю телевизор.",
+      "en": "When I'm not working, I watch TV.",
+      "hint": "[kag-dá ya nye ra-bó-ta-yu, ya smat-ryú ti-li-ví-zar]",
+      "priority": 2,
+      "syllables": 15,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "leisure",
+        "tv"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
+        "не",
+        "работаю",
+        "смотрю",
+        "телевизор",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis002",
+      "module": "leisure_places",
+      "ru": "Я слу́шаю му́зыку.",
+      "ru_plain": "Я слушаю музыку.",
+      "en": "I listen to music.",
+      "hint": "[ya slú-sha-yu mú-zy-ku]",
+      "priority": 2,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "leisure",
+        "music"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "музыку",
+        "слушаю",
+        "я",
+        "я слушаю музыку."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis003",
+      "module": "leisure_places",
+      "ru": "Я люблю́ игра́ть на гита́ре.",
+      "ru_plain": "Я люблю играть на гитаре.",
+      "en": "I like playing guitar.",
+      "hint": "[ya lyub-lyú ig-rát' na gi-tá-rye]",
+      "priority": 2,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "Use игра́ть на for musical instruments.",
+      "tags": [
+        "leisure",
+        "music",
+        "instrument"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "гитаре",
+        "играть",
+        "люблю",
+        "на",
+        "я",
+        "я люблю играть на гитаре."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis004",
+      "module": "leisure_places",
+      "ru": "Я игра́ю на гита́ре и на пиани́но.",
+      "ru_plain": "Я играю на гитаре и на пианино.",
+      "en": "I play guitar and piano.",
+      "hint": "[ya ig-rá-yu na gi-tá-rye i na pi-a-ní-na]",
+      "priority": 2,
+      "syllables": 14,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "Instrument pattern: игра́ть на + instrument.",
+      "tags": [
+        "leisure",
+        "music",
+        "instrument"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "гитаре",
+        "и",
+        "играю",
+        "на",
+        "пианино",
+        "я",
+        "я играю на гитаре и на пианино."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis005",
+      "module": "leisure_places",
+      "ru": "Я пишу́ му́зыку.",
+      "ru_plain": "Я пишу музыку.",
+      "en": "I write music.",
+      "hint": "[ya pi-shú mú-zy-ku]",
+      "priority": 2,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "leisure",
+        "music"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "музыку",
+        "пишу",
+        "я",
+        "я пишу музыку."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis006",
+      "module": "leisure_places",
+      "ru": "Кадри́я лю́бит рисова́ть.",
+      "ru_plain": "Кадрия любит рисовать.",
+      "en": "Kadriya likes to draw.",
+      "hint": "[kad-rí-ya lyú-bit ri-sa-vát']",
+      "priority": 2,
+      "syllables": 8,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "leisure",
+        "kadriya",
+        "art"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "кадрия",
+        "кадрия любит рисовать.",
+        "любит",
+        "рисовать"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis007",
+      "module": "leisure_places",
+      "ru": "Я немно́го люблю́ танцева́ть.",
+      "ru_plain": "Я немного люблю танцевать.",
+      "en": "I like dancing a little.",
+      "hint": "[ya nem-nó-ga lyub-lyú tan-tsi-vát']",
+      "priority": 3,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "leisure",
+        "dance"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "люблю",
+        "немного",
+        "танцевать",
+        "я",
+        "я немного люблю танцевать."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis008",
+      "module": "leisure_places",
+      "ru": "Мы игра́ем с на́шими кота́ми.",
+      "ru_plain": "Мы играем с нашими котами.",
+      "en": "We play with our cats.",
+      "hint": "[my ig-rá-yem s ná-shi-mi ka-tá-mi]",
+      "priority": 2,
+      "syllables": 10,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "leisure",
+        "cats",
+        "home"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "играем",
+        "котами",
+        "мы",
+        "мы играем с нашими котами.",
+        "нашими",
+        "с"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis009",
+      "module": "leisure_places",
+      "ru": "Я люблю́ смотре́ть боевики́.",
+      "ru_plain": "Я люблю смотреть боевики.",
+      "en": "I like watching action movies.",
+      "hint": "[ya lyub-lyú smat-ryét' ba-ye-vi-kí]",
+      "priority": 3,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "leisure",
+        "movies"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "боевики",
+        "люблю",
+        "смотреть",
+        "я",
+        "я люблю смотреть боевики."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis010",
+      "module": "leisure_places",
+      "ru": "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+      "ru_plain": "Кадрия любит смотреть фильмы о любви.",
+      "en": "Kadriya likes watching love movies.",
+      "hint": "[kad-rí-ya lyú-bit smat-ryét' fíl'-my a lyub-ví]",
+      "priority": 3,
+      "syllables": 12,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "leisure",
+        "movies",
+        "kadriya"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "кадрия",
+        "кадрия любит смотреть фильмы о любви.",
+        "любви",
+        "любит",
+        "о",
+        "смотреть",
+        "фильмы"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis011",
+      "module": "leisure_places",
+      "ru": "Э́то дом.",
+      "ru_plain": "Это дом.",
+      "en": "This is home / a house.",
+      "hint": "[é-ta dom]",
+      "priority": 3,
+      "syllables": 3,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "place",
+        "home"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "дом",
+        "это",
+        "это дом."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis012",
+      "module": "leisure_places",
+      "ru": "Здесь мы отдыха́ем.",
+      "ru_plain": "Здесь мы отдыхаем.",
+      "en": "Here we relax.",
+      "hint": "[zdyes' my at-dy-há-yem]",
+      "priority": 3,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "place",
+        "home"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "здесь",
+        "здесь мы отдыхаем.",
+        "мы",
+        "отдыхаем"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis013",
+      "module": "leisure_places",
+      "ru": "Э́то стадио́н.",
+      "ru_plain": "Это стадион.",
+      "en": "This is a stadium.",
+      "hint": "[é-ta sta-di-ón]",
+      "priority": 3,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "place",
+        "sports"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "стадион",
+        "это",
+        "это стадион."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis014",
+      "module": "leisure_places",
+      "ru": "Здесь мы игра́ем в футбо́л.",
+      "ru_plain": "Здесь мы играем в футбол.",
+      "en": "Here we play soccer.",
+      "hint": "[zdyes' my ig-rá-yem v fut-ból]",
+      "priority": 3,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "Use игра́ть в for sports and games.",
+      "tags": [
+        "place",
+        "sports"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "в",
+        "здесь",
+        "здесь мы играем в футбол.",
+        "играем",
+        "мы",
+        "футбол"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis015",
+      "module": "leisure_places",
+      "ru": "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+      "ru_plain": "Там можно увидеть разные спортивные игры.",
+      "en": "There you can see different sports games.",
+      "hint": "[tam mózh-na u-ví-dyet' ráz-ny-ye spar-tív-ny-ye íg-ry]",
+      "priority": 3,
+      "syllables": 15,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "place",
+        "sports"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "игры",
+        "можно",
+        "разные",
+        "спортивные",
+        "там",
+        "там можно увидеть разные спортивные игры.",
+        "увидеть"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis016",
+      "module": "leisure_places",
+      "ru": "Э́то кинотеа́тр.",
+      "ru_plain": "Это кинотеатр.",
+      "en": "This is a movie theater.",
+      "hint": "[é-ta ki-na-ti-átr]",
+      "priority": 3,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "place",
+        "movies"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "кинотеатр",
+        "это",
+        "это кинотеатр."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis017",
+      "module": "leisure_places",
+      "ru": "Здесь я слу́шаю и смотрю́ фильм.",
+      "ru_plain": "Здесь я слушаю и смотрю фильм.",
+      "en": "Here I listen and watch a film.",
+      "hint": "[zdyes' ya slú-sha-yu i smat-ryú fil'm]",
+      "priority": 3,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "place",
+        "movies"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "здесь",
+        "здесь я слушаю и смотрю фильм.",
+        "и",
+        "слушаю",
+        "смотрю",
+        "фильм",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis018",
+      "module": "leisure_places",
+      "ru": "Э́то музе́й.",
+      "ru_plain": "Это музей.",
+      "en": "This is a museum.",
+      "hint": "[é-ta mu-zyéy]",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "place",
+        "museum"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "музей",
+        "это",
+        "это музей."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis019",
+      "module": "leisure_places",
+      "ru": "Там я смотрю́ карти́ны и скульпту́ры.",
+      "ru_plain": "Там я смотрю картины и скульптуры.",
+      "en": "There I look at paintings and sculptures.",
+      "hint": "[tam ya smat-ryú kar-tí-ny i skul'p-tú-ry]",
+      "priority": 3,
+      "syllables": 11,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "place",
+        "museum"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "и",
+        "картины",
+        "скульптуры",
+        "смотрю",
+        "там",
+        "там я смотрю картины и скульптуры.",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis020",
+      "module": "leisure_places",
+      "ru": "Мы гуля́ли в па́рке.",
+      "ru_plain": "Мы гуляли в парке.",
+      "en": "We walked in the park.",
+      "hint": "[my gu-lyá-li f pár-kye]",
+      "priority": 3,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "leisure",
+        "park"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "в",
+        "гуляли",
+        "мы",
+        "мы гуляли в парке.",
+        "парке"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
+      "id": "leis021",
+      "module": "leisure_places",
+      "ru": "Мы отдыха́ли и слу́шали му́зыку.",
+      "ru_plain": "Мы отдыхали и слушали музыку.",
+      "en": "We rested and listened to music.",
+      "hint": "[my at-dy-há-li i slú-sha-li mú-zy-ku]",
+      "priority": 3,
+      "syllables": 12,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "leisure",
+        "music"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "и",
+        "музыку",
+        "мы",
+        "мы отдыхали и слушали музыку.",
+        "отдыхали",
+        "слушали"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "prerequisites": [
+        "family_visit_011"
+      ]
+    },
+    {
       "id": "work001",
       "module": "work_business",
       "ru": "У меня́ своя́ компа́ния.",
@@ -12628,10 +13912,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -12680,10 +13964,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -12730,10 +14014,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -12781,10 +14065,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -12834,10 +14118,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -12885,10 +14169,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -12940,10 +14224,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -12992,10 +14276,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -13047,10 +14331,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -13099,10 +14383,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -13154,10 +14438,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -13207,10 +14491,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -13260,10 +14544,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -13311,10 +14595,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -13361,10 +14645,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -13416,10 +14700,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -13464,10 +14748,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -13512,10 +14796,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -13560,10 +14844,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -13608,10 +14892,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -13656,10 +14940,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -13704,10 +14988,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -13754,10 +15038,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -13805,10 +15089,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -13853,10 +15137,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -13900,10 +15184,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -13947,10 +15231,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -13994,10 +15278,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -14042,10 +15326,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -14090,10 +15374,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -14138,10 +15422,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "prerequisites": [
-        "family_visit_012"
+        "family_visit_013"
       ]
     },
     {
@@ -14187,10 +15471,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14240,10 +15524,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14289,10 +15573,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14346,10 +15630,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14401,10 +15685,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14456,10 +15740,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14511,10 +15795,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14563,10 +15847,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14616,10 +15900,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14673,10 +15957,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14726,10 +16010,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14783,10 +16067,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14838,10 +16122,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14890,10 +16174,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "prerequisites": [
-        "family_visit_013"
+        "family_visit_014"
       ]
     },
     {
@@ -14943,10 +16227,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "prerequisites": [
-        "family_visit_014"
+        "family_visit_015"
       ]
     },
     {
@@ -14995,10 +16279,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "prerequisites": [
-        "family_visit_014"
+        "family_visit_015"
       ]
     },
     {
@@ -15050,10 +16334,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "prerequisites": [
-        "family_visit_014"
+        "family_visit_015"
       ]
     },
     {
@@ -15103,10 +16387,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "prerequisites": [
-        "family_visit_014"
+        "family_visit_015"
       ]
     },
     {
@@ -15156,10 +16440,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "prerequisites": [
-        "family_visit_014"
+        "family_visit_015"
       ]
     },
     {
@@ -15210,10 +16494,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "prerequisites": [
-        "family_visit_014"
+        "family_visit_015"
       ]
     },
     {
@@ -15265,10 +16549,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "prerequisites": [
-        "family_visit_014"
+        "family_visit_015"
       ]
     },
     {
@@ -15324,10 +16608,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "prerequisites": [
-        "family_visit_014"
+        "family_visit_015"
       ]
     },
     {
@@ -15385,10 +16669,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "prerequisites": [
-        "family_visit_014"
+        "family_visit_015"
       ]
     },
     {
@@ -15436,10 +16720,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -15487,10 +16771,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -15538,10 +16822,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -15591,10 +16875,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -15640,10 +16924,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -15695,10 +16979,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -15747,10 +17031,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -15799,10 +17083,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -15850,10 +17134,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -15900,10 +17184,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -15949,10 +17233,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16000,10 +17284,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16049,10 +17333,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16099,10 +17383,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16149,10 +17433,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16200,10 +17484,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16251,10 +17535,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16302,10 +17586,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16353,10 +17637,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16406,10 +17690,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16457,10 +17741,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16505,10 +17789,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16553,10 +17837,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16604,10 +17888,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16658,10 +17942,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16712,10 +17996,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16765,10 +18049,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16819,10 +18103,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "prerequisites": [
-        "family_visit_015"
+        "family_visit_016"
       ]
     },
     {
@@ -16864,10 +18148,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "prerequisites": [
-        "family_visit_016"
+        "family_visit_017"
       ]
     },
     {
@@ -16909,10 +18193,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "prerequisites": [
-        "family_visit_016"
+        "family_visit_017"
       ]
     },
     {
@@ -16954,10 +18238,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "prerequisites": [
-        "family_visit_016"
+        "family_visit_017"
       ]
     },
     {
@@ -16999,10 +18283,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "prerequisites": [
-        "family_visit_016"
+        "family_visit_017"
       ]
     },
     {
@@ -17044,10 +18328,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "prerequisites": [
-        "family_visit_016"
+        "family_visit_017"
       ]
     },
     {
@@ -17089,10 +18373,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "prerequisites": [
-        "family_visit_016"
+        "family_visit_017"
       ]
     },
     {
@@ -17134,10 +18418,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "prerequisites": [
-        "family_visit_016"
+        "family_visit_017"
       ]
     },
     {
@@ -17179,10 +18463,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "prerequisites": [
-        "family_visit_016"
+        "family_visit_017"
       ]
     },
     {
@@ -17224,10 +18508,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "prerequisites": [
-        "family_visit_016"
+        "family_visit_017"
       ]
     },
     {
@@ -17269,10 +18553,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "prerequisites": [
-        "family_visit_016"
+        "family_visit_017"
       ]
     }
   ],
@@ -23290,11 +24574,899 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "cloze_leis001_01",
+      "item_id": "leis001",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Когда́ я не рабо́таю, я смотрю́ телеви́зор.",
+      "ru_plain": "Когда я не работаю, я смотрю телевизор.",
+      "prompt_ru": "Когда я не работаю, я смотрю ____.",
+      "answer": "телевизор",
+      "accepted_answers": [
+        "телеви́зор",
+        "телевизор"
+      ],
+      "en": "When I'm not working, I watch TV.",
+      "priority": 2,
+      "lexemes": [
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
+        "не",
+        "работаю",
+        "смотрю",
+        "телевизор",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "leisure",
+        "tv"
+      ]
+    },
+    {
+      "id": "cloze_leis002_01",
+      "item_id": "leis002",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я слу́шаю му́зыку.",
+      "ru_plain": "Я слушаю музыку.",
+      "prompt_ru": "Я ____ музыку.",
+      "answer": "слушаю",
+      "accepted_answers": [
+        "слу́шаю",
+        "слушаю"
+      ],
+      "en": "I listen to music.",
+      "priority": 2,
+      "lexemes": [
+        "музыку",
+        "слушаю",
+        "я",
+        "я слушаю музыку."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "leisure",
+        "music"
+      ]
+    },
+    {
+      "id": "cloze_leis003_01",
+      "item_id": "leis003",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я люблю́ игра́ть на гита́ре.",
+      "ru_plain": "Я люблю играть на гитаре.",
+      "prompt_ru": "Я люблю ____ на гитаре.",
+      "answer": "играть",
+      "accepted_answers": [
+        "игра́ть",
+        "играть"
+      ],
+      "en": "I like playing guitar.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "играть",
+        "люблю",
+        "на",
+        "я",
+        "я люблю играть на гитаре."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "instrument",
+        "leisure",
+        "music"
+      ]
+    },
+    {
+      "id": "cloze_leis004_01",
+      "item_id": "leis004",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я игра́ю на гита́ре и на пиани́но.",
+      "ru_plain": "Я играю на гитаре и на пианино.",
+      "prompt_ru": "Я играю на гитаре и на ____.",
+      "answer": "пианино",
+      "accepted_answers": [
+        "пиани́но",
+        "пианино"
+      ],
+      "en": "I play guitar and piano.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "и",
+        "играю",
+        "на",
+        "пианино",
+        "я",
+        "я играю на гитаре и на пианино."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "instrument",
+        "leisure",
+        "music"
+      ]
+    },
+    {
+      "id": "cloze_leis005_01",
+      "item_id": "leis005",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я пишу́ му́зыку.",
+      "ru_plain": "Я пишу музыку.",
+      "prompt_ru": "Я пишу ____.",
+      "answer": "музыку",
+      "accepted_answers": [
+        "му́зыку",
+        "музыку"
+      ],
+      "en": "I write music.",
+      "priority": 2,
+      "lexemes": [
+        "музыку",
+        "пишу",
+        "я",
+        "я пишу музыку."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "leisure",
+        "music"
+      ]
+    },
+    {
+      "id": "cloze_leis006_01",
+      "item_id": "leis006",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Кадри́я лю́бит рисова́ть.",
+      "ru_plain": "Кадрия любит рисовать.",
+      "prompt_ru": "Кадрия любит ____.",
+      "answer": "рисовать",
+      "accepted_answers": [
+        "рисова́ть",
+        "рисовать"
+      ],
+      "en": "Kadriya likes to draw.",
+      "priority": 2,
+      "lexemes": [
+        "кадрия",
+        "кадрия любит рисовать.",
+        "любит",
+        "рисовать"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "art",
+        "cloze",
+        "kadriya",
+        "leisure"
+      ]
+    },
+    {
+      "id": "cloze_leis007_01",
+      "item_id": "leis007",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я немно́го люблю́ танцева́ть.",
+      "ru_plain": "Я немного люблю танцевать.",
+      "prompt_ru": "Я немного люблю ____.",
+      "answer": "танцевать",
+      "accepted_answers": [
+        "танцева́ть",
+        "танцевать"
+      ],
+      "en": "I like dancing a little.",
+      "priority": 3,
+      "lexemes": [
+        "люблю",
+        "немного",
+        "танцевать",
+        "я",
+        "я немного люблю танцевать."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "dance",
+        "leisure"
+      ]
+    },
+    {
+      "id": "cloze_leis008_01",
+      "item_id": "leis008",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы игра́ем с на́шими кота́ми.",
+      "ru_plain": "Мы играем с нашими котами.",
+      "prompt_ru": "Мы ____ с нашими котами.",
+      "answer": "играем",
+      "accepted_answers": [
+        "игра́ем",
+        "играем"
+      ],
+      "en": "We play with our cats.",
+      "priority": 2,
+      "lexemes": [
+        "играем",
+        "котами",
+        "мы",
+        "мы играем с нашими котами.",
+        "нашими",
+        "с"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cats",
+        "cloze",
+        "home",
+        "leisure"
+      ]
+    },
+    {
+      "id": "cloze_leis009_01",
+      "item_id": "leis009",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я люблю́ смотре́ть боевики́.",
+      "ru_plain": "Я люблю смотреть боевики.",
+      "prompt_ru": "Я люблю ____ боевики.",
+      "answer": "смотреть",
+      "accepted_answers": [
+        "смотре́ть",
+        "смотреть"
+      ],
+      "en": "I like watching action movies.",
+      "priority": 3,
+      "lexemes": [
+        "боевики",
+        "люблю",
+        "смотреть",
+        "я",
+        "я люблю смотреть боевики."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "leisure",
+        "movies"
+      ]
+    },
+    {
+      "id": "cloze_leis010_01",
+      "item_id": "leis010",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+      "ru_plain": "Кадрия любит смотреть фильмы о любви.",
+      "prompt_ru": "Кадрия любит ____ фильмы о любви.",
+      "answer": "смотреть",
+      "accepted_answers": [
+        "смотре́ть",
+        "смотреть"
+      ],
+      "en": "Kadriya likes watching love movies.",
+      "priority": 3,
+      "lexemes": [
+        "кадрия",
+        "кадрия любит смотреть фильмы о любви.",
+        "любви",
+        "любит",
+        "о",
+        "смотреть",
+        "фильмы"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "kadriya",
+        "leisure",
+        "movies"
+      ]
+    },
+    {
+      "id": "cloze_leis011_01",
+      "item_id": "leis011",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то дом.",
+      "ru_plain": "Это дом.",
+      "prompt_ru": "____ дом.",
+      "answer": "Это",
+      "accepted_answers": [
+        "Э́то",
+        "Это"
+      ],
+      "en": "This is home / a house.",
+      "priority": 3,
+      "lexemes": [
+        "дом",
+        "это",
+        "это дом."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "home",
+        "place"
+      ]
+    },
+    {
+      "id": "cloze_leis012_01",
+      "item_id": "leis012",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь мы отдыха́ем.",
+      "ru_plain": "Здесь мы отдыхаем.",
+      "prompt_ru": "Здесь мы ____.",
+      "answer": "отдыхаем",
+      "accepted_answers": [
+        "отдыха́ем",
+        "отдыхаем"
+      ],
+      "en": "Here we relax.",
+      "priority": 3,
+      "lexemes": [
+        "здесь",
+        "здесь мы отдыхаем.",
+        "мы",
+        "отдыхаем"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "home",
+        "place"
+      ]
+    },
+    {
+      "id": "cloze_leis013_01",
+      "item_id": "leis013",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то стадио́н.",
+      "ru_plain": "Это стадион.",
+      "prompt_ru": "Это ____.",
+      "answer": "стадион",
+      "accepted_answers": [
+        "стадио́н",
+        "стадион"
+      ],
+      "en": "This is a stadium.",
+      "priority": 3,
+      "lexemes": [
+        "стадион",
+        "это",
+        "это стадион."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "place",
+        "sports"
+      ]
+    },
+    {
+      "id": "cloze_leis014_01",
+      "item_id": "leis014",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь мы игра́ем в футбо́л.",
+      "ru_plain": "Здесь мы играем в футбол.",
+      "prompt_ru": "Здесь мы ____ в футбол.",
+      "answer": "играем",
+      "accepted_answers": [
+        "игра́ем",
+        "играем"
+      ],
+      "en": "Here we play soccer.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "здесь",
+        "здесь мы играем в футбол.",
+        "играем",
+        "мы",
+        "футбол"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "place",
+        "sports"
+      ]
+    },
+    {
+      "id": "cloze_leis015_01",
+      "item_id": "leis015",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+      "ru_plain": "Там можно увидеть разные спортивные игры.",
+      "prompt_ru": "Там можно увидеть разные ____ игры.",
+      "answer": "спортивные",
+      "accepted_answers": [
+        "спорти́вные",
+        "спортивные"
+      ],
+      "en": "There you can see different sports games.",
+      "priority": 3,
+      "lexemes": [
+        "игры",
+        "можно",
+        "разные",
+        "спортивные",
+        "там",
+        "там можно увидеть разные спортивные игры.",
+        "увидеть"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "place",
+        "sports"
+      ]
+    },
+    {
+      "id": "cloze_leis016_01",
+      "item_id": "leis016",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то кинотеа́тр.",
+      "ru_plain": "Это кинотеатр.",
+      "prompt_ru": "Это ____.",
+      "answer": "кинотеатр",
+      "accepted_answers": [
+        "кинотеа́тр",
+        "кинотеатр"
+      ],
+      "en": "This is a movie theater.",
+      "priority": 3,
+      "lexemes": [
+        "кинотеатр",
+        "это",
+        "это кинотеатр."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "movies",
+        "place"
+      ]
+    },
+    {
+      "id": "cloze_leis017_01",
+      "item_id": "leis017",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь я слу́шаю и смотрю́ фильм.",
+      "ru_plain": "Здесь я слушаю и смотрю фильм.",
+      "prompt_ru": "Здесь я ____ и смотрю фильм.",
+      "answer": "слушаю",
+      "accepted_answers": [
+        "слу́шаю",
+        "слушаю"
+      ],
+      "en": "Here I listen and watch a film.",
+      "priority": 3,
+      "lexemes": [
+        "здесь",
+        "здесь я слушаю и смотрю фильм.",
+        "и",
+        "слушаю",
+        "смотрю",
+        "фильм",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "movies",
+        "place"
+      ]
+    },
+    {
+      "id": "cloze_leis018_01",
+      "item_id": "leis018",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то музе́й.",
+      "ru_plain": "Это музей.",
+      "prompt_ru": "Это ____.",
+      "answer": "музей",
+      "accepted_answers": [
+        "музе́й",
+        "музей"
+      ],
+      "en": "This is a museum.",
+      "priority": 3,
+      "lexemes": [
+        "музей",
+        "это",
+        "это музей."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "museum",
+        "place"
+      ]
+    },
+    {
+      "id": "cloze_leis019_01",
+      "item_id": "leis019",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Там я смотрю́ карти́ны и скульпту́ры.",
+      "ru_plain": "Там я смотрю картины и скульптуры.",
+      "prompt_ru": "Там я смотрю картины и ____.",
+      "answer": "скульптуры",
+      "accepted_answers": [
+        "скульпту́ры",
+        "скульптуры"
+      ],
+      "en": "There I look at paintings and sculptures.",
+      "priority": 3,
+      "lexemes": [
+        "и",
+        "картины",
+        "скульптуры",
+        "смотрю",
+        "там",
+        "там я смотрю картины и скульптуры.",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "museum",
+        "place"
+      ]
+    },
+    {
+      "id": "cloze_leis020_01",
+      "item_id": "leis020",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы гуля́ли в па́рке.",
+      "ru_plain": "Мы гуляли в парке.",
+      "prompt_ru": "Мы ____ в парке.",
+      "answer": "гуляли",
+      "accepted_answers": [
+        "гуля́ли",
+        "гуляли"
+      ],
+      "en": "We walked in the park.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "гуляли",
+        "мы",
+        "мы гуляли в парке.",
+        "парке"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "leisure",
+        "park"
+      ]
+    },
+    {
+      "id": "cloze_leis021_01",
+      "item_id": "leis021",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы отдыха́ли и слу́шали му́зыку.",
+      "ru_plain": "Мы отдыхали и слушали музыку.",
+      "prompt_ru": "Мы ____ и слушали музыку.",
+      "answer": "отдыхали",
+      "accepted_answers": [
+        "отдыха́ли",
+        "отдыхали"
+      ],
+      "en": "We rested and listened to music.",
+      "priority": 3,
+      "lexemes": [
+        "и",
+        "музыку",
+        "мы",
+        "мы отдыхали и слушали музыку.",
+        "отдыхали",
+        "слушали"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "leisure",
+        "music"
+      ]
+    },
+    {
       "id": "cloze_work001_01",
       "item_id": "work001",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У меня́ своя́ компа́ния.",
       "ru_plain": "У меня своя компания.",
       "prompt_ru": "У меня своя ____.",
@@ -23334,8 +25506,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work002_01",
       "item_id": "work002",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Кадри́я рабо́тает вме́сте со мной.",
       "ru_plain": "Кадрия работает вместе со мной.",
       "prompt_ru": "Кадрия ____ вместе со мной.",
@@ -23376,8 +25548,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work003_01",
       "item_id": "work003",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Мы рабо́таем вме́сте.",
       "ru_plain": "Мы работаем вместе.",
       "prompt_ru": "Мы ____ вместе.",
@@ -23416,8 +25588,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work004_01",
       "item_id": "work004",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У меня́ мно́го рабо́ты.",
       "ru_plain": "У меня много работы.",
       "prompt_ru": "У меня много ____.",
@@ -23457,8 +25629,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work005_01",
       "item_id": "work005",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я о́чень за́нят.",
       "ru_plain": "Я очень занят.",
       "prompt_ru": "Я ____ занят.",
@@ -23500,8 +25672,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work006_01",
       "item_id": "work006",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Хорошо́. Я мно́го рабо́таю.",
       "ru_plain": "Хорошо. Я много работаю.",
       "prompt_ru": "Хорошо. Я много ____.",
@@ -23541,8 +25713,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work007_01",
       "item_id": "work007",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У вас мно́го клие́нтов?",
       "ru_plain": "У вас много клиентов?",
       "prompt_ru": "У вас много ____?",
@@ -23586,8 +25758,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work008_01",
       "item_id": "work008",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Да, у меня́ мно́го клие́нтов.",
       "ru_plain": "Да, у меня много клиентов.",
       "prompt_ru": "Да, у меня много ____.",
@@ -23628,8 +25800,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work009_01",
       "item_id": "work009",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У вас мно́го дел?",
       "ru_plain": "У вас много дел?",
       "prompt_ru": "У вас ____ дел?",
@@ -23673,8 +25845,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work010_01",
       "item_id": "work010",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Да, у меня́ мно́го дел.",
       "ru_plain": "Да, у меня много дел.",
       "prompt_ru": "Да, у меня ____ дел.",
@@ -23715,8 +25887,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work011_01",
       "item_id": "work011",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Сего́дня я рабо́тал с клие́нтом.",
       "ru_plain": "Сегодня я работал с клиентом.",
       "prompt_ru": "Сегодня я работал с ____.",
@@ -23760,8 +25932,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work012_01",
       "item_id": "work012",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я звони́л клие́нтам.",
       "ru_plain": "Я звонил клиентам.",
       "prompt_ru": "Я звонил ____.",
@@ -23803,8 +25975,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work013_01",
       "item_id": "work013",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я рабо́тал на компью́тере.",
       "ru_plain": "Я работал на компьютере.",
       "prompt_ru": "Я работал на ____.",
@@ -23846,8 +26018,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work014_01",
       "item_id": "work014",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я рабо́таю в суде́.",
       "ru_plain": "Я работаю в суде.",
       "prompt_ru": "Я ____ в суде.",
@@ -23887,8 +26059,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work015_01",
       "item_id": "work015",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Мы дово́льны результа́том.",
       "ru_plain": "Мы довольны результатом.",
       "prompt_ru": "Мы довольны ____.",
@@ -23927,8 +26099,8 @@ window.CONTENT_DATA = {
       "id": "cloze_work016_01",
       "item_id": "work016",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я сча́стлив рабо́тать на себя́.",
       "ru_plain": "Я счастлив работать на себя.",
       "prompt_ru": "Я ____ работать на себя.",
@@ -23972,8 +26144,8 @@ window.CONTENT_DATA = {
       "id": "cloze_lega007_01",
       "item_id": "lega007",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "мирно́е соглаше́ние",
       "ru_plain": "мирное соглашение",
       "prompt_ru": "мирное ____",
@@ -24012,8 +26184,8 @@ window.CONTENT_DATA = {
       "id": "cloze_lega008_01",
       "item_id": "lega008",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "суде́бное де́ло",
       "ru_plain": "судебное дело",
       "prompt_ru": "____ дело",
@@ -24053,8 +26225,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele001_01",
       "item_id": "cele001",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Скоро́ Рождество́.",
       "ru_plain": "Скоро Рождество.",
       "prompt_ru": "Скоро ____.",
@@ -24092,8 +26264,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele002_01",
       "item_id": "cele002",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Како́й сего́дня пра́здник?",
       "ru_plain": "Какой сегодня праздник?",
       "prompt_ru": "Какой сегодня ____?",
@@ -24135,8 +26307,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele003_01",
       "item_id": "cele003",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Сего́дня Рождество́.",
       "ru_plain": "Сегодня Рождество.",
       "prompt_ru": "Сегодня ____.",
@@ -24174,8 +26346,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele004_01",
       "item_id": "cele004",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Как вы с Кадри́ей отпра́здновали Рождество́?",
       "ru_plain": "Как вы с Кадрией отпраздновали Рождество?",
       "prompt_ru": "Как вы с Кадрией ____ Рождество?",
@@ -24221,8 +26393,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele005_01",
       "item_id": "cele005",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
       "ru_plain": "Мы отпраздновали Рождество у моих родителей дома.",
       "prompt_ru": "Мы ____ Рождество у моих родителей дома.",
@@ -24266,8 +26438,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele006_01",
       "item_id": "cele006",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Каки́е пла́ны на Рождество́?",
       "ru_plain": "Какие планы на Рождество?",
       "prompt_ru": "Какие планы на ____?",
@@ -24311,8 +26483,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele007_01",
       "item_id": "cele007",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "На Рождество́ мы хоти́м полете́ть в О́регон.",
       "ru_plain": "На Рождество мы хотим полететь в Орегон.",
       "prompt_ru": "На ____ мы хотим полететь в Орегон.",
@@ -24356,8 +26528,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele008_01",
       "item_id": "cele008",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы хоти́м ката́ться на лы́жах.",
       "ru_plain": "Мы хотим кататься на лыжах.",
       "prompt_ru": "Мы хотим ____ на лыжах.",
@@ -24398,8 +26570,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele009_01",
       "item_id": "cele009",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Кадри́я бу́дет гуля́ть и отдыха́ть.",
       "ru_plain": "Кадрия будет гулять и отдыхать.",
       "prompt_ru": "Кадрия будет гулять и ____.",
@@ -24441,8 +26613,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele010_01",
       "item_id": "cele010",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Ско́лько дней вы бу́дете в О́регоне?",
       "ru_plain": "Сколько дней вы будете в Орегоне?",
       "prompt_ru": "____ дней вы будете в Орегоне?",
@@ -24488,8 +26660,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele011_01",
       "item_id": "cele011",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы бу́дем в О́регоне пять дней.",
       "ru_plain": "Мы будем в Орегоне пять дней.",
       "prompt_ru": "Мы будем в ____ пять дней.",
@@ -24531,8 +26703,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele012_01",
       "item_id": "cele012",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Что вы де́лали на День Благодаре́ния?",
       "ru_plain": "Что вы делали на День Благодарения?",
       "prompt_ru": "Что вы делали на День ____?",
@@ -24578,8 +26750,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele013_01",
       "item_id": "cele013",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "На День Благодаре́ния мы у́жинали всей семьёй.",
       "ru_plain": "На День Благодарения мы ужинали всей семьёй.",
       "prompt_ru": "На День ____ мы ужинали всей семьёй.",
@@ -24623,8 +26795,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cele014_01",
       "item_id": "cele014",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Э́то был большо́й у́жин.",
       "ru_plain": "Это был большой ужин.",
       "prompt_ru": "Это был ____ ужин.",
@@ -24665,8 +26837,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cult001_01",
       "item_id": "cult001",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Ка́мень с души́ упа́л.",
       "ru_plain": "Камень с души упал.",
       "prompt_ru": "____ с души упал.",
@@ -24708,8 +26880,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cult002_01",
       "item_id": "cult002",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Жизнь бьёт ключо́м.",
       "ru_plain": "Жизнь бьёт ключом.",
       "prompt_ru": "Жизнь бьёт ____.",
@@ -24750,8 +26922,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cult003_01",
       "item_id": "cult003",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "В гостя́х хорошо́, а до́ма лу́чше.",
       "ru_plain": "В гостях хорошо, а дома лучше.",
       "prompt_ru": "В ____ хорошо, а дома лучше.",
@@ -24795,8 +26967,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cult004_01",
       "item_id": "cult004",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Нет ху́да без добра́.",
       "ru_plain": "Нет худа без добра.",
       "prompt_ru": "Нет худа без ____.",
@@ -24838,8 +27010,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cult005_01",
       "item_id": "cult005",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "У сосе́да трава́ зелене́е.",
       "ru_plain": "У соседа трава зеленее.",
       "prompt_ru": "У соседа трава ____.",
@@ -24881,8 +27053,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cult006_01",
       "item_id": "cult006",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Семь раз отме́рь, оди́н раз отре́жь.",
       "ru_plain": "Семь раз отмерь, один раз отрежь.",
       "prompt_ru": "Семь раз ____, один раз отрежь.",
@@ -24925,8 +27097,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cult007_01",
       "item_id": "cult007",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Чем отлича́ется адвока́т от прокуро́ра?",
       "ru_plain": "Чем отличается адвокат от прокурора?",
       "prompt_ru": "Чем ____ адвокат от прокурора?",
@@ -24970,8 +27142,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cult008_01",
       "item_id": "cult008",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Адвока́т озабо́чен бу́дущим своего́ клие́нта, а прокуро́р — его́ про́шлым.",
       "ru_plain": "Адвокат озабочен будущим своего клиента, а прокурор — его прошлым.",
       "prompt_ru": "Адвокат ____ будущим своего клиента, а прокурор — его прошлым.",
@@ -25019,8 +27191,8 @@ window.CONTENT_DATA = {
       "id": "cloze_cult009_01",
       "item_id": "cult009",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Цивилиза́ция привела́ к тому́, что уже́ не ва́жно, чей адвока́т лу́чше.",
       "ru_plain": "Цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
       "prompt_ru": "____ привела к тому, что уже не важно, чей адвокат лучше.",
@@ -25070,8 +27242,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "prompt_ru": "Мы едем в ____.",
@@ -25111,8 +27283,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "prompt_ru": "Мы будем в ____.",
@@ -25152,8 +27324,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "prompt_ru": "Мы ____ в Будве.",
@@ -25193,8 +27365,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "prompt_ru": "Где наш ____?",
@@ -25236,8 +27408,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "prompt_ru": "____ такси?",
@@ -25275,8 +27447,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "prompt_ru": "____ ехать до отеля?",
@@ -25320,8 +27492,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "prompt_ru": "Где ____?",
@@ -25361,8 +27533,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "prompt_ru": "Я хочу ____ у моря.",
@@ -25403,8 +27575,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "prompt_ru": "Старый город очень ____.",
@@ -25444,8 +27616,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "prompt_ru": "Море очень ____.",
@@ -25484,8 +27656,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "prompt_ru": "Мы ____.",
@@ -25523,8 +27695,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "prompt_ru": "Мы здесь с ____.",
@@ -25563,8 +27735,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "prompt_ru": "Счёт, ____.",
@@ -25602,8 +27774,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "prompt_ru": "Мы хотим ____.",
@@ -25642,8 +27814,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav017_01",
       "item_id": "trav017",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Вот мой па́спорт.",
       "ru_plain": "Вот мой паспорт.",
       "prompt_ru": "Вот мой ____.",
@@ -25683,8 +27855,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav018_01",
       "item_id": "trav018",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ зарегистри́роваться.",
       "ru_plain": "Я хочу зарегистрироваться.",
       "prompt_ru": "Я хочу ____.",
@@ -25724,8 +27896,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav019_01",
       "item_id": "trav019",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ сда́ть бага́ж.",
       "ru_plain": "Я хочу сдать багаж.",
       "prompt_ru": "Я хочу ____ багаж.",
@@ -25765,8 +27937,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav020_01",
       "item_id": "trav020",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где выда́ча багажа́?",
       "ru_plain": "Где выдача багажа?",
       "prompt_ru": "Где ____ багажа?",
@@ -25808,8 +27980,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav021_01",
       "item_id": "trav021",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "У меня́ есть брони́рование.",
       "ru_plain": "У меня есть бронирование.",
       "prompt_ru": "У меня есть ____.",
@@ -25849,8 +28021,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav022_01",
       "item_id": "trav022",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ключ, пожа́луйста.",
       "ru_plain": "Ключ, пожалуйста.",
       "prompt_ru": "Ключ, ____.",
@@ -25887,8 +28059,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav023_01",
       "item_id": "trav023",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где лифт?",
       "ru_plain": "Где лифт?",
       "prompt_ru": "Где ____?",
@@ -25924,8 +28096,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav024_01",
       "item_id": "trav024",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "В но́мере есть интерне́т?",
       "ru_plain": "В номере есть интернет?",
       "prompt_ru": "В номере есть ____?",
@@ -25965,8 +28137,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav025_01",
       "item_id": "trav025",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Во ско́лько зае́зд?",
       "ru_plain": "Во сколько заезд?",
       "prompt_ru": "Во ____ заезд?",
@@ -26009,8 +28181,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav026_01",
       "item_id": "trav026",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Во ско́лько вы́езд?",
       "ru_plain": "Во сколько выезд?",
       "prompt_ru": "Во ____ выезд?",
@@ -26053,8 +28225,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav027_01",
       "item_id": "trav027",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Э́то ваш ключ.",
       "ru_plain": "Это ваш ключ.",
       "prompt_ru": "Это ваш ____.",
@@ -26095,8 +28267,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav028_01",
       "item_id": "trav028",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Како́й ваш но́мер?",
       "ru_plain": "Какой ваш номер?",
       "prompt_ru": "____ ваш номер?",
@@ -26139,8 +28311,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "prompt_ru": "хочу / ____",
@@ -26175,8 +28347,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "prompt_ru": "могу / ____",
@@ -26211,8 +28383,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "prompt_ru": "говорю / ____",
@@ -26247,8 +28419,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "prompt_ru": "понимаю / ____",
@@ -26283,8 +28455,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "prompt_ru": "люблю / ____",
@@ -26319,8 +28491,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "prompt_ru": "работаю / ____",
@@ -26355,8 +28527,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "prompt_ru": "живу / ____",
@@ -26390,8 +28562,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "prompt_ru": "ем / ____",
@@ -26426,8 +28598,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "prompt_ru": "пью / ____",
@@ -26461,8 +28633,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "prompt_ru": "знаю / ____",
@@ -34639,11 +36811,929 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "dict_leis001_01",
+      "item_id": "leis001",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Когда́ я не рабо́таю, я смотрю́ телеви́зор.",
+      "ru_plain": "Когда я не работаю, я смотрю телевизор.",
+      "accepted_answers": [
+        "Когда я не работаю, я смотрю телевизор.",
+        "Когда́ я не рабо́таю, я смотрю́ телеви́зор."
+      ],
+      "en": "When I'm not working, I watch TV.",
+      "priority": 2,
+      "lexemes": [
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
+        "не",
+        "работаю",
+        "смотрю",
+        "телевизор",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "leisure",
+        "tv"
+      ]
+    },
+    {
+      "id": "dict_leis002_01",
+      "item_id": "leis002",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я слу́шаю му́зыку.",
+      "ru_plain": "Я слушаю музыку.",
+      "accepted_answers": [
+        "Я слу́шаю му́зыку.",
+        "Я слушаю музыку."
+      ],
+      "en": "I listen to music.",
+      "priority": 2,
+      "lexemes": [
+        "музыку",
+        "слушаю",
+        "я",
+        "я слушаю музыку."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "leisure",
+        "music"
+      ]
+    },
+    {
+      "id": "dict_leis003_01",
+      "item_id": "leis003",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я люблю́ игра́ть на гита́ре.",
+      "ru_plain": "Я люблю играть на гитаре.",
+      "accepted_answers": [
+        "Я люблю играть на гитаре.",
+        "Я люблю́ игра́ть на гита́ре."
+      ],
+      "en": "I like playing guitar.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "играть",
+        "люблю",
+        "на",
+        "я",
+        "я люблю играть на гитаре."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "instrument",
+        "leisure",
+        "music"
+      ]
+    },
+    {
+      "id": "dict_leis004_01",
+      "item_id": "leis004",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я игра́ю на гита́ре и на пиани́но.",
+      "ru_plain": "Я играю на гитаре и на пианино.",
+      "accepted_answers": [
+        "Я игра́ю на гита́ре и на пиани́но.",
+        "Я играю на гитаре и на пианино."
+      ],
+      "en": "I play guitar and piano.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "и",
+        "играю",
+        "на",
+        "пианино",
+        "я",
+        "я играю на гитаре и на пианино."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "instrument",
+        "leisure",
+        "music"
+      ]
+    },
+    {
+      "id": "dict_leis005_01",
+      "item_id": "leis005",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я пишу́ му́зыку.",
+      "ru_plain": "Я пишу музыку.",
+      "accepted_answers": [
+        "Я пишу музыку.",
+        "Я пишу́ му́зыку."
+      ],
+      "en": "I write music.",
+      "priority": 2,
+      "lexemes": [
+        "музыку",
+        "пишу",
+        "я",
+        "я пишу музыку."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "leisure",
+        "music"
+      ]
+    },
+    {
+      "id": "dict_leis006_01",
+      "item_id": "leis006",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Кадри́я лю́бит рисова́ть.",
+      "ru_plain": "Кадрия любит рисовать.",
+      "accepted_answers": [
+        "Кадри́я лю́бит рисова́ть.",
+        "Кадрия любит рисовать."
+      ],
+      "en": "Kadriya likes to draw.",
+      "priority": 2,
+      "lexemes": [
+        "кадрия",
+        "кадрия любит рисовать.",
+        "любит",
+        "рисовать"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "art",
+        "dictation",
+        "kadriya",
+        "leisure"
+      ]
+    },
+    {
+      "id": "dict_leis007_01",
+      "item_id": "leis007",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я немно́го люблю́ танцева́ть.",
+      "ru_plain": "Я немного люблю танцевать.",
+      "accepted_answers": [
+        "Я немно́го люблю́ танцева́ть.",
+        "Я немного люблю танцевать."
+      ],
+      "en": "I like dancing a little.",
+      "priority": 3,
+      "lexemes": [
+        "люблю",
+        "немного",
+        "танцевать",
+        "я",
+        "я немного люблю танцевать."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dance",
+        "dictation",
+        "leisure"
+      ]
+    },
+    {
+      "id": "dict_leis008_01",
+      "item_id": "leis008",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы игра́ем с на́шими кота́ми.",
+      "ru_plain": "Мы играем с нашими котами.",
+      "accepted_answers": [
+        "Мы игра́ем с на́шими кота́ми.",
+        "Мы играем с нашими котами."
+      ],
+      "en": "We play with our cats.",
+      "priority": 2,
+      "lexemes": [
+        "играем",
+        "котами",
+        "мы",
+        "мы играем с нашими котами.",
+        "нашими",
+        "с"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "cats",
+        "dictation",
+        "home",
+        "leisure"
+      ]
+    },
+    {
+      "id": "dict_leis009_01",
+      "item_id": "leis009",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я люблю́ смотре́ть боевики́.",
+      "ru_plain": "Я люблю смотреть боевики.",
+      "accepted_answers": [
+        "Я люблю смотреть боевики.",
+        "Я люблю́ смотре́ть боевики́."
+      ],
+      "en": "I like watching action movies.",
+      "priority": 3,
+      "lexemes": [
+        "боевики",
+        "люблю",
+        "смотреть",
+        "я",
+        "я люблю смотреть боевики."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "leisure",
+        "movies"
+      ]
+    },
+    {
+      "id": "dict_leis010_01",
+      "item_id": "leis010",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+      "ru_plain": "Кадрия любит смотреть фильмы о любви.",
+      "accepted_answers": [
+        "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+        "Кадрия любит смотреть фильмы о любви."
+      ],
+      "en": "Kadriya likes watching love movies.",
+      "priority": 3,
+      "lexemes": [
+        "кадрия",
+        "кадрия любит смотреть фильмы о любви.",
+        "любви",
+        "любит",
+        "о",
+        "смотреть",
+        "фильмы"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "kadriya",
+        "leisure",
+        "movies"
+      ]
+    },
+    {
+      "id": "dict_leis011_01",
+      "item_id": "leis011",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то дом.",
+      "ru_plain": "Это дом.",
+      "accepted_answers": [
+        "Э́то дом.",
+        "Это дом."
+      ],
+      "en": "This is home / a house.",
+      "priority": 3,
+      "lexemes": [
+        "дом",
+        "это",
+        "это дом."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "home",
+        "place"
+      ]
+    },
+    {
+      "id": "dict_leis012_01",
+      "item_id": "leis012",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь мы отдыха́ем.",
+      "ru_plain": "Здесь мы отдыхаем.",
+      "accepted_answers": [
+        "Здесь мы отдыха́ем.",
+        "Здесь мы отдыхаем."
+      ],
+      "en": "Here we relax.",
+      "priority": 3,
+      "lexemes": [
+        "здесь",
+        "здесь мы отдыхаем.",
+        "мы",
+        "отдыхаем"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "home",
+        "place"
+      ]
+    },
+    {
+      "id": "dict_leis013_01",
+      "item_id": "leis013",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то стадио́н.",
+      "ru_plain": "Это стадион.",
+      "accepted_answers": [
+        "Э́то стадио́н.",
+        "Это стадион."
+      ],
+      "en": "This is a stadium.",
+      "priority": 3,
+      "lexemes": [
+        "стадион",
+        "это",
+        "это стадион."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "place",
+        "sports"
+      ]
+    },
+    {
+      "id": "dict_leis014_01",
+      "item_id": "leis014",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь мы игра́ем в футбо́л.",
+      "ru_plain": "Здесь мы играем в футбол.",
+      "accepted_answers": [
+        "Здесь мы игра́ем в футбо́л.",
+        "Здесь мы играем в футбол."
+      ],
+      "en": "Here we play soccer.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "здесь",
+        "здесь мы играем в футбол.",
+        "играем",
+        "мы",
+        "футбол"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "place",
+        "sports"
+      ]
+    },
+    {
+      "id": "dict_leis015_01",
+      "item_id": "leis015",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+      "ru_plain": "Там можно увидеть разные спортивные игры.",
+      "accepted_answers": [
+        "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+        "Там можно увидеть разные спортивные игры."
+      ],
+      "en": "There you can see different sports games.",
+      "priority": 3,
+      "lexemes": [
+        "игры",
+        "можно",
+        "разные",
+        "спортивные",
+        "там",
+        "там можно увидеть разные спортивные игры.",
+        "увидеть"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "place",
+        "sports"
+      ]
+    },
+    {
+      "id": "dict_leis016_01",
+      "item_id": "leis016",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то кинотеа́тр.",
+      "ru_plain": "Это кинотеатр.",
+      "accepted_answers": [
+        "Э́то кинотеа́тр.",
+        "Это кинотеатр."
+      ],
+      "en": "This is a movie theater.",
+      "priority": 3,
+      "lexemes": [
+        "кинотеатр",
+        "это",
+        "это кинотеатр."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "movies",
+        "place"
+      ]
+    },
+    {
+      "id": "dict_leis017_01",
+      "item_id": "leis017",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь я слу́шаю и смотрю́ фильм.",
+      "ru_plain": "Здесь я слушаю и смотрю фильм.",
+      "accepted_answers": [
+        "Здесь я слу́шаю и смотрю́ фильм.",
+        "Здесь я слушаю и смотрю фильм."
+      ],
+      "en": "Here I listen and watch a film.",
+      "priority": 3,
+      "lexemes": [
+        "здесь",
+        "здесь я слушаю и смотрю фильм.",
+        "и",
+        "слушаю",
+        "смотрю",
+        "фильм",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "movies",
+        "place"
+      ]
+    },
+    {
+      "id": "dict_leis018_01",
+      "item_id": "leis018",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то музе́й.",
+      "ru_plain": "Это музей.",
+      "accepted_answers": [
+        "Э́то музе́й.",
+        "Это музей."
+      ],
+      "en": "This is a museum.",
+      "priority": 3,
+      "lexemes": [
+        "музей",
+        "это",
+        "это музей."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "museum",
+        "place"
+      ]
+    },
+    {
+      "id": "dict_leis019_01",
+      "item_id": "leis019",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Там я смотрю́ карти́ны и скульпту́ры.",
+      "ru_plain": "Там я смотрю картины и скульптуры.",
+      "accepted_answers": [
+        "Там я смотрю картины и скульптуры.",
+        "Там я смотрю́ карти́ны и скульпту́ры."
+      ],
+      "en": "There I look at paintings and sculptures.",
+      "priority": 3,
+      "lexemes": [
+        "и",
+        "картины",
+        "скульптуры",
+        "смотрю",
+        "там",
+        "там я смотрю картины и скульптуры.",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "museum",
+        "place"
+      ]
+    },
+    {
+      "id": "dict_leis020_01",
+      "item_id": "leis020",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы гуля́ли в па́рке.",
+      "ru_plain": "Мы гуляли в парке.",
+      "accepted_answers": [
+        "Мы гуля́ли в па́рке.",
+        "Мы гуляли в парке."
+      ],
+      "en": "We walked in the park.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "гуляли",
+        "мы",
+        "мы гуляли в парке.",
+        "парке"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "leisure",
+        "park"
+      ]
+    },
+    {
+      "id": "dict_leis021_01",
+      "item_id": "leis021",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы отдыха́ли и слу́шали му́зыку.",
+      "ru_plain": "Мы отдыхали и слушали музыку.",
+      "accepted_answers": [
+        "Мы отдыха́ли и слу́шали му́зыку.",
+        "Мы отдыхали и слушали музыку."
+      ],
+      "en": "We rested and listened to music.",
+      "priority": 3,
+      "lexemes": [
+        "и",
+        "музыку",
+        "мы",
+        "мы отдыхали и слушали музыку.",
+        "отдыхали",
+        "слушали"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "leisure",
+        "music"
+      ]
+    },
+    {
       "id": "dict_work001_01",
       "item_id": "work001",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У меня́ своя́ компа́ния.",
       "ru_plain": "У меня своя компания.",
       "accepted_answers": [
@@ -34685,8 +37775,8 @@ window.CONTENT_DATA = {
       "id": "dict_work002_01",
       "item_id": "work002",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Кадри́я рабо́тает вме́сте со мной.",
       "ru_plain": "Кадрия работает вместе со мной.",
       "accepted_answers": [
@@ -34729,8 +37819,8 @@ window.CONTENT_DATA = {
       "id": "dict_work003_01",
       "item_id": "work003",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Мы рабо́таем вме́сте.",
       "ru_plain": "Мы работаем вместе.",
       "accepted_answers": [
@@ -34771,8 +37861,8 @@ window.CONTENT_DATA = {
       "id": "dict_work004_01",
       "item_id": "work004",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У меня́ мно́го рабо́ты.",
       "ru_plain": "У меня много работы.",
       "accepted_answers": [
@@ -34814,8 +37904,8 @@ window.CONTENT_DATA = {
       "id": "dict_work005_01",
       "item_id": "work005",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я о́чень за́нят.",
       "ru_plain": "Я очень занят.",
       "accepted_answers": [
@@ -34859,8 +37949,8 @@ window.CONTENT_DATA = {
       "id": "dict_work006_01",
       "item_id": "work006",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Хорошо́. Я мно́го рабо́таю.",
       "ru_plain": "Хорошо. Я много работаю.",
       "accepted_answers": [
@@ -34902,8 +37992,8 @@ window.CONTENT_DATA = {
       "id": "dict_work007_01",
       "item_id": "work007",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У вас мно́го клие́нтов?",
       "ru_plain": "У вас много клиентов?",
       "accepted_answers": [
@@ -34947,8 +38037,8 @@ window.CONTENT_DATA = {
       "id": "dict_work008_01",
       "item_id": "work008",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Да, у меня́ мно́го клие́нтов.",
       "ru_plain": "Да, у меня много клиентов.",
       "accepted_answers": [
@@ -34991,8 +38081,8 @@ window.CONTENT_DATA = {
       "id": "dict_work009_01",
       "item_id": "work009",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У вас мно́го дел?",
       "ru_plain": "У вас много дел?",
       "accepted_answers": [
@@ -35036,8 +38126,8 @@ window.CONTENT_DATA = {
       "id": "dict_work010_01",
       "item_id": "work010",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Да, у меня́ мно́го дел.",
       "ru_plain": "Да, у меня много дел.",
       "accepted_answers": [
@@ -35080,8 +38170,8 @@ window.CONTENT_DATA = {
       "id": "dict_work011_01",
       "item_id": "work011",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Сего́дня я рабо́тал с клие́нтом.",
       "ru_plain": "Сегодня я работал с клиентом.",
       "accepted_answers": [
@@ -35127,8 +38217,8 @@ window.CONTENT_DATA = {
       "id": "dict_work012_01",
       "item_id": "work012",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я звони́л клие́нтам.",
       "ru_plain": "Я звонил клиентам.",
       "accepted_answers": [
@@ -35172,8 +38262,8 @@ window.CONTENT_DATA = {
       "id": "dict_work013_01",
       "item_id": "work013",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я рабо́тал на компью́тере.",
       "ru_plain": "Я работал на компьютере.",
       "accepted_answers": [
@@ -35217,8 +38307,8 @@ window.CONTENT_DATA = {
       "id": "dict_work014_01",
       "item_id": "work014",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я рабо́таю в суде́.",
       "ru_plain": "Я работаю в суде.",
       "accepted_answers": [
@@ -35260,8 +38350,8 @@ window.CONTENT_DATA = {
       "id": "dict_work015_01",
       "item_id": "work015",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Мы дово́льны результа́том.",
       "ru_plain": "Мы довольны результатом.",
       "accepted_answers": [
@@ -35302,8 +38392,8 @@ window.CONTENT_DATA = {
       "id": "dict_work016_01",
       "item_id": "work016",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я сча́стлив рабо́тать на себя́.",
       "ru_plain": "Я счастлив работать на себя.",
       "accepted_answers": [
@@ -35349,8 +38439,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega002_01",
       "item_id": "lega002",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "судья́",
       "ru_plain": "судья",
       "accepted_answers": [
@@ -35387,8 +38477,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega003_01",
       "item_id": "lega003",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "слу́шание",
       "ru_plain": "слушание",
       "accepted_answers": [
@@ -35425,8 +38515,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega004_01",
       "item_id": "lega004",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "де́ло",
       "ru_plain": "дело",
       "accepted_answers": [
@@ -35463,8 +38553,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega005_01",
       "item_id": "lega005",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "клие́нт",
       "ru_plain": "клиент",
       "accepted_answers": [
@@ -35501,8 +38591,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega006_01",
       "item_id": "lega006",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "страхо́вка",
       "ru_plain": "страховка",
       "accepted_answers": [
@@ -35539,8 +38629,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega007_01",
       "item_id": "lega007",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "мирно́е соглаше́ние",
       "ru_plain": "мирное соглашение",
       "accepted_answers": [
@@ -35579,8 +38669,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega008_01",
       "item_id": "lega008",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "суде́бное де́ло",
       "ru_plain": "судебное дело",
       "accepted_answers": [
@@ -35620,8 +38710,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega009_01",
       "item_id": "lega009",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "тра́вма",
       "ru_plain": "травма",
       "accepted_answers": [
@@ -35658,8 +38748,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega010_01",
       "item_id": "lega010",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "клевета́",
       "ru_plain": "клевета",
       "accepted_answers": [
@@ -35695,8 +38785,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega011_01",
       "item_id": "lega011",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "зако́н",
       "ru_plain": "закон",
       "accepted_answers": [
@@ -35732,8 +38822,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega012_01",
       "item_id": "lega012",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "пра́во",
       "ru_plain": "право",
       "accepted_answers": [
@@ -35769,8 +38859,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega013_01",
       "item_id": "lega013",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "прокуро́р",
       "ru_plain": "прокурор",
       "accepted_answers": [
@@ -35807,8 +38897,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega014_01",
       "item_id": "lega014",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "защи́тник",
       "ru_plain": "защитник",
       "accepted_answers": [
@@ -35845,8 +38935,8 @@ window.CONTENT_DATA = {
       "id": "dict_lega015_01",
       "item_id": "lega015",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "пове́стка",
       "ru_plain": "повестка",
       "accepted_answers": [
@@ -35883,8 +38973,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele001_01",
       "item_id": "cele001",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Скоро́ Рождество́.",
       "ru_plain": "Скоро Рождество.",
       "accepted_answers": [
@@ -35924,8 +39014,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele002_01",
       "item_id": "cele002",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Како́й сего́дня пра́здник?",
       "ru_plain": "Какой сегодня праздник?",
       "accepted_answers": [
@@ -35967,8 +39057,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele003_01",
       "item_id": "cele003",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Сего́дня Рождество́.",
       "ru_plain": "Сегодня Рождество.",
       "accepted_answers": [
@@ -36008,8 +39098,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele004_01",
       "item_id": "cele004",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Как вы с Кадри́ей отпра́здновали Рождество́?",
       "ru_plain": "Как вы с Кадрией отпраздновали Рождество?",
       "accepted_answers": [
@@ -36055,8 +39145,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele005_01",
       "item_id": "cele005",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
       "ru_plain": "Мы отпраздновали Рождество у моих родителей дома.",
       "accepted_answers": [
@@ -36102,8 +39192,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele006_01",
       "item_id": "cele006",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Каки́е пла́ны на Рождество́?",
       "ru_plain": "Какие планы на Рождество?",
       "accepted_answers": [
@@ -36147,8 +39237,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele007_01",
       "item_id": "cele007",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "На Рождество́ мы хоти́м полете́ть в О́регон.",
       "ru_plain": "На Рождество мы хотим полететь в Орегон.",
       "accepted_answers": [
@@ -36194,8 +39284,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele008_01",
       "item_id": "cele008",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы хоти́м ката́ться на лы́жах.",
       "ru_plain": "Мы хотим кататься на лыжах.",
       "accepted_answers": [
@@ -36238,8 +39328,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele009_01",
       "item_id": "cele009",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Кадри́я бу́дет гуля́ть и отдыха́ть.",
       "ru_plain": "Кадрия будет гулять и отдыхать.",
       "accepted_answers": [
@@ -36283,8 +39373,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele010_01",
       "item_id": "cele010",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Ско́лько дней вы бу́дете в О́регоне?",
       "ru_plain": "Сколько дней вы будете в Орегоне?",
       "accepted_answers": [
@@ -36330,8 +39420,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele011_01",
       "item_id": "cele011",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы бу́дем в О́регоне пять дней.",
       "ru_plain": "Мы будем в Орегоне пять дней.",
       "accepted_answers": [
@@ -36375,8 +39465,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele012_01",
       "item_id": "cele012",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Что вы де́лали на День Благодаре́ния?",
       "ru_plain": "Что вы делали на День Благодарения?",
       "accepted_answers": [
@@ -36422,8 +39512,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele013_01",
       "item_id": "cele013",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "На День Благодаре́ния мы у́жинали всей семьёй.",
       "ru_plain": "На День Благодарения мы ужинали всей семьёй.",
       "accepted_answers": [
@@ -36469,8 +39559,8 @@ window.CONTENT_DATA = {
       "id": "dict_cele014_01",
       "item_id": "cele014",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Э́то был большо́й у́жин.",
       "ru_plain": "Это был большой ужин.",
       "accepted_answers": [
@@ -36513,8 +39603,8 @@ window.CONTENT_DATA = {
       "id": "dict_cult001_01",
       "item_id": "cult001",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Ка́мень с души́ упа́л.",
       "ru_plain": "Камень с души упал.",
       "accepted_answers": [
@@ -36556,8 +39646,8 @@ window.CONTENT_DATA = {
       "id": "dict_cult002_01",
       "item_id": "cult002",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Жизнь бьёт ключо́м.",
       "ru_plain": "Жизнь бьёт ключом.",
       "accepted_answers": [
@@ -36598,8 +39688,8 @@ window.CONTENT_DATA = {
       "id": "dict_cult003_01",
       "item_id": "cult003",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "В гостя́х хорошо́, а до́ма лу́чше.",
       "ru_plain": "В гостях хорошо, а дома лучше.",
       "accepted_answers": [
@@ -36643,8 +39733,8 @@ window.CONTENT_DATA = {
       "id": "dict_cult004_01",
       "item_id": "cult004",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Нет ху́да без добра́.",
       "ru_plain": "Нет худа без добра.",
       "accepted_answers": [
@@ -36686,8 +39776,8 @@ window.CONTENT_DATA = {
       "id": "dict_cult005_01",
       "item_id": "cult005",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "У сосе́да трава́ зелене́е.",
       "ru_plain": "У соседа трава зеленее.",
       "accepted_answers": [
@@ -36729,8 +39819,8 @@ window.CONTENT_DATA = {
       "id": "dict_cult006_01",
       "item_id": "cult006",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Семь раз отме́рь, оди́н раз отре́жь.",
       "ru_plain": "Семь раз отмерь, один раз отрежь.",
       "accepted_answers": [
@@ -36773,8 +39863,8 @@ window.CONTENT_DATA = {
       "id": "dict_cult007_01",
       "item_id": "cult007",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Чем отлича́ется адвока́т от прокуро́ра?",
       "ru_plain": "Чем отличается адвокат от прокурора?",
       "accepted_answers": [
@@ -36818,8 +39908,8 @@ window.CONTENT_DATA = {
       "id": "dict_cult008_01",
       "item_id": "cult008",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Адвока́т озабо́чен бу́дущим своего́ клие́нта, а прокуро́р — его́ про́шлым.",
       "ru_plain": "Адвокат озабочен будущим своего клиента, а прокурор — его прошлым.",
       "accepted_answers": [
@@ -36867,8 +39957,8 @@ window.CONTENT_DATA = {
       "id": "dict_cult009_01",
       "item_id": "cult009",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Цивилиза́ция привела́ к тому́, что уже́ не ва́жно, чей адвока́т лу́чше.",
       "ru_plain": "Цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
       "accepted_answers": [
@@ -36918,8 +40008,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "accepted_answers": [
@@ -36961,8 +40051,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "accepted_answers": [
@@ -37004,8 +40094,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "accepted_answers": [
@@ -37047,8 +40137,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "accepted_answers": [
@@ -37090,8 +40180,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "accepted_answers": [
@@ -37131,8 +40221,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "accepted_answers": [
@@ -37176,8 +40266,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "accepted_answers": [
@@ -37217,8 +40307,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "accepted_answers": [
@@ -37261,8 +40351,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "accepted_answers": [
@@ -37304,8 +40394,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "accepted_answers": [
@@ -37346,8 +40436,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "accepted_answers": [
@@ -37387,8 +40477,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "accepted_answers": [
@@ -37429,8 +40519,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "accepted_answers": [
@@ -37470,8 +40560,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "accepted_answers": [
@@ -37512,8 +40602,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav015_01",
       "item_id": "trav015",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "аэропо́рт",
       "ru_plain": "аэропорт",
       "accepted_answers": [
@@ -37552,8 +40642,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav016_01",
       "item_id": "trav016",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "бага́ж",
       "ru_plain": "багаж",
       "accepted_answers": [
@@ -37593,8 +40683,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav017_01",
       "item_id": "trav017",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Вот мой па́спорт.",
       "ru_plain": "Вот мой паспорт.",
       "accepted_answers": [
@@ -37636,8 +40726,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav018_01",
       "item_id": "trav018",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ зарегистри́роваться.",
       "ru_plain": "Я хочу зарегистрироваться.",
       "accepted_answers": [
@@ -37679,8 +40769,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav019_01",
       "item_id": "trav019",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ сда́ть бага́ж.",
       "ru_plain": "Я хочу сдать багаж.",
       "accepted_answers": [
@@ -37722,8 +40812,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav020_01",
       "item_id": "trav020",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где выда́ча багажа́?",
       "ru_plain": "Где выдача багажа?",
       "accepted_answers": [
@@ -37765,8 +40855,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav021_01",
       "item_id": "trav021",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "У меня́ есть брони́рование.",
       "ru_plain": "У меня есть бронирование.",
       "accepted_answers": [
@@ -37808,8 +40898,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav022_01",
       "item_id": "trav022",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ключ, пожа́луйста.",
       "ru_plain": "Ключ, пожалуйста.",
       "accepted_answers": [
@@ -37848,8 +40938,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav023_01",
       "item_id": "trav023",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где лифт?",
       "ru_plain": "Где лифт?",
       "accepted_answers": [
@@ -37887,8 +40977,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav024_01",
       "item_id": "trav024",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "В но́мере есть интерне́т?",
       "ru_plain": "В номере есть интернет?",
       "accepted_answers": [
@@ -37930,8 +41020,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav025_01",
       "item_id": "trav025",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Во ско́лько зае́зд?",
       "ru_plain": "Во сколько заезд?",
       "accepted_answers": [
@@ -37974,8 +41064,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav026_01",
       "item_id": "trav026",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Во ско́лько вы́езд?",
       "ru_plain": "Во сколько выезд?",
       "accepted_answers": [
@@ -38018,8 +41108,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav027_01",
       "item_id": "trav027",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Э́то ваш ключ.",
       "ru_plain": "Это ваш ключ.",
       "accepted_answers": [
@@ -38061,8 +41151,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav028_01",
       "item_id": "trav028",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Како́й ваш но́мер?",
       "ru_plain": "Какой ваш номер?",
       "accepted_answers": [
@@ -38105,8 +41195,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "accepted_answers": [
@@ -38143,8 +41233,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "accepted_answers": [
@@ -38181,8 +41271,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "accepted_answers": [
@@ -38219,8 +41309,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "accepted_answers": [
@@ -38257,8 +41347,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "accepted_answers": [
@@ -38295,8 +41385,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "accepted_answers": [
@@ -38333,8 +41423,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "accepted_answers": [
@@ -38371,8 +41461,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "accepted_answers": [
@@ -38409,8 +41499,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "accepted_answers": [
@@ -38446,8 +41536,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "accepted_answers": [
@@ -46707,11 +49797,961 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "stress_leis001_01",
+      "item_id": "leis001",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Когда́ я не рабо́таю, я смотрю́ телеви́зор.",
+      "ru_plain": "Когда я не работаю, я смотрю телевизор.",
+      "options": [
+        "Ко́гда я не работаю, я смотрю телевизор.",
+        "Когда я́ не работаю, я смотрю телевизор.",
+        "Когда́ я не рабо́таю, я смотрю́ телеви́зор.",
+        "Когда́ я не работаю, я смотрю телевизор."
+      ],
+      "answer": "Когда́ я не рабо́таю, я смотрю́ телеви́зор.",
+      "en": "When I'm not working, I watch TV.",
+      "priority": 2,
+      "lexemes": [
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
+        "не",
+        "работаю",
+        "смотрю",
+        "телевизор",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "leisure",
+        "stress_drill",
+        "tv"
+      ]
+    },
+    {
+      "id": "stress_leis002_01",
+      "item_id": "leis002",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я слу́шаю му́зыку.",
+      "ru_plain": "Я слушаю музыку.",
+      "options": [
+        "Я слу́шаю му́зыку.",
+        "Я слу́шаю музыку.",
+        "Я слуша́ю музыку.",
+        "Я́ слушаю музыку."
+      ],
+      "answer": "Я слу́шаю му́зыку.",
+      "en": "I listen to music.",
+      "priority": 2,
+      "lexemes": [
+        "музыку",
+        "слушаю",
+        "я",
+        "я слушаю музыку."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "leisure",
+        "music",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis003_01",
+      "item_id": "leis003",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я люблю́ игра́ть на гита́ре.",
+      "ru_plain": "Я люблю играть на гитаре.",
+      "options": [
+        "Я лю́блю играть на гитаре.",
+        "Я люблю́ игра́ть на гита́ре.",
+        "Я люблю́ играть на гитаре.",
+        "Я́ люблю играть на гитаре."
+      ],
+      "answer": "Я люблю́ игра́ть на гита́ре.",
+      "en": "I like playing guitar.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "играть",
+        "люблю",
+        "на",
+        "я",
+        "я люблю играть на гитаре."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "instrument",
+        "leisure",
+        "music",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis004_01",
+      "item_id": "leis004",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я игра́ю на гита́ре и на пиани́но.",
+      "ru_plain": "Я играю на гитаре и на пианино.",
+      "options": [
+        "Я и́граю на гитаре и на пианино.",
+        "Я игра́ю на гита́ре и на пиани́но.",
+        "Я игра́ю на гитаре и на пианино.",
+        "Я́ играю на гитаре и на пианино."
+      ],
+      "answer": "Я игра́ю на гита́ре и на пиани́но.",
+      "en": "I play guitar and piano.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "и",
+        "играю",
+        "на",
+        "пианино",
+        "я",
+        "я играю на гитаре и на пианино."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "instrument",
+        "leisure",
+        "music",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis005_01",
+      "item_id": "leis005",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я пишу́ му́зыку.",
+      "ru_plain": "Я пишу музыку.",
+      "options": [
+        "Я пи́шу музыку.",
+        "Я пишу́ му́зыку.",
+        "Я пишу́ музыку.",
+        "Я́ пишу музыку."
+      ],
+      "answer": "Я пишу́ му́зыку.",
+      "en": "I write music.",
+      "priority": 2,
+      "lexemes": [
+        "музыку",
+        "пишу",
+        "я",
+        "я пишу музыку."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "leisure",
+        "music",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis006_01",
+      "item_id": "leis006",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Кадри́я лю́бит рисова́ть.",
+      "ru_plain": "Кадрия любит рисовать.",
+      "options": [
+        "Ка́дрия любит рисовать.",
+        "Кадри́я лю́бит рисова́ть.",
+        "Кадри́я любит рисовать.",
+        "Кадрия́ любит рисовать."
+      ],
+      "answer": "Кадри́я лю́бит рисова́ть.",
+      "en": "Kadriya likes to draw.",
+      "priority": 2,
+      "lexemes": [
+        "кадрия",
+        "кадрия любит рисовать.",
+        "любит",
+        "рисовать"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "art",
+        "kadriya",
+        "leisure",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis007_01",
+      "item_id": "leis007",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я немно́го люблю́ танцева́ть.",
+      "ru_plain": "Я немного люблю танцевать.",
+      "options": [
+        "Я не́много люблю танцевать.",
+        "Я немно́го люблю танцевать.",
+        "Я немно́го люблю́ танцева́ть.",
+        "Я́ немного люблю танцевать."
+      ],
+      "answer": "Я немно́го люблю́ танцева́ть.",
+      "en": "I like dancing a little.",
+      "priority": 3,
+      "lexemes": [
+        "люблю",
+        "немного",
+        "танцевать",
+        "я",
+        "я немного люблю танцевать."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "dance",
+        "leisure",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis008_01",
+      "item_id": "leis008",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы игра́ем с на́шими кота́ми.",
+      "ru_plain": "Мы играем с нашими котами.",
+      "options": [
+        "Мы и́граем с нашими котами.",
+        "Мы игра́ем с на́шими кота́ми.",
+        "Мы игра́ем с нашими котами.",
+        "Мы́ играем с нашими котами."
+      ],
+      "answer": "Мы игра́ем с на́шими кота́ми.",
+      "en": "We play with our cats.",
+      "priority": 2,
+      "lexemes": [
+        "играем",
+        "котами",
+        "мы",
+        "мы играем с нашими котами.",
+        "нашими",
+        "с"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "cats",
+        "home",
+        "leisure",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis009_01",
+      "item_id": "leis009",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я люблю́ смотре́ть боевики́.",
+      "ru_plain": "Я люблю смотреть боевики.",
+      "options": [
+        "Я лю́блю смотреть боевики.",
+        "Я люблю́ смотре́ть боевики́.",
+        "Я люблю́ смотреть боевики.",
+        "Я́ люблю смотреть боевики."
+      ],
+      "answer": "Я люблю́ смотре́ть боевики́.",
+      "en": "I like watching action movies.",
+      "priority": 3,
+      "lexemes": [
+        "боевики",
+        "люблю",
+        "смотреть",
+        "я",
+        "я люблю смотреть боевики."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "leisure",
+        "movies",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis010_01",
+      "item_id": "leis010",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+      "ru_plain": "Кадрия любит смотреть фильмы о любви.",
+      "options": [
+        "Ка́дрия любит смотреть фильмы о любви.",
+        "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+        "Кадри́я любит смотреть фильмы о любви.",
+        "Кадрия́ любит смотреть фильмы о любви."
+      ],
+      "answer": "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+      "en": "Kadriya likes watching love movies.",
+      "priority": 3,
+      "lexemes": [
+        "кадрия",
+        "кадрия любит смотреть фильмы о любви.",
+        "любви",
+        "любит",
+        "о",
+        "смотреть",
+        "фильмы"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "kadriya",
+        "leisure",
+        "movies",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis011_01",
+      "item_id": "leis011",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то дом.",
+      "ru_plain": "Это дом.",
+      "options": [
+        "Э́то дом.",
+        "Это до́м.",
+        "Это́ дом."
+      ],
+      "answer": "Э́то дом.",
+      "en": "This is home / a house.",
+      "priority": 3,
+      "lexemes": [
+        "дом",
+        "это",
+        "это дом."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "home",
+        "place",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis012_01",
+      "item_id": "leis012",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь мы отдыха́ем.",
+      "ru_plain": "Здесь мы отдыхаем.",
+      "options": [
+        "Зде́сь мы отдыхаем.",
+        "Здесь мы о́тдыхаем.",
+        "Здесь мы отдыха́ем.",
+        "Здесь мы́ отдыхаем."
+      ],
+      "answer": "Здесь мы отдыха́ем.",
+      "en": "Here we relax.",
+      "priority": 3,
+      "lexemes": [
+        "здесь",
+        "здесь мы отдыхаем.",
+        "мы",
+        "отдыхаем"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "home",
+        "place",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis013_01",
+      "item_id": "leis013",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то стадио́н.",
+      "ru_plain": "Это стадион.",
+      "options": [
+        "Э́то стадио́н.",
+        "Э́то стадион.",
+        "Это ста́дион.",
+        "Это́ стадион."
+      ],
+      "answer": "Э́то стадио́н.",
+      "en": "This is a stadium.",
+      "priority": 3,
+      "lexemes": [
+        "стадион",
+        "это",
+        "это стадион."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "place",
+        "sports",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis014_01",
+      "item_id": "leis014",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь мы игра́ем в футбо́л.",
+      "ru_plain": "Здесь мы играем в футбол.",
+      "options": [
+        "Зде́сь мы играем в футбол.",
+        "Здесь мы и́граем в футбол.",
+        "Здесь мы игра́ем в футбо́л.",
+        "Здесь мы́ играем в футбол."
+      ],
+      "answer": "Здесь мы игра́ем в футбо́л.",
+      "en": "Here we play soccer.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "здесь",
+        "здесь мы играем в футбол.",
+        "играем",
+        "мы",
+        "футбол"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "place",
+        "sports",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis015_01",
+      "item_id": "leis015",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+      "ru_plain": "Там можно увидеть разные спортивные игры.",
+      "options": [
+        "Та́м можно увидеть разные спортивные игры.",
+        "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+        "Там мо́жно увидеть разные спортивные игры.",
+        "Там можно́ увидеть разные спортивные игры."
+      ],
+      "answer": "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+      "en": "There you can see different sports games.",
+      "priority": 3,
+      "lexemes": [
+        "игры",
+        "можно",
+        "разные",
+        "спортивные",
+        "там",
+        "там можно увидеть разные спортивные игры.",
+        "увидеть"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "place",
+        "sports",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis016_01",
+      "item_id": "leis016",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то кинотеа́тр.",
+      "ru_plain": "Это кинотеатр.",
+      "options": [
+        "Э́то кинотеа́тр.",
+        "Э́то кинотеатр.",
+        "Это ки́нотеатр.",
+        "Это́ кинотеатр."
+      ],
+      "answer": "Э́то кинотеа́тр.",
+      "en": "This is a movie theater.",
+      "priority": 3,
+      "lexemes": [
+        "кинотеатр",
+        "это",
+        "это кинотеатр."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "movies",
+        "place",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis017_01",
+      "item_id": "leis017",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь я слу́шаю и смотрю́ фильм.",
+      "ru_plain": "Здесь я слушаю и смотрю фильм.",
+      "options": [
+        "Зде́сь я слушаю и смотрю фильм.",
+        "Здесь я слу́шаю и смотрю фильм.",
+        "Здесь я слу́шаю и смотрю́ фильм.",
+        "Здесь я́ слушаю и смотрю фильм."
+      ],
+      "answer": "Здесь я слу́шаю и смотрю́ фильм.",
+      "en": "Here I listen and watch a film.",
+      "priority": 3,
+      "lexemes": [
+        "здесь",
+        "здесь я слушаю и смотрю фильм.",
+        "и",
+        "слушаю",
+        "смотрю",
+        "фильм",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "movies",
+        "place",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis018_01",
+      "item_id": "leis018",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то музе́й.",
+      "ru_plain": "Это музей.",
+      "options": [
+        "Э́то музе́й.",
+        "Э́то музей.",
+        "Это му́зей.",
+        "Это́ музей."
+      ],
+      "answer": "Э́то музе́й.",
+      "en": "This is a museum.",
+      "priority": 3,
+      "lexemes": [
+        "музей",
+        "это",
+        "это музей."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "museum",
+        "place",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis019_01",
+      "item_id": "leis019",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Там я смотрю́ карти́ны и скульпту́ры.",
+      "ru_plain": "Там я смотрю картины и скульптуры.",
+      "options": [
+        "Та́м я смотрю картины и скульптуры.",
+        "Там я смо́трю картины и скульптуры.",
+        "Там я смотрю́ карти́ны и скульпту́ры.",
+        "Там я́ смотрю картины и скульптуры."
+      ],
+      "answer": "Там я смотрю́ карти́ны и скульпту́ры.",
+      "en": "There I look at paintings and sculptures.",
+      "priority": 3,
+      "lexemes": [
+        "и",
+        "картины",
+        "скульптуры",
+        "смотрю",
+        "там",
+        "там я смотрю картины и скульптуры.",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "museum",
+        "place",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis020_01",
+      "item_id": "leis020",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы гуля́ли в па́рке.",
+      "ru_plain": "Мы гуляли в парке.",
+      "options": [
+        "Мы гу́ляли в парке.",
+        "Мы гуля́ли в па́рке.",
+        "Мы гуля́ли в парке.",
+        "Мы́ гуляли в парке."
+      ],
+      "answer": "Мы гуля́ли в па́рке.",
+      "en": "We walked in the park.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "гуляли",
+        "мы",
+        "мы гуляли в парке.",
+        "парке"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "leisure",
+        "park",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_leis021_01",
+      "item_id": "leis021",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы отдыха́ли и слу́шали му́зыку.",
+      "ru_plain": "Мы отдыхали и слушали музыку.",
+      "options": [
+        "Мы о́тдыхали и слушали музыку.",
+        "Мы отды́хали и слушали музыку.",
+        "Мы отдыха́ли и слу́шали му́зыку.",
+        "Мы́ отдыхали и слушали музыку."
+      ],
+      "answer": "Мы отдыха́ли и слу́шали му́зыку.",
+      "en": "We rested and listened to music.",
+      "priority": 3,
+      "lexemes": [
+        "и",
+        "музыку",
+        "мы",
+        "мы отдыхали и слушали музыку.",
+        "отдыхали",
+        "слушали"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "leisure",
+        "music",
+        "stress_drill"
+      ]
+    },
+    {
       "id": "stress_work001_01",
       "item_id": "work001",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У меня́ своя́ компа́ния.",
       "ru_plain": "У меня своя компания.",
       "options": [
@@ -46754,8 +50794,8 @@ window.CONTENT_DATA = {
       "id": "stress_work002_01",
       "item_id": "work002",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Кадри́я рабо́тает вме́сте со мной.",
       "ru_plain": "Кадрия работает вместе со мной.",
       "options": [
@@ -46799,8 +50839,8 @@ window.CONTENT_DATA = {
       "id": "stress_work003_01",
       "item_id": "work003",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Мы рабо́таем вме́сте.",
       "ru_plain": "Мы работаем вместе.",
       "options": [
@@ -46842,8 +50882,8 @@ window.CONTENT_DATA = {
       "id": "stress_work004_01",
       "item_id": "work004",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У меня́ мно́го рабо́ты.",
       "ru_plain": "У меня много работы.",
       "options": [
@@ -46886,8 +50926,8 @@ window.CONTENT_DATA = {
       "id": "stress_work005_01",
       "item_id": "work005",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я о́чень за́нят.",
       "ru_plain": "Я очень занят.",
       "options": [
@@ -46932,8 +50972,8 @@ window.CONTENT_DATA = {
       "id": "stress_work006_01",
       "item_id": "work006",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Хорошо́. Я мно́го рабо́таю.",
       "ru_plain": "Хорошо. Я много работаю.",
       "options": [
@@ -46976,8 +51016,8 @@ window.CONTENT_DATA = {
       "id": "stress_work007_01",
       "item_id": "work007",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У вас мно́го клие́нтов?",
       "ru_plain": "У вас много клиентов?",
       "options": [
@@ -47024,8 +51064,8 @@ window.CONTENT_DATA = {
       "id": "stress_work008_01",
       "item_id": "work008",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Да, у меня́ мно́го клие́нтов.",
       "ru_plain": "Да, у меня много клиентов.",
       "options": [
@@ -47069,8 +51109,8 @@ window.CONTENT_DATA = {
       "id": "stress_work009_01",
       "item_id": "work009",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У вас мно́го дел?",
       "ru_plain": "У вас много дел?",
       "options": [
@@ -47117,8 +51157,8 @@ window.CONTENT_DATA = {
       "id": "stress_work010_01",
       "item_id": "work010",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Да, у меня́ мно́го дел.",
       "ru_plain": "Да, у меня много дел.",
       "options": [
@@ -47162,8 +51202,8 @@ window.CONTENT_DATA = {
       "id": "stress_work011_01",
       "item_id": "work011",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Сего́дня я рабо́тал с клие́нтом.",
       "ru_plain": "Сегодня я работал с клиентом.",
       "options": [
@@ -47210,8 +51250,8 @@ window.CONTENT_DATA = {
       "id": "stress_work012_01",
       "item_id": "work012",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я звони́л клие́нтам.",
       "ru_plain": "Я звонил клиентам.",
       "options": [
@@ -47256,8 +51296,8 @@ window.CONTENT_DATA = {
       "id": "stress_work013_01",
       "item_id": "work013",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я рабо́тал на компью́тере.",
       "ru_plain": "Я работал на компьютере.",
       "options": [
@@ -47302,8 +51342,8 @@ window.CONTENT_DATA = {
       "id": "stress_work014_01",
       "item_id": "work014",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я рабо́таю в суде́.",
       "ru_plain": "Я работаю в суде.",
       "options": [
@@ -47346,8 +51386,8 @@ window.CONTENT_DATA = {
       "id": "stress_work015_01",
       "item_id": "work015",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Мы дово́льны результа́том.",
       "ru_plain": "Мы довольны результатом.",
       "options": [
@@ -47389,8 +51429,8 @@ window.CONTENT_DATA = {
       "id": "stress_work016_01",
       "item_id": "work016",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я сча́стлив рабо́тать на себя́.",
       "ru_plain": "Я счастлив работать на себя.",
       "options": [
@@ -47437,8 +51477,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega002_01",
       "item_id": "lega002",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "судья́",
       "ru_plain": "судья",
       "options": [
@@ -47476,8 +51516,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega003_01",
       "item_id": "lega003",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "слу́шание",
       "ru_plain": "слушание",
       "options": [
@@ -47517,8 +51557,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega004_01",
       "item_id": "lega004",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "де́ло",
       "ru_plain": "дело",
       "options": [
@@ -47556,8 +51596,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega005_01",
       "item_id": "lega005",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "клие́нт",
       "ru_plain": "клиент",
       "options": [
@@ -47595,8 +51635,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega006_01",
       "item_id": "lega006",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "страхо́вка",
       "ru_plain": "страховка",
       "options": [
@@ -47635,8 +51675,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega007_01",
       "item_id": "lega007",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "мирно́е соглаше́ние",
       "ru_plain": "мирное соглашение",
       "options": [
@@ -47678,8 +51718,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega008_01",
       "item_id": "lega008",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "суде́бное де́ло",
       "ru_plain": "судебное дело",
       "options": [
@@ -47722,8 +51762,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega009_01",
       "item_id": "lega009",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "тра́вма",
       "ru_plain": "травма",
       "options": [
@@ -47761,8 +51801,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega010_01",
       "item_id": "lega010",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "клевета́",
       "ru_plain": "клевета",
       "options": [
@@ -47800,8 +51840,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega011_01",
       "item_id": "lega011",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "зако́н",
       "ru_plain": "закон",
       "options": [
@@ -47838,8 +51878,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega012_01",
       "item_id": "lega012",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "пра́во",
       "ru_plain": "право",
       "options": [
@@ -47876,8 +51916,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega013_01",
       "item_id": "lega013",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "прокуро́р",
       "ru_plain": "прокурор",
       "options": [
@@ -47916,8 +51956,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega014_01",
       "item_id": "lega014",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "защи́тник",
       "ru_plain": "защитник",
       "options": [
@@ -47956,8 +51996,8 @@ window.CONTENT_DATA = {
       "id": "stress_lega015_01",
       "item_id": "lega015",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "пове́стка",
       "ru_plain": "повестка",
       "options": [
@@ -47996,8 +52036,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele001_01",
       "item_id": "cele001",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Скоро́ Рождество́.",
       "ru_plain": "Скоро Рождество.",
       "options": [
@@ -48038,8 +52078,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele002_01",
       "item_id": "cele002",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Како́й сего́дня пра́здник?",
       "ru_plain": "Какой сегодня праздник?",
       "options": [
@@ -48084,8 +52124,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele003_01",
       "item_id": "cele003",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Сего́дня Рождество́.",
       "ru_plain": "Сегодня Рождество.",
       "options": [
@@ -48126,8 +52166,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele004_01",
       "item_id": "cele004",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Как вы с Кадри́ей отпра́здновали Рождество́?",
       "ru_plain": "Как вы с Кадрией отпраздновали Рождество?",
       "options": [
@@ -48176,8 +52216,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele005_01",
       "item_id": "cele005",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
       "ru_plain": "Мы отпраздновали Рождество у моих родителей дома.",
       "options": [
@@ -48224,8 +52264,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele006_01",
       "item_id": "cele006",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Каки́е пла́ны на Рождество́?",
       "ru_plain": "Какие планы на Рождество?",
       "options": [
@@ -48272,8 +52312,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele007_01",
       "item_id": "cele007",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "На Рождество́ мы хоти́м полете́ть в О́регон.",
       "ru_plain": "На Рождество мы хотим полететь в Орегон.",
       "options": [
@@ -48320,8 +52360,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele008_01",
       "item_id": "cele008",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы хоти́м ката́ться на лы́жах.",
       "ru_plain": "Мы хотим кататься на лыжах.",
       "options": [
@@ -48365,8 +52405,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele009_01",
       "item_id": "cele009",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Кадри́я бу́дет гуля́ть и отдыха́ть.",
       "ru_plain": "Кадрия будет гулять и отдыхать.",
       "options": [
@@ -48411,8 +52451,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele010_01",
       "item_id": "cele010",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Ско́лько дней вы бу́дете в О́регоне?",
       "ru_plain": "Сколько дней вы будете в Орегоне?",
       "options": [
@@ -48461,8 +52501,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele011_01",
       "item_id": "cele011",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы бу́дем в О́регоне пять дней.",
       "ru_plain": "Мы будем в Орегоне пять дней.",
       "options": [
@@ -48507,8 +52547,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele012_01",
       "item_id": "cele012",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Что вы де́лали на День Благодаре́ния?",
       "ru_plain": "Что вы делали на День Благодарения?",
       "options": [
@@ -48557,8 +52597,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele013_01",
       "item_id": "cele013",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "На День Благодаре́ния мы у́жинали всей семьёй.",
       "ru_plain": "На День Благодарения мы ужинали всей семьёй.",
       "options": [
@@ -48605,8 +52645,8 @@ window.CONTENT_DATA = {
       "id": "stress_cele014_01",
       "item_id": "cele014",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Э́то был большо́й у́жин.",
       "ru_plain": "Это был большой ужин.",
       "options": [
@@ -48650,8 +52690,8 @@ window.CONTENT_DATA = {
       "id": "stress_cult001_01",
       "item_id": "cult001",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Ка́мень с души́ упа́л.",
       "ru_plain": "Камень с души упал.",
       "options": [
@@ -48696,8 +52736,8 @@ window.CONTENT_DATA = {
       "id": "stress_cult002_01",
       "item_id": "cult002",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Жизнь бьёт ключо́м.",
       "ru_plain": "Жизнь бьёт ключом.",
       "options": [
@@ -48741,8 +52781,8 @@ window.CONTENT_DATA = {
       "id": "stress_cult003_01",
       "item_id": "cult003",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "В гостя́х хорошо́, а до́ма лу́чше.",
       "ru_plain": "В гостях хорошо, а дома лучше.",
       "options": [
@@ -48789,8 +52829,8 @@ window.CONTENT_DATA = {
       "id": "stress_cult004_01",
       "item_id": "cult004",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Нет ху́да без добра́.",
       "ru_plain": "Нет худа без добра.",
       "options": [
@@ -48835,8 +52875,8 @@ window.CONTENT_DATA = {
       "id": "stress_cult005_01",
       "item_id": "cult005",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "У сосе́да трава́ зелене́е.",
       "ru_plain": "У соседа трава зеленее.",
       "options": [
@@ -48881,8 +52921,8 @@ window.CONTENT_DATA = {
       "id": "stress_cult006_01",
       "item_id": "cult006",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Семь раз отме́рь, оди́н раз отре́жь.",
       "ru_plain": "Семь раз отмерь, один раз отрежь.",
       "options": [
@@ -48928,8 +52968,8 @@ window.CONTENT_DATA = {
       "id": "stress_cult007_01",
       "item_id": "cult007",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Чем отлича́ется адвока́т от прокуро́ра?",
       "ru_plain": "Чем отличается адвокат от прокурора?",
       "options": [
@@ -48976,8 +53016,8 @@ window.CONTENT_DATA = {
       "id": "stress_cult008_01",
       "item_id": "cult008",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Адвока́т озабо́чен бу́дущим своего́ клие́нта, а прокуро́р — его́ про́шлым.",
       "ru_plain": "Адвокат озабочен будущим своего клиента, а прокурор — его прошлым.",
       "options": [
@@ -49028,8 +53068,8 @@ window.CONTENT_DATA = {
       "id": "stress_cult009_01",
       "item_id": "cult009",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Цивилиза́ция привела́ к тому́, что уже́ не ва́жно, чей адвока́т лу́чше.",
       "ru_plain": "Цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
       "options": [
@@ -49082,8 +53122,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "options": [
@@ -49126,8 +53166,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "options": [
@@ -49170,8 +53210,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "options": [
@@ -49214,8 +53254,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "options": [
@@ -49260,8 +53300,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "options": [
@@ -49302,8 +53342,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "options": [
@@ -49350,8 +53390,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "options": [
@@ -49395,8 +53435,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "options": [
@@ -49439,8 +53479,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "options": [
@@ -49482,8 +53522,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "options": [
@@ -49524,8 +53564,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "options": [
@@ -49566,8 +53606,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "options": [
@@ -49609,8 +53649,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav015_01",
       "item_id": "trav015",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "аэропо́рт",
       "ru_plain": "аэропорт",
       "options": [
@@ -49652,8 +53692,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav016_01",
       "item_id": "trav016",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "бага́ж",
       "ru_plain": "багаж",
       "options": [
@@ -49694,8 +53734,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav017_01",
       "item_id": "trav017",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Вот мой па́спорт.",
       "ru_plain": "Вот мой паспорт.",
       "options": [
@@ -49738,8 +53778,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav018_01",
       "item_id": "trav018",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ зарегистри́роваться.",
       "ru_plain": "Я хочу зарегистрироваться.",
       "options": [
@@ -49782,8 +53822,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav019_01",
       "item_id": "trav019",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ сда́ть бага́ж.",
       "ru_plain": "Я хочу сдать багаж.",
       "options": [
@@ -49826,8 +53866,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav020_01",
       "item_id": "trav020",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где выда́ча багажа́?",
       "ru_plain": "Где выдача багажа?",
       "options": [
@@ -49872,8 +53912,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav021_01",
       "item_id": "trav021",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "У меня́ есть брони́рование.",
       "ru_plain": "У меня есть бронирование.",
       "options": [
@@ -49916,8 +53956,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav022_01",
       "item_id": "trav022",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ключ, пожа́луйста.",
       "ru_plain": "Ключ, пожалуйста.",
       "options": [
@@ -49957,8 +53997,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav024_01",
       "item_id": "trav024",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "В но́мере есть интерне́т?",
       "ru_plain": "В номере есть интернет?",
       "options": [
@@ -50001,8 +54041,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav025_01",
       "item_id": "trav025",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Во ско́лько зае́зд?",
       "ru_plain": "Во сколько заезд?",
       "options": [
@@ -50048,8 +54088,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav026_01",
       "item_id": "trav026",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Во ско́лько вы́езд?",
       "ru_plain": "Во сколько выезд?",
       "options": [
@@ -50095,8 +54135,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav027_01",
       "item_id": "trav027",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Э́то ваш ключ.",
       "ru_plain": "Это ваш ключ.",
       "options": [
@@ -50141,8 +54181,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav028_01",
       "item_id": "trav028",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Како́й ваш но́мер?",
       "ru_plain": "Какой ваш номер?",
       "options": [
@@ -50188,8 +54228,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "options": [
@@ -50227,8 +54267,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "options": [
@@ -50266,8 +54306,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "options": [
@@ -50305,8 +54345,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "options": [
@@ -50344,8 +54384,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "options": [
@@ -50383,8 +54423,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "options": [
@@ -50422,8 +54462,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "options": [
@@ -50461,8 +54501,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "options": [
@@ -50500,8 +54540,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "options": [
@@ -59981,11 +64021,1067 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "pron_leis001_01",
+      "item_id": "leis001",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Когда́ я не рабо́таю, я смотрю́ телеви́зор.",
+      "ru_plain": "Когда я не работаю, я смотрю телевизор.",
+      "en": "When I'm not working, I watch TV.",
+      "priority": 2,
+      "lexemes": [
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
+        "не",
+        "работаю",
+        "смотрю",
+        "телевизор",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "leisure",
+        "pronunciation",
+        "tv"
+      ]
+    },
+    {
+      "id": "pron_leis002_01",
+      "item_id": "leis002",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я слу́шаю му́зыку.",
+      "ru_plain": "Я слушаю музыку.",
+      "en": "I listen to music.",
+      "priority": 2,
+      "lexemes": [
+        "музыку",
+        "слушаю",
+        "я",
+        "я слушаю музыку."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "leisure",
+        "music",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis003_01",
+      "item_id": "leis003",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я люблю́ игра́ть на гита́ре.",
+      "ru_plain": "Я люблю играть на гитаре.",
+      "en": "I like playing guitar.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "играть",
+        "люблю",
+        "на",
+        "я",
+        "я люблю играть на гитаре."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "instrument",
+        "leisure",
+        "music",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis004_01",
+      "item_id": "leis004",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я игра́ю на гита́ре и на пиани́но.",
+      "ru_plain": "Я играю на гитаре и на пианино.",
+      "en": "I play guitar and piano.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "и",
+        "играю",
+        "на",
+        "пианино",
+        "я",
+        "я играю на гитаре и на пианино."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "instrument",
+        "leisure",
+        "music",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis005_01",
+      "item_id": "leis005",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я пишу́ му́зыку.",
+      "ru_plain": "Я пишу музыку.",
+      "en": "I write music.",
+      "priority": 2,
+      "lexemes": [
+        "музыку",
+        "пишу",
+        "я",
+        "я пишу музыку."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "leisure",
+        "music",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis006_01",
+      "item_id": "leis006",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Кадри́я лю́бит рисова́ть.",
+      "ru_plain": "Кадрия любит рисовать.",
+      "en": "Kadriya likes to draw.",
+      "priority": 2,
+      "lexemes": [
+        "кадрия",
+        "кадрия любит рисовать.",
+        "любит",
+        "рисовать"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "art",
+        "kadriya",
+        "leisure",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis007_01",
+      "item_id": "leis007",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я немно́го люблю́ танцева́ть.",
+      "ru_plain": "Я немного люблю танцевать.",
+      "en": "I like dancing a little.",
+      "priority": 3,
+      "lexemes": [
+        "люблю",
+        "немного",
+        "танцевать",
+        "я",
+        "я немного люблю танцевать."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dance",
+        "leisure",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis008_01",
+      "item_id": "leis008",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы игра́ем с на́шими кота́ми.",
+      "ru_plain": "Мы играем с нашими котами.",
+      "en": "We play with our cats.",
+      "priority": 2,
+      "lexemes": [
+        "играем",
+        "котами",
+        "мы",
+        "мы играем с нашими котами.",
+        "нашими",
+        "с"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "cats",
+        "home",
+        "leisure",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis009_01",
+      "item_id": "leis009",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я люблю́ смотре́ть боевики́.",
+      "ru_plain": "Я люблю смотреть боевики.",
+      "en": "I like watching action movies.",
+      "priority": 3,
+      "lexemes": [
+        "боевики",
+        "люблю",
+        "смотреть",
+        "я",
+        "я люблю смотреть боевики."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "leisure",
+        "movies",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis010_01",
+      "item_id": "leis010",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+      "ru_plain": "Кадрия любит смотреть фильмы о любви.",
+      "en": "Kadriya likes watching love movies.",
+      "priority": 3,
+      "lexemes": [
+        "кадрия",
+        "кадрия любит смотреть фильмы о любви.",
+        "любви",
+        "любит",
+        "о",
+        "смотреть",
+        "фильмы"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "kadriya",
+        "leisure",
+        "movies",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis011_01",
+      "item_id": "leis011",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то дом.",
+      "ru_plain": "Это дом.",
+      "en": "This is home / a house.",
+      "priority": 3,
+      "lexemes": [
+        "дом",
+        "это",
+        "это дом."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "home",
+        "place",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis012_01",
+      "item_id": "leis012",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь мы отдыха́ем.",
+      "ru_plain": "Здесь мы отдыхаем.",
+      "en": "Here we relax.",
+      "priority": 3,
+      "lexemes": [
+        "здесь",
+        "здесь мы отдыхаем.",
+        "мы",
+        "отдыхаем"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "home",
+        "place",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis013_01",
+      "item_id": "leis013",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то стадио́н.",
+      "ru_plain": "Это стадион.",
+      "en": "This is a stadium.",
+      "priority": 3,
+      "lexemes": [
+        "стадион",
+        "это",
+        "это стадион."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "place",
+        "pronunciation",
+        "sports"
+      ]
+    },
+    {
+      "id": "pron_leis014_01",
+      "item_id": "leis014",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь мы игра́ем в футбо́л.",
+      "ru_plain": "Здесь мы играем в футбол.",
+      "en": "Here we play soccer.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "здесь",
+        "здесь мы играем в футбол.",
+        "играем",
+        "мы",
+        "футбол"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "place",
+        "pronunciation",
+        "sports"
+      ]
+    },
+    {
+      "id": "pron_leis015_01",
+      "item_id": "leis015",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+      "ru_plain": "Там можно увидеть разные спортивные игры.",
+      "en": "There you can see different sports games.",
+      "priority": 3,
+      "lexemes": [
+        "игры",
+        "можно",
+        "разные",
+        "спортивные",
+        "там",
+        "там можно увидеть разные спортивные игры.",
+        "увидеть"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "place",
+        "pronunciation",
+        "sports"
+      ]
+    },
+    {
+      "id": "pron_leis016_01",
+      "item_id": "leis016",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то кинотеа́тр.",
+      "ru_plain": "Это кинотеатр.",
+      "en": "This is a movie theater.",
+      "priority": 3,
+      "lexemes": [
+        "кинотеатр",
+        "это",
+        "это кинотеатр."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "movies",
+        "place",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis017_01",
+      "item_id": "leis017",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь я слу́шаю и смотрю́ фильм.",
+      "ru_plain": "Здесь я слушаю и смотрю фильм.",
+      "en": "Here I listen and watch a film.",
+      "priority": 3,
+      "lexemes": [
+        "здесь",
+        "здесь я слушаю и смотрю фильм.",
+        "и",
+        "слушаю",
+        "смотрю",
+        "фильм",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "movies",
+        "place",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis018_01",
+      "item_id": "leis018",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то музе́й.",
+      "ru_plain": "Это музей.",
+      "en": "This is a museum.",
+      "priority": 3,
+      "lexemes": [
+        "музей",
+        "это",
+        "это музей."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "museum",
+        "place",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis019_01",
+      "item_id": "leis019",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Там я смотрю́ карти́ны и скульпту́ры.",
+      "ru_plain": "Там я смотрю картины и скульптуры.",
+      "en": "There I look at paintings and sculptures.",
+      "priority": 3,
+      "lexemes": [
+        "и",
+        "картины",
+        "скульптуры",
+        "смотрю",
+        "там",
+        "там я смотрю картины и скульптуры.",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "museum",
+        "place",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis020_01",
+      "item_id": "leis020",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы гуля́ли в па́рке.",
+      "ru_plain": "Мы гуляли в парке.",
+      "en": "We walked in the park.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "гуляли",
+        "мы",
+        "мы гуляли в парке.",
+        "парке"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "leisure",
+        "park",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_leis021_01",
+      "item_id": "leis021",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы отдыха́ли и слу́шали му́зыку.",
+      "ru_plain": "Мы отдыхали и слушали музыку.",
+      "en": "We rested and listened to music.",
+      "priority": 3,
+      "lexemes": [
+        "и",
+        "музыку",
+        "мы",
+        "мы отдыхали и слушали музыку.",
+        "отдыхали",
+        "слушали"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "leisure",
+        "music",
+        "pronunciation"
+      ]
+    },
+    {
       "id": "pron_work001_01",
       "item_id": "work001",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У меня́ своя́ компа́ния.",
       "ru_plain": "У меня своя компания.",
       "en": "I have my own company.",
@@ -60033,8 +65129,8 @@ window.CONTENT_DATA = {
       "id": "pron_work002_01",
       "item_id": "work002",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Кадри́я рабо́тает вме́сте со мной.",
       "ru_plain": "Кадрия работает вместе со мной.",
       "en": "Kadriya works together with me.",
@@ -60083,8 +65179,8 @@ window.CONTENT_DATA = {
       "id": "pron_work003_01",
       "item_id": "work003",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Мы рабо́таем вме́сте.",
       "ru_plain": "Мы работаем вместе.",
       "en": "We work together.",
@@ -60131,8 +65227,8 @@ window.CONTENT_DATA = {
       "id": "pron_work004_01",
       "item_id": "work004",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У меня́ мно́го рабо́ты.",
       "ru_plain": "У меня много работы.",
       "en": "I have a lot of work.",
@@ -60180,8 +65276,8 @@ window.CONTENT_DATA = {
       "id": "pron_work005_01",
       "item_id": "work005",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я о́чень за́нят.",
       "ru_plain": "Я очень занят.",
       "en": "I'm very busy.",
@@ -60231,8 +65327,8 @@ window.CONTENT_DATA = {
       "id": "pron_work006_01",
       "item_id": "work006",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Хорошо́. Я мно́го рабо́таю.",
       "ru_plain": "Хорошо. Я много работаю.",
       "en": "Good. I work a lot.",
@@ -60280,8 +65376,8 @@ window.CONTENT_DATA = {
       "id": "pron_work007_01",
       "item_id": "work007",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У вас мно́го клие́нтов?",
       "ru_plain": "У вас много клиентов?",
       "en": "Do you have many clients?",
@@ -60333,8 +65429,8 @@ window.CONTENT_DATA = {
       "id": "pron_work008_01",
       "item_id": "work008",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Да, у меня́ мно́го клие́нтов.",
       "ru_plain": "Да, у меня много клиентов.",
       "en": "Yes, I have many clients.",
@@ -60383,8 +65479,8 @@ window.CONTENT_DATA = {
       "id": "pron_work009_01",
       "item_id": "work009",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У вас мно́го дел?",
       "ru_plain": "У вас много дел?",
       "en": "Do you have many cases?",
@@ -60436,8 +65532,8 @@ window.CONTENT_DATA = {
       "id": "pron_work010_01",
       "item_id": "work010",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Да, у меня́ мно́го дел.",
       "ru_plain": "Да, у меня много дел.",
       "en": "Yes, I have many cases.",
@@ -60486,8 +65582,8 @@ window.CONTENT_DATA = {
       "id": "pron_work011_01",
       "item_id": "work011",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Сего́дня я рабо́тал с клие́нтом.",
       "ru_plain": "Сегодня я работал с клиентом.",
       "en": "Today I worked with a client.",
@@ -60539,8 +65635,8 @@ window.CONTENT_DATA = {
       "id": "pron_work012_01",
       "item_id": "work012",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я звони́л клие́нтам.",
       "ru_plain": "Я звонил клиентам.",
       "en": "I called clients.",
@@ -60590,8 +65686,8 @@ window.CONTENT_DATA = {
       "id": "pron_work013_01",
       "item_id": "work013",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я рабо́тал на компью́тере.",
       "ru_plain": "Я работал на компьютере.",
       "en": "I worked on the computer.",
@@ -60641,8 +65737,8 @@ window.CONTENT_DATA = {
       "id": "pron_work014_01",
       "item_id": "work014",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я рабо́таю в суде́.",
       "ru_plain": "Я работаю в суде.",
       "en": "I work in court.",
@@ -60690,8 +65786,8 @@ window.CONTENT_DATA = {
       "id": "pron_work015_01",
       "item_id": "work015",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Мы дово́льны результа́том.",
       "ru_plain": "Мы довольны результатом.",
       "en": "We're pleased with the result.",
@@ -60738,8 +65834,8 @@ window.CONTENT_DATA = {
       "id": "pron_work016_01",
       "item_id": "work016",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я сча́стлив рабо́тать на себя́.",
       "ru_plain": "Я счастлив работать на себя.",
       "en": "I'm happy to work for myself.",
@@ -60791,8 +65887,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega002_01",
       "item_id": "lega002",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "судья́",
       "ru_plain": "судья",
       "en": "judge",
@@ -60837,8 +65933,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega003_01",
       "item_id": "lega003",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "слу́шание",
       "ru_plain": "слушание",
       "en": "hearing",
@@ -60883,8 +65979,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega004_01",
       "item_id": "lega004",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "де́ло",
       "ru_plain": "дело",
       "en": "case / matter",
@@ -60929,8 +66025,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega005_01",
       "item_id": "lega005",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "клие́нт",
       "ru_plain": "клиент",
       "en": "client",
@@ -60975,8 +66071,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega006_01",
       "item_id": "lega006",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "страхо́вка",
       "ru_plain": "страховка",
       "en": "insurance",
@@ -61021,8 +66117,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega007_01",
       "item_id": "lega007",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "мирно́е соглаше́ние",
       "ru_plain": "мирное соглашение",
       "en": "settlement agreement",
@@ -61069,8 +66165,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega008_01",
       "item_id": "lega008",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "суде́бное де́ло",
       "ru_plain": "судебное дело",
       "en": "court case / lawsuit",
@@ -61118,8 +66214,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega009_01",
       "item_id": "lega009",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "тра́вма",
       "ru_plain": "травма",
       "en": "injury",
@@ -61164,8 +66260,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega010_01",
       "item_id": "lega010",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "клевета́",
       "ru_plain": "клевета",
       "en": "defamation",
@@ -61209,8 +66305,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega011_01",
       "item_id": "lega011",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "зако́н",
       "ru_plain": "закон",
       "en": "law",
@@ -61254,8 +66350,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega012_01",
       "item_id": "lega012",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "пра́во",
       "ru_plain": "право",
       "en": "law / right",
@@ -61299,8 +66395,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega013_01",
       "item_id": "lega013",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "прокуро́р",
       "ru_plain": "прокурор",
       "en": "prosecutor",
@@ -61345,8 +66441,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega014_01",
       "item_id": "lega014",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "защи́тник",
       "ru_plain": "защитник",
       "en": "defender / defense lawyer",
@@ -61391,8 +66487,8 @@ window.CONTENT_DATA = {
       "id": "pron_lega015_01",
       "item_id": "lega015",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "пове́стка",
       "ru_plain": "повестка",
       "en": "summons / subpoena",
@@ -61437,8 +66533,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele001_01",
       "item_id": "cele001",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Скоро́ Рождество́.",
       "ru_plain": "Скоро Рождество.",
       "en": "Christmas is soon.",
@@ -61484,8 +66580,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele002_01",
       "item_id": "cele002",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Како́й сего́дня пра́здник?",
       "ru_plain": "Какой сегодня праздник?",
       "en": "What holiday is today?",
@@ -61535,8 +66631,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele003_01",
       "item_id": "cele003",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Сего́дня Рождество́.",
       "ru_plain": "Сегодня Рождество.",
       "en": "Today is Christmas.",
@@ -61582,8 +66678,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele004_01",
       "item_id": "cele004",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Как вы с Кадри́ей отпра́здновали Рождество́?",
       "ru_plain": "Как вы с Кадрией отпраздновали Рождество?",
       "en": "How did you and Kadriya celebrate Christmas?",
@@ -61637,8 +66733,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele005_01",
       "item_id": "cele005",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
       "ru_plain": "Мы отпраздновали Рождество у моих родителей дома.",
       "en": "We celebrated Christmas at my parents' house.",
@@ -61690,8 +66786,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele006_01",
       "item_id": "cele006",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Каки́е пла́ны на Рождество́?",
       "ru_plain": "Какие планы на Рождество?",
       "en": "What are the plans for Christmas?",
@@ -61743,8 +66839,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele007_01",
       "item_id": "cele007",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "На Рождество́ мы хоти́м полете́ть в О́регон.",
       "ru_plain": "На Рождество мы хотим полететь в Орегон.",
       "en": "For Christmas we want to fly to Oregon.",
@@ -61796,8 +66892,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele008_01",
       "item_id": "cele008",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы хоти́м ката́ться на лы́жах.",
       "ru_plain": "Мы хотим кататься на лыжах.",
       "en": "We want to ski.",
@@ -61846,8 +66942,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele009_01",
       "item_id": "cele009",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Кадри́я бу́дет гуля́ть и отдыха́ть.",
       "ru_plain": "Кадрия будет гулять и отдыхать.",
       "en": "Kadriya will walk and relax.",
@@ -61897,8 +66993,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele010_01",
       "item_id": "cele010",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Ско́лько дней вы бу́дете в О́регоне?",
       "ru_plain": "Сколько дней вы будете в Орегоне?",
       "en": "How many days will you be in Oregon?",
@@ -61952,8 +67048,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele011_01",
       "item_id": "cele011",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы бу́дем в О́регоне пять дней.",
       "ru_plain": "Мы будем в Орегоне пять дней.",
       "en": "We'll be in Oregon for five days.",
@@ -62003,8 +67099,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele012_01",
       "item_id": "cele012",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Что вы де́лали на День Благодаре́ния?",
       "ru_plain": "Что вы делали на День Благодарения?",
       "en": "What did you do for Thanksgiving?",
@@ -62058,8 +67154,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele013_01",
       "item_id": "cele013",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "На День Благодаре́ния мы у́жинали всей семьёй.",
       "ru_plain": "На День Благодарения мы ужинали всей семьёй.",
       "en": "For Thanksgiving we had dinner as a whole family.",
@@ -62111,8 +67207,8 @@ window.CONTENT_DATA = {
       "id": "pron_cele014_01",
       "item_id": "cele014",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Э́то был большо́й у́жин.",
       "ru_plain": "Это был большой ужин.",
       "en": "It was a big dinner.",
@@ -62161,8 +67257,8 @@ window.CONTENT_DATA = {
       "id": "pron_cult001_01",
       "item_id": "cult001",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Ка́мень с души́ упа́л.",
       "ru_plain": "Камень с души упал.",
       "en": "A weight has been lifted.",
@@ -62212,8 +67308,8 @@ window.CONTENT_DATA = {
       "id": "pron_cult002_01",
       "item_id": "cult002",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Жизнь бьёт ключо́м.",
       "ru_plain": "Жизнь бьёт ключом.",
       "en": "Life is in full swing.",
@@ -62262,8 +67358,8 @@ window.CONTENT_DATA = {
       "id": "pron_cult003_01",
       "item_id": "cult003",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "В гостя́х хорошо́, а до́ма лу́чше.",
       "ru_plain": "В гостях хорошо, а дома лучше.",
       "en": "Being a guest is good, but home is better.",
@@ -62315,8 +67411,8 @@ window.CONTENT_DATA = {
       "id": "pron_cult004_01",
       "item_id": "cult004",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Нет ху́да без добра́.",
       "ru_plain": "Нет худа без добра.",
       "en": "Every cloud has a silver lining.",
@@ -62366,8 +67462,8 @@ window.CONTENT_DATA = {
       "id": "pron_cult005_01",
       "item_id": "cult005",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "У сосе́да трава́ зелене́е.",
       "ru_plain": "У соседа трава зеленее.",
       "en": "The neighbor's grass is greener.",
@@ -62417,8 +67513,8 @@ window.CONTENT_DATA = {
       "id": "pron_cult006_01",
       "item_id": "cult006",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Семь раз отме́рь, оди́н раз отре́жь.",
       "ru_plain": "Семь раз отмерь, один раз отрежь.",
       "en": "Measure seven times, cut once.",
@@ -62469,8 +67565,8 @@ window.CONTENT_DATA = {
       "id": "pron_cult007_01",
       "item_id": "cult007",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Чем отлича́ется адвока́т от прокуро́ра?",
       "ru_plain": "Чем отличается адвокат от прокурора?",
       "en": "How is a defense lawyer different from a prosecutor?",
@@ -62522,8 +67618,8 @@ window.CONTENT_DATA = {
       "id": "pron_cult008_01",
       "item_id": "cult008",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Адвока́т озабо́чен бу́дущим своего́ клие́нта, а прокуро́р — его́ про́шлым.",
       "ru_plain": "Адвокат озабочен будущим своего клиента, а прокурор — его прошлым.",
       "en": "The lawyer is concerned with the client's future; the prosecutor with his past.",
@@ -62579,8 +67675,8 @@ window.CONTENT_DATA = {
       "id": "pron_cult009_01",
       "item_id": "cult009",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Цивилиза́ция привела́ к тому́, что уже́ не ва́жно, чей адвока́т лу́чше.",
       "ru_plain": "Цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
       "en": "Civilization made it so what matters is whose lawyer is better.",
@@ -62638,8 +67734,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "en": "We're going to Budva.",
@@ -62687,8 +67783,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "en": "We'll be in Montenegro.",
@@ -62736,8 +67832,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "en": "We'll be in Budva.",
@@ -62785,8 +67881,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "en": "Where is our hotel?",
@@ -62836,8 +67932,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "en": "Can we get a taxi?",
@@ -62883,8 +67979,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "en": "How long is the ride to the hotel?",
@@ -62936,8 +68032,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "en": "Where is the beach?",
@@ -62986,8 +68082,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "en": "I want to walk by the sea.",
@@ -63036,8 +68132,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "en": "The old town is very beautiful.",
@@ -63085,8 +68181,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "en": "The sea is very beautiful.",
@@ -63133,8 +68229,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "en": "We're relaxing / on vacation.",
@@ -63180,8 +68276,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "en": "We're here with family.",
@@ -63229,8 +68325,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "en": "The check, please.",
@@ -63276,8 +68372,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "en": "We want to have dinner.",
@@ -63324,8 +68420,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav015_01",
       "item_id": "trav015",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "аэропо́рт",
       "ru_plain": "аэропорт",
       "en": "airport",
@@ -63372,8 +68468,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav016_01",
       "item_id": "trav016",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "бага́ж",
       "ru_plain": "багаж",
       "en": "luggage",
@@ -63421,8 +68517,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav017_01",
       "item_id": "trav017",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Вот мой па́спорт.",
       "ru_plain": "Вот мой паспорт.",
       "en": "Here is my passport.",
@@ -63470,8 +68566,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav018_01",
       "item_id": "trav018",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ зарегистри́роваться.",
       "ru_plain": "Я хочу зарегистрироваться.",
       "en": "I want to check in / register.",
@@ -63519,8 +68615,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav019_01",
       "item_id": "trav019",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ сда́ть бага́ж.",
       "ru_plain": "Я хочу сдать багаж.",
       "en": "I want to check my luggage.",
@@ -63568,8 +68664,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav020_01",
       "item_id": "trav020",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где выда́ча багажа́?",
       "ru_plain": "Где выдача багажа?",
       "en": "Where is baggage claim?",
@@ -63619,8 +68715,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav021_01",
       "item_id": "trav021",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "У меня́ есть брони́рование.",
       "ru_plain": "У меня есть бронирование.",
       "en": "I have a reservation.",
@@ -63668,8 +68764,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav022_01",
       "item_id": "trav022",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ключ, пожа́луйста.",
       "ru_plain": "Ключ, пожалуйста.",
       "en": "Key, please.",
@@ -63714,8 +68810,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav023_01",
       "item_id": "trav023",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где лифт?",
       "ru_plain": "Где лифт?",
       "en": "Where is the elevator?",
@@ -63760,8 +68856,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav024_01",
       "item_id": "trav024",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "В но́мере есть интерне́т?",
       "ru_plain": "В номере есть интернет?",
       "en": "Is there internet in the room?",
@@ -63809,8 +68905,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav025_01",
       "item_id": "trav025",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Во ско́лько зае́зд?",
       "ru_plain": "Во сколько заезд?",
       "en": "What time is check-in?",
@@ -63861,8 +68957,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav026_01",
       "item_id": "trav026",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Во ско́лько вы́езд?",
       "ru_plain": "Во сколько выезд?",
       "en": "What time is check-out?",
@@ -63913,8 +69009,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav027_01",
       "item_id": "trav027",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Э́то ваш ключ.",
       "ru_plain": "Это ваш ключ.",
       "en": "This is your key.",
@@ -63964,8 +69060,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav028_01",
       "item_id": "trav028",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Како́й ваш но́мер?",
       "ru_plain": "Какой ваш номер?",
       "en": "What is your room number?",
@@ -64016,8 +69112,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "en": "I want / you (pl/formal) want — хоте́ть",
@@ -64060,8 +69156,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "en": "I can / you can — мочь",
@@ -64104,8 +69200,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "en": "I speak / you speak — говори́ть",
@@ -64148,8 +69244,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "en": "I understand / you understand — понима́ть",
@@ -64192,8 +69288,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "en": "I love / you love — люби́ть",
@@ -64236,8 +69332,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "en": "I work / you work — рабо́тать",
@@ -64280,8 +69376,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "en": "I live / you live — жить",
@@ -64324,8 +69420,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "en": "I eat / you eat — есть",
@@ -64368,8 +69464,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "en": "I drink / you drink — пить",
@@ -64412,8 +69508,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "en": "I know / you know — знать",
@@ -73110,11 +78206,983 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "back_leis001_01",
+      "item_id": "leis001",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Когда́ я не рабо́таю, я смотрю́ телеви́зор.",
+      "ru_plain": "Когда я не работаю, я смотрю телевизор.",
+      "accepted_answers": [
+        "Когда я не работаю, я смотрю телевизор.",
+        "Когда́ я не рабо́таю, я смотрю́ телеви́зор."
+      ],
+      "en": "When I'm not working, I watch TV.",
+      "priority": 2,
+      "lexemes": [
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
+        "не",
+        "работаю",
+        "смотрю",
+        "телевизор",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "leisure",
+        "tv"
+      ]
+    },
+    {
+      "id": "back_leis002_01",
+      "item_id": "leis002",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я слу́шаю му́зыку.",
+      "ru_plain": "Я слушаю музыку.",
+      "accepted_answers": [
+        "Я слу́шаю му́зыку.",
+        "Я слушаю музыку."
+      ],
+      "en": "I listen to music.",
+      "priority": 2,
+      "lexemes": [
+        "музыку",
+        "слушаю",
+        "я",
+        "я слушаю музыку."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "leisure",
+        "music"
+      ]
+    },
+    {
+      "id": "back_leis003_01",
+      "item_id": "leis003",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я люблю́ игра́ть на гита́ре.",
+      "ru_plain": "Я люблю играть на гитаре.",
+      "accepted_answers": [
+        "Я люблю играть на гитаре.",
+        "Я люблю́ игра́ть на гита́ре."
+      ],
+      "en": "I like playing guitar.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "играть",
+        "люблю",
+        "на",
+        "я",
+        "я люблю играть на гитаре."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "instrument",
+        "leisure",
+        "music"
+      ]
+    },
+    {
+      "id": "back_leis004_01",
+      "item_id": "leis004",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я игра́ю на гита́ре и на пиани́но.",
+      "ru_plain": "Я играю на гитаре и на пианино.",
+      "accepted_answers": [
+        "Я игра́ю на гита́ре и на пиани́но.",
+        "Я играю на гитаре и на пианино."
+      ],
+      "en": "I play guitar and piano.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "и",
+        "играю",
+        "на",
+        "пианино",
+        "я",
+        "я играю на гитаре и на пианино."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "instrument",
+        "leisure",
+        "music"
+      ]
+    },
+    {
+      "id": "back_leis005_01",
+      "item_id": "leis005",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я пишу́ му́зыку.",
+      "ru_plain": "Я пишу музыку.",
+      "accepted_answers": [
+        "Я пишу музыку.",
+        "Я пишу́ му́зыку."
+      ],
+      "en": "I write music.",
+      "priority": 2,
+      "lexemes": [
+        "музыку",
+        "пишу",
+        "я",
+        "я пишу музыку."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "leisure",
+        "music"
+      ]
+    },
+    {
+      "id": "back_leis006_01",
+      "item_id": "leis006",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Кадри́я лю́бит рисова́ть.",
+      "ru_plain": "Кадрия любит рисовать.",
+      "accepted_answers": [
+        "Кадри́я лю́бит рисова́ть.",
+        "Кадрия любит рисовать."
+      ],
+      "en": "Kadriya likes to draw.",
+      "priority": 2,
+      "lexemes": [
+        "кадрия",
+        "кадрия любит рисовать.",
+        "любит",
+        "рисовать"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "art",
+        "back_translation",
+        "kadriya",
+        "leisure"
+      ]
+    },
+    {
+      "id": "back_leis007_01",
+      "item_id": "leis007",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я немно́го люблю́ танцева́ть.",
+      "ru_plain": "Я немного люблю танцевать.",
+      "accepted_answers": [
+        "Я немно́го люблю́ танцева́ть.",
+        "Я немного люблю танцевать."
+      ],
+      "en": "I like dancing a little.",
+      "priority": 3,
+      "lexemes": [
+        "люблю",
+        "немного",
+        "танцевать",
+        "я",
+        "я немного люблю танцевать."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "dance",
+        "leisure"
+      ]
+    },
+    {
+      "id": "back_leis008_01",
+      "item_id": "leis008",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы игра́ем с на́шими кота́ми.",
+      "ru_plain": "Мы играем с нашими котами.",
+      "accepted_answers": [
+        "Мы игра́ем с на́шими кота́ми.",
+        "Мы играем с нашими котами."
+      ],
+      "en": "We play with our cats.",
+      "priority": 2,
+      "lexemes": [
+        "играем",
+        "котами",
+        "мы",
+        "мы играем с нашими котами.",
+        "нашими",
+        "с"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "cats",
+        "home",
+        "leisure"
+      ]
+    },
+    {
+      "id": "back_leis009_01",
+      "item_id": "leis009",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Я люблю́ смотре́ть боевики́.",
+      "ru_plain": "Я люблю смотреть боевики.",
+      "accepted_answers": [
+        "Я люблю смотреть боевики.",
+        "Я люблю́ смотре́ть боевики́."
+      ],
+      "en": "I like watching action movies.",
+      "priority": 3,
+      "lexemes": [
+        "боевики",
+        "люблю",
+        "смотреть",
+        "я",
+        "я люблю смотреть боевики."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "leisure",
+        "movies"
+      ]
+    },
+    {
+      "id": "back_leis010_01",
+      "item_id": "leis010",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+      "ru_plain": "Кадрия любит смотреть фильмы о любви.",
+      "accepted_answers": [
+        "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+        "Кадрия любит смотреть фильмы о любви."
+      ],
+      "en": "Kadriya likes watching love movies.",
+      "priority": 3,
+      "lexemes": [
+        "кадрия",
+        "кадрия любит смотреть фильмы о любви.",
+        "любви",
+        "любит",
+        "о",
+        "смотреть",
+        "фильмы"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "kadriya",
+        "leisure",
+        "movies"
+      ]
+    },
+    {
+      "id": "back_leis011_01",
+      "item_id": "leis011",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то дом.",
+      "ru_plain": "Это дом.",
+      "accepted_answers": [
+        "Э́то дом.",
+        "Это дом."
+      ],
+      "en": "This is home / a house.",
+      "priority": 3,
+      "lexemes": [
+        "дом",
+        "это",
+        "это дом."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "home",
+        "place"
+      ]
+    },
+    {
+      "id": "back_leis012_01",
+      "item_id": "leis012",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь мы отдыха́ем.",
+      "ru_plain": "Здесь мы отдыхаем.",
+      "accepted_answers": [
+        "Здесь мы отдыха́ем.",
+        "Здесь мы отдыхаем."
+      ],
+      "en": "Here we relax.",
+      "priority": 3,
+      "lexemes": [
+        "здесь",
+        "здесь мы отдыхаем.",
+        "мы",
+        "отдыхаем"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "home",
+        "place"
+      ]
+    },
+    {
+      "id": "back_leis013_01",
+      "item_id": "leis013",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то стадио́н.",
+      "ru_plain": "Это стадион.",
+      "accepted_answers": [
+        "Э́то стадио́н.",
+        "Это стадион."
+      ],
+      "en": "This is a stadium.",
+      "priority": 3,
+      "lexemes": [
+        "стадион",
+        "это",
+        "это стадион."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "place",
+        "sports"
+      ]
+    },
+    {
+      "id": "back_leis014_01",
+      "item_id": "leis014",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь мы игра́ем в футбо́л.",
+      "ru_plain": "Здесь мы играем в футбол.",
+      "accepted_answers": [
+        "Здесь мы игра́ем в футбо́л.",
+        "Здесь мы играем в футбол."
+      ],
+      "en": "Here we play soccer.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "здесь",
+        "здесь мы играем в футбол.",
+        "играем",
+        "мы",
+        "футбол"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "place",
+        "sports"
+      ]
+    },
+    {
+      "id": "back_leis015_01",
+      "item_id": "leis015",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+      "ru_plain": "Там можно увидеть разные спортивные игры.",
+      "accepted_answers": [
+        "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+        "Там можно увидеть разные спортивные игры."
+      ],
+      "en": "There you can see different sports games.",
+      "priority": 3,
+      "lexemes": [
+        "игры",
+        "можно",
+        "разные",
+        "спортивные",
+        "там",
+        "там можно увидеть разные спортивные игры.",
+        "увидеть"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "place",
+        "sports"
+      ]
+    },
+    {
+      "id": "back_leis016_01",
+      "item_id": "leis016",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то кинотеа́тр.",
+      "ru_plain": "Это кинотеатр.",
+      "accepted_answers": [
+        "Э́то кинотеа́тр.",
+        "Это кинотеатр."
+      ],
+      "en": "This is a movie theater.",
+      "priority": 3,
+      "lexemes": [
+        "кинотеатр",
+        "это",
+        "это кинотеатр."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "movies",
+        "place"
+      ]
+    },
+    {
+      "id": "back_leis017_01",
+      "item_id": "leis017",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Здесь я слу́шаю и смотрю́ фильм.",
+      "ru_plain": "Здесь я слушаю и смотрю фильм.",
+      "accepted_answers": [
+        "Здесь я слу́шаю и смотрю́ фильм.",
+        "Здесь я слушаю и смотрю фильм."
+      ],
+      "en": "Here I listen and watch a film.",
+      "priority": 3,
+      "lexemes": [
+        "здесь",
+        "здесь я слушаю и смотрю фильм.",
+        "и",
+        "слушаю",
+        "смотрю",
+        "фильм",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "movies",
+        "place"
+      ]
+    },
+    {
+      "id": "back_leis018_01",
+      "item_id": "leis018",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Э́то музе́й.",
+      "ru_plain": "Это музей.",
+      "accepted_answers": [
+        "Э́то музе́й.",
+        "Это музей."
+      ],
+      "en": "This is a museum.",
+      "priority": 3,
+      "lexemes": [
+        "музей",
+        "это",
+        "это музей."
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "museum",
+        "place"
+      ]
+    },
+    {
+      "id": "back_leis019_01",
+      "item_id": "leis019",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Там я смотрю́ карти́ны и скульпту́ры.",
+      "ru_plain": "Там я смотрю картины и скульптуры.",
+      "accepted_answers": [
+        "Там я смотрю картины и скульптуры.",
+        "Там я смотрю́ карти́ны и скульпту́ры."
+      ],
+      "en": "There I look at paintings and sculptures.",
+      "priority": 3,
+      "lexemes": [
+        "и",
+        "картины",
+        "скульптуры",
+        "смотрю",
+        "там",
+        "там я смотрю картины и скульптуры.",
+        "я"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "museum",
+        "place"
+      ]
+    },
+    {
+      "id": "back_leis020_01",
+      "item_id": "leis020",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы гуля́ли в па́рке.",
+      "ru_plain": "Мы гуляли в парке.",
+      "accepted_answers": [
+        "Мы гуля́ли в па́рке.",
+        "Мы гуляли в парке."
+      ],
+      "en": "We walked in the park.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "гуляли",
+        "мы",
+        "мы гуляли в парке.",
+        "парке"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "leisure",
+        "park"
+      ]
+    },
+    {
+      "id": "back_leis021_01",
+      "item_id": "leis021",
+      "module": "leisure_places",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "ru": "Мы отдыха́ли и слу́шали му́зыку.",
+      "ru_plain": "Мы отдыхали и слушали музыку.",
+      "accepted_answers": [
+        "Мы отдыха́ли и слу́шали му́зыку.",
+        "Мы отдыхали и слушали музыку."
+      ],
+      "en": "We rested and listened to music.",
+      "priority": 3,
+      "lexemes": [
+        "и",
+        "музыку",
+        "мы",
+        "мы отдыхали и слушали музыку.",
+        "отдыхали",
+        "слушали"
+      ],
+      "structures": [
+        "grammar:igrat_v_na",
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "leisure",
+        "music"
+      ]
+    },
+    {
       "id": "back_work001_01",
       "item_id": "work001",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У меня́ своя́ компа́ния.",
       "ru_plain": "У меня своя компания.",
       "accepted_answers": [
@@ -73158,8 +79226,8 @@ window.CONTENT_DATA = {
       "id": "back_work002_01",
       "item_id": "work002",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Кадри́я рабо́тает вме́сте со мной.",
       "ru_plain": "Кадрия работает вместе со мной.",
       "accepted_answers": [
@@ -73204,8 +79272,8 @@ window.CONTENT_DATA = {
       "id": "back_work003_01",
       "item_id": "work003",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Мы рабо́таем вме́сте.",
       "ru_plain": "Мы работаем вместе.",
       "accepted_answers": [
@@ -73248,8 +79316,8 @@ window.CONTENT_DATA = {
       "id": "back_work004_01",
       "item_id": "work004",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У меня́ мно́го рабо́ты.",
       "ru_plain": "У меня много работы.",
       "accepted_answers": [
@@ -73293,8 +79361,8 @@ window.CONTENT_DATA = {
       "id": "back_work005_01",
       "item_id": "work005",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я о́чень за́нят.",
       "ru_plain": "Я очень занят.",
       "accepted_answers": [
@@ -73340,8 +79408,8 @@ window.CONTENT_DATA = {
       "id": "back_work006_01",
       "item_id": "work006",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Хорошо́. Я мно́го рабо́таю.",
       "ru_plain": "Хорошо. Я много работаю.",
       "accepted_answers": [
@@ -73385,8 +79453,8 @@ window.CONTENT_DATA = {
       "id": "back_work007_01",
       "item_id": "work007",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У вас мно́го клие́нтов?",
       "ru_plain": "У вас много клиентов?",
       "accepted_answers": [
@@ -73434,8 +79502,8 @@ window.CONTENT_DATA = {
       "id": "back_work008_01",
       "item_id": "work008",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Да, у меня́ мно́го клие́нтов.",
       "ru_plain": "Да, у меня много клиентов.",
       "accepted_answers": [
@@ -73480,8 +79548,8 @@ window.CONTENT_DATA = {
       "id": "back_work009_01",
       "item_id": "work009",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "У вас мно́го дел?",
       "ru_plain": "У вас много дел?",
       "accepted_answers": [
@@ -73529,8 +79597,8 @@ window.CONTENT_DATA = {
       "id": "back_work010_01",
       "item_id": "work010",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Да, у меня́ мно́го дел.",
       "ru_plain": "Да, у меня много дел.",
       "accepted_answers": [
@@ -73575,8 +79643,8 @@ window.CONTENT_DATA = {
       "id": "back_work011_01",
       "item_id": "work011",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Сего́дня я рабо́тал с клие́нтом.",
       "ru_plain": "Сегодня я работал с клиентом.",
       "accepted_answers": [
@@ -73624,8 +79692,8 @@ window.CONTENT_DATA = {
       "id": "back_work012_01",
       "item_id": "work012",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я звони́л клие́нтам.",
       "ru_plain": "Я звонил клиентам.",
       "accepted_answers": [
@@ -73671,8 +79739,8 @@ window.CONTENT_DATA = {
       "id": "back_work013_01",
       "item_id": "work013",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я рабо́тал на компью́тере.",
       "ru_plain": "Я работал на компьютере.",
       "accepted_answers": [
@@ -73718,8 +79786,8 @@ window.CONTENT_DATA = {
       "id": "back_work014_01",
       "item_id": "work014",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я рабо́таю в суде́.",
       "ru_plain": "Я работаю в суде.",
       "accepted_answers": [
@@ -73763,8 +79831,8 @@ window.CONTENT_DATA = {
       "id": "back_work015_01",
       "item_id": "work015",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Мы дово́льны результа́том.",
       "ru_plain": "Мы довольны результатом.",
       "accepted_answers": [
@@ -73807,8 +79875,8 @@ window.CONTENT_DATA = {
       "id": "back_work016_01",
       "item_id": "work016",
       "module": "work_business",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "Я сча́стлив рабо́тать на себя́.",
       "ru_plain": "Я счастлив работать на себя.",
       "accepted_answers": [
@@ -73856,8 +79924,8 @@ window.CONTENT_DATA = {
       "id": "back_lega002_01",
       "item_id": "lega002",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "судья́",
       "ru_plain": "судья",
       "accepted_answers": [
@@ -73898,8 +79966,8 @@ window.CONTENT_DATA = {
       "id": "back_lega003_01",
       "item_id": "lega003",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "слу́шание",
       "ru_plain": "слушание",
       "accepted_answers": [
@@ -73940,8 +80008,8 @@ window.CONTENT_DATA = {
       "id": "back_lega004_01",
       "item_id": "lega004",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "де́ло",
       "ru_plain": "дело",
       "accepted_answers": [
@@ -73982,8 +80050,8 @@ window.CONTENT_DATA = {
       "id": "back_lega005_01",
       "item_id": "lega005",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "клие́нт",
       "ru_plain": "клиент",
       "accepted_answers": [
@@ -74024,8 +80092,8 @@ window.CONTENT_DATA = {
       "id": "back_lega006_01",
       "item_id": "lega006",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "страхо́вка",
       "ru_plain": "страховка",
       "accepted_answers": [
@@ -74066,8 +80134,8 @@ window.CONTENT_DATA = {
       "id": "back_lega007_01",
       "item_id": "lega007",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "мирно́е соглаше́ние",
       "ru_plain": "мирное соглашение",
       "accepted_answers": [
@@ -74110,8 +80178,8 @@ window.CONTENT_DATA = {
       "id": "back_lega008_01",
       "item_id": "lega008",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "суде́бное де́ло",
       "ru_plain": "судебное дело",
       "accepted_answers": [
@@ -74155,8 +80223,8 @@ window.CONTENT_DATA = {
       "id": "back_lega009_01",
       "item_id": "lega009",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "тра́вма",
       "ru_plain": "травма",
       "accepted_answers": [
@@ -74197,8 +80265,8 @@ window.CONTENT_DATA = {
       "id": "back_lega010_01",
       "item_id": "lega010",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "клевета́",
       "ru_plain": "клевета",
       "accepted_answers": [
@@ -74238,8 +80306,8 @@ window.CONTENT_DATA = {
       "id": "back_lega011_01",
       "item_id": "lega011",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "зако́н",
       "ru_plain": "закон",
       "accepted_answers": [
@@ -74279,8 +80347,8 @@ window.CONTENT_DATA = {
       "id": "back_lega012_01",
       "item_id": "lega012",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "пра́во",
       "ru_plain": "право",
       "accepted_answers": [
@@ -74320,8 +80388,8 @@ window.CONTENT_DATA = {
       "id": "back_lega013_01",
       "item_id": "lega013",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "прокуро́р",
       "ru_plain": "прокурор",
       "accepted_answers": [
@@ -74362,8 +80430,8 @@ window.CONTENT_DATA = {
       "id": "back_lega014_01",
       "item_id": "lega014",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "защи́тник",
       "ru_plain": "защитник",
       "accepted_answers": [
@@ -74404,8 +80472,8 @@ window.CONTENT_DATA = {
       "id": "back_lega015_01",
       "item_id": "lega015",
       "module": "legal_recognition",
-      "lesson_id": "family_visit_013",
-      "lesson_number": 13,
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
       "ru": "пове́стка",
       "ru_plain": "повестка",
       "accepted_answers": [
@@ -74446,8 +80514,8 @@ window.CONTENT_DATA = {
       "id": "back_cele001_01",
       "item_id": "cele001",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Скоро́ Рождество́.",
       "ru_plain": "Скоро Рождество.",
       "accepted_answers": [
@@ -74489,8 +80557,8 @@ window.CONTENT_DATA = {
       "id": "back_cele002_01",
       "item_id": "cele002",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Како́й сего́дня пра́здник?",
       "ru_plain": "Какой сегодня праздник?",
       "accepted_answers": [
@@ -74536,8 +80604,8 @@ window.CONTENT_DATA = {
       "id": "back_cele003_01",
       "item_id": "cele003",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Сего́дня Рождество́.",
       "ru_plain": "Сегодня Рождество.",
       "accepted_answers": [
@@ -74579,8 +80647,8 @@ window.CONTENT_DATA = {
       "id": "back_cele004_01",
       "item_id": "cele004",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Как вы с Кадри́ей отпра́здновали Рождество́?",
       "ru_plain": "Как вы с Кадрией отпраздновали Рождество?",
       "accepted_answers": [
@@ -74630,8 +80698,8 @@ window.CONTENT_DATA = {
       "id": "back_cele005_01",
       "item_id": "cele005",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
       "ru_plain": "Мы отпраздновали Рождество у моих родителей дома.",
       "accepted_answers": [
@@ -74679,8 +80747,8 @@ window.CONTENT_DATA = {
       "id": "back_cele006_01",
       "item_id": "cele006",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Каки́е пла́ны на Рождество́?",
       "ru_plain": "Какие планы на Рождество?",
       "accepted_answers": [
@@ -74728,8 +80796,8 @@ window.CONTENT_DATA = {
       "id": "back_cele007_01",
       "item_id": "cele007",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "На Рождество́ мы хоти́м полете́ть в О́регон.",
       "ru_plain": "На Рождество мы хотим полететь в Орегон.",
       "accepted_answers": [
@@ -74777,8 +80845,8 @@ window.CONTENT_DATA = {
       "id": "back_cele008_01",
       "item_id": "cele008",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы хоти́м ката́ться на лы́жах.",
       "ru_plain": "Мы хотим кататься на лыжах.",
       "accepted_answers": [
@@ -74823,8 +80891,8 @@ window.CONTENT_DATA = {
       "id": "back_cele009_01",
       "item_id": "cele009",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Кадри́я бу́дет гуля́ть и отдыха́ть.",
       "ru_plain": "Кадрия будет гулять и отдыхать.",
       "accepted_answers": [
@@ -74870,8 +80938,8 @@ window.CONTENT_DATA = {
       "id": "back_cele010_01",
       "item_id": "cele010",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Ско́лько дней вы бу́дете в О́регоне?",
       "ru_plain": "Сколько дней вы будете в Орегоне?",
       "accepted_answers": [
@@ -74921,8 +80989,8 @@ window.CONTENT_DATA = {
       "id": "back_cele011_01",
       "item_id": "cele011",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Мы бу́дем в О́регоне пять дней.",
       "ru_plain": "Мы будем в Орегоне пять дней.",
       "accepted_answers": [
@@ -74968,8 +81036,8 @@ window.CONTENT_DATA = {
       "id": "back_cele012_01",
       "item_id": "cele012",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Что вы де́лали на День Благодаре́ния?",
       "ru_plain": "Что вы делали на День Благодарения?",
       "accepted_answers": [
@@ -75019,8 +81087,8 @@ window.CONTENT_DATA = {
       "id": "back_cele013_01",
       "item_id": "cele013",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "На День Благодаре́ния мы у́жинали всей семьёй.",
       "ru_plain": "На День Благодарения мы ужинали всей семьёй.",
       "accepted_answers": [
@@ -75068,8 +81136,8 @@ window.CONTENT_DATA = {
       "id": "back_cele014_01",
       "item_id": "cele014",
       "module": "celebrations",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "ru": "Э́то был большо́й у́жин.",
       "ru_plain": "Это был большой ужин.",
       "accepted_answers": [
@@ -75114,8 +81182,8 @@ window.CONTENT_DATA = {
       "id": "back_cult001_01",
       "item_id": "cult001",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Ка́мень с души́ упа́л.",
       "ru_plain": "Камень с души упал.",
       "accepted_answers": [
@@ -75161,8 +81229,8 @@ window.CONTENT_DATA = {
       "id": "back_cult002_01",
       "item_id": "cult002",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Жизнь бьёт ключо́м.",
       "ru_plain": "Жизнь бьёт ключом.",
       "accepted_answers": [
@@ -75207,8 +81275,8 @@ window.CONTENT_DATA = {
       "id": "back_cult003_01",
       "item_id": "cult003",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "В гостя́х хорошо́, а до́ма лу́чше.",
       "ru_plain": "В гостях хорошо, а дома лучше.",
       "accepted_answers": [
@@ -75256,8 +81324,8 @@ window.CONTENT_DATA = {
       "id": "back_cult004_01",
       "item_id": "cult004",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Нет ху́да без добра́.",
       "ru_plain": "Нет худа без добра.",
       "accepted_answers": [
@@ -75303,8 +81371,8 @@ window.CONTENT_DATA = {
       "id": "back_cult005_01",
       "item_id": "cult005",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "У сосе́да трава́ зелене́е.",
       "ru_plain": "У соседа трава зеленее.",
       "accepted_answers": [
@@ -75350,8 +81418,8 @@ window.CONTENT_DATA = {
       "id": "back_cult006_01",
       "item_id": "cult006",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Семь раз отме́рь, оди́н раз отре́жь.",
       "ru_plain": "Семь раз отмерь, один раз отрежь.",
       "accepted_answers": [
@@ -75398,8 +81466,8 @@ window.CONTENT_DATA = {
       "id": "back_cult007_01",
       "item_id": "cult007",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Чем отлича́ется адвока́т от прокуро́ра?",
       "ru_plain": "Чем отличается адвокат от прокурора?",
       "accepted_answers": [
@@ -75447,8 +81515,8 @@ window.CONTENT_DATA = {
       "id": "back_cult008_01",
       "item_id": "cult008",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Адвока́т озабо́чен бу́дущим своего́ клие́нта, а прокуро́р — его́ про́шлым.",
       "ru_plain": "Адвокат озабочен будущим своего клиента, а прокурор — его прошлым.",
       "accepted_answers": [
@@ -75500,8 +81568,8 @@ window.CONTENT_DATA = {
       "id": "back_cult009_01",
       "item_id": "cult009",
       "module": "cultural_bonus",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16,
       "ru": "Цивилиза́ция привела́ к тому́, что уже́ не ва́жно, чей адвока́т лу́чше.",
       "ru_plain": "Цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
       "accepted_answers": [
@@ -75555,8 +81623,8 @@ window.CONTENT_DATA = {
       "id": "back_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "accepted_answers": [
@@ -75600,8 +81668,8 @@ window.CONTENT_DATA = {
       "id": "back_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "accepted_answers": [
@@ -75645,8 +81713,8 @@ window.CONTENT_DATA = {
       "id": "back_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "accepted_answers": [
@@ -75690,8 +81758,8 @@ window.CONTENT_DATA = {
       "id": "back_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "accepted_answers": [
@@ -75737,8 +81805,8 @@ window.CONTENT_DATA = {
       "id": "back_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "accepted_answers": [
@@ -75780,8 +81848,8 @@ window.CONTENT_DATA = {
       "id": "back_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "accepted_answers": [
@@ -75829,8 +81897,8 @@ window.CONTENT_DATA = {
       "id": "back_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "accepted_answers": [
@@ -75874,8 +81942,8 @@ window.CONTENT_DATA = {
       "id": "back_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "accepted_answers": [
@@ -75920,8 +81988,8 @@ window.CONTENT_DATA = {
       "id": "back_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "accepted_answers": [
@@ -75965,8 +82033,8 @@ window.CONTENT_DATA = {
       "id": "back_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "accepted_answers": [
@@ -76009,8 +82077,8 @@ window.CONTENT_DATA = {
       "id": "back_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "accepted_answers": [
@@ -76052,8 +82120,8 @@ window.CONTENT_DATA = {
       "id": "back_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "accepted_answers": [
@@ -76096,8 +82164,8 @@ window.CONTENT_DATA = {
       "id": "back_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "accepted_answers": [
@@ -76139,8 +82207,8 @@ window.CONTENT_DATA = {
       "id": "back_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "accepted_answers": [
@@ -76183,8 +82251,8 @@ window.CONTENT_DATA = {
       "id": "back_trav015_01",
       "item_id": "trav015",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "аэропо́рт",
       "ru_plain": "аэропорт",
       "accepted_answers": [
@@ -76227,8 +82295,8 @@ window.CONTENT_DATA = {
       "id": "back_trav016_01",
       "item_id": "trav016",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "бага́ж",
       "ru_plain": "багаж",
       "accepted_answers": [
@@ -76272,8 +82340,8 @@ window.CONTENT_DATA = {
       "id": "back_trav017_01",
       "item_id": "trav017",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Вот мой па́спорт.",
       "ru_plain": "Вот мой паспорт.",
       "accepted_answers": [
@@ -76317,8 +82385,8 @@ window.CONTENT_DATA = {
       "id": "back_trav018_01",
       "item_id": "trav018",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ зарегистри́роваться.",
       "ru_plain": "Я хочу зарегистрироваться.",
       "accepted_answers": [
@@ -76362,8 +82430,8 @@ window.CONTENT_DATA = {
       "id": "back_trav019_01",
       "item_id": "trav019",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Я хочу́ сда́ть бага́ж.",
       "ru_plain": "Я хочу сдать багаж.",
       "accepted_answers": [
@@ -76407,8 +82475,8 @@ window.CONTENT_DATA = {
       "id": "back_trav020_01",
       "item_id": "trav020",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где выда́ча багажа́?",
       "ru_plain": "Где выдача багажа?",
       "accepted_answers": [
@@ -76454,8 +82522,8 @@ window.CONTENT_DATA = {
       "id": "back_trav021_01",
       "item_id": "trav021",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "У меня́ есть брони́рование.",
       "ru_plain": "У меня есть бронирование.",
       "accepted_answers": [
@@ -76499,8 +82567,8 @@ window.CONTENT_DATA = {
       "id": "back_trav022_01",
       "item_id": "trav022",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Ключ, пожа́луйста.",
       "ru_plain": "Ключ, пожалуйста.",
       "accepted_answers": [
@@ -76541,8 +82609,8 @@ window.CONTENT_DATA = {
       "id": "back_trav023_01",
       "item_id": "trav023",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Где лифт?",
       "ru_plain": "Где лифт?",
       "accepted_answers": [
@@ -76582,8 +82650,8 @@ window.CONTENT_DATA = {
       "id": "back_trav024_01",
       "item_id": "trav024",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "В но́мере есть интерне́т?",
       "ru_plain": "В номере есть интернет?",
       "accepted_answers": [
@@ -76627,8 +82695,8 @@ window.CONTENT_DATA = {
       "id": "back_trav025_01",
       "item_id": "trav025",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Во ско́лько зае́зд?",
       "ru_plain": "Во сколько заезд?",
       "accepted_answers": [
@@ -76675,8 +82743,8 @@ window.CONTENT_DATA = {
       "id": "back_trav026_01",
       "item_id": "trav026",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Во ско́лько вы́езд?",
       "ru_plain": "Во сколько выезд?",
       "accepted_answers": [
@@ -76723,8 +82791,8 @@ window.CONTENT_DATA = {
       "id": "back_trav027_01",
       "item_id": "trav027",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Э́то ваш ключ.",
       "ru_plain": "Это ваш ключ.",
       "accepted_answers": [
@@ -76770,8 +82838,8 @@ window.CONTENT_DATA = {
       "id": "back_trav028_01",
       "item_id": "trav028",
       "module": "travel_budva",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
       "ru": "Како́й ваш но́мер?",
       "ru_plain": "Какой ваш номер?",
       "accepted_answers": [
@@ -76818,8 +82886,8 @@ window.CONTENT_DATA = {
       "id": "back_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "accepted_answers": [
@@ -76858,8 +82926,8 @@ window.CONTENT_DATA = {
       "id": "back_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "accepted_answers": [
@@ -76898,8 +82966,8 @@ window.CONTENT_DATA = {
       "id": "back_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "accepted_answers": [
@@ -76938,8 +83006,8 @@ window.CONTENT_DATA = {
       "id": "back_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "accepted_answers": [
@@ -76978,8 +83046,8 @@ window.CONTENT_DATA = {
       "id": "back_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "accepted_answers": [
@@ -77018,8 +83086,8 @@ window.CONTENT_DATA = {
       "id": "back_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "accepted_answers": [
@@ -77058,8 +83126,8 @@ window.CONTENT_DATA = {
       "id": "back_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "accepted_answers": [
@@ -77098,8 +83166,8 @@ window.CONTENT_DATA = {
       "id": "back_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "accepted_answers": [
@@ -77138,8 +83206,8 @@ window.CONTENT_DATA = {
       "id": "back_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "accepted_answers": [
@@ -77177,8 +83245,8 @@ window.CONTENT_DATA = {
       "id": "back_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "accepted_answers": [
@@ -82181,8 +88249,8 @@ window.CONTENT_DATA = {
     {
       "id": "tutor_verb_fluency_check",
       "scenario_id": "verb_fluency_check",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "setting": "Core verb fluency",
       "goal": "Produce core verbs under real interview-style pressure.",
       "learner_role": "guest",
@@ -82283,7 +88351,8 @@ window.CONTENT_DATA = {
         "family_visit_014",
         "family_visit_015",
         "family_visit_016",
-        "family_visit_017"
+        "family_visit_017",
+        "family_visit_018"
       ],
       "allowed_item_ids": [
         "firs001",
@@ -82493,6 +88562,27 @@ window.CONTENT_DATA = {
         "dail027",
         "dail028",
         "dail029",
+        "leis001",
+        "leis002",
+        "leis003",
+        "leis004",
+        "leis005",
+        "leis006",
+        "leis007",
+        "leis008",
+        "leis009",
+        "leis010",
+        "leis011",
+        "leis012",
+        "leis013",
+        "leis014",
+        "leis015",
+        "leis016",
+        "leis017",
+        "leis018",
+        "leis019",
+        "leis020",
+        "leis021",
         "work001",
         "work002",
         "work003",
@@ -82593,6 +88683,7 @@ window.CONTENT_DATA = {
         "бабушка",
         "багаж",
         "благодарения",
+        "боевики",
         "бокал",
         "большое",
         "большой",
@@ -82642,6 +88733,7 @@ window.CONTENT_DATA = {
         "готовить",
         "готовлю",
         "готовы",
+        "гуляли",
         "гулять",
         "да",
         "да, мы готовы.",
@@ -82713,6 +88805,9 @@ window.CONTENT_DATA = {
         "звонил",
         "звоню",
         "здесь",
+        "здесь мы играем в футбол.",
+        "здесь мы отдыхаем.",
+        "здесь я слушаю и смотрю фильм.",
         "здоровы",
         "здоровье",
         "здравствуйте",
@@ -82723,6 +88818,8 @@ window.CONTENT_DATA = {
         "зовут",
         "зять",
         "и",
+        "играем",
+        "играть",
         "играю",
         "идёт",
         "идёт дождь.",
@@ -82733,6 +88830,8 @@ window.CONTENT_DATA = {
         "интернет",
         "кадрия",
         "кадрия будет гулять и отдыхать.",
+        "кадрия любит рисовать.",
+        "кадрия любит смотреть фильмы о любви.",
         "кадрия работает вместе со мной.",
         "как",
         "как по-русски …?",
@@ -82742,8 +88841,11 @@ window.CONTENT_DATA = {
         "клиентом",
         "ключ",
         "ключ, пожалуйста.",
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
         "компания",
         "компьютере",
+        "котами",
         "кофе",
         "красивое",
         "красивый",
@@ -82752,6 +88854,8 @@ window.CONTENT_DATA = {
         "ли",
         "лифт",
         "лыжах",
+        "любви",
+        "любит",
         "любите",
         "люблю",
         "люблю / любите",
@@ -82783,15 +88887,19 @@ window.CONTENT_DATA = {
         "море очень красивое.",
         "моря",
         "муж",
+        "музыку",
         "мы",
         "мы будем в будве.",
         "мы будем в орегоне пять дней.",
         "мы будем в черногории.",
+        "мы гуляли в парке.",
         "мы довольны результатом.",
         "мы едем в будву.",
         "мы едим и смотрим телевизор.",
         "мы здесь с семьёй.",
+        "мы играем с нашими котами.",
         "мы отдыхаем.",
+        "мы отдыхали и слушали музыку.",
         "мы отпраздновали рождество у моих родителей дома.",
         "мы познакомились …",
         "мы работаем вместе.",
@@ -82805,6 +88913,7 @@ window.CONTENT_DATA = {
         "надо",
         "наелся",
         "начинаю",
+        "нашими",
         "не",
         "немного",
         "нет",
@@ -82815,6 +88924,7 @@ window.CONTENT_DATA = {
         "нравится",
         "нужно",
         "нужно работать ещё два часа.",
+        "о",
         "обедаю",
         "облачно",
         "обычно",
@@ -82827,6 +88937,7 @@ window.CONTENT_DATA = {
         "орегон",
         "орегоне",
         "отдыхаем",
+        "отдыхали",
         "отдыхать",
         "отдыхаю",
         "отлично",
@@ -82836,9 +88947,12 @@ window.CONTENT_DATA = {
         "очень вкусно!",
         "очень приятно",
         "папа",
+        "парке",
         "паспорт",
         "передайте",
         "передайте, пожалуйста, хлеб",
+        "пианино",
+        "пишу",
         "плохая",
         "по",
         "повторите",
@@ -82897,6 +89011,7 @@ window.CONTENT_DATA = {
         "рано",
         "результатом",
         "решать",
+        "рисовать",
         "родителей",
         "родители",
         "рождество",
@@ -82927,8 +89042,12 @@ window.CONTENT_DATA = {
         "скоро",
         "скоро рождество.",
         "слишком",
+        "слушали",
+        "слушаю",
         "смогу",
+        "смотреть",
         "смотрим",
+        "смотрю",
         "снег",
         "со",
         "солнечная",
@@ -82952,6 +89071,7 @@ window.CONTENT_DATA = {
         "счёт, пожалуйста.",
         "сын",
         "такси",
+        "танцевать",
         "телевизор",
         "тепло",
         "тесть",
@@ -82974,6 +89094,9 @@ window.CONTENT_DATA = {
         "утром",
         "утром я часто играю на гитаре.",
         "учу",
+        "фильм",
+        "фильмы",
+        "футбол",
         "хлеб",
         "хожу",
         "хозяев",
@@ -83017,21 +89140,27 @@ window.CONTENT_DATA = {
         "я живу в америке",
         "я живу в доме пять лет.",
         "я звонил клиентам.",
+        "я играю на гитаре и на пианино.",
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
+        "я люблю играть на гитаре.",
         "я люблю рано вставать.",
+        "я люблю смотреть боевики.",
         "я наелся",
         "я начинаю работать в десять утра.",
         "я не знаю, смогу ли я взять отпуск.",
         "я не понимаю",
         "я немного говорю по-русски",
+        "я немного люблю танцевать.",
         "я обедаю днём.",
         "я очень занят.",
+        "я пишу музыку.",
         "я понимаю",
         "я работал на компьютере.",
         "я работаю в суде.",
         "я работаю утром и вечером.",
+        "я слушаю музыку.",
         "я счастлив работать на себя.",
         "я ужинаю вечером.",
         "я хочу зарегистрироваться.",
@@ -83103,6 +89232,7 @@ window.CONTENT_DATA = {
         "дней",
         "до",
         "добра",
+        "дом",
         "дома",
         "доме",
         "души",
@@ -83118,6 +89248,8 @@ window.CONTENT_DATA = {
         "занят",
         "защитник",
         "зеленее",
+        "и",
+        "игры",
         "или",
         "июль",
         "июнь",
@@ -83145,8 +89277,10 @@ window.CONTENT_DATA = {
         "камень",
         "камень с души упал.",
         "каникулы",
+        "картины",
         "кем",
         "кем вы работаете?",
+        "кинотеатр",
         "клевета",
         "клиент",
         "клиента",
@@ -83169,6 +89303,8 @@ window.CONTENT_DATA = {
         "мирное",
         "мирное соглашение",
         "много",
+        "можно",
+        "музей",
         "мы",
         "мы потратили семь или восемь часов.",
         "на",
@@ -83223,6 +89359,7 @@ window.CONTENT_DATA = {
         "работаете",
         "работал",
         "раз",
+        "разные",
         "ребёнок",
         "родится",
         "рождению",
@@ -83249,10 +89386,14 @@ window.CONTENT_DATA = {
         "сколько стоит?",
         "сколько стоят?",
         "сколько часов ты работал?",
+        "скульптуры",
         "слушание",
+        "смотрю",
         "соглашение",
         "соседа",
         "спина",
+        "спортивные",
+        "стадион",
         "стоит",
         "стоят",
         "страховка",
@@ -83261,6 +89402,8 @@ window.CONTENT_DATA = {
         "судебное дело",
         "судья",
         "там",
+        "там можно увидеть разные спортивные игры.",
+        "там я смотрю картины и скульптуры.",
         "тому",
         "трава",
         "травма",
@@ -83275,6 +89418,7 @@ window.CONTENT_DATA = {
         "у вас много дел?",
         "у вас много клиентов?",
         "у соседа трава зеленее.",
+        "увидеть",
         "уже",
         "ужинаете",
         "улице",
@@ -83302,7 +89446,12 @@ window.CONTENT_DATA = {
         "чувствует",
         "это",
         "это ваш ключ.",
+        "это дом.",
+        "это кинотеатр.",
+        "это музей.",
+        "это стадион.",
         "этой",
+        "я",
         "январь"
       ],
       "structures": [
@@ -83312,6 +89461,7 @@ window.CONTENT_DATA = {
         "grammar:formal_question",
         "grammar:formal_second_person",
         "grammar:future_plan",
+        "grammar:igrat_v_na",
         "grammar:number_noun_agreement",
         "grammar:past_masculine_work",
         "grammar:prepositional_place",
@@ -83322,12 +89472,14 @@ window.CONTENT_DATA = {
         "lexical:core_verbs",
         "lexical:day_parts",
         "lexical:days_of_week",
+        "lexical:hobbies",
         "lexical:holiday_vocab",
         "lexical:idioms",
         "lexical:kinship_terms",
         "lexical:legal_vocab",
         "lexical:months",
         "lexical:numbers",
+        "lexical:places",
         "lexical:proverbs",
         "lexical:travel_vocab",
         "lexical:work_vocab",
@@ -83343,6 +89495,7 @@ window.CONTENT_DATA = {
         "phrase:holiday_plan",
         "phrase:host_question",
         "phrase:introduction",
+        "phrase:leisure_answer",
         "phrase:pace_repair",
         "phrase:personal_origin",
         "phrase:place_description",
@@ -83375,7 +89528,7 @@ window.CONTENT_DATA = {
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Core verb fluency — Produce core verbs under real interview-style pressure.\nCurriculum boundary: Lesson 17 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- хочу / хотите — I want / you (pl/formal) want — хоте́ть\n- могу / можете — I can / you can — мочь\n- говорю / говорите — I speak / you speak — говори́ть\n- понимаю / понимаете — I understand / you understand — понима́ть\n- люблю / любите — I love / you love — люби́ть\n- работаю / работаете — I work / you work — рабо́тать\n- живу / живёте — I live / you live — жить\n- ем / едите — I eat / you eat — есть\n- пью / пьёте — I drink / you drink — пить\n- знаю / знаете — I know / you know — знать\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Core verb fluency — Produce core verbs under real interview-style pressure.\nCurriculum boundary: Lesson 18 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- хочу / хотите — I want / you (pl/formal) want — хоте́ть\n- могу / можете — I can / you can — мочь\n- говорю / говорите — I speak / you speak — говори́ть\n- понимаю / понимаете — I understand / you understand — понима́ть\n- люблю / любите — I love / you love — люби́ть\n- работаю / работаете — I work / you work — рабо́тать\n- живу / живёте — I live / you live — жить\n- ем / едите — I eat / you eat — есть\n- пью / пьёте — I drink / you drink — пить\n- знаю / знаете — I know / you know — знать\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
       "id": "tutor_extended_family_family_tree",
@@ -87446,98 +93599,167 @@ window.CONTENT_DATA = {
       "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Quick descriptions and pace repair — Use short adverbs and adjective-agreement weather lines from the original guide.\nCurriculum boundary: Lesson 10 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Это очень интересно. — This is very interesting.\n- Это немного трудно. — This is a little difficult.\n- Это не трудно. — This is not difficult.\n- Это очень легко. — This is very easy.\n- Это удобно. — This is convenient.\n- Это не очень удобно. — This is not very convenient.\n- Это слишком быстро. — This is too fast.\n- Медленно, пожалуйста. — Slowly, please.\n- Это важно. — This is important.\n- Это не важно. — This is not important.\n- Погода хорошая. — The weather is good.\n- Погода плохая. — The weather is bad.\n- Погода солнечная. — The weather is sunny.\n- Погода дождливая. — The weather is rainy.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
-      "id": "tutor_budva_trip_checkin",
-      "scenario_id": "budva_trip_checkin",
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16,
-      "setting": "Budva family trip",
-      "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
+      "id": "tutor_leisure_places_checkin",
+      "scenario_id": "leisure_places_checkin",
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
+      "setting": "Hobbies, home, and leisure places",
+      "goal": "Answer dinner-safe questions about music, films, cats, parks, stadiums, museums, and what you do when not working.",
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
-        "trav001",
-        "trav002",
-        "trav003",
-        "trav004",
-        "trav005",
-        "trav006",
-        "trav007",
-        "trav008",
-        "trav009",
-        "trav012",
-        "trav013"
+        "leis001",
+        "leis002",
+        "leis003",
+        "leis004",
+        "leis005",
+        "leis006",
+        "leis007",
+        "leis008",
+        "leis009",
+        "leis010",
+        "leis011",
+        "leis012",
+        "leis013",
+        "leis014",
+        "leis015",
+        "leis016",
+        "leis017",
+        "leis018",
+        "leis019",
+        "leis020",
+        "leis021"
       ],
       "required_phrases": [
         {
-          "id": "trav001",
-          "ru": "Мы е́дем в Бу́дву.",
-          "ru_plain": "Мы едем в Будву.",
-          "en": "We're going to Budva."
+          "id": "leis001",
+          "ru": "Когда́ я не рабо́таю, я смотрю́ телеви́зор.",
+          "ru_plain": "Когда я не работаю, я смотрю телевизор.",
+          "en": "When I'm not working, I watch TV."
         },
         {
-          "id": "trav002",
-          "ru": "Мы бу́дем в Черного́рии.",
-          "ru_plain": "Мы будем в Черногории.",
-          "en": "We'll be in Montenegro."
+          "id": "leis002",
+          "ru": "Я слу́шаю му́зыку.",
+          "ru_plain": "Я слушаю музыку.",
+          "en": "I listen to music."
         },
         {
-          "id": "trav003",
-          "ru": "Мы бу́дем в Бу́две.",
-          "ru_plain": "Мы будем в Будве.",
-          "en": "We'll be in Budva."
+          "id": "leis003",
+          "ru": "Я люблю́ игра́ть на гита́ре.",
+          "ru_plain": "Я люблю играть на гитаре.",
+          "en": "I like playing guitar."
         },
         {
-          "id": "trav004",
-          "ru": "Где на́ш о́тель?",
-          "ru_plain": "Где наш отель?",
-          "en": "Where is our hotel?"
+          "id": "leis004",
+          "ru": "Я игра́ю на гита́ре и на пиани́но.",
+          "ru_plain": "Я играю на гитаре и на пианино.",
+          "en": "I play guitar and piano."
         },
         {
-          "id": "trav005",
-          "ru": "Мо́жно такси́?",
-          "ru_plain": "Можно такси?",
-          "en": "Can we get a taxi?"
+          "id": "leis005",
+          "ru": "Я пишу́ му́зыку.",
+          "ru_plain": "Я пишу музыку.",
+          "en": "I write music."
         },
         {
-          "id": "trav006",
-          "ru": "Ско́лько е́хать до о́теля?",
-          "ru_plain": "Сколько ехать до отеля?",
-          "en": "How long is the ride to the hotel?"
+          "id": "leis006",
+          "ru": "Кадри́я лю́бит рисова́ть.",
+          "ru_plain": "Кадрия любит рисовать.",
+          "en": "Kadriya likes to draw."
         },
         {
-          "id": "trav007",
-          "ru": "Где пляж?",
-          "ru_plain": "Где пляж?",
-          "en": "Where is the beach?"
+          "id": "leis007",
+          "ru": "Я немно́го люблю́ танцева́ть.",
+          "ru_plain": "Я немного люблю танцевать.",
+          "en": "I like dancing a little."
         },
         {
-          "id": "trav008",
-          "ru": "Я хочу́ погуля́ть у мо́ря.",
-          "ru_plain": "Я хочу погулять у моря.",
-          "en": "I want to walk by the sea."
+          "id": "leis008",
+          "ru": "Мы игра́ем с на́шими кота́ми.",
+          "ru_plain": "Мы играем с нашими котами.",
+          "en": "We play with our cats."
         },
         {
-          "id": "trav009",
-          "ru": "Ста́рый го́род о́чень краси́вый.",
-          "ru_plain": "Старый город очень красивый.",
-          "en": "The old town is very beautiful."
+          "id": "leis009",
+          "ru": "Я люблю́ смотре́ть боевики́.",
+          "ru_plain": "Я люблю смотреть боевики.",
+          "en": "I like watching action movies."
         },
         {
-          "id": "trav012",
-          "ru": "Мы здесь с семьёй.",
-          "ru_plain": "Мы здесь с семьёй.",
-          "en": "We're here with family."
+          "id": "leis010",
+          "ru": "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+          "ru_plain": "Кадрия любит смотреть фильмы о любви.",
+          "en": "Kadriya likes watching love movies."
         },
         {
-          "id": "trav013",
-          "ru": "Счёт, пожа́луйста.",
-          "ru_plain": "Счёт, пожалуйста.",
-          "en": "The check, please."
+          "id": "leis011",
+          "ru": "Э́то дом.",
+          "ru_plain": "Это дом.",
+          "en": "This is home / a house."
+        },
+        {
+          "id": "leis012",
+          "ru": "Здесь мы отдыха́ем.",
+          "ru_plain": "Здесь мы отдыхаем.",
+          "en": "Here we relax."
+        },
+        {
+          "id": "leis013",
+          "ru": "Э́то стадио́н.",
+          "ru_plain": "Это стадион.",
+          "en": "This is a stadium."
+        },
+        {
+          "id": "leis014",
+          "ru": "Здесь мы игра́ем в футбо́л.",
+          "ru_plain": "Здесь мы играем в футбол.",
+          "en": "Here we play soccer."
+        },
+        {
+          "id": "leis015",
+          "ru": "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+          "ru_plain": "Там можно увидеть разные спортивные игры.",
+          "en": "There you can see different sports games."
+        },
+        {
+          "id": "leis016",
+          "ru": "Э́то кинотеа́тр.",
+          "ru_plain": "Это кинотеатр.",
+          "en": "This is a movie theater."
+        },
+        {
+          "id": "leis017",
+          "ru": "Здесь я слу́шаю и смотрю́ фильм.",
+          "ru_plain": "Здесь я слушаю и смотрю фильм.",
+          "en": "Here I listen and watch a film."
+        },
+        {
+          "id": "leis018",
+          "ru": "Э́то музе́й.",
+          "ru_plain": "Это музей.",
+          "en": "This is a museum."
+        },
+        {
+          "id": "leis019",
+          "ru": "Там я смотрю́ карти́ны и скульпту́ры.",
+          "ru_plain": "Там я смотрю картины и скульптуры.",
+          "en": "There I look at paintings and sculptures."
+        },
+        {
+          "id": "leis020",
+          "ru": "Мы гуля́ли в па́рке.",
+          "ru_plain": "Мы гуляли в парке.",
+          "en": "We walked in the park."
+        },
+        {
+          "id": "leis021",
+          "ru": "Мы отдыха́ли и слу́шали му́зыку.",
+          "ru_plain": "Мы отдыхали и слушали музыку.",
+          "en": "We rested and listened to music."
         }
       ],
       "success_criteria": [
-        "handles_travel_logistics",
-        "talks_about_budva",
+        "talks_about_leisure_places",
         "stays_in_russian",
         "uses_repair_lines"
       ],
@@ -87553,11 +93775,7 @@ window.CONTENT_DATA = {
         "family_visit_009",
         "family_visit_010",
         "family_visit_011",
-        "family_visit_012",
-        "family_visit_013",
-        "family_visit_014",
-        "family_visit_015",
-        "family_visit_016"
+        "family_visit_012"
       ],
       "allowed_item_ids": [
         "firs001",
@@ -87767,6 +93985,970 @@ window.CONTENT_DATA = {
         "dail027",
         "dail028",
         "dail029",
+        "leis001",
+        "leis002",
+        "leis003",
+        "leis004",
+        "leis005",
+        "leis006",
+        "leis007",
+        "leis008",
+        "leis009",
+        "leis010",
+        "leis011",
+        "leis012",
+        "leis013",
+        "leis014",
+        "leis015",
+        "leis016",
+        "leis017",
+        "leis018",
+        "leis019",
+        "leis020",
+        "leis021"
+      ],
+      "active_vocab": [
+        "америке",
+        "америки",
+        "аппетита",
+        "бабушка",
+        "боевики",
+        "бокал",
+        "большое",
+        "брат",
+        "будем",
+        "будем здоровы!",
+        "будет",
+        "было",
+        "быстро",
+        "в",
+        "в десять я начинаю решать проблемы клиентов.",
+        "важно",
+        "ваше",
+        "вашу",
+        "вечер",
+        "вечером",
+        "вещей",
+        "взять",
+        "вкусно",
+        "воскресенье",
+        "время",
+        "вставать",
+        "встаю",
+        "встречу",
+        "вторник",
+        "вчера",
+        "вчера было солнечно.",
+        "выпьем",
+        "выходных",
+        "гитаре",
+        "говорит",
+        "говорю",
+        "готовить",
+        "готовлю",
+        "готовы",
+        "гуляли",
+        "да",
+        "да, мы готовы.",
+        "да, немного",
+        "давайте",
+        "давайте выпьем за это!",
+        "два",
+        "дедушка",
+        "делаю",
+        "день",
+        "десяти",
+        "десять",
+        "дети",
+        "джо",
+        "для",
+        "дна",
+        "днём",
+        "до",
+        "до дна",
+        "до свидания",
+        "доброе",
+        "доброе утро",
+        "доброе утро.",
+        "добрый",
+        "добрый вечер",
+        "добрый вечер.",
+        "добрый день",
+        "добрый день.",
+        "дождливая",
+        "дождь",
+        "должен",
+        "доме",
+        "домой",
+        "дочь",
+        "едим",
+        "есть",
+        "ещё",
+        "жена",
+        "жены",
+        "живу",
+        "за",
+        "за ваше здоровье!",
+        "за встречу!",
+        "за здоровье!",
+        "за знакомство!",
+        "за любовь!",
+        "за молодых!",
+        "за родителей!",
+        "за семью!",
+        "за хозяев!",
+        "за хозяйку!",
+        "завтра",
+        "завтра будет тепло.",
+        "завтракаю",
+        "звоню",
+        "здесь",
+        "здесь мы играем в футбол.",
+        "здесь мы отдыхаем.",
+        "здесь я слушаю и смотрю фильм.",
+        "здоровы",
+        "здоровье",
+        "здравствуйте",
+        "знакомство",
+        "знаю",
+        "зовут",
+        "зять",
+        "и",
+        "играем",
+        "играть",
+        "играю",
+        "идёт",
+        "идёт дождь.",
+        "идёт снег.",
+        "из",
+        "извините",
+        "интересно",
+        "кадрия",
+        "кадрия любит рисовать.",
+        "кадрия любит смотреть фильмы о любви.",
+        "как",
+        "как по-русски …?",
+        "клиентов",
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
+        "котами",
+        "кофе",
+        "легко",
+        "лет",
+        "ли",
+        "любви",
+        "любит",
+        "люблю",
+        "любовь",
+        "людям",
+        "мама",
+        "медленно",
+        "медленно, пожалуйста.",
+        "меня",
+        "меня зовут джо",
+        "минут",
+        "миссури",
+        "мне",
+        "мне очень нравится",
+        "много",
+        "моей",
+        "можно",
+        "можно ещё?",
+        "можно чаю?",
+        "молодых",
+        "муж",
+        "музыку",
+        "мы",
+        "мы гуляли в парке.",
+        "мы едим и смотрим телевизор.",
+        "мы играем с нашими котами.",
+        "мы отдыхали и слушали музыку.",
+        "мы познакомились …",
+        "на",
+        "на выходных",
+        "на работе я делаю много разных вещей.",
+        "надо",
+        "наелся",
+        "начинаю",
+        "нашими",
+        "не",
+        "немного",
+        "нет",
+        "нет, спасибо",
+        "нормально",
+        "ночи",
+        "нравится",
+        "нужно",
+        "нужно работать ещё два часа.",
+        "о",
+        "обедаю",
+        "облачно",
+        "обычно",
+        "обычно я встаю рано утром.",
+        "обычно я не завтракаю.",
+        "обычно я отдыхаю вечером.",
+        "обычно я работаю семь часов.",
+        "она",
+        "она говорит, что я должен готовить чаще.",
+        "отдыхаем",
+        "отдыхали",
+        "отдыхаю",
+        "отлично",
+        "отпуск",
+        "очень",
+        "очень вкусно!",
+        "очень приятно",
+        "папа",
+        "парке",
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "пианино",
+        "пишу",
+        "плохая",
+        "по",
+        "повторите",
+        "повторите, пожалуйста",
+        "погода",
+        "погода дождливая.",
+        "погода плохая.",
+        "погода солнечная.",
+        "погода хорошая.",
+        "пожалуйста",
+        "познакомились",
+        "познакомиться",
+        "помедленнее",
+        "помедленнее, пожалуйста",
+        "понедельник",
+        "понимаю",
+        "понятно",
+        "после",
+        "после работы мы ужинаем.",
+        "после этого я прихожу домой.",
+        "после я готовлю кофе для моей жены.",
+        "представиться",
+        "пригласили",
+        "приняли",
+        "прихожу",
+        "приятно",
+        "приятно познакомиться",
+        "приятного",
+        "приятного аппетита!",
+        "проблемы",
+        "простите",
+        "пятница",
+        "пять",
+        "работал",
+        "работать",
+        "работаю",
+        "работе",
+        "работы",
+        "рад",
+        "рад познакомиться",
+        "разных",
+        "разрешите",
+        "разрешите представиться",
+        "рано",
+        "решать",
+        "рисовать",
+        "родителей",
+        "родители",
+        "русски",
+        "русский",
+        "рюмка",
+        "с",
+        "свидания",
+        "сегодня",
+        "сегодня облачно.",
+        "сегодня солнечно.",
+        "сегодня тепло.",
+        "сегодня холодно.",
+        "сегодня я работал четыре часа тридцать минут.",
+        "сегодня я работал четыре часа.",
+        "семь",
+        "семью",
+        "семья",
+        "сестра",
+        "сестра жены",
+        "сказать",
+        "слишком",
+        "слушали",
+        "слушаю",
+        "смогу",
+        "смотреть",
+        "смотрим",
+        "смотрю",
+        "снег",
+        "солнечная",
+        "солнечно",
+        "спасибо",
+        "спасибо большое",
+        "спасибо, было очень вкусно",
+        "спасибо, не надо",
+        "спасибо, что пригласили",
+        "спасибо, что приняли",
+        "спокойной",
+        "спокойной ночи",
+        "среда",
+        "суббота",
+        "суд",
+        "сын",
+        "танцевать",
+        "телевизор",
+        "тепло",
+        "тесть",
+        "тост",
+        "тридцать",
+        "трудно",
+        "тёща",
+        "у",
+        "у меня есть время до десяти.",
+        "удобно",
+        "ужинаем",
+        "ужинаю",
+        "утра",
+        "утро",
+        "утром",
+        "утром я часто играю на гитаре.",
+        "учу",
+        "фильм",
+        "фильмы",
+        "футбол",
+        "хлеб",
+        "хожу",
+        "хозяев",
+        "хозяйку",
+        "холодно",
+        "хорошая",
+        "хорошо",
+        "хорошо, спасибо",
+        "хочу",
+        "часа",
+        "часов",
+        "часто",
+        "часто я хожу в суд.",
+        "чаще",
+        "чаю",
+        "четверг",
+        "четыре",
+        "что",
+        "штата",
+        "шурин",
+        "это",
+        "это важно.",
+        "это не важно.",
+        "это не очень удобно.",
+        "это не трудно.",
+        "это немного трудно.",
+        "это очень интересно.",
+        "это очень легко.",
+        "это слишком быстро.",
+        "это удобно.",
+        "этого",
+        "юрист",
+        "я",
+        "я ещё учу русский",
+        "я живу в америке",
+        "я живу в доме пять лет.",
+        "я играю на гитаре и на пианино.",
+        "я из америки",
+        "я из штата миссури",
+        "я люблю вашу дочь",
+        "я люблю играть на гитаре.",
+        "я люблю рано вставать.",
+        "я люблю смотреть боевики.",
+        "я наелся",
+        "я начинаю работать в десять утра.",
+        "я не знаю, смогу ли я взять отпуск.",
+        "я не понимаю",
+        "я немного говорю по-русски",
+        "я немного люблю танцевать.",
+        "я обедаю днём.",
+        "я пишу музыку.",
+        "я понимаю",
+        "я работаю утром и вечером.",
+        "я слушаю музыку.",
+        "я ужинаю вечером.",
+        "я хочу сказать тост за …",
+        "я часто звоню людям.",
+        "я юрист"
+      ],
+      "passive_vocab": [
+        "август",
+        "апрель",
+        "блины",
+        "болит",
+        "борщ",
+        "будете",
+        "будете …?",
+        "будут",
+        "был",
+        "было",
+        "было семьдесят человек.",
+        "в",
+        "вам",
+        "вам нравится …?",
+        "вас",
+        "водка",
+        "возьмёшь",
+        "восемь",
+        "времени",
+        "вы",
+        "вы говорите по-русски?",
+        "вы готовы к рождению малыша?",
+        "выходных",
+        "говорите",
+        "готовы",
+        "две",
+        "две тысячи",
+        "двенадцать",
+        "декабрь",
+        "дела",
+        "делал",
+        "делали",
+        "день",
+        "дом",
+        "доме",
+        "ещё",
+        "живёшь",
+        "занимался",
+        "занят",
+        "и",
+        "игры",
+        "или",
+        "июль",
+        "июнь",
+        "к",
+        "кадрия",
+        "как",
+        "как вам россия?",
+        "как вы познакомились?",
+        "как дела?",
+        "как на улице?",
+        "как себя чувствует кадрия?",
+        "как там на улице?",
+        "какая",
+        "какая сегодня погода?",
+        "какой",
+        "какой сегодня день недели?",
+        "какой сегодня день?",
+        "какой сейчас месяц?",
+        "каникулы",
+        "картины",
+        "кем",
+        "кем вы работаете?",
+        "кинотеатр",
+        "когда",
+        "когда вы обедаете?",
+        "когда вы отдыхаете?",
+        "когда вы работаете?",
+        "когда вы ужинаете?",
+        "когда у вас родится ребёнок?",
+        "лет",
+        "май",
+        "малыш",
+        "малыша",
+        "март",
+        "месяц",
+        "можно",
+        "музей",
+        "мы",
+        "мы потратили семь или восемь часов.",
+        "на",
+        "неделе",
+        "недели",
+        "немного",
+        "немного болит спина.",
+        "ноябрь",
+        "нравится",
+        "обедаете",
+        "октябрь",
+        "оливье",
+        "она",
+        "она очень устала.",
+        "отдыхаете",
+        "откуда",
+        "откуда вы?",
+        "отпуск",
+        "очень",
+        "пельмени",
+        "по",
+        "погода",
+        "познакомились",
+        "потратили",
+        "прошлой",
+        "пять",
+        "пять тысяч",
+        "работаете",
+        "работал",
+        "разные",
+        "ребёнок",
+        "родится",
+        "рождению",
+        "рождественские",
+        "россия",
+        "русски",
+        "себя",
+        "сегодня",
+        "сейчас",
+        "сейчас три двенадцать.",
+        "семь",
+        "семьдесят",
+        "сентябрь",
+        "сколько",
+        "сколько было человек?",
+        "сколько лет ты живёшь в доме?",
+        "сколько сейчас времени?",
+        "сколько стоит?",
+        "сколько стоят?",
+        "сколько часов ты работал?",
+        "скульптуры",
+        "смотрю",
+        "спина",
+        "спортивные",
+        "стадион",
+        "стоит",
+        "стоят",
+        "там",
+        "там можно увидеть разные спортивные игры.",
+        "там я смотрю картины и скульптуры.",
+        "три",
+        "ты",
+        "ты возьмёшь отпуск?",
+        "тысяч",
+        "тысяча",
+        "тысячи",
+        "у",
+        "у вас будут рождественские каникулы?",
+        "увидеть",
+        "ужинаете",
+        "улице",
+        "устала",
+        "февраль",
+        "чай",
+        "часов",
+        "человек",
+        "чем",
+        "чем был занят?",
+        "чем ты сегодня занимался?",
+        "что",
+        "что вы делали на выходных?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "что ты сегодня делал?",
+        "чувствует",
+        "это",
+        "это дом.",
+        "это кинотеатр.",
+        "это музей.",
+        "это стадион.",
+        "этой",
+        "я",
+        "январь"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "discourse:politeness",
+        "grammar:adjective_agreement",
+        "grammar:formal_question",
+        "grammar:igrat_v_na",
+        "grammar:number_noun_agreement",
+        "grammar:present_first_person",
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:adverbs",
+        "lexical:day_parts",
+        "lexical:days_of_week",
+        "lexical:hobbies",
+        "lexical:kinship_terms",
+        "lexical:months",
+        "lexical:numbers",
+        "lexical:places",
+        "morphology:gendered_short_form",
+        "phrase:calendar_question",
+        "phrase:compliment_food",
+        "phrase:family_affection",
+        "phrase:food_offer",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:host_question",
+        "phrase:introduction",
+        "phrase:leisure_answer",
+        "phrase:pace_repair",
+        "phrase:personal_origin",
+        "phrase:polite_decline",
+        "phrase:price_question",
+        "phrase:quantity_question",
+        "phrase:repair",
+        "phrase:routine_answer",
+        "phrase:short_evaluation",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative",
+        "phrase:weather_answer",
+        "phrase:work_identity",
+        "phrase:yes_no",
+        "register:formal_you",
+        "register:name_patronymic",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "listening_misparse",
+        "register",
+        "stress"
+      ],
+      "correction_policy": [
+        "Minor error: recast briefly and continue the role-play.",
+        "Repeated error: give one short rule, then return to Russian practice.",
+        "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
+        "Communication-breaking error: clarify in English, provide the verified model, then retry."
+      ],
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Hobbies, home, and leisure places — Answer dinner-safe questions about music, films, cats, parks, stadiums, museums, and what you do when not working.\nCurriculum boundary: Lesson 12 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Когда я не работаю, я смотрю телевизор. — When I'm not working, I watch TV.\n- Я слушаю музыку. — I listen to music.\n- Я люблю играть на гитаре. — I like playing guitar.\n- Я играю на гитаре и на пианино. — I play guitar and piano.\n- Я пишу музыку. — I write music.\n- Кадрия любит рисовать. — Kadriya likes to draw.\n- Я немного люблю танцевать. — I like dancing a little.\n- Мы играем с нашими котами. — We play with our cats.\n- Я люблю смотреть боевики. — I like watching action movies.\n- Кадрия любит смотреть фильмы о любви. — Kadriya likes watching love movies.\n- Это дом. — This is home / a house.\n- Здесь мы отдыхаем. — Here we relax.\n- Это стадион. — This is a stadium.\n- Здесь мы играем в футбол. — Here we play soccer.\n- Там можно увидеть разные спортивные игры. — There you can see different sports games.\n- Это кинотеатр. — This is a movie theater.\n- Здесь я слушаю и смотрю фильм. — Here I listen and watch a film.\n- Это музей. — This is a museum.\n- Там я смотрю картины и скульптуры. — There I look at paintings and sculptures.\n- Мы гуляли в парке. — We walked in the park.\n- Мы отдыхали и слушали музыку. — We rested and listened to music.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+    },
+    {
+      "id": "tutor_budva_trip_checkin",
+      "scenario_id": "budva_trip_checkin",
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
+      "setting": "Budva family trip",
+      "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
+      "learner_role": "guest",
+      "tutor_role": "host family member",
+      "required_items": [
+        "trav001",
+        "trav002",
+        "trav003",
+        "trav004",
+        "trav005",
+        "trav006",
+        "trav007",
+        "trav008",
+        "trav009",
+        "trav012",
+        "trav013"
+      ],
+      "required_phrases": [
+        {
+          "id": "trav001",
+          "ru": "Мы е́дем в Бу́дву.",
+          "ru_plain": "Мы едем в Будву.",
+          "en": "We're going to Budva."
+        },
+        {
+          "id": "trav002",
+          "ru": "Мы бу́дем в Черного́рии.",
+          "ru_plain": "Мы будем в Черногории.",
+          "en": "We'll be in Montenegro."
+        },
+        {
+          "id": "trav003",
+          "ru": "Мы бу́дем в Бу́две.",
+          "ru_plain": "Мы будем в Будве.",
+          "en": "We'll be in Budva."
+        },
+        {
+          "id": "trav004",
+          "ru": "Где на́ш о́тель?",
+          "ru_plain": "Где наш отель?",
+          "en": "Where is our hotel?"
+        },
+        {
+          "id": "trav005",
+          "ru": "Мо́жно такси́?",
+          "ru_plain": "Можно такси?",
+          "en": "Can we get a taxi?"
+        },
+        {
+          "id": "trav006",
+          "ru": "Ско́лько е́хать до о́теля?",
+          "ru_plain": "Сколько ехать до отеля?",
+          "en": "How long is the ride to the hotel?"
+        },
+        {
+          "id": "trav007",
+          "ru": "Где пляж?",
+          "ru_plain": "Где пляж?",
+          "en": "Where is the beach?"
+        },
+        {
+          "id": "trav008",
+          "ru": "Я хочу́ погуля́ть у мо́ря.",
+          "ru_plain": "Я хочу погулять у моря.",
+          "en": "I want to walk by the sea."
+        },
+        {
+          "id": "trav009",
+          "ru": "Ста́рый го́род о́чень краси́вый.",
+          "ru_plain": "Старый город очень красивый.",
+          "en": "The old town is very beautiful."
+        },
+        {
+          "id": "trav012",
+          "ru": "Мы здесь с семьёй.",
+          "ru_plain": "Мы здесь с семьёй.",
+          "en": "We're here with family."
+        },
+        {
+          "id": "trav013",
+          "ru": "Счёт, пожа́луйста.",
+          "ru_plain": "Счёт, пожалуйста.",
+          "en": "The check, please."
+        }
+      ],
+      "success_criteria": [
+        "handles_travel_logistics",
+        "talks_about_budva",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "allowed_lesson_ids": [
+        "family_visit_001",
+        "family_visit_002",
+        "family_visit_003",
+        "family_visit_004",
+        "family_visit_005",
+        "family_visit_006",
+        "family_visit_007",
+        "family_visit_008",
+        "family_visit_009",
+        "family_visit_010",
+        "family_visit_011",
+        "family_visit_012",
+        "family_visit_013",
+        "family_visit_014",
+        "family_visit_015",
+        "family_visit_016",
+        "family_visit_017"
+      ],
+      "allowed_item_ids": [
+        "firs001",
+        "firs002",
+        "firs003",
+        "firs004",
+        "firs005",
+        "firs006",
+        "firs007",
+        "firs008",
+        "firs009",
+        "firs010",
+        "firs011",
+        "firs012",
+        "firs013",
+        "poli001",
+        "poli002",
+        "poli003",
+        "poli004",
+        "poli005",
+        "poli006",
+        "poli007",
+        "poli008",
+        "poli009",
+        "poli010",
+        "poli011",
+        "poli012",
+        "poli013",
+        "poli014",
+        "poli015",
+        "poli016",
+        "poli017",
+        "toas001",
+        "toas002",
+        "toas003",
+        "toas004",
+        "toas005",
+        "toas006",
+        "toas007",
+        "toas008",
+        "toas009",
+        "toas010",
+        "toas011",
+        "toas012",
+        "toas013",
+        "toas014",
+        "toas015",
+        "toas016",
+        "fami001",
+        "fami002",
+        "fami003",
+        "fami004",
+        "fami005",
+        "fami006",
+        "fami007",
+        "fami008",
+        "fami009",
+        "fami010",
+        "fami011",
+        "fami012",
+        "fami013",
+        "fami014",
+        "fami015",
+        "fami016",
+        "fami017",
+        "fami018",
+        "fami019",
+        "fami020",
+        "fami021",
+        "fami022",
+        "fami023",
+        "fami024",
+        "fami025",
+        "fami026",
+        "fami027",
+        "fami028",
+        "food001",
+        "food002",
+        "food003",
+        "food004",
+        "food005",
+        "food006",
+        "food007",
+        "food008",
+        "food009",
+        "food010",
+        "food011",
+        "food012",
+        "food013",
+        "food014",
+        "food015",
+        "food016",
+        "smal001",
+        "smal002",
+        "smal003",
+        "smal004",
+        "smal005",
+        "smal006",
+        "smal007",
+        "smal008",
+        "smal009",
+        "list001",
+        "list002",
+        "list003",
+        "list004",
+        "list005",
+        "list006",
+        "list007",
+        "list008",
+        "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018",
+        "cale001",
+        "cale002",
+        "cale003",
+        "cale004",
+        "cale005",
+        "cale006",
+        "cale007",
+        "cale008",
+        "cale009",
+        "cale010",
+        "cale011",
+        "cale012",
+        "cale013",
+        "cale014",
+        "cale015",
+        "cale016",
+        "cale017",
+        "cale018",
+        "cale019",
+        "numb001",
+        "numb002",
+        "numb003",
+        "numb004",
+        "numb005",
+        "numb006",
+        "numb007",
+        "numb008",
+        "numb009",
+        "numb010",
+        "numb011",
+        "numb012",
+        "numb013",
+        "numb014",
+        "numb015",
+        "numb016",
+        "numb017",
+        "numb018",
+        "numb019",
+        "numb020",
+        "numb021",
+        "numb022",
+        "numb023",
+        "numb024",
+        "numb025",
+        "numb026",
+        "numb027",
+        "numb028",
+        "adve001",
+        "adve002",
+        "adve003",
+        "adve004",
+        "adve005",
+        "adve006",
+        "adve007",
+        "adve008",
+        "adve009",
+        "adve010",
+        "adve011",
+        "adve012",
+        "adve013",
+        "adve014",
+        "dail001",
+        "dail002",
+        "dail003",
+        "dail004",
+        "dail005",
+        "dail006",
+        "dail007",
+        "dail008",
+        "dail009",
+        "dail010",
+        "dail011",
+        "dail012",
+        "dail013",
+        "dail014",
+        "dail015",
+        "dail016",
+        "dail017",
+        "dail018",
+        "dail019",
+        "dail020",
+        "dail021",
+        "dail022",
+        "dail023",
+        "dail024",
+        "dail025",
+        "dail026",
+        "dail027",
+        "dail028",
+        "dail029",
+        "leis001",
+        "leis002",
+        "leis003",
+        "leis004",
+        "leis005",
+        "leis006",
+        "leis007",
+        "leis008",
+        "leis009",
+        "leis010",
+        "leis011",
+        "leis012",
+        "leis013",
+        "leis014",
+        "leis015",
+        "leis016",
+        "leis017",
+        "leis018",
+        "leis019",
+        "leis020",
+        "leis021",
         "work001",
         "work002",
         "work003",
@@ -87857,6 +95039,7 @@ window.CONTENT_DATA = {
         "бабушка",
         "багаж",
         "благодарения",
+        "боевики",
         "бокал",
         "большое",
         "большой",
@@ -87904,6 +95087,7 @@ window.CONTENT_DATA = {
         "готовить",
         "готовлю",
         "готовы",
+        "гуляли",
         "гулять",
         "да",
         "да, мы готовы.",
@@ -87970,6 +95154,9 @@ window.CONTENT_DATA = {
         "звонил",
         "звоню",
         "здесь",
+        "здесь мы играем в футбол.",
+        "здесь мы отдыхаем.",
+        "здесь я слушаю и смотрю фильм.",
         "здоровы",
         "здоровье",
         "здравствуйте",
@@ -87978,6 +95165,8 @@ window.CONTENT_DATA = {
         "зовут",
         "зять",
         "и",
+        "играем",
+        "играть",
         "играю",
         "идёт",
         "идёт дождь.",
@@ -87988,6 +95177,8 @@ window.CONTENT_DATA = {
         "интернет",
         "кадрия",
         "кадрия будет гулять и отдыхать.",
+        "кадрия любит рисовать.",
+        "кадрия любит смотреть фильмы о любви.",
         "кадрия работает вместе со мной.",
         "как",
         "как по-русски …?",
@@ -87997,8 +95188,11 @@ window.CONTENT_DATA = {
         "клиентом",
         "ключ",
         "ключ, пожалуйста.",
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
         "компания",
         "компьютере",
+        "котами",
         "кофе",
         "красивое",
         "красивый",
@@ -88007,6 +95201,8 @@ window.CONTENT_DATA = {
         "ли",
         "лифт",
         "лыжах",
+        "любви",
+        "любит",
         "люблю",
         "любовь",
         "людям",
@@ -88033,15 +95229,19 @@ window.CONTENT_DATA = {
         "море очень красивое.",
         "моря",
         "муж",
+        "музыку",
         "мы",
         "мы будем в будве.",
         "мы будем в орегоне пять дней.",
         "мы будем в черногории.",
+        "мы гуляли в парке.",
         "мы довольны результатом.",
         "мы едем в будву.",
         "мы едим и смотрим телевизор.",
         "мы здесь с семьёй.",
+        "мы играем с нашими котами.",
         "мы отдыхаем.",
+        "мы отдыхали и слушали музыку.",
         "мы отпраздновали рождество у моих родителей дома.",
         "мы познакомились …",
         "мы работаем вместе.",
@@ -88055,6 +95255,7 @@ window.CONTENT_DATA = {
         "надо",
         "наелся",
         "начинаю",
+        "нашими",
         "не",
         "немного",
         "нет",
@@ -88065,6 +95266,7 @@ window.CONTENT_DATA = {
         "нравится",
         "нужно",
         "нужно работать ещё два часа.",
+        "о",
         "обедаю",
         "облачно",
         "обычно",
@@ -88077,6 +95279,7 @@ window.CONTENT_DATA = {
         "орегон",
         "орегоне",
         "отдыхаем",
+        "отдыхали",
         "отдыхать",
         "отдыхаю",
         "отлично",
@@ -88086,9 +95289,12 @@ window.CONTENT_DATA = {
         "очень вкусно!",
         "очень приятно",
         "папа",
+        "парке",
         "паспорт",
         "передайте",
         "передайте, пожалуйста, хлеб",
+        "пианино",
+        "пишу",
         "плохая",
         "по",
         "повторите",
@@ -88140,6 +95346,7 @@ window.CONTENT_DATA = {
         "рано",
         "результатом",
         "решать",
+        "рисовать",
         "родителей",
         "родители",
         "рождество",
@@ -88170,8 +95377,12 @@ window.CONTENT_DATA = {
         "скоро",
         "скоро рождество.",
         "слишком",
+        "слушали",
+        "слушаю",
         "смогу",
+        "смотреть",
         "смотрим",
+        "смотрю",
         "снег",
         "со",
         "солнечная",
@@ -88195,6 +95406,7 @@ window.CONTENT_DATA = {
         "счёт, пожалуйста.",
         "сын",
         "такси",
+        "танцевать",
         "телевизор",
         "тепло",
         "тесть",
@@ -88217,6 +95429,9 @@ window.CONTENT_DATA = {
         "утром",
         "утром я часто играю на гитаре.",
         "учу",
+        "фильм",
+        "фильмы",
+        "футбол",
         "хлеб",
         "хожу",
         "хозяев",
@@ -88258,21 +95473,27 @@ window.CONTENT_DATA = {
         "я живу в америке",
         "я живу в доме пять лет.",
         "я звонил клиентам.",
+        "я играю на гитаре и на пианино.",
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
+        "я люблю играть на гитаре.",
         "я люблю рано вставать.",
+        "я люблю смотреть боевики.",
         "я наелся",
         "я начинаю работать в десять утра.",
         "я не знаю, смогу ли я взять отпуск.",
         "я не понимаю",
         "я немного говорю по-русски",
+        "я немного люблю танцевать.",
         "я обедаю днём.",
         "я очень занят.",
+        "я пишу музыку.",
         "я понимаю",
         "я работал на компьютере.",
         "я работаю в суде.",
         "я работаю утром и вечером.",
+        "я слушаю музыку.",
         "я счастлив работать на себя.",
         "я ужинаю вечером.",
         "я хочу зарегистрироваться.",
@@ -88344,6 +95565,7 @@ window.CONTENT_DATA = {
         "дней",
         "до",
         "добра",
+        "дом",
         "дома",
         "доме",
         "души",
@@ -88359,6 +95581,8 @@ window.CONTENT_DATA = {
         "занят",
         "защитник",
         "зеленее",
+        "и",
+        "игры",
         "или",
         "июль",
         "июнь",
@@ -88386,8 +95610,10 @@ window.CONTENT_DATA = {
         "камень",
         "камень с души упал.",
         "каникулы",
+        "картины",
         "кем",
         "кем вы работаете?",
+        "кинотеатр",
         "клевета",
         "клиент",
         "клиента",
@@ -88410,6 +95636,8 @@ window.CONTENT_DATA = {
         "мирное",
         "мирное соглашение",
         "много",
+        "можно",
+        "музей",
         "мы",
         "мы потратили семь или восемь часов.",
         "на",
@@ -88464,6 +95692,7 @@ window.CONTENT_DATA = {
         "работаете",
         "работал",
         "раз",
+        "разные",
         "ребёнок",
         "родится",
         "рождению",
@@ -88490,10 +95719,14 @@ window.CONTENT_DATA = {
         "сколько стоит?",
         "сколько стоят?",
         "сколько часов ты работал?",
+        "скульптуры",
         "слушание",
+        "смотрю",
         "соглашение",
         "соседа",
         "спина",
+        "спортивные",
+        "стадион",
         "стоит",
         "стоят",
         "страховка",
@@ -88502,6 +95735,8 @@ window.CONTENT_DATA = {
         "судебное дело",
         "судья",
         "там",
+        "там можно увидеть разные спортивные игры.",
+        "там я смотрю картины и скульптуры.",
         "тому",
         "трава",
         "травма",
@@ -88516,6 +95751,7 @@ window.CONTENT_DATA = {
         "у вас много дел?",
         "у вас много клиентов?",
         "у соседа трава зеленее.",
+        "увидеть",
         "уже",
         "ужинаете",
         "улице",
@@ -88543,7 +95779,12 @@ window.CONTENT_DATA = {
         "чувствует",
         "это",
         "это ваш ключ.",
+        "это дом.",
+        "это кинотеатр.",
+        "это музей.",
+        "это стадион.",
         "этой",
+        "я",
         "январь"
       ],
       "structures": [
@@ -88552,6 +95793,7 @@ window.CONTENT_DATA = {
         "grammar:adjective_agreement",
         "grammar:formal_question",
         "grammar:future_plan",
+        "grammar:igrat_v_na",
         "grammar:number_noun_agreement",
         "grammar:past_masculine_work",
         "grammar:prepositional_place",
@@ -88561,12 +95803,14 @@ window.CONTENT_DATA = {
         "lexical:adverbs",
         "lexical:day_parts",
         "lexical:days_of_week",
+        "lexical:hobbies",
         "lexical:holiday_vocab",
         "lexical:idioms",
         "lexical:kinship_terms",
         "lexical:legal_vocab",
         "lexical:months",
         "lexical:numbers",
+        "lexical:places",
         "lexical:proverbs",
         "lexical:travel_vocab",
         "lexical:work_vocab",
@@ -88582,6 +95826,7 @@ window.CONTENT_DATA = {
         "phrase:holiday_plan",
         "phrase:host_question",
         "phrase:introduction",
+        "phrase:leisure_answer",
         "phrase:pace_repair",
         "phrase:personal_origin",
         "phrase:place_description",
@@ -88615,7 +95860,7 @@ window.CONTENT_DATA = {
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Budva family trip — Talk about arriving in Budva, the hotel, the sea, and simple plans.\nCurriculum boundary: Lesson 16 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Мы едем в Будву. — We're going to Budva.\n- Мы будем в Черногории. — We'll be in Montenegro.\n- Мы будем в Будве. — We'll be in Budva.\n- Где наш отель? — Where is our hotel?\n- Можно такси? — Can we get a taxi?\n- Сколько ехать до отеля? — How long is the ride to the hotel?\n- Где пляж? — Where is the beach?\n- Я хочу погулять у моря. — I want to walk by the sea.\n- Старый город очень красивый. — The old town is very beautiful.\n- Мы здесь с семьёй. — We're here with family.\n- Счёт, пожалуйста. — The check, please.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Budva family trip — Talk about arriving in Budva, the hotel, the sea, and simple plans.\nCurriculum boundary: Lesson 17 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Мы едем в Будву. — We're going to Budva.\n- Мы будем в Черногории. — We'll be in Montenegro.\n- Мы будем в Будве. — We'll be in Budva.\n- Где наш отель? — Where is our hotel?\n- Можно такси? — Can we get a taxi?\n- Сколько ехать до отеля? — How long is the ride to the hotel?\n- Где пляж? — Where is the beach?\n- Я хочу погулять у моря. — I want to walk by the sea.\n- Старый город очень красивый. — The old town is very beautiful.\n- Мы здесь с семьёй. — We're here with family.\n- Счёт, пожалуйста. — The check, please.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
       "id": "tutor_daily_routine_checkin",
@@ -90330,8 +97575,8 @@ window.CONTENT_DATA = {
     {
       "id": "tutor_work_business_checkin",
       "scenario_id": "work_business_checkin",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "setting": "Lawyer work small talk",
       "goal": "Answer predictable questions about clients, cases, court, and being busy without overexplaining.",
       "learner_role": "guest",
@@ -90449,7 +97694,8 @@ window.CONTENT_DATA = {
         "family_visit_009",
         "family_visit_010",
         "family_visit_011",
-        "family_visit_012"
+        "family_visit_012",
+        "family_visit_013"
       ],
       "allowed_item_ids": [
         "firs001",
@@ -90659,6 +97905,27 @@ window.CONTENT_DATA = {
         "dail027",
         "dail028",
         "dail029",
+        "leis001",
+        "leis002",
+        "leis003",
+        "leis004",
+        "leis005",
+        "leis006",
+        "leis007",
+        "leis008",
+        "leis009",
+        "leis010",
+        "leis011",
+        "leis012",
+        "leis013",
+        "leis014",
+        "leis015",
+        "leis016",
+        "leis017",
+        "leis018",
+        "leis019",
+        "leis020",
+        "leis021",
         "work001",
         "work002",
         "work003",
@@ -90681,6 +97948,7 @@ window.CONTENT_DATA = {
         "америки",
         "аппетита",
         "бабушка",
+        "боевики",
         "бокал",
         "большое",
         "брат",
@@ -90716,6 +97984,7 @@ window.CONTENT_DATA = {
         "готовить",
         "готовлю",
         "готовы",
+        "гуляли",
         "да",
         "да, мы готовы.",
         "да, немного",
@@ -90776,6 +98045,10 @@ window.CONTENT_DATA = {
         "занят",
         "звонил",
         "звоню",
+        "здесь",
+        "здесь мы играем в футбол.",
+        "здесь мы отдыхаем.",
+        "здесь я слушаю и смотрю фильм.",
         "здоровы",
         "здоровье",
         "здравствуйте",
@@ -90784,6 +98057,8 @@ window.CONTENT_DATA = {
         "зовут",
         "зять",
         "и",
+        "играем",
+        "играть",
         "играю",
         "идёт",
         "идёт дождь.",
@@ -90792,18 +98067,25 @@ window.CONTENT_DATA = {
         "извините",
         "интересно",
         "кадрия",
+        "кадрия любит рисовать.",
+        "кадрия любит смотреть фильмы о любви.",
         "кадрия работает вместе со мной.",
         "как",
         "как по-русски …?",
         "клиентам",
         "клиентов",
         "клиентом",
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
         "компания",
         "компьютере",
+        "котами",
         "кофе",
         "легко",
         "лет",
         "ли",
+        "любви",
+        "любит",
         "люблю",
         "любовь",
         "людям",
@@ -90824,9 +98106,13 @@ window.CONTENT_DATA = {
         "можно чаю?",
         "молодых",
         "муж",
+        "музыку",
         "мы",
+        "мы гуляли в парке.",
         "мы довольны результатом.",
         "мы едим и смотрим телевизор.",
+        "мы играем с нашими котами.",
+        "мы отдыхали и слушали музыку.",
         "мы познакомились …",
         "мы работаем вместе.",
         "на",
@@ -90835,6 +98121,7 @@ window.CONTENT_DATA = {
         "надо",
         "наелся",
         "начинаю",
+        "нашими",
         "не",
         "немного",
         "нет",
@@ -90844,6 +98131,7 @@ window.CONTENT_DATA = {
         "нравится",
         "нужно",
         "нужно работать ещё два часа.",
+        "о",
         "обедаю",
         "облачно",
         "обычно",
@@ -90853,6 +98141,8 @@ window.CONTENT_DATA = {
         "обычно я работаю семь часов.",
         "она",
         "она говорит, что я должен готовить чаще.",
+        "отдыхаем",
+        "отдыхали",
         "отдыхаю",
         "отлично",
         "отпуск",
@@ -90860,8 +98150,11 @@ window.CONTENT_DATA = {
         "очень вкусно!",
         "очень приятно",
         "папа",
+        "парке",
         "передайте",
         "передайте, пожалуйста, хлеб",
+        "пианино",
+        "пишу",
         "плохая",
         "по",
         "повторите",
@@ -90910,6 +98203,7 @@ window.CONTENT_DATA = {
         "рано",
         "результатом",
         "решать",
+        "рисовать",
         "родителей",
         "родители",
         "русски",
@@ -90934,8 +98228,12 @@ window.CONTENT_DATA = {
         "сестра жены",
         "сказать",
         "слишком",
+        "слушали",
+        "слушаю",
         "смогу",
+        "смотреть",
         "смотрим",
+        "смотрю",
         "снег",
         "со",
         "солнечная",
@@ -90954,6 +98252,7 @@ window.CONTENT_DATA = {
         "суде",
         "счастлив",
         "сын",
+        "танцевать",
         "телевизор",
         "тепло",
         "тесть",
@@ -90973,6 +98272,9 @@ window.CONTENT_DATA = {
         "утром",
         "утром я часто играю на гитаре.",
         "учу",
+        "фильм",
+        "фильмы",
+        "футбол",
         "хлеб",
         "хожу",
         "хозяев",
@@ -91011,21 +98313,27 @@ window.CONTENT_DATA = {
         "я живу в америке",
         "я живу в доме пять лет.",
         "я звонил клиентам.",
+        "я играю на гитаре и на пианино.",
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
+        "я люблю играть на гитаре.",
         "я люблю рано вставать.",
+        "я люблю смотреть боевики.",
         "я наелся",
         "я начинаю работать в десять утра.",
         "я не знаю, смогу ли я взять отпуск.",
         "я не понимаю",
         "я немного говорю по-русски",
+        "я немного люблю танцевать.",
         "я обедаю днём.",
         "я очень занят.",
+        "я пишу музыку.",
         "я понимаю",
         "я работал на компьютере.",
         "я работаю в суде.",
         "я работаю утром и вечером.",
+        "я слушаю музыку.",
         "я счастлив работать на себя.",
         "я ужинаю вечером.",
         "я хочу сказать тост за …",
@@ -91067,11 +98375,14 @@ window.CONTENT_DATA = {
         "делал",
         "делали",
         "день",
+        "дом",
         "доме",
         "ещё",
         "живёшь",
         "занимался",
         "занят",
+        "и",
+        "игры",
         "или",
         "июль",
         "июнь",
@@ -91091,8 +98402,10 @@ window.CONTENT_DATA = {
         "какой сегодня день?",
         "какой сейчас месяц?",
         "каникулы",
+        "картины",
         "кем",
         "кем вы работаете?",
+        "кинотеатр",
         "клиентов",
         "когда",
         "когда вы обедаете?",
@@ -91107,6 +98420,8 @@ window.CONTENT_DATA = {
         "март",
         "месяц",
         "много",
+        "можно",
+        "музей",
         "мы",
         "мы потратили семь или восемь часов.",
         "на",
@@ -91136,6 +98451,7 @@ window.CONTENT_DATA = {
         "пять тысяч",
         "работаете",
         "работал",
+        "разные",
         "ребёнок",
         "родится",
         "рождению",
@@ -91156,10 +98472,16 @@ window.CONTENT_DATA = {
         "сколько стоит?",
         "сколько стоят?",
         "сколько часов ты работал?",
+        "скульптуры",
+        "смотрю",
         "спина",
+        "спортивные",
+        "стадион",
         "стоит",
         "стоят",
         "там",
+        "там можно увидеть разные спортивные игры.",
+        "там я смотрю картины и скульптуры.",
         "три",
         "ты",
         "ты возьмёшь отпуск?",
@@ -91170,6 +98492,7 @@ window.CONTENT_DATA = {
         "у вас будут рождественские каникулы?",
         "у вас много дел?",
         "у вас много клиентов?",
+        "увидеть",
         "ужинаете",
         "улице",
         "устала",
@@ -91186,7 +98509,13 @@ window.CONTENT_DATA = {
         "что ты делал на этой неделе?",
         "что ты сегодня делал?",
         "чувствует",
+        "это",
+        "это дом.",
+        "это кинотеатр.",
+        "это музей.",
+        "это стадион.",
         "этой",
+        "я",
         "январь"
       ],
       "structures": [
@@ -91194,6 +98523,7 @@ window.CONTENT_DATA = {
         "discourse:politeness",
         "grammar:adjective_agreement",
         "grammar:formal_question",
+        "grammar:igrat_v_na",
         "grammar:number_noun_agreement",
         "grammar:past_masculine_work",
         "grammar:present_first_person",
@@ -91202,9 +98532,11 @@ window.CONTENT_DATA = {
         "lexical:adverbs",
         "lexical:day_parts",
         "lexical:days_of_week",
+        "lexical:hobbies",
         "lexical:kinship_terms",
         "lexical:months",
         "lexical:numbers",
+        "lexical:places",
         "lexical:work_vocab",
         "morphology:gendered_short_form",
         "phrase:calendar_question",
@@ -91216,6 +98548,7 @@ window.CONTENT_DATA = {
         "phrase:guest_gratitude",
         "phrase:host_question",
         "phrase:introduction",
+        "phrase:leisure_answer",
         "phrase:pace_repair",
         "phrase:personal_origin",
         "phrase:polite_decline",
@@ -91247,13 +98580,13 @@ window.CONTENT_DATA = {
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Lawyer work small talk — Answer predictable questions about clients, cases, court, and being busy without overexplaining.\nCurriculum boundary: Lesson 12 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Я юрист — I'm a lawyer (general — use this)\n- У меня своя компания. — I have my own company.\n- Кадрия работает вместе со мной. — Kadriya works together with me.\n- Мы работаем вместе. — We work together.\n- У меня много работы. — I have a lot of work.\n- Я очень занят. — I'm very busy.\n- Хорошо. Я много работаю. — Good. I work a lot.\n- У вас много клиентов? — Do you have many clients?\n- Да, у меня много клиентов. — Yes, I have many clients.\n- У вас много дел? — Do you have many cases?\n- Да, у меня много дел. — Yes, I have many cases.\n- Сегодня я работал с клиентом. — Today I worked with a client.\n- Я звонил клиентам. — I called clients.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Lawyer work small talk — Answer predictable questions about clients, cases, court, and being busy without overexplaining.\nCurriculum boundary: Lesson 13 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Я юрист — I'm a lawyer (general — use this)\n- У меня своя компания. — I have my own company.\n- Кадрия работает вместе со мной. — Kadriya works together with me.\n- Мы работаем вместе. — We work together.\n- У меня много работы. — I have a lot of work.\n- Я очень занят. — I'm very busy.\n- Хорошо. Я много работаю. — Good. I work a lot.\n- У вас много клиентов? — Do you have many clients?\n- Да, у меня много клиентов. — Yes, I have many clients.\n- У вас много дел? — Do you have many cases?\n- Да, у меня много дел. — Yes, I have many cases.\n- Сегодня я работал с клиентом. — Today I worked with a client.\n- Я звонил клиентам. — I called clients.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
       "id": "tutor_holiday_celebration_checkin",
       "scenario_id": "holiday_celebration_checkin",
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14,
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15,
       "setting": "Holiday and family celebration small talk",
       "goal": "Answer Christmas/Thanksgiving/family-plan prompts from the original guide in short Russian.",
       "learner_role": "guest",
@@ -91335,998 +98668,6 @@ window.CONTENT_DATA = {
       "success_criteria": [
         "answers_holiday_plans",
         "keeps_celebration_story_short",
-        "stays_in_russian",
-        "uses_repair_lines"
-      ],
-      "allowed_lesson_ids": [
-        "family_visit_001",
-        "family_visit_002",
-        "family_visit_003",
-        "family_visit_004",
-        "family_visit_005",
-        "family_visit_006",
-        "family_visit_007",
-        "family_visit_008",
-        "family_visit_009",
-        "family_visit_010",
-        "family_visit_011",
-        "family_visit_012",
-        "family_visit_013",
-        "family_visit_014"
-      ],
-      "allowed_item_ids": [
-        "firs001",
-        "firs002",
-        "firs003",
-        "firs004",
-        "firs005",
-        "firs006",
-        "firs007",
-        "firs008",
-        "firs009",
-        "firs010",
-        "firs011",
-        "firs012",
-        "firs013",
-        "poli001",
-        "poli002",
-        "poli003",
-        "poli004",
-        "poli005",
-        "poli006",
-        "poli007",
-        "poli008",
-        "poli009",
-        "poli010",
-        "poli011",
-        "poli012",
-        "poli013",
-        "poli014",
-        "poli015",
-        "poli016",
-        "poli017",
-        "toas001",
-        "toas002",
-        "toas003",
-        "toas004",
-        "toas005",
-        "toas006",
-        "toas007",
-        "toas008",
-        "toas009",
-        "toas010",
-        "toas011",
-        "toas012",
-        "toas013",
-        "toas014",
-        "toas015",
-        "toas016",
-        "fami001",
-        "fami002",
-        "fami003",
-        "fami004",
-        "fami005",
-        "fami006",
-        "fami007",
-        "fami008",
-        "fami009",
-        "fami010",
-        "fami011",
-        "fami012",
-        "fami013",
-        "fami014",
-        "fami015",
-        "fami016",
-        "fami017",
-        "fami018",
-        "fami019",
-        "fami020",
-        "fami021",
-        "fami022",
-        "fami023",
-        "fami024",
-        "fami025",
-        "fami026",
-        "fami027",
-        "fami028",
-        "food001",
-        "food002",
-        "food003",
-        "food004",
-        "food005",
-        "food006",
-        "food007",
-        "food008",
-        "food009",
-        "food010",
-        "food011",
-        "food012",
-        "food013",
-        "food014",
-        "food015",
-        "food016",
-        "smal001",
-        "smal002",
-        "smal003",
-        "smal004",
-        "smal005",
-        "smal006",
-        "smal007",
-        "smal008",
-        "smal009",
-        "list001",
-        "list002",
-        "list003",
-        "list004",
-        "list005",
-        "list006",
-        "list007",
-        "list008",
-        "list009",
-        "list010",
-        "list011",
-        "list012",
-        "list013",
-        "list014",
-        "list015",
-        "list016",
-        "list017",
-        "list018",
-        "cale001",
-        "cale002",
-        "cale003",
-        "cale004",
-        "cale005",
-        "cale006",
-        "cale007",
-        "cale008",
-        "cale009",
-        "cale010",
-        "cale011",
-        "cale012",
-        "cale013",
-        "cale014",
-        "cale015",
-        "cale016",
-        "cale017",
-        "cale018",
-        "cale019",
-        "numb001",
-        "numb002",
-        "numb003",
-        "numb004",
-        "numb005",
-        "numb006",
-        "numb007",
-        "numb008",
-        "numb009",
-        "numb010",
-        "numb011",
-        "numb012",
-        "numb013",
-        "numb014",
-        "numb015",
-        "numb016",
-        "numb017",
-        "numb018",
-        "numb019",
-        "numb020",
-        "numb021",
-        "numb022",
-        "numb023",
-        "numb024",
-        "numb025",
-        "numb026",
-        "numb027",
-        "numb028",
-        "adve001",
-        "adve002",
-        "adve003",
-        "adve004",
-        "adve005",
-        "adve006",
-        "adve007",
-        "adve008",
-        "adve009",
-        "adve010",
-        "adve011",
-        "adve012",
-        "adve013",
-        "adve014",
-        "dail001",
-        "dail002",
-        "dail003",
-        "dail004",
-        "dail005",
-        "dail006",
-        "dail007",
-        "dail008",
-        "dail009",
-        "dail010",
-        "dail011",
-        "dail012",
-        "dail013",
-        "dail014",
-        "dail015",
-        "dail016",
-        "dail017",
-        "dail018",
-        "dail019",
-        "dail020",
-        "dail021",
-        "dail022",
-        "dail023",
-        "dail024",
-        "dail025",
-        "dail026",
-        "dail027",
-        "dail028",
-        "dail029",
-        "work001",
-        "work002",
-        "work003",
-        "work004",
-        "work005",
-        "work006",
-        "work007",
-        "work008",
-        "work009",
-        "work010",
-        "work011",
-        "work012",
-        "work013",
-        "work014",
-        "work015",
-        "work016",
-        "lega001",
-        "lega002",
-        "lega003",
-        "lega004",
-        "lega005",
-        "lega006",
-        "lega007",
-        "lega008",
-        "lega009",
-        "lega010",
-        "lega011",
-        "lega012",
-        "lega013",
-        "lega014",
-        "lega015",
-        "cele001",
-        "cele002",
-        "cele003",
-        "cele004",
-        "cele005",
-        "cele006",
-        "cele007",
-        "cele008",
-        "cele009",
-        "cele010",
-        "cele011",
-        "cele012",
-        "cele013",
-        "cele014"
-      ],
-      "active_vocab": [
-        "америке",
-        "америки",
-        "аппетита",
-        "бабушка",
-        "благодарения",
-        "бокал",
-        "большое",
-        "большой",
-        "брат",
-        "будем",
-        "будем здоровы!",
-        "будет",
-        "был",
-        "было",
-        "быстро",
-        "в",
-        "в десять я начинаю решать проблемы клиентов.",
-        "важно",
-        "ваше",
-        "вашу",
-        "вечер",
-        "вечером",
-        "вещей",
-        "взять",
-        "вкусно",
-        "вместе",
-        "воскресенье",
-        "время",
-        "всей",
-        "вставать",
-        "встаю",
-        "встречу",
-        "вторник",
-        "вчера",
-        "вчера было солнечно.",
-        "выпьем",
-        "выходных",
-        "гитаре",
-        "говорит",
-        "говорю",
-        "готовить",
-        "готовлю",
-        "готовы",
-        "гулять",
-        "да",
-        "да, мы готовы.",
-        "да, немного",
-        "да, у меня много дел.",
-        "да, у меня много клиентов.",
-        "давайте",
-        "давайте выпьем за это!",
-        "два",
-        "дедушка",
-        "дел",
-        "делаю",
-        "день",
-        "десяти",
-        "десять",
-        "дети",
-        "джо",
-        "для",
-        "дна",
-        "дней",
-        "днём",
-        "до",
-        "до дна",
-        "до свидания",
-        "доброе",
-        "доброе утро",
-        "доброе утро.",
-        "добрый",
-        "добрый вечер",
-        "добрый вечер.",
-        "добрый день",
-        "добрый день.",
-        "довольны",
-        "дождливая",
-        "дождь",
-        "должен",
-        "дома",
-        "доме",
-        "домой",
-        "дочь",
-        "едим",
-        "есть",
-        "ещё",
-        "жена",
-        "жены",
-        "живу",
-        "за",
-        "за ваше здоровье!",
-        "за встречу!",
-        "за здоровье!",
-        "за знакомство!",
-        "за любовь!",
-        "за молодых!",
-        "за родителей!",
-        "за семью!",
-        "за хозяев!",
-        "за хозяйку!",
-        "завтра",
-        "завтра будет тепло.",
-        "завтракаю",
-        "занят",
-        "звонил",
-        "звоню",
-        "здоровы",
-        "здоровье",
-        "здравствуйте",
-        "знакомство",
-        "знаю",
-        "зовут",
-        "зять",
-        "и",
-        "играю",
-        "идёт",
-        "идёт дождь.",
-        "идёт снег.",
-        "из",
-        "извините",
-        "интересно",
-        "кадрия",
-        "кадрия будет гулять и отдыхать.",
-        "кадрия работает вместе со мной.",
-        "как",
-        "как по-русски …?",
-        "кататься",
-        "клиентам",
-        "клиентов",
-        "клиентом",
-        "компания",
-        "компьютере",
-        "кофе",
-        "легко",
-        "лет",
-        "ли",
-        "лыжах",
-        "люблю",
-        "любовь",
-        "людям",
-        "мама",
-        "медленно",
-        "медленно, пожалуйста.",
-        "меня",
-        "меня зовут джо",
-        "минут",
-        "миссури",
-        "мне",
-        "мне очень нравится",
-        "много",
-        "мной",
-        "моей",
-        "можно",
-        "можно ещё?",
-        "можно чаю?",
-        "моих",
-        "молодых",
-        "муж",
-        "мы",
-        "мы будем в орегоне пять дней.",
-        "мы довольны результатом.",
-        "мы едим и смотрим телевизор.",
-        "мы отпраздновали рождество у моих родителей дома.",
-        "мы познакомились …",
-        "мы работаем вместе.",
-        "мы хотим кататься на лыжах.",
-        "на",
-        "на выходных",
-        "на день благодарения мы ужинали всей семьёй.",
-        "на работе я делаю много разных вещей.",
-        "на рождество мы хотим полететь в орегон.",
-        "надо",
-        "наелся",
-        "начинаю",
-        "не",
-        "немного",
-        "нет",
-        "нет, спасибо",
-        "нормально",
-        "ночи",
-        "нравится",
-        "нужно",
-        "нужно работать ещё два часа.",
-        "обедаю",
-        "облачно",
-        "обычно",
-        "обычно я встаю рано утром.",
-        "обычно я не завтракаю.",
-        "обычно я отдыхаю вечером.",
-        "обычно я работаю семь часов.",
-        "она",
-        "она говорит, что я должен готовить чаще.",
-        "орегон",
-        "орегоне",
-        "отдыхать",
-        "отдыхаю",
-        "отлично",
-        "отпраздновали",
-        "отпуск",
-        "очень",
-        "очень вкусно!",
-        "очень приятно",
-        "папа",
-        "передайте",
-        "передайте, пожалуйста, хлеб",
-        "плохая",
-        "по",
-        "повторите",
-        "повторите, пожалуйста",
-        "погода",
-        "погода дождливая.",
-        "погода плохая.",
-        "погода солнечная.",
-        "погода хорошая.",
-        "пожалуйста",
-        "познакомились",
-        "познакомиться",
-        "полететь",
-        "помедленнее",
-        "помедленнее, пожалуйста",
-        "понедельник",
-        "понимаю",
-        "понятно",
-        "после",
-        "после работы мы ужинаем.",
-        "после этого я прихожу домой.",
-        "после я готовлю кофе для моей жены.",
-        "представиться",
-        "пригласили",
-        "приняли",
-        "прихожу",
-        "приятно",
-        "приятно познакомиться",
-        "приятного",
-        "приятного аппетита!",
-        "проблемы",
-        "простите",
-        "пятница",
-        "пять",
-        "работаем",
-        "работает",
-        "работал",
-        "работать",
-        "работаю",
-        "работе",
-        "работы",
-        "рад",
-        "рад познакомиться",
-        "разных",
-        "разрешите",
-        "разрешите представиться",
-        "рано",
-        "результатом",
-        "решать",
-        "родителей",
-        "родители",
-        "рождество",
-        "русски",
-        "русский",
-        "рюмка",
-        "с",
-        "свидания",
-        "своя",
-        "себя",
-        "сегодня",
-        "сегодня облачно.",
-        "сегодня рождество.",
-        "сегодня солнечно.",
-        "сегодня тепло.",
-        "сегодня холодно.",
-        "сегодня я работал с клиентом.",
-        "сегодня я работал четыре часа тридцать минут.",
-        "сегодня я работал четыре часа.",
-        "семь",
-        "семью",
-        "семья",
-        "семьёй",
-        "сестра",
-        "сестра жены",
-        "сказать",
-        "скоро",
-        "скоро рождество.",
-        "слишком",
-        "смогу",
-        "смотрим",
-        "снег",
-        "со",
-        "солнечная",
-        "солнечно",
-        "спасибо",
-        "спасибо большое",
-        "спасибо, было очень вкусно",
-        "спасибо, не надо",
-        "спасибо, что пригласили",
-        "спасибо, что приняли",
-        "спокойной",
-        "спокойной ночи",
-        "среда",
-        "суббота",
-        "суд",
-        "суде",
-        "счастлив",
-        "сын",
-        "телевизор",
-        "тепло",
-        "тесть",
-        "тост",
-        "тридцать",
-        "трудно",
-        "тёща",
-        "у",
-        "у меня есть время до десяти.",
-        "у меня много работы.",
-        "у меня своя компания.",
-        "удобно",
-        "ужин",
-        "ужинаем",
-        "ужинали",
-        "ужинаю",
-        "утра",
-        "утро",
-        "утром",
-        "утром я часто играю на гитаре.",
-        "учу",
-        "хлеб",
-        "хожу",
-        "хозяев",
-        "хозяйку",
-        "холодно",
-        "хорошая",
-        "хорошо",
-        "хорошо, спасибо",
-        "хорошо. я много работаю.",
-        "хотим",
-        "хочу",
-        "часа",
-        "часов",
-        "часто",
-        "часто я хожу в суд.",
-        "чаще",
-        "чаю",
-        "четверг",
-        "четыре",
-        "что",
-        "штата",
-        "шурин",
-        "это",
-        "это был большой ужин.",
-        "это важно.",
-        "это не важно.",
-        "это не очень удобно.",
-        "это не трудно.",
-        "это немного трудно.",
-        "это очень интересно.",
-        "это очень легко.",
-        "это слишком быстро.",
-        "это удобно.",
-        "этого",
-        "юрист",
-        "я",
-        "я ещё учу русский",
-        "я живу в америке",
-        "я живу в доме пять лет.",
-        "я звонил клиентам.",
-        "я из америки",
-        "я из штата миссури",
-        "я люблю вашу дочь",
-        "я люблю рано вставать.",
-        "я наелся",
-        "я начинаю работать в десять утра.",
-        "я не знаю, смогу ли я взять отпуск.",
-        "я не понимаю",
-        "я немного говорю по-русски",
-        "я обедаю днём.",
-        "я очень занят.",
-        "я понимаю",
-        "я работал на компьютере.",
-        "я работаю в суде.",
-        "я работаю утром и вечером.",
-        "я счастлив работать на себя.",
-        "я ужинаю вечером.",
-        "я хочу сказать тост за …",
-        "я часто звоню людям.",
-        "я юрист"
-      ],
-      "passive_vocab": [
-        "август",
-        "апрель",
-        "благодарения",
-        "блины",
-        "болит",
-        "борщ",
-        "будете",
-        "будете …?",
-        "будут",
-        "был",
-        "было",
-        "было семьдесят человек.",
-        "в",
-        "вам",
-        "вам нравится …?",
-        "вас",
-        "водка",
-        "возьмёшь",
-        "восемь",
-        "времени",
-        "вы",
-        "вы говорите по-русски?",
-        "вы готовы к рождению малыша?",
-        "выходных",
-        "говорите",
-        "готовы",
-        "две",
-        "две тысячи",
-        "двенадцать",
-        "декабрь",
-        "дел",
-        "дела",
-        "делал",
-        "делали",
-        "дело",
-        "день",
-        "дней",
-        "доме",
-        "ещё",
-        "живёшь",
-        "закон",
-        "занимался",
-        "занят",
-        "защитник",
-        "или",
-        "июль",
-        "июнь",
-        "к",
-        "кадрией",
-        "кадрия",
-        "как",
-        "как вам россия?",
-        "как вы познакомились?",
-        "как вы с кадрией отпраздновали рождество?",
-        "как дела?",
-        "как на улице?",
-        "как себя чувствует кадрия?",
-        "как там на улице?",
-        "какая",
-        "какая сегодня погода?",
-        "какие",
-        "какие планы на рождество?",
-        "какой",
-        "какой сегодня день недели?",
-        "какой сегодня день?",
-        "какой сегодня праздник?",
-        "какой сейчас месяц?",
-        "каникулы",
-        "кем",
-        "кем вы работаете?",
-        "клевета",
-        "клиент",
-        "клиентов",
-        "когда",
-        "когда вы обедаете?",
-        "когда вы отдыхаете?",
-        "когда вы работаете?",
-        "когда вы ужинаете?",
-        "когда у вас родится ребёнок?",
-        "лет",
-        "май",
-        "малыш",
-        "малыша",
-        "март",
-        "месяц",
-        "мирное",
-        "мирное соглашение",
-        "много",
-        "мы",
-        "мы потратили семь или восемь часов.",
-        "на",
-        "неделе",
-        "недели",
-        "немного",
-        "немного болит спина.",
-        "ноябрь",
-        "нравится",
-        "обедаете",
-        "октябрь",
-        "оливье",
-        "она",
-        "она очень устала.",
-        "орегоне",
-        "отдыхаете",
-        "откуда",
-        "откуда вы?",
-        "отпраздновали",
-        "отпуск",
-        "очень",
-        "пельмени",
-        "планы",
-        "по",
-        "повестка",
-        "погода",
-        "познакомились",
-        "потратили",
-        "право",
-        "праздник",
-        "прокурор",
-        "прошлой",
-        "пять",
-        "пять тысяч",
-        "работаете",
-        "работал",
-        "ребёнок",
-        "родится",
-        "рождению",
-        "рождественские",
-        "рождество",
-        "россия",
-        "русски",
-        "с",
-        "себя",
-        "сегодня",
-        "сейчас",
-        "сейчас три двенадцать.",
-        "семь",
-        "семьдесят",
-        "сентябрь",
-        "сколько",
-        "сколько было человек?",
-        "сколько дней вы будете в орегоне?",
-        "сколько лет ты живёшь в доме?",
-        "сколько сейчас времени?",
-        "сколько стоит?",
-        "сколько стоят?",
-        "сколько часов ты работал?",
-        "слушание",
-        "соглашение",
-        "спина",
-        "стоит",
-        "стоят",
-        "страховка",
-        "суд",
-        "судебное",
-        "судебное дело",
-        "судья",
-        "там",
-        "травма",
-        "три",
-        "ты",
-        "ты возьмёшь отпуск?",
-        "тысяч",
-        "тысяча",
-        "тысячи",
-        "у",
-        "у вас будут рождественские каникулы?",
-        "у вас много дел?",
-        "у вас много клиентов?",
-        "ужинаете",
-        "улице",
-        "устала",
-        "февраль",
-        "чай",
-        "часов",
-        "человек",
-        "чем",
-        "чем был занят?",
-        "чем ты сегодня занимался?",
-        "что",
-        "что вы делали на выходных?",
-        "что вы делали на день благодарения?",
-        "что ты делал на прошлой неделе?",
-        "что ты делал на этой неделе?",
-        "что ты сегодня делал?",
-        "чувствует",
-        "этой",
-        "январь"
-      ],
-      "structures": [
-        "culture:toast_etiquette",
-        "discourse:politeness",
-        "grammar:adjective_agreement",
-        "grammar:formal_question",
-        "grammar:future_plan",
-        "grammar:number_noun_agreement",
-        "grammar:past_masculine_work",
-        "grammar:present_first_person",
-        "grammar:time_expression",
-        "grammar:when_question",
-        "lexical:adverbs",
-        "lexical:day_parts",
-        "lexical:days_of_week",
-        "lexical:holiday_vocab",
-        "lexical:kinship_terms",
-        "lexical:legal_vocab",
-        "lexical:months",
-        "lexical:numbers",
-        "lexical:work_vocab",
-        "morphology:gendered_short_form",
-        "phrase:calendar_question",
-        "phrase:client_case_answer",
-        "phrase:compliment_food",
-        "phrase:family_affection",
-        "phrase:family_celebration",
-        "phrase:food_offer",
-        "phrase:greeting",
-        "phrase:guest_gratitude",
-        "phrase:holiday_plan",
-        "phrase:host_question",
-        "phrase:introduction",
-        "phrase:pace_repair",
-        "phrase:personal_origin",
-        "phrase:polite_decline",
-        "phrase:price_question",
-        "phrase:quantity_question",
-        "phrase:repair",
-        "phrase:routine_answer",
-        "phrase:short_evaluation",
-        "phrase:table_toast",
-        "phrase:toast_za_accusative",
-        "phrase:weather_answer",
-        "phrase:work_identity",
-        "phrase:yes_no",
-        "register:formal_you",
-        "register:name_patronymic",
-        "skill:listening_question_recognition",
-        "strategy:recognition_only"
-      ],
-      "allowed_error_types": [
-        "cultural_usage",
-        "forgot_phrase",
-        "listening_misparse",
-        "register",
-        "stress"
-      ],
-      "correction_policy": [
-        "Minor error: recast briefly and continue the role-play.",
-        "Repeated error: give one short rule, then return to Russian practice.",
-        "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
-        "Communication-breaking error: clarify in English, provide the verified model, then retry."
-      ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Holiday and family celebration small talk — Answer Christmas/Thanksgiving/family-plan prompts from the original guide in short Russian.\nCurriculum boundary: Lesson 14 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Скоро Рождество. — Christmas is soon.\n- Как вы с Кадрией отпраздновали Рождество? — How did you and Kadriya celebrate Christmas?\n- Мы отпраздновали Рождество у моих родителей дома. — We celebrated Christmas at my parents' house.\n- Какие планы на Рождество? — What are the plans for Christmas?\n- На Рождество мы хотим полететь в Орегон. — For Christmas we want to fly to Oregon.\n- Сколько дней вы будете в Орегоне? — How many days will you be in Oregon?\n- Мы будем в Орегоне пять дней. — We'll be in Oregon for five days.\n- Что вы делали на День Благодарения? — What did you do for Thanksgiving?\n- На День Благодарения мы ужинали всей семьёй. — For Thanksgiving we had dinner as a whole family.\n- Это был большой ужин. — It was a big dinner.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
-    },
-    {
-      "id": "tutor_cultural_bonus_recognition",
-      "scenario_id": "cultural_bonus_recognition",
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15,
-      "setting": "Recognition-only cultural extras",
-      "goal": "Recognize source-guide proverbs and lawyer jokes without trying to perform them.",
-      "learner_role": "guest",
-      "tutor_role": "host family member",
-      "required_items": [
-        "cult001",
-        "cult002",
-        "cult003",
-        "cult004",
-        "cult005",
-        "cult006",
-        "cult007",
-        "cult008",
-        "cult009"
-      ],
-      "required_phrases": [
-        {
-          "id": "cult001",
-          "ru": "Ка́мень с души́ упа́л.",
-          "ru_plain": "Камень с души упал.",
-          "en": "A weight has been lifted."
-        },
-        {
-          "id": "cult002",
-          "ru": "Жизнь бьёт ключо́м.",
-          "ru_plain": "Жизнь бьёт ключом.",
-          "en": "Life is in full swing."
-        },
-        {
-          "id": "cult003",
-          "ru": "В гостя́х хорошо́, а до́ма лу́чше.",
-          "ru_plain": "В гостях хорошо, а дома лучше.",
-          "en": "Being a guest is good, but home is better."
-        },
-        {
-          "id": "cult004",
-          "ru": "Нет ху́да без добра́.",
-          "ru_plain": "Нет худа без добра.",
-          "en": "Every cloud has a silver lining."
-        },
-        {
-          "id": "cult005",
-          "ru": "У сосе́да трава́ зелене́е.",
-          "ru_plain": "У соседа трава зеленее.",
-          "en": "The neighbor's grass is greener."
-        },
-        {
-          "id": "cult006",
-          "ru": "Семь раз отме́рь, оди́н раз отре́жь.",
-          "ru_plain": "Семь раз отмерь, один раз отрежь.",
-          "en": "Measure seven times, cut once."
-        },
-        {
-          "id": "cult007",
-          "ru": "Чем отлича́ется адвока́т от прокуро́ра?",
-          "ru_plain": "Чем отличается адвокат от прокурора?",
-          "en": "How is a defense lawyer different from a prosecutor?"
-        },
-        {
-          "id": "cult008",
-          "ru": "Адвока́т озабо́чен бу́дущим своего́ клие́нта, а прокуро́р — его́ про́шлым.",
-          "ru_plain": "Адвокат озабочен будущим своего клиента, а прокурор — его прошлым.",
-          "en": "The lawyer is concerned with the client's future; the prosecutor with his past."
-        },
-        {
-          "id": "cult009",
-          "ru": "Цивилиза́ция привела́ к тому́, что уже́ не ва́жно, чей адвока́т лу́чше.",
-          "ru_plain": "Цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
-          "en": "Civilization made it so what matters is whose lawyer is better."
-        }
-      ],
-      "success_criteria": [
-        "recognizes_cultural_bonus",
         "stays_in_russian",
         "uses_repair_lines"
       ],
@@ -92555,6 +98896,27 @@ window.CONTENT_DATA = {
         "dail027",
         "dail028",
         "dail029",
+        "leis001",
+        "leis002",
+        "leis003",
+        "leis004",
+        "leis005",
+        "leis006",
+        "leis007",
+        "leis008",
+        "leis009",
+        "leis010",
+        "leis011",
+        "leis012",
+        "leis013",
+        "leis014",
+        "leis015",
+        "leis016",
+        "leis017",
+        "leis018",
+        "leis019",
+        "leis020",
+        "leis021",
         "work001",
         "work002",
         "work003",
@@ -92599,16 +98961,7 @@ window.CONTENT_DATA = {
         "cele011",
         "cele012",
         "cele013",
-        "cele014",
-        "cult001",
-        "cult002",
-        "cult003",
-        "cult004",
-        "cult005",
-        "cult006",
-        "cult007",
-        "cult008",
-        "cult009"
+        "cele014"
       ],
       "active_vocab": [
         "америке",
@@ -92616,6 +98969,7 @@ window.CONTENT_DATA = {
         "аппетита",
         "бабушка",
         "благодарения",
+        "боевики",
         "бокал",
         "большое",
         "большой",
@@ -92654,6 +99008,7 @@ window.CONTENT_DATA = {
         "готовить",
         "готовлю",
         "готовы",
+        "гуляли",
         "гулять",
         "да",
         "да, мы готовы.",
@@ -92717,6 +99072,10 @@ window.CONTENT_DATA = {
         "занят",
         "звонил",
         "звоню",
+        "здесь",
+        "здесь мы играем в футбол.",
+        "здесь мы отдыхаем.",
+        "здесь я слушаю и смотрю фильм.",
         "здоровы",
         "здоровье",
         "здравствуйте",
@@ -92725,6 +99084,8 @@ window.CONTENT_DATA = {
         "зовут",
         "зять",
         "и",
+        "играем",
+        "играть",
         "играю",
         "идёт",
         "идёт дождь.",
@@ -92734,6 +99095,8 @@ window.CONTENT_DATA = {
         "интересно",
         "кадрия",
         "кадрия будет гулять и отдыхать.",
+        "кадрия любит рисовать.",
+        "кадрия любит смотреть фильмы о любви.",
         "кадрия работает вместе со мной.",
         "как",
         "как по-русски …?",
@@ -92741,13 +99104,18 @@ window.CONTENT_DATA = {
         "клиентам",
         "клиентов",
         "клиентом",
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
         "компания",
         "компьютере",
+        "котами",
         "кофе",
         "легко",
         "лет",
         "ли",
         "лыжах",
+        "любви",
+        "любит",
         "люблю",
         "любовь",
         "людям",
@@ -92769,10 +99137,14 @@ window.CONTENT_DATA = {
         "моих",
         "молодых",
         "муж",
+        "музыку",
         "мы",
         "мы будем в орегоне пять дней.",
+        "мы гуляли в парке.",
         "мы довольны результатом.",
         "мы едим и смотрим телевизор.",
+        "мы играем с нашими котами.",
+        "мы отдыхали и слушали музыку.",
         "мы отпраздновали рождество у моих родителей дома.",
         "мы познакомились …",
         "мы работаем вместе.",
@@ -92785,6 +99157,7 @@ window.CONTENT_DATA = {
         "надо",
         "наелся",
         "начинаю",
+        "нашими",
         "не",
         "немного",
         "нет",
@@ -92794,6 +99167,7 @@ window.CONTENT_DATA = {
         "нравится",
         "нужно",
         "нужно работать ещё два часа.",
+        "о",
         "обедаю",
         "облачно",
         "обычно",
@@ -92805,6 +99179,8 @@ window.CONTENT_DATA = {
         "она говорит, что я должен готовить чаще.",
         "орегон",
         "орегоне",
+        "отдыхаем",
+        "отдыхали",
         "отдыхать",
         "отдыхаю",
         "отлично",
@@ -92814,8 +99190,11 @@ window.CONTENT_DATA = {
         "очень вкусно!",
         "очень приятно",
         "папа",
+        "парке",
         "передайте",
         "передайте, пожалуйста, хлеб",
+        "пианино",
+        "пишу",
         "плохая",
         "по",
         "повторите",
@@ -92865,6 +99244,7 @@ window.CONTENT_DATA = {
         "рано",
         "результатом",
         "решать",
+        "рисовать",
         "родителей",
         "родители",
         "рождество",
@@ -92894,8 +99274,12 @@ window.CONTENT_DATA = {
         "скоро",
         "скоро рождество.",
         "слишком",
+        "слушали",
+        "слушаю",
         "смогу",
+        "смотреть",
         "смотрим",
+        "смотрю",
         "снег",
         "со",
         "солнечная",
@@ -92914,6 +99298,7 @@ window.CONTENT_DATA = {
         "суде",
         "счастлив",
         "сын",
+        "танцевать",
         "телевизор",
         "тепло",
         "тесть",
@@ -92935,6 +99320,9 @@ window.CONTENT_DATA = {
         "утром",
         "утром я часто играю на гитаре.",
         "учу",
+        "фильм",
+        "фильмы",
+        "футбол",
         "хлеб",
         "хожу",
         "хозяев",
@@ -92975,21 +99363,27 @@ window.CONTENT_DATA = {
         "я живу в америке",
         "я живу в доме пять лет.",
         "я звонил клиентам.",
+        "я играю на гитаре и на пианино.",
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
+        "я люблю играть на гитаре.",
         "я люблю рано вставать.",
+        "я люблю смотреть боевики.",
         "я наелся",
         "я начинаю работать в десять утра.",
         "я не знаю, смогу ли я взять отпуск.",
         "я не понимаю",
         "я немного говорю по-русски",
+        "я немного люблю танцевать.",
         "я обедаю днём.",
         "я очень занят.",
+        "я пишу музыку.",
         "я понимаю",
         "я работал на компьютере.",
         "я работаю в суде.",
         "я работаю утром и вечером.",
+        "я слушаю музыку.",
         "я счастлив работать на себя.",
         "я ужинаю вечером.",
         "я хочу сказать тост за …",
@@ -92997,12 +99391,8 @@ window.CONTENT_DATA = {
         "я юрист"
       ],
       "passive_vocab": [
-        "а",
         "август",
-        "адвокат",
-        "адвокат озабочен будущим своего клиента, а прокурор — его прошлым.",
         "апрель",
-        "без",
         "благодарения",
         "блины",
         "болит",
@@ -93010,14 +99400,10 @@ window.CONTENT_DATA = {
         "будете",
         "будете …?",
         "будут",
-        "будущим",
         "был",
         "было",
         "было семьдесят человек.",
-        "бьёт",
         "в",
-        "в гостях хорошо, а дома лучше.",
-        "важно",
         "вам",
         "вам нравится …?",
         "вас",
@@ -93030,7 +99416,6 @@ window.CONTENT_DATA = {
         "вы готовы к рождению малыша?",
         "выходных",
         "говорите",
-        "гостях",
         "готовы",
         "две",
         "две тысячи",
@@ -93043,20 +99428,16 @@ window.CONTENT_DATA = {
         "дело",
         "день",
         "дней",
-        "добра",
-        "дома",
+        "дом",
         "доме",
-        "души",
-        "его",
         "ещё",
         "живёшь",
-        "жизнь",
-        "жизнь бьёт ключом.",
         "закон",
         "занимался",
         "занят",
         "защитник",
-        "зеленее",
+        "и",
+        "игры",
         "или",
         "июль",
         "июнь",
@@ -93080,16 +99461,14 @@ window.CONTENT_DATA = {
         "какой сегодня день?",
         "какой сегодня праздник?",
         "какой сейчас месяц?",
-        "камень",
-        "камень с души упал.",
         "каникулы",
+        "картины",
         "кем",
         "кем вы работаете?",
+        "кинотеатр",
         "клевета",
         "клиент",
-        "клиента",
         "клиентов",
-        "ключом",
         "когда",
         "когда вы обедаете?",
         "когда вы отдыхаете?",
@@ -93097,7 +99476,6 @@ window.CONTENT_DATA = {
         "когда вы ужинаете?",
         "когда у вас родится ребёнок?",
         "лет",
-        "лучше",
         "май",
         "малыш",
         "малыша",
@@ -93106,35 +99484,28 @@ window.CONTENT_DATA = {
         "мирное",
         "мирное соглашение",
         "много",
+        "можно",
+        "музей",
         "мы",
         "мы потратили семь или восемь часов.",
         "на",
-        "не",
         "неделе",
         "недели",
         "немного",
         "немного болит спина.",
-        "нет",
-        "нет худа без добра.",
         "ноябрь",
         "нравится",
         "обедаете",
-        "один",
-        "озабочен",
         "октябрь",
         "оливье",
         "она",
         "она очень устала.",
         "орегоне",
-        "от",
         "отдыхаете",
         "откуда",
         "откуда вы?",
-        "отличается",
-        "отмерь",
         "отпраздновали",
         "отпуск",
-        "отрежь",
         "очень",
         "пельмени",
         "планы",
@@ -93145,16 +99516,13 @@ window.CONTENT_DATA = {
         "потратили",
         "право",
         "праздник",
-        "привела",
         "прокурор",
-        "прокурора",
         "прошлой",
-        "прошлым",
         "пять",
         "пять тысяч",
         "работаете",
         "работал",
-        "раз",
+        "разные",
         "ребёнок",
         "родится",
         "рождению",
@@ -93163,13 +99531,11 @@ window.CONTENT_DATA = {
         "россия",
         "русски",
         "с",
-        "своего",
         "себя",
         "сегодня",
         "сейчас",
         "сейчас три двенадцать.",
         "семь",
-        "семь раз отмерь, один раз отрежь.",
         "семьдесят",
         "сентябрь",
         "сколько",
@@ -93180,10 +99546,13 @@ window.CONTENT_DATA = {
         "сколько стоит?",
         "сколько стоят?",
         "сколько часов ты работал?",
+        "скульптуры",
         "слушание",
+        "смотрю",
         "соглашение",
-        "соседа",
         "спина",
+        "спортивные",
+        "стадион",
         "стоит",
         "стоят",
         "страховка",
@@ -93192,8 +99561,8 @@ window.CONTENT_DATA = {
         "судебное дело",
         "судья",
         "там",
-        "тому",
-        "трава",
+        "там можно увидеть разные спортивные игры.",
+        "там я смотрю картины и скульптуры.",
         "травма",
         "три",
         "ты",
@@ -93205,24 +99574,16 @@ window.CONTENT_DATA = {
         "у вас будут рождественские каникулы?",
         "у вас много дел?",
         "у вас много клиентов?",
-        "у соседа трава зеленее.",
-        "уже",
+        "увидеть",
         "ужинаете",
         "улице",
-        "упал",
         "устала",
         "февраль",
-        "хорошо",
-        "худа",
-        "цивилизация",
-        "цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
         "чай",
         "часов",
-        "чей",
         "человек",
         "чем",
         "чем был занят?",
-        "чем отличается адвокат от прокурора?",
         "чем ты сегодня занимался?",
         "что",
         "что вы делали на выходных?",
@@ -93231,7 +99592,13 @@ window.CONTENT_DATA = {
         "что ты делал на этой неделе?",
         "что ты сегодня делал?",
         "чувствует",
+        "это",
+        "это дом.",
+        "это кинотеатр.",
+        "это музей.",
+        "это стадион.",
         "этой",
+        "я",
         "январь"
       ],
       "structures": [
@@ -93240,6 +99607,7 @@ window.CONTENT_DATA = {
         "grammar:adjective_agreement",
         "grammar:formal_question",
         "grammar:future_plan",
+        "grammar:igrat_v_na",
         "grammar:number_noun_agreement",
         "grammar:past_masculine_work",
         "grammar:present_first_person",
@@ -93248,13 +99616,13 @@ window.CONTENT_DATA = {
         "lexical:adverbs",
         "lexical:day_parts",
         "lexical:days_of_week",
+        "lexical:hobbies",
         "lexical:holiday_vocab",
-        "lexical:idioms",
         "lexical:kinship_terms",
         "lexical:legal_vocab",
         "lexical:months",
         "lexical:numbers",
-        "lexical:proverbs",
+        "lexical:places",
         "lexical:work_vocab",
         "morphology:gendered_short_form",
         "phrase:calendar_question",
@@ -93268,6 +99636,7 @@ window.CONTENT_DATA = {
         "phrase:holiday_plan",
         "phrase:host_question",
         "phrase:introduction",
+        "phrase:leisure_answer",
         "phrase:pace_repair",
         "phrase:personal_origin",
         "phrase:polite_decline",
@@ -93299,122 +99668,86 @@ window.CONTENT_DATA = {
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Recognition-only cultural extras — Recognize source-guide proverbs and lawyer jokes without trying to perform them.\nCurriculum boundary: Lesson 15 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Камень с души упал. — A weight has been lifted.\n- Жизнь бьёт ключом. — Life is in full swing.\n- В гостях хорошо, а дома лучше. — Being a guest is good, but home is better.\n- Нет худа без добра. — Every cloud has a silver lining.\n- У соседа трава зеленее. — The neighbor's grass is greener.\n- Семь раз отмерь, один раз отрежь. — Measure seven times, cut once.\n- Чем отличается адвокат от прокурора? — How is a defense lawyer different from a prosecutor?\n- Адвокат озабочен будущим своего клиента, а прокурор — его прошлым. — The lawyer is concerned with the client's future; the prosecutor with his past.\n- Цивилизация привела к тому, что уже не важно, чей адвокат лучше. — Civilization made it so what matters is whose lawyer is better.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Holiday and family celebration small talk — Answer Christmas/Thanksgiving/family-plan prompts from the original guide in short Russian.\nCurriculum boundary: Lesson 15 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Скоро Рождество. — Christmas is soon.\n- Как вы с Кадрией отпраздновали Рождество? — How did you and Kadriya celebrate Christmas?\n- Мы отпраздновали Рождество у моих родителей дома. — We celebrated Christmas at my parents' house.\n- Какие планы на Рождество? — What are the plans for Christmas?\n- На Рождество мы хотим полететь в Орегон. — For Christmas we want to fly to Oregon.\n- Сколько дней вы будете в Орегоне? — How many days will you be in Oregon?\n- Мы будем в Орегоне пять дней. — We'll be in Oregon for five days.\n- Что вы делали на День Благодарения? — What did you do for Thanksgiving?\n- На День Благодарения мы ужинали всей семьёй. — For Thanksgiving we had dinner as a whole family.\n- Это был большой ужин. — It was a big dinner.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
-      "id": "tutor_budva_airport_hotel_checkin",
-      "scenario_id": "budva_airport_hotel_checkin",
+      "id": "tutor_cultural_bonus_recognition",
+      "scenario_id": "cultural_bonus_recognition",
       "lesson_id": "family_visit_016",
       "lesson_number": 16,
-      "setting": "Airport and hotel arrival",
-      "goal": "Handle airport check-in, luggage, hotel reservation, room, key, elevator, and checkout basics.",
+      "setting": "Recognition-only cultural extras",
+      "goal": "Recognize source-guide proverbs and lawyer jokes without trying to perform them.",
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
-        "trav015",
-        "trav016",
-        "trav017",
-        "trav018",
-        "trav019",
-        "trav020",
-        "trav021",
-        "trav022",
-        "trav023",
-        "trav024",
-        "trav025",
-        "trav026",
-        "trav027",
-        "trav028"
+        "cult001",
+        "cult002",
+        "cult003",
+        "cult004",
+        "cult005",
+        "cult006",
+        "cult007",
+        "cult008",
+        "cult009"
       ],
       "required_phrases": [
         {
-          "id": "trav015",
-          "ru": "аэропо́рт",
-          "ru_plain": "аэропорт",
-          "en": "airport"
+          "id": "cult001",
+          "ru": "Ка́мень с души́ упа́л.",
+          "ru_plain": "Камень с души упал.",
+          "en": "A weight has been lifted."
         },
         {
-          "id": "trav016",
-          "ru": "бага́ж",
-          "ru_plain": "багаж",
-          "en": "luggage"
+          "id": "cult002",
+          "ru": "Жизнь бьёт ключо́м.",
+          "ru_plain": "Жизнь бьёт ключом.",
+          "en": "Life is in full swing."
         },
         {
-          "id": "trav017",
-          "ru": "Вот мой па́спорт.",
-          "ru_plain": "Вот мой паспорт.",
-          "en": "Here is my passport."
+          "id": "cult003",
+          "ru": "В гостя́х хорошо́, а до́ма лу́чше.",
+          "ru_plain": "В гостях хорошо, а дома лучше.",
+          "en": "Being a guest is good, but home is better."
         },
         {
-          "id": "trav018",
-          "ru": "Я хочу́ зарегистри́роваться.",
-          "ru_plain": "Я хочу зарегистрироваться.",
-          "en": "I want to check in / register."
+          "id": "cult004",
+          "ru": "Нет ху́да без добра́.",
+          "ru_plain": "Нет худа без добра.",
+          "en": "Every cloud has a silver lining."
         },
         {
-          "id": "trav019",
-          "ru": "Я хочу́ сда́ть бага́ж.",
-          "ru_plain": "Я хочу сдать багаж.",
-          "en": "I want to check my luggage."
+          "id": "cult005",
+          "ru": "У сосе́да трава́ зелене́е.",
+          "ru_plain": "У соседа трава зеленее.",
+          "en": "The neighbor's grass is greener."
         },
         {
-          "id": "trav020",
-          "ru": "Где выда́ча багажа́?",
-          "ru_plain": "Где выдача багажа?",
-          "en": "Where is baggage claim?"
+          "id": "cult006",
+          "ru": "Семь раз отме́рь, оди́н раз отре́жь.",
+          "ru_plain": "Семь раз отмерь, один раз отрежь.",
+          "en": "Measure seven times, cut once."
         },
         {
-          "id": "trav021",
-          "ru": "У меня́ есть брони́рование.",
-          "ru_plain": "У меня есть бронирование.",
-          "en": "I have a reservation."
+          "id": "cult007",
+          "ru": "Чем отлича́ется адвока́т от прокуро́ра?",
+          "ru_plain": "Чем отличается адвокат от прокурора?",
+          "en": "How is a defense lawyer different from a prosecutor?"
         },
         {
-          "id": "trav022",
-          "ru": "Ключ, пожа́луйста.",
-          "ru_plain": "Ключ, пожалуйста.",
-          "en": "Key, please."
+          "id": "cult008",
+          "ru": "Адвока́т озабо́чен бу́дущим своего́ клие́нта, а прокуро́р — его́ про́шлым.",
+          "ru_plain": "Адвокат озабочен будущим своего клиента, а прокурор — его прошлым.",
+          "en": "The lawyer is concerned with the client's future; the prosecutor with his past."
         },
         {
-          "id": "trav023",
-          "ru": "Где лифт?",
-          "ru_plain": "Где лифт?",
-          "en": "Where is the elevator?"
-        },
-        {
-          "id": "trav024",
-          "ru": "В но́мере есть интерне́т?",
-          "ru_plain": "В номере есть интернет?",
-          "en": "Is there internet in the room?"
-        },
-        {
-          "id": "trav025",
-          "ru": "Во ско́лько зае́зд?",
-          "ru_plain": "Во сколько заезд?",
-          "en": "What time is check-in?"
-        },
-        {
-          "id": "trav026",
-          "ru": "Во ско́лько вы́езд?",
-          "ru_plain": "Во сколько выезд?",
-          "en": "What time is check-out?"
-        },
-        {
-          "id": "trav027",
-          "ru": "Э́то ваш ключ.",
-          "ru_plain": "Это ваш ключ.",
-          "en": "This is your key."
-        },
-        {
-          "id": "trav028",
-          "ru": "Како́й ваш но́мер?",
-          "ru_plain": "Какой ваш номер?",
-          "en": "What is your room number?"
+          "id": "cult009",
+          "ru": "Цивилиза́ция привела́ к тому́, что уже́ не ва́жно, чей адвока́т лу́чше.",
+          "ru_plain": "Цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
+          "en": "Civilization made it so what matters is whose lawyer is better."
         }
       ],
       "success_criteria": [
-        "handles_airport_hotel",
-        "handles_travel_logistics",
+        "recognizes_cultural_bonus",
         "stays_in_russian",
         "uses_repair_lines"
       ],
@@ -93644,6 +99977,1204 @@ window.CONTENT_DATA = {
         "dail027",
         "dail028",
         "dail029",
+        "leis001",
+        "leis002",
+        "leis003",
+        "leis004",
+        "leis005",
+        "leis006",
+        "leis007",
+        "leis008",
+        "leis009",
+        "leis010",
+        "leis011",
+        "leis012",
+        "leis013",
+        "leis014",
+        "leis015",
+        "leis016",
+        "leis017",
+        "leis018",
+        "leis019",
+        "leis020",
+        "leis021",
+        "work001",
+        "work002",
+        "work003",
+        "work004",
+        "work005",
+        "work006",
+        "work007",
+        "work008",
+        "work009",
+        "work010",
+        "work011",
+        "work012",
+        "work013",
+        "work014",
+        "work015",
+        "work016",
+        "lega001",
+        "lega002",
+        "lega003",
+        "lega004",
+        "lega005",
+        "lega006",
+        "lega007",
+        "lega008",
+        "lega009",
+        "lega010",
+        "lega011",
+        "lega012",
+        "lega013",
+        "lega014",
+        "lega015",
+        "cele001",
+        "cele002",
+        "cele003",
+        "cele004",
+        "cele005",
+        "cele006",
+        "cele007",
+        "cele008",
+        "cele009",
+        "cele010",
+        "cele011",
+        "cele012",
+        "cele013",
+        "cele014",
+        "cult001",
+        "cult002",
+        "cult003",
+        "cult004",
+        "cult005",
+        "cult006",
+        "cult007",
+        "cult008",
+        "cult009"
+      ],
+      "active_vocab": [
+        "америке",
+        "америки",
+        "аппетита",
+        "бабушка",
+        "благодарения",
+        "боевики",
+        "бокал",
+        "большое",
+        "большой",
+        "брат",
+        "будем",
+        "будем здоровы!",
+        "будет",
+        "был",
+        "было",
+        "быстро",
+        "в",
+        "в десять я начинаю решать проблемы клиентов.",
+        "важно",
+        "ваше",
+        "вашу",
+        "вечер",
+        "вечером",
+        "вещей",
+        "взять",
+        "вкусно",
+        "вместе",
+        "воскресенье",
+        "время",
+        "всей",
+        "вставать",
+        "встаю",
+        "встречу",
+        "вторник",
+        "вчера",
+        "вчера было солнечно.",
+        "выпьем",
+        "выходных",
+        "гитаре",
+        "говорит",
+        "говорю",
+        "готовить",
+        "готовлю",
+        "готовы",
+        "гуляли",
+        "гулять",
+        "да",
+        "да, мы готовы.",
+        "да, немного",
+        "да, у меня много дел.",
+        "да, у меня много клиентов.",
+        "давайте",
+        "давайте выпьем за это!",
+        "два",
+        "дедушка",
+        "дел",
+        "делаю",
+        "день",
+        "десяти",
+        "десять",
+        "дети",
+        "джо",
+        "для",
+        "дна",
+        "дней",
+        "днём",
+        "до",
+        "до дна",
+        "до свидания",
+        "доброе",
+        "доброе утро",
+        "доброе утро.",
+        "добрый",
+        "добрый вечер",
+        "добрый вечер.",
+        "добрый день",
+        "добрый день.",
+        "довольны",
+        "дождливая",
+        "дождь",
+        "должен",
+        "дома",
+        "доме",
+        "домой",
+        "дочь",
+        "едим",
+        "есть",
+        "ещё",
+        "жена",
+        "жены",
+        "живу",
+        "за",
+        "за ваше здоровье!",
+        "за встречу!",
+        "за здоровье!",
+        "за знакомство!",
+        "за любовь!",
+        "за молодых!",
+        "за родителей!",
+        "за семью!",
+        "за хозяев!",
+        "за хозяйку!",
+        "завтра",
+        "завтра будет тепло.",
+        "завтракаю",
+        "занят",
+        "звонил",
+        "звоню",
+        "здесь",
+        "здесь мы играем в футбол.",
+        "здесь мы отдыхаем.",
+        "здесь я слушаю и смотрю фильм.",
+        "здоровы",
+        "здоровье",
+        "здравствуйте",
+        "знакомство",
+        "знаю",
+        "зовут",
+        "зять",
+        "и",
+        "играем",
+        "играть",
+        "играю",
+        "идёт",
+        "идёт дождь.",
+        "идёт снег.",
+        "из",
+        "извините",
+        "интересно",
+        "кадрия",
+        "кадрия будет гулять и отдыхать.",
+        "кадрия любит рисовать.",
+        "кадрия любит смотреть фильмы о любви.",
+        "кадрия работает вместе со мной.",
+        "как",
+        "как по-русски …?",
+        "кататься",
+        "клиентам",
+        "клиентов",
+        "клиентом",
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
+        "компания",
+        "компьютере",
+        "котами",
+        "кофе",
+        "легко",
+        "лет",
+        "ли",
+        "лыжах",
+        "любви",
+        "любит",
+        "люблю",
+        "любовь",
+        "людям",
+        "мама",
+        "медленно",
+        "медленно, пожалуйста.",
+        "меня",
+        "меня зовут джо",
+        "минут",
+        "миссури",
+        "мне",
+        "мне очень нравится",
+        "много",
+        "мной",
+        "моей",
+        "можно",
+        "можно ещё?",
+        "можно чаю?",
+        "моих",
+        "молодых",
+        "муж",
+        "музыку",
+        "мы",
+        "мы будем в орегоне пять дней.",
+        "мы гуляли в парке.",
+        "мы довольны результатом.",
+        "мы едим и смотрим телевизор.",
+        "мы играем с нашими котами.",
+        "мы отдыхали и слушали музыку.",
+        "мы отпраздновали рождество у моих родителей дома.",
+        "мы познакомились …",
+        "мы работаем вместе.",
+        "мы хотим кататься на лыжах.",
+        "на",
+        "на выходных",
+        "на день благодарения мы ужинали всей семьёй.",
+        "на работе я делаю много разных вещей.",
+        "на рождество мы хотим полететь в орегон.",
+        "надо",
+        "наелся",
+        "начинаю",
+        "нашими",
+        "не",
+        "немного",
+        "нет",
+        "нет, спасибо",
+        "нормально",
+        "ночи",
+        "нравится",
+        "нужно",
+        "нужно работать ещё два часа.",
+        "о",
+        "обедаю",
+        "облачно",
+        "обычно",
+        "обычно я встаю рано утром.",
+        "обычно я не завтракаю.",
+        "обычно я отдыхаю вечером.",
+        "обычно я работаю семь часов.",
+        "она",
+        "она говорит, что я должен готовить чаще.",
+        "орегон",
+        "орегоне",
+        "отдыхаем",
+        "отдыхали",
+        "отдыхать",
+        "отдыхаю",
+        "отлично",
+        "отпраздновали",
+        "отпуск",
+        "очень",
+        "очень вкусно!",
+        "очень приятно",
+        "папа",
+        "парке",
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "пианино",
+        "пишу",
+        "плохая",
+        "по",
+        "повторите",
+        "повторите, пожалуйста",
+        "погода",
+        "погода дождливая.",
+        "погода плохая.",
+        "погода солнечная.",
+        "погода хорошая.",
+        "пожалуйста",
+        "познакомились",
+        "познакомиться",
+        "полететь",
+        "помедленнее",
+        "помедленнее, пожалуйста",
+        "понедельник",
+        "понимаю",
+        "понятно",
+        "после",
+        "после работы мы ужинаем.",
+        "после этого я прихожу домой.",
+        "после я готовлю кофе для моей жены.",
+        "представиться",
+        "пригласили",
+        "приняли",
+        "прихожу",
+        "приятно",
+        "приятно познакомиться",
+        "приятного",
+        "приятного аппетита!",
+        "проблемы",
+        "простите",
+        "пятница",
+        "пять",
+        "работаем",
+        "работает",
+        "работал",
+        "работать",
+        "работаю",
+        "работе",
+        "работы",
+        "рад",
+        "рад познакомиться",
+        "разных",
+        "разрешите",
+        "разрешите представиться",
+        "рано",
+        "результатом",
+        "решать",
+        "рисовать",
+        "родителей",
+        "родители",
+        "рождество",
+        "русски",
+        "русский",
+        "рюмка",
+        "с",
+        "свидания",
+        "своя",
+        "себя",
+        "сегодня",
+        "сегодня облачно.",
+        "сегодня рождество.",
+        "сегодня солнечно.",
+        "сегодня тепло.",
+        "сегодня холодно.",
+        "сегодня я работал с клиентом.",
+        "сегодня я работал четыре часа тридцать минут.",
+        "сегодня я работал четыре часа.",
+        "семь",
+        "семью",
+        "семья",
+        "семьёй",
+        "сестра",
+        "сестра жены",
+        "сказать",
+        "скоро",
+        "скоро рождество.",
+        "слишком",
+        "слушали",
+        "слушаю",
+        "смогу",
+        "смотреть",
+        "смотрим",
+        "смотрю",
+        "снег",
+        "со",
+        "солнечная",
+        "солнечно",
+        "спасибо",
+        "спасибо большое",
+        "спасибо, было очень вкусно",
+        "спасибо, не надо",
+        "спасибо, что пригласили",
+        "спасибо, что приняли",
+        "спокойной",
+        "спокойной ночи",
+        "среда",
+        "суббота",
+        "суд",
+        "суде",
+        "счастлив",
+        "сын",
+        "танцевать",
+        "телевизор",
+        "тепло",
+        "тесть",
+        "тост",
+        "тридцать",
+        "трудно",
+        "тёща",
+        "у",
+        "у меня есть время до десяти.",
+        "у меня много работы.",
+        "у меня своя компания.",
+        "удобно",
+        "ужин",
+        "ужинаем",
+        "ужинали",
+        "ужинаю",
+        "утра",
+        "утро",
+        "утром",
+        "утром я часто играю на гитаре.",
+        "учу",
+        "фильм",
+        "фильмы",
+        "футбол",
+        "хлеб",
+        "хожу",
+        "хозяев",
+        "хозяйку",
+        "холодно",
+        "хорошая",
+        "хорошо",
+        "хорошо, спасибо",
+        "хорошо. я много работаю.",
+        "хотим",
+        "хочу",
+        "часа",
+        "часов",
+        "часто",
+        "часто я хожу в суд.",
+        "чаще",
+        "чаю",
+        "четверг",
+        "четыре",
+        "что",
+        "штата",
+        "шурин",
+        "это",
+        "это был большой ужин.",
+        "это важно.",
+        "это не важно.",
+        "это не очень удобно.",
+        "это не трудно.",
+        "это немного трудно.",
+        "это очень интересно.",
+        "это очень легко.",
+        "это слишком быстро.",
+        "это удобно.",
+        "этого",
+        "юрист",
+        "я",
+        "я ещё учу русский",
+        "я живу в америке",
+        "я живу в доме пять лет.",
+        "я звонил клиентам.",
+        "я играю на гитаре и на пианино.",
+        "я из америки",
+        "я из штата миссури",
+        "я люблю вашу дочь",
+        "я люблю играть на гитаре.",
+        "я люблю рано вставать.",
+        "я люблю смотреть боевики.",
+        "я наелся",
+        "я начинаю работать в десять утра.",
+        "я не знаю, смогу ли я взять отпуск.",
+        "я не понимаю",
+        "я немного говорю по-русски",
+        "я немного люблю танцевать.",
+        "я обедаю днём.",
+        "я очень занят.",
+        "я пишу музыку.",
+        "я понимаю",
+        "я работал на компьютере.",
+        "я работаю в суде.",
+        "я работаю утром и вечером.",
+        "я слушаю музыку.",
+        "я счастлив работать на себя.",
+        "я ужинаю вечером.",
+        "я хочу сказать тост за …",
+        "я часто звоню людям.",
+        "я юрист"
+      ],
+      "passive_vocab": [
+        "а",
+        "август",
+        "адвокат",
+        "адвокат озабочен будущим своего клиента, а прокурор — его прошлым.",
+        "апрель",
+        "без",
+        "благодарения",
+        "блины",
+        "болит",
+        "борщ",
+        "будете",
+        "будете …?",
+        "будут",
+        "будущим",
+        "был",
+        "было",
+        "было семьдесят человек.",
+        "бьёт",
+        "в",
+        "в гостях хорошо, а дома лучше.",
+        "важно",
+        "вам",
+        "вам нравится …?",
+        "вас",
+        "водка",
+        "возьмёшь",
+        "восемь",
+        "времени",
+        "вы",
+        "вы говорите по-русски?",
+        "вы готовы к рождению малыша?",
+        "выходных",
+        "говорите",
+        "гостях",
+        "готовы",
+        "две",
+        "две тысячи",
+        "двенадцать",
+        "декабрь",
+        "дел",
+        "дела",
+        "делал",
+        "делали",
+        "дело",
+        "день",
+        "дней",
+        "добра",
+        "дом",
+        "дома",
+        "доме",
+        "души",
+        "его",
+        "ещё",
+        "живёшь",
+        "жизнь",
+        "жизнь бьёт ключом.",
+        "закон",
+        "занимался",
+        "занят",
+        "защитник",
+        "зеленее",
+        "и",
+        "игры",
+        "или",
+        "июль",
+        "июнь",
+        "к",
+        "кадрией",
+        "кадрия",
+        "как",
+        "как вам россия?",
+        "как вы познакомились?",
+        "как вы с кадрией отпраздновали рождество?",
+        "как дела?",
+        "как на улице?",
+        "как себя чувствует кадрия?",
+        "как там на улице?",
+        "какая",
+        "какая сегодня погода?",
+        "какие",
+        "какие планы на рождество?",
+        "какой",
+        "какой сегодня день недели?",
+        "какой сегодня день?",
+        "какой сегодня праздник?",
+        "какой сейчас месяц?",
+        "камень",
+        "камень с души упал.",
+        "каникулы",
+        "картины",
+        "кем",
+        "кем вы работаете?",
+        "кинотеатр",
+        "клевета",
+        "клиент",
+        "клиента",
+        "клиентов",
+        "ключом",
+        "когда",
+        "когда вы обедаете?",
+        "когда вы отдыхаете?",
+        "когда вы работаете?",
+        "когда вы ужинаете?",
+        "когда у вас родится ребёнок?",
+        "лет",
+        "лучше",
+        "май",
+        "малыш",
+        "малыша",
+        "март",
+        "месяц",
+        "мирное",
+        "мирное соглашение",
+        "много",
+        "можно",
+        "музей",
+        "мы",
+        "мы потратили семь или восемь часов.",
+        "на",
+        "не",
+        "неделе",
+        "недели",
+        "немного",
+        "немного болит спина.",
+        "нет",
+        "нет худа без добра.",
+        "ноябрь",
+        "нравится",
+        "обедаете",
+        "один",
+        "озабочен",
+        "октябрь",
+        "оливье",
+        "она",
+        "она очень устала.",
+        "орегоне",
+        "от",
+        "отдыхаете",
+        "откуда",
+        "откуда вы?",
+        "отличается",
+        "отмерь",
+        "отпраздновали",
+        "отпуск",
+        "отрежь",
+        "очень",
+        "пельмени",
+        "планы",
+        "по",
+        "повестка",
+        "погода",
+        "познакомились",
+        "потратили",
+        "право",
+        "праздник",
+        "привела",
+        "прокурор",
+        "прокурора",
+        "прошлой",
+        "прошлым",
+        "пять",
+        "пять тысяч",
+        "работаете",
+        "работал",
+        "раз",
+        "разные",
+        "ребёнок",
+        "родится",
+        "рождению",
+        "рождественские",
+        "рождество",
+        "россия",
+        "русски",
+        "с",
+        "своего",
+        "себя",
+        "сегодня",
+        "сейчас",
+        "сейчас три двенадцать.",
+        "семь",
+        "семь раз отмерь, один раз отрежь.",
+        "семьдесят",
+        "сентябрь",
+        "сколько",
+        "сколько было человек?",
+        "сколько дней вы будете в орегоне?",
+        "сколько лет ты живёшь в доме?",
+        "сколько сейчас времени?",
+        "сколько стоит?",
+        "сколько стоят?",
+        "сколько часов ты работал?",
+        "скульптуры",
+        "слушание",
+        "смотрю",
+        "соглашение",
+        "соседа",
+        "спина",
+        "спортивные",
+        "стадион",
+        "стоит",
+        "стоят",
+        "страховка",
+        "суд",
+        "судебное",
+        "судебное дело",
+        "судья",
+        "там",
+        "там можно увидеть разные спортивные игры.",
+        "там я смотрю картины и скульптуры.",
+        "тому",
+        "трава",
+        "травма",
+        "три",
+        "ты",
+        "ты возьмёшь отпуск?",
+        "тысяч",
+        "тысяча",
+        "тысячи",
+        "у",
+        "у вас будут рождественские каникулы?",
+        "у вас много дел?",
+        "у вас много клиентов?",
+        "у соседа трава зеленее.",
+        "увидеть",
+        "уже",
+        "ужинаете",
+        "улице",
+        "упал",
+        "устала",
+        "февраль",
+        "хорошо",
+        "худа",
+        "цивилизация",
+        "цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
+        "чай",
+        "часов",
+        "чей",
+        "человек",
+        "чем",
+        "чем был занят?",
+        "чем отличается адвокат от прокурора?",
+        "чем ты сегодня занимался?",
+        "что",
+        "что вы делали на выходных?",
+        "что вы делали на день благодарения?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "что ты сегодня делал?",
+        "чувствует",
+        "это",
+        "это дом.",
+        "это кинотеатр.",
+        "это музей.",
+        "это стадион.",
+        "этой",
+        "я",
+        "январь"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "discourse:politeness",
+        "grammar:adjective_agreement",
+        "grammar:formal_question",
+        "grammar:future_plan",
+        "grammar:igrat_v_na",
+        "grammar:number_noun_agreement",
+        "grammar:past_masculine_work",
+        "grammar:present_first_person",
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:adverbs",
+        "lexical:day_parts",
+        "lexical:days_of_week",
+        "lexical:hobbies",
+        "lexical:holiday_vocab",
+        "lexical:idioms",
+        "lexical:kinship_terms",
+        "lexical:legal_vocab",
+        "lexical:months",
+        "lexical:numbers",
+        "lexical:places",
+        "lexical:proverbs",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:calendar_question",
+        "phrase:client_case_answer",
+        "phrase:compliment_food",
+        "phrase:family_affection",
+        "phrase:family_celebration",
+        "phrase:food_offer",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:holiday_plan",
+        "phrase:host_question",
+        "phrase:introduction",
+        "phrase:leisure_answer",
+        "phrase:pace_repair",
+        "phrase:personal_origin",
+        "phrase:polite_decline",
+        "phrase:price_question",
+        "phrase:quantity_question",
+        "phrase:repair",
+        "phrase:routine_answer",
+        "phrase:short_evaluation",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative",
+        "phrase:weather_answer",
+        "phrase:work_identity",
+        "phrase:yes_no",
+        "register:formal_you",
+        "register:name_patronymic",
+        "skill:listening_question_recognition",
+        "strategy:recognition_only"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "listening_misparse",
+        "register",
+        "stress"
+      ],
+      "correction_policy": [
+        "Minor error: recast briefly and continue the role-play.",
+        "Repeated error: give one short rule, then return to Russian practice.",
+        "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
+        "Communication-breaking error: clarify in English, provide the verified model, then retry."
+      ],
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Recognition-only cultural extras — Recognize source-guide proverbs and lawyer jokes without trying to perform them.\nCurriculum boundary: Lesson 16 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Камень с души упал. — A weight has been lifted.\n- Жизнь бьёт ключом. — Life is in full swing.\n- В гостях хорошо, а дома лучше. — Being a guest is good, but home is better.\n- Нет худа без добра. — Every cloud has a silver lining.\n- У соседа трава зеленее. — The neighbor's grass is greener.\n- Семь раз отмерь, один раз отрежь. — Measure seven times, cut once.\n- Чем отличается адвокат от прокурора? — How is a defense lawyer different from a prosecutor?\n- Адвокат озабочен будущим своего клиента, а прокурор — его прошлым. — The lawyer is concerned with the client's future; the prosecutor with his past.\n- Цивилизация привела к тому, что уже не важно, чей адвокат лучше. — Civilization made it so what matters is whose lawyer is better.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+    },
+    {
+      "id": "tutor_budva_airport_hotel_checkin",
+      "scenario_id": "budva_airport_hotel_checkin",
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17,
+      "setting": "Airport and hotel arrival",
+      "goal": "Handle airport check-in, luggage, hotel reservation, room, key, elevator, and checkout basics.",
+      "learner_role": "guest",
+      "tutor_role": "host family member",
+      "required_items": [
+        "trav015",
+        "trav016",
+        "trav017",
+        "trav018",
+        "trav019",
+        "trav020",
+        "trav021",
+        "trav022",
+        "trav023",
+        "trav024",
+        "trav025",
+        "trav026",
+        "trav027",
+        "trav028"
+      ],
+      "required_phrases": [
+        {
+          "id": "trav015",
+          "ru": "аэропо́рт",
+          "ru_plain": "аэропорт",
+          "en": "airport"
+        },
+        {
+          "id": "trav016",
+          "ru": "бага́ж",
+          "ru_plain": "багаж",
+          "en": "luggage"
+        },
+        {
+          "id": "trav017",
+          "ru": "Вот мой па́спорт.",
+          "ru_plain": "Вот мой паспорт.",
+          "en": "Here is my passport."
+        },
+        {
+          "id": "trav018",
+          "ru": "Я хочу́ зарегистри́роваться.",
+          "ru_plain": "Я хочу зарегистрироваться.",
+          "en": "I want to check in / register."
+        },
+        {
+          "id": "trav019",
+          "ru": "Я хочу́ сда́ть бага́ж.",
+          "ru_plain": "Я хочу сдать багаж.",
+          "en": "I want to check my luggage."
+        },
+        {
+          "id": "trav020",
+          "ru": "Где выда́ча багажа́?",
+          "ru_plain": "Где выдача багажа?",
+          "en": "Where is baggage claim?"
+        },
+        {
+          "id": "trav021",
+          "ru": "У меня́ есть брони́рование.",
+          "ru_plain": "У меня есть бронирование.",
+          "en": "I have a reservation."
+        },
+        {
+          "id": "trav022",
+          "ru": "Ключ, пожа́луйста.",
+          "ru_plain": "Ключ, пожалуйста.",
+          "en": "Key, please."
+        },
+        {
+          "id": "trav023",
+          "ru": "Где лифт?",
+          "ru_plain": "Где лифт?",
+          "en": "Where is the elevator?"
+        },
+        {
+          "id": "trav024",
+          "ru": "В но́мере есть интерне́т?",
+          "ru_plain": "В номере есть интернет?",
+          "en": "Is there internet in the room?"
+        },
+        {
+          "id": "trav025",
+          "ru": "Во ско́лько зае́зд?",
+          "ru_plain": "Во сколько заезд?",
+          "en": "What time is check-in?"
+        },
+        {
+          "id": "trav026",
+          "ru": "Во ско́лько вы́езд?",
+          "ru_plain": "Во сколько выезд?",
+          "en": "What time is check-out?"
+        },
+        {
+          "id": "trav027",
+          "ru": "Э́то ваш ключ.",
+          "ru_plain": "Это ваш ключ.",
+          "en": "This is your key."
+        },
+        {
+          "id": "trav028",
+          "ru": "Како́й ваш но́мер?",
+          "ru_plain": "Какой ваш номер?",
+          "en": "What is your room number?"
+        }
+      ],
+      "success_criteria": [
+        "handles_airport_hotel",
+        "handles_travel_logistics",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "allowed_lesson_ids": [
+        "family_visit_001",
+        "family_visit_002",
+        "family_visit_003",
+        "family_visit_004",
+        "family_visit_005",
+        "family_visit_006",
+        "family_visit_007",
+        "family_visit_008",
+        "family_visit_009",
+        "family_visit_010",
+        "family_visit_011",
+        "family_visit_012",
+        "family_visit_013",
+        "family_visit_014",
+        "family_visit_015",
+        "family_visit_016",
+        "family_visit_017"
+      ],
+      "allowed_item_ids": [
+        "firs001",
+        "firs002",
+        "firs003",
+        "firs004",
+        "firs005",
+        "firs006",
+        "firs007",
+        "firs008",
+        "firs009",
+        "firs010",
+        "firs011",
+        "firs012",
+        "firs013",
+        "poli001",
+        "poli002",
+        "poli003",
+        "poli004",
+        "poli005",
+        "poli006",
+        "poli007",
+        "poli008",
+        "poli009",
+        "poli010",
+        "poli011",
+        "poli012",
+        "poli013",
+        "poli014",
+        "poli015",
+        "poli016",
+        "poli017",
+        "toas001",
+        "toas002",
+        "toas003",
+        "toas004",
+        "toas005",
+        "toas006",
+        "toas007",
+        "toas008",
+        "toas009",
+        "toas010",
+        "toas011",
+        "toas012",
+        "toas013",
+        "toas014",
+        "toas015",
+        "toas016",
+        "fami001",
+        "fami002",
+        "fami003",
+        "fami004",
+        "fami005",
+        "fami006",
+        "fami007",
+        "fami008",
+        "fami009",
+        "fami010",
+        "fami011",
+        "fami012",
+        "fami013",
+        "fami014",
+        "fami015",
+        "fami016",
+        "fami017",
+        "fami018",
+        "fami019",
+        "fami020",
+        "fami021",
+        "fami022",
+        "fami023",
+        "fami024",
+        "fami025",
+        "fami026",
+        "fami027",
+        "fami028",
+        "food001",
+        "food002",
+        "food003",
+        "food004",
+        "food005",
+        "food006",
+        "food007",
+        "food008",
+        "food009",
+        "food010",
+        "food011",
+        "food012",
+        "food013",
+        "food014",
+        "food015",
+        "food016",
+        "smal001",
+        "smal002",
+        "smal003",
+        "smal004",
+        "smal005",
+        "smal006",
+        "smal007",
+        "smal008",
+        "smal009",
+        "list001",
+        "list002",
+        "list003",
+        "list004",
+        "list005",
+        "list006",
+        "list007",
+        "list008",
+        "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018",
+        "cale001",
+        "cale002",
+        "cale003",
+        "cale004",
+        "cale005",
+        "cale006",
+        "cale007",
+        "cale008",
+        "cale009",
+        "cale010",
+        "cale011",
+        "cale012",
+        "cale013",
+        "cale014",
+        "cale015",
+        "cale016",
+        "cale017",
+        "cale018",
+        "cale019",
+        "numb001",
+        "numb002",
+        "numb003",
+        "numb004",
+        "numb005",
+        "numb006",
+        "numb007",
+        "numb008",
+        "numb009",
+        "numb010",
+        "numb011",
+        "numb012",
+        "numb013",
+        "numb014",
+        "numb015",
+        "numb016",
+        "numb017",
+        "numb018",
+        "numb019",
+        "numb020",
+        "numb021",
+        "numb022",
+        "numb023",
+        "numb024",
+        "numb025",
+        "numb026",
+        "numb027",
+        "numb028",
+        "adve001",
+        "adve002",
+        "adve003",
+        "adve004",
+        "adve005",
+        "adve006",
+        "adve007",
+        "adve008",
+        "adve009",
+        "adve010",
+        "adve011",
+        "adve012",
+        "adve013",
+        "adve014",
+        "dail001",
+        "dail002",
+        "dail003",
+        "dail004",
+        "dail005",
+        "dail006",
+        "dail007",
+        "dail008",
+        "dail009",
+        "dail010",
+        "dail011",
+        "dail012",
+        "dail013",
+        "dail014",
+        "dail015",
+        "dail016",
+        "dail017",
+        "dail018",
+        "dail019",
+        "dail020",
+        "dail021",
+        "dail022",
+        "dail023",
+        "dail024",
+        "dail025",
+        "dail026",
+        "dail027",
+        "dail028",
+        "dail029",
+        "leis001",
+        "leis002",
+        "leis003",
+        "leis004",
+        "leis005",
+        "leis006",
+        "leis007",
+        "leis008",
+        "leis009",
+        "leis010",
+        "leis011",
+        "leis012",
+        "leis013",
+        "leis014",
+        "leis015",
+        "leis016",
+        "leis017",
+        "leis018",
+        "leis019",
+        "leis020",
+        "leis021",
         "work001",
         "work002",
         "work003",
@@ -93734,6 +101265,7 @@ window.CONTENT_DATA = {
         "бабушка",
         "багаж",
         "благодарения",
+        "боевики",
         "бокал",
         "большое",
         "большой",
@@ -93781,6 +101313,7 @@ window.CONTENT_DATA = {
         "готовить",
         "готовлю",
         "готовы",
+        "гуляли",
         "гулять",
         "да",
         "да, мы готовы.",
@@ -93847,6 +101380,9 @@ window.CONTENT_DATA = {
         "звонил",
         "звоню",
         "здесь",
+        "здесь мы играем в футбол.",
+        "здесь мы отдыхаем.",
+        "здесь я слушаю и смотрю фильм.",
         "здоровы",
         "здоровье",
         "здравствуйте",
@@ -93855,6 +101391,8 @@ window.CONTENT_DATA = {
         "зовут",
         "зять",
         "и",
+        "играем",
+        "играть",
         "играю",
         "идёт",
         "идёт дождь.",
@@ -93865,6 +101403,8 @@ window.CONTENT_DATA = {
         "интернет",
         "кадрия",
         "кадрия будет гулять и отдыхать.",
+        "кадрия любит рисовать.",
+        "кадрия любит смотреть фильмы о любви.",
         "кадрия работает вместе со мной.",
         "как",
         "как по-русски …?",
@@ -93874,8 +101414,11 @@ window.CONTENT_DATA = {
         "клиентом",
         "ключ",
         "ключ, пожалуйста.",
+        "когда",
+        "когда я не работаю, я смотрю телевизор.",
         "компания",
         "компьютере",
+        "котами",
         "кофе",
         "красивое",
         "красивый",
@@ -93884,6 +101427,8 @@ window.CONTENT_DATA = {
         "ли",
         "лифт",
         "лыжах",
+        "любви",
+        "любит",
         "люблю",
         "любовь",
         "людям",
@@ -93910,15 +101455,19 @@ window.CONTENT_DATA = {
         "море очень красивое.",
         "моря",
         "муж",
+        "музыку",
         "мы",
         "мы будем в будве.",
         "мы будем в орегоне пять дней.",
         "мы будем в черногории.",
+        "мы гуляли в парке.",
         "мы довольны результатом.",
         "мы едем в будву.",
         "мы едим и смотрим телевизор.",
         "мы здесь с семьёй.",
+        "мы играем с нашими котами.",
         "мы отдыхаем.",
+        "мы отдыхали и слушали музыку.",
         "мы отпраздновали рождество у моих родителей дома.",
         "мы познакомились …",
         "мы работаем вместе.",
@@ -93932,6 +101481,7 @@ window.CONTENT_DATA = {
         "надо",
         "наелся",
         "начинаю",
+        "нашими",
         "не",
         "немного",
         "нет",
@@ -93942,6 +101492,7 @@ window.CONTENT_DATA = {
         "нравится",
         "нужно",
         "нужно работать ещё два часа.",
+        "о",
         "обедаю",
         "облачно",
         "обычно",
@@ -93954,6 +101505,7 @@ window.CONTENT_DATA = {
         "орегон",
         "орегоне",
         "отдыхаем",
+        "отдыхали",
         "отдыхать",
         "отдыхаю",
         "отлично",
@@ -93963,9 +101515,12 @@ window.CONTENT_DATA = {
         "очень вкусно!",
         "очень приятно",
         "папа",
+        "парке",
         "паспорт",
         "передайте",
         "передайте, пожалуйста, хлеб",
+        "пианино",
+        "пишу",
         "плохая",
         "по",
         "повторите",
@@ -94017,6 +101572,7 @@ window.CONTENT_DATA = {
         "рано",
         "результатом",
         "решать",
+        "рисовать",
         "родителей",
         "родители",
         "рождество",
@@ -94047,8 +101603,12 @@ window.CONTENT_DATA = {
         "скоро",
         "скоро рождество.",
         "слишком",
+        "слушали",
+        "слушаю",
         "смогу",
+        "смотреть",
         "смотрим",
+        "смотрю",
         "снег",
         "со",
         "солнечная",
@@ -94072,6 +101632,7 @@ window.CONTENT_DATA = {
         "счёт, пожалуйста.",
         "сын",
         "такси",
+        "танцевать",
         "телевизор",
         "тепло",
         "тесть",
@@ -94094,6 +101655,9 @@ window.CONTENT_DATA = {
         "утром",
         "утром я часто играю на гитаре.",
         "учу",
+        "фильм",
+        "фильмы",
+        "футбол",
         "хлеб",
         "хожу",
         "хозяев",
@@ -94135,21 +101699,27 @@ window.CONTENT_DATA = {
         "я живу в америке",
         "я живу в доме пять лет.",
         "я звонил клиентам.",
+        "я играю на гитаре и на пианино.",
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
+        "я люблю играть на гитаре.",
         "я люблю рано вставать.",
+        "я люблю смотреть боевики.",
         "я наелся",
         "я начинаю работать в десять утра.",
         "я не знаю, смогу ли я взять отпуск.",
         "я не понимаю",
         "я немного говорю по-русски",
+        "я немного люблю танцевать.",
         "я обедаю днём.",
         "я очень занят.",
+        "я пишу музыку.",
         "я понимаю",
         "я работал на компьютере.",
         "я работаю в суде.",
         "я работаю утром и вечером.",
+        "я слушаю музыку.",
         "я счастлив работать на себя.",
         "я ужинаю вечером.",
         "я хочу зарегистрироваться.",
@@ -94221,6 +101791,7 @@ window.CONTENT_DATA = {
         "дней",
         "до",
         "добра",
+        "дом",
         "дома",
         "доме",
         "души",
@@ -94236,6 +101807,8 @@ window.CONTENT_DATA = {
         "занят",
         "защитник",
         "зеленее",
+        "и",
+        "игры",
         "или",
         "июль",
         "июнь",
@@ -94263,8 +101836,10 @@ window.CONTENT_DATA = {
         "камень",
         "камень с души упал.",
         "каникулы",
+        "картины",
         "кем",
         "кем вы работаете?",
+        "кинотеатр",
         "клевета",
         "клиент",
         "клиента",
@@ -94287,6 +101862,8 @@ window.CONTENT_DATA = {
         "мирное",
         "мирное соглашение",
         "много",
+        "можно",
+        "музей",
         "мы",
         "мы потратили семь или восемь часов.",
         "на",
@@ -94341,6 +101918,7 @@ window.CONTENT_DATA = {
         "работаете",
         "работал",
         "раз",
+        "разные",
         "ребёнок",
         "родится",
         "рождению",
@@ -94367,10 +101945,14 @@ window.CONTENT_DATA = {
         "сколько стоит?",
         "сколько стоят?",
         "сколько часов ты работал?",
+        "скульптуры",
         "слушание",
+        "смотрю",
         "соглашение",
         "соседа",
         "спина",
+        "спортивные",
+        "стадион",
         "стоит",
         "стоят",
         "страховка",
@@ -94379,6 +101961,8 @@ window.CONTENT_DATA = {
         "судебное дело",
         "судья",
         "там",
+        "там можно увидеть разные спортивные игры.",
+        "там я смотрю картины и скульптуры.",
         "тому",
         "трава",
         "травма",
@@ -94393,6 +101977,7 @@ window.CONTENT_DATA = {
         "у вас много дел?",
         "у вас много клиентов?",
         "у соседа трава зеленее.",
+        "увидеть",
         "уже",
         "ужинаете",
         "улице",
@@ -94420,7 +102005,12 @@ window.CONTENT_DATA = {
         "чувствует",
         "это",
         "это ваш ключ.",
+        "это дом.",
+        "это кинотеатр.",
+        "это музей.",
+        "это стадион.",
         "этой",
+        "я",
         "январь"
       ],
       "structures": [
@@ -94429,6 +102019,7 @@ window.CONTENT_DATA = {
         "grammar:adjective_agreement",
         "grammar:formal_question",
         "grammar:future_plan",
+        "grammar:igrat_v_na",
         "grammar:number_noun_agreement",
         "grammar:past_masculine_work",
         "grammar:prepositional_place",
@@ -94438,12 +102029,14 @@ window.CONTENT_DATA = {
         "lexical:adverbs",
         "lexical:day_parts",
         "lexical:days_of_week",
+        "lexical:hobbies",
         "lexical:holiday_vocab",
         "lexical:idioms",
         "lexical:kinship_terms",
         "lexical:legal_vocab",
         "lexical:months",
         "lexical:numbers",
+        "lexical:places",
         "lexical:proverbs",
         "lexical:travel_vocab",
         "lexical:work_vocab",
@@ -94459,6 +102052,7 @@ window.CONTENT_DATA = {
         "phrase:holiday_plan",
         "phrase:host_question",
         "phrase:introduction",
+        "phrase:leisure_answer",
         "phrase:pace_repair",
         "phrase:personal_origin",
         "phrase:place_description",
@@ -94492,7 +102086,7 @@ window.CONTENT_DATA = {
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Airport and hotel arrival — Handle airport check-in, luggage, hotel reservation, room, key, elevator, and checkout basics.\nCurriculum boundary: Lesson 16 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- аэропорт — airport\n- багаж — luggage\n- Вот мой паспорт. — Here is my passport.\n- Я хочу зарегистрироваться. — I want to check in / register.\n- Я хочу сдать багаж. — I want to check my luggage.\n- Где выдача багажа? — Where is baggage claim?\n- У меня есть бронирование. — I have a reservation.\n- Ключ, пожалуйста. — Key, please.\n- Где лифт? — Where is the elevator?\n- В номере есть интернет? — Is there internet in the room?\n- Во сколько заезд? — What time is check-in?\n- Во сколько выезд? — What time is check-out?\n- Это ваш ключ. — This is your key.\n- Какой ваш номер? — What is your room number?\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Airport and hotel arrival — Handle airport check-in, luggage, hotel reservation, room, key, elevator, and checkout basics.\nCurriculum boundary: Lesson 17 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- аэропорт — airport\n- багаж — luggage\n- Вот мой паспорт. — Here is my passport.\n- Я хочу зарегистрироваться. — I want to check in / register.\n- Я хочу сдать багаж. — I want to check my luggage.\n- Где выдача багажа? — Where is baggage claim?\n- У меня есть бронирование. — I have a reservation.\n- Ключ, пожалуйста. — Key, please.\n- Где лифт? — Where is the elevator?\n- В номере есть интернет? — Is there internet in the room?\n- Во сколько заезд? — What time is check-in?\n- Во сколько выезд? — What time is check-out?\n- Это ваш ключ. — This is your key.\n- Какой ваш номер? — What is your room number?\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     }
   ],
   "contrast_cards": [
@@ -94867,8 +102461,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb001_ya",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "хочу́",
       "ru_plain": "хочу",
       "en": "я + хоте́ть: I want",
@@ -94912,8 +102506,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb001_ty",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "хо́чешь",
       "ru_plain": "хочешь",
       "en": "ты + хоте́ть: you want",
@@ -94957,8 +102551,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb001_on_ona",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "хо́чет",
       "ru_plain": "хочет",
       "en": "он/она + хоте́ть: he/she wants",
@@ -95002,8 +102596,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb001_my",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "хоти́м",
       "ru_plain": "хотим",
       "en": "мы + хоте́ть: we want",
@@ -95047,8 +102641,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb001_vy",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "хоти́те",
       "ru_plain": "хотите",
       "en": "вы + хоте́ть: you want",
@@ -95092,8 +102686,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb001_oni",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "хотя́т",
       "ru_plain": "хотят",
       "en": "они + хоте́ть: they want",
@@ -95137,8 +102731,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb002_ya",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "могу́",
       "ru_plain": "могу",
       "en": "я + мочь: I can",
@@ -95182,8 +102776,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb002_ty",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "мо́жешь",
       "ru_plain": "можешь",
       "en": "ты + мочь: you can",
@@ -95227,8 +102821,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb002_on_ona",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "мо́жет",
       "ru_plain": "может",
       "en": "он/она + мочь: he/she can",
@@ -95272,8 +102866,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb002_my",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "мо́жем",
       "ru_plain": "можем",
       "en": "мы + мочь: we can",
@@ -95317,8 +102911,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb002_vy",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "мо́жете",
       "ru_plain": "можете",
       "en": "вы + мочь: you can",
@@ -95362,8 +102956,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb002_oni",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "мо́гут",
       "ru_plain": "могут",
       "en": "они + мочь: they can",
@@ -95407,8 +103001,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb003_ya",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "говорю́",
       "ru_plain": "говорю",
       "en": "я + говори́ть: I speak",
@@ -95452,8 +103046,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb003_ty",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "говори́шь",
       "ru_plain": "говоришь",
       "en": "ты + говори́ть: you speak",
@@ -95497,8 +103091,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb003_on_ona",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "говори́т",
       "ru_plain": "говорит",
       "en": "он/она + говори́ть: he/she speaks",
@@ -95542,8 +103136,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb003_my",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "говори́м",
       "ru_plain": "говорим",
       "en": "мы + говори́ть: we speak",
@@ -95587,8 +103181,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb003_vy",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "говори́те",
       "ru_plain": "говорите",
       "en": "вы + говори́ть: you speak",
@@ -95632,8 +103226,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb003_oni",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "говоря́т",
       "ru_plain": "говорят",
       "en": "они + говори́ть: they speak",
@@ -95677,8 +103271,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb004_ya",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "понима́ю",
       "ru_plain": "понимаю",
       "en": "я + понима́ть: I understand",
@@ -95722,8 +103316,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb004_ty",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "понима́ешь",
       "ru_plain": "понимаешь",
       "en": "ты + понима́ть: you understand",
@@ -95767,8 +103361,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb004_on_ona",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "понима́ет",
       "ru_plain": "понимает",
       "en": "он/она + понима́ть: he/she understands",
@@ -95812,8 +103406,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb004_my",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "понима́ем",
       "ru_plain": "понимаем",
       "en": "мы + понима́ть: we understand",
@@ -95857,8 +103451,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb004_vy",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "понима́ете",
       "ru_plain": "понимаете",
       "en": "вы + понима́ть: you understand",
@@ -95902,8 +103496,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb004_oni",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "понима́ют",
       "ru_plain": "понимают",
       "en": "они + понима́ть: they understand",
@@ -95947,8 +103541,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb005_ya",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "люблю́",
       "ru_plain": "люблю",
       "en": "я + люби́ть: I love",
@@ -95992,8 +103586,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb005_ty",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "лю́бишь",
       "ru_plain": "любишь",
       "en": "ты + люби́ть: you love",
@@ -96037,8 +103631,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb005_on_ona",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "лю́бит",
       "ru_plain": "любит",
       "en": "он/она + люби́ть: he/she loves",
@@ -96082,8 +103676,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb005_my",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "лю́бим",
       "ru_plain": "любим",
       "en": "мы + люби́ть: we love",
@@ -96127,8 +103721,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb005_vy",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "лю́бите",
       "ru_plain": "любите",
       "en": "вы + люби́ть: you love",
@@ -96172,8 +103766,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb005_oni",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "лю́бят",
       "ru_plain": "любят",
       "en": "они + люби́ть: they love",
@@ -96217,8 +103811,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb006_ya",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "рабо́таю",
       "ru_plain": "работаю",
       "en": "я + рабо́тать: I work",
@@ -96262,8 +103856,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb006_ty",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "рабо́таешь",
       "ru_plain": "работаешь",
       "en": "ты + рабо́тать: you work",
@@ -96307,8 +103901,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb006_on_ona",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "рабо́тает",
       "ru_plain": "работает",
       "en": "он/она + рабо́тать: he/she works",
@@ -96352,8 +103946,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb006_my",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "рабо́таем",
       "ru_plain": "работаем",
       "en": "мы + рабо́тать: we work",
@@ -96397,8 +103991,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb006_vy",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "рабо́таете",
       "ru_plain": "работаете",
       "en": "вы + рабо́тать: you work",
@@ -96442,8 +104036,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb006_oni",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "рабо́тают",
       "ru_plain": "работают",
       "en": "они + рабо́тать: they work",
@@ -96487,8 +104081,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb007_ya",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "живу́",
       "ru_plain": "живу",
       "en": "я + жить: I live",
@@ -96532,8 +104126,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb007_ty",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "живёшь",
       "ru_plain": "живёшь",
       "en": "ты + жить: you live",
@@ -96576,8 +104170,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb007_on_ona",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "живёт",
       "ru_plain": "живёт",
       "en": "он/она + жить: he/she lives",
@@ -96620,8 +104214,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb007_my",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "живём",
       "ru_plain": "живём",
       "en": "мы + жить: we live",
@@ -96664,8 +104258,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb007_vy",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "живёте",
       "ru_plain": "живёте",
       "en": "вы + жить: you live",
@@ -96708,8 +104302,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb007_oni",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "живу́т",
       "ru_plain": "живут",
       "en": "они + жить: they live",
@@ -96753,8 +104347,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb008_ya",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "ем",
       "ru_plain": "ем",
       "en": "я + есть: I eat",
@@ -96797,8 +104391,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb008_ty",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "ешь",
       "ru_plain": "ешь",
       "en": "ты + есть: you eat",
@@ -96841,8 +104435,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb008_on_ona",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "ест",
       "ru_plain": "ест",
       "en": "он/она + есть: he/she eats",
@@ -96885,8 +104479,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb008_my",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "еди́м",
       "ru_plain": "едим",
       "en": "мы + есть: we eat",
@@ -96930,8 +104524,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb008_vy",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "еди́те",
       "ru_plain": "едите",
       "en": "вы + есть: you eat",
@@ -96975,8 +104569,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb008_oni",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "едя́т",
       "ru_plain": "едят",
       "en": "они + есть: they eat",
@@ -97020,8 +104614,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb009_ya",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "пью",
       "ru_plain": "пью",
       "en": "я + пить: I drink",
@@ -97064,8 +104658,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb009_ty",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "пьёшь",
       "ru_plain": "пьёшь",
       "en": "ты + пить: you drink",
@@ -97108,8 +104702,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb009_on_ona",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "пьёт",
       "ru_plain": "пьёт",
       "en": "он/она + пить: he/she drinks",
@@ -97152,8 +104746,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb009_my",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "пьём",
       "ru_plain": "пьём",
       "en": "мы + пить: we drink",
@@ -97196,8 +104790,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb009_vy",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "пьёте",
       "ru_plain": "пьёте",
       "en": "вы + пить: you drink",
@@ -97240,8 +104834,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb009_oni",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "пьют",
       "ru_plain": "пьют",
       "en": "они + пить: they drink",
@@ -97284,8 +104878,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb010_ya",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "зна́ю",
       "ru_plain": "знаю",
       "en": "я + знать: I know",
@@ -97329,8 +104923,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb010_ty",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "зна́ешь",
       "ru_plain": "знаешь",
       "en": "ты + знать: you know",
@@ -97374,8 +104968,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb010_on_ona",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "зна́ет",
       "ru_plain": "знает",
       "en": "он/она + знать: he/she knows",
@@ -97419,8 +105013,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb010_my",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "зна́ем",
       "ru_plain": "знаем",
       "en": "мы + знать: we know",
@@ -97464,8 +105058,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb010_vy",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "зна́ете",
       "ru_plain": "знаете",
       "en": "вы + знать: you know",
@@ -97509,8 +105103,8 @@ window.CONTENT_DATA = {
       "id": "conj_verb010_oni",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17,
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18,
       "ru": "зна́ют",
       "ru_plain": "знают",
       "en": "они + знать: they know",
@@ -97809,6 +105403,10 @@ window.CONTENT_DATA = {
     },
     "tells_daily_story": {
       "label": "tells a short daily-routine story",
+      "error_type": "forgot_phrase"
+    },
+    "talks_about_leisure_places": {
+      "label": "talks about hobbies, home, and leisure places",
       "error_type": "forgot_phrase"
     },
     "uses_day_parts": {
@@ -98228,8 +105826,8 @@ window.CONTENT_DATA = {
         "answers_personalized_questions",
         "uses_formal_greeting"
       ],
-      "lesson_id": "family_visit_017",
-      "lesson_number": 17
+      "lesson_id": "family_visit_018",
+      "lesson_number": 18
     },
     {
       "id": "extended_family_family_tree",
@@ -98434,6 +106032,41 @@ window.CONTENT_DATA = {
       "lesson_number": 10
     },
     {
+      "id": "leisure_places_checkin",
+      "setting": "Hobbies, home, and leisure places",
+      "goal": "Answer dinner-safe questions about music, films, cats, parks, stadiums, museums, and what you do when not working.",
+      "required_items": [
+        "leis001",
+        "leis002",
+        "leis003",
+        "leis004",
+        "leis005",
+        "leis006",
+        "leis007",
+        "leis008",
+        "leis009",
+        "leis010",
+        "leis011",
+        "leis012",
+        "leis013",
+        "leis014",
+        "leis015",
+        "leis016",
+        "leis017",
+        "leis018",
+        "leis019",
+        "leis020",
+        "leis021"
+      ],
+      "success_criteria": [
+        "talks_about_leisure_places",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12
+    },
+    {
       "id": "budva_trip_checkin",
       "setting": "Budva family trip",
       "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
@@ -98456,8 +106089,8 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17
     },
     {
       "id": "daily_routine_checkin",
@@ -98538,8 +106171,8 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13
     },
     {
       "id": "holiday_celebration_checkin",
@@ -98563,8 +106196,8 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
-      "lesson_id": "family_visit_014",
-      "lesson_number": 14
+      "lesson_id": "family_visit_015",
+      "lesson_number": 15
     },
     {
       "id": "cultural_bonus_recognition",
@@ -98586,8 +106219,8 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
-      "lesson_id": "family_visit_015",
-      "lesson_number": 15
+      "lesson_id": "family_visit_016",
+      "lesson_number": 16
     },
     {
       "id": "budva_airport_hotel_checkin",
@@ -98615,8 +106248,8 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
-      "lesson_id": "family_visit_016",
-      "lesson_number": 16
+      "lesson_id": "family_visit_017",
+      "lesson_number": 17
     }
   ]
 };

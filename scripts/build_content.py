@@ -289,6 +289,10 @@ ROLEPLAY_CRITERIA = {
         "label": "tells a short daily-routine story",
         "error_type": "forgot_phrase",
     },
+    "talks_about_leisure_places": {
+        "label": "talks about hobbies, home, and leisure places",
+        "error_type": "forgot_phrase",
+    },
     "uses_day_parts": {
         "label": "uses morning/day/evening words",
         "error_type": "case_or_inflection",
@@ -827,6 +831,39 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "leisure_places_checkin",
+        "setting": "Hobbies, home, and leisure places",
+        "goal": "Answer dinner-safe questions about music, films, cats, parks, stadiums, museums, and what you do when not working.",
+        "required_items": [
+            "leis001",
+            "leis002",
+            "leis003",
+            "leis004",
+            "leis005",
+            "leis006",
+            "leis007",
+            "leis008",
+            "leis009",
+            "leis010",
+            "leis011",
+            "leis012",
+            "leis013",
+            "leis014",
+            "leis015",
+            "leis016",
+            "leis017",
+            "leis018",
+            "leis019",
+            "leis020",
+            "leis021",
+        ],
+        "success_criteria": [
+            "talks_about_leisure_places",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
         "id": "budva_trip_checkin",
         "setting": "Budva family trip",
         "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
@@ -1097,6 +1134,13 @@ MODULES = [
         "🕰️",
     ),
     (
+        "leisure_places",
+        "Hobbies & Places",
+        "Dinner-safe small talk from the guide: music, films, home, cats, parks, stadiums, cinema, and museums.",
+        2,
+        "🎸",
+    ),
+    (
         "work_business",
         "Work & Clients",
         "Short lawyer/work answers from the guide: clients, cases, court, and being busy.",
@@ -1203,6 +1247,12 @@ MODULE_STRUCTURES = {
         "phrase:routine_answer",
         "grammar:when_question",
         "grammar:time_expression",
+    ],
+    "leisure_places": [
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "grammar:igrat_v_na",
     ],
     "work_business": [
         "lexical:work_vocab",
@@ -2547,6 +2597,185 @@ add(
     rehearse=True,
     note="Personal family joke; rehearse with Kadriya before saying it to relatives.",
     tags=["routine", "family", "evening", "story"],
+)
+
+# --- HOBBIES & PLACES (dinner-safe personal small talk) ---
+add(
+    "leisure_places",
+    "Когда́ я не рабо́таю, я смотрю́ телеви́зор.",
+    "When I'm not working, I watch TV.",
+    "[kag-dá ya nye ra-bó-ta-yu, ya smat-ryú ti-li-ví-zar]",
+    2,
+    tags=["leisure", "tv"],
+)
+add(
+    "leisure_places",
+    "Я слу́шаю му́зыку.",
+    "I listen to music.",
+    "[ya slú-sha-yu mú-zy-ku]",
+    2,
+    tags=["leisure", "music"],
+)
+add(
+    "leisure_places",
+    "Я люблю́ игра́ть на гита́ре.",
+    "I like playing guitar.",
+    "[ya lyub-lyú ig-rát' na gi-tá-rye]",
+    2,
+    note="Use игра́ть на for musical instruments.",
+    tags=["leisure", "music", "instrument"],
+)
+add(
+    "leisure_places",
+    "Я игра́ю на гита́ре и на пиани́но.",
+    "I play guitar and piano.",
+    "[ya ig-rá-yu na gi-tá-rye i na pi-a-ní-na]",
+    2,
+    note="Instrument pattern: игра́ть на + instrument.",
+    tags=["leisure", "music", "instrument"],
+)
+add(
+    "leisure_places",
+    "Я пишу́ му́зыку.",
+    "I write music.",
+    "[ya pi-shú mú-zy-ku]",
+    2,
+    tags=["leisure", "music"],
+)
+add(
+    "leisure_places",
+    "Кадри́я лю́бит рисова́ть.",
+    "Kadriya likes to draw.",
+    "[kad-rí-ya lyú-bit ri-sa-vát']",
+    2,
+    tags=["leisure", "kadriya", "art"],
+)
+add(
+    "leisure_places",
+    "Я немно́го люблю́ танцева́ть.",
+    "I like dancing a little.",
+    "[ya nem-nó-ga lyub-lyú tan-tsi-vát']",
+    3,
+    tags=["leisure", "dance"],
+)
+add(
+    "leisure_places",
+    "Мы игра́ем с на́шими кота́ми.",
+    "We play with our cats.",
+    "[my ig-rá-yem s ná-shi-mi ka-tá-mi]",
+    2,
+    tags=["leisure", "cats", "home"],
+)
+add(
+    "leisure_places",
+    "Я люблю́ смотре́ть боевики́.",
+    "I like watching action movies.",
+    "[ya lyub-lyú smat-ryét' ba-ye-vi-kí]",
+    3,
+    tags=["leisure", "movies"],
+)
+add(
+    "leisure_places",
+    "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+    "Kadriya likes watching love movies.",
+    "[kad-rí-ya lyú-bit smat-ryét' fíl'-my a lyub-ví]",
+    3,
+    tags=["leisure", "movies", "kadriya"],
+)
+add(
+    "leisure_places",
+    "Э́то дом.",
+    "This is home / a house.",
+    "[é-ta dom]",
+    3,
+    recognize=True,
+    tags=["place", "home"],
+)
+add(
+    "leisure_places",
+    "Здесь мы отдыха́ем.",
+    "Here we relax.",
+    "[zdyes' my at-dy-há-yem]",
+    3,
+    tags=["place", "home"],
+)
+add(
+    "leisure_places",
+    "Э́то стадио́н.",
+    "This is a stadium.",
+    "[é-ta sta-di-ón]",
+    3,
+    recognize=True,
+    tags=["place", "sports"],
+)
+add(
+    "leisure_places",
+    "Здесь мы игра́ем в футбо́л.",
+    "Here we play soccer.",
+    "[zdyes' my ig-rá-yem v fut-ból]",
+    3,
+    note="Use игра́ть в for sports and games.",
+    tags=["place", "sports"],
+)
+add(
+    "leisure_places",
+    "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+    "There you can see different sports games.",
+    "[tam mózh-na u-ví-dyet' ráz-ny-ye spar-tív-ny-ye íg-ry]",
+    3,
+    recognize=True,
+    tags=["place", "sports"],
+)
+add(
+    "leisure_places",
+    "Э́то кинотеа́тр.",
+    "This is a movie theater.",
+    "[é-ta ki-na-ti-átr]",
+    3,
+    recognize=True,
+    tags=["place", "movies"],
+)
+add(
+    "leisure_places",
+    "Здесь я слу́шаю и смотрю́ фильм.",
+    "Here I listen and watch a film.",
+    "[zdyes' ya slú-sha-yu i smat-ryú fil'm]",
+    3,
+    tags=["place", "movies"],
+)
+add(
+    "leisure_places",
+    "Э́то музе́й.",
+    "This is a museum.",
+    "[é-ta mu-zyéy]",
+    3,
+    recognize=True,
+    tags=["place", "museum"],
+)
+add(
+    "leisure_places",
+    "Там я смотрю́ карти́ны и скульпту́ры.",
+    "There I look at paintings and sculptures.",
+    "[tam ya smat-ryú kar-tí-ny i skul'p-tú-ry]",
+    3,
+    recognize=True,
+    tags=["place", "museum"],
+)
+add(
+    "leisure_places",
+    "Мы гуля́ли в па́рке.",
+    "We walked in the park.",
+    "[my gu-lyá-li f pár-kye]",
+    3,
+    tags=["leisure", "park"],
+)
+add(
+    "leisure_places",
+    "Мы отдыха́ли и слу́шали му́зыку.",
+    "We rested and listened to music.",
+    "[my at-dy-há-li i slú-sha-li mú-zy-ku]",
+    3,
+    tags=["leisure", "music"],
 )
 
 # --- WORK & CLIENTS (lawyer/business small-talk lane) ---
