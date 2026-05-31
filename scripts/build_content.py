@@ -1075,6 +1075,70 @@ def build_tutor_cards(
     return cards
 
 
+def build_contrast_cards(contrast_sets: list[dict], items: list[dict]) -> list[dict]:
+    item_by_id = {item["id"]: item for item in items}
+    cards = []
+    for contrast in contrast_sets:
+        contrast_items = [
+            item_by_id[item_id]
+            for item_id in contrast.get("items", [])
+            if item_id in item_by_id
+        ]
+        if len(contrast_items) < 2:
+            continue
+        lesson_number = max(item["lesson_number"] for item in contrast_items)
+        lesson_id = next(
+            item["lesson_id"]
+            for item in contrast_items
+            if item["lesson_number"] == lesson_number
+        )
+        options = [
+            {
+                "id": item["id"],
+                "ru": item["ru"],
+                "ru_plain": item["ru_plain"],
+                "en": item["en"],
+            }
+            for item in contrast_items
+        ]
+        for target in contrast_items:
+            cards.append(
+                {
+                    "id": f"contrast_{contrast['id']}_{target['id']}",
+                    "contrast_set_id": contrast["id"],
+                    "item_id": target["id"],
+                    "lesson_id": lesson_id,
+                    "lesson_number": lesson_number,
+                    "title": contrast["title"],
+                    "risk": contrast.get("risk", "medium"),
+                    "drill_type": contrast.get("drill_type", "choose_in_context"),
+                    "prompt": target["en"],
+                    "usage_note": contrast.get("usage_note", ""),
+                    "options": options,
+                    "answer_id": target["id"],
+                    "ru": target["ru"],
+                    "ru_plain": target["ru_plain"],
+                    "en": target["en"],
+                    "structures": sorted(
+                        set().union(
+                            *(set(item["structures"]) for item in contrast_items)
+                        )
+                    ),
+                    "allowed_error_types": sorted(
+                        set().union(
+                            *(
+                                set(item["allowed_error_types"])
+                                for item in contrast_items
+                            )
+                        )
+                        | {"cultural_usage", "register", "forgot_phrase"}
+                    ),
+                    "tags": sorted(set(["contrast", contrast["id"]])),
+                }
+            )
+    return cards
+
+
 def build():
     course = load_course(os.environ.get("ZASTOLOM_COURSE", DEFAULT_COURSE_ID))
     mod_index = {m[0]: idx for idx, m in enumerate(MODULES)}
@@ -1159,6 +1223,7 @@ def build():
     dictation_cards = build_dictation_cards(items)
     backtranslation_cards = build_backtranslation_cards(items)
     tutor_cards = build_tutor_cards(scenarios, items, curriculum, course)
+    contrast_cards = build_contrast_cards(CONTRAST_SETS, items)
     data = {
         "course": course,
         "meta": {
@@ -1178,6 +1243,7 @@ def build():
         "dictation_cards": dictation_cards,
         "backtranslation_cards": backtranslation_cards,
         "tutor_cards": tutor_cards,
+        "contrast_cards": contrast_cards,
         "error_types": ERROR_TYPES,
         "contrast_sets": CONTRAST_SETS,
         "scenarios": scenarios,

@@ -288,6 +288,8 @@ body {
 .opt.correct { background: var(--ok); color: var(--paper); }
 .opt.wrong { background: var(--red-bright); color: var(--paper); }
 .opt[disabled] { cursor: default; }
+.opt__hint { display:block; margin-top: 4px; font-family: var(--font-body); font-size: .82rem; color: var(--ink-soft); }
+.opt.correct .opt__hint, .opt.wrong .opt__hint { color: rgba(243,233,210,.82); }
 .answerbox { display:flex; gap:10px; }
 .answerbox input {
   flex:1; font-family: var(--font-serif); font-size: 1.3rem; padding: 12px 14px;

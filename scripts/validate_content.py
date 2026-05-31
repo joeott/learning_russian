@@ -380,6 +380,58 @@ def validate_content(data: dict) -> list[str]:
         for item_id in contrast.get("items", []):
             if item_id not in ids:
                 fail(errors, f"contrast {contrast.get('id')}: unknown item {item_id}")
+    contrast_by_id = {
+        contrast.get("id"): contrast for contrast in data.get("contrast_sets", [])
+    }
+    for card in data.get("contrast_cards", []):
+        card_id = card.get("id", "")
+        contrast = contrast_by_id.get(card.get("contrast_set_id"))
+        source = item_by_id.get(card.get("item_id"))
+        if not contrast:
+            fail(
+                errors,
+                f"{card_id}: unknown contrast_set_id {card.get('contrast_set_id')}",
+            )
+            continue
+        if not source:
+            fail(errors, f"{card_id}: unknown source item {card.get('item_id')}")
+            continue
+        if card.get("answer_id") != source.get("id"):
+            fail(errors, f"{card_id}: answer_id must match source item")
+        if source.get("id") not in contrast.get("items", []):
+            fail(errors, f"{card_id}: source item not in contrast set")
+        option_ids = {option.get("id") for option in card.get("options", [])}
+        if option_ids != set(contrast.get("items", [])):
+            fail(errors, f"{card_id}: options must mirror contrast set items")
+        if card.get("usage_note") != contrast.get("usage_note", ""):
+            fail(errors, f"{card_id}: usage_note must come from contrast set")
+        if card.get("ru_plain") != source.get("ru_plain"):
+            fail(errors, f"{card_id}: ru_plain does not match source item")
+        expected_lesson_number = max(
+            item_by_id[item_id]["lesson_number"]
+            for item_id in contrast.get("items", [])
+            if item_id in item_by_id
+        )
+        if card.get("lesson_number") != expected_lesson_number:
+            fail(errors, f"{card_id}: lesson_number does not match contrast boundary")
+        try:
+            boundary = lesson_boundary(data, card.get("lesson_id"))
+            if source["id"] not in boundary["item_ids"]:
+                fail(errors, f"{card_id}: source item outside lesson boundary")
+            locked_structures = set(card.get("structures", [])) - boundary["structures"]
+            if locked_structures:
+                fail(
+                    errors,
+                    f"{card_id}: structures outside lesson boundary: {sorted(locked_structures)}",
+                )
+        except KeyError as exc:
+            fail(errors, f"{card_id}: {exc}")
+        for required_error in ("cultural_usage", "forgot_phrase"):
+            if required_error not in card.get("allowed_error_types", []):
+                fail(errors, f"{card_id}: missing contrast error type {required_error}")
+        for error_type in card.get("allowed_error_types", []):
+            if error_type not in error_types:
+                fail(errors, f"{card_id}: unknown allowed_error_type {error_type}")
     for item in data.get("items", []):
         for error_type in item.get("error_types", []):
             if error_type not in error_types:
