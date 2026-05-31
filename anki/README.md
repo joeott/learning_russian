@@ -1,7 +1,7 @@
 # Anki Deck — Russian for Meeting Kadriya's Family
 
-`russian_family_visit.txt` is a TAB-separated Anki import file (354 cards across
-20 modules). `russian_family_visit_contextual.txt` is a companion import with
+`russian_family_visit.txt` is a TAB-separated Anki import file (370 cards across
+21 modules). `russian_family_visit_contextual.txt` is a companion import with
 typed cloze, dictation, stress, pronunciation, back-translation, contrast, and
 scenario cards generated from the same verified phrases. Both are generated
 deterministically from `../content/content.json` by `../scripts/build_anki.py`.
@@ -80,7 +80,7 @@ To **also** drill RU → EN (recognition), change the notetype to
 - select the notes → **Notes → Change Notetype** → Basic (and reversed card).
 
 This generates a second card per note (Russian prompt → English answer). For the
-119 `recognize`-tagged items (questions relatives will fire at you), the reverse
+124 `recognize`-tagged items (questions relatives will fire at you), the reverse
 direction is exactly what you want — those are about understanding when heard.
 
 ---
@@ -92,7 +92,7 @@ The goal is **oral**, so the Russian must be spoken aloud.
 ### ★ Option 0 — Bundled native audio (recommended, already done for you)
 Every card already contains a `[sound:zastolom_<id>.mp3]` tag, and the matching
 **real ElevenLabs recordings** (voice: *Elena — native Russian*) are staged in
-[`anki/media/`](media/) (354 files). To make them play:
+[`anki/media/`](media/) (370 files). To make them play:
 
 1. Import the deck (section 2 above).
 2. Copy the audio into Anki's media folder so it finds the files:

@@ -247,6 +247,22 @@ She has a welcoming smile.	<div style="font-size:2em">У неё приве́тл
 He looks like his dad.	<div style="font-size:2em">Он похо́ж на па́пу.</div>[sound:zastolom_phys016.mp3]	[on pa-hózh na pá-pu]		physical_description p2
 She looks like her mom.	<div style="font-size:2em">Она́ похо́жа на ма́му.</div>[sound:zastolom_phys017.mp3]	[a-ná pa-hó-zha na má-mu]		physical_description p2
 He has a big long nose.	<div style="font-size:2em">У него́ большо́й дли́нный нос.</div>[sound:zastolom_phys018.mp3]	[u ni-vó bal'-shóy dlín-nyy nos]	(focus: understand when heard)	physical_description p3 recognize
+How are you feeling? (formal)	<div style="font-size:2em">Как вы себя́ чу́вствуете?</div>[sound:zastolom_heal001.mp3]	[kak vy si-byá chúv-stvu-ye-tye]	(focus: understand when heard)	health_feelings p2 recognize
+How are you feeling? (informal)	<div style="font-size:2em">Как ты себя́ чу́вствуешь?</div>[sound:zastolom_heal002.mp3]	[kak ty si-byá chúv-stvu-yesh]	(focus: understand when heard)	health_feelings p2 recognize
+I feel unwell.	<div style="font-size:2em">Я пло́хо себя́ чу́вствую.</div>[sound:zastolom_heal003.mp3]	[ya pló-ha si-byá chúv-stvu-yu]		health_feelings p2
+I don't feel very well.	<div style="font-size:2em">Я не о́чень хорошо́ себя́ чу́вствую.</div>[sound:zastolom_heal004.mp3]	[ya nye ó-chen' ha-ra-shó si-byá chúv-stvu-yu]		health_feelings p2
+Did you get sick? (to a man, informal)	<div style="font-size:2em">Ты заболе́л?</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_heal005.mp3]	[ty za-ba-lyél]	(focus: understand when heard)	health_feelings p2 recognize
+I don't know yet.	<div style="font-size:2em">Я ещё не зна́ю.</div>[sound:zastolom_heal006.mp3]	[ya ye-shchó nye zná-yu]		health_feelings p2
+I hope not.	<div style="font-size:2em">Наде́юсь, что нет.</div>[sound:zastolom_heal007.mp3]	[na-dyé-yus', shto nyet]		health_feelings p2
+What hurts?	<div style="font-size:2em">Что у тебя́ боли́т?</div>[sound:zastolom_heal008.mp3]	[shto u ti-byá ba-lít]	(focus: understand when heard)	health_feelings p2 recognize
+I have a headache.	<div style="font-size:2em">У меня́ боли́т голова́.</div>[sound:zastolom_heal009.mp3]	[u mi-nyá ba-lít ga-la-vá]	Use у меня + болит + body part for aches.	health_feelings p2
+My back hurts.	<div style="font-size:2em">У меня́ боли́т спина́.</div>[sound:zastolom_heal010.mp3]	[u mi-nyá ba-lít spi-ná]		health_feelings p2
+I often get tired.	<div style="font-size:2em">Я ча́сто устаю́.</div>[sound:zastolom_heal011.mp3]	[ya chá-sta us-ta-yú]		health_feelings p2
+I want to sleep.	<div style="font-size:2em">Я хочу́ спать.</div>[sound:zastolom_heal012.mp3]	[ya ha-chú spat']		health_feelings p2
+I hope not to get sick.	<div style="font-size:2em">Я наде́юсь не заболе́ть.</div>[sound:zastolom_heal013.mp3]	[ya na-dyé-yus' nye za-ba-lyét']		health_feelings p3
+I'm not sick.	<div style="font-size:2em">Я не боле́ю.</div>[sound:zastolom_heal014.mp3]	[ya nye ba-lyé-yu]		health_feelings p2
+I'm sick.	<div style="font-size:2em">Я боле́ю.</div>[sound:zastolom_heal015.mp3]	[ya ba-lyé-yu]		health_feelings p3
+I root for the Cardinals.	<div style="font-size:2em">Я боле́ю за Кардина́лов.</div>[sound:zastolom_heal016.mp3]	[ya ba-lyé-yu za kar-di-ná-lav]	Same verb as 'be sick', but боле́ть за + team means to root for a team. (focus: understand when heard)	health_feelings p3 recognize
 I can dance.	<div style="font-size:2em">Я могу́ танцева́ть.</div>[sound:zastolom_moda001.mp3]	[ya ma-gú tan-tsi-vát']	мочь = can / have the possibility.	modal_ability p3
 I don't know how to dance salsa.	<div style="font-size:2em">Я не уме́ю танцева́ть са́льсу.</div>[sound:zastolom_moda002.mp3]	[ya nye u-myé-yu tan-tsi-vát' sál'-su]	уме́ть = know how / have the skill.	modal_ability p3
 I know how to dance salsa.	<div style="font-size:2em">Я зна́ю, как танцева́ть са́льсу.</div>[sound:zastolom_moda003.mp3]	[ya zná-yu kak tan-tsi-vát' sál'-su]	(focus: understand when heard)	modal_ability p3 recognize

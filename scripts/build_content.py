@@ -297,6 +297,10 @@ ROLEPLAY_CRITERIA = {
         "label": "describes people with simple appearance phrases",
         "error_type": "case_or_inflection",
     },
+    "handles_health_checkin": {
+        "label": "handles basic health and tiredness check-ins",
+        "error_type": "case_or_inflection",
+    },
     "uses_modal_survival": {
         "label": "uses can, know-how, want, need, and permission patterns",
         "error_type": "case_or_inflection",
@@ -930,6 +934,34 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "health_feelings_checkin",
+        "setting": "Health, tiredness, and feeling unwell",
+        "goal": "Recognize basic health prompts and answer briefly when Joe feels tired, has a headache, or hopes not to get sick.",
+        "required_items": [
+            "heal001",
+            "heal002",
+            "heal003",
+            "heal004",
+            "heal005",
+            "heal006",
+            "heal007",
+            "heal008",
+            "heal009",
+            "heal010",
+            "heal011",
+            "heal012",
+            "heal013",
+            "heal014",
+            "heal015",
+            "heal016",
+        ],
+        "success_criteria": [
+            "handles_health_checkin",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
         "id": "budva_trip_checkin",
         "setting": "Budva family trip",
         "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
@@ -1214,6 +1246,13 @@ MODULES = [
         "👤",
     ),
     (
+        "health_feelings",
+        "Health & Feelings",
+        "Original-guide health check-ins: feeling unwell, headache, tiredness, sleep, hope, and болеть.",
+        2,
+        "🩺",
+    ),
+    (
         "modal_ability",
         "Can, Want & Need",
         "Original-guide modal survival: can, know how, want, need, allowed, not allowed, and should.",
@@ -1339,6 +1378,12 @@ MODULE_STRUCTURES = {
         "phrase:appearance_question",
         "grammar:adjective_agreement",
         "phrase:family_resemblance",
+    ],
+    "health_feelings": [
+        "lexical:health_vocab",
+        "phrase:health_question",
+        "grammar:u_menya_bolit",
+        "phrase:tiredness_answer",
     ],
     "modal_ability": [
         "grammar:modal_verbs",
@@ -3017,6 +3062,144 @@ add(
     3,
     recognize=True,
     tags=["appearance", "face", "listening"],
+)
+
+# --- HEALTH & FEELINGS (Joe feeling unwell, tired, or hoping not to get sick) ---
+add(
+    "health_feelings",
+    "Как вы себя́ чу́вствуете?",
+    "How are you feeling? (formal)",
+    "[kak vy si-byá chúv-stvu-ye-tye]",
+    2,
+    recognize=True,
+    tags=["health", "question", "formal", "listening"],
+)
+add(
+    "health_feelings",
+    "Как ты себя́ чу́вствуешь?",
+    "How are you feeling? (informal)",
+    "[kak ty si-byá chúv-stvu-yesh]",
+    2,
+    recognize=True,
+    tags=["health", "question", "informal", "listening"],
+)
+add(
+    "health_feelings",
+    "Я пло́хо себя́ чу́вствую.",
+    "I feel unwell.",
+    "[ya pló-ha si-byá chúv-stvu-yu]",
+    2,
+    tags=["health", "feeling"],
+)
+add(
+    "health_feelings",
+    "Я не о́чень хорошо́ себя́ чу́вствую.",
+    "I don't feel very well.",
+    "[ya nye ó-chen' ha-ra-shó si-byá chúv-stvu-yu]",
+    2,
+    tags=["health", "feeling"],
+)
+add(
+    "health_feelings",
+    "Ты заболе́л?",
+    "Did you get sick? (to a man, informal)",
+    "[ty za-ba-lyél]",
+    2,
+    recognize=True,
+    gender="m",
+    tags=["health", "question", "listening"],
+)
+add(
+    "health_feelings",
+    "Я ещё не зна́ю.",
+    "I don't know yet.",
+    "[ya ye-shchó nye zná-yu]",
+    2,
+    tags=["health", "answer"],
+)
+add(
+    "health_feelings",
+    "Наде́юсь, что нет.",
+    "I hope not.",
+    "[na-dyé-yus', shto nyet]",
+    2,
+    tags=["health", "hope"],
+)
+add(
+    "health_feelings",
+    "Что у тебя́ боли́т?",
+    "What hurts?",
+    "[shto u ti-byá ba-lít]",
+    2,
+    recognize=True,
+    tags=["health", "question", "listening"],
+)
+add(
+    "health_feelings",
+    "У меня́ боли́т голова́.",
+    "I have a headache.",
+    "[u mi-nyá ba-lít ga-la-vá]",
+    2,
+    note="Use у меня + болит + body part for aches.",
+    tags=["health", "pain", "head"],
+)
+add(
+    "health_feelings",
+    "У меня́ боли́т спина́.",
+    "My back hurts.",
+    "[u mi-nyá ba-lít spi-ná]",
+    2,
+    tags=["health", "pain", "back"],
+)
+add(
+    "health_feelings",
+    "Я ча́сто устаю́.",
+    "I often get tired.",
+    "[ya chá-sta us-ta-yú]",
+    2,
+    tags=["health", "tired"],
+)
+add(
+    "health_feelings",
+    "Я хочу́ спать.",
+    "I want to sleep.",
+    "[ya ha-chú spat']",
+    2,
+    tags=["health", "sleep"],
+)
+add(
+    "health_feelings",
+    "Я наде́юсь не заболе́ть.",
+    "I hope not to get sick.",
+    "[ya na-dyé-yus' nye za-ba-lyét']",
+    3,
+    tags=["health", "hope"],
+)
+add(
+    "health_feelings",
+    "Я не боле́ю.",
+    "I'm not sick.",
+    "[ya nye ba-lyé-yu]",
+    2,
+    tags=["health", "sick"],
+)
+add(
+    "health_feelings",
+    "Я боле́ю.",
+    "I'm sick.",
+    "[ya ba-lyé-yu]",
+    3,
+    tags=["health", "sick"],
+)
+add(
+    "health_feelings",
+    "Я боле́ю за Кардина́лов.",
+    "I root for the Cardinals.",
+    "[ya ba-lyé-yu za kar-di-ná-lav]",
+    3,
+    recognize=True,
+    note="Same verb as 'be sick', but боле́ть за + team means to root for a team.",
+    tags=["health", "sports", "contrast", "listening"],
 )
 
 # --- CAN, WANT & NEED (modal survival patterns) ---
