@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "browser": "node scripts/browser_controller.mjs",
-    "check:js": "node --check web/app.js && node --check web/service-worker.js && node --check scripts/browser_controller.mjs"
+    "check:js": "node --check web/app.js && node --check web/service-worker.js && node --check scripts/browser_controller.mjs && node --check scripts/browser_flow_check.mjs"
   },
   "repository": {
     "type": "git",

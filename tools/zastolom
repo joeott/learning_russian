@@ -17,6 +17,7 @@ COMMANDS
   audio coverage        Report which phrases have audio
   serve                 Serve the repo over HTTP and print the app URL
   browser               Inspect the local web app with the JS browser controller
+  flow                  Run browser-verified learner flow assertions
   verify                Run all health checks (JSON, JS syntax, audio coverage)
   test                  Run stdlib validation/unit tests
   loop-prompt           Print the local iterative improvement-loop prompt
@@ -31,6 +32,7 @@ EXAMPLES
   tools/zastolom serve --port 8000
   tools/zastolom browser http://localhost:8000/web/#/quiz --mobile
   tools/zastolom browser http://localhost:8000/web/#/quiz/roleplay --mobile --click-text "Reveal model answer" --click-text "Close with model"
+  tools/zastolom flow http://localhost:8000/web/
   tools/zastolom verify
 
 ELEVENLABS KEY RESOLUTION (first hit wins)
@@ -261,6 +263,23 @@ def cmd_browser(args):
         print(err("browser controller failed"))
         sys.exit(r.returncode)
 
+def cmd_flow(args):
+    if not which("node"):
+        print(err("node not found — cannot run JS browser flow check"))
+        sys.exit(2)
+    script = os.path.join(ROOT, "scripts", "browser_flow_check.mjs")
+    command = ["node", script]
+    if args.url:
+        command.append(args.url)
+    if args.out:
+        command += ["--out", args.out]
+    print(head("flow"), flush=True)
+    print("  → " + " ".join(command), flush=True)
+    r = subprocess.run(command, cwd=ROOT)
+    if r.returncode != 0:
+        print(err("browser flow check failed"))
+        sys.exit(r.returncode)
+
 def cmd_verify(args):
     fails = 0
     print(head("verify"))
@@ -280,7 +299,7 @@ def cmd_verify(args):
         fails += 1; print(err("web/content.js missing — run `zastolom build content`"))
     # 3 JS syntax (node if available)
     if which("node"):
-        for f in ("web/app.js", "web/service-worker.js"):
+        for f in ("web/app.js", "web/service-worker.js", "scripts/browser_controller.mjs", "scripts/browser_flow_check.mjs"):
             r = subprocess.run(["node", "--check", os.path.join(ROOT, f)], capture_output=True)
             if r.returncode == 0:
                 print(ok(f"{f} syntax OK"))
@@ -367,6 +386,9 @@ def main():
     br.add_argument("--click-text", action="append")
     br.add_argument("--out")
     br.add_argument("--wait-ms", type=int)
+    fl = sub.add_parser("flow")
+    fl.add_argument("url", nargs="?", default="http://localhost:8000/web/")
+    fl.add_argument("--out")
     sub.add_parser("verify"); sub.add_parser("test"); sub.add_parser("loop-prompt"); sub.add_parser("stats")
     sub.add_parser("help")
 
@@ -379,6 +401,7 @@ def main():
          "coverage": cmd_audio_coverage}.get(args.acmd, lambda a: print(__doc__))(args)
     elif args.cmd == "serve": cmd_serve(args)
     elif args.cmd == "browser": cmd_browser(args)
+    elif args.cmd == "flow": cmd_flow(args)
     elif args.cmd == "verify": cmd_verify(args)
     elif args.cmd == "test": cmd_test(args)
     elif args.cmd == "loop-prompt": cmd_loop_prompt(args)
