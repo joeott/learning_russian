@@ -47,6 +47,7 @@ def main():
         "calendar_weather",
         "daily_routine",
         "work_business",
+        "celebrations",
         "travel_budva",
         "verbs",
     ]

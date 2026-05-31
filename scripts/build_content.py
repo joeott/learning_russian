@@ -285,6 +285,14 @@ ROLEPLAY_CRITERIA = {
         "label": "keeps legal work details brief",
         "error_type": "forgot_phrase",
     },
+    "answers_holiday_plans": {
+        "label": "answers holiday and celebration prompts",
+        "error_type": "forgot_phrase",
+    },
+    "keeps_celebration_story_short": {
+        "label": "keeps celebration story short",
+        "error_type": "forgot_phrase",
+    },
 }
 
 CONTRAST_SETS = [
@@ -768,6 +776,29 @@ SCENARIOS = [
             "uses_repair_lines",
         ],
     },
+    {
+        "id": "holiday_celebration_checkin",
+        "setting": "Holiday and family celebration small talk",
+        "goal": "Answer Christmas/Thanksgiving/family-plan prompts from the original guide in short Russian.",
+        "required_items": [
+            "cele001",
+            "cele004",
+            "cele005",
+            "cele006",
+            "cele007",
+            "cele010",
+            "cele011",
+            "cele012",
+            "cele013",
+            "cele014",
+        ],
+        "success_criteria": [
+            "answers_holiday_plans",
+            "keeps_celebration_story_short",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
 ]
 
 
@@ -861,6 +892,13 @@ MODULES = [
         "💼",
     ),
     (
+        "celebrations",
+        "Holidays & Plans",
+        "Original-guide Christmas, Thanksgiving, and family-plan small talk.",
+        3,
+        "🎄",
+    ),
+    (
         "travel_budva",
         "Budva Trip",
         "Montenegro travel phrases for airport, hotel, beach, and old-town plans.",
@@ -932,6 +970,12 @@ MODULE_STRUCTURES = {
         "phrase:work_identity",
         "phrase:client_case_answer",
         "grammar:past_masculine_work",
+    ],
+    "celebrations": [
+        "lexical:holiday_vocab",
+        "phrase:holiday_plan",
+        "phrase:family_celebration",
+        "grammar:future_plan",
     ],
     "travel_budva": [
         "lexical:travel_vocab",
@@ -1785,6 +1829,125 @@ add(
     3,
     gender="m",
     tags=["work", "business"],
+)
+
+# --- HOLIDAYS & PLANS (original-guide celebration lane) ---
+add(
+    "celebrations",
+    "Скоро́ Рождество́.",
+    "Christmas is soon.",
+    "[ska-ró razh-di-stvó]",
+    3,
+    tags=["holiday", "christmas"],
+)
+add(
+    "celebrations",
+    "Како́й сего́дня пра́здник?",
+    "What holiday is today?",
+    "[ka-kóy si-vód-nya prázd-nik]",
+    3,
+    recognize=True,
+    tags=["holiday", "question"],
+)
+add(
+    "celebrations",
+    "Сего́дня Рождество́.",
+    "Today is Christmas.",
+    "[si-vód-nya razh-di-stvó]",
+    3,
+    tags=["holiday", "christmas"],
+)
+add(
+    "celebrations",
+    "Как вы с Кадри́ей отпра́здновали Рождество́?",
+    "How did you and Kadriya celebrate Christmas?",
+    "[kak vy s kad-rí-yey at-prázd-na-va-li razh-di-stvó]",
+    3,
+    recognize=True,
+    tags=["holiday", "christmas", "question"],
+)
+add(
+    "celebrations",
+    "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+    "We celebrated Christmas at my parents' house.",
+    "[my at-prázd-na-va-li razh-di-stvó u ma-íh ra-dí-te-ley dó-ma]",
+    3,
+    tags=["holiday", "christmas", "family"],
+)
+add(
+    "celebrations",
+    "Каки́е пла́ны на Рождество́?",
+    "What are the plans for Christmas?",
+    "[ka-kí-ye plá-ny na razh-di-stvó]",
+    3,
+    recognize=True,
+    tags=["holiday", "christmas", "question"],
+)
+add(
+    "celebrations",
+    "На Рождество́ мы хоти́м полете́ть в О́регон.",
+    "For Christmas we want to fly to Oregon.",
+    "[na razh-di-stvó my ha-tím pa-li-tyét' v ó-re-gan]",
+    3,
+    tags=["holiday", "christmas", "plans"],
+)
+add(
+    "celebrations",
+    "Мы хоти́м ката́ться на лы́жах.",
+    "We want to ski.",
+    "[my ha-tím ka-tát'-sya na lý-zhah]",
+    3,
+    tags=["holiday", "plans"],
+)
+add(
+    "celebrations",
+    "Кадри́я бу́дет гуля́ть и отдыха́ть.",
+    "Kadriya will walk and relax.",
+    "[kad-rí-ya bú-det gu-lyát' i at-dy-hát']",
+    3,
+    tags=["holiday", "plans", "kadriya"],
+)
+add(
+    "celebrations",
+    "Ско́лько дней вы бу́дете в О́регоне?",
+    "How many days will you be in Oregon?",
+    "[skól'-ka dney vy bú-de-tye v ó-re-ga-ne]",
+    3,
+    recognize=True,
+    tags=["holiday", "plans", "question"],
+)
+add(
+    "celebrations",
+    "Мы бу́дем в О́регоне пять дней.",
+    "We'll be in Oregon for five days.",
+    "[my bú-dem v ó-re-ga-ne pyat' dney]",
+    3,
+    tags=["holiday", "plans"],
+)
+add(
+    "celebrations",
+    "Что вы де́лали на День Благодаре́ния?",
+    "What did you do for Thanksgiving?",
+    "[shto vy dyé-la-li na dyen' bla-ga-da-ryé-ni-ya]",
+    3,
+    recognize=True,
+    tags=["holiday", "thanksgiving", "question"],
+)
+add(
+    "celebrations",
+    "На День Благодаре́ния мы у́жинали всей семьёй.",
+    "For Thanksgiving we had dinner as a whole family.",
+    "[na dyen' bla-ga-da-ryé-ni-ya my ú-zhi-na-li fsey sim-yóy]",
+    3,
+    tags=["holiday", "thanksgiving", "family"],
+)
+add(
+    "celebrations",
+    "Э́то был большо́й у́жин.",
+    "It was a big dinner.",
+    "[é-ta byl bal'-shóy ú-zhin]",
+    3,
+    tags=["holiday", "thanksgiving", "family"],
 )
 
 # --- BUDVA TRIP (Montenegro travel lane) ---

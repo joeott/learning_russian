@@ -56,10 +56,11 @@ window.CONTENT_DATA = {
       "calendar_weather": 19,
       "daily_routine": 17,
       "work_business": 16,
+      "celebrations": 14,
       "travel_budva": 14,
       "verbs": 10
     },
-    "total_items": 175
+    "total_items": 189
   },
   "curriculum": {
     "model": "lesson_locked_i_plus_1",
@@ -1054,6 +1055,161 @@ window.CONTENT_DATA = {
       {
         "lesson_id": "family_visit_011",
         "lesson_number": 11,
+        "module": "celebrations",
+        "title": "Holidays & Plans",
+        "introduced_lexemes": [
+          "благодарения",
+          "большой",
+          "будем",
+          "будет",
+          "будете",
+          "был",
+          "в",
+          "всей",
+          "вы",
+          "гулять",
+          "делали",
+          "день",
+          "дней",
+          "дома",
+          "и",
+          "кадрией",
+          "кадрия",
+          "кадрия будет гулять и отдыхать.",
+          "как",
+          "как вы с кадрией отпраздновали рождество?",
+          "какие",
+          "какие планы на рождество?",
+          "какой",
+          "какой сегодня праздник?",
+          "кататься",
+          "лыжах",
+          "моих",
+          "мы",
+          "мы будем в орегоне пять дней.",
+          "мы отпраздновали рождество у моих родителей дома.",
+          "мы хотим кататься на лыжах.",
+          "на",
+          "на день благодарения мы ужинали всей семьёй.",
+          "на рождество мы хотим полететь в орегон.",
+          "орегон",
+          "орегоне",
+          "отдыхать",
+          "отпраздновали",
+          "планы",
+          "полететь",
+          "праздник",
+          "пять",
+          "родителей",
+          "рождество",
+          "с",
+          "сегодня",
+          "сегодня рождество.",
+          "семьёй",
+          "сколько",
+          "сколько дней вы будете в орегоне?",
+          "скоро",
+          "скоро рождество.",
+          "у",
+          "ужин",
+          "ужинали",
+          "хотим",
+          "что",
+          "что вы делали на день благодарения?",
+          "это",
+          "это был большой ужин."
+        ],
+        "active_vocab": [
+          "благодарения",
+          "большой",
+          "будем",
+          "будет",
+          "был",
+          "в",
+          "всей",
+          "гулять",
+          "день",
+          "дней",
+          "дома",
+          "и",
+          "кадрия",
+          "кадрия будет гулять и отдыхать.",
+          "кататься",
+          "лыжах",
+          "моих",
+          "мы",
+          "мы будем в орегоне пять дней.",
+          "мы отпраздновали рождество у моих родителей дома.",
+          "мы хотим кататься на лыжах.",
+          "на",
+          "на день благодарения мы ужинали всей семьёй.",
+          "на рождество мы хотим полететь в орегон.",
+          "орегон",
+          "орегоне",
+          "отдыхать",
+          "отпраздновали",
+          "полететь",
+          "пять",
+          "родителей",
+          "рождество",
+          "сегодня",
+          "сегодня рождество.",
+          "семьёй",
+          "скоро",
+          "скоро рождество.",
+          "у",
+          "ужин",
+          "ужинали",
+          "хотим",
+          "это",
+          "это был большой ужин."
+        ],
+        "passive_vocab": [
+          "благодарения",
+          "будете",
+          "в",
+          "вы",
+          "делали",
+          "день",
+          "дней",
+          "кадрией",
+          "как",
+          "как вы с кадрией отпраздновали рождество?",
+          "какие",
+          "какие планы на рождество?",
+          "какой",
+          "какой сегодня праздник?",
+          "на",
+          "орегоне",
+          "отпраздновали",
+          "планы",
+          "праздник",
+          "рождество",
+          "с",
+          "сегодня",
+          "сколько",
+          "сколько дней вы будете в орегоне?",
+          "что",
+          "что вы делали на день благодарения?"
+        ],
+        "introduced_structures": [
+          "grammar:future_plan",
+          "lexical:holiday_vocab",
+          "phrase:family_celebration",
+          "phrase:holiday_plan",
+          "skill:listening_question_recognition"
+        ],
+        "allowed_error_types": [
+          "listening_misparse",
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_010"
+        ]
+      },
+      {
+        "lesson_id": "family_visit_012",
+        "lesson_number": 12,
         "module": "travel_budva",
         "title": "Budva Trip",
         "introduced_lexemes": [
@@ -1174,12 +1330,12 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_010"
+          "family_visit_011"
         ]
       },
       {
-        "lesson_id": "family_visit_012",
-        "lesson_number": 12,
+        "lesson_id": "family_visit_013",
+        "lesson_number": 13,
         "module": "verbs",
         "title": "Core Verbs (reactivation)",
         "introduced_lexemes": [
@@ -1256,7 +1412,7 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_011"
+          "family_visit_012"
         ]
       }
     ]
@@ -1343,12 +1499,20 @@ window.CONTENT_DATA = {
       "order": 9
     },
     {
+      "id": "celebrations",
+      "title": "Holidays & Plans",
+      "why": "Original-guide Christmas, Thanksgiving, and family-plan small talk.",
+      "priority": 3,
+      "icon": "🎄",
+      "order": 10
+    },
+    {
       "id": "travel_budva",
       "title": "Budva Trip",
       "why": "Montenegro travel phrases for airport, hotel, beach, and old-town plans.",
       "priority": 2,
       "icon": "🧳",
-      "order": 10
+      "order": 11
     },
     {
       "id": "verbs",
@@ -1356,7 +1520,7 @@ window.CONTENT_DATA = {
       "why": "High-frequency verbs from Ekaterina's guide — я / вы forms.",
       "priority": 3,
       "icon": "⚙️",
-      "order": 11
+      "order": 12
     }
   ],
   "items": [
@@ -8675,6 +8839,758 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "cele001",
+      "module": "celebrations",
+      "ru": "Скоро́ Рождество́.",
+      "ru_plain": "Скоро Рождество.",
+      "en": "Christmas is soon.",
+      "hint": "[ska-ró razh-di-stvó]",
+      "priority": 3,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "holiday",
+        "christmas"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "рождество",
+        "скоро",
+        "скоро рождество."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele002",
+      "module": "celebrations",
+      "ru": "Како́й сего́дня пра́здник?",
+      "ru_plain": "Какой сегодня праздник?",
+      "en": "What holiday is today?",
+      "hint": "[ka-kóy si-vód-nya prázd-nik]",
+      "priority": 3,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "holiday",
+        "question"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "какой",
+        "какой сегодня праздник?",
+        "праздник",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele003",
+      "module": "celebrations",
+      "ru": "Сего́дня Рождество́.",
+      "ru_plain": "Сегодня Рождество.",
+      "en": "Today is Christmas.",
+      "hint": "[si-vód-nya razh-di-stvó]",
+      "priority": 3,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "holiday",
+        "christmas"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "рождество",
+        "сегодня",
+        "сегодня рождество."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele004",
+      "module": "celebrations",
+      "ru": "Как вы с Кадри́ей отпра́здновали Рождество́?",
+      "ru_plain": "Как вы с Кадрией отпраздновали Рождество?",
+      "en": "How did you and Kadriya celebrate Christmas?",
+      "hint": "[kak vy s kad-rí-yey at-prázd-na-va-li razh-di-stvó]",
+      "priority": 3,
+      "syllables": 13,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "holiday",
+        "christmas",
+        "question"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вы",
+        "кадрией",
+        "как",
+        "как вы с кадрией отпраздновали рождество?",
+        "отпраздновали",
+        "рождество",
+        "с"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele005",
+      "module": "celebrations",
+      "ru": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+      "ru_plain": "Мы отпраздновали Рождество у моих родителей дома.",
+      "en": "We celebrated Christmas at my parents' house.",
+      "hint": "[my at-prázd-na-va-li razh-di-stvó u ma-íh ra-dí-te-ley dó-ma]",
+      "priority": 3,
+      "syllables": 18,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "holiday",
+        "christmas",
+        "family"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "дома",
+        "моих",
+        "мы",
+        "мы отпраздновали рождество у моих родителей дома.",
+        "отпраздновали",
+        "родителей",
+        "рождество",
+        "у"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele006",
+      "module": "celebrations",
+      "ru": "Каки́е пла́ны на Рождество́?",
+      "ru_plain": "Какие планы на Рождество?",
+      "en": "What are the plans for Christmas?",
+      "hint": "[ka-kí-ye plá-ny na razh-di-stvó]",
+      "priority": 3,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "holiday",
+        "christmas",
+        "question"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "какие",
+        "какие планы на рождество?",
+        "на",
+        "планы",
+        "рождество"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele007",
+      "module": "celebrations",
+      "ru": "На Рождество́ мы хоти́м полете́ть в О́регон.",
+      "ru_plain": "На Рождество мы хотим полететь в Орегон.",
+      "en": "For Christmas we want to fly to Oregon.",
+      "hint": "[na razh-di-stvó my ha-tím pa-li-tyét' v ó-re-gan]",
+      "priority": 3,
+      "syllables": 13,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "holiday",
+        "christmas",
+        "plans"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "в",
+        "мы",
+        "на",
+        "на рождество мы хотим полететь в орегон.",
+        "орегон",
+        "полететь",
+        "рождество",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele008",
+      "module": "celebrations",
+      "ru": "Мы хоти́м ката́ться на лы́жах.",
+      "ru_plain": "Мы хотим кататься на лыжах.",
+      "en": "We want to ski.",
+      "hint": "[my ha-tím ka-tát'-sya na lý-zhah]",
+      "priority": 3,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "holiday",
+        "plans"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "кататься",
+        "лыжах",
+        "мы",
+        "мы хотим кататься на лыжах.",
+        "на",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele009",
+      "module": "celebrations",
+      "ru": "Кадри́я бу́дет гуля́ть и отдыха́ть.",
+      "ru_plain": "Кадрия будет гулять и отдыхать.",
+      "en": "Kadriya will walk and relax.",
+      "hint": "[kad-rí-ya bú-det gu-lyát' i at-dy-hát']",
+      "priority": 3,
+      "syllables": 11,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "holiday",
+        "plans",
+        "kadriya"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "будет",
+        "гулять",
+        "и",
+        "кадрия",
+        "кадрия будет гулять и отдыхать.",
+        "отдыхать"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele010",
+      "module": "celebrations",
+      "ru": "Ско́лько дней вы бу́дете в О́регоне?",
+      "ru_plain": "Сколько дней вы будете в Орегоне?",
+      "en": "How many days will you be in Oregon?",
+      "hint": "[skól'-ka dney vy bú-de-tye v ó-re-ga-ne]",
+      "priority": 3,
+      "syllables": 11,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "holiday",
+        "plans",
+        "question"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "будете",
+        "в",
+        "вы",
+        "дней",
+        "орегоне",
+        "сколько",
+        "сколько дней вы будете в орегоне?"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele011",
+      "module": "celebrations",
+      "ru": "Мы бу́дем в О́регоне пять дней.",
+      "ru_plain": "Мы будем в Орегоне пять дней.",
+      "en": "We'll be in Oregon for five days.",
+      "hint": "[my bú-dem v ó-re-ga-ne pyat' dney]",
+      "priority": 3,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "holiday",
+        "plans"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "будем",
+        "в",
+        "дней",
+        "мы",
+        "мы будем в орегоне пять дней.",
+        "орегоне",
+        "пять"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele012",
+      "module": "celebrations",
+      "ru": "Что вы де́лали на День Благодаре́ния?",
+      "ru_plain": "Что вы делали на День Благодарения?",
+      "en": "What did you do for Thanksgiving?",
+      "hint": "[shto vy dyé-la-li na dyen' bla-ga-da-ryé-ni-ya]",
+      "priority": 3,
+      "syllables": 13,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "holiday",
+        "thanksgiving",
+        "question"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "благодарения",
+        "вы",
+        "делали",
+        "день",
+        "на",
+        "что",
+        "что вы делали на день благодарения?"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele013",
+      "module": "celebrations",
+      "ru": "На День Благодаре́ния мы у́жинали всей семьёй.",
+      "ru_plain": "На День Благодарения мы ужинали всей семьёй.",
+      "en": "For Thanksgiving we had dinner as a whole family.",
+      "hint": "[na dyen' bla-ga-da-ryé-ni-ya my ú-zhi-na-li fsey sim-yóy]",
+      "priority": 3,
+      "syllables": 16,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "holiday",
+        "thanksgiving",
+        "family"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "благодарения",
+        "всей",
+        "день",
+        "мы",
+        "на",
+        "на день благодарения мы ужинали всей семьёй.",
+        "семьёй",
+        "ужинали"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
+      "id": "cele014",
+      "module": "celebrations",
+      "ru": "Э́то был большо́й у́жин.",
+      "ru_plain": "Это был большой ужин.",
+      "en": "It was a big dinner.",
+      "hint": "[é-ta byl bal'-shóy ú-zhin]",
+      "priority": 3,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "holiday",
+        "thanksgiving",
+        "family"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "большой",
+        "был",
+        "ужин",
+        "это",
+        "это был большой ужин."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "prerequisites": [
+        "family_visit_010"
+      ]
+    },
+    {
       "id": "trav001",
       "module": "travel_budva",
       "ru": "Мы е́дем в Бу́дву.",
@@ -8719,10 +9635,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8770,10 +9686,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8821,10 +9737,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8874,10 +9790,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8923,10 +9839,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8978,10 +9894,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -9030,10 +9946,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -9082,10 +9998,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -9133,10 +10049,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -9183,10 +10099,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -9232,10 +10148,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -9283,10 +10199,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -9332,10 +10248,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -9382,10 +10298,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -9427,10 +10343,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -9472,10 +10388,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -9517,10 +10433,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -9562,10 +10478,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -9607,10 +10523,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -9652,10 +10568,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -9697,10 +10613,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -9742,10 +10658,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -9787,10 +10703,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     },
     {
@@ -9832,10 +10748,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "prerequisites": [
-        "family_visit_011"
+        "family_visit_012"
       ]
     }
   ],
@@ -14073,11 +14989,623 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "cloze_cele001_01",
+      "item_id": "cele001",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Скоро́ Рождество́.",
+      "ru_plain": "Скоро Рождество.",
+      "prompt_ru": "Скоро ____.",
+      "answer": "Рождество",
+      "accepted_answers": [
+        "Рождество",
+        "Рождество́"
+      ],
+      "en": "Christmas is soon.",
+      "priority": 3,
+      "lexemes": [
+        "рождество",
+        "скоро",
+        "скоро рождество."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "christmas",
+        "cloze",
+        "holiday"
+      ]
+    },
+    {
+      "id": "cloze_cele002_01",
+      "item_id": "cele002",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Како́й сего́дня пра́здник?",
+      "ru_plain": "Какой сегодня праздник?",
+      "prompt_ru": "Какой сегодня ____?",
+      "answer": "праздник",
+      "accepted_answers": [
+        "пра́здник",
+        "праздник"
+      ],
+      "en": "What holiday is today?",
+      "priority": 3,
+      "lexemes": [
+        "какой",
+        "какой сегодня праздник?",
+        "праздник",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "holiday",
+        "question"
+      ]
+    },
+    {
+      "id": "cloze_cele003_01",
+      "item_id": "cele003",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Сего́дня Рождество́.",
+      "ru_plain": "Сегодня Рождество.",
+      "prompt_ru": "Сегодня ____.",
+      "answer": "Рождество",
+      "accepted_answers": [
+        "Рождество",
+        "Рождество́"
+      ],
+      "en": "Today is Christmas.",
+      "priority": 3,
+      "lexemes": [
+        "рождество",
+        "сегодня",
+        "сегодня рождество."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "christmas",
+        "cloze",
+        "holiday"
+      ]
+    },
+    {
+      "id": "cloze_cele004_01",
+      "item_id": "cele004",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Как вы с Кадри́ей отпра́здновали Рождество́?",
+      "ru_plain": "Как вы с Кадрией отпраздновали Рождество?",
+      "prompt_ru": "Как вы с Кадрией ____ Рождество?",
+      "answer": "отпраздновали",
+      "accepted_answers": [
+        "отпра́здновали",
+        "отпраздновали"
+      ],
+      "en": "How did you and Kadriya celebrate Christmas?",
+      "priority": 3,
+      "lexemes": [
+        "вы",
+        "кадрией",
+        "как",
+        "как вы с кадрией отпраздновали рождество?",
+        "отпраздновали",
+        "рождество",
+        "с"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "christmas",
+        "cloze",
+        "holiday",
+        "question"
+      ]
+    },
+    {
+      "id": "cloze_cele005_01",
+      "item_id": "cele005",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+      "ru_plain": "Мы отпраздновали Рождество у моих родителей дома.",
+      "prompt_ru": "Мы ____ Рождество у моих родителей дома.",
+      "answer": "отпраздновали",
+      "accepted_answers": [
+        "отпра́здновали",
+        "отпраздновали"
+      ],
+      "en": "We celebrated Christmas at my parents' house.",
+      "priority": 3,
+      "lexemes": [
+        "дома",
+        "моих",
+        "мы",
+        "мы отпраздновали рождество у моих родителей дома.",
+        "отпраздновали",
+        "родителей",
+        "рождество",
+        "у"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "christmas",
+        "cloze",
+        "family",
+        "holiday"
+      ]
+    },
+    {
+      "id": "cloze_cele006_01",
+      "item_id": "cele006",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Каки́е пла́ны на Рождество́?",
+      "ru_plain": "Какие планы на Рождество?",
+      "prompt_ru": "Какие планы на ____?",
+      "answer": "Рождество",
+      "accepted_answers": [
+        "Рождество",
+        "Рождество́"
+      ],
+      "en": "What are the plans for Christmas?",
+      "priority": 3,
+      "lexemes": [
+        "какие",
+        "какие планы на рождество?",
+        "на",
+        "планы",
+        "рождество"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "christmas",
+        "cloze",
+        "holiday",
+        "question"
+      ]
+    },
+    {
+      "id": "cloze_cele007_01",
+      "item_id": "cele007",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "На Рождество́ мы хоти́м полете́ть в О́регон.",
+      "ru_plain": "На Рождество мы хотим полететь в Орегон.",
+      "prompt_ru": "На ____ мы хотим полететь в Орегон.",
+      "answer": "Рождество",
+      "accepted_answers": [
+        "Рождество",
+        "Рождество́"
+      ],
+      "en": "For Christmas we want to fly to Oregon.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "мы",
+        "на",
+        "на рождество мы хотим полететь в орегон.",
+        "орегон",
+        "полететь",
+        "рождество",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "christmas",
+        "cloze",
+        "holiday",
+        "plans"
+      ]
+    },
+    {
+      "id": "cloze_cele008_01",
+      "item_id": "cele008",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы хоти́м ката́ться на лы́жах.",
+      "ru_plain": "Мы хотим кататься на лыжах.",
+      "prompt_ru": "Мы хотим ____ на лыжах.",
+      "answer": "кататься",
+      "accepted_answers": [
+        "ката́ться",
+        "кататься"
+      ],
+      "en": "We want to ski.",
+      "priority": 3,
+      "lexemes": [
+        "кататься",
+        "лыжах",
+        "мы",
+        "мы хотим кататься на лыжах.",
+        "на",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "holiday",
+        "plans"
+      ]
+    },
+    {
+      "id": "cloze_cele009_01",
+      "item_id": "cele009",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Кадри́я бу́дет гуля́ть и отдыха́ть.",
+      "ru_plain": "Кадрия будет гулять и отдыхать.",
+      "prompt_ru": "Кадрия будет гулять и ____.",
+      "answer": "отдыхать",
+      "accepted_answers": [
+        "отдыха́ть",
+        "отдыхать"
+      ],
+      "en": "Kadriya will walk and relax.",
+      "priority": 3,
+      "lexemes": [
+        "будет",
+        "гулять",
+        "и",
+        "кадрия",
+        "кадрия будет гулять и отдыхать.",
+        "отдыхать"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "holiday",
+        "kadriya",
+        "plans"
+      ]
+    },
+    {
+      "id": "cloze_cele010_01",
+      "item_id": "cele010",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Ско́лько дней вы бу́дете в О́регоне?",
+      "ru_plain": "Сколько дней вы будете в Орегоне?",
+      "prompt_ru": "____ дней вы будете в Орегоне?",
+      "answer": "Сколько",
+      "accepted_answers": [
+        "Ско́лько",
+        "Сколько"
+      ],
+      "en": "How many days will you be in Oregon?",
+      "priority": 3,
+      "lexemes": [
+        "будете",
+        "в",
+        "вы",
+        "дней",
+        "орегоне",
+        "сколько",
+        "сколько дней вы будете в орегоне?"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "holiday",
+        "plans",
+        "question"
+      ]
+    },
+    {
+      "id": "cloze_cele011_01",
+      "item_id": "cele011",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы бу́дем в О́регоне пять дней.",
+      "ru_plain": "Мы будем в Орегоне пять дней.",
+      "prompt_ru": "Мы будем в ____ пять дней.",
+      "answer": "Орегоне",
+      "accepted_answers": [
+        "О́регоне",
+        "Орегоне"
+      ],
+      "en": "We'll be in Oregon for five days.",
+      "priority": 3,
+      "lexemes": [
+        "будем",
+        "в",
+        "дней",
+        "мы",
+        "мы будем в орегоне пять дней.",
+        "орегоне",
+        "пять"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "holiday",
+        "plans"
+      ]
+    },
+    {
+      "id": "cloze_cele012_01",
+      "item_id": "cele012",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Что вы де́лали на День Благодаре́ния?",
+      "ru_plain": "Что вы делали на День Благодарения?",
+      "prompt_ru": "Что вы делали на День ____?",
+      "answer": "Благодарения",
+      "accepted_answers": [
+        "Благодаре́ния",
+        "Благодарения"
+      ],
+      "en": "What did you do for Thanksgiving?",
+      "priority": 3,
+      "lexemes": [
+        "благодарения",
+        "вы",
+        "делали",
+        "день",
+        "на",
+        "что",
+        "что вы делали на день благодарения?"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "holiday",
+        "question",
+        "thanksgiving"
+      ]
+    },
+    {
+      "id": "cloze_cele013_01",
+      "item_id": "cele013",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "На День Благодаре́ния мы у́жинали всей семьёй.",
+      "ru_plain": "На День Благодарения мы ужинали всей семьёй.",
+      "prompt_ru": "На День ____ мы ужинали всей семьёй.",
+      "answer": "Благодарения",
+      "accepted_answers": [
+        "Благодаре́ния",
+        "Благодарения"
+      ],
+      "en": "For Thanksgiving we had dinner as a whole family.",
+      "priority": 3,
+      "lexemes": [
+        "благодарения",
+        "всей",
+        "день",
+        "мы",
+        "на",
+        "на день благодарения мы ужинали всей семьёй.",
+        "семьёй",
+        "ужинали"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "family",
+        "holiday",
+        "thanksgiving"
+      ]
+    },
+    {
+      "id": "cloze_cele014_01",
+      "item_id": "cele014",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Э́то был большо́й у́жин.",
+      "ru_plain": "Это был большой ужин.",
+      "prompt_ru": "Это был ____ ужин.",
+      "answer": "большой",
+      "accepted_answers": [
+        "большо́й",
+        "большой"
+      ],
+      "en": "It was a big dinner.",
+      "priority": 3,
+      "lexemes": [
+        "большой",
+        "был",
+        "ужин",
+        "это",
+        "это был большой ужин."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "family",
+        "holiday",
+        "thanksgiving"
+      ]
+    },
+    {
       "id": "cloze_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "prompt_ru": "Мы едем в ____.",
@@ -14117,8 +15645,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "prompt_ru": "Мы будем в ____.",
@@ -14158,8 +15686,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "prompt_ru": "Мы ____ в Будве.",
@@ -14199,8 +15727,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "prompt_ru": "Где наш ____?",
@@ -14242,8 +15770,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "prompt_ru": "____ такси?",
@@ -14281,8 +15809,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "prompt_ru": "____ ехать до отеля?",
@@ -14326,8 +15854,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "prompt_ru": "Где ____?",
@@ -14367,8 +15895,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "prompt_ru": "Я хочу ____ у моря.",
@@ -14409,8 +15937,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "prompt_ru": "Старый город очень ____.",
@@ -14450,8 +15978,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "prompt_ru": "Море очень ____.",
@@ -14490,8 +16018,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "prompt_ru": "Мы ____.",
@@ -14529,8 +16057,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "prompt_ru": "Мы здесь с ____.",
@@ -14569,8 +16097,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "prompt_ru": "Счёт, ____.",
@@ -14608,8 +16136,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "prompt_ru": "Мы хотим ____.",
@@ -14648,8 +16176,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "prompt_ru": "хочу / ____",
@@ -14684,8 +16212,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "prompt_ru": "могу / ____",
@@ -14720,8 +16248,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "prompt_ru": "говорю / ____",
@@ -14756,8 +16284,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "prompt_ru": "понимаю / ____",
@@ -14792,8 +16320,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "prompt_ru": "люблю / ____",
@@ -14828,8 +16356,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "prompt_ru": "работаю / ____",
@@ -14864,8 +16392,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "prompt_ru": "живу / ____",
@@ -14899,8 +16427,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "prompt_ru": "ем / ____",
@@ -14935,8 +16463,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "prompt_ru": "пью / ____",
@@ -14970,8 +16498,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "prompt_ru": "знаю / ____",
@@ -20817,11 +22345,641 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "dict_cele001_01",
+      "item_id": "cele001",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Скоро́ Рождество́.",
+      "ru_plain": "Скоро Рождество.",
+      "accepted_answers": [
+        "Скоро Рождество.",
+        "Скоро́ Рождество́."
+      ],
+      "en": "Christmas is soon.",
+      "priority": 3,
+      "lexemes": [
+        "рождество",
+        "скоро",
+        "скоро рождество."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "christmas",
+        "dictation",
+        "holiday"
+      ]
+    },
+    {
+      "id": "dict_cele002_01",
+      "item_id": "cele002",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Како́й сего́дня пра́здник?",
+      "ru_plain": "Какой сегодня праздник?",
+      "accepted_answers": [
+        "Како́й сего́дня пра́здник?",
+        "Какой сегодня праздник?"
+      ],
+      "en": "What holiday is today?",
+      "priority": 3,
+      "lexemes": [
+        "какой",
+        "какой сегодня праздник?",
+        "праздник",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "holiday",
+        "question"
+      ]
+    },
+    {
+      "id": "dict_cele003_01",
+      "item_id": "cele003",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Сего́дня Рождество́.",
+      "ru_plain": "Сегодня Рождество.",
+      "accepted_answers": [
+        "Сего́дня Рождество́.",
+        "Сегодня Рождество."
+      ],
+      "en": "Today is Christmas.",
+      "priority": 3,
+      "lexemes": [
+        "рождество",
+        "сегодня",
+        "сегодня рождество."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "christmas",
+        "dictation",
+        "holiday"
+      ]
+    },
+    {
+      "id": "dict_cele004_01",
+      "item_id": "cele004",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Как вы с Кадри́ей отпра́здновали Рождество́?",
+      "ru_plain": "Как вы с Кадрией отпраздновали Рождество?",
+      "accepted_answers": [
+        "Как вы с Кадри́ей отпра́здновали Рождество́?",
+        "Как вы с Кадрией отпраздновали Рождество?"
+      ],
+      "en": "How did you and Kadriya celebrate Christmas?",
+      "priority": 3,
+      "lexemes": [
+        "вы",
+        "кадрией",
+        "как",
+        "как вы с кадрией отпраздновали рождество?",
+        "отпраздновали",
+        "рождество",
+        "с"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "christmas",
+        "dictation",
+        "holiday",
+        "question"
+      ]
+    },
+    {
+      "id": "dict_cele005_01",
+      "item_id": "cele005",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+      "ru_plain": "Мы отпраздновали Рождество у моих родителей дома.",
+      "accepted_answers": [
+        "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+        "Мы отпраздновали Рождество у моих родителей дома."
+      ],
+      "en": "We celebrated Christmas at my parents' house.",
+      "priority": 3,
+      "lexemes": [
+        "дома",
+        "моих",
+        "мы",
+        "мы отпраздновали рождество у моих родителей дома.",
+        "отпраздновали",
+        "родителей",
+        "рождество",
+        "у"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "christmas",
+        "dictation",
+        "family",
+        "holiday"
+      ]
+    },
+    {
+      "id": "dict_cele006_01",
+      "item_id": "cele006",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Каки́е пла́ны на Рождество́?",
+      "ru_plain": "Какие планы на Рождество?",
+      "accepted_answers": [
+        "Каки́е пла́ны на Рождество́?",
+        "Какие планы на Рождество?"
+      ],
+      "en": "What are the plans for Christmas?",
+      "priority": 3,
+      "lexemes": [
+        "какие",
+        "какие планы на рождество?",
+        "на",
+        "планы",
+        "рождество"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "christmas",
+        "dictation",
+        "holiday",
+        "question"
+      ]
+    },
+    {
+      "id": "dict_cele007_01",
+      "item_id": "cele007",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "На Рождество́ мы хоти́м полете́ть в О́регон.",
+      "ru_plain": "На Рождество мы хотим полететь в Орегон.",
+      "accepted_answers": [
+        "На Рождество мы хотим полететь в Орегон.",
+        "На Рождество́ мы хоти́м полете́ть в О́регон."
+      ],
+      "en": "For Christmas we want to fly to Oregon.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "мы",
+        "на",
+        "на рождество мы хотим полететь в орегон.",
+        "орегон",
+        "полететь",
+        "рождество",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "christmas",
+        "dictation",
+        "holiday",
+        "plans"
+      ]
+    },
+    {
+      "id": "dict_cele008_01",
+      "item_id": "cele008",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы хоти́м ката́ться на лы́жах.",
+      "ru_plain": "Мы хотим кататься на лыжах.",
+      "accepted_answers": [
+        "Мы хоти́м ката́ться на лы́жах.",
+        "Мы хотим кататься на лыжах."
+      ],
+      "en": "We want to ski.",
+      "priority": 3,
+      "lexemes": [
+        "кататься",
+        "лыжах",
+        "мы",
+        "мы хотим кататься на лыжах.",
+        "на",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "holiday",
+        "plans"
+      ]
+    },
+    {
+      "id": "dict_cele009_01",
+      "item_id": "cele009",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Кадри́я бу́дет гуля́ть и отдыха́ть.",
+      "ru_plain": "Кадрия будет гулять и отдыхать.",
+      "accepted_answers": [
+        "Кадри́я бу́дет гуля́ть и отдыха́ть.",
+        "Кадрия будет гулять и отдыхать."
+      ],
+      "en": "Kadriya will walk and relax.",
+      "priority": 3,
+      "lexemes": [
+        "будет",
+        "гулять",
+        "и",
+        "кадрия",
+        "кадрия будет гулять и отдыхать.",
+        "отдыхать"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "holiday",
+        "kadriya",
+        "plans"
+      ]
+    },
+    {
+      "id": "dict_cele010_01",
+      "item_id": "cele010",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Ско́лько дней вы бу́дете в О́регоне?",
+      "ru_plain": "Сколько дней вы будете в Орегоне?",
+      "accepted_answers": [
+        "Ско́лько дней вы бу́дете в О́регоне?",
+        "Сколько дней вы будете в Орегоне?"
+      ],
+      "en": "How many days will you be in Oregon?",
+      "priority": 3,
+      "lexemes": [
+        "будете",
+        "в",
+        "вы",
+        "дней",
+        "орегоне",
+        "сколько",
+        "сколько дней вы будете в орегоне?"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "holiday",
+        "plans",
+        "question"
+      ]
+    },
+    {
+      "id": "dict_cele011_01",
+      "item_id": "cele011",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы бу́дем в О́регоне пять дней.",
+      "ru_plain": "Мы будем в Орегоне пять дней.",
+      "accepted_answers": [
+        "Мы бу́дем в О́регоне пять дней.",
+        "Мы будем в Орегоне пять дней."
+      ],
+      "en": "We'll be in Oregon for five days.",
+      "priority": 3,
+      "lexemes": [
+        "будем",
+        "в",
+        "дней",
+        "мы",
+        "мы будем в орегоне пять дней.",
+        "орегоне",
+        "пять"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "holiday",
+        "plans"
+      ]
+    },
+    {
+      "id": "dict_cele012_01",
+      "item_id": "cele012",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Что вы де́лали на День Благодаре́ния?",
+      "ru_plain": "Что вы делали на День Благодарения?",
+      "accepted_answers": [
+        "Что вы де́лали на День Благодаре́ния?",
+        "Что вы делали на День Благодарения?"
+      ],
+      "en": "What did you do for Thanksgiving?",
+      "priority": 3,
+      "lexemes": [
+        "благодарения",
+        "вы",
+        "делали",
+        "день",
+        "на",
+        "что",
+        "что вы делали на день благодарения?"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "holiday",
+        "question",
+        "thanksgiving"
+      ]
+    },
+    {
+      "id": "dict_cele013_01",
+      "item_id": "cele013",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "На День Благодаре́ния мы у́жинали всей семьёй.",
+      "ru_plain": "На День Благодарения мы ужинали всей семьёй.",
+      "accepted_answers": [
+        "На День Благодаре́ния мы у́жинали всей семьёй.",
+        "На День Благодарения мы ужинали всей семьёй."
+      ],
+      "en": "For Thanksgiving we had dinner as a whole family.",
+      "priority": 3,
+      "lexemes": [
+        "благодарения",
+        "всей",
+        "день",
+        "мы",
+        "на",
+        "на день благодарения мы ужинали всей семьёй.",
+        "семьёй",
+        "ужинали"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "family",
+        "holiday",
+        "thanksgiving"
+      ]
+    },
+    {
+      "id": "dict_cele014_01",
+      "item_id": "cele014",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Э́то был большо́й у́жин.",
+      "ru_plain": "Это был большой ужин.",
+      "accepted_answers": [
+        "Э́то был большо́й у́жин.",
+        "Это был большой ужин."
+      ],
+      "en": "It was a big dinner.",
+      "priority": 3,
+      "lexemes": [
+        "большой",
+        "был",
+        "ужин",
+        "это",
+        "это был большой ужин."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "family",
+        "holiday",
+        "thanksgiving"
+      ]
+    },
+    {
       "id": "dict_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "accepted_answers": [
@@ -20863,8 +23021,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "accepted_answers": [
@@ -20906,8 +23064,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "accepted_answers": [
@@ -20949,8 +23107,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "accepted_answers": [
@@ -20992,8 +23150,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "accepted_answers": [
@@ -21033,8 +23191,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "accepted_answers": [
@@ -21078,8 +23236,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "accepted_answers": [
@@ -21119,8 +23277,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "accepted_answers": [
@@ -21163,8 +23321,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "accepted_answers": [
@@ -21206,8 +23364,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "accepted_answers": [
@@ -21248,8 +23406,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "accepted_answers": [
@@ -21289,8 +23447,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "accepted_answers": [
@@ -21331,8 +23489,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "accepted_answers": [
@@ -21372,8 +23530,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "accepted_answers": [
@@ -21414,8 +23572,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "accepted_answers": [
@@ -21452,8 +23610,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "accepted_answers": [
@@ -21490,8 +23648,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "accepted_answers": [
@@ -21528,8 +23686,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "accepted_answers": [
@@ -21566,8 +23724,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "accepted_answers": [
@@ -21604,8 +23762,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "accepted_answers": [
@@ -21642,8 +23800,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "accepted_answers": [
@@ -21680,8 +23838,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "accepted_answers": [
@@ -21718,8 +23876,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "accepted_answers": [
@@ -21755,8 +23913,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "accepted_answers": [
@@ -27583,11 +29741,665 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "stress_cele001_01",
+      "item_id": "cele001",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Скоро́ Рождество́.",
+      "ru_plain": "Скоро Рождество.",
+      "options": [
+        "Ско́ро Рождество.",
+        "Скоро Ро́ждество.",
+        "Скоро́ Рождество.",
+        "Скоро́ Рождество́."
+      ],
+      "answer": "Скоро́ Рождество́.",
+      "en": "Christmas is soon.",
+      "priority": 3,
+      "lexemes": [
+        "рождество",
+        "скоро",
+        "скоро рождество."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "christmas",
+        "holiday",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cele002_01",
+      "item_id": "cele002",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Како́й сего́дня пра́здник?",
+      "ru_plain": "Какой сегодня праздник?",
+      "options": [
+        "Ка́кой сегодня праздник?",
+        "Како́й сего́дня пра́здник?",
+        "Како́й сегодня праздник?",
+        "Какой се́годня праздник?"
+      ],
+      "answer": "Како́й сего́дня пра́здник?",
+      "en": "What holiday is today?",
+      "priority": 3,
+      "lexemes": [
+        "какой",
+        "какой сегодня праздник?",
+        "праздник",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "holiday",
+        "question",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cele003_01",
+      "item_id": "cele003",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Сего́дня Рождество́.",
+      "ru_plain": "Сегодня Рождество.",
+      "options": [
+        "Се́годня Рождество.",
+        "Сего́дня Рождество.",
+        "Сего́дня Рождество́.",
+        "Сегодня́ Рождество."
+      ],
+      "answer": "Сего́дня Рождество́.",
+      "en": "Today is Christmas.",
+      "priority": 3,
+      "lexemes": [
+        "рождество",
+        "сегодня",
+        "сегодня рождество."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "christmas",
+        "holiday",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cele004_01",
+      "item_id": "cele004",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Как вы с Кадри́ей отпра́здновали Рождество́?",
+      "ru_plain": "Как вы с Кадрией отпраздновали Рождество?",
+      "options": [
+        "Ка́к вы с Кадрией отпраздновали Рождество?",
+        "Как вы с Ка́дрией отпраздновали Рождество?",
+        "Как вы с Кадри́ей отпра́здновали Рождество́?",
+        "Как вы́ с Кадрией отпраздновали Рождество?"
+      ],
+      "answer": "Как вы с Кадри́ей отпра́здновали Рождество́?",
+      "en": "How did you and Kadriya celebrate Christmas?",
+      "priority": 3,
+      "lexemes": [
+        "вы",
+        "кадрией",
+        "как",
+        "как вы с кадрией отпраздновали рождество?",
+        "отпраздновали",
+        "рождество",
+        "с"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "christmas",
+        "holiday",
+        "question",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cele005_01",
+      "item_id": "cele005",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+      "ru_plain": "Мы отпраздновали Рождество у моих родителей дома.",
+      "options": [
+        "Мы о́тпраздновали Рождество у моих родителей дома.",
+        "Мы отпра́здновали Рождество у моих родителей дома.",
+        "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+        "Мы́ отпраздновали Рождество у моих родителей дома."
+      ],
+      "answer": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+      "en": "We celebrated Christmas at my parents' house.",
+      "priority": 3,
+      "lexemes": [
+        "дома",
+        "моих",
+        "мы",
+        "мы отпраздновали рождество у моих родителей дома.",
+        "отпраздновали",
+        "родителей",
+        "рождество",
+        "у"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "christmas",
+        "family",
+        "holiday",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cele006_01",
+      "item_id": "cele006",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Каки́е пла́ны на Рождество́?",
+      "ru_plain": "Какие планы на Рождество?",
+      "options": [
+        "Ка́кие планы на Рождество?",
+        "Каки́е пла́ны на Рождество́?",
+        "Каки́е планы на Рождество?",
+        "Какие́ планы на Рождество?"
+      ],
+      "answer": "Каки́е пла́ны на Рождество́?",
+      "en": "What are the plans for Christmas?",
+      "priority": 3,
+      "lexemes": [
+        "какие",
+        "какие планы на рождество?",
+        "на",
+        "планы",
+        "рождество"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "christmas",
+        "holiday",
+        "question",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cele007_01",
+      "item_id": "cele007",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "На Рождество́ мы хоти́м полете́ть в О́регон.",
+      "ru_plain": "На Рождество мы хотим полететь в Орегон.",
+      "options": [
+        "На Ро́ждество мы хотим полететь в Орегон.",
+        "На Рожде́ство мы хотим полететь в Орегон.",
+        "На Рождество́ мы хоти́м полете́ть в О́регон.",
+        "На́ Рождество мы хотим полететь в Орегон."
+      ],
+      "answer": "На Рождество́ мы хоти́м полете́ть в О́регон.",
+      "en": "For Christmas we want to fly to Oregon.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "мы",
+        "на",
+        "на рождество мы хотим полететь в орегон.",
+        "орегон",
+        "полететь",
+        "рождество",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "christmas",
+        "holiday",
+        "plans",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cele008_01",
+      "item_id": "cele008",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы хоти́м ката́ться на лы́жах.",
+      "ru_plain": "Мы хотим кататься на лыжах.",
+      "options": [
+        "Мы хо́тим кататься на лыжах.",
+        "Мы хоти́м ката́ться на лы́жах.",
+        "Мы хоти́м кататься на лыжах.",
+        "Мы́ хотим кататься на лыжах."
+      ],
+      "answer": "Мы хоти́м ката́ться на лы́жах.",
+      "en": "We want to ski.",
+      "priority": 3,
+      "lexemes": [
+        "кататься",
+        "лыжах",
+        "мы",
+        "мы хотим кататься на лыжах.",
+        "на",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "holiday",
+        "plans",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cele009_01",
+      "item_id": "cele009",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Кадри́я бу́дет гуля́ть и отдыха́ть.",
+      "ru_plain": "Кадрия будет гулять и отдыхать.",
+      "options": [
+        "Ка́дрия будет гулять и отдыхать.",
+        "Кадри́я бу́дет гуля́ть и отдыха́ть.",
+        "Кадри́я будет гулять и отдыхать.",
+        "Кадрия́ будет гулять и отдыхать."
+      ],
+      "answer": "Кадри́я бу́дет гуля́ть и отдыха́ть.",
+      "en": "Kadriya will walk and relax.",
+      "priority": 3,
+      "lexemes": [
+        "будет",
+        "гулять",
+        "и",
+        "кадрия",
+        "кадрия будет гулять и отдыхать.",
+        "отдыхать"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "holiday",
+        "kadriya",
+        "plans",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cele010_01",
+      "item_id": "cele010",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Ско́лько дней вы бу́дете в О́регоне?",
+      "ru_plain": "Сколько дней вы будете в Орегоне?",
+      "options": [
+        "Ско́лько дней вы бу́дете в О́регоне?",
+        "Ско́лько дней вы будете в Орегоне?",
+        "Сколько дне́й вы будете в Орегоне?",
+        "Сколько́ дней вы будете в Орегоне?"
+      ],
+      "answer": "Ско́лько дней вы бу́дете в О́регоне?",
+      "en": "How many days will you be in Oregon?",
+      "priority": 3,
+      "lexemes": [
+        "будете",
+        "в",
+        "вы",
+        "дней",
+        "орегоне",
+        "сколько",
+        "сколько дней вы будете в орегоне?"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "holiday",
+        "plans",
+        "question",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cele011_01",
+      "item_id": "cele011",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы бу́дем в О́регоне пять дней.",
+      "ru_plain": "Мы будем в Орегоне пять дней.",
+      "options": [
+        "Мы бу́дем в О́регоне пять дней.",
+        "Мы бу́дем в Орегоне пять дней.",
+        "Мы буде́м в Орегоне пять дней.",
+        "Мы́ будем в Орегоне пять дней."
+      ],
+      "answer": "Мы бу́дем в О́регоне пять дней.",
+      "en": "We'll be in Oregon for five days.",
+      "priority": 3,
+      "lexemes": [
+        "будем",
+        "в",
+        "дней",
+        "мы",
+        "мы будем в орегоне пять дней.",
+        "орегоне",
+        "пять"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "holiday",
+        "plans",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cele012_01",
+      "item_id": "cele012",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Что вы де́лали на День Благодаре́ния?",
+      "ru_plain": "Что вы делали на День Благодарения?",
+      "options": [
+        "Что вы де́лали на День Благодаре́ния?",
+        "Что вы де́лали на День Благодарения?",
+        "Что вы́ делали на День Благодарения?",
+        "Что́ вы делали на День Благодарения?"
+      ],
+      "answer": "Что вы де́лали на День Благодаре́ния?",
+      "en": "What did you do for Thanksgiving?",
+      "priority": 3,
+      "lexemes": [
+        "благодарения",
+        "вы",
+        "делали",
+        "день",
+        "на",
+        "что",
+        "что вы делали на день благодарения?"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "holiday",
+        "question",
+        "stress_drill",
+        "thanksgiving"
+      ]
+    },
+    {
+      "id": "stress_cele013_01",
+      "item_id": "cele013",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "На День Благодаре́ния мы у́жинали всей семьёй.",
+      "ru_plain": "На День Благодарения мы ужинали всей семьёй.",
+      "options": [
+        "На Де́нь Благодарения мы ужинали всей семьёй.",
+        "На День Бла́годарения мы ужинали всей семьёй.",
+        "На День Благодаре́ния мы у́жинали всей семьёй.",
+        "На́ День Благодарения мы ужинали всей семьёй."
+      ],
+      "answer": "На День Благодаре́ния мы у́жинали всей семьёй.",
+      "en": "For Thanksgiving we had dinner as a whole family.",
+      "priority": 3,
+      "lexemes": [
+        "благодарения",
+        "всей",
+        "день",
+        "мы",
+        "на",
+        "на день благодарения мы ужинали всей семьёй.",
+        "семьёй",
+        "ужинали"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "family",
+        "holiday",
+        "stress_drill",
+        "thanksgiving"
+      ]
+    },
+    {
+      "id": "stress_cele014_01",
+      "item_id": "cele014",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Э́то был большо́й у́жин.",
+      "ru_plain": "Это был большой ужин.",
+      "options": [
+        "Э́то был большо́й у́жин.",
+        "Э́то был большой ужин.",
+        "Это бы́л большой ужин.",
+        "Это́ был большой ужин."
+      ],
+      "answer": "Э́то был большо́й у́жин.",
+      "en": "It was a big dinner.",
+      "priority": 3,
+      "lexemes": [
+        "большой",
+        "был",
+        "ужин",
+        "это",
+        "это был большой ужин."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "family",
+        "holiday",
+        "stress_drill",
+        "thanksgiving"
+      ]
+    },
+    {
       "id": "stress_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "options": [
@@ -27630,8 +30442,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "options": [
@@ -27674,8 +30486,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "options": [
@@ -27718,8 +30530,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "options": [
@@ -27764,8 +30576,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "options": [
@@ -27806,8 +30618,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "options": [
@@ -27854,8 +30666,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "options": [
@@ -27899,8 +30711,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "options": [
@@ -27943,8 +30755,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "options": [
@@ -27986,8 +30798,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "options": [
@@ -28028,8 +30840,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "options": [
@@ -28070,8 +30882,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "options": [
@@ -28113,8 +30925,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "options": [
@@ -28152,8 +30964,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "options": [
@@ -28191,8 +31003,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "options": [
@@ -28230,8 +31042,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "options": [
@@ -28269,8 +31081,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "options": [
@@ -28308,8 +31120,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "options": [
@@ -28347,8 +31159,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "options": [
@@ -28386,8 +31198,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "options": [
@@ -28425,8 +31237,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "options": [
@@ -35177,11 +37989,735 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "pron_cele001_01",
+      "item_id": "cele001",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Скоро́ Рождество́.",
+      "ru_plain": "Скоро Рождество.",
+      "en": "Christmas is soon.",
+      "priority": 3,
+      "lexemes": [
+        "рождество",
+        "скоро",
+        "скоро рождество."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "christmas",
+        "holiday",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cele002_01",
+      "item_id": "cele002",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Како́й сего́дня пра́здник?",
+      "ru_plain": "Какой сегодня праздник?",
+      "en": "What holiday is today?",
+      "priority": 3,
+      "lexemes": [
+        "какой",
+        "какой сегодня праздник?",
+        "праздник",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "holiday",
+        "pronunciation",
+        "question"
+      ]
+    },
+    {
+      "id": "pron_cele003_01",
+      "item_id": "cele003",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Сего́дня Рождество́.",
+      "ru_plain": "Сегодня Рождество.",
+      "en": "Today is Christmas.",
+      "priority": 3,
+      "lexemes": [
+        "рождество",
+        "сегодня",
+        "сегодня рождество."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "christmas",
+        "holiday",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cele004_01",
+      "item_id": "cele004",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Как вы с Кадри́ей отпра́здновали Рождество́?",
+      "ru_plain": "Как вы с Кадрией отпраздновали Рождество?",
+      "en": "How did you and Kadriya celebrate Christmas?",
+      "priority": 3,
+      "lexemes": [
+        "вы",
+        "кадрией",
+        "как",
+        "как вы с кадрией отпраздновали рождество?",
+        "отпраздновали",
+        "рождество",
+        "с"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "christmas",
+        "holiday",
+        "pronunciation",
+        "question"
+      ]
+    },
+    {
+      "id": "pron_cele005_01",
+      "item_id": "cele005",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+      "ru_plain": "Мы отпраздновали Рождество у моих родителей дома.",
+      "en": "We celebrated Christmas at my parents' house.",
+      "priority": 3,
+      "lexemes": [
+        "дома",
+        "моих",
+        "мы",
+        "мы отпраздновали рождество у моих родителей дома.",
+        "отпраздновали",
+        "родителей",
+        "рождество",
+        "у"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "christmas",
+        "family",
+        "holiday",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cele006_01",
+      "item_id": "cele006",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Каки́е пла́ны на Рождество́?",
+      "ru_plain": "Какие планы на Рождество?",
+      "en": "What are the plans for Christmas?",
+      "priority": 3,
+      "lexemes": [
+        "какие",
+        "какие планы на рождество?",
+        "на",
+        "планы",
+        "рождество"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "christmas",
+        "holiday",
+        "pronunciation",
+        "question"
+      ]
+    },
+    {
+      "id": "pron_cele007_01",
+      "item_id": "cele007",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "На Рождество́ мы хоти́м полете́ть в О́регон.",
+      "ru_plain": "На Рождество мы хотим полететь в Орегон.",
+      "en": "For Christmas we want to fly to Oregon.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "мы",
+        "на",
+        "на рождество мы хотим полететь в орегон.",
+        "орегон",
+        "полететь",
+        "рождество",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "christmas",
+        "holiday",
+        "plans",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cele008_01",
+      "item_id": "cele008",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы хоти́м ката́ться на лы́жах.",
+      "ru_plain": "Мы хотим кататься на лыжах.",
+      "en": "We want to ski.",
+      "priority": 3,
+      "lexemes": [
+        "кататься",
+        "лыжах",
+        "мы",
+        "мы хотим кататься на лыжах.",
+        "на",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "holiday",
+        "plans",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cele009_01",
+      "item_id": "cele009",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Кадри́я бу́дет гуля́ть и отдыха́ть.",
+      "ru_plain": "Кадрия будет гулять и отдыхать.",
+      "en": "Kadriya will walk and relax.",
+      "priority": 3,
+      "lexemes": [
+        "будет",
+        "гулять",
+        "и",
+        "кадрия",
+        "кадрия будет гулять и отдыхать.",
+        "отдыхать"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "holiday",
+        "kadriya",
+        "plans",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cele010_01",
+      "item_id": "cele010",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Ско́лько дней вы бу́дете в О́регоне?",
+      "ru_plain": "Сколько дней вы будете в Орегоне?",
+      "en": "How many days will you be in Oregon?",
+      "priority": 3,
+      "lexemes": [
+        "будете",
+        "в",
+        "вы",
+        "дней",
+        "орегоне",
+        "сколько",
+        "сколько дней вы будете в орегоне?"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "holiday",
+        "plans",
+        "pronunciation",
+        "question"
+      ]
+    },
+    {
+      "id": "pron_cele011_01",
+      "item_id": "cele011",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы бу́дем в О́регоне пять дней.",
+      "ru_plain": "Мы будем в Орегоне пять дней.",
+      "en": "We'll be in Oregon for five days.",
+      "priority": 3,
+      "lexemes": [
+        "будем",
+        "в",
+        "дней",
+        "мы",
+        "мы будем в орегоне пять дней.",
+        "орегоне",
+        "пять"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "holiday",
+        "plans",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cele012_01",
+      "item_id": "cele012",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Что вы де́лали на День Благодаре́ния?",
+      "ru_plain": "Что вы делали на День Благодарения?",
+      "en": "What did you do for Thanksgiving?",
+      "priority": 3,
+      "lexemes": [
+        "благодарения",
+        "вы",
+        "делали",
+        "день",
+        "на",
+        "что",
+        "что вы делали на день благодарения?"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "holiday",
+        "pronunciation",
+        "question",
+        "thanksgiving"
+      ]
+    },
+    {
+      "id": "pron_cele013_01",
+      "item_id": "cele013",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "На День Благодаре́ния мы у́жинали всей семьёй.",
+      "ru_plain": "На День Благодарения мы ужинали всей семьёй.",
+      "en": "For Thanksgiving we had dinner as a whole family.",
+      "priority": 3,
+      "lexemes": [
+        "благодарения",
+        "всей",
+        "день",
+        "мы",
+        "на",
+        "на день благодарения мы ужинали всей семьёй.",
+        "семьёй",
+        "ужинали"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "family",
+        "holiday",
+        "pronunciation",
+        "thanksgiving"
+      ]
+    },
+    {
+      "id": "pron_cele014_01",
+      "item_id": "cele014",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Э́то был большо́й у́жин.",
+      "ru_plain": "Это был большой ужин.",
+      "en": "It was a big dinner.",
+      "priority": 3,
+      "lexemes": [
+        "большой",
+        "был",
+        "ужин",
+        "это",
+        "это был большой ужин."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "family",
+        "holiday",
+        "pronunciation",
+        "thanksgiving"
+      ]
+    },
+    {
       "id": "pron_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "en": "We're going to Budva.",
@@ -35229,8 +38765,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "en": "We'll be in Montenegro.",
@@ -35278,8 +38814,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "en": "We'll be in Budva.",
@@ -35327,8 +38863,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "en": "Where is our hotel?",
@@ -35378,8 +38914,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "en": "Can we get a taxi?",
@@ -35425,8 +38961,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "en": "How long is the ride to the hotel?",
@@ -35478,8 +39014,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "en": "Where is the beach?",
@@ -35528,8 +39064,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "en": "I want to walk by the sea.",
@@ -35578,8 +39114,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "en": "The old town is very beautiful.",
@@ -35627,8 +39163,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "en": "The sea is very beautiful.",
@@ -35675,8 +39211,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "en": "We're relaxing / on vacation.",
@@ -35722,8 +39258,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "en": "We're here with family.",
@@ -35771,8 +39307,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "en": "The check, please.",
@@ -35818,8 +39354,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "en": "We want to have dinner.",
@@ -35866,8 +39402,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "en": "I want / you (pl/formal) want — хоте́ть",
@@ -35910,8 +39446,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "en": "I can / you can — мочь",
@@ -35954,8 +39490,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "en": "I speak / you speak — говори́ть",
@@ -35998,8 +39534,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "en": "I understand / you understand — понима́ть",
@@ -36042,8 +39578,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "en": "I love / you love — люби́ть",
@@ -36086,8 +39622,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "en": "I work / you work — рабо́тать",
@@ -36130,8 +39666,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "en": "I live / you live — жить",
@@ -36174,8 +39710,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "en": "I eat / you eat — есть",
@@ -36218,8 +39754,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "en": "I drink / you drink — пить",
@@ -36262,8 +39798,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "en": "I know / you know — знать",
@@ -42447,11 +45983,679 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "back_cele001_01",
+      "item_id": "cele001",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Скоро́ Рождество́.",
+      "ru_plain": "Скоро Рождество.",
+      "accepted_answers": [
+        "Скоро Рождество.",
+        "Скоро́ Рождество́."
+      ],
+      "en": "Christmas is soon.",
+      "priority": 3,
+      "lexemes": [
+        "рождество",
+        "скоро",
+        "скоро рождество."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "christmas",
+        "holiday"
+      ]
+    },
+    {
+      "id": "back_cele002_01",
+      "item_id": "cele002",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Како́й сего́дня пра́здник?",
+      "ru_plain": "Какой сегодня праздник?",
+      "accepted_answers": [
+        "Како́й сего́дня пра́здник?",
+        "Какой сегодня праздник?"
+      ],
+      "en": "What holiday is today?",
+      "priority": 3,
+      "lexemes": [
+        "какой",
+        "какой сегодня праздник?",
+        "праздник",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "holiday",
+        "question"
+      ]
+    },
+    {
+      "id": "back_cele003_01",
+      "item_id": "cele003",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Сего́дня Рождество́.",
+      "ru_plain": "Сегодня Рождество.",
+      "accepted_answers": [
+        "Сего́дня Рождество́.",
+        "Сегодня Рождество."
+      ],
+      "en": "Today is Christmas.",
+      "priority": 3,
+      "lexemes": [
+        "рождество",
+        "сегодня",
+        "сегодня рождество."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "christmas",
+        "holiday"
+      ]
+    },
+    {
+      "id": "back_cele004_01",
+      "item_id": "cele004",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Как вы с Кадри́ей отпра́здновали Рождество́?",
+      "ru_plain": "Как вы с Кадрией отпраздновали Рождество?",
+      "accepted_answers": [
+        "Как вы с Кадри́ей отпра́здновали Рождество́?",
+        "Как вы с Кадрией отпраздновали Рождество?"
+      ],
+      "en": "How did you and Kadriya celebrate Christmas?",
+      "priority": 3,
+      "lexemes": [
+        "вы",
+        "кадрией",
+        "как",
+        "как вы с кадрией отпраздновали рождество?",
+        "отпраздновали",
+        "рождество",
+        "с"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "christmas",
+        "holiday",
+        "question"
+      ]
+    },
+    {
+      "id": "back_cele005_01",
+      "item_id": "cele005",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+      "ru_plain": "Мы отпраздновали Рождество у моих родителей дома.",
+      "accepted_answers": [
+        "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+        "Мы отпраздновали Рождество у моих родителей дома."
+      ],
+      "en": "We celebrated Christmas at my parents' house.",
+      "priority": 3,
+      "lexemes": [
+        "дома",
+        "моих",
+        "мы",
+        "мы отпраздновали рождество у моих родителей дома.",
+        "отпраздновали",
+        "родителей",
+        "рождество",
+        "у"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "christmas",
+        "family",
+        "holiday"
+      ]
+    },
+    {
+      "id": "back_cele006_01",
+      "item_id": "cele006",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Каки́е пла́ны на Рождество́?",
+      "ru_plain": "Какие планы на Рождество?",
+      "accepted_answers": [
+        "Каки́е пла́ны на Рождество́?",
+        "Какие планы на Рождество?"
+      ],
+      "en": "What are the plans for Christmas?",
+      "priority": 3,
+      "lexemes": [
+        "какие",
+        "какие планы на рождество?",
+        "на",
+        "планы",
+        "рождество"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "christmas",
+        "holiday",
+        "question"
+      ]
+    },
+    {
+      "id": "back_cele007_01",
+      "item_id": "cele007",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "На Рождество́ мы хоти́м полете́ть в О́регон.",
+      "ru_plain": "На Рождество мы хотим полететь в Орегон.",
+      "accepted_answers": [
+        "На Рождество мы хотим полететь в Орегон.",
+        "На Рождество́ мы хоти́м полете́ть в О́регон."
+      ],
+      "en": "For Christmas we want to fly to Oregon.",
+      "priority": 3,
+      "lexemes": [
+        "в",
+        "мы",
+        "на",
+        "на рождество мы хотим полететь в орегон.",
+        "орегон",
+        "полететь",
+        "рождество",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "christmas",
+        "holiday",
+        "plans"
+      ]
+    },
+    {
+      "id": "back_cele008_01",
+      "item_id": "cele008",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы хоти́м ката́ться на лы́жах.",
+      "ru_plain": "Мы хотим кататься на лыжах.",
+      "accepted_answers": [
+        "Мы хоти́м ката́ться на лы́жах.",
+        "Мы хотим кататься на лыжах."
+      ],
+      "en": "We want to ski.",
+      "priority": 3,
+      "lexemes": [
+        "кататься",
+        "лыжах",
+        "мы",
+        "мы хотим кататься на лыжах.",
+        "на",
+        "хотим"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "holiday",
+        "plans"
+      ]
+    },
+    {
+      "id": "back_cele009_01",
+      "item_id": "cele009",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Кадри́я бу́дет гуля́ть и отдыха́ть.",
+      "ru_plain": "Кадрия будет гулять и отдыхать.",
+      "accepted_answers": [
+        "Кадри́я бу́дет гуля́ть и отдыха́ть.",
+        "Кадрия будет гулять и отдыхать."
+      ],
+      "en": "Kadriya will walk and relax.",
+      "priority": 3,
+      "lexemes": [
+        "будет",
+        "гулять",
+        "и",
+        "кадрия",
+        "кадрия будет гулять и отдыхать.",
+        "отдыхать"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "holiday",
+        "kadriya",
+        "plans"
+      ]
+    },
+    {
+      "id": "back_cele010_01",
+      "item_id": "cele010",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Ско́лько дней вы бу́дете в О́регоне?",
+      "ru_plain": "Сколько дней вы будете в Орегоне?",
+      "accepted_answers": [
+        "Ско́лько дней вы бу́дете в О́регоне?",
+        "Сколько дней вы будете в Орегоне?"
+      ],
+      "en": "How many days will you be in Oregon?",
+      "priority": 3,
+      "lexemes": [
+        "будете",
+        "в",
+        "вы",
+        "дней",
+        "орегоне",
+        "сколько",
+        "сколько дней вы будете в орегоне?"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "holiday",
+        "plans",
+        "question"
+      ]
+    },
+    {
+      "id": "back_cele011_01",
+      "item_id": "cele011",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Мы бу́дем в О́регоне пять дней.",
+      "ru_plain": "Мы будем в Орегоне пять дней.",
+      "accepted_answers": [
+        "Мы бу́дем в О́регоне пять дней.",
+        "Мы будем в Орегоне пять дней."
+      ],
+      "en": "We'll be in Oregon for five days.",
+      "priority": 3,
+      "lexemes": [
+        "будем",
+        "в",
+        "дней",
+        "мы",
+        "мы будем в орегоне пять дней.",
+        "орегоне",
+        "пять"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "holiday",
+        "plans"
+      ]
+    },
+    {
+      "id": "back_cele012_01",
+      "item_id": "cele012",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Что вы де́лали на День Благодаре́ния?",
+      "ru_plain": "Что вы делали на День Благодарения?",
+      "accepted_answers": [
+        "Что вы де́лали на День Благодаре́ния?",
+        "Что вы делали на День Благодарения?"
+      ],
+      "en": "What did you do for Thanksgiving?",
+      "priority": 3,
+      "lexemes": [
+        "благодарения",
+        "вы",
+        "делали",
+        "день",
+        "на",
+        "что",
+        "что вы делали на день благодарения?"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "holiday",
+        "question",
+        "thanksgiving"
+      ]
+    },
+    {
+      "id": "back_cele013_01",
+      "item_id": "cele013",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "На День Благодаре́ния мы у́жинали всей семьёй.",
+      "ru_plain": "На День Благодарения мы ужинали всей семьёй.",
+      "accepted_answers": [
+        "На День Благодаре́ния мы у́жинали всей семьёй.",
+        "На День Благодарения мы ужинали всей семьёй."
+      ],
+      "en": "For Thanksgiving we had dinner as a whole family.",
+      "priority": 3,
+      "lexemes": [
+        "благодарения",
+        "всей",
+        "день",
+        "мы",
+        "на",
+        "на день благодарения мы ужинали всей семьёй.",
+        "семьёй",
+        "ужинали"
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "family",
+        "holiday",
+        "thanksgiving"
+      ]
+    },
+    {
+      "id": "back_cele014_01",
+      "item_id": "cele014",
+      "module": "celebrations",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "ru": "Э́то был большо́й у́жин.",
+      "ru_plain": "Это был большой ужин.",
+      "accepted_answers": [
+        "Э́то был большо́й у́жин.",
+        "Это был большой ужин."
+      ],
+      "en": "It was a big dinner.",
+      "priority": 3,
+      "lexemes": [
+        "большой",
+        "был",
+        "ужин",
+        "это",
+        "это был большой ужин."
+      ],
+      "structures": [
+        "grammar:future_plan",
+        "lexical:holiday_vocab",
+        "phrase:family_celebration",
+        "phrase:holiday_plan"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "family",
+        "holiday",
+        "thanksgiving"
+      ]
+    },
+    {
       "id": "back_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "accepted_answers": [
@@ -42495,8 +46699,8 @@ window.CONTENT_DATA = {
       "id": "back_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "accepted_answers": [
@@ -42540,8 +46744,8 @@ window.CONTENT_DATA = {
       "id": "back_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "accepted_answers": [
@@ -42585,8 +46789,8 @@ window.CONTENT_DATA = {
       "id": "back_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "accepted_answers": [
@@ -42632,8 +46836,8 @@ window.CONTENT_DATA = {
       "id": "back_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "accepted_answers": [
@@ -42675,8 +46879,8 @@ window.CONTENT_DATA = {
       "id": "back_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "accepted_answers": [
@@ -42724,8 +46928,8 @@ window.CONTENT_DATA = {
       "id": "back_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "accepted_answers": [
@@ -42769,8 +46973,8 @@ window.CONTENT_DATA = {
       "id": "back_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "accepted_answers": [
@@ -42815,8 +47019,8 @@ window.CONTENT_DATA = {
       "id": "back_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "accepted_answers": [
@@ -42860,8 +47064,8 @@ window.CONTENT_DATA = {
       "id": "back_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "accepted_answers": [
@@ -42904,8 +47108,8 @@ window.CONTENT_DATA = {
       "id": "back_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "accepted_answers": [
@@ -42947,8 +47151,8 @@ window.CONTENT_DATA = {
       "id": "back_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "accepted_answers": [
@@ -42991,8 +47195,8 @@ window.CONTENT_DATA = {
       "id": "back_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "accepted_answers": [
@@ -43034,8 +47238,8 @@ window.CONTENT_DATA = {
       "id": "back_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "accepted_answers": [
@@ -43078,8 +47282,8 @@ window.CONTENT_DATA = {
       "id": "back_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "accepted_answers": [
@@ -43118,8 +47322,8 @@ window.CONTENT_DATA = {
       "id": "back_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "accepted_answers": [
@@ -43158,8 +47362,8 @@ window.CONTENT_DATA = {
       "id": "back_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "accepted_answers": [
@@ -43198,8 +47402,8 @@ window.CONTENT_DATA = {
       "id": "back_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "accepted_answers": [
@@ -43238,8 +47442,8 @@ window.CONTENT_DATA = {
       "id": "back_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "accepted_answers": [
@@ -43278,8 +47482,8 @@ window.CONTENT_DATA = {
       "id": "back_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "accepted_answers": [
@@ -43318,8 +47522,8 @@ window.CONTENT_DATA = {
       "id": "back_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "accepted_answers": [
@@ -43358,8 +47562,8 @@ window.CONTENT_DATA = {
       "id": "back_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "accepted_answers": [
@@ -43398,8 +47602,8 @@ window.CONTENT_DATA = {
       "id": "back_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "accepted_answers": [
@@ -43437,8 +47641,8 @@ window.CONTENT_DATA = {
       "id": "back_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "accepted_answers": [
@@ -47946,8 +52150,8 @@ window.CONTENT_DATA = {
     {
       "id": "tutor_verb_fluency_check",
       "scenario_id": "verb_fluency_check",
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12,
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
       "setting": "Core verb fluency",
       "goal": "Produce core verbs under real interview-style pressure.",
       "learner_role": "guest",
@@ -48043,7 +52247,8 @@ window.CONTENT_DATA = {
         "family_visit_009",
         "family_visit_010",
         "family_visit_011",
-        "family_visit_012"
+        "family_visit_012",
+        "family_visit_013"
       ],
       "allowed_item_ids": [
         "firs001",
@@ -48197,6 +52402,20 @@ window.CONTENT_DATA = {
         "work014",
         "work015",
         "work016",
+        "cele001",
+        "cele002",
+        "cele003",
+        "cele004",
+        "cele005",
+        "cele006",
+        "cele007",
+        "cele008",
+        "cele009",
+        "cele010",
+        "cele011",
+        "cele012",
+        "cele013",
+        "cele014",
         "trav001",
         "trav002",
         "trav003",
@@ -48227,14 +52446,17 @@ window.CONTENT_DATA = {
         "америки",
         "аппетита",
         "бабушка",
+        "благодарения",
         "бокал",
         "большое",
+        "большой",
         "брат",
         "будве",
         "будву",
         "будем",
         "будем здоровы!",
         "будет",
+        "был",
         "было",
         "в",
         "ваше",
@@ -48245,6 +52467,7 @@ window.CONTENT_DATA = {
         "вместе",
         "воскресенье",
         "время",
+        "всей",
         "встречу",
         "вторник",
         "вчера",
@@ -48255,6 +52478,7 @@ window.CONTENT_DATA = {
         "говорю",
         "говорю / говорите",
         "город",
+        "гулять",
         "да",
         "да, немного",
         "да, у меня много дел.",
@@ -48269,6 +52493,7 @@ window.CONTENT_DATA = {
         "дети",
         "джо",
         "дна",
+        "дней",
         "днём",
         "до",
         "до дна",
@@ -48283,6 +52508,7 @@ window.CONTENT_DATA = {
         "добрый день.",
         "довольны",
         "дождь",
+        "дома",
         "дочь",
         "едем",
         "едим",
@@ -48328,9 +52554,11 @@ window.CONTENT_DATA = {
         "из",
         "извините",
         "кадрия",
+        "кадрия будет гулять и отдыхать.",
         "кадрия работает вместе со мной.",
         "как",
         "как по-русски …?",
+        "кататься",
         "клиентам",
         "клиентов",
         "клиентом",
@@ -48338,6 +52566,7 @@ window.CONTENT_DATA = {
         "компьютере",
         "красивое",
         "красивый",
+        "лыжах",
         "любите",
         "люблю",
         "люблю / любите",
@@ -48357,6 +52586,7 @@ window.CONTENT_DATA = {
         "можно ещё?",
         "можно такси?",
         "можно чаю?",
+        "моих",
         "молодых",
         "море",
         "море очень красивое.",
@@ -48364,17 +52594,22 @@ window.CONTENT_DATA = {
         "муж",
         "мы",
         "мы будем в будве.",
+        "мы будем в орегоне пять дней.",
         "мы будем в черногории.",
         "мы довольны результатом.",
         "мы едем в будву.",
         "мы едим и смотрим телевизор.",
         "мы здесь с семьёй.",
         "мы отдыхаем.",
+        "мы отпраздновали рождество у моих родителей дома.",
         "мы познакомились …",
         "мы работаем вместе.",
+        "мы хотим кататься на лыжах.",
         "мы хотим поужинать.",
         "на",
         "на выходных",
+        "на день благодарения мы ужинали всей семьёй.",
+        "на рождество мы хотим полететь в орегон.",
         "надо",
         "наелся",
         "начинаю",
@@ -48390,9 +52625,13 @@ window.CONTENT_DATA = {
         "обычно",
         "обычно я отдыхаю вечером.",
         "обычно я работаю семь часов.",
+        "орегон",
+        "орегоне",
         "отдыхаем",
+        "отдыхать",
         "отдыхаю",
         "отлично",
+        "отпраздновали",
         "очень",
         "очень вкусно!",
         "очень приятно",
@@ -48406,6 +52645,7 @@ window.CONTENT_DATA = {
         "пожалуйста",
         "познакомились",
         "познакомиться",
+        "полететь",
         "помедленнее",
         "помедленнее, пожалуйста",
         "понедельник",
@@ -48426,6 +52666,7 @@ window.CONTENT_DATA = {
         "пью / пьёте",
         "пьёте",
         "пятница",
+        "пять",
         "работаем",
         "работает",
         "работаете",
@@ -48441,6 +52682,7 @@ window.CONTENT_DATA = {
         "результатом",
         "родителей",
         "родители",
+        "рождество",
         "русски",
         "русский",
         "рюмка",
@@ -48450,6 +52692,7 @@ window.CONTENT_DATA = {
         "себя",
         "сегодня",
         "сегодня облачно.",
+        "сегодня рождество.",
         "сегодня солнечно.",
         "сегодня тепло.",
         "сегодня холодно.",
@@ -48462,6 +52705,8 @@ window.CONTENT_DATA = {
         "сестра",
         "сестра жены",
         "сказать",
+        "скоро",
+        "скоро рождество.",
         "смотрим",
         "снег",
         "со",
@@ -48493,6 +52738,8 @@ window.CONTENT_DATA = {
         "у меня есть время до десяти.",
         "у меня много работы.",
         "у меня своя компания.",
+        "ужин",
+        "ужинали",
         "ужинаю",
         "утра",
         "утро",
@@ -48519,6 +52766,7 @@ window.CONTENT_DATA = {
         "штата",
         "шурин",
         "это",
+        "это был большой ужин.",
         "юрист",
         "я",
         "я ещё учу русский",
@@ -48544,10 +52792,12 @@ window.CONTENT_DATA = {
         "я юрист"
       ],
       "passive_vocab": [
+        "благодарения",
         "блины",
         "борщ",
         "будете",
         "будете …?",
+        "в",
         "вам",
         "вам нравится …?",
         "вас",
@@ -48561,19 +52811,26 @@ window.CONTENT_DATA = {
         "дел",
         "дела",
         "делал",
+        "делали",
         "день",
+        "дней",
         "до",
         "ехать",
         "ещё",
+        "кадрией",
         "как",
         "как вам россия?",
         "как вы познакомились?",
+        "как вы с кадрией отпраздновали рождество?",
         "как дела?",
         "как там на улице?",
         "какая",
         "какая сегодня погода?",
+        "какие",
+        "какие планы на рождество?",
         "какой",
         "какой сегодня день недели?",
+        "какой сегодня праздник?",
         "кем",
         "кем вы работаете?",
         "клиентов",
@@ -48589,21 +52846,28 @@ window.CONTENT_DATA = {
         "нравится",
         "обедаете",
         "оливье",
+        "орегоне",
         "отдыхаете",
         "отель",
         "отеля",
         "откуда",
         "откуда вы?",
+        "отпраздновали",
         "пельмени",
+        "планы",
         "пляж",
         "по",
         "погода",
         "познакомились",
+        "праздник",
         "работаете",
+        "рождество",
         "россия",
         "русски",
+        "с",
         "сегодня",
         "сколько",
+        "сколько дней вы будете в орегоне?",
         "сколько ехать до отеля?",
         "там",
         "ты",
@@ -48614,6 +52878,7 @@ window.CONTENT_DATA = {
         "улице",
         "чай",
         "что",
+        "что вы делали на день благодарения?",
         "что ты сегодня делал?"
       ],
       "structures": [
@@ -48621,6 +52886,7 @@ window.CONTENT_DATA = {
         "discourse:politeness",
         "grammar:formal_question",
         "grammar:formal_second_person",
+        "grammar:future_plan",
         "grammar:past_masculine_work",
         "grammar:prepositional_place",
         "grammar:present_first_person",
@@ -48629,6 +52895,7 @@ window.CONTENT_DATA = {
         "lexical:core_verbs",
         "lexical:day_parts",
         "lexical:days_of_week",
+        "lexical:holiday_vocab",
         "lexical:kinship_terms",
         "lexical:travel_vocab",
         "lexical:work_vocab",
@@ -48637,9 +52904,11 @@ window.CONTENT_DATA = {
         "phrase:client_case_answer",
         "phrase:compliment_food",
         "phrase:family_affection",
+        "phrase:family_celebration",
         "phrase:food_offer",
         "phrase:greeting",
         "phrase:guest_gratitude",
+        "phrase:holiday_plan",
         "phrase:host_question",
         "phrase:introduction",
         "phrase:personal_origin",
@@ -48669,7 +52938,7 @@ window.CONTENT_DATA = {
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Core verb fluency — Produce core verbs under real interview-style pressure.\nCurriculum boundary: Lesson 12 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- хочу / хотите — I want / you (pl/formal) want — хоте́ть\n- могу / можете — I can / you can — мочь\n- говорю / говорите — I speak / you speak — говори́ть\n- понимаю / понимаете — I understand / you understand — понима́ть\n- люблю / любите — I love / you love — люби́ть\n- работаю / работаете — I work / you work — рабо́тать\n- живу / живёте — I live / you live — жить\n- ем / едите — I eat / you eat — есть\n- пью / пьёте — I drink / you drink — пить\n- знаю / знаете — I know / you know — знать\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Core verb fluency — Produce core verbs under real interview-style pressure.\nCurriculum boundary: Lesson 13 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- хочу / хотите — I want / you (pl/formal) want — хоте́ть\n- могу / можете — I can / you can — мочь\n- говорю / говорите — I speak / you speak — говори́ть\n- понимаю / понимаете — I understand / you understand — понима́ть\n- люблю / любите — I love / you love — люби́ть\n- работаю / работаете — I work / you work — рабо́тать\n- живу / живёте — I live / you live — жить\n- ем / едите — I eat / you eat — есть\n- пью / пьёте — I drink / you drink — пить\n- знаю / знаете — I know / you know — знать\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
       "id": "tutor_extended_family_family_tree",
@@ -50189,8 +54458,8 @@ window.CONTENT_DATA = {
     {
       "id": "tutor_budva_trip_checkin",
       "scenario_id": "budva_trip_checkin",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "setting": "Budva family trip",
       "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
       "learner_role": "guest",
@@ -50293,7 +54562,8 @@ window.CONTENT_DATA = {
         "family_visit_008",
         "family_visit_009",
         "family_visit_010",
-        "family_visit_011"
+        "family_visit_011",
+        "family_visit_012"
       ],
       "allowed_item_ids": [
         "firs001",
@@ -50447,6 +54717,20 @@ window.CONTENT_DATA = {
         "work014",
         "work015",
         "work016",
+        "cele001",
+        "cele002",
+        "cele003",
+        "cele004",
+        "cele005",
+        "cele006",
+        "cele007",
+        "cele008",
+        "cele009",
+        "cele010",
+        "cele011",
+        "cele012",
+        "cele013",
+        "cele014",
         "trav001",
         "trav002",
         "trav003",
@@ -50467,14 +54751,17 @@ window.CONTENT_DATA = {
         "америки",
         "аппетита",
         "бабушка",
+        "благодарения",
         "бокал",
         "большое",
+        "большой",
         "брат",
         "будве",
         "будву",
         "будем",
         "будем здоровы!",
         "будет",
+        "был",
         "было",
         "в",
         "ваше",
@@ -50485,6 +54772,7 @@ window.CONTENT_DATA = {
         "вместе",
         "воскресенье",
         "время",
+        "всей",
         "встречу",
         "вторник",
         "вчера",
@@ -50493,6 +54781,7 @@ window.CONTENT_DATA = {
         "выходных",
         "говорю",
         "город",
+        "гулять",
         "да",
         "да, немного",
         "да, у меня много дел.",
@@ -50507,6 +54796,7 @@ window.CONTENT_DATA = {
         "дети",
         "джо",
         "дна",
+        "дней",
         "днём",
         "до",
         "до дна",
@@ -50521,6 +54811,7 @@ window.CONTENT_DATA = {
         "добрый день.",
         "довольны",
         "дождь",
+        "дома",
         "дочь",
         "едем",
         "едим",
@@ -50558,9 +54849,11 @@ window.CONTENT_DATA = {
         "из",
         "извините",
         "кадрия",
+        "кадрия будет гулять и отдыхать.",
         "кадрия работает вместе со мной.",
         "как",
         "как по-русски …?",
+        "кататься",
         "клиентам",
         "клиентов",
         "клиентом",
@@ -50568,6 +54861,7 @@ window.CONTENT_DATA = {
         "компьютере",
         "красивое",
         "красивый",
+        "лыжах",
         "люблю",
         "любовь",
         "мама",
@@ -50582,6 +54876,7 @@ window.CONTENT_DATA = {
         "можно ещё?",
         "можно такси?",
         "можно чаю?",
+        "моих",
         "молодых",
         "море",
         "море очень красивое.",
@@ -50589,17 +54884,22 @@ window.CONTENT_DATA = {
         "муж",
         "мы",
         "мы будем в будве.",
+        "мы будем в орегоне пять дней.",
         "мы будем в черногории.",
         "мы довольны результатом.",
         "мы едем в будву.",
         "мы едим и смотрим телевизор.",
         "мы здесь с семьёй.",
         "мы отдыхаем.",
+        "мы отпраздновали рождество у моих родителей дома.",
         "мы познакомились …",
         "мы работаем вместе.",
+        "мы хотим кататься на лыжах.",
         "мы хотим поужинать.",
         "на",
         "на выходных",
+        "на день благодарения мы ужинали всей семьёй.",
+        "на рождество мы хотим полететь в орегон.",
         "надо",
         "наелся",
         "начинаю",
@@ -50615,9 +54915,13 @@ window.CONTENT_DATA = {
         "обычно",
         "обычно я отдыхаю вечером.",
         "обычно я работаю семь часов.",
+        "орегон",
+        "орегоне",
         "отдыхаем",
+        "отдыхать",
         "отдыхаю",
         "отлично",
+        "отпраздновали",
         "очень",
         "очень вкусно!",
         "очень приятно",
@@ -50631,6 +54935,7 @@ window.CONTENT_DATA = {
         "пожалуйста",
         "познакомились",
         "познакомиться",
+        "полететь",
         "помедленнее",
         "помедленнее, пожалуйста",
         "понедельник",
@@ -50646,6 +54951,7 @@ window.CONTENT_DATA = {
         "приятного аппетита!",
         "простите",
         "пятница",
+        "пять",
         "работаем",
         "работает",
         "работал",
@@ -50659,6 +54965,7 @@ window.CONTENT_DATA = {
         "результатом",
         "родителей",
         "родители",
+        "рождество",
         "русски",
         "русский",
         "рюмка",
@@ -50668,6 +54975,7 @@ window.CONTENT_DATA = {
         "себя",
         "сегодня",
         "сегодня облачно.",
+        "сегодня рождество.",
         "сегодня солнечно.",
         "сегодня тепло.",
         "сегодня холодно.",
@@ -50680,6 +54988,8 @@ window.CONTENT_DATA = {
         "сестра",
         "сестра жены",
         "сказать",
+        "скоро",
+        "скоро рождество.",
         "смотрим",
         "снег",
         "со",
@@ -50711,6 +55021,8 @@ window.CONTENT_DATA = {
         "у меня есть время до десяти.",
         "у меня много работы.",
         "у меня своя компания.",
+        "ужин",
+        "ужинали",
         "ужинаю",
         "утра",
         "утро",
@@ -50735,6 +55047,7 @@ window.CONTENT_DATA = {
         "штата",
         "шурин",
         "это",
+        "это был большой ужин.",
         "юрист",
         "я",
         "я ещё учу русский",
@@ -50760,10 +55073,12 @@ window.CONTENT_DATA = {
         "я юрист"
       ],
       "passive_vocab": [
+        "благодарения",
         "блины",
         "борщ",
         "будете",
         "будете …?",
+        "в",
         "вам",
         "вам нравится …?",
         "вас",
@@ -50777,19 +55092,26 @@ window.CONTENT_DATA = {
         "дел",
         "дела",
         "делал",
+        "делали",
         "день",
+        "дней",
         "до",
         "ехать",
         "ещё",
+        "кадрией",
         "как",
         "как вам россия?",
         "как вы познакомились?",
+        "как вы с кадрией отпраздновали рождество?",
         "как дела?",
         "как там на улице?",
         "какая",
         "какая сегодня погода?",
+        "какие",
+        "какие планы на рождество?",
         "какой",
         "какой сегодня день недели?",
+        "какой сегодня праздник?",
         "кем",
         "кем вы работаете?",
         "клиентов",
@@ -50805,21 +55127,28 @@ window.CONTENT_DATA = {
         "нравится",
         "обедаете",
         "оливье",
+        "орегоне",
         "отдыхаете",
         "отель",
         "отеля",
         "откуда",
         "откуда вы?",
+        "отпраздновали",
         "пельмени",
+        "планы",
         "пляж",
         "по",
         "погода",
         "познакомились",
+        "праздник",
         "работаете",
+        "рождество",
         "россия",
         "русски",
+        "с",
         "сегодня",
         "сколько",
+        "сколько дней вы будете в орегоне?",
         "сколько ехать до отеля?",
         "там",
         "ты",
@@ -50830,12 +55159,14 @@ window.CONTENT_DATA = {
         "улице",
         "чай",
         "что",
+        "что вы делали на день благодарения?",
         "что ты сегодня делал?"
       ],
       "structures": [
         "culture:toast_etiquette",
         "discourse:politeness",
         "grammar:formal_question",
+        "grammar:future_plan",
         "grammar:past_masculine_work",
         "grammar:prepositional_place",
         "grammar:present_first_person",
@@ -50843,6 +55174,7 @@ window.CONTENT_DATA = {
         "grammar:when_question",
         "lexical:day_parts",
         "lexical:days_of_week",
+        "lexical:holiday_vocab",
         "lexical:kinship_terms",
         "lexical:travel_vocab",
         "lexical:work_vocab",
@@ -50851,9 +55183,11 @@ window.CONTENT_DATA = {
         "phrase:client_case_answer",
         "phrase:compliment_food",
         "phrase:family_affection",
+        "phrase:family_celebration",
         "phrase:food_offer",
         "phrase:greeting",
         "phrase:guest_gratitude",
+        "phrase:holiday_plan",
         "phrase:host_question",
         "phrase:introduction",
         "phrase:personal_origin",
@@ -50884,7 +55218,7 @@ window.CONTENT_DATA = {
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Budva family trip — Talk about arriving in Budva, the hotel, the sea, and simple plans.\nCurriculum boundary: Lesson 11 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Мы едем в Будву. — We're going to Budva.\n- Мы будем в Черногории. — We'll be in Montenegro.\n- Мы будем в Будве. — We'll be in Budva.\n- Где наш отель? — Where is our hotel?\n- Можно такси? — Can we get a taxi?\n- Сколько ехать до отеля? — How long is the ride to the hotel?\n- Где пляж? — Where is the beach?\n- Я хочу погулять у моря. — I want to walk by the sea.\n- Старый город очень красивый. — The old town is very beautiful.\n- Мы здесь с семьёй. — We're here with family.\n- Счёт, пожалуйста. — The check, please.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Budva family trip — Talk about arriving in Budva, the hotel, the sea, and simple plans.\nCurriculum boundary: Lesson 12 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Мы едем в Будву. — We're going to Budva.\n- Мы будем в Черногории. — We'll be in Montenegro.\n- Мы будем в Будве. — We'll be in Budva.\n- Где наш отель? — Where is our hotel?\n- Можно такси? — Can we get a taxi?\n- Сколько ехать до отеля? — How long is the ride to the hotel?\n- Где пляж? — Where is the beach?\n- Я хочу погулять у моря. — I want to walk by the sea.\n- Старый город очень красивый. — The old town is very beautiful.\n- Мы здесь с семьёй. — We're here with family.\n- Счёт, пожалуйста. — The check, please.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
       "id": "tutor_daily_routine_checkin",
@@ -52125,6 +56459,708 @@ window.CONTENT_DATA = {
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
       "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Lawyer work small talk — Answer predictable questions about clients, cases, court, and being busy without overexplaining.\nCurriculum boundary: Lesson 10 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Я юрист — I'm a lawyer (general — use this)\n- У меня своя компания. — I have my own company.\n- Кадрия работает вместе со мной. — Kadriya works together with me.\n- Мы работаем вместе. — We work together.\n- У меня много работы. — I have a lot of work.\n- Я очень занят. — I'm very busy.\n- Хорошо. Я много работаю. — Good. I work a lot.\n- У вас много клиентов? — Do you have many clients?\n- Да, у меня много клиентов. — Yes, I have many clients.\n- У вас много дел? — Do you have many cases?\n- Да, у меня много дел. — Yes, I have many cases.\n- Сегодня я работал с клиентом. — Today I worked with a client.\n- Я звонил клиентам. — I called clients.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+    },
+    {
+      "id": "tutor_holiday_celebration_checkin",
+      "scenario_id": "holiday_celebration_checkin",
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
+      "setting": "Holiday and family celebration small talk",
+      "goal": "Answer Christmas/Thanksgiving/family-plan prompts from the original guide in short Russian.",
+      "learner_role": "guest",
+      "tutor_role": "host family member",
+      "required_items": [
+        "cele001",
+        "cele004",
+        "cele005",
+        "cele006",
+        "cele007",
+        "cele010",
+        "cele011",
+        "cele012",
+        "cele013",
+        "cele014"
+      ],
+      "required_phrases": [
+        {
+          "id": "cele001",
+          "ru": "Скоро́ Рождество́.",
+          "ru_plain": "Скоро Рождество.",
+          "en": "Christmas is soon."
+        },
+        {
+          "id": "cele004",
+          "ru": "Как вы с Кадри́ей отпра́здновали Рождество́?",
+          "ru_plain": "Как вы с Кадрией отпраздновали Рождество?",
+          "en": "How did you and Kadriya celebrate Christmas?"
+        },
+        {
+          "id": "cele005",
+          "ru": "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+          "ru_plain": "Мы отпраздновали Рождество у моих родителей дома.",
+          "en": "We celebrated Christmas at my parents' house."
+        },
+        {
+          "id": "cele006",
+          "ru": "Каки́е пла́ны на Рождество́?",
+          "ru_plain": "Какие планы на Рождество?",
+          "en": "What are the plans for Christmas?"
+        },
+        {
+          "id": "cele007",
+          "ru": "На Рождество́ мы хоти́м полете́ть в О́регон.",
+          "ru_plain": "На Рождество мы хотим полететь в Орегон.",
+          "en": "For Christmas we want to fly to Oregon."
+        },
+        {
+          "id": "cele010",
+          "ru": "Ско́лько дней вы бу́дете в О́регоне?",
+          "ru_plain": "Сколько дней вы будете в Орегоне?",
+          "en": "How many days will you be in Oregon?"
+        },
+        {
+          "id": "cele011",
+          "ru": "Мы бу́дем в О́регоне пять дней.",
+          "ru_plain": "Мы будем в Орегоне пять дней.",
+          "en": "We'll be in Oregon for five days."
+        },
+        {
+          "id": "cele012",
+          "ru": "Что вы де́лали на День Благодаре́ния?",
+          "ru_plain": "Что вы делали на День Благодарения?",
+          "en": "What did you do for Thanksgiving?"
+        },
+        {
+          "id": "cele013",
+          "ru": "На День Благодаре́ния мы у́жинали всей семьёй.",
+          "ru_plain": "На День Благодарения мы ужинали всей семьёй.",
+          "en": "For Thanksgiving we had dinner as a whole family."
+        },
+        {
+          "id": "cele014",
+          "ru": "Э́то был большо́й у́жин.",
+          "ru_plain": "Это был большой ужин.",
+          "en": "It was a big dinner."
+        }
+      ],
+      "success_criteria": [
+        "answers_holiday_plans",
+        "keeps_celebration_story_short",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "allowed_lesson_ids": [
+        "family_visit_001",
+        "family_visit_002",
+        "family_visit_003",
+        "family_visit_004",
+        "family_visit_005",
+        "family_visit_006",
+        "family_visit_007",
+        "family_visit_008",
+        "family_visit_009",
+        "family_visit_010",
+        "family_visit_011"
+      ],
+      "allowed_item_ids": [
+        "firs001",
+        "firs002",
+        "firs003",
+        "firs004",
+        "firs005",
+        "firs006",
+        "firs007",
+        "firs008",
+        "firs009",
+        "firs010",
+        "firs011",
+        "firs012",
+        "firs013",
+        "poli001",
+        "poli002",
+        "poli003",
+        "poli004",
+        "poli005",
+        "poli006",
+        "poli007",
+        "poli008",
+        "poli009",
+        "poli010",
+        "poli011",
+        "poli012",
+        "poli013",
+        "poli014",
+        "poli015",
+        "poli016",
+        "poli017",
+        "toas001",
+        "toas002",
+        "toas003",
+        "toas004",
+        "toas005",
+        "toas006",
+        "toas007",
+        "toas008",
+        "toas009",
+        "toas010",
+        "toas011",
+        "toas012",
+        "toas013",
+        "toas014",
+        "toas015",
+        "toas016",
+        "fami001",
+        "fami002",
+        "fami003",
+        "fami004",
+        "fami005",
+        "fami006",
+        "fami007",
+        "fami008",
+        "fami009",
+        "fami010",
+        "fami011",
+        "fami012",
+        "fami013",
+        "fami014",
+        "fami015",
+        "fami016",
+        "fami017",
+        "fami018",
+        "fami019",
+        "food001",
+        "food002",
+        "food003",
+        "food004",
+        "food005",
+        "food006",
+        "food007",
+        "food008",
+        "food009",
+        "food010",
+        "food011",
+        "food012",
+        "food013",
+        "food014",
+        "food015",
+        "food016",
+        "smal001",
+        "smal002",
+        "smal003",
+        "smal004",
+        "smal005",
+        "smal006",
+        "smal007",
+        "smal008",
+        "smal009",
+        "list001",
+        "list002",
+        "list003",
+        "list004",
+        "list005",
+        "list006",
+        "list007",
+        "list008",
+        "list009",
+        "cale001",
+        "cale002",
+        "cale003",
+        "cale004",
+        "cale005",
+        "cale006",
+        "cale007",
+        "cale008",
+        "cale009",
+        "cale010",
+        "cale011",
+        "cale012",
+        "cale013",
+        "cale014",
+        "cale015",
+        "cale016",
+        "cale017",
+        "cale018",
+        "cale019",
+        "dail001",
+        "dail002",
+        "dail003",
+        "dail004",
+        "dail005",
+        "dail006",
+        "dail007",
+        "dail008",
+        "dail009",
+        "dail010",
+        "dail011",
+        "dail012",
+        "dail013",
+        "dail014",
+        "dail015",
+        "dail016",
+        "dail017",
+        "work001",
+        "work002",
+        "work003",
+        "work004",
+        "work005",
+        "work006",
+        "work007",
+        "work008",
+        "work009",
+        "work010",
+        "work011",
+        "work012",
+        "work013",
+        "work014",
+        "work015",
+        "work016",
+        "cele001",
+        "cele002",
+        "cele003",
+        "cele004",
+        "cele005",
+        "cele006",
+        "cele007",
+        "cele008",
+        "cele009",
+        "cele010",
+        "cele011",
+        "cele012",
+        "cele013",
+        "cele014"
+      ],
+      "active_vocab": [
+        "америке",
+        "америки",
+        "аппетита",
+        "бабушка",
+        "благодарения",
+        "бокал",
+        "большое",
+        "большой",
+        "брат",
+        "будем",
+        "будем здоровы!",
+        "будет",
+        "был",
+        "было",
+        "в",
+        "ваше",
+        "вашу",
+        "вечер",
+        "вечером",
+        "вкусно",
+        "вместе",
+        "воскресенье",
+        "время",
+        "всей",
+        "встречу",
+        "вторник",
+        "вчера",
+        "вчера было солнечно.",
+        "выпьем",
+        "выходных",
+        "говорю",
+        "гулять",
+        "да",
+        "да, немного",
+        "да, у меня много дел.",
+        "да, у меня много клиентов.",
+        "давайте",
+        "давайте выпьем за это!",
+        "дедушка",
+        "дел",
+        "день",
+        "десяти",
+        "десять",
+        "дети",
+        "джо",
+        "дна",
+        "дней",
+        "днём",
+        "до",
+        "до дна",
+        "до свидания",
+        "доброе",
+        "доброе утро",
+        "доброе утро.",
+        "добрый",
+        "добрый вечер",
+        "добрый вечер.",
+        "добрый день",
+        "добрый день.",
+        "довольны",
+        "дождь",
+        "дома",
+        "дочь",
+        "едим",
+        "есть",
+        "ещё",
+        "жена",
+        "жены",
+        "живу",
+        "за",
+        "за ваше здоровье!",
+        "за встречу!",
+        "за здоровье!",
+        "за знакомство!",
+        "за любовь!",
+        "за молодых!",
+        "за родителей!",
+        "за семью!",
+        "за хозяев!",
+        "за хозяйку!",
+        "завтра",
+        "завтра будет тепло.",
+        "занят",
+        "звонил",
+        "здоровы",
+        "здоровье",
+        "здравствуйте",
+        "знакомство",
+        "зовут",
+        "зять",
+        "и",
+        "идёт",
+        "идёт дождь.",
+        "идёт снег.",
+        "из",
+        "извините",
+        "кадрия",
+        "кадрия будет гулять и отдыхать.",
+        "кадрия работает вместе со мной.",
+        "как",
+        "как по-русски …?",
+        "кататься",
+        "клиентам",
+        "клиентов",
+        "клиентом",
+        "компания",
+        "компьютере",
+        "лыжах",
+        "люблю",
+        "любовь",
+        "мама",
+        "меня",
+        "меня зовут джо",
+        "миссури",
+        "мне",
+        "мне очень нравится",
+        "много",
+        "мной",
+        "можно",
+        "можно ещё?",
+        "можно чаю?",
+        "моих",
+        "молодых",
+        "муж",
+        "мы",
+        "мы будем в орегоне пять дней.",
+        "мы довольны результатом.",
+        "мы едим и смотрим телевизор.",
+        "мы отпраздновали рождество у моих родителей дома.",
+        "мы познакомились …",
+        "мы работаем вместе.",
+        "мы хотим кататься на лыжах.",
+        "на",
+        "на выходных",
+        "на день благодарения мы ужинали всей семьёй.",
+        "на рождество мы хотим полететь в орегон.",
+        "надо",
+        "наелся",
+        "начинаю",
+        "не",
+        "немного",
+        "нет",
+        "нет, спасибо",
+        "нормально",
+        "ночи",
+        "нравится",
+        "обедаю",
+        "облачно",
+        "обычно",
+        "обычно я отдыхаю вечером.",
+        "обычно я работаю семь часов.",
+        "орегон",
+        "орегоне",
+        "отдыхать",
+        "отдыхаю",
+        "отлично",
+        "отпраздновали",
+        "очень",
+        "очень вкусно!",
+        "очень приятно",
+        "папа",
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "по",
+        "повторите",
+        "повторите, пожалуйста",
+        "пожалуйста",
+        "познакомились",
+        "познакомиться",
+        "полететь",
+        "помедленнее",
+        "помедленнее, пожалуйста",
+        "понедельник",
+        "понимаю",
+        "понятно",
+        "представиться",
+        "пригласили",
+        "приняли",
+        "приятно",
+        "приятно познакомиться",
+        "приятного",
+        "приятного аппетита!",
+        "простите",
+        "пятница",
+        "пять",
+        "работаем",
+        "работает",
+        "работал",
+        "работать",
+        "работаю",
+        "работы",
+        "рад",
+        "рад познакомиться",
+        "разрешите",
+        "разрешите представиться",
+        "результатом",
+        "родителей",
+        "родители",
+        "рождество",
+        "русски",
+        "русский",
+        "рюмка",
+        "с",
+        "свидания",
+        "своя",
+        "себя",
+        "сегодня",
+        "сегодня облачно.",
+        "сегодня рождество.",
+        "сегодня солнечно.",
+        "сегодня тепло.",
+        "сегодня холодно.",
+        "сегодня я работал с клиентом.",
+        "сегодня я работал четыре часа.",
+        "семь",
+        "семью",
+        "семья",
+        "семьёй",
+        "сестра",
+        "сестра жены",
+        "сказать",
+        "скоро",
+        "скоро рождество.",
+        "смотрим",
+        "снег",
+        "со",
+        "солнечно",
+        "спасибо",
+        "спасибо большое",
+        "спасибо, было очень вкусно",
+        "спасибо, не надо",
+        "спасибо, что пригласили",
+        "спасибо, что приняли",
+        "спокойной",
+        "спокойной ночи",
+        "среда",
+        "суббота",
+        "суде",
+        "счастлив",
+        "сын",
+        "телевизор",
+        "тепло",
+        "тесть",
+        "тост",
+        "тёща",
+        "у",
+        "у меня есть время до десяти.",
+        "у меня много работы.",
+        "у меня своя компания.",
+        "ужин",
+        "ужинали",
+        "ужинаю",
+        "утра",
+        "утро",
+        "утром",
+        "учу",
+        "хлеб",
+        "хозяев",
+        "хозяйку",
+        "холодно",
+        "хорошо",
+        "хорошо, спасибо",
+        "хорошо. я много работаю.",
+        "хотим",
+        "хочу",
+        "часа",
+        "часов",
+        "чаю",
+        "четверг",
+        "четыре",
+        "что",
+        "штата",
+        "шурин",
+        "это",
+        "это был большой ужин.",
+        "юрист",
+        "я",
+        "я ещё учу русский",
+        "я живу в америке",
+        "я звонил клиентам.",
+        "я из америки",
+        "я из штата миссури",
+        "я люблю вашу дочь",
+        "я наелся",
+        "я начинаю работать в десять утра.",
+        "я не понимаю",
+        "я немного говорю по-русски",
+        "я обедаю днём.",
+        "я очень занят.",
+        "я понимаю",
+        "я работал на компьютере.",
+        "я работаю в суде.",
+        "я работаю утром и вечером.",
+        "я счастлив работать на себя.",
+        "я ужинаю вечером.",
+        "я хочу сказать тост за …",
+        "я юрист"
+      ],
+      "passive_vocab": [
+        "благодарения",
+        "блины",
+        "борщ",
+        "будете",
+        "будете …?",
+        "в",
+        "вам",
+        "вам нравится …?",
+        "вас",
+        "водка",
+        "вы",
+        "вы говорите по-русски?",
+        "говорите",
+        "дел",
+        "дела",
+        "делал",
+        "делали",
+        "день",
+        "дней",
+        "ещё",
+        "кадрией",
+        "как",
+        "как вам россия?",
+        "как вы познакомились?",
+        "как вы с кадрией отпраздновали рождество?",
+        "как дела?",
+        "как там на улице?",
+        "какая",
+        "какая сегодня погода?",
+        "какие",
+        "какие планы на рождество?",
+        "какой",
+        "какой сегодня день недели?",
+        "какой сегодня праздник?",
+        "кем",
+        "кем вы работаете?",
+        "клиентов",
+        "когда",
+        "когда вы обедаете?",
+        "когда вы отдыхаете?",
+        "когда вы работаете?",
+        "когда вы ужинаете?",
+        "много",
+        "на",
+        "недели",
+        "нравится",
+        "обедаете",
+        "оливье",
+        "орегоне",
+        "отдыхаете",
+        "откуда",
+        "откуда вы?",
+        "отпраздновали",
+        "пельмени",
+        "планы",
+        "по",
+        "погода",
+        "познакомились",
+        "праздник",
+        "работаете",
+        "рождество",
+        "россия",
+        "русски",
+        "с",
+        "сегодня",
+        "сколько",
+        "сколько дней вы будете в орегоне?",
+        "там",
+        "ты",
+        "у",
+        "у вас много дел?",
+        "у вас много клиентов?",
+        "ужинаете",
+        "улице",
+        "чай",
+        "что",
+        "что вы делали на день благодарения?",
+        "что ты сегодня делал?"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "discourse:politeness",
+        "grammar:formal_question",
+        "grammar:future_plan",
+        "grammar:past_masculine_work",
+        "grammar:present_first_person",
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "lexical:days_of_week",
+        "lexical:holiday_vocab",
+        "lexical:kinship_terms",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:calendar_question",
+        "phrase:client_case_answer",
+        "phrase:compliment_food",
+        "phrase:family_affection",
+        "phrase:family_celebration",
+        "phrase:food_offer",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:holiday_plan",
+        "phrase:host_question",
+        "phrase:introduction",
+        "phrase:personal_origin",
+        "phrase:polite_decline",
+        "phrase:repair",
+        "phrase:routine_answer",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative",
+        "phrase:weather_answer",
+        "phrase:work_identity",
+        "phrase:yes_no",
+        "register:formal_you",
+        "register:name_patronymic",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "listening_misparse",
+        "register",
+        "stress"
+      ],
+      "correction_policy": [
+        "Minor error: recast briefly and continue the role-play.",
+        "Repeated error: give one short rule, then return to Russian practice.",
+        "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
+        "Communication-breaking error: clarify in English, provide the verified model, then retry."
+      ],
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Holiday and family celebration small talk — Answer Christmas/Thanksgiving/family-plan prompts from the original guide in short Russian.\nCurriculum boundary: Lesson 11 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Скоро Рождество. — Christmas is soon.\n- Как вы с Кадрией отпраздновали Рождество? — How did you and Kadriya celebrate Christmas?\n- Мы отпраздновали Рождество у моих родителей дома. — We celebrated Christmas at my parents' house.\n- Какие планы на Рождество? — What are the plans for Christmas?\n- На Рождество мы хотим полететь в Орегон. — For Christmas we want to fly to Oregon.\n- Сколько дней вы будете в Орегоне? — How many days will you be in Oregon?\n- Мы будем в Орегоне пять дней. — We'll be in Oregon for five days.\n- Что вы делали на День Благодарения? — What did you do for Thanksgiving?\n- На День Благодарения мы ужинали всей семьёй. — For Thanksgiving we had dinner as a whole family.\n- Это был большой ужин. — It was a big dinner.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     }
   ],
   "contrast_cards": [
@@ -52749,6 +57785,14 @@ window.CONTENT_DATA = {
     "keeps_work_brief": {
       "label": "keeps legal work details brief",
       "error_type": "forgot_phrase"
+    },
+    "answers_holiday_plans": {
+      "label": "answers holiday and celebration prompts",
+      "error_type": "forgot_phrase"
+    },
+    "keeps_celebration_story_short": {
+      "label": "keeps celebration story short",
+      "error_type": "forgot_phrase"
     }
   },
   "contrast_sets": [
@@ -53135,8 +58179,8 @@ window.CONTENT_DATA = {
         "answers_personalized_questions",
         "uses_formal_greeting"
       ],
-      "lesson_id": "family_visit_012",
-      "lesson_number": 12
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13
     },
     {
       "id": "extended_family_family_tree",
@@ -53258,8 +58302,8 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12
     },
     {
       "id": "daily_routine_checkin",
@@ -53315,6 +58359,31 @@ window.CONTENT_DATA = {
       ],
       "lesson_id": "family_visit_010",
       "lesson_number": 10
+    },
+    {
+      "id": "holiday_celebration_checkin",
+      "setting": "Holiday and family celebration small talk",
+      "goal": "Answer Christmas/Thanksgiving/family-plan prompts from the original guide in short Russian.",
+      "required_items": [
+        "cele001",
+        "cele004",
+        "cele005",
+        "cele006",
+        "cele007",
+        "cele010",
+        "cele011",
+        "cele012",
+        "cele013",
+        "cele014"
+      ],
+      "success_criteria": [
+        "answers_holiday_plans",
+        "keeps_celebration_story_short",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11
     }
   ]
 };

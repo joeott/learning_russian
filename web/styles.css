@@ -227,17 +227,25 @@ body {
 .pill--p3 { background: transparent; }
 
 /* ---------- Flashcards (Learn) ---------- */
-.learnbar { display:flex; flex-wrap: wrap; gap: 10px; align-items:center; margin-bottom: 18px; }
+.learnbar { display:flex; flex-wrap: wrap; gap: 10px; align-items:center; margin-bottom: 14px; }
 .learnbar .spacer { flex: 1; }
 .chip { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; font-size:.74rem; font-weight:500; padding:6px 11px; border:2px solid var(--ink); border-radius:20px; background:var(--paper-2); cursor:pointer; }
 .chip.is-on { background: var(--ink); color: var(--paper); }
 .chip--tight { padding:5px 9px; }
 .speedctl { display:flex; gap: 5px; align-items:center; }
+.learnbar--scroll {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.learnbar--scroll .chip { flex: 0 0 auto; }
 
 .card {
   position: relative; background: var(--paper); border: 3px solid var(--ink); border-radius: var(--radius);
   box-shadow: var(--shadow); padding: 30px 26px 22px; max-width: 640px; margin: 0 auto;
-  min-height: 320px; display: flex; flex-direction: column;
+  min-height: 280px; display: flex; flex-direction: column;
 }
 .card__meta { display: flex; align-items:center; gap: 8px; margin-bottom: 14px; }
 .card__mod { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.1em; font-size:.72rem; color: var(--ink-soft); }
@@ -477,15 +485,7 @@ body {
   .section-head__sub { margin-left: 0; flex-basis: 100%; }
   .countdown { transform: none; }
   .card { padding: 22px 18px; min-height: 280px; }
-  .learnbar--scroll {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    margin-right: -20px;
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch;
-  }
-  .learnbar--scroll .chip { flex: 0 0 auto; }
+  .learnbar--scroll { margin-right: -20px; }
   .learnbar--tools { gap: 8px; }
   .learnbar--tools .spacer { display: none; }
   .analyticsbox { grid-template-columns: 1fr; }

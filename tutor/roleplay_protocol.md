@@ -283,6 +283,12 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 **You produce:** `Я юри́ст`, `У меня́ своя́ компа́ния`, `Да, у меня́ мно́го клие́нтов`, `Да, у меня́ мно́го дел`, and one short today-work sentence.
 **Success:** You do not overexplain legal details; you answer, pause, and use repair lines if the follow-up is too fast.
 
+### Scenario 24 — Holiday and family plans (id: holiday_celebration_checkin)
+**Goal:** Answer original-guide Christmas/Thanksgiving/family-plan prompts in simple Russian.
+**Tutor:** asks `Каки́е пла́ны на Рождество́?`, `Как вы с Кадри́ей отпра́здновали Рождество́?`, `Ско́лько дней вы бу́дете в О́регоне?`, and `Что вы де́лали на День Благодаре́ния?`
+**You produce:** one short holiday plan, one family celebration answer, and one Thanksgiving dinner answer from the `celebrations` module.
+**Success:** You keep the story to one or two sentences and recover with repair lines instead of trying a long holiday narrative.
+
 ---
 
 ## Session templates

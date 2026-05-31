@@ -6,7 +6,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 ## Current generated course
 
 - Source of truth: `scripts/build_content.py`
-- Generated content: 175 items across 12 modules
+- Generated content: 189 items across 13 modules
 - Strongest coverage today:
   - greetings and first contact
   - politeness and repair phrases
@@ -17,6 +17,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
   - calendar and weather small talk
   - daily-routine and time-of-day answers
   - lawyer/work/client small talk
+  - holiday, celebration, and family-plan recognition
   - Budva/Montenegro trip logistics and simple place descriptions
   - a small core-verb reactivation set
 
@@ -31,7 +32,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 | Budva/Montenegro trip logistics | `source/ekaterina_guide.md:1461-1467`, `source/ekaterina_guide.md:1501`, `source/ekaterina_guide.md:1969`, `source/ekaterina_guide.md:2031-2043`, `source/research/budva_travel.md` | Covered by `travel_budva` basics | Later: add airport-specific and hotel-check-in variants only if they are rehearsed with Kadriya. |
 | Daily routine and time of day | `source/ekaterina_guide.md:1113-1120`, `source/ekaterina_guide.md:1198-1212`, `source/ekaterina_guide.md:1366-1368`, `source/ekaterina_guide.md:1378-1399`, `source/research/daily_routine.md` | Covered by `daily_routine` basics | Later: add fuller “my day” storytelling only if short-answer drills are already automatic. |
 | Work, clients, business | `source/ekaterina_guide.md:820-839`, `source/ekaterina_guide.md:1028-1042`, `source/ekaterina_guide.md:1327-1334`, `source/ekaterina_guide.md:1679-1701`, `source/ekaterina_guide.md:1782-1803`, `source/ekaterina_guide.md:1829-1833`, `source/ekaterina_guide.md:1994-2012`, `source/ekaterina_guide.md:2516-2526`, `source/research/work_business.md` | Covered by `smalltalk` + `work_business` basics | Later: add only recognition-level legal vocabulary unless Kadriya confirms a production phrase is worth the risk. |
-| Holidays and celebrations | `source/ekaterina_guide.md:891-930`, `source/ekaterina_guide.md:981-987` | Partial: toast module only | Add a holiday/celebration scenario for family-table small talk. |
+| Holidays and celebrations | `source/ekaterina_guide.md:889-895`, `source/ekaterina_guide.md:909-927`, `source/ekaterina_guide.md:981-989`, `source/ekaterina_guide.md:1017-1025`, `source/ekaterina_guide.md:1404-1405`, `source/ekaterina_guide.md:2234-2244`, `source/research/celebrations.md` | Covered by `celebrations` basics plus the existing toast module | Later: add recognition-only cultural extras only after mission-critical production phrases are automatic. |
 | Idioms and proverbs | `source/ekaterina_guide.md:582-591`, `source/ekaterina_guide.md:864-881` | Missing | Keep as recognition-only bonus unless Kadriya verifies high value for the visit. |
 | Adverbs, adjectives, and grammar notes | `source/ekaterina_guide.md:476-554`, `source/ekaterina_guide.md:1082-1107`, `source/ekaterina_guide.md:1917-1935` | Indirect only | Convert only the parts that improve oral survival: adjective agreement in weather/day phrases and adverbs for simple answers. |
 | Family/baby questions | `source/ekaterina_guide.md:636-639` | Partial: family module | Add one scenario for family health/baby readiness if Kadriya wants this practiced. Mark uncertain/over-personal items `rehearse=True`. |
@@ -39,11 +40,10 @@ iterations can close the real beginner-course gaps without inventing Russian.
 
 ## Priority order for remaining build-out
 
-1. `holiday_celebration`: handles Christmas/holiday prompts and family-table storytelling.
-2. Fuller `daily_routine` story mode if the short answers are already automatic.
-3. Work/legal recognition-only vocabulary if family asks deeper lawyer questions.
-4. Airport/hotel variants for Budva if Kadriya confirms they are useful.
-5. Recognition-only bonus deck: idioms, proverbs, and legal jokes after the mission-critical modules are green.
+1. Fuller `daily_routine` story mode if the short answers are already automatic.
+2. Work/legal recognition-only vocabulary if family asks deeper lawyer questions.
+3. Airport/hotel variants for Budva if Kadriya confirms they are useful.
+4. Recognition-only bonus deck: idioms, proverbs, and legal jokes after the mission-critical modules are green.
 
 ## Rules for adding each gap
 
