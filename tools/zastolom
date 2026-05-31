@@ -39,7 +39,9 @@ EXAMPLES
   tools/zastolom preflight http://localhost:8000/web/
   tools/zastolom verify
   tools/zastolom source-loop --run               # discover and score source targets
+  tools/zastolom source-loop --spoken --run       # spoken/listening-focused targets only
   tools/zastolom future-loop --run --write-canvas # discover and score linked candidate pages
+  tools/zastolom future-loop --spoken --run --write-canvas # build spoken canvas candidates only
   tools/zastolom source-loop               # print the loop prompt only
 
 ELEVENLABS KEY RESOLUTION (first hit wins)
@@ -209,7 +211,13 @@ def _evaluate_source_page(url, entry, is_seed, discovered_from=None):
     html_text = _fetch_source_page(url)
     title = _extract_title(html_text)
     visible = _extract_visible_text(html_text)
-    row = _score_source_text(url, title, visible, entry.get("default_drill"))
+    row = _score_source_text(
+        url,
+        title,
+        visible,
+        entry.get("default_drill"),
+        spoken=bool(entry.get("spoken")),
+    )
     row["seed_note"] = entry.get("reason")
     row["seed_name"] = entry.get("name", "")
     row["seed_url"] = entry.get("url")
@@ -218,7 +226,14 @@ def _evaluate_source_page(url, entry, is_seed, discovered_from=None):
     return row, html_text
 
 
-def _read_source_targets(path=None):
+def _target_is_spoken(target):
+    if target.get("spoken"):
+        return True
+    focus = {str(value).lower() for value in target.get("focus", [])}
+    return bool(focus.intersection({"spoken", "speaking", "audio", "dialogue", "dictation", "listen"}))
+
+
+def _read_source_targets(path=None, spoken=False):
     target_path = path or SOURCE_TARGETS
     try:
         with open(target_path, encoding="utf-8") as f:
@@ -228,14 +243,16 @@ def _read_source_targets(path=None):
         targets = []
     if not targets:
         targets = [
-            {"url": "https://russian.rt.com/", "name": "RT Russian", "default_drill": ["read", "dictation", "translate"], "reason": "short news pieces", "discover_limit": 4, "discover_paths": ["/news", "/russia", "/world"]},
-            {"url": "https://www.culture.ru", "name": "Culture.ru", "default_drill": ["read", "dictation", "translate"], "reason": "editorial interviews/features", "discover_limit": 4, "discover_paths": ["/ru/news", "/media"]},
-            {"url": "https://gramota.ru", "name": "Gramota.ru", "default_drill": ["read", "translate"], "reason": "official language material", "discover_limit": 4, "discover_paths": ["/spravochnik", "/gramota", "/spravka"]},
-            {"url": "https://www.russianpod101.com/welcome", "name": "RussianPod101", "default_drill": ["listen", "dictation", "translate"], "reason": "podcast lessons and transcripts"},
-            {"url": "https://www.youtube.com", "name": "YouTube Russian channels", "default_drill": ["dictation", "shadow", "translate"], "reason": "captioned short-form storytelling channels"},
-            {"url": "https://www.pushkininstitute.ru/articles", "name": "Pushkin Institute", "default_drill": ["read", "dictation", "translate"], "reason": "authored Russian texts with short practical chunks", "discover_limit": 5, "discover_paths": ["/articles/"]},
-            {"url": "https://www.ruslang.ru/", "name": "Russian Language Blog", "default_drill": ["read", "translate"], "reason": "easy culture and language prose"},
+            {"url": "https://russian.rt.com/", "name": "RT Russian", "default_drill": ["read", "dictation", "translate"], "reason": "short news pieces", "focus": ["news", "reading", "listening"], "discover_limit": 4, "discover_paths": ["/news", "/russia", "/world"]},
+            {"url": "https://www.culture.ru", "name": "Culture.ru", "default_drill": ["read", "dictation", "translate"], "reason": "editorial interviews/features", "focus": ["culture", "reading", "interview"], "discover_limit": 4, "discover_paths": ["/ru/news", "/media"]},
+            {"url": "https://gramota.ru", "name": "Gramota.ru", "default_drill": ["read", "translate"], "reason": "official language material", "focus": ["reference", "grammar", "reading"], "discover_limit": 4, "discover_paths": ["/spravochnik", "/gramota", "/spravka"]},
+            {"url": "https://www.russianpod101.com/welcome", "name": "RussianPod101", "default_drill": ["listen", "dictation", "translate"], "reason": "podcast lessons and transcripts", "spoken": True, "focus": ["spoken", "podcast", "listening", "transcript", "dictation"]},
+            {"url": "https://www.youtube.com", "name": "YouTube Russian channels", "default_drill": ["dictation", "shadow", "translate"], "reason": "captioned short-form storytelling channels", "spoken": True, "focus": ["spoken", "audio", "video", "listening", "subtitle"]},
+            {"url": "https://www.pushkininstitute.ru/articles", "name": "Pushkin Institute", "default_drill": ["read", "dictation", "translate"], "reason": "authored Russian texts with short practical chunks", "focus": ["reading", "news", "essay"], "discover_limit": 5, "discover_paths": ["/articles/"]},
+            {"url": "https://www.ruslang.ru/", "name": "Russian Language Blog", "default_drill": ["read", "translate"], "reason": "easy culture and language prose", "focus": ["reading"]},
         ]
+    if spoken:
+        targets = [target for target in targets if _target_is_spoken(target)]
     return targets
 
 
@@ -275,7 +292,7 @@ def _fetch_source_page(url):
     raise last_err or RuntimeError(f"unable to fetch {url}")
 
 
-def _score_source_text(url, title, text, default_drill):
+def _score_source_text(url, title, text, default_drill, spoken=False):
     letters = [ch for ch in text if ch.isalpha()]
     cyrillic = [ch for ch in letters if CYRILLIC_CHAR_RE.match(ch)]
     words = re.findall(r"[А-Яа-яЁёA-Za-z-']+", text)
@@ -307,6 +324,31 @@ def _score_source_text(url, title, text, default_drill):
         status = "verified"
     elif composite >= 0.45:
         status = "needs_check"
+    if spoken:
+        lowered = (text + " " + title + " " + url).lower()
+        spoken_markers = (
+            "аудио",
+            "подкаст",
+            "подкасты",
+            "диалог",
+            "разговор",
+            "субтитр",
+            "смотреть",
+            "слушать",
+            "транскрипт",
+            "listen",
+            "podcast",
+            "speech",
+            "audio",
+            "озвучка",
+        )
+        marker_hits = sum(1 for token in spoken_markers if token in lowered)
+        if marker_hits:
+            marker_bonus = min(0.10, 0.06 + min(0.08, marker_hits * 0.02))
+            composite = min(1.0, round(composite + marker_bonus, 3))
+            # Speech-heavy source pages are worth one more check level.
+            if status != "verified" and composite >= 0.57:
+                status = "needs_check"
     why = []
     if letter_ratio < 0.5:
         why.append("not enough Cyrillic for beginner practice")
@@ -317,6 +359,10 @@ def _score_source_text(url, title, text, default_drill):
     drill = []
     if status != "rejected":
         drill = default_drill or ["read", "dictation", "translate"]
+        if spoken and "dictation" not in drill:
+            drill.append("dictation")
+        if spoken and "listen" not in drill:
+            drill.append("listen")
         if composite > 0.72:
             drill.append("shadow")
     return {
@@ -349,7 +395,7 @@ def cmd_source_loop(args):
         with open(path, encoding="utf-8") as f:
             print(f.read())
         return
-    targets = _read_source_targets(args.targets)
+    targets = _read_source_targets(args.targets, spoken=args.spoken)
     if args.limit:
         targets = targets[: args.limit]
     rows = []
@@ -816,11 +862,13 @@ def main():
     sl = sub.add_parser("source-loop")
     sl.add_argument("--run", action="store_true", help="run the scouting scan")
     sl.add_argument("--future", action="store_true", help="also scan candidate links from each target page")
+    sl.add_argument("--spoken", action="store_true", help="focus targets for spoken-language/listening practice")
     sl.add_argument("--limit", type=int, default=0, help="max pages to scan in this run")
     sl.add_argument("--write-canvas", action="store_true", help="append passing candidates to source/candidate_materials.md")
     sl.add_argument("--targets", help="optional JSON target file (defaults to source/source_loop_targets.json)")
     fl = sub.add_parser("future-loop")
     fl.add_argument("--run", action="store_true", help="run the discovery scan and follow-up links")
+    fl.add_argument("--spoken", action="store_true", help="focus targets for spoken-language/listening practice")
     fl.add_argument("--limit", type=int, default=0, help="max seed pages to scan in this run")
     fl.add_argument("--write-canvas", action="store_true", help="append passing candidates to source/candidate_materials.md")
     fl.add_argument("--targets", help="optional JSON target file (defaults to source/source_loop_targets.json)")

@@ -5,6 +5,7 @@
       "name": "RT Russian",
       "default_drill": ["read", "dictation", "translate"],
       "reason": "short news snippets with clear, short-form Russian",
+      "focus": ["news", "reading", "listening"],
       "discover_limit": 4,
       "discover_paths": ["/news", "/russia", "/world"]
     },
@@ -13,6 +14,7 @@
       "name": "Culture.ru",
       "default_drill": ["read", "dictation", "translate"],
       "reason": "short feature summaries and interview clips",
+      "focus": ["culture", "reading", "interview"],
       "discover_limit": 4,
       "discover_paths": ["/ru/news", "/media"]
     },
@@ -21,6 +23,7 @@
       "name": "Gramota.ru",
       "default_drill": ["read", "translate"],
       "reason": "official language and normative references",
+      "focus": ["reference", "grammar", "reading"],
       "discover_limit": 4,
       "discover_paths": ["/spravochnik", "/gramota", "/spravka"]
     },
@@ -28,25 +31,31 @@
       "url": "https://www.russianpod101.com/welcome",
       "name": "RussianPod101",
       "default_drill": ["dictation", "translate"],
-      "reason": "podcast lesson pages with transcript opportunities"
+      "reason": "podcast lesson pages with transcript opportunities",
+      "spoken": true,
+      "focus": ["spoken", "podcast", "listening", "transcript", "dictation"]
     },
     {
       "url": "https://www.youtube.com",
       "name": "YouTube Russian channels",
       "default_drill": ["dictation", "shadow", "translate"],
-      "reason": "captioned slow-story or interview channels"
+      "reason": "captioned slow-story or interview channels",
+      "spoken": true,
+      "focus": ["spoken", "audio", "video", "listening", "subtitle"]
     },
     {
       "url": "https://www.ruslang.ru/",
       "name": "RusLang",
       "default_drill": ["read", "translate"],
-      "reason": "easy-reader style Russian learning copy"
+      "reason": "easy-reader style Russian learning copy",
+      "focus": ["reading"]
     },
     {
       "url": "https://www.pushkininstitute.ru/articles",
       "name": "Pushkin Institute",
       "default_drill": ["read", "dictation", "translate"],
       "reason": "short practical language essays with clear register",
+      "focus": ["reading", "news", "essay"],
       "discover_limit": 5,
       "discover_paths": ["/articles/"]
     }

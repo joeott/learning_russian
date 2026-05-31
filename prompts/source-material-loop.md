@@ -14,6 +14,8 @@ offline-first constraints.
   - culturally safe and non-offensive for family-meal contexts,
   - short enough for 30–90 seconds of focused practice,
   - understandable with mostly unlocked lesson vocabulary plus 1 new lexical item.
+- For speaking/sound practice, a source should include audial cues (podcast, dialogue,
+  video captions, transcript, or narrator audio).
 - Every retained source must include:
   - a direct URL,
   - a short `why_relevant` note,
@@ -26,9 +28,13 @@ offline-first constraints.
    - `tools/zastolom source-loop --run --limit 5 --targets source/source_loop_targets.json`
    - This refreshes `tmp/source-loop-latest.json` and can optionally append approved pages to
      `source/candidate_materials.md` with `--write-canvas`.
+   - For spoken/listening materials:  
+     `tools/zastolom source-loop --spoken --run --limit 5 --targets source/source_loop_targets.json`
 2. Or run the discovery-first variant to scan related links from each target section:
    - `tools/zastolom future-loop --run --limit 3 --targets source/source_loop_targets.json`
    - This opens each target, pulls in-page links that match discover paths in the target config, and scores them as candidate materials.
+   - Spoken mode for source discovery:  
+     `tools/zastolom future-loop --spoken --run --limit 3 --targets source/source_loop_targets.json`
 3. Use `tools/zastolom browser <url> --both` to open a candidate source page and inspect
    readability on desktop and mobile.
 4. Extract 1–2 short candidate passages and copy the exact source text.
@@ -75,8 +81,11 @@ At the end of each source loop, produce:
 - `source/candidate_materials.md` updated with 2–4 approved entries,
 - a short log in `tmp/source-loop-latest.json` with scores and acceptance decisions.
 
-For one-click capture:
+For one-click spoken capture:
 
 ```bash
-tools/zastolom future-loop --run --limit 3 --write-canvas
+tools/zastolom future-loop --spoken --run --limit 3 --write-canvas
 ```
+
+After each run, prefer adding 30–60 second audial passages first
+(short dialogue, captioned clip, or podcast line) before any long reading material.
