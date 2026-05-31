@@ -207,6 +207,7 @@
       productionAccuracy: stageAccuracy("produce"),
       roleplayPass: stageAccuracy("roleplay"),
       dictationAccuracy: stageAccuracy("dictation"),
+      contrastAccuracy: stageAccuracy("contrast"),
     };
   }
   function repairStageFor(errorType) {
@@ -435,9 +436,10 @@
         <div class="stat rise"><div class="stat__num">${d}</div><div class="stat__label">Days to ${escapeHtml(targetLabel())}</div></div>
       </div>
       <div class="analyticsbox rise">
-        <div><h3>Performance signals</h3><p>Readiness now includes cloze, dictation, back-translation, production, listening, and role-play mastery.</p></div>
+        <div><h3>Performance signals</h3><p>Readiness now includes cloze, dictation, back-translation, contrast, production, listening, and role-play mastery.</p></div>
         <div class="analyticsgrid">
           <div><strong>${a.dictationAccuracy}<small>%</small></strong><span>dictation accuracy</span></div>
+          <div><strong>${a.contrastAccuracy}<small>%</small></strong><span>contrast accuracy</span></div>
           <div><strong>${a.productionAccuracy}<small>%</small></strong><span>production accuracy</span></div>
           <div><strong>${a.listenAccuracy}<small>%</small></strong><span>listening accuracy</span></div>
           <div><strong>${a.roleplayPass}<small>%</small></strong><span>role-play pass rate</span></div>
