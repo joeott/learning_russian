@@ -14,7 +14,8 @@ from curriculum import lesson_boundary
 ROOT = Path(__file__).resolve().parent.parent
 ACUTE = "\u0301"
 PROTOCOL_SCENARIO_RE = re.compile(
-    r"^###\s*Scenario\s+(\d+)\s*[—-]\s*(.+)$", re.MULTILINE
+    r"^###\s*Scenario\s+(\d+)\s*[—-]\s*(.+?)\s*$",
+    re.MULTILINE,
 )
 STOPWORDS = {
     "the",
@@ -61,13 +62,22 @@ def strip_stress(value: str) -> str:
     return unicodedata.normalize("NFC", value).replace(ACUTE, "")
 
 
-def parse_protocol_scenarios(path: Path) -> list[tuple[int, str]]:
+def parse_protocol_scenarios(path: Path) -> list[tuple[int, str, str | None]]:
     text = path.read_text(encoding="utf-8")
     parsed = []
     for match in PROTOCOL_SCENARIO_RE.finditer(text):
         number = int(match.group(1))
-        title = match.group(2).strip()
-        parsed.append((number, title))
+        raw_title = match.group(2).strip()
+        title = raw_title
+        scenario_id = None
+        id_match = re.search(r"\(id:\s*([^\)]+)\)\s*$", raw_title)
+        if id_match:
+            scenario_id = id_match.group(1).strip()
+            title = raw_title[: id_match.start()].strip()
+            # Trim one trailing dash if present before the id block.
+            if title.endswith("("):
+                title = title[:-1].strip()
+        parsed.append((number, title, scenario_id))
     return parsed
 
 
@@ -85,7 +95,7 @@ def validate_protocol_scenarios(data: dict, protocol: Path) -> list[str]:
     if not parsed:
         errors.append("tutor protocol scenarios not found")
         return errors
-    numbers = [number for number, _ in parsed]
+    numbers = [number for number, _, _ in parsed]
     if numbers != list(range(1, len(parsed) + 1)):
         errors.append("protocol scenario headings must be 1..N in order")
 
@@ -103,7 +113,31 @@ def validate_protocol_scenarios(data: dict, protocol: Path) -> list[str]:
         )
         for scenario in scenarios
     }
-    for number, title in parsed:
+    scenario_ids = set(scenario_tokens)
+
+    protocol_ids: list[tuple[int, str, str | None]] = []
+    for number, title, scenario_id in parsed:
+        normalized_id = scenario_id.strip() if scenario_id else None
+        protocol_ids.append((number, title, normalized_id))
+        if normalized_id and normalized_id not in scenario_ids:
+            errors.append(
+                f"protocol scenario {number} references unknown generated scenario id '{normalized_id}'"
+            )
+
+    by_id: dict[str, list[int]] = {}
+    for number, title, scenario_id in protocol_ids:
+        if scenario_id:
+            by_id.setdefault(scenario_id, []).append(number)
+
+    for scenario_id, labels in by_id.items():
+        if len(labels) > 1:
+            errors.append(
+                f"protocol scenario id '{scenario_id}' used for multiple headings: {labels}"
+            )
+
+    for number, title, scenario_id in protocol_ids:
+        if scenario_id:
+            continue
         protocol_tokens = tokenize_words(title)
         if not protocol_tokens:
             errors.append(
@@ -115,11 +149,22 @@ def validate_protocol_scenarios(data: dict, protocol: Path) -> list[str]:
                 f"protocol scenario {number} '{title}' did not match any generated scenario"
             )
 
+    represented: set[str] = {scenario_id for _, _, scenario_id in protocol_ids if scenario_id}
+
+    protocol_titles = [title for _, title, _ in protocol_ids]
+    protocol_tokens = [tokenize_words(title) for title in protocol_titles]
+
+    unmatched = []
     for scenario_id, tokens in scenario_tokens.items():
-        if not any(tokens & tokenize_words(title) for _, title in parsed):
-            errors.append(
-                f"generated scenario '{scenario_id}' is not represented in protocol headings"
-            )
+        if scenario_id in represented:
+            continue
+        if not any(tokens & p_tokens for p_tokens in protocol_tokens):
+            unmatched.append(scenario_id)
+    if unmatched:
+        errors.append(
+            "generated scenarios are not represented in protocol headings: "
+            + ", ".join(sorted(unmatched))
+        )
     return errors
 
 

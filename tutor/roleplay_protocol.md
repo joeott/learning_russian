@@ -94,7 +94,7 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 
 ---
 
-### Scenario 1 — The doorway greeting (maps to Schedule Day 1)
+### Scenario 1 — The doorway greeting (maps to Schedule Day 1) (id: doorway_greeting)
 **Goal:** Walk in, greet the elders correctly, survive the first 20 seconds.
 **Tutor (in character as the father-in-law opening the door):**
 `Здра́вствуйте! Проходи́те, проходи́те! Как добра́лись?`
@@ -106,7 +106,7 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 
 ---
 
-### Scenario 2 — Introduce yourself + "I'm still learning"
+### Scenario 2 — Introduce yourself + "I'm still learning" (id: introduce_and_learning_safety)
 **Goal:** Say who you are and disarm the room by flagging your level early — your best safety net.
 **Tutor:** `Как вас зову́т? Вы говори́те по-ру́сски?`
 **You produce:**
@@ -117,7 +117,7 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 
 ---
 
-### Scenario 3 — Accept food & compliment the cook
+### Scenario 3 — Accept food & compliment the cook (id: dinner_table_food_offer)
 **Goal:** Praise the тёща's cooking, accept/decline more without rudeness.
 **Tutor (as the mother-in-law, ladling food):** `Попро́буйте! Ещё? Бу́дете борщ?`
 **You produce:**
@@ -128,7 +128,7 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 
 ---
 
-### Scenario 4 — Propose a toast (maps to Schedule Day 9)
+### Scenario 4 — Propose a toast (maps to Schedule Day 9) (id: first_toast)
 **Goal:** Stand-ready with a short, warm toast. This lands huge.
 **Tutor (raising a glass):** `Дава́йте вы́пьем! Джо, ска́жете тост?`
 **You produce (pick one, then clink — eye contact):**
@@ -139,7 +139,7 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 
 ---
 
-### Scenario 5 — Answer the questions relatives fire at you (maps to Day 5/10 listening)
+### Scenario 5 — Answer the questions relatives fire at you (maps to Day 5/10 listening) (id: rapid_host_questions)
 **Goal:** Decode the rapid questions and answer in short, true sentences.
 **Tutor asks, one at a time, then faster:** `Отку́да вы?` · `Кем вы рабо́таете?` · `Как вы познако́мились?` · `Как вам Росси́я?`
 **You produce:**
@@ -151,7 +151,7 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 
 ---
 
-### Scenario 6 — Small talk: how you met Kadriya (maps to Schedule Days 7–8)
+### Scenario 6 — Small talk: how you met Kadriya (maps to Schedule Days 7–8) (id: how_we_met)
 **Goal:** Deliver a 2–3 sentence "how we met" story, then field a follow-up.
 **Tutor:** `Расскажи́те, как вы познако́мились?` then a follow-up like `А когда́ э́то бы́ло?` / `Где вы живёте сейча́с?`
 **You produce:**
@@ -162,7 +162,7 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 
 ---
 
-### Scenario 7 — "Things go off-script" recovery drill
+### Scenario 7 — "Things go off-script" recovery drill (id: off_script_recovery)
 **Goal:** Build calm when you don't understand. This is the real skill for game day.
 **Tutor:** deliberately speaks a bit too fast, uses an unknown word, or asks something random (`Вы лю́бите футбо́л?`, an idiom, an aside to "your wife"). No glosses.
 **You produce (the rescue toolkit — drill until automatic):**
@@ -176,14 +176,14 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 
 ---
 
-### Scenario 8 — Full-dinner simulation (maps to Schedule Day 11; rehearse live Day 15)
+### Scenario 8 — Full-dinner simulation (maps to Schedule Day 11; rehearse live Day 15) (id: full_dinner_simulation)
 **Goal:** Stitch it all together under realistic pressure.
 **Tutor runs ~10 minutes, in character, escalating:** opens the door → seats you → offers food → asks 2–3 questions → invites a toast → throws ONE off-script curveball → winds down with `Спаси́бо, что пришли́`.
 **Optional difficulty:** add background-noise mode ("imagine music and side chatter"), per Schedule Day 12.
 **You produce:** the full arc — greet (S1) → introduce + "still learning" (S2) → eat & compliment (S3) → answer questions (S5) → tell the story (S6) → toast (S4) → recover from the curveball (S7) → `Спаси́бо, бы́ло о́чень вку́сно` and `До свида́ния` (`food004`, `firs012`).
 **Success:** You get through the whole dinner in **~80% Russian**, correct register/forms, at least one warm toast and one specific compliment, and you recover from the curveball without panic.
 
-### Scenario 9 — Lawyer / Missouri small talk
+### Scenario 9 — Lawyer / Missouri small talk (id: lawyer_small_talk)
 **Goal:** Handle common biographical questions confidently without saying awkward terms.
 **Tutor:** `А чем вы занимаетесь? Откуда вы приехали?`
 **You produce:**
@@ -193,7 +193,7 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 - `Я о́чень рад быть здесь` — `firs011`
 **Success:** Your biography is clear, correct, and natural; if asked a follow-up, recover with a repair line and continue.
 
-### Scenario 10 — Noisy-table recovery drill
+### Scenario 10 — Noisy-table recovery drill (id: noisy_table)
 **Goal:** Stay usable when speech gets fast and noisy.
 **Tutor:** asks short questions from `listening` with short interleaved noise phrases.
 **You produce:**
@@ -205,55 +205,55 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 
 ---
 
-### Scenario 11 — Greetings and farewells
+### Scenario 11 — Greetings and farewells (id: greeting_daypart_and_farewell)
 **Goal:** Keep your opening and closing lines natural, polite, and short.
 **Tutor:** use short scripted transitions at table boundaries.
 **You produce:** `До́брый день`, `До́брый ве́чер`, `До свида́ния`, and respectful exit phrases.
 **Success:** You can switch registers smoothly between greeting and close without overloading.
 
-### Scenario 12 — Politeness baseline
+### Scenario 12 — Politeness baseline (id: politeness_baseline)
 **Goal:** Maintain polite Russian on every request, refusal, and acknowledgment.
 **Tutor:** prompt two neutral mini-dialogues; you answer each with short polite Russian.
 **You produce:** `Пожа́луйста`, `Спаси́бо`, `Извини́те`, and brief acknowledgement phrases.
 **Success:** Register is safe, calm, and complete even under low pressure.
 
-### Scenario 13 — Toast repertoire recall
+### Scenario 13 — Toast repertoire recall (id: toast_repertoire_recall)
 **Goal:** Choose the right toast formula quickly in likely dinner moments.
 **Tutor:** gives 3 random cue stems (`За ...`) and you respond with safe toast forms.
 **You produce:** safe `За ...` toast phrases, avoiding non-safe formulas.
 **Success:** One correct toast comes out with clear stress and safe wording.
 
-### Scenario 14 — Family context practice
+### Scenario 14 — Family context practice (id: family_context_practice)
 **Goal:** Navigate family-relations language without overreaching.
 **Tutor:** role-plays a brief kinship-safe check-in.
 **You produce:** respectful kinship references and short affiliative lines from your deck.
 **Success:** No avoidable register slips in family role references.
 
-### Scenario 15 — Dinner navigation
+### Scenario 15 — Dinner navigation (id: dinner_navigation)
 **Goal:** Mix requesting, accepting, declining, complimenting, and passing food with composure.
 **Tutor:** simulates a rapid food-flow round at the table.
 **You produce:** standard food request/accept/decline / compliment phrases.
 **Success:** You answer naturally, and one polite decline sounds natural.
 
-### Scenario 16 — Verb fluency check
+### Scenario 16 — Verb fluency check (id: verb_fluency_check)
 **Goal:** Answer profile and logistics questions under mild pressure using core verbs.
 **Tutor:** asks short first/second-person present-tense questions.
 **You produce:** concise answers from `verbs` and `smalltalk` items.
 **Success:** Core verbs are produced with expected agreement and case marking.
 
-### Scenario 17 — Extended family tree and kinship
+### Scenario 17 — Extended family tree and kinship (id: extended_family_family_tree)
 **Goal:** Use family vocabulary from in-law and parent loops without overloading.
 **Tutor:** asks short relationship-check prompts.
 **You produce:** `сема́я́`, `жена́`, `муж`, `па́па`, `ма́ма`, `де́т`, `ба́бушка`, `де́душка`, `сы́н`, `до́чь`, `бра́т`, `сестра́` in short phrases.
 **Success:** You answer with natural kinship words and correct register.
 
-### Scenario 18 — Family mini-check-in (How are you?)
+### Scenario 18 — Family mini-check-in (How are you?) (id: family_mini_checkin)
 **Goal:** Handle short routine check-ins without losing rhythm.
 **Tutor:** asks `Как дела́?`, `Хорошо́, спаси́бо`, and offer/recapture prompts.
 **You produce:** the short answers (`Я немно́го говорю́ по-ру́сски`, `Хорошо́, спаси́бо`, `Норма́льно`, `Да, немно́го`) and keep responses short and warm.
 **Success:** You can answer quickly and recover with `повтори́те`/`поме́дленнее` if needed.
 
-### Scenario 19 — Toast mechanics and table flow
+### Scenario 19 — Toast mechanics and table flow (id: toast_mechanics_and_table_flow)
 **Goal:** Keep toast vocabulary accurate with the right social move.
 **Tutor:** asks quick prompts from toast-building moments (`до дна́`, `бока́л`, `рю́мка`, and toast starters).
 **You produce:** both toast formulas and proper table-item handling words.
