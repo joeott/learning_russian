@@ -33,6 +33,18 @@ class WebAnalyticsContractTests(unittest.TestCase):
         self.assertIn("if (wasDelayedReview)", body)
         self.assertIn("if (ok && !opts.assisted)", body)
 
+    def test_analytics_history_is_local_daily_snapshot(self) -> None:
+        for token in (
+            ".analytics_history",
+            "loadAnalyticsHistory",
+            "saveAnalyticsHistory",
+            "analyticsSnapshot",
+            "Readiness trend",
+        ):
+            self.assertIn(token, self.app)
+        self.assertIn("rows.slice(-14)", self.app)
+        self.assertIn("new Date().toISOString().slice(0, 10)", self.app)
+
 
 if __name__ == "__main__":
     unittest.main()

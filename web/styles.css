@@ -160,6 +160,19 @@ body {
 .analyticsgrid strong { display:block; font-family: var(--font-display); color: var(--red); font-size: 1.6rem; line-height: 1; }
 .analyticsgrid small { font-size: .82rem; }
 .analyticsgrid span { display:block; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .05em; font-size: .66rem; color: var(--ink-soft); line-height: 1.15; }
+.trendbox {
+  display:grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 16px; align-items:center;
+  background: var(--paper); border:2px solid var(--ink); border-radius: var(--radius);
+  padding: 14px 16px; margin: -10px 0 26px; box-shadow: var(--shadow-sm);
+}
+.trendbox h3 { margin: 0 0 4px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .05em; }
+.trendbox p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
+.trendgrid { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.trendgrid div { border-left:2px solid var(--cream-line); padding-left: 9px; }
+.trendgrid strong { display:block; font-family: var(--font-display); color: var(--red); font-size: 1.5rem; line-height: 1; }
+.trendgrid small { font-size:.82rem; }
+.trendgrid span, .trendgrid em { display:block; font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; font-size:.66rem; color: var(--ink-soft); line-height:1.15; }
+.trendgrid em { margin-top: 4px; color: var(--ok); font-style: normal; }
 
 /* ---------- Module grid ---------- */
 .modgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(248px,1fr)); gap: 16px; }
@@ -415,6 +428,8 @@ body {
   .learnbar--tools .spacer { display: none; }
   .analyticsbox { grid-template-columns: 1fr; }
   .analyticsgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trendbox { grid-template-columns: 1fr; }
+  .trendgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .mastery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
