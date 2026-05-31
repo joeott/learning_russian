@@ -130,14 +130,64 @@ async function assertLessonLockedRecognition(page, baseUrl) {
   await assertText(page, "Practice is constrained to Lesson 1");
   const expected = await page.evaluate(() => {
     const first = window.CONTENT_DATA.curriculum.lessons[0];
-    const unlocked = window.CONTENT_DATA.items.filter((item) => item.lesson_number <= first.lesson_number);
+    const { items = [], cloze_cards = [], dictation_cards = [], stress_cards = [], pronunciation_cards = [], backtranslation_cards = [], contrast_cards = [], scenarios = [] } = window.CONTENT_DATA;
+    const hasLessonAccess = (card) => !card.lesson_number || card.lesson_number <= first.lesson_number;
+    const unlockedItems = items.filter((item) => item.lesson_number <= first.lesson_number);
+    const scenarioIds = new Set((scenarios || []).flatMap((s) => s.required_items || []));
+    const hasScenarios = (scenarios || []).length > 0;
+    const isRoleplay = hasScenarios
+      ? (it) => scenarioIds.has(it.id)
+      : (it) => it.priority <= 2 && (it.ru_plain.includes(" ") || it.tags.includes("toast"));
     return {
       lessonNumber: first.lesson_number,
-      unlocked: unlocked.length,
+      phrasesUnlocked: unlockedItems.length,
+      phrasesTotal: items.length,
+      recognition: unlockedItems.length,
+      recall: unlockedItems.length,
+      produce: unlockedItems.length,
+      listen: unlockedItems.filter((it) => it.syllables >= 1).length,
+      roleplay: unlockedItems.filter(isRoleplay).length,
+      cloze: cloze_cards.filter(hasLessonAccess).length,
+      dictation: dictation_cards.filter(hasLessonAccess).length,
+      stress: stress_cards.filter(hasLessonAccess).length,
+      pronounce: pronunciation_cards.filter(hasLessonAccess).length,
+      backtranslate: backtranslation_cards.filter(hasLessonAccess).length,
+      contrast: contrast_cards.filter(hasLessonAccess).length,
+      totals: {
+        cloze: cloze_cards.length,
+        dictation: dictation_cards.length,
+        stress: stress_cards.length,
+        pronounce: pronunciation_cards.length,
+        backtranslate: backtranslation_cards.length,
+        contrast: contrast_cards.length,
+      },
       total: window.CONTENT_DATA.items.length,
     };
   });
-  await assertText(page, `${expected.unlocked}/${expected.total} PHRASES UNLOCKED`);
+  await assertText(page, `${expected.phrasesUnlocked}/${expected.phrasesTotal} PHRASES UNLOCKED`);
+
+  const metaText = (await page.locator(".lessonlock__meta").innerText()).toLowerCase();
+  if (!metaText.includes(`${expected.phrasesUnlocked}/${expected.phrasesTotal} phrases unlocked`)) {
+    throw new Error(`Lesson lock meta mismatch: phrases unlocked expected ${expected.phrasesUnlocked}/${expected.phrasesTotal}`);
+  }
+  if (!metaText.includes(`${expected.cloze}/${expected.totals.cloze} cloze`)) {
+    throw new Error(`Lesson lock meta mismatch: cloze unlocked expected ${expected.cloze}/${expected.totals.cloze}`);
+  }
+  if (!metaText.includes(`${expected.dictation}/${expected.totals.dictation} dictation`)) {
+    throw new Error(`Lesson lock meta mismatch: dictation unlocked expected ${expected.dictation}/${expected.totals.dictation}`);
+  }
+  if (!metaText.includes(`${expected.stress}/${expected.totals.stress} stress`)) {
+    throw new Error(`Lesson lock meta mismatch: stress unlocked expected ${expected.stress}/${expected.totals.stress}`);
+  }
+  if (!metaText.includes(`${expected.pronounce}/${expected.totals.pronounce} pronounce`)) {
+    throw new Error(`Lesson lock meta mismatch: pronounce unlocked expected ${expected.pronounce}/${expected.totals.pronounce}`);
+  }
+  if (!metaText.includes(`${expected.backtranslate}/${expected.totals.backtranslate} back-translation`)) {
+    throw new Error(`Lesson lock meta mismatch: back-translation unlocked expected ${expected.backtranslate}/${expected.totals.backtranslate}`);
+  }
+  if (!metaText.includes(`${expected.contrast}/${expected.totals.contrast} contrast`)) {
+    throw new Error(`Lesson lock meta mismatch: contrast unlocked expected ${expected.contrast}/${expected.totals.contrast}`);
+  }
 
   await page.goto(withHash(baseUrl, "#/quiz/recognition"), { waitUntil: "networkidle" });
   await page.waitForTimeout(250);
@@ -151,34 +201,9 @@ async function assertLessonLockedRecognition(page, baseUrl) {
     throw new Error(`Lesson lock violated: ${prompted.id} is lesson ${prompted.lesson_number}, expected <= ${expected.lessonNumber}`);
   }
 
-  const unlockedByStage = await page.evaluate((lessonNumber) => {
-    const { items = [], cloze_cards = [], dictation_cards = [], stress_cards = [], pronunciation_cards = [], backtranslation_cards = [], contrast_cards = [] } = window.CONTENT_DATA;
-    const hasLessonAccess = (card) => !card.lesson_number || card.lesson_number <= lessonNumber;
-    const unlockedItems = items.filter((it) => hasLessonAccess(it));
-    const scenarioIds = new Set((window.CONTENT_DATA.scenarios || []).flatMap((s) => s.required_items || []));
-    const hasScenarios = (window.CONTENT_DATA.scenarios || []).length > 0;
-    const isRoleplay = hasScenarios
-      ? (it) => scenarioIds.has(it.id)
-      : (it) => it.priority <= 2 && (it.ru_plain.includes(" ") || it.tags.includes("toast"));
-    return {
-      recognition: unlockedItems.length,
-      recall: unlockedItems.length,
-      produce: unlockedItems.length,
-      listen: unlockedItems.filter((it) => it.syllables >= 1).length,
-      roleplay: unlockedItems.filter(isRoleplay).length,
-      cloze: cloze_cards.filter(hasLessonAccess),
-      dictation: dictation_cards.filter(hasLessonAccess),
-      stress: stress_cards.filter(hasLessonAccess),
-      pronounce: pronunciation_cards.filter(hasLessonAccess),
-      backtranslate: backtranslation_cards.filter(hasLessonAccess),
-      contrast: contrast_cards.filter(hasLessonAccess),
-    };
-  }, expected.lessonNumber);
-
   for (const stageKey of ["recognition", "recall", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"]) {
-    const available = unlockedByStage[stageKey];
-    const count = Array.isArray(available) ? available.length : available;
-    if (!count) {
+    const available = expected[stageKey];
+    if (!available) {
       continue;
     }
     await page.goto(withHash(baseUrl, `#/quiz/${stageKey}`), { waitUntil: "networkidle" });
