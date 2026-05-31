@@ -70,6 +70,60 @@ class SourceMaterialLoopTests(unittest.TestCase):
         )
         self.assertIn(scored["status"], {"verified", "needs_check"})
 
+    def test_easy_candidate_requires_verified_short_cyrillic_source(self) -> None:
+        easy = {
+            "status": "verified",
+            "scores": {"word_count": 80, "cyrillic_ratio": 0.9},
+            "notes": [],
+        }
+        self.assertTrue(zastolom._is_easy_candidate(easy))
+
+        too_long = {
+            **easy,
+            "scores": {"word_count": 500, "cyrillic_ratio": 0.9},
+            "notes": ["too long to fit fast drill pass"],
+        }
+        self.assertFalse(zastolom._is_easy_candidate(too_long))
+
+        needs_check = {**easy, "status": "needs_check"}
+        self.assertFalse(zastolom._is_easy_candidate(needs_check))
+
+        low_cyrillic = {
+            **easy,
+            "scores": {"word_count": 80, "cyrillic_ratio": 0.2},
+        }
+        self.assertFalse(zastolom._is_easy_candidate(low_cyrillic))
+
+    def test_source_loop_candidates_easy_prefers_short_verified_then_falls_back(
+        self,
+    ) -> None:
+        easy = {
+            "url": "easy",
+            "status": "verified",
+            "scores": {"word_count": 80, "cyrillic_ratio": 0.9},
+            "notes": [],
+        }
+        long = {
+            "url": "long",
+            "status": "verified",
+            "scores": {"word_count": 500, "cyrillic_ratio": 0.9},
+            "notes": ["too long to fit fast drill pass"],
+        }
+        needs_check = {
+            "url": "needs-check",
+            "status": "needs_check",
+            "scores": {"word_count": 80, "cyrillic_ratio": 0.9},
+            "notes": [],
+        }
+
+        preferred = zastolom._source_loop_candidates(
+            [long, needs_check, easy], easy=True
+        )
+        self.assertEqual([r["url"] for r in preferred], ["easy"])
+
+        fallback = zastolom._source_loop_candidates([long, needs_check], easy=True)
+        self.assertEqual([r["url"] for r in fallback], ["long", "needs-check"])
+
     def test_load_canvas_urls_dedupes_normalized(self) -> None:
         contents = """
         ## Week 2026-05-31

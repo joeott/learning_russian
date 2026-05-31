@@ -382,6 +382,38 @@ def _score_source_text(url, title, text, default_drill, spoken=False):
     }
 
 
+def _is_easy_candidate(row):
+    """Return True for short, beginner-usable candidate material.
+
+    We keep the threshold intentionally narrow for immediate mission use:
+    verified quality, not too short/too long, and no explicit length penalty.
+    """
+    if row.get("status") != "verified":
+        return False
+    scores = row.get("scores", {})
+    word_count = int(scores.get("word_count", 0) or 0)
+    if word_count < 40 or word_count > 260:
+        return False
+    notes = set((row.get("notes") or []))
+    for blocked in (
+        "too short for meaningful dictation",
+        "too long to fit fast drill pass",
+    ):
+        if blocked in notes:
+            return False
+    # Keep easy sources stable across spoken/read targets.
+    cyrillic_ratio = float(scores.get("cyrillic_ratio", 0.0) or 0.0)
+    return cyrillic_ratio >= 0.55
+
+
+def _source_loop_candidates(rows, easy=False):
+    candidates = [r for r in rows if r.get("status") in {"verified", "needs_check"}]
+    if not easy:
+        return candidates
+    easy_rows = [r for r in candidates if _is_easy_candidate(r)]
+    return easy_rows if easy_rows else candidates
+
+
 def _extract_title(html_text):
     match = re.search(r"<title[^>]*>(.*?)</title>", html_text, flags=re.I | re.S)
     if not match:
@@ -473,7 +505,9 @@ def cmd_source_loop(args):
     print(ok(f"source loop logged → {SOURCE_LOOP_LOG}"))
 
     if args.write_canvas:
-        accepted = [r for r in rows if r["status"] in {"verified", "needs_check"}]
+        accepted = _source_loop_candidates(
+            rows, easy=bool(getattr(args, "easy", False))
+        )
         if args.future:
             accepted = [r for r in accepted if not r.get("is_seed")]
         existing = _load_canvas_urls(SOURCE_CANDIDATE_FILE)
@@ -493,6 +527,10 @@ def cmd_source_loop(args):
                 f.write("tools/zastolom future-loop --run --write-canvas")
             else:
                 f.write("tools/zastolom source-loop --run --write-canvas")
+            if getattr(args, "easy", False):
+                f.write(" --easy")
+            if args.spoken:
+                f.write(" --spoken")
             f.write("`\n")
             for row in new_candidates:
                 status = row["status"]
@@ -948,12 +986,14 @@ def main():
     sl.add_argument("--run", action="store_true", help="run the scouting scan")
     sl.add_argument("--future", action="store_true", help="also scan candidate links from each target page")
     sl.add_argument("--spoken", action="store_true", help="focus targets for spoken-language/listening practice")
+    sl.add_argument("--easy", action="store_true", help="only keep short, beginner-safe candidates for canvas")
     sl.add_argument("--limit", type=int, default=0, help="max pages to scan in this run")
     sl.add_argument("--write-canvas", action="store_true", help="append passing candidates to source/candidate_materials.md")
     sl.add_argument("--targets", help="optional JSON target file (defaults to source/source_loop_targets.json)")
     fl = sub.add_parser("future-loop")
     fl.add_argument("--run", action="store_true", help="run the discovery scan and follow-up links")
     fl.add_argument("--spoken", action="store_true", help="focus targets for spoken-language/listening practice")
+    fl.add_argument("--easy", action="store_true", help="only keep short, beginner-safe candidates for canvas")
     fl.add_argument("--limit", type=int, default=0, help="max seed pages to scan in this run")
     fl.add_argument("--write-canvas", action="store_true", help="append passing candidates to source/candidate_materials.md")
     fl.add_argument("--targets", help="optional JSON target file (defaults to source/source_loop_targets.json)")
