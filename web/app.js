@@ -116,7 +116,7 @@
   function loadLearnRate() {
     try {
       const value = Number(localStorage.getItem(LEARN_RATE_KEY));
-      return [0.75, 1, 1.15].includes(value) ? value : 1;
+      return [0.65, 0.85, 1, 1.15, 1.3].includes(value) ? value : 1;
     } catch (e) { return 1; }
   }
   function saveLearnRate(value) {
@@ -989,8 +989,14 @@
     return learnState.list[learnState.idx] || null;
   }
   function speedControlsHtml() {
-    return [0.75, 1, 1.15].map(rate =>
-      `<button class="chip chip--tight ${learnState.audioRate === rate ? "is-on" : ""}" onclick="ZS.setLearnRate(${rate})">${rate}x</button>`
+    return [
+      { rate: 0.65, label: "Slow" },
+      { rate: 0.85, label: "Careful" },
+      { rate: 1, label: "Normal" },
+      { rate: 1.15, label: "Table" },
+      { rate: 1.3, label: "Fast" },
+    ].map(({ rate, label }) =>
+      `<button class="chip chip--tight ${learnState.audioRate === rate ? "is-on" : ""}" title="${label} readback" aria-label="${label} readback speed ${rate}x" onclick="ZS.setLearnRate(${rate})">${rate}x</button>`
     ).join("");
   }
   function verbConjugationFor(it) {
@@ -1170,11 +1176,11 @@
         <button class="iconbtn" onclick="ZS.next()" aria-label="Next">›</button>
       </div>
       <div class="learnvoice">
-        <button id="learnRecordBtn" class="btn btn--sm btn--red" onclick="ZS.startLearnRecording()">Record</button>
-        <button id="learnStopRecordBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.stopLearnRecording()" disabled>Stop</button>
-        <button id="learnPlayRecordBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.playLearnRecording()" ${learnRecordingUrl && learnRecordingItemId === it.id ? "" : "disabled"}>Play mine</button>
-        <button class="btn btn--sm btn--ghost ghost-dark ${learnState.showVoiceLab ? "is-on" : ""}" onclick="ZS.toggleVoiceLab()">Sonograph</button>
-        ${hasConjugation ? `<button class="btn btn--sm btn--ghost ghost-dark ${learnState.showConjugation ? "is-on" : ""}" onclick="ZS.toggleConjugation()">Conjugate</button>` : ""}
+        <button id="learnRecordBtn" class="btn btn--sm btn--red" title="Record your pronunciation for this card" onclick="ZS.startLearnRecording()">Record</button>
+        <button id="learnStopRecordBtn" class="btn btn--sm btn--ghost ghost-dark" title="Stop recording" onclick="ZS.stopLearnRecording()" disabled>Stop</button>
+        <button id="learnPlayRecordBtn" class="btn btn--sm btn--ghost ghost-dark" title="Play your latest recording for this card" onclick="ZS.playLearnRecording()" ${learnRecordingUrl && learnRecordingItemId === it.id ? "" : "disabled"}>Play mine</button>
+        <button class="btn btn--sm btn--ghost ghost-dark ${learnState.showVoiceLab ? "is-on" : ""}" title="Show native and self-recorded spectrograms" onclick="ZS.toggleVoiceLab()">Sonograph</button>
+        ${hasConjugation ? `<button class="btn btn--sm btn--ghost ghost-dark ${learnState.showConjugation ? "is-on" : ""}" title="Show the core verb forms for this card" onclick="ZS.toggleConjugation()">Conjugate</button>` : ""}
       </div>`;
     speak(it, { quiet: true, rate: learnState.audioRate }); // try native audio, but do not show autoplay-blocked TTS warnings
     if (learnState.showVoiceLab) setTimeout(renderLearnSpectrograms, 0);
@@ -1725,7 +1731,7 @@
     },
     toggleEn() { learnState.hideEn = !learnState.hideEn; renderLearn(); },
     setLearnRate(rate) {
-      if (![0.75, 1, 1.15].includes(rate)) return;
+      if (![0.65, 0.85, 1, 1.15, 1.3].includes(rate)) return;
       learnState.audioRate = rate;
       saveLearnRate(rate);
       renderLearn();

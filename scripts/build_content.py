@@ -309,6 +309,10 @@ ROLEPLAY_CRITERIA = {
         "label": "answers home, chores, homework, and shopping questions",
         "error_type": "case_or_inflection",
     },
+    "uses_pronouns_possession": {
+        "label": "uses personal and possessive pronouns in short phrases",
+        "error_type": "case_or_inflection",
+    },
     "uses_modal_survival": {
         "label": "uses can, know-how, want, need, and permission patterns",
         "error_type": "case_or_inflection",
@@ -1030,6 +1034,34 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "pronouns_possession_checkin",
+        "setting": "Pronouns, possession, and who has what",
+        "goal": "Use original-guide personal and possessive pronouns in short family/home/travel answers without overexplaining the grammar.",
+        "required_items": [
+            "pron001",
+            "pron002",
+            "pron003",
+            "pron004",
+            "pron005",
+            "pron006",
+            "pron007",
+            "pron008",
+            "pron009",
+            "pron010",
+            "pron011",
+            "pron012",
+            "pron013",
+            "pron014",
+            "pron015",
+            "pron016",
+        ],
+        "success_criteria": [
+            "uses_pronouns_possession",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
         "id": "budva_trip_checkin",
         "setting": "Budva family trip",
         "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
@@ -1335,6 +1367,13 @@ MODULES = [
         "🧹",
     ),
     (
+        "pronouns_possession",
+        "Pronouns & Possession",
+        "Original-guide pronouns made oral: my/your/our, he/she/they, and у меня / у нас patterns.",
+        2,
+        "🔗",
+    ),
+    (
         "modal_ability",
         "Can, Want & Need",
         "Original-guide modal survival: can, know how, want, need, allowed, not allowed, and should.",
@@ -1478,6 +1517,12 @@ MODULE_STRUCTURES = {
         "phrase:homework_question",
         "phrase:shopping_answer",
         "phrase:help_request",
+    ],
+    "pronouns_possession": [
+        "lexical:personal_pronouns",
+        "grammar:possessive_agreement",
+        "grammar:u_genitive_possession",
+        "phrase:relationship_reference",
     ],
     "modal_ability": [
         "grammar:modal_verbs",
@@ -3592,6 +3637,142 @@ add(
     "[mnye núzh-na pó-mashch']",
     2,
     tags=["help", "request"],
+)
+
+# --- PRONOUNS & POSSESSION (oral use from the source-guide pronoun tables) ---
+add(
+    "pronouns_possession",
+    "Э́то мой дом.",
+    "This is my house.",
+    "[é-ta moy dom]",
+    2,
+    tags=["pronouns", "possessive", "masculine"],
+)
+add(
+    "pronouns_possession",
+    "Э́то моя́ жена́.",
+    "This is my wife.",
+    "[é-ta ma-yá zhi-ná]",
+    2,
+    tags=["pronouns", "possessive", "family"],
+)
+add(
+    "pronouns_possession",
+    "Э́то моё люби́мое ме́сто.",
+    "This is my favorite place.",
+    "[é-ta ma-yó lyu-bí-ma-ye myés-ta]",
+    2,
+    tags=["pronouns", "possessive", "place"],
+)
+add(
+    "pronouns_possession",
+    "Э́то мои́ коты́.",
+    "These are my cats.",
+    "[é-ta ma-í ka-tý]",
+    2,
+    tags=["pronouns", "possessive", "cats"],
+)
+add(
+    "pronouns_possession",
+    "Я люблю́ мои́х кото́в.",
+    "I love my cats.",
+    "[ya lyub-lyú ma-íh ka-tóv]",
+    2,
+    tags=["pronouns", "possessive", "cats"],
+)
+add(
+    "pronouns_possession",
+    "Вот моя́ визи́тка.",
+    "Here is my business card.",
+    "[vot ma-yá vi-zít-ka]",
+    2,
+    tags=["pronouns", "possessive", "work"],
+)
+add(
+    "pronouns_possession",
+    "Э́то его́ дом.",
+    "This is his house.",
+    "[é-ta ye-vó dom]",
+    3,
+    recognize=True,
+    tags=["pronouns", "possessive", "listening"],
+)
+add(
+    "pronouns_possession",
+    "Э́то её маши́на.",
+    "This is her car.",
+    "[é-ta ye-yó ma-shý-na]",
+    3,
+    recognize=True,
+    tags=["pronouns", "possessive", "car", "listening"],
+)
+add(
+    "pronouns_possession",
+    "Э́то на́ши коты́.",
+    "These are our cats.",
+    "[é-ta ná-shi ka-tý]",
+    2,
+    tags=["pronouns", "possessive", "cats"],
+)
+add(
+    "pronouns_possession",
+    "Э́то ваш ключ?",
+    "Is this your key? (formal)",
+    "[é-ta vash klyuch]",
+    2,
+    recognize=True,
+    tags=["pronouns", "possessive", "formal", "listening"],
+)
+add(
+    "pronouns_possession",
+    "У меня́ есть два кота́.",
+    "I have two cats.",
+    "[u mi-nyá yest' dva ka-tá]",
+    2,
+    tags=["pronouns", "u-menya", "cats"],
+)
+add(
+    "pronouns_possession",
+    "У нас бы́ло мно́го госте́й.",
+    "We had many guests.",
+    "[u nas bý-la mnó-ga gas-tyéy]",
+    3,
+    tags=["pronouns", "u-nas", "guests"],
+)
+add(
+    "pronouns_possession",
+    "У вас есть вре́мя?",
+    "Do you have time? (formal)",
+    "[u vas yest' vryé-mya]",
+    2,
+    recognize=True,
+    tags=["pronouns", "u-vas", "question", "listening"],
+)
+add(
+    "pronouns_possession",
+    "Моя́ жена́ Кадри́я рабо́тает вме́сте со мной.",
+    "My wife Kadriya works together with me.",
+    "[ma-yá zhi-ná kad-rí-ya ra-bó-ta-yet vmyés-te sa mnoy]",
+    3,
+    tags=["pronouns", "family", "instrumental"],
+)
+add(
+    "pronouns_possession",
+    "Они́ рабо́тают вме́сте.",
+    "They work together.",
+    "[a-ní ra-bó-ta-yut vmyés-te]",
+    2,
+    recognize=True,
+    tags=["pronouns", "they", "work", "listening"],
+)
+add(
+    "pronouns_possession",
+    "Я соглашу́сь с тобо́й.",
+    "I will agree with you.",
+    "[ya sa-gla-shús' s ta-bóy]",
+    3,
+    recognize=True,
+    tags=["pronouns", "with-you", "listening"],
 )
 
 # --- CAN, WANT & NEED (modal survival patterns) ---

@@ -297,6 +297,22 @@ Where is the store?	<div style="font-size:2em">Где магази́н?</div>[so
 How much does the watermelon cost?	<div style="font-size:2em">Ско́лько сто́ит арбу́з?</div>[sound:zastolom_home015.mp3]	[skól'-ka stó-it ar-búz]	(focus: understand when heard)	home_life p3 recognize
 Please help.	<div style="font-size:2em">Помоги́те, пожа́луйста.</div>[sound:zastolom_home016.mp3]	[pa-ma-gí-tye, pa-zhá-lus-ta]		home_life p2
 I need help.	<div style="font-size:2em">Мне ну́жна по́мощь.</div>[sound:zastolom_home017.mp3]	[mnye núzh-na pó-mashch']		home_life p2
+This is my house.	<div style="font-size:2em">Э́то мой дом.</div>[sound:zastolom_pron001.mp3]	[é-ta moy dom]		pronouns_possession p2
+This is my wife.	<div style="font-size:2em">Э́то моя́ жена́.</div>[sound:zastolom_pron002.mp3]	[é-ta ma-yá zhi-ná]		pronouns_possession p2
+This is my favorite place.	<div style="font-size:2em">Э́то моё люби́мое ме́сто.</div>[sound:zastolom_pron003.mp3]	[é-ta ma-yó lyu-bí-ma-ye myés-ta]		pronouns_possession p2
+These are my cats.	<div style="font-size:2em">Э́то мои́ коты́.</div>[sound:zastolom_pron004.mp3]	[é-ta ma-í ka-tý]		pronouns_possession p2
+I love my cats.	<div style="font-size:2em">Я люблю́ мои́х кото́в.</div>[sound:zastolom_pron005.mp3]	[ya lyub-lyú ma-íh ka-tóv]		pronouns_possession p2
+Here is my business card.	<div style="font-size:2em">Вот моя́ визи́тка.</div>[sound:zastolom_pron006.mp3]	[vot ma-yá vi-zít-ka]		pronouns_possession p2
+This is his house.	<div style="font-size:2em">Э́то его́ дом.</div>[sound:zastolom_pron007.mp3]	[é-ta ye-vó dom]	(focus: understand when heard)	pronouns_possession p3 recognize
+This is her car.	<div style="font-size:2em">Э́то её маши́на.</div>[sound:zastolom_pron008.mp3]	[é-ta ye-yó ma-shý-na]	(focus: understand when heard)	pronouns_possession p3 recognize
+These are our cats.	<div style="font-size:2em">Э́то на́ши коты́.</div>[sound:zastolom_pron009.mp3]	[é-ta ná-shi ka-tý]		pronouns_possession p2
+Is this your key? (formal)	<div style="font-size:2em">Э́то ваш ключ?</div>[sound:zastolom_pron010.mp3]	[é-ta vash klyuch]	(focus: understand when heard)	pronouns_possession p2 recognize
+I have two cats.	<div style="font-size:2em">У меня́ есть два кота́.</div>[sound:zastolom_pron011.mp3]	[u mi-nyá yest' dva ka-tá]		pronouns_possession p2
+We had many guests.	<div style="font-size:2em">У нас бы́ло мно́го госте́й.</div>[sound:zastolom_pron012.mp3]	[u nas bý-la mnó-ga gas-tyéy]		pronouns_possession p3
+Do you have time? (formal)	<div style="font-size:2em">У вас есть вре́мя?</div>[sound:zastolom_pron013.mp3]	[u vas yest' vryé-mya]	(focus: understand when heard)	pronouns_possession p2 recognize
+My wife Kadriya works together with me.	<div style="font-size:2em">Моя́ жена́ Кадри́я рабо́тает вме́сте со мной.</div>[sound:zastolom_pron014.mp3]	[ma-yá zhi-ná kad-rí-ya ra-bó-ta-yet vmyés-te sa mnoy]		pronouns_possession p3
+They work together.	<div style="font-size:2em">Они́ рабо́тают вме́сте.</div>[sound:zastolom_pron015.mp3]	[a-ní ra-bó-ta-yut vmyés-te]	(focus: understand when heard)	pronouns_possession p2 recognize
+I will agree with you.	<div style="font-size:2em">Я соглашу́сь с тобо́й.</div>[sound:zastolom_pron016.mp3]	[ya sa-gla-shús' s ta-bóy]	(focus: understand when heard)	pronouns_possession p3 recognize
 I can dance.	<div style="font-size:2em">Я могу́ танцева́ть.</div>[sound:zastolom_moda001.mp3]	[ya ma-gú tan-tsi-vát']	мочь = can / have the possibility.	modal_ability p3
 I don't know how to dance salsa.	<div style="font-size:2em">Я не уме́ю танцева́ть са́льсу.</div>[sound:zastolom_moda002.mp3]	[ya nye u-myé-yu tan-tsi-vát' sál'-su]	уме́ть = know how / have the skill.	modal_ability p3
 I know how to dance salsa.	<div style="font-size:2em">Я зна́ю, как танцева́ть са́льсу.</div>[sound:zastolom_moda003.mp3]	[ya zná-yu kak tan-tsi-vát' sál'-su]	(focus: understand when heard)	modal_ability p3 recognize
