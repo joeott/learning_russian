@@ -8,7 +8,7 @@ deterministic, and grounded in verified Russian phrases.
 
 A learner can open the PWA, set a current lesson boundary, study stress-marked
 Cyrillic with audio, complete recognition, recall, cloze, dictation, stress,
-back-translation, contrast, production, listening, and role-play flows, receive targeted
+pronunciation, back-translation, contrast, production, listening, and role-play flows, receive targeted
 Russian-specific repair feedback, and have all progress reflected in local
 mastery state. Critical flows are verified by tests and browser automation before
 merge.
@@ -33,7 +33,7 @@ merge.
 6. Lesson-constrained AI tutor prompt cards generated from structured scenarios.
 7. Error-profile dashboard and targeted repair queues.
 8. Pronunciation and listening ladder: captions, fading hints, stress danger,
-   and optional recording/ASR adapters.
+   offline record/compare practice, and optional ASR adapters.
 9. Readiness analytics: delayed recall, listening accuracy, production accuracy,
    role-play pass rate, fragile high-priority items.
 10. Offline media packs and travel readiness checks.
@@ -55,12 +55,14 @@ Every slice should include the smallest useful vertical path:
 
 ## Current Direction
 
-After cloze, dictation, and back-translation, the next foundation is a
-lesson-constrained tutor workflow. It should turn existing structured scenarios
-and verified phrase banks into copyable AI tutor prompts that:
+The current implementation has the curriculum graph, lesson-locked generated
+cards, repair queues, tutor prompt cards, stress selection, contrast selection,
+and offline pronunciation record/compare practice. The next foundations should
+broaden oral transfer without weakening the guardrails:
 
-- name the current scenario and lesson boundary,
-- list only verified target phrases,
-- expose allowed vocabulary, structures, and error types,
-- enforce short corrective feedback,
-- prevent unguarded beginner-level Russian generation.
+- expand the listening ladder into explicit caption levels and noisy/fast
+  variants,
+- add richer Anki exports for contextual siblings with burying guidance,
+- make offline readiness measurable from cached app/audio state,
+- keep any future ASR or LLM evaluation behind adapters that validate against
+  unlocked vocabulary, structures, and verified phrase variants.

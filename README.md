@@ -26,7 +26,7 @@ On the home screen: tap **Learn** → start with the red **P1** cards (that's th
 
 | # | Tool | What it's for | Where |
 |---|------|---------------|-------|
-| 1 | **The web app** | Daily lessons + staged drills: recognise, recall, cloze, dictation, stress, back-translation, contrast, produce, listen, role-play. | [`web/`](web/) — serve & open |
+| 1 | **The web app** | Daily lessons + staged drills: recognise, recall, cloze, dictation, stress, pronounce, back-translation, contrast, produce, listen, role-play. | [`web/`](web/) — serve & open |
 | 2 | **AI tutor** | Live spoken role-play — Claude plays your тёща/тесть and corrects you. Highest-leverage thing you can do for a *speaking* goal. | [`tutor/roleplay_protocol.md`](tutor/roleplay_protocol.md) |
 | 3 | **Anki deck** | Spaced repetition on your phone — the workhorse for *retention*. ~109 cards, audio-ready. | [`anki/`](anki/) — see its README to import |
 | 4 | **Cheat sheet** | One printable "table survival sheet" for your pocket on the day. | [`printable/cheatsheet.html`](printable/cheatsheet.html) → Print / Save as PDF |
@@ -85,9 +85,9 @@ docs/           ICALL implementation plan and validation standard
 prompts/        local iterative improvement-loop prompt
 ```
 
-The web app now tracks stage-specific mastery and due reviews locally: recognition, recall, cloze, dictation, stress, back-translation, contrast, listening, production, and role-play are scheduled separately, with lapse/error data feeding repair drills.
+The web app now tracks stage-specific mastery and due reviews locally: recognition, recall, cloze, dictation, stress, pronunciation, back-translation, contrast, listening, production, and role-play are scheduled separately, with lapse/error data feeding repair drills.
 
-The content contract also includes a lesson-locked curriculum graph. Each item carries its lesson boundary, lexemes, structures, prerequisites, and allowed error types so dictation, stress, cloze, back-translation, contrast, and AI tutor features can reject out-of-sequence material instead of free-generating beyond the learner's unlocked Russian. The ongoing roadmap is tracked in [`docs/ICALL_IMPLEMENTATION_PLAN.md`](docs/ICALL_IMPLEMENTATION_PLAN.md).
+The content contract also includes a lesson-locked curriculum graph. Each item carries its lesson boundary, lexemes, structures, prerequisites, and allowed error types so dictation, stress, pronunciation, cloze, back-translation, contrast, and AI tutor features can reject out-of-sequence material instead of free-generating beyond the learner's unlocked Russian. The ongoing roadmap is tracked in [`docs/ICALL_IMPLEMENTATION_PLAN.md`](docs/ICALL_IMPLEMENTATION_PLAN.md).
 
 ---
 

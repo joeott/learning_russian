@@ -155,7 +155,7 @@ body {
 }
 .analyticsbox h3 { margin: 0 0 4px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .05em; }
 .analyticsbox p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
-.analyticsgrid { display:grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
+.analyticsgrid { display:grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px; }
 .analyticsgrid div { border-left: 2px solid var(--cream-line); padding-left: 9px; }
 .analyticsgrid strong { display:block; font-family: var(--font-display); color: var(--red); font-size: 1.6rem; line-height: 1; }
 .analyticsgrid small { font-size: .82rem; }
@@ -278,6 +278,17 @@ body {
 .listenhint div { font-family: var(--font-serif); font-weight:700; font-size: 1.15rem; color: var(--paper); overflow-wrap:anywhere; }
 .listenhint .stress { color: var(--amber); }
 .listenactions { display:flex; justify-content:center; margin: -4px 0 14px; }
+.pronbox {
+  background: var(--paper-2); border:2px solid var(--ink); border-radius: var(--radius);
+  padding: 14px; box-shadow: var(--shadow-sm);
+}
+.pronbox__row { display:flex; justify-content:center; align-items:center; gap: 10px; flex-wrap:wrap; }
+.pronbox__status { margin: 12px 0 0; color: var(--ink-soft); text-align:center; font-size: .92rem; }
+.pronbox__targets { display:flex; flex-wrap:wrap; justify-content:center; gap: 6px; margin-top: 10px; }
+.pronbox__targets span {
+  font-family: var(--font-display); text-transform: uppercase; letter-spacing:.06em; font-size:.66rem;
+  border:1px solid var(--ink); border-radius:20px; padding: 3px 8px; background: var(--paper);
+}
 .options { display:grid; gap: 10px; }
 .opt {
   font-family: var(--font-serif); font-size: 1.15rem; text-align:left; cursor:pointer;

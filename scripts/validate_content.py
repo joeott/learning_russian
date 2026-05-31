@@ -277,6 +277,51 @@ def validate_content(data: dict) -> list[str]:
             if error_type not in error_types:
                 fail(errors, f"{card_id}: unknown allowed_error_type {error_type}")
 
+    for card in data.get("pronunciation_cards", []):
+        card_id = card.get("id", "")
+        source = item_by_id.get(card.get("item_id"))
+        if not source:
+            fail(errors, f"{card_id}: unknown source item {card.get('item_id')}")
+            continue
+        if card.get("lesson_id") != source.get("lesson_id"):
+            fail(errors, f"{card_id}: lesson_id does not match source item")
+        if card.get("lesson_number") != source.get("lesson_number"):
+            fail(errors, f"{card_id}: lesson_number does not match source item")
+        if card.get("module") != source.get("module"):
+            fail(errors, f"{card_id}: module does not match source item")
+        if card.get("ru") != source.get("ru"):
+            fail(errors, f"{card_id}: ru does not match source item")
+        if card.get("ru_plain") != source.get("ru_plain"):
+            fail(errors, f"{card_id}: ru_plain does not match source item")
+        expected_steps = {
+            "listen_native",
+            "record_self",
+            "playback_compare",
+            "self_rate",
+        }
+        if set(card.get("practice_steps", [])) != expected_steps:
+            fail(errors, f"{card_id}: pronunciation steps must be complete")
+        for target in ("stress", "vowel_reduction"):
+            if target not in card.get("feedback_targets", []):
+                fail(errors, f"{card_id}: missing feedback target {target}")
+            if target not in card.get("allowed_error_types", []):
+                fail(errors, f"{card_id}: missing pronunciation error type {target}")
+        try:
+            boundary = lesson_boundary(data, card.get("lesson_id"))
+            if source["id"] not in boundary["item_ids"]:
+                fail(errors, f"{card_id}: source item outside lesson boundary")
+            locked_structures = set(card.get("structures", [])) - boundary["structures"]
+            if locked_structures:
+                fail(
+                    errors,
+                    f"{card_id}: structures outside lesson boundary: {sorted(locked_structures)}",
+                )
+        except KeyError as exc:
+            fail(errors, f"{card_id}: {exc}")
+        for error_type in card.get("allowed_error_types", []):
+            if error_type not in error_types:
+                fail(errors, f"{card_id}: unknown allowed_error_type {error_type}")
+
     for card in data.get("backtranslation_cards", []):
         card_id = card.get("id", "")
         source = item_by_id.get(card.get("item_id"))
@@ -502,6 +547,18 @@ def validate_generated(data: dict) -> list[str]:
         fail(
             errors,
             f"dictation cards missing audio ids: {', '.join(missing_dictation_audio[:12])}",
+        )
+    missing_pronunciation_audio = sorted(
+        {
+            card["item_id"]
+            for card in data.get("pronunciation_cards", [])
+            if card["item_id"] not in audio_ids
+        }
+    )
+    if missing_pronunciation_audio:
+        fail(
+            errors,
+            f"pronunciation cards missing audio ids: {', '.join(missing_pronunciation_audio[:12])}",
         )
     anki_rows = (
         (ROOT / "anki" / "russian_family_visit.txt")
