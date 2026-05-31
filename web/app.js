@@ -242,11 +242,12 @@
   function router() {
     const hash = location.hash || "#/home";
     const [, route, arg] = hash.split("/");
-    document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("is-active", a.dataset.tab === (route || "home")));
+    const activeRoute = route === "drill" ? "quiz" : (route || "home");
+    document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("is-active", a.dataset.tab === activeRoute));
     view.scrollTop = 0; window.scrollTo(0, 0);
-    if (route === "learn") renderLearn(arg);
-    else if (route === "quiz") arg ? renderQuizRun(arg) : renderQuizMenu();
-    else if (route === "plan") renderPlan();
+    if (activeRoute === "learn") renderLearn(arg);
+    else if (activeRoute === "quiz") arg ? renderQuizRun(arg) : renderQuizMenu();
+    else if (activeRoute === "plan") renderPlan();
     else renderHome();
     view.focus({ preventScroll: true });
   }
