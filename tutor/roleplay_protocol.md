@@ -88,7 +88,7 @@ The tutor should actively target these four — they're what make Cyrillic-reade
 
 ---
 
-## The 8 Role-Play Scenarios (increasing difficulty)
+## The 19 Role-Play Scenarios (increasing difficulty)
 
 Run them in order over your study days. Each says: **Goal · the Russian the tutor uses · what you should produce (with content.json IDs) · success criteria.** All "expected responses" are phrases already in your deck — don't invent new Russian, lean on what you've drilled.
 
@@ -240,6 +240,24 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 **Tutor:** asks short first/second-person present-tense questions.
 **You produce:** concise answers from `verbs` and `smalltalk` items.
 **Success:** Core verbs are produced with expected agreement and case marking.
+
+### Scenario 17 — Extended family tree and kinship
+**Goal:** Use family vocabulary from in-law and parent loops without overloading.
+**Tutor:** asks short relationship-check prompts.
+**You produce:** `сема́я́`, `жена́`, `муж`, `па́па`, `ма́ма`, `де́т`, `ба́бушка`, `де́душка`, `сы́н`, `до́чь`, `бра́т`, `сестра́` in short phrases.
+**Success:** You answer with natural kinship words and correct register.
+
+### Scenario 18 — Family mini-check-in (How are you?)
+**Goal:** Handle short routine check-ins without losing rhythm.
+**Tutor:** asks `Как дела́?`, `Хорошо́, спаси́бо`, and offer/recapture prompts.
+**You produce:** the short answers (`Я немно́го говорю́ по-ру́сски`, `Хорошо́, спаси́бо`, `Норма́льно`, `Да, немно́го`) and keep responses short and warm.
+**Success:** You can answer quickly and recover with `повтори́те`/`поме́дленнее` if needed.
+
+### Scenario 19 — Toast mechanics and table flow
+**Goal:** Keep toast vocabulary accurate with the right social move.
+**Tutor:** asks quick prompts from toast-building moments (`до дна́`, `бока́л`, `рю́мка`, and toast starters).
+**You produce:** both toast formulas and proper table-item handling words.
+**Success:** You switch between toast wording and glass vocabulary without register or intent errors.
 
 ---
 
