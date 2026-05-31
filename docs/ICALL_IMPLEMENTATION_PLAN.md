@@ -60,8 +60,9 @@ cards, repair queues, tutor prompt cards, stress selection, contrast selection,
 offline pronunciation record/compare practice, contextual Anki export, offline
 readiness checks, an explicit listening ladder with speed and room-noise passes,
 criterion-aware role-play outcomes with cumulative repair signals,
-delayed-recall analytics, and local readiness history. The next foundations
-should broaden oral transfer without weakening the guardrails:
+delayed-recall analytics, response-latency tracking, and local readiness
+history. The next foundations should broaden oral transfer without weakening the
+guardrails:
 
 - add more high-variability listening variants beyond the current deterministic
   room-noise transformation,
