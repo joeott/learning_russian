@@ -236,6 +236,44 @@ def validate_content(data: dict) -> list[str]:
             if error_type not in error_types:
                 fail(errors, f"{card_id}: unknown allowed_error_type {error_type}")
 
+    for card in data.get("backtranslation_cards", []):
+        card_id = card.get("id", "")
+        source = item_by_id.get(card.get("item_id"))
+        if not source:
+            fail(errors, f"{card_id}: unknown source item {card.get('item_id')}")
+            continue
+        if card.get("lesson_id") != source.get("lesson_id"):
+            fail(errors, f"{card_id}: lesson_id does not match source item")
+        if card.get("lesson_number") != source.get("lesson_number"):
+            fail(errors, f"{card_id}: lesson_number does not match source item")
+        if card.get("module") != source.get("module"):
+            fail(errors, f"{card_id}: module does not match source item")
+        if source.get("ru_plain") not in card.get("accepted_answers", []):
+            fail(errors, f"{card_id}: accepted answers must include source ru_plain")
+        if card.get("ru_plain") != source.get("ru_plain"):
+            fail(errors, f"{card_id}: ru_plain does not match source item")
+        try:
+            boundary = lesson_boundary(data, card.get("lesson_id"))
+            if source["id"] not in boundary["item_ids"]:
+                fail(errors, f"{card_id}: source item outside lesson boundary")
+            locked_structures = set(card.get("structures", [])) - boundary["structures"]
+            if locked_structures:
+                fail(
+                    errors,
+                    f"{card_id}: structures outside lesson boundary: {sorted(locked_structures)}",
+                )
+        except KeyError as exc:
+            fail(errors, f"{card_id}: {exc}")
+        for required_error in ("forgot_phrase", "case_or_inflection", "word_order"):
+            if required_error not in card.get("allowed_error_types", []):
+                fail(
+                    errors,
+                    f"{card_id}: missing back-translation error type {required_error}",
+                )
+        for error_type in card.get("allowed_error_types", []):
+            if error_type not in error_types:
+                fail(errors, f"{card_id}: unknown allowed_error_type {error_type}")
+
     for scenario in data.get("scenarios", []):
         scenario_lesson_id = scenario.get("lesson_id")
         if scenario_lesson_id and scenario_lesson_id not in lesson_ids:
