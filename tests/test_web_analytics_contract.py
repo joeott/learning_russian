@@ -40,10 +40,23 @@ class WebAnalyticsContractTests(unittest.TestCase):
             "saveAnalyticsHistory",
             "analyticsSnapshot",
             "Readiness trend",
+            "averageResponseMs",
         ):
             self.assertIn(token, self.app)
         self.assertIn("rows.slice(-14)", self.app)
         self.assertIn("new Date().toISOString().slice(0, 10)", self.app)
+
+    def test_response_latency_is_recorded_per_stage(self) -> None:
+        for token in (
+            "questionStartedAt",
+            "last_latency_ms",
+            "latency_ms_total",
+            "latency_count",
+            "avg response time",
+            "formatLatency",
+        ):
+            self.assertIn(token, self.app)
+        self.assertIn("Math.min(300000", self.app)
 
     def test_roleplay_failure_signals_surface_repair_drills(self) -> None:
         for token in (

@@ -231,6 +231,20 @@
     const success = states.reduce((n, st) => n + (st.delayed_success || 0), 0);
     return attempts ? Math.round(success / attempts * 100) : 0;
   }
+  function averageResponseMs() {
+    const states = STAGE_KEYS.flatMap(stageKey =>
+      stagePool(stageKey).map(it => stageState(it.id, stageKey)).filter(Boolean)
+    );
+    const totals = states.reduce((acc, st) => {
+      acc.ms += st.latency_ms_total || 0;
+      acc.count += st.latency_count || 0;
+      return acc;
+    }, { ms: 0, count: 0 });
+    return totals.count ? Math.round(totals.ms / totals.count) : 0;
+  }
+  function formatLatency(ms) {
+    return ms ? `${Math.max(0.1, Math.round(ms / 100) / 10)}s` : "0s";
+  }
   function analytics() {
     const now = Date.now();
     const day = 86400000;
@@ -252,6 +266,7 @@
       roleplayMisses: roleplayMisses(),
       dictationAccuracy: stageAccuracy("dictation"),
       contrastAccuracy: stageAccuracy("contrast"),
+      averageResponseMs: averageResponseMs(),
     };
   }
   function todayKey() { return new Date().toISOString().slice(0, 10); }
@@ -263,6 +278,7 @@
       due: metrics.due,
       overdue: metrics.overdue,
       roleplayMisses: metrics.roleplayMisses,
+      averageResponseMs: metrics.averageResponseMs,
       touched: overallProgress().done,
     };
     const rows = loadAnalyticsHistory().filter(row => row && row.date !== snapshot.date);
@@ -286,6 +302,7 @@
         <div><strong>${current.delayedRecall}<small>%</small></strong><span>delayed recall</span><em>${delta(current, previous, "delayedRecall")}</em></div>
         <div><strong>${current.touched}</strong><span>phrases touched</span><em>${delta(current, previous, "touched")}</em></div>
         <div><strong>${current.overdue}</strong><span>overdue</span><em>${delta(current, previous, "overdue")}</em></div>
+        <div><strong>${formatLatency(current.averageResponseMs || 0)}</strong><span>avg response</span><em>${delta(current, previous, "averageResponseMs")}</em></div>
       </div>
     </div>`;
   }
@@ -636,6 +653,7 @@
           <div><strong>${a.roleplayPass}<small>%</small></strong><span>role-play pass rate</span></div>
           <div><strong>${a.roleplayMisses}</strong><span>role-play missed criteria</span></div>
           <div><strong>${fragileItems().length}</strong><span>fragile high-priority phrases</span></div>
+          <div><strong>${formatLatency(a.averageResponseMs)}</strong><span>avg response time</span></div>
         </div>
       </div>
       ${roleplaySignalsHtml(roleSignals)}
@@ -844,6 +862,7 @@
     if (quiz.i >= quiz.q.length) return drawSummary();
     const it = quiz.q[quiz.i];
     quiz.answered = false;
+    quiz.questionStartedAt = Date.now();
     if (stage.key === "listen") {
       quiz.listenStep = quiz.listenStep || "no_text";
       quiz.listenAssistance = quiz.listenAssistance || 0;
@@ -962,11 +981,18 @@
     opts = opts || {};
     const r = rec(id);
     const st = stageRec(id, stageKey);
+    const latencyMs = opts.latency_ms || (quiz && quiz.questionStartedAt ? Date.now() - quiz.questionStartedAt : 0);
     const wasDelayedReview = (st.seen || 0) > 0 && isDue(st);
     r.seen++;
     r.last_seen_at = new Date().toISOString();
     st.seen++;
     st.last_seen_at = r.last_seen_at;
+    if (latencyMs > 0) {
+      const boundedLatency = Math.min(300000, Math.round(latencyMs));
+      st.last_latency_ms = boundedLatency;
+      st.latency_ms_total = (st.latency_ms_total || 0) + boundedLatency;
+      st.latency_count = (st.latency_count || 0) + 1;
+    }
     if (wasDelayedReview) {
       st.delayed_attempts = (st.delayed_attempts || 0) + 1;
       if (ok && !opts.assisted) st.delayed_success = (st.delayed_success || 0) + 1;
