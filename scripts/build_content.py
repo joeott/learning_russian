@@ -309,6 +309,10 @@ ROLEPLAY_CRITERIA = {
         "label": "recognizes proverbs and legal jokes",
         "error_type": "listening_misparse",
     },
+    "recognizes_fast_checkins": {
+        "label": "recognizes fast family check-ins",
+        "error_type": "listening_misparse",
+    },
 }
 
 CONTRAST_SETS = [
@@ -669,6 +673,27 @@ SCENARIOS = [
             "uses_quick_responses",
             "stays_in_russian",
             "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "native_speed_checkins",
+        "setting": "Native-speed check-in questions",
+        "goal": "Recognize recurring original-guide check-in questions at family speed.",
+        "required_items": [
+            "list010",
+            "list011",
+            "list012",
+            "list013",
+            "list014",
+            "list015",
+            "list016",
+            "list017",
+            "list018",
+        ],
+        "success_criteria": [
+            "recognizes_fast_checkins",
+            "uses_repair_lines",
+            "stays_in_russian",
         ],
     },
     {
@@ -1594,6 +1619,89 @@ add(
     "[bú-dye-tye] — e.g. «Бу́дете чай?»",
     3,
     recognize=True,
+)
+add(
+    "listening",
+    "Чем ты сего́дня занима́лся?",
+    "What did you do today?",
+    "[chem ty si-vód-nya za-ni-mál-sya]",
+    2,
+    recognize=True,
+    tags=["question", "checkin", "listening"],
+)
+add(
+    "listening",
+    "Како́й сего́дня день?",
+    "What kind of day is it today?",
+    "[ka-kóy si-vód-nya dyen']",
+    2,
+    recognize=True,
+    tags=["question", "weather", "checkin"],
+)
+add(
+    "listening",
+    "Как на у́лице?",
+    "How is it outside?",
+    "[kak na ú-li-tse]",
+    2,
+    recognize=True,
+    tags=["question", "weather", "checkin"],
+)
+add(
+    "listening",
+    "Что вы де́лали на выходны́х?",
+    "What did you do on the weekend?",
+    "[shto vy dyé-la-li na vy-had-nýh]",
+    2,
+    recognize=True,
+    tags=["question", "weekend", "checkin"],
+)
+add(
+    "listening",
+    "Что ты де́лал на про́шлой неде́ле?",
+    "What did you do last week?",
+    "[shto ty dyé-lal na prósh-lay ni-dyé-lye]",
+    2,
+    recognize=True,
+    tags=["question", "week", "checkin"],
+)
+add(
+    "listening",
+    "Что ты де́лал на э́той неде́ле?",
+    "What did you do this week?",
+    "[shto ty dyé-lal na é-tay ni-dyé-lye]",
+    2,
+    recognize=True,
+    tags=["question", "week", "checkin"],
+)
+add(
+    "listening",
+    "Чем был за́нят?",
+    "What were you busy with?",
+    "[chem byl zá-nyat]",
+    2,
+    recognize=True,
+    gender="m",
+    tags=["question", "work", "checkin"],
+)
+add(
+    "listening",
+    "У вас бу́дут рожде́ственские кани́кулы?",
+    "Will you have Christmas vacation?",
+    "[u vas bú-dut razh-dyén-stven-ski-ye ka-ní-ku-ly]",
+    3,
+    recognize=True,
+    tags=["question", "holiday", "checkin"],
+)
+add(
+    "listening",
+    "Ско́лько часо́в ты рабо́тал?",
+    "How many hours did you work?",
+    "[skól'-ka cha-sóf ty ra-bó-tal]",
+    2,
+    recognize=True,
+    gender="m",
+    tags=["question", "work", "checkin"],
 )
 
 # --- CALENDAR & WEATHER (original-guide small-talk lane) ---

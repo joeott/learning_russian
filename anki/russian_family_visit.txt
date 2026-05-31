@@ -100,6 +100,15 @@ How did you two meet?	<div style="font-size:2em">Как вы познако́м�
 Do you like …?	<div style="font-size:2em">Вам нра́вится …?</div>[sound:zastolom_list007.mp3]	[vam nrá-vi-tsa]	(focus: understand when heard)	listening p2 recognize
 More? (offering food/drink)	<div style="font-size:2em">Ещё?</div>[sound:zastolom_list008.mp3]	[ye-shchó]	(focus: understand when heard)	listening p1 recognize
 Will you have …? (offering)	<div style="font-size:2em">Бу́дете …?</div>[sound:zastolom_list009.mp3]	[bú-dye-tye] — e.g. «Бу́дете чай?»	(focus: understand when heard)	listening p3 recognize
+What did you do today?	<div style="font-size:2em">Чем ты сего́дня занима́лся?</div>[sound:zastolom_list010.mp3]	[chem ty si-vód-nya za-ni-mál-sya]	(focus: understand when heard)	listening p2 recognize
+What kind of day is it today?	<div style="font-size:2em">Како́й сего́дня день?</div>[sound:zastolom_list011.mp3]	[ka-kóy si-vód-nya dyen']	(focus: understand when heard)	listening p2 recognize
+How is it outside?	<div style="font-size:2em">Как на у́лице?</div>[sound:zastolom_list012.mp3]	[kak na ú-li-tse]	(focus: understand when heard)	listening p2 recognize
+What did you do on the weekend?	<div style="font-size:2em">Что вы де́лали на выходны́х?</div>[sound:zastolom_list013.mp3]	[shto vy dyé-la-li na vy-had-nýh]	(focus: understand when heard)	listening p2 recognize
+What did you do last week?	<div style="font-size:2em">Что ты де́лал на про́шлой неде́ле?</div>[sound:zastolom_list014.mp3]	[shto ty dyé-lal na prósh-lay ni-dyé-lye]	(focus: understand when heard)	listening p2 recognize
+What did you do this week?	<div style="font-size:2em">Что ты де́лал на э́той неде́ле?</div>[sound:zastolom_list015.mp3]	[shto ty dyé-lal na é-tay ni-dyé-lye]	(focus: understand when heard)	listening p2 recognize
+What were you busy with?	<div style="font-size:2em">Чем был за́нят?</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_list016.mp3]	[chem byl zá-nyat]	(focus: understand when heard)	listening p2 recognize
+Will you have Christmas vacation?	<div style="font-size:2em">У вас бу́дут рожде́ственские кани́кулы?</div>[sound:zastolom_list017.mp3]	[u vas bú-dut razh-dyén-stven-ski-ye ka-ní-ku-ly]	(focus: understand when heard)	listening p3 recognize
+How many hours did you work?	<div style="font-size:2em">Ско́лько часо́в ты рабо́тал?</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_list018.mp3]	[skól'-ka cha-sóf ty ra-bó-tal]	(focus: understand when heard)	listening p2 recognize
 What is the weather like today?	<div style="font-size:2em">Ка́кая сего́дня пого́да?</div>[sound:zastolom_cale001.mp3]	[ká-ka-ya si-vód-nya pa-gó-da]	(focus: understand when heard)	calendar_weather p2 recognize
 How is it outside?	<div style="font-size:2em">Как там на у́лице?</div>[sound:zastolom_cale002.mp3]	[kak tam na ú-li-tse]	(focus: understand when heard)	calendar_weather p2 recognize
 Today it's cold.	<div style="font-size:2em">Сего́дня хо́лодно.</div>[sound:zastolom_cale003.mp3]	[si-vód-nya hó-lad-na]		calendar_weather p2

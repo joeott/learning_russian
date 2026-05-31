@@ -52,7 +52,7 @@ window.CONTENT_DATA = {
       "family": 19,
       "food": 16,
       "smalltalk": 9,
-      "listening": 9,
+      "listening": 18,
       "calendar_weather": 19,
       "adverbs_adjectives": 14,
       "daily_routine": 29,
@@ -63,7 +63,7 @@ window.CONTENT_DATA = {
       "travel_budva": 28,
       "verbs": 10
     },
-    "total_items": 253
+    "total_items": 262
   },
   "curriculum": {
     "model": "lesson_locked_i_plus_1",
@@ -592,60 +592,130 @@ window.CONTENT_DATA = {
         "introduced_lexemes": [
           "будете",
           "будете …?",
+          "будут",
+          "был",
           "вам",
           "вам нравится …?",
+          "вас",
           "вы",
           "вы говорите по-русски?",
+          "выходных",
           "говорите",
           "дела",
+          "делал",
+          "делали",
+          "день",
           "ещё",
+          "занимался",
+          "занят",
           "как",
           "как вам россия?",
           "как вы познакомились?",
           "как дела?",
+          "как на улице?",
+          "какой",
+          "какой сегодня день?",
+          "каникулы",
           "кем",
           "кем вы работаете?",
+          "на",
+          "неделе",
           "нравится",
           "откуда",
           "откуда вы?",
           "по",
           "познакомились",
+          "прошлой",
           "работаете",
+          "работал",
+          "рождественские",
           "россия",
-          "русски"
+          "русски",
+          "сегодня",
+          "сколько",
+          "сколько часов ты работал?",
+          "ты",
+          "у",
+          "у вас будут рождественские каникулы?",
+          "улице",
+          "часов",
+          "чем",
+          "чем был занят?",
+          "чем ты сегодня занимался?",
+          "что",
+          "что вы делали на выходных?",
+          "что ты делал на прошлой неделе?",
+          "что ты делал на этой неделе?",
+          "этой"
         ],
         "active_vocab": [],
         "passive_vocab": [
           "будете",
           "будете …?",
+          "будут",
+          "был",
           "вам",
           "вам нравится …?",
+          "вас",
           "вы",
           "вы говорите по-русски?",
+          "выходных",
           "говорите",
           "дела",
+          "делал",
+          "делали",
+          "день",
           "ещё",
+          "занимался",
+          "занят",
           "как",
           "как вам россия?",
           "как вы познакомились?",
           "как дела?",
+          "как на улице?",
+          "какой",
+          "какой сегодня день?",
+          "каникулы",
           "кем",
           "кем вы работаете?",
+          "на",
+          "неделе",
           "нравится",
           "откуда",
           "откуда вы?",
           "по",
           "познакомились",
+          "прошлой",
           "работаете",
+          "работал",
+          "рождественские",
           "россия",
-          "русски"
+          "русски",
+          "сегодня",
+          "сколько",
+          "сколько часов ты работал?",
+          "ты",
+          "у",
+          "у вас будут рождественские каникулы?",
+          "улице",
+          "часов",
+          "чем",
+          "чем был занят?",
+          "чем ты сегодня занимался?",
+          "что",
+          "что вы делали на выходных?",
+          "что ты делал на прошлой неделе?",
+          "что ты делал на этой неделе?",
+          "этой"
         ],
         "introduced_structures": [
           "grammar:formal_question",
+          "morphology:gendered_short_form",
           "phrase:host_question",
           "skill:listening_question_recognition"
         ],
         "allowed_error_types": [
+          "gendered_form",
           "listening_misparse",
           "stress"
         ],
@@ -6653,6 +6723,492 @@ window.CONTENT_DATA = {
       ],
       "structures": [
         "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
+      ]
+    },
+    {
+      "id": "list010",
+      "module": "listening",
+      "ru": "Чем ты сего́дня занима́лся?",
+      "ru_plain": "Чем ты сегодня занимался?",
+      "en": "What did you do today?",
+      "hint": "[chem ty si-vód-nya za-ni-mál-sya]",
+      "priority": 2,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "question",
+        "checkin",
+        "listening"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "занимался",
+        "сегодня",
+        "ты",
+        "чем",
+        "чем ты сегодня занимался?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
+      ]
+    },
+    {
+      "id": "list011",
+      "module": "listening",
+      "ru": "Како́й сего́дня день?",
+      "ru_plain": "Какой сегодня день?",
+      "en": "What kind of day is it today?",
+      "hint": "[ka-kóy si-vód-nya dyen']",
+      "priority": 2,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "question",
+        "weather",
+        "checkin"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "день",
+        "какой",
+        "какой сегодня день?",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
+      ]
+    },
+    {
+      "id": "list012",
+      "module": "listening",
+      "ru": "Как на у́лице?",
+      "ru_plain": "Как на улице?",
+      "en": "How is it outside?",
+      "hint": "[kak na ú-li-tse]",
+      "priority": 2,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "question",
+        "weather",
+        "checkin"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "как",
+        "как на улице?",
+        "на",
+        "улице"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
+      ]
+    },
+    {
+      "id": "list013",
+      "module": "listening",
+      "ru": "Что вы де́лали на выходны́х?",
+      "ru_plain": "Что вы делали на выходных?",
+      "en": "What did you do on the weekend?",
+      "hint": "[shto vy dyé-la-li na vy-had-nýh]",
+      "priority": 2,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "question",
+        "weekend",
+        "checkin"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вы",
+        "выходных",
+        "делали",
+        "на",
+        "что",
+        "что вы делали на выходных?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
+      ]
+    },
+    {
+      "id": "list014",
+      "module": "listening",
+      "ru": "Что ты де́лал на про́шлой неде́ле?",
+      "ru_plain": "Что ты делал на прошлой неделе?",
+      "en": "What did you do last week?",
+      "hint": "[shto ty dyé-lal na prósh-lay ni-dyé-lye]",
+      "priority": 2,
+      "syllables": 10,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "question",
+        "week",
+        "checkin"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "делал",
+        "на",
+        "неделе",
+        "прошлой",
+        "ты",
+        "что",
+        "что ты делал на прошлой неделе?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
+      ]
+    },
+    {
+      "id": "list015",
+      "module": "listening",
+      "ru": "Что ты де́лал на э́той неде́ле?",
+      "ru_plain": "Что ты делал на этой неделе?",
+      "en": "What did you do this week?",
+      "hint": "[shto ty dyé-lal na é-tay ni-dyé-lye]",
+      "priority": 2,
+      "syllables": 10,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "question",
+        "week",
+        "checkin"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "делал",
+        "на",
+        "неделе",
+        "ты",
+        "что",
+        "что ты делал на этой неделе?",
+        "этой"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
+      ]
+    },
+    {
+      "id": "list016",
+      "module": "listening",
+      "ru": "Чем был за́нят?",
+      "ru_plain": "Чем был занят?",
+      "en": "What were you busy with?",
+      "hint": "[chem byl zá-nyat]",
+      "priority": 2,
+      "syllables": 4,
+      "conf": "high",
+      "gender": "m",
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "question",
+        "work",
+        "checkin"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "был",
+        "занят",
+        "чем",
+        "чем был занят?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "morphology:gendered_short_form",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
+      ]
+    },
+    {
+      "id": "list017",
+      "module": "listening",
+      "ru": "У вас бу́дут рожде́ственские кани́кулы?",
+      "ru_plain": "У вас будут рождественские каникулы?",
+      "en": "Will you have Christmas vacation?",
+      "hint": "[u vas bú-dut razh-dyén-stven-ski-ye ka-ní-ku-ly]",
+      "priority": 3,
+      "syllables": 13,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "question",
+        "holiday",
+        "checkin"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "будут",
+        "вас",
+        "каникулы",
+        "рождественские",
+        "у",
+        "у вас будут рождественские каникулы?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
+      ]
+    },
+    {
+      "id": "list018",
+      "module": "listening",
+      "ru": "Ско́лько часо́в ты рабо́тал?",
+      "ru_plain": "Сколько часов ты работал?",
+      "en": "How many hours did you work?",
+      "hint": "[skól'-ka cha-sóf ty ra-bó-tal]",
+      "priority": 2,
+      "syllables": 8,
+      "conf": "high",
+      "gender": "m",
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "question",
+        "work",
+        "checkin"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "работал",
+        "сколько",
+        "сколько часов ты работал?",
+        "ты",
+        "часов"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "morphology:gendered_short_form",
         "phrase:host_question",
         "skill:listening_question_recognition"
       ],
@@ -16880,6 +17436,402 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "cloze_list010_01",
+      "item_id": "list010",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Чем ты сего́дня занима́лся?",
+      "ru_plain": "Чем ты сегодня занимался?",
+      "prompt_ru": "Чем ты сегодня ____?",
+      "answer": "занимался",
+      "accepted_answers": [
+        "занима́лся",
+        "занимался"
+      ],
+      "en": "What did you do today?",
+      "priority": 2,
+      "lexemes": [
+        "занимался",
+        "сегодня",
+        "ты",
+        "чем",
+        "чем ты сегодня занимался?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "cloze",
+        "listening",
+        "question"
+      ]
+    },
+    {
+      "id": "cloze_list011_01",
+      "item_id": "list011",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Како́й сего́дня день?",
+      "ru_plain": "Какой сегодня день?",
+      "prompt_ru": "Какой ____ день?",
+      "answer": "сегодня",
+      "accepted_answers": [
+        "сего́дня",
+        "сегодня"
+      ],
+      "en": "What kind of day is it today?",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "какой",
+        "какой сегодня день?",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "cloze",
+        "question",
+        "weather"
+      ]
+    },
+    {
+      "id": "cloze_list012_01",
+      "item_id": "list012",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Как на у́лице?",
+      "ru_plain": "Как на улице?",
+      "prompt_ru": "Как на ____?",
+      "answer": "улице",
+      "accepted_answers": [
+        "у́лице",
+        "улице"
+      ],
+      "en": "How is it outside?",
+      "priority": 2,
+      "lexemes": [
+        "как",
+        "как на улице?",
+        "на",
+        "улице"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "cloze",
+        "question",
+        "weather"
+      ]
+    },
+    {
+      "id": "cloze_list013_01",
+      "item_id": "list013",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что вы де́лали на выходны́х?",
+      "ru_plain": "Что вы делали на выходных?",
+      "prompt_ru": "Что вы делали на ____?",
+      "answer": "выходных",
+      "accepted_answers": [
+        "выходны́х",
+        "выходных"
+      ],
+      "en": "What did you do on the weekend?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "выходных",
+        "делали",
+        "на",
+        "что",
+        "что вы делали на выходных?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "cloze",
+        "question",
+        "weekend"
+      ]
+    },
+    {
+      "id": "cloze_list014_01",
+      "item_id": "list014",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что ты де́лал на про́шлой неде́ле?",
+      "ru_plain": "Что ты делал на прошлой неделе?",
+      "prompt_ru": "Что ты делал на ____ неделе?",
+      "answer": "прошлой",
+      "accepted_answers": [
+        "про́шлой",
+        "прошлой"
+      ],
+      "en": "What did you do last week?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "на",
+        "неделе",
+        "прошлой",
+        "ты",
+        "что",
+        "что ты делал на прошлой неделе?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "cloze",
+        "question",
+        "week"
+      ]
+    },
+    {
+      "id": "cloze_list015_01",
+      "item_id": "list015",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что ты де́лал на э́той неде́ле?",
+      "ru_plain": "Что ты делал на этой неделе?",
+      "prompt_ru": "Что ты делал на этой ____?",
+      "answer": "неделе",
+      "accepted_answers": [
+        "неде́ле",
+        "неделе"
+      ],
+      "en": "What did you do this week?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "на",
+        "неделе",
+        "ты",
+        "что",
+        "что ты делал на этой неделе?",
+        "этой"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "cloze",
+        "question",
+        "week"
+      ]
+    },
+    {
+      "id": "cloze_list016_01",
+      "item_id": "list016",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Чем был за́нят?",
+      "ru_plain": "Чем был занят?",
+      "prompt_ru": "Чем был ____?",
+      "answer": "занят",
+      "accepted_answers": [
+        "за́нят",
+        "занят"
+      ],
+      "en": "What were you busy with?",
+      "priority": 2,
+      "lexemes": [
+        "был",
+        "занят",
+        "чем",
+        "чем был занят?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "morphology:gendered_short_form",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "cloze",
+        "question",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_list017_01",
+      "item_id": "list017",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "У вас бу́дут рожде́ственские кани́кулы?",
+      "ru_plain": "У вас будут рождественские каникулы?",
+      "prompt_ru": "У вас будут ____ каникулы?",
+      "answer": "рождественские",
+      "accepted_answers": [
+        "рожде́ственские",
+        "рождественские"
+      ],
+      "en": "Will you have Christmas vacation?",
+      "priority": 3,
+      "lexemes": [
+        "будут",
+        "вас",
+        "каникулы",
+        "рождественские",
+        "у",
+        "у вас будут рождественские каникулы?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "cloze",
+        "holiday",
+        "question"
+      ]
+    },
+    {
+      "id": "cloze_list018_01",
+      "item_id": "list018",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Ско́лько часо́в ты рабо́тал?",
+      "ru_plain": "Сколько часов ты работал?",
+      "prompt_ru": "____ часов ты работал?",
+      "answer": "Сколько",
+      "accepted_answers": [
+        "Ско́лько",
+        "Сколько"
+      ],
+      "en": "How many hours did you work?",
+      "priority": 2,
+      "lexemes": [
+        "работал",
+        "сколько",
+        "сколько часов ты работал?",
+        "ты",
+        "часов"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "morphology:gendered_short_form",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "cloze",
+        "question",
+        "work"
+      ]
+    },
+    {
       "id": "cloze_cale001_01",
       "item_id": "cale001",
       "module": "calendar_weather",
@@ -25968,6 +26920,402 @@ window.CONTENT_DATA = {
       ],
       "tags": [
         "dictation"
+      ]
+    },
+    {
+      "id": "dict_list010_01",
+      "item_id": "list010",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Чем ты сего́дня занима́лся?",
+      "ru_plain": "Чем ты сегодня занимался?",
+      "accepted_answers": [
+        "Чем ты сего́дня занима́лся?",
+        "Чем ты сегодня занимался?"
+      ],
+      "en": "What did you do today?",
+      "priority": 2,
+      "lexemes": [
+        "занимался",
+        "сегодня",
+        "ты",
+        "чем",
+        "чем ты сегодня занимался?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "dictation",
+        "listening",
+        "question"
+      ]
+    },
+    {
+      "id": "dict_list011_01",
+      "item_id": "list011",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Како́й сего́дня день?",
+      "ru_plain": "Какой сегодня день?",
+      "accepted_answers": [
+        "Како́й сего́дня день?",
+        "Какой сегодня день?"
+      ],
+      "en": "What kind of day is it today?",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "какой",
+        "какой сегодня день?",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "dictation",
+        "question",
+        "weather"
+      ]
+    },
+    {
+      "id": "dict_list012_01",
+      "item_id": "list012",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Как на у́лице?",
+      "ru_plain": "Как на улице?",
+      "accepted_answers": [
+        "Как на у́лице?",
+        "Как на улице?"
+      ],
+      "en": "How is it outside?",
+      "priority": 2,
+      "lexemes": [
+        "как",
+        "как на улице?",
+        "на",
+        "улице"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "dictation",
+        "question",
+        "weather"
+      ]
+    },
+    {
+      "id": "dict_list013_01",
+      "item_id": "list013",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что вы де́лали на выходны́х?",
+      "ru_plain": "Что вы делали на выходных?",
+      "accepted_answers": [
+        "Что вы де́лали на выходны́х?",
+        "Что вы делали на выходных?"
+      ],
+      "en": "What did you do on the weekend?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "выходных",
+        "делали",
+        "на",
+        "что",
+        "что вы делали на выходных?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "dictation",
+        "question",
+        "weekend"
+      ]
+    },
+    {
+      "id": "dict_list014_01",
+      "item_id": "list014",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что ты де́лал на про́шлой неде́ле?",
+      "ru_plain": "Что ты делал на прошлой неделе?",
+      "accepted_answers": [
+        "Что ты де́лал на про́шлой неде́ле?",
+        "Что ты делал на прошлой неделе?"
+      ],
+      "en": "What did you do last week?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "на",
+        "неделе",
+        "прошлой",
+        "ты",
+        "что",
+        "что ты делал на прошлой неделе?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "dictation",
+        "question",
+        "week"
+      ]
+    },
+    {
+      "id": "dict_list015_01",
+      "item_id": "list015",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что ты де́лал на э́той неде́ле?",
+      "ru_plain": "Что ты делал на этой неделе?",
+      "accepted_answers": [
+        "Что ты де́лал на э́той неде́ле?",
+        "Что ты делал на этой неделе?"
+      ],
+      "en": "What did you do this week?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "на",
+        "неделе",
+        "ты",
+        "что",
+        "что ты делал на этой неделе?",
+        "этой"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "dictation",
+        "question",
+        "week"
+      ]
+    },
+    {
+      "id": "dict_list016_01",
+      "item_id": "list016",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Чем был за́нят?",
+      "ru_plain": "Чем был занят?",
+      "accepted_answers": [
+        "Чем был за́нят?",
+        "Чем был занят?"
+      ],
+      "en": "What were you busy with?",
+      "priority": 2,
+      "lexemes": [
+        "был",
+        "занят",
+        "чем",
+        "чем был занят?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "morphology:gendered_short_form",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "dictation",
+        "question",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_list017_01",
+      "item_id": "list017",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "У вас бу́дут рожде́ственские кани́кулы?",
+      "ru_plain": "У вас будут рождественские каникулы?",
+      "accepted_answers": [
+        "У вас бу́дут рожде́ственские кани́кулы?",
+        "У вас будут рождественские каникулы?"
+      ],
+      "en": "Will you have Christmas vacation?",
+      "priority": 3,
+      "lexemes": [
+        "будут",
+        "вас",
+        "каникулы",
+        "рождественские",
+        "у",
+        "у вас будут рождественские каникулы?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "dictation",
+        "holiday",
+        "question"
+      ]
+    },
+    {
+      "id": "dict_list018_01",
+      "item_id": "list018",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Ско́лько часо́в ты рабо́тал?",
+      "ru_plain": "Сколько часов ты работал?",
+      "accepted_answers": [
+        "Ско́лько часо́в ты рабо́тал?",
+        "Сколько часов ты работал?"
+      ],
+      "en": "How many hours did you work?",
+      "priority": 2,
+      "lexemes": [
+        "работал",
+        "сколько",
+        "сколько часов ты работал?",
+        "ты",
+        "часов"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "morphology:gendered_short_form",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "dictation",
+        "question",
+        "work"
       ]
     },
     {
@@ -36053,6 +37401,429 @@ window.CONTENT_DATA = {
       ],
       "tags": [
         "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_list010_01",
+      "item_id": "list010",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Чем ты сего́дня занима́лся?",
+      "ru_plain": "Чем ты сегодня занимался?",
+      "options": [
+        "Че́м ты сегодня занимался?",
+        "Чем ты се́годня занимался?",
+        "Чем ты сего́дня занима́лся?",
+        "Чем ты́ сегодня занимался?"
+      ],
+      "answer": "Чем ты сего́дня занима́лся?",
+      "en": "What did you do today?",
+      "priority": 2,
+      "lexemes": [
+        "занимался",
+        "сегодня",
+        "ты",
+        "чем",
+        "чем ты сегодня занимался?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "listening",
+        "question",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_list011_01",
+      "item_id": "list011",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Како́й сего́дня день?",
+      "ru_plain": "Какой сегодня день?",
+      "options": [
+        "Ка́кой сегодня день?",
+        "Како́й сего́дня день?",
+        "Како́й сегодня день?",
+        "Какой се́годня день?"
+      ],
+      "answer": "Како́й сего́дня день?",
+      "en": "What kind of day is it today?",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "какой",
+        "какой сегодня день?",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "question",
+        "stress_drill",
+        "weather"
+      ]
+    },
+    {
+      "id": "stress_list012_01",
+      "item_id": "list012",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Как на у́лице?",
+      "ru_plain": "Как на улице?",
+      "options": [
+        "Ка́к на улице?",
+        "Как на у́лице?",
+        "Как на ули́це?",
+        "Как на́ улице?"
+      ],
+      "answer": "Как на у́лице?",
+      "en": "How is it outside?",
+      "priority": 2,
+      "lexemes": [
+        "как",
+        "как на улице?",
+        "на",
+        "улице"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "question",
+        "stress_drill",
+        "weather"
+      ]
+    },
+    {
+      "id": "stress_list013_01",
+      "item_id": "list013",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что вы де́лали на выходны́х?",
+      "ru_plain": "Что вы делали на выходных?",
+      "options": [
+        "Что вы де́лали на выходны́х?",
+        "Что вы де́лали на выходных?",
+        "Что вы́ делали на выходных?",
+        "Что́ вы делали на выходных?"
+      ],
+      "answer": "Что вы де́лали на выходны́х?",
+      "en": "What did you do on the weekend?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "выходных",
+        "делали",
+        "на",
+        "что",
+        "что вы делали на выходных?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "question",
+        "stress_drill",
+        "weekend"
+      ]
+    },
+    {
+      "id": "stress_list014_01",
+      "item_id": "list014",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что ты де́лал на про́шлой неде́ле?",
+      "ru_plain": "Что ты делал на прошлой неделе?",
+      "options": [
+        "Что ты де́лал на про́шлой неде́ле?",
+        "Что ты де́лал на прошлой неделе?",
+        "Что ты́ делал на прошлой неделе?",
+        "Что́ ты делал на прошлой неделе?"
+      ],
+      "answer": "Что ты де́лал на про́шлой неде́ле?",
+      "en": "What did you do last week?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "на",
+        "неделе",
+        "прошлой",
+        "ты",
+        "что",
+        "что ты делал на прошлой неделе?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "question",
+        "stress_drill",
+        "week"
+      ]
+    },
+    {
+      "id": "stress_list015_01",
+      "item_id": "list015",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что ты де́лал на э́той неде́ле?",
+      "ru_plain": "Что ты делал на этой неделе?",
+      "options": [
+        "Что ты де́лал на э́той неде́ле?",
+        "Что ты де́лал на этой неделе?",
+        "Что ты́ делал на этой неделе?",
+        "Что́ ты делал на этой неделе?"
+      ],
+      "answer": "Что ты де́лал на э́той неде́ле?",
+      "en": "What did you do this week?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "на",
+        "неделе",
+        "ты",
+        "что",
+        "что ты делал на этой неделе?",
+        "этой"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "question",
+        "stress_drill",
+        "week"
+      ]
+    },
+    {
+      "id": "stress_list016_01",
+      "item_id": "list016",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Чем был за́нят?",
+      "ru_plain": "Чем был занят?",
+      "options": [
+        "Че́м был занят?",
+        "Чем бы́л занят?",
+        "Чем был за́нят?",
+        "Чем был заня́т?"
+      ],
+      "answer": "Чем был за́нят?",
+      "en": "What were you busy with?",
+      "priority": 2,
+      "lexemes": [
+        "был",
+        "занят",
+        "чем",
+        "чем был занят?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "morphology:gendered_short_form",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "question",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_list017_01",
+      "item_id": "list017",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "У вас бу́дут рожде́ственские кани́кулы?",
+      "ru_plain": "У вас будут рождественские каникулы?",
+      "options": [
+        "У ва́с будут рождественские каникулы?",
+        "У вас бу́дут рожде́ственские кани́кулы?",
+        "У вас бу́дут рождественские каникулы?",
+        "У́ вас будут рождественские каникулы?"
+      ],
+      "answer": "У вас бу́дут рожде́ственские кани́кулы?",
+      "en": "Will you have Christmas vacation?",
+      "priority": 3,
+      "lexemes": [
+        "будут",
+        "вас",
+        "каникулы",
+        "рождественские",
+        "у",
+        "у вас будут рождественские каникулы?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "holiday",
+        "question",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_list018_01",
+      "item_id": "list018",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Ско́лько часо́в ты рабо́тал?",
+      "ru_plain": "Сколько часов ты работал?",
+      "options": [
+        "Ско́лько часо́в ты рабо́тал?",
+        "Ско́лько часов ты работал?",
+        "Сколько ча́сов ты работал?",
+        "Сколько́ часов ты работал?"
+      ],
+      "answer": "Ско́лько часо́в ты рабо́тал?",
+      "en": "How many hours did you work?",
+      "priority": 2,
+      "lexemes": [
+        "работал",
+        "сколько",
+        "сколько часов ты работал?",
+        "ты",
+        "часов"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "morphology:gendered_short_form",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "question",
+        "stress_drill",
+        "work"
       ]
     },
     {
@@ -46686,6 +48457,474 @@ window.CONTENT_DATA = {
       ],
       "tags": [
         "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_list010_01",
+      "item_id": "list010",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Чем ты сего́дня занима́лся?",
+      "ru_plain": "Чем ты сегодня занимался?",
+      "en": "What did you do today?",
+      "priority": 2,
+      "lexemes": [
+        "занимался",
+        "сегодня",
+        "ты",
+        "чем",
+        "чем ты сегодня занимался?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "listening",
+        "pronunciation",
+        "question"
+      ]
+    },
+    {
+      "id": "pron_list011_01",
+      "item_id": "list011",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Како́й сего́дня день?",
+      "ru_plain": "Какой сегодня день?",
+      "en": "What kind of day is it today?",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "какой",
+        "какой сегодня день?",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "pronunciation",
+        "question",
+        "weather"
+      ]
+    },
+    {
+      "id": "pron_list012_01",
+      "item_id": "list012",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Как на у́лице?",
+      "ru_plain": "Как на улице?",
+      "en": "How is it outside?",
+      "priority": 2,
+      "lexemes": [
+        "как",
+        "как на улице?",
+        "на",
+        "улице"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "pronunciation",
+        "question",
+        "weather"
+      ]
+    },
+    {
+      "id": "pron_list013_01",
+      "item_id": "list013",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что вы де́лали на выходны́х?",
+      "ru_plain": "Что вы делали на выходных?",
+      "en": "What did you do on the weekend?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "выходных",
+        "делали",
+        "на",
+        "что",
+        "что вы делали на выходных?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "pronunciation",
+        "question",
+        "weekend"
+      ]
+    },
+    {
+      "id": "pron_list014_01",
+      "item_id": "list014",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что ты де́лал на про́шлой неде́ле?",
+      "ru_plain": "Что ты делал на прошлой неделе?",
+      "en": "What did you do last week?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "на",
+        "неделе",
+        "прошлой",
+        "ты",
+        "что",
+        "что ты делал на прошлой неделе?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "pronunciation",
+        "question",
+        "week"
+      ]
+    },
+    {
+      "id": "pron_list015_01",
+      "item_id": "list015",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что ты де́лал на э́той неде́ле?",
+      "ru_plain": "Что ты делал на этой неделе?",
+      "en": "What did you do this week?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "на",
+        "неделе",
+        "ты",
+        "что",
+        "что ты делал на этой неделе?",
+        "этой"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "pronunciation",
+        "question",
+        "week"
+      ]
+    },
+    {
+      "id": "pron_list016_01",
+      "item_id": "list016",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Чем был за́нят?",
+      "ru_plain": "Чем был занят?",
+      "en": "What were you busy with?",
+      "priority": 2,
+      "lexemes": [
+        "был",
+        "занят",
+        "чем",
+        "чем был занят?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "morphology:gendered_short_form",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "pronunciation",
+        "question",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_list017_01",
+      "item_id": "list017",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "У вас бу́дут рожде́ственские кани́кулы?",
+      "ru_plain": "У вас будут рождественские каникулы?",
+      "en": "Will you have Christmas vacation?",
+      "priority": 3,
+      "lexemes": [
+        "будут",
+        "вас",
+        "каникулы",
+        "рождественские",
+        "у",
+        "у вас будут рождественские каникулы?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "holiday",
+        "pronunciation",
+        "question"
+      ]
+    },
+    {
+      "id": "pron_list018_01",
+      "item_id": "list018",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Ско́лько часо́в ты рабо́тал?",
+      "ru_plain": "Сколько часов ты работал?",
+      "en": "How many hours did you work?",
+      "priority": 2,
+      "lexemes": [
+        "работал",
+        "сколько",
+        "сколько часов ты работал?",
+        "ты",
+        "часов"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "morphology:gendered_short_form",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "pronunciation",
+        "question",
+        "work"
       ]
     },
     {
@@ -58004,6 +60243,438 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "back_list010_01",
+      "item_id": "list010",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Чем ты сего́дня занима́лся?",
+      "ru_plain": "Чем ты сегодня занимался?",
+      "accepted_answers": [
+        "Чем ты сего́дня занима́лся?",
+        "Чем ты сегодня занимался?"
+      ],
+      "en": "What did you do today?",
+      "priority": 2,
+      "lexemes": [
+        "занимался",
+        "сегодня",
+        "ты",
+        "чем",
+        "чем ты сегодня занимался?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "checkin",
+        "listening",
+        "question"
+      ]
+    },
+    {
+      "id": "back_list011_01",
+      "item_id": "list011",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Како́й сего́дня день?",
+      "ru_plain": "Какой сегодня день?",
+      "accepted_answers": [
+        "Како́й сего́дня день?",
+        "Какой сегодня день?"
+      ],
+      "en": "What kind of day is it today?",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "какой",
+        "какой сегодня день?",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "checkin",
+        "question",
+        "weather"
+      ]
+    },
+    {
+      "id": "back_list012_01",
+      "item_id": "list012",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Как на у́лице?",
+      "ru_plain": "Как на улице?",
+      "accepted_answers": [
+        "Как на у́лице?",
+        "Как на улице?"
+      ],
+      "en": "How is it outside?",
+      "priority": 2,
+      "lexemes": [
+        "как",
+        "как на улице?",
+        "на",
+        "улице"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "checkin",
+        "question",
+        "weather"
+      ]
+    },
+    {
+      "id": "back_list013_01",
+      "item_id": "list013",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что вы де́лали на выходны́х?",
+      "ru_plain": "Что вы делали на выходных?",
+      "accepted_answers": [
+        "Что вы де́лали на выходны́х?",
+        "Что вы делали на выходных?"
+      ],
+      "en": "What did you do on the weekend?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "выходных",
+        "делали",
+        "на",
+        "что",
+        "что вы делали на выходных?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "checkin",
+        "question",
+        "weekend"
+      ]
+    },
+    {
+      "id": "back_list014_01",
+      "item_id": "list014",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что ты де́лал на про́шлой неде́ле?",
+      "ru_plain": "Что ты делал на прошлой неделе?",
+      "accepted_answers": [
+        "Что ты де́лал на про́шлой неде́ле?",
+        "Что ты делал на прошлой неделе?"
+      ],
+      "en": "What did you do last week?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "на",
+        "неделе",
+        "прошлой",
+        "ты",
+        "что",
+        "что ты делал на прошлой неделе?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "checkin",
+        "question",
+        "week"
+      ]
+    },
+    {
+      "id": "back_list015_01",
+      "item_id": "list015",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Что ты де́лал на э́той неде́ле?",
+      "ru_plain": "Что ты делал на этой неделе?",
+      "accepted_answers": [
+        "Что ты де́лал на э́той неде́ле?",
+        "Что ты делал на этой неделе?"
+      ],
+      "en": "What did you do this week?",
+      "priority": 2,
+      "lexemes": [
+        "делал",
+        "на",
+        "неделе",
+        "ты",
+        "что",
+        "что ты делал на этой неделе?",
+        "этой"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "checkin",
+        "question",
+        "week"
+      ]
+    },
+    {
+      "id": "back_list016_01",
+      "item_id": "list016",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Чем был за́нят?",
+      "ru_plain": "Чем был занят?",
+      "accepted_answers": [
+        "Чем был за́нят?",
+        "Чем был занят?"
+      ],
+      "en": "What were you busy with?",
+      "priority": 2,
+      "lexemes": [
+        "был",
+        "занят",
+        "чем",
+        "чем был занят?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "morphology:gendered_short_form",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "checkin",
+        "question",
+        "work"
+      ]
+    },
+    {
+      "id": "back_list017_01",
+      "item_id": "list017",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "У вас бу́дут рожде́ственские кани́кулы?",
+      "ru_plain": "У вас будут рождественские каникулы?",
+      "accepted_answers": [
+        "У вас бу́дут рожде́ственские кани́кулы?",
+        "У вас будут рождественские каникулы?"
+      ],
+      "en": "Will you have Christmas vacation?",
+      "priority": 3,
+      "lexemes": [
+        "будут",
+        "вас",
+        "каникулы",
+        "рождественские",
+        "у",
+        "у вас будут рождественские каникулы?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "checkin",
+        "holiday",
+        "question"
+      ]
+    },
+    {
+      "id": "back_list018_01",
+      "item_id": "list018",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Ско́лько часо́в ты рабо́тал?",
+      "ru_plain": "Сколько часов ты работал?",
+      "accepted_answers": [
+        "Ско́лько часо́в ты рабо́тал?",
+        "Сколько часов ты работал?"
+      ],
+      "en": "How many hours did you work?",
+      "priority": 2,
+      "lexemes": [
+        "работал",
+        "сколько",
+        "сколько часов ты работал?",
+        "ты",
+        "часов"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "morphology:gendered_short_form",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "checkin",
+        "question",
+        "work"
+      ]
+    },
+    {
       "id": "back_cale001_01",
       "item_id": "cale001",
       "module": "calendar_weather",
@@ -65946,7 +68617,16 @@ window.CONTENT_DATA = {
         "list006",
         "list007",
         "list008",
-        "list009"
+        "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018"
       ],
       "active_vocab": [
         "америке",
@@ -66118,20 +68798,35 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
+        "был",
         "вам",
         "вам нравится …?",
+        "вас",
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выходных",
         "говорите",
         "дела",
+        "делал",
+        "делали",
+        "день",
         "ещё",
+        "занимался",
+        "занят",
         "как",
         "как вам россия?",
         "как вы познакомились?",
         "как дела?",
+        "как на улице?",
+        "какой",
+        "какой сегодня день?",
+        "каникулы",
         "кем",
         "кем вы работаете?",
+        "на",
+        "неделе",
         "нравится",
         "оливье",
         "откуда",
@@ -66139,10 +68834,29 @@ window.CONTENT_DATA = {
         "пельмени",
         "по",
         "познакомились",
+        "прошлой",
         "работаете",
+        "работал",
+        "рождественские",
         "россия",
         "русски",
-        "чай"
+        "сегодня",
+        "сколько",
+        "сколько часов ты работал?",
+        "ты",
+        "у",
+        "у вас будут рождественские каникулы?",
+        "улице",
+        "чай",
+        "часов",
+        "чем",
+        "чем был занят?",
+        "чем ты сегодня занимался?",
+        "что",
+        "что вы делали на выходных?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -66924,7 +69638,16 @@ window.CONTENT_DATA = {
         "list006",
         "list007",
         "list008",
-        "list009"
+        "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018"
       ],
       "active_vocab": [
         "америке",
@@ -67096,20 +69819,35 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
+        "был",
         "вам",
         "вам нравится …?",
+        "вас",
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выходных",
         "говорите",
         "дела",
+        "делал",
+        "делали",
+        "день",
         "ещё",
+        "занимался",
+        "занят",
         "как",
         "как вам россия?",
         "как вы познакомились?",
         "как дела?",
+        "как на улице?",
+        "какой",
+        "какой сегодня день?",
+        "каникулы",
         "кем",
         "кем вы работаете?",
+        "на",
+        "неделе",
         "нравится",
         "оливье",
         "откуда",
@@ -67117,10 +69855,29 @@ window.CONTENT_DATA = {
         "пельмени",
         "по",
         "познакомились",
+        "прошлой",
         "работаете",
+        "работал",
+        "рождественские",
         "россия",
         "русски",
-        "чай"
+        "сегодня",
+        "сколько",
+        "сколько часов ты работал?",
+        "ты",
+        "у",
+        "у вас будут рождественские каникулы?",
+        "улице",
+        "чай",
+        "часов",
+        "чем",
+        "чем был занят?",
+        "чем ты сегодня занимался?",
+        "что",
+        "что вы делали на выходных?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -67694,7 +70451,16 @@ window.CONTENT_DATA = {
         "list006",
         "list007",
         "list008",
-        "list009"
+        "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018"
       ],
       "active_vocab": [
         "америке",
@@ -67866,20 +70632,35 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
+        "был",
         "вам",
         "вам нравится …?",
+        "вас",
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выходных",
         "говорите",
         "дела",
+        "делал",
+        "делали",
+        "день",
         "ещё",
+        "занимался",
+        "занят",
         "как",
         "как вам россия?",
         "как вы познакомились?",
         "как дела?",
+        "как на улице?",
+        "какой",
+        "какой сегодня день?",
+        "каникулы",
         "кем",
         "кем вы работаете?",
+        "на",
+        "неделе",
         "нравится",
         "оливье",
         "откуда",
@@ -67887,10 +70668,29 @@ window.CONTENT_DATA = {
         "пельмени",
         "по",
         "познакомились",
+        "прошлой",
         "работаете",
+        "работал",
+        "рождественские",
         "россия",
         "русски",
-        "чай"
+        "сегодня",
+        "сколько",
+        "сколько часов ты работал?",
+        "ты",
+        "у",
+        "у вас будут рождественские каникулы?",
+        "улице",
+        "чай",
+        "часов",
+        "чем",
+        "чем был занят?",
+        "чем ты сегодня занимался?",
+        "что",
+        "что вы делали на выходных?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -69569,6 +72369,15 @@ window.CONTENT_DATA = {
         "list007",
         "list008",
         "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018",
         "cale001",
         "cale002",
         "cale003",
@@ -70176,7 +72985,9 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
         "будущим",
+        "был",
         "бьёт",
         "в",
         "в гостях хорошо, а дома лучше.",
@@ -70193,6 +73004,7 @@ window.CONTENT_DATA = {
         "вы говорите по-русски?",
         "выдача",
         "выезд",
+        "выходных",
         "где",
         "где выдача багажа?",
         "где наш отель?",
@@ -70217,6 +73029,8 @@ window.CONTENT_DATA = {
         "жизнь бьёт ключом.",
         "заезд",
         "закон",
+        "занимался",
+        "занят",
         "защитник",
         "зеленее",
         "к",
@@ -70226,6 +73040,7 @@ window.CONTENT_DATA = {
         "как вы познакомились?",
         "как вы с кадрией отпраздновали рождество?",
         "как дела?",
+        "как на улице?",
         "как там на улице?",
         "какая",
         "какая сегодня погода?",
@@ -70234,9 +73049,11 @@ window.CONTENT_DATA = {
         "какой",
         "какой ваш номер?",
         "какой сегодня день недели?",
+        "какой сегодня день?",
         "какой сегодня праздник?",
         "камень",
         "камень с души упал.",
+        "каникулы",
         "кем",
         "кем вы работаете?",
         "клевета",
@@ -70257,6 +73074,7 @@ window.CONTENT_DATA = {
         "на",
         "наш",
         "не",
+        "неделе",
         "недели",
         "нет",
         "нет худа без добра.",
@@ -70289,9 +73107,12 @@ window.CONTENT_DATA = {
         "привела",
         "прокурор",
         "прокурора",
+        "прошлой",
         "прошлым",
         "работаете",
+        "работал",
         "раз",
+        "рождественские",
         "рождество",
         "россия",
         "русски",
@@ -70303,6 +73124,7 @@ window.CONTENT_DATA = {
         "сколько",
         "сколько дней вы будете в орегоне?",
         "сколько ехать до отеля?",
+        "сколько часов ты работал?",
         "слушание",
         "соглашение",
         "соседа",
@@ -70317,6 +73139,7 @@ window.CONTENT_DATA = {
         "травма",
         "ты",
         "у",
+        "у вас будут рождественские каникулы?",
         "у вас много дел?",
         "у вас много клиентов?",
         "у соседа трава зеленее.",
@@ -70329,14 +73152,21 @@ window.CONTENT_DATA = {
         "цивилизация",
         "цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
         "чай",
+        "часов",
         "чей",
         "чем",
+        "чем был занят?",
         "чем отличается адвокат от прокурора?",
+        "чем ты сегодня занимался?",
         "что",
+        "что вы делали на выходных?",
         "что вы делали на день благодарения?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
         "что ты сегодня делал?",
         "это",
-        "это ваш ключ."
+        "это ваш ключ.",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -70910,7 +73740,16 @@ window.CONTENT_DATA = {
         "list006",
         "list007",
         "list008",
-        "list009"
+        "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018"
       ],
       "active_vocab": [
         "америке",
@@ -71082,20 +73921,35 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
+        "был",
         "вам",
         "вам нравится …?",
+        "вас",
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выходных",
         "говорите",
         "дела",
+        "делал",
+        "делали",
+        "день",
         "ещё",
+        "занимался",
+        "занят",
         "как",
         "как вам россия?",
         "как вы познакомились?",
         "как дела?",
+        "как на улице?",
+        "какой",
+        "какой сегодня день?",
+        "каникулы",
         "кем",
         "кем вы работаете?",
+        "на",
+        "неделе",
         "нравится",
         "оливье",
         "откуда",
@@ -71103,10 +73957,29 @@ window.CONTENT_DATA = {
         "пельмени",
         "по",
         "познакомились",
+        "прошлой",
         "работаете",
+        "работал",
+        "рождественские",
         "россия",
         "русски",
-        "чай"
+        "сегодня",
+        "сколько",
+        "сколько часов ты работал?",
+        "ты",
+        "у",
+        "у вас будут рождественские каникулы?",
+        "улице",
+        "чай",
+        "часов",
+        "чем",
+        "чем был занят?",
+        "чем ты сегодня занимался?",
+        "что",
+        "что вы делали на выходных?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -71147,6 +74020,477 @@ window.CONTENT_DATA = {
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
       "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Family mini-check-in — Respond naturally to short routine check-ins and keep the exchange warm.\nCurriculum boundary: Lesson 7 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Как дела? — How are you?\n- Да — Yes\n- Хорошо, спасибо — Good, thank you (answer to 'how are you')\n- Нормально — Fine / OK (answer)\n- Повторите, пожалуйста — Could you repeat, please\n- Помедленнее, пожалуйста — Slower, please\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+    },
+    {
+      "id": "tutor_native_speed_checkins",
+      "scenario_id": "native_speed_checkins",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "setting": "Native-speed check-in questions",
+      "goal": "Recognize recurring original-guide check-in questions at family speed.",
+      "learner_role": "guest",
+      "tutor_role": "host family member",
+      "required_items": [
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018"
+      ],
+      "required_phrases": [
+        {
+          "id": "list010",
+          "ru": "Чем ты сего́дня занима́лся?",
+          "ru_plain": "Чем ты сегодня занимался?",
+          "en": "What did you do today?"
+        },
+        {
+          "id": "list011",
+          "ru": "Како́й сего́дня день?",
+          "ru_plain": "Какой сегодня день?",
+          "en": "What kind of day is it today?"
+        },
+        {
+          "id": "list012",
+          "ru": "Как на у́лице?",
+          "ru_plain": "Как на улице?",
+          "en": "How is it outside?"
+        },
+        {
+          "id": "list013",
+          "ru": "Что вы де́лали на выходны́х?",
+          "ru_plain": "Что вы делали на выходных?",
+          "en": "What did you do on the weekend?"
+        },
+        {
+          "id": "list014",
+          "ru": "Что ты де́лал на про́шлой неде́ле?",
+          "ru_plain": "Что ты делал на прошлой неделе?",
+          "en": "What did you do last week?"
+        },
+        {
+          "id": "list015",
+          "ru": "Что ты де́лал на э́той неде́ле?",
+          "ru_plain": "Что ты делал на этой неделе?",
+          "en": "What did you do this week?"
+        },
+        {
+          "id": "list016",
+          "ru": "Чем был за́нят?",
+          "ru_plain": "Чем был занят?",
+          "en": "What were you busy with?"
+        },
+        {
+          "id": "list017",
+          "ru": "У вас бу́дут рожде́ственские кани́кулы?",
+          "ru_plain": "У вас будут рождественские каникулы?",
+          "en": "Will you have Christmas vacation?"
+        },
+        {
+          "id": "list018",
+          "ru": "Ско́лько часо́в ты рабо́тал?",
+          "ru_plain": "Сколько часов ты работал?",
+          "en": "How many hours did you work?"
+        }
+      ],
+      "success_criteria": [
+        "recognizes_fast_checkins",
+        "uses_repair_lines",
+        "stays_in_russian"
+      ],
+      "allowed_lesson_ids": [
+        "family_visit_001",
+        "family_visit_002",
+        "family_visit_003",
+        "family_visit_004",
+        "family_visit_005",
+        "family_visit_006",
+        "family_visit_007"
+      ],
+      "allowed_item_ids": [
+        "firs001",
+        "firs002",
+        "firs003",
+        "firs004",
+        "firs005",
+        "firs006",
+        "firs007",
+        "firs008",
+        "firs009",
+        "firs010",
+        "firs011",
+        "firs012",
+        "firs013",
+        "poli001",
+        "poli002",
+        "poli003",
+        "poli004",
+        "poli005",
+        "poli006",
+        "poli007",
+        "poli008",
+        "poli009",
+        "poli010",
+        "poli011",
+        "poli012",
+        "poli013",
+        "poli014",
+        "poli015",
+        "poli016",
+        "poli017",
+        "toas001",
+        "toas002",
+        "toas003",
+        "toas004",
+        "toas005",
+        "toas006",
+        "toas007",
+        "toas008",
+        "toas009",
+        "toas010",
+        "toas011",
+        "toas012",
+        "toas013",
+        "toas014",
+        "toas015",
+        "toas016",
+        "fami001",
+        "fami002",
+        "fami003",
+        "fami004",
+        "fami005",
+        "fami006",
+        "fami007",
+        "fami008",
+        "fami009",
+        "fami010",
+        "fami011",
+        "fami012",
+        "fami013",
+        "fami014",
+        "fami015",
+        "fami016",
+        "fami017",
+        "fami018",
+        "fami019",
+        "food001",
+        "food002",
+        "food003",
+        "food004",
+        "food005",
+        "food006",
+        "food007",
+        "food008",
+        "food009",
+        "food010",
+        "food011",
+        "food012",
+        "food013",
+        "food014",
+        "food015",
+        "food016",
+        "smal001",
+        "smal002",
+        "smal003",
+        "smal004",
+        "smal005",
+        "smal006",
+        "smal007",
+        "smal008",
+        "smal009",
+        "list001",
+        "list002",
+        "list003",
+        "list004",
+        "list005",
+        "list006",
+        "list007",
+        "list008",
+        "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018"
+      ],
+      "active_vocab": [
+        "америке",
+        "америки",
+        "аппетита",
+        "бабушка",
+        "бокал",
+        "большое",
+        "брат",
+        "будем",
+        "будем здоровы!",
+        "было",
+        "в",
+        "ваше",
+        "вашу",
+        "вечер",
+        "вкусно",
+        "встречу",
+        "выпьем",
+        "говорю",
+        "да",
+        "да, немного",
+        "давайте",
+        "давайте выпьем за это!",
+        "дедушка",
+        "день",
+        "дети",
+        "джо",
+        "дна",
+        "до",
+        "до дна",
+        "до свидания",
+        "доброе",
+        "доброе утро",
+        "добрый",
+        "добрый вечер",
+        "добрый день",
+        "дочь",
+        "ещё",
+        "жена",
+        "жены",
+        "живу",
+        "за",
+        "за ваше здоровье!",
+        "за встречу!",
+        "за здоровье!",
+        "за знакомство!",
+        "за любовь!",
+        "за молодых!",
+        "за родителей!",
+        "за семью!",
+        "за хозяев!",
+        "за хозяйку!",
+        "здоровы",
+        "здоровье",
+        "здравствуйте",
+        "знакомство",
+        "зовут",
+        "зять",
+        "из",
+        "извините",
+        "как",
+        "как по-русски …?",
+        "люблю",
+        "любовь",
+        "мама",
+        "меня",
+        "меня зовут джо",
+        "миссури",
+        "мне",
+        "мне очень нравится",
+        "можно",
+        "можно ещё?",
+        "можно чаю?",
+        "молодых",
+        "муж",
+        "мы",
+        "мы познакомились …",
+        "надо",
+        "наелся",
+        "не",
+        "немного",
+        "нет",
+        "нет, спасибо",
+        "нормально",
+        "ночи",
+        "нравится",
+        "отлично",
+        "очень",
+        "очень вкусно!",
+        "очень приятно",
+        "папа",
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "по",
+        "повторите",
+        "повторите, пожалуйста",
+        "пожалуйста",
+        "познакомились",
+        "познакомиться",
+        "помедленнее",
+        "помедленнее, пожалуйста",
+        "понимаю",
+        "понятно",
+        "представиться",
+        "пригласили",
+        "приняли",
+        "приятно",
+        "приятно познакомиться",
+        "приятного",
+        "приятного аппетита!",
+        "простите",
+        "рад",
+        "рад познакомиться",
+        "разрешите",
+        "разрешите представиться",
+        "родителей",
+        "родители",
+        "русски",
+        "русский",
+        "рюмка",
+        "свидания",
+        "семью",
+        "семья",
+        "сестра",
+        "сестра жены",
+        "сказать",
+        "спасибо",
+        "спасибо большое",
+        "спасибо, было очень вкусно",
+        "спасибо, не надо",
+        "спасибо, что пригласили",
+        "спасибо, что приняли",
+        "спокойной",
+        "спокойной ночи",
+        "сын",
+        "тесть",
+        "тост",
+        "тёща",
+        "утро",
+        "учу",
+        "хлеб",
+        "хозяев",
+        "хозяйку",
+        "хорошо",
+        "хорошо, спасибо",
+        "хочу",
+        "чаю",
+        "что",
+        "штата",
+        "шурин",
+        "это",
+        "юрист",
+        "я",
+        "я ещё учу русский",
+        "я живу в америке",
+        "я из америки",
+        "я из штата миссури",
+        "я люблю вашу дочь",
+        "я наелся",
+        "я не понимаю",
+        "я немного говорю по-русски",
+        "я понимаю",
+        "я хочу сказать тост за …",
+        "я юрист"
+      ],
+      "passive_vocab": [
+        "блины",
+        "борщ",
+        "будете",
+        "будете …?",
+        "будут",
+        "был",
+        "вам",
+        "вам нравится …?",
+        "вас",
+        "водка",
+        "вы",
+        "вы говорите по-русски?",
+        "выходных",
+        "говорите",
+        "дела",
+        "делал",
+        "делали",
+        "день",
+        "ещё",
+        "занимался",
+        "занят",
+        "как",
+        "как вам россия?",
+        "как вы познакомились?",
+        "как дела?",
+        "как на улице?",
+        "какой",
+        "какой сегодня день?",
+        "каникулы",
+        "кем",
+        "кем вы работаете?",
+        "на",
+        "неделе",
+        "нравится",
+        "оливье",
+        "откуда",
+        "откуда вы?",
+        "пельмени",
+        "по",
+        "познакомились",
+        "прошлой",
+        "работаете",
+        "работал",
+        "рождественские",
+        "россия",
+        "русски",
+        "сегодня",
+        "сколько",
+        "сколько часов ты работал?",
+        "ты",
+        "у",
+        "у вас будут рождественские каникулы?",
+        "улице",
+        "чай",
+        "часов",
+        "чем",
+        "чем был занят?",
+        "чем ты сегодня занимался?",
+        "что",
+        "что вы делали на выходных?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "этой"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "discourse:politeness",
+        "grammar:formal_question",
+        "grammar:present_first_person",
+        "lexical:kinship_terms",
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:family_affection",
+        "phrase:food_offer",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:host_question",
+        "phrase:introduction",
+        "phrase:personal_origin",
+        "phrase:polite_decline",
+        "phrase:repair",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative",
+        "phrase:work_identity",
+        "phrase:yes_no",
+        "register:formal_you",
+        "register:name_patronymic",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "register",
+        "stress"
+      ],
+      "correction_policy": [
+        "Minor error: recast briefly and continue the role-play.",
+        "Repeated error: give one short rule, then return to Russian practice.",
+        "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
+        "Communication-breaking error: clarify in English, provide the verified model, then retry."
+      ],
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Native-speed check-in questions — Recognize recurring original-guide check-in questions at family speed.\nCurriculum boundary: Lesson 7 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Чем ты сегодня занимался? — What did you do today?\n- Какой сегодня день? — What kind of day is it today?\n- Как на улице? — How is it outside?\n- Что вы делали на выходных? — What did you do on the weekend?\n- Что ты делал на прошлой неделе? — What did you do last week?\n- Что ты делал на этой неделе? — What did you do this week?\n- Чем был занят? — What were you busy with?\n- У вас будут рождественские каникулы? — Will you have Christmas vacation?\n- Сколько часов ты работал? — How many hours did you work?\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
       "id": "tutor_toast_mechanics_and_table_flow",
@@ -71619,6 +74963,15 @@ window.CONTENT_DATA = {
         "list007",
         "list008",
         "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018",
         "cale001",
         "cale002",
         "cale003",
@@ -71838,27 +75191,39 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
+        "был",
         "вам",
         "вам нравится …?",
+        "вас",
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выходных",
         "говорите",
         "дела",
+        "делал",
+        "делали",
         "день",
         "ещё",
+        "занимался",
+        "занят",
         "как",
         "как вам россия?",
         "как вы познакомились?",
         "как дела?",
+        "как на улице?",
         "как там на улице?",
         "какая",
         "какая сегодня погода?",
         "какой",
         "какой сегодня день недели?",
+        "какой сегодня день?",
+        "каникулы",
         "кем",
         "кем вы работаете?",
         "на",
+        "неделе",
         "недели",
         "нравится",
         "оливье",
@@ -71868,13 +75233,30 @@ window.CONTENT_DATA = {
         "по",
         "погода",
         "познакомились",
+        "прошлой",
         "работаете",
+        "работал",
+        "рождественские",
         "россия",
         "русски",
         "сегодня",
+        "сколько",
+        "сколько часов ты работал?",
         "там",
+        "ты",
+        "у",
+        "у вас будут рождественские каникулы?",
         "улице",
-        "чай"
+        "чай",
+        "часов",
+        "чем",
+        "чем был занят?",
+        "чем ты сегодня занимался?",
+        "что",
+        "что вы делали на выходных?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -72148,6 +75530,15 @@ window.CONTENT_DATA = {
         "list007",
         "list008",
         "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018",
         "cale001",
         "cale002",
         "cale003",
@@ -72408,27 +75799,39 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
+        "был",
         "вам",
         "вам нравится …?",
+        "вас",
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выходных",
         "говорите",
         "дела",
+        "делал",
+        "делали",
         "день",
         "ещё",
+        "занимался",
+        "занят",
         "как",
         "как вам россия?",
         "как вы познакомились?",
         "как дела?",
+        "как на улице?",
         "как там на улице?",
         "какая",
         "какая сегодня погода?",
         "какой",
         "какой сегодня день недели?",
+        "какой сегодня день?",
+        "каникулы",
         "кем",
         "кем вы работаете?",
         "на",
+        "неделе",
         "недели",
         "нравится",
         "оливье",
@@ -72438,13 +75841,30 @@ window.CONTENT_DATA = {
         "по",
         "погода",
         "познакомились",
+        "прошлой",
         "работаете",
+        "работал",
+        "рождественские",
         "россия",
         "русски",
         "сегодня",
+        "сколько",
+        "сколько часов ты работал?",
         "там",
+        "ты",
+        "у",
+        "у вас будут рождественские каникулы?",
         "улице",
-        "чай"
+        "чай",
+        "часов",
+        "чем",
+        "чем был занят?",
+        "чем ты сегодня занимался?",
+        "что",
+        "что вы делали на выходных?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -72706,6 +76126,15 @@ window.CONTENT_DATA = {
         "list007",
         "list008",
         "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018",
         "cale001",
         "cale002",
         "cale003",
@@ -73279,7 +76708,9 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
         "будущим",
+        "был",
         "бьёт",
         "в",
         "в гостях хорошо, а дома лучше.",
@@ -73296,6 +76727,7 @@ window.CONTENT_DATA = {
         "вы говорите по-русски?",
         "выдача",
         "выезд",
+        "выходных",
         "где",
         "где выдача багажа?",
         "где наш отель?",
@@ -73320,6 +76752,8 @@ window.CONTENT_DATA = {
         "жизнь бьёт ключом.",
         "заезд",
         "закон",
+        "занимался",
+        "занят",
         "защитник",
         "зеленее",
         "к",
@@ -73329,6 +76763,7 @@ window.CONTENT_DATA = {
         "как вы познакомились?",
         "как вы с кадрией отпраздновали рождество?",
         "как дела?",
+        "как на улице?",
         "как там на улице?",
         "какая",
         "какая сегодня погода?",
@@ -73337,9 +76772,11 @@ window.CONTENT_DATA = {
         "какой",
         "какой ваш номер?",
         "какой сегодня день недели?",
+        "какой сегодня день?",
         "какой сегодня праздник?",
         "камень",
         "камень с души упал.",
+        "каникулы",
         "кем",
         "кем вы работаете?",
         "клевета",
@@ -73360,6 +76797,7 @@ window.CONTENT_DATA = {
         "на",
         "наш",
         "не",
+        "неделе",
         "недели",
         "нет",
         "нет худа без добра.",
@@ -73392,9 +76830,12 @@ window.CONTENT_DATA = {
         "привела",
         "прокурор",
         "прокурора",
+        "прошлой",
         "прошлым",
         "работаете",
+        "работал",
         "раз",
+        "рождественские",
         "рождество",
         "россия",
         "русски",
@@ -73406,6 +76847,7 @@ window.CONTENT_DATA = {
         "сколько",
         "сколько дней вы будете в орегоне?",
         "сколько ехать до отеля?",
+        "сколько часов ты работал?",
         "слушание",
         "соглашение",
         "соседа",
@@ -73420,6 +76862,7 @@ window.CONTENT_DATA = {
         "травма",
         "ты",
         "у",
+        "у вас будут рождественские каникулы?",
         "у вас много дел?",
         "у вас много клиентов?",
         "у соседа трава зеленее.",
@@ -73432,14 +76875,21 @@ window.CONTENT_DATA = {
         "цивилизация",
         "цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
         "чай",
+        "часов",
         "чей",
         "чем",
+        "чем был занят?",
         "чем отличается адвокат от прокурора?",
+        "чем ты сегодня занимался?",
         "что",
+        "что вы делали на выходных?",
         "что вы делали на день благодарения?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
         "что ты сегодня делал?",
         "это",
-        "это ваш ключ."
+        "это ваш ключ.",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -73722,6 +77172,15 @@ window.CONTENT_DATA = {
         "list007",
         "list008",
         "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018",
         "cale001",
         "cale002",
         "cale003",
@@ -74094,25 +77553,35 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
+        "был",
         "вам",
         "вам нравится …?",
+        "вас",
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выходных",
         "говорите",
         "дела",
         "делал",
+        "делали",
         "день",
         "ещё",
+        "занимался",
+        "занят",
         "как",
         "как вам россия?",
         "как вы познакомились?",
         "как дела?",
+        "как на улице?",
         "как там на улице?",
         "какая",
         "какая сегодня погода?",
         "какой",
         "какой сегодня день недели?",
+        "какой сегодня день?",
+        "каникулы",
         "кем",
         "кем вы работаете?",
         "когда",
@@ -74121,6 +77590,7 @@ window.CONTENT_DATA = {
         "когда вы работаете?",
         "когда вы ужинаете?",
         "на",
+        "неделе",
         "недели",
         "нравится",
         "обедаете",
@@ -74132,17 +77602,32 @@ window.CONTENT_DATA = {
         "по",
         "погода",
         "познакомились",
+        "прошлой",
         "работаете",
+        "работал",
+        "рождественские",
         "россия",
         "русски",
         "сегодня",
+        "сколько",
+        "сколько часов ты работал?",
         "там",
         "ты",
+        "у",
+        "у вас будут рождественские каникулы?",
         "ужинаете",
         "улице",
         "чай",
+        "часов",
+        "чем",
+        "чем был занят?",
+        "чем ты сегодня занимался?",
         "что",
-        "что ты сегодня делал?"
+        "что вы делали на выходных?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "что ты сегодня делал?",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -74410,6 +77895,15 @@ window.CONTENT_DATA = {
         "list007",
         "list008",
         "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018",
         "cale001",
         "cale002",
         "cale003",
@@ -74782,25 +78276,35 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
+        "был",
         "вам",
         "вам нравится …?",
+        "вас",
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выходных",
         "говорите",
         "дела",
         "делал",
+        "делали",
         "день",
         "ещё",
+        "занимался",
+        "занят",
         "как",
         "как вам россия?",
         "как вы познакомились?",
         "как дела?",
+        "как на улице?",
         "как там на улице?",
         "какая",
         "какая сегодня погода?",
         "какой",
         "какой сегодня день недели?",
+        "какой сегодня день?",
+        "каникулы",
         "кем",
         "кем вы работаете?",
         "когда",
@@ -74809,6 +78313,7 @@ window.CONTENT_DATA = {
         "когда вы работаете?",
         "когда вы ужинаете?",
         "на",
+        "неделе",
         "недели",
         "нравится",
         "обедаете",
@@ -74820,17 +78325,32 @@ window.CONTENT_DATA = {
         "по",
         "погода",
         "познакомились",
+        "прошлой",
         "работаете",
+        "работал",
+        "рождественские",
         "россия",
         "русски",
         "сегодня",
+        "сколько",
+        "сколько часов ты работал?",
         "там",
         "ты",
+        "у",
+        "у вас будут рождественские каникулы?",
         "ужинаете",
         "улице",
         "чай",
+        "часов",
+        "чем",
+        "чем был занят?",
+        "чем ты сегодня занимался?",
         "что",
-        "что ты сегодня делал?"
+        "что вы делали на выходных?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "что ты сегодня делал?",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -75106,6 +78626,15 @@ window.CONTENT_DATA = {
         "list007",
         "list008",
         "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018",
         "cale001",
         "cale002",
         "cale003",
@@ -75528,27 +79057,36 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
+        "был",
         "вам",
         "вам нравится …?",
         "вас",
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выходных",
         "говорите",
         "дел",
         "дела",
         "делал",
+        "делали",
         "день",
         "ещё",
+        "занимался",
+        "занят",
         "как",
         "как вам россия?",
         "как вы познакомились?",
         "как дела?",
+        "как на улице?",
         "как там на улице?",
         "какая",
         "какая сегодня погода?",
         "какой",
         "какой сегодня день недели?",
+        "какой сегодня день?",
+        "каникулы",
         "кем",
         "кем вы работаете?",
         "клиентов",
@@ -75559,6 +79097,7 @@ window.CONTENT_DATA = {
         "когда вы ужинаете?",
         "много",
         "на",
+        "неделе",
         "недели",
         "нравится",
         "обедаете",
@@ -75570,20 +79109,34 @@ window.CONTENT_DATA = {
         "по",
         "погода",
         "познакомились",
+        "прошлой",
         "работаете",
+        "работал",
+        "рождественские",
         "россия",
         "русски",
         "сегодня",
+        "сколько",
+        "сколько часов ты работал?",
         "там",
         "ты",
         "у",
+        "у вас будут рождественские каникулы?",
         "у вас много дел?",
         "у вас много клиентов?",
         "ужинаете",
         "улице",
         "чай",
+        "часов",
+        "чем",
+        "чем был занят?",
+        "чем ты сегодня занимался?",
         "что",
-        "что ты сегодня делал?"
+        "что вы делали на выходных?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "что ты сегодня делал?",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -75844,6 +79397,15 @@ window.CONTENT_DATA = {
         "list007",
         "list008",
         "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018",
         "cale001",
         "cale002",
         "cale003",
@@ -76327,6 +79889,8 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
+        "был",
         "в",
         "вам",
         "вам нравится …?",
@@ -76334,6 +79898,7 @@ window.CONTENT_DATA = {
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выходных",
         "говорите",
         "дел",
         "дела",
@@ -76344,6 +79909,8 @@ window.CONTENT_DATA = {
         "дней",
         "ещё",
         "закон",
+        "занимался",
+        "занят",
         "защитник",
         "кадрией",
         "как",
@@ -76351,6 +79918,7 @@ window.CONTENT_DATA = {
         "как вы познакомились?",
         "как вы с кадрией отпраздновали рождество?",
         "как дела?",
+        "как на улице?",
         "как там на улице?",
         "какая",
         "какая сегодня погода?",
@@ -76358,7 +79926,9 @@ window.CONTENT_DATA = {
         "какие планы на рождество?",
         "какой",
         "какой сегодня день недели?",
+        "какой сегодня день?",
         "какой сегодня праздник?",
+        "каникулы",
         "кем",
         "кем вы работаете?",
         "клевета",
@@ -76373,6 +79943,7 @@ window.CONTENT_DATA = {
         "мирное соглашение",
         "много",
         "на",
+        "неделе",
         "недели",
         "нравится",
         "обедаете",
@@ -76391,7 +79962,10 @@ window.CONTENT_DATA = {
         "право",
         "праздник",
         "прокурор",
+        "прошлой",
         "работаете",
+        "работал",
+        "рождественские",
         "рождество",
         "россия",
         "русски",
@@ -76399,6 +79973,7 @@ window.CONTENT_DATA = {
         "сегодня",
         "сколько",
         "сколько дней вы будете в орегоне?",
+        "сколько часов ты работал?",
         "слушание",
         "соглашение",
         "страховка",
@@ -76410,14 +79985,23 @@ window.CONTENT_DATA = {
         "травма",
         "ты",
         "у",
+        "у вас будут рождественские каникулы?",
         "у вас много дел?",
         "у вас много клиентов?",
         "ужинаете",
         "улице",
         "чай",
+        "часов",
+        "чем",
+        "чем был занят?",
+        "чем ты сегодня занимался?",
         "что",
+        "что вы делали на выходных?",
         "что вы делали на день благодарения?",
-        "что ты сегодня делал?"
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "что ты сегодня делал?",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -76676,6 +80260,15 @@ window.CONTENT_DATA = {
         "list007",
         "list008",
         "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018",
         "cale001",
         "cale002",
         "cale003",
@@ -77172,7 +80765,9 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
         "будущим",
+        "был",
         "бьёт",
         "в",
         "в гостях хорошо, а дома лучше.",
@@ -77183,6 +80778,7 @@ window.CONTENT_DATA = {
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выходных",
         "говорите",
         "гостях",
         "дел",
@@ -77200,6 +80796,8 @@ window.CONTENT_DATA = {
         "жизнь",
         "жизнь бьёт ключом.",
         "закон",
+        "занимался",
+        "занят",
         "защитник",
         "зеленее",
         "к",
@@ -77209,6 +80807,7 @@ window.CONTENT_DATA = {
         "как вы познакомились?",
         "как вы с кадрией отпраздновали рождество?",
         "как дела?",
+        "как на улице?",
         "как там на улице?",
         "какая",
         "какая сегодня погода?",
@@ -77216,9 +80815,11 @@ window.CONTENT_DATA = {
         "какие планы на рождество?",
         "какой",
         "какой сегодня день недели?",
+        "какой сегодня день?",
         "какой сегодня праздник?",
         "камень",
         "камень с души упал.",
+        "каникулы",
         "кем",
         "кем вы работаете?",
         "клевета",
@@ -77237,6 +80838,7 @@ window.CONTENT_DATA = {
         "много",
         "на",
         "не",
+        "неделе",
         "недели",
         "нет",
         "нет худа без добра.",
@@ -77265,9 +80867,12 @@ window.CONTENT_DATA = {
         "привела",
         "прокурор",
         "прокурора",
+        "прошлой",
         "прошлым",
         "работаете",
+        "работал",
         "раз",
+        "рождественские",
         "рождество",
         "россия",
         "русски",
@@ -77278,6 +80883,7 @@ window.CONTENT_DATA = {
         "семь раз отмерь, один раз отрежь.",
         "сколько",
         "сколько дней вы будете в орегоне?",
+        "сколько часов ты работал?",
         "слушание",
         "соглашение",
         "соседа",
@@ -77292,6 +80898,7 @@ window.CONTENT_DATA = {
         "травма",
         "ты",
         "у",
+        "у вас будут рождественские каникулы?",
         "у вас много дел?",
         "у вас много клиентов?",
         "у соседа трава зеленее.",
@@ -77304,12 +80911,19 @@ window.CONTENT_DATA = {
         "цивилизация",
         "цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
         "чай",
+        "часов",
         "чей",
         "чем",
+        "чем был занят?",
         "чем отличается адвокат от прокурора?",
+        "чем ты сегодня занимался?",
         "что",
+        "что вы делали на выходных?",
         "что вы делали на день благодарения?",
-        "что ты сегодня делал?"
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
+        "что ты сегодня делал?",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -77607,6 +81221,15 @@ window.CONTENT_DATA = {
         "list007",
         "list008",
         "list009",
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018",
         "cale001",
         "cale002",
         "cale003",
@@ -78180,7 +81803,9 @@ window.CONTENT_DATA = {
         "борщ",
         "будете",
         "будете …?",
+        "будут",
         "будущим",
+        "был",
         "бьёт",
         "в",
         "в гостях хорошо, а дома лучше.",
@@ -78197,6 +81822,7 @@ window.CONTENT_DATA = {
         "вы говорите по-русски?",
         "выдача",
         "выезд",
+        "выходных",
         "где",
         "где выдача багажа?",
         "где наш отель?",
@@ -78221,6 +81847,8 @@ window.CONTENT_DATA = {
         "жизнь бьёт ключом.",
         "заезд",
         "закон",
+        "занимался",
+        "занят",
         "защитник",
         "зеленее",
         "к",
@@ -78230,6 +81858,7 @@ window.CONTENT_DATA = {
         "как вы познакомились?",
         "как вы с кадрией отпраздновали рождество?",
         "как дела?",
+        "как на улице?",
         "как там на улице?",
         "какая",
         "какая сегодня погода?",
@@ -78238,9 +81867,11 @@ window.CONTENT_DATA = {
         "какой",
         "какой ваш номер?",
         "какой сегодня день недели?",
+        "какой сегодня день?",
         "какой сегодня праздник?",
         "камень",
         "камень с души упал.",
+        "каникулы",
         "кем",
         "кем вы работаете?",
         "клевета",
@@ -78261,6 +81892,7 @@ window.CONTENT_DATA = {
         "на",
         "наш",
         "не",
+        "неделе",
         "недели",
         "нет",
         "нет худа без добра.",
@@ -78293,9 +81925,12 @@ window.CONTENT_DATA = {
         "привела",
         "прокурор",
         "прокурора",
+        "прошлой",
         "прошлым",
         "работаете",
+        "работал",
         "раз",
+        "рождественские",
         "рождество",
         "россия",
         "русски",
@@ -78307,6 +81942,7 @@ window.CONTENT_DATA = {
         "сколько",
         "сколько дней вы будете в орегоне?",
         "сколько ехать до отеля?",
+        "сколько часов ты работал?",
         "слушание",
         "соглашение",
         "соседа",
@@ -78321,6 +81957,7 @@ window.CONTENT_DATA = {
         "травма",
         "ты",
         "у",
+        "у вас будут рождественские каникулы?",
         "у вас много дел?",
         "у вас много клиентов?",
         "у соседа трава зеленее.",
@@ -78333,14 +81970,21 @@ window.CONTENT_DATA = {
         "цивилизация",
         "цивилизация привела к тому, что уже не важно, чей адвокат лучше.",
         "чай",
+        "часов",
         "чей",
         "чем",
+        "чем был занят?",
         "чем отличается адвокат от прокурора?",
+        "чем ты сегодня занимался?",
         "что",
+        "что вы делали на выходных?",
         "что вы делали на день благодарения?",
+        "что ты делал на прошлой неделе?",
+        "что ты делал на этой неделе?",
         "что ты сегодня делал?",
         "это",
-        "это ваш ключ."
+        "это ваш ключ.",
+        "этой"
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -81744,6 +85388,10 @@ window.CONTENT_DATA = {
     "recognizes_cultural_bonus": {
       "label": "recognizes proverbs and legal jokes",
       "error_type": "listening_misparse"
+    },
+    "recognizes_fast_checkins": {
+      "label": "recognizes fast family check-ins",
+      "error_type": "listening_misparse"
     }
   },
   "contrast_sets": [
@@ -82176,6 +85824,29 @@ window.CONTENT_DATA = {
         "uses_quick_responses",
         "stays_in_russian",
         "uses_repair_lines"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7
+    },
+    {
+      "id": "native_speed_checkins",
+      "setting": "Native-speed check-in questions",
+      "goal": "Recognize recurring original-guide check-in questions at family speed.",
+      "required_items": [
+        "list010",
+        "list011",
+        "list012",
+        "list013",
+        "list014",
+        "list015",
+        "list016",
+        "list017",
+        "list018"
+      ],
+      "success_criteria": [
+        "recognizes_fast_checkins",
+        "uses_repair_lines",
+        "stays_in_russian"
       ],
       "lesson_id": "family_visit_007",
       "lesson_number": 7

@@ -6,14 +6,14 @@ iterations can close the real beginner-course gaps without inventing Russian.
 ## Current generated course
 
 - Source of truth: `scripts/build_content.py`
-- Generated content: 253 items across 16 modules, plus 60 generated conjugation drills
+- Generated content: 262 items across 16 modules, plus 60 generated conjugation drills
 - Strongest coverage today:
   - greetings and first contact
   - politeness and repair phrases
   - toasts
   - family and in-law vocabulary
   - food/table compliments and requests
-  - common listening questions
+  - common and native-speed family check-in questions
   - calendar and weather small talk
   - practical adverbs, pace repair, and weather adjective agreement
   - daily-routine, time-of-day answers, and a short `Мой день` story mode
@@ -29,7 +29,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 | Original guide area | Evidence in source | Current coverage | Gap / next course work |
 | --- | --- | --- | --- |
 | Verb reactivation and conjugation | `source/ekaterina_guide.md:23`, `source/ekaterina_guide.md:120-220`, `source/ekaterina_guide.md:1289-1293`, `source/ekaterina_guide.md:1670-1675`, `source/ekaterina_guide.md:2031-2062`, `source/research/verb_drills.md` | Covered by `verbs` plus 60 generated `conjugate` drill cards across `я`, `ты`, `он/она`, `мы`, `вы`, and `они` | Later: add new verbs only when they come from mission-critical production phrases. |
-| Greetings and lesson check-ins | `source/ekaterina_guide.md:840-848`, `source/ekaterina_guide.md:891-897`, `source/ekaterina_guide.md:1792-1803` | Partial: greetings plus several listening questions | Add more native-speed recognition drills for day, weather, week, and "what did you do" prompts. |
+| Greetings and lesson check-ins | `source/ekaterina_guide.md:840-850`, `source/ekaterina_guide.md:977-981`, `source/ekaterina_guide.md:1197-1211`, `source/ekaterina_guide.md:1224-1234`, `source/ekaterina_guide.md:1792-1803`, `source/research/native_speed_checkins.md` | Covered by `listening` basics plus native-speed check-in recognition cards | Later: add only live family variants Joe actually hears. |
 | Calendar, days, dates | `source/ekaterina_guide.md:303-317`, `source/ekaterina_guide.md:668-679`, `source/ekaterina_guide.md:820-850` | Covered by `calendar_weather` basics | Later: add dates/months only if they support actual travel/family prompts. |
 | Weather and outside conditions | `source/ekaterina_guide.md:840-850`, `source/ekaterina_guide.md:897-910`, `source/ekaterina_guide.md:1799-1803` | Covered by `calendar_weather` basics | Later: add adjective-agreement contrast only if it improves spoken answers. |
 | Budva/Montenegro trip logistics | `source/ekaterina_guide.md:1461-1467`, `source/ekaterina_guide.md:1501`, `source/ekaterina_guide.md:1969`, `source/ekaterina_guide.md:2031-2043`, `source/research/budva_travel.md` | Covered by `travel_budva` basics, including airport arrival and hotel check-in/out variants | Later: add only Kadriya-confirmed local wording or transport-specific variants. |
