@@ -68,6 +68,11 @@ flow verifier for lesson-locking plus the core Home -> Learn -> Drill -> Cloze
 stage. The next foundations should broaden oral transfer without weakening the
 guardrails:
 
+Latest completed slice: role-play tutor integration is now browser-verified.
+The flow checker now asserts the lesson-constrained tutor panel opens from role-play,
+checks the rendered lesson boundary text, and validates that the item-level
+`tutor_prompt_opens` counter persists to localStorage.
+
 - add more high-variability listening variants beyond the current deterministic
   room-noise transformation,
 - expand readiness analytics with richer trend charts and better stage-specific
