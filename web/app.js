@@ -137,6 +137,85 @@
     return (s || "").normalize("NFC").replace(new RegExp(ACUTE, "g"), "")
       .toLowerCase().replace(/[.!?,…]+$/g, "").replace(/[«»"]/g, "").replace(/\s+/g, " ").trim();
   }
+  function tokenizeAnswer(s) {
+    return normalize(s).split(/\s+/).filter(Boolean);
+  }
+  function tokenCounts(tokens) {
+    return tokens.reduce((acc, token) => {
+      acc[token] = (acc[token] || 0) + 1;
+      return acc;
+    }, {});
+  }
+  function sameTokenMultiset(aTokens, bTokens) {
+    if (aTokens.length !== bTokens.length) return false;
+    const aCounts = tokenCounts(aTokens);
+    const bCounts = tokenCounts(bTokens);
+    return Object.keys(aCounts).every((k) => aCounts[k] === bCounts[k]) &&
+      Object.keys(bCounts).every((k) => aCounts[k] === bCounts[k]);
+  }
+  function levenshtein(a, b) {
+    if (a === b) return 0;
+    if (!a) return b.length;
+    if (!b) return a.length;
+    const dp = Array.from({ length: b.length + 1 }, (_, j) => j);
+    for (let i = 1; i <= a.length; i++) {
+      let prevDiag = dp[0];
+      dp[0] = i;
+      for (let j = 1; j <= b.length; j++) {
+        const temp = dp[j];
+        const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+        dp[j] = Math.min(dp[j] + 1, dp[j - 1] + 1, prevDiag + cost);
+        prevDiag = temp;
+      }
+    }
+    return dp[b.length];
+  }
+  function isCloseToken(a, b) {
+    if (!a || !b) return false;
+    if (a === b) return true;
+    const diff = Math.abs(a.length - b.length);
+    if (diff > 2) return false;
+    return levenshtein(a, b) <= 2;
+  }
+  function nearTokenMatch(userTokens, answerTokens) {
+    if (userTokens.length !== answerTokens.length) return false;
+    const remaining = answerTokens.slice();
+    for (const token of userTokens) {
+      const hit = remaining.findIndex((candidate) => isCloseToken(token, candidate));
+      if (hit < 0) return false;
+      remaining.splice(hit, 1);
+    }
+    return true;
+  }
+  function inferBacktranslateErrorType(item, raw) {
+    const allowed = new Set(
+      (item && (item.allowed_error_types || item.error_types || [])) || []
+    );
+    const candidates = (item && item.accepted_answers) || [item && item.ru_plain].filter(Boolean);
+    const rawNorm = normalize(raw || "");
+    if (!rawNorm) return allowed.has("forgot_phrase") ? "forgot_phrase" : null;
+    const rawTokens = tokenizeAnswer(rawNorm);
+    for (const candidate of candidates) {
+      const candNorm = normalize(candidate || "");
+      if (!candNorm) continue;
+      if (rawNorm === candNorm) return null;
+      const candTokens = tokenizeAnswer(candNorm);
+      if (sameTokenMultiset(rawTokens, candTokens) && rawTokens.length > 0) {
+        if (rawTokens.join(" ") !== candTokens.join(" ")) {
+          return allowed.has("word_order") ? "word_order" : "forgot_phrase";
+        }
+      }
+    }
+    for (const candidate of candidates) {
+      const candNorm = normalize(candidate || "");
+      if (!candNorm) continue;
+      const candTokens = tokenizeAnswer(candNorm);
+      if (nearTokenMatch(rawTokens, candTokens)) {
+        return allowed.has("case_or_inflection") ? "case_or_inflection" : (allowed.has("word_order") ? "word_order" : "forgot_phrase");
+      }
+    }
+    return allowed.has("forgot_phrase") ? "forgot_phrase" : null;
+  }
   function stripStress(s) {
     return (s || "").normalize("NFC").replace(new RegExp(ACUTE, "g"), "");
   }
@@ -1443,10 +1522,14 @@
     startBack(id) {
       if (quiz.answered) return;
       const note = $("#btEn") ? $("#btEn").value.trim() : "";
+      if (!note) {
+        showFeedback(false, practiceItem(id), "<div class=\"card__hint\">Write an English note first, then hide the Russian.</div>", "forgot_phrase");
+        return;
+      }
       $("#btSource").style.display = "none";
       $("#btStep1").style.display = "none";
       $("#btStep2").style.display = "";
-      $("#btNote").textContent = note || "Your English note was blank. Rebuild the Russian from memory.";
+      $("#btNote").textContent = note;
       const el = $("#btRu");
       if (el) {
         el.focus();
@@ -1459,7 +1542,7 @@
       const val = $("#btRu") ? $("#btRu").value : "";
       const accepted = it.accepted_answers || [it.ru_plain];
       const ok = accepted.some(answer => normalize(val) === normalize(answer));
-      const errorType = ok ? null : inferredErrorType(it, quiz.stageKey);
+      const errorType = ok ? null : inferBacktranslateErrorType(it, val);
       gradeItem(id, ok, quiz.stageKey, errorType);
       showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`, errorType);
     },
