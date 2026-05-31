@@ -151,6 +151,51 @@ async function assertLessonLockedRecognition(page, baseUrl) {
     throw new Error(`Lesson lock violated: ${prompted.id} is lesson ${prompted.lesson_number}, expected <= ${expected.lessonNumber}`);
   }
 
+  const unlockedByStage = await page.evaluate((lessonNumber) => {
+    const { items = [], cloze_cards = [], dictation_cards = [], stress_cards = [], pronunciation_cards = [], backtranslation_cards = [], contrast_cards = [] } = window.CONTENT_DATA;
+    const hasLessonAccess = (card) => !card.lesson_number || card.lesson_number <= lessonNumber;
+    const unlockedItems = items.filter((it) => hasLessonAccess(it));
+    const scenarioIds = new Set((window.CONTENT_DATA.scenarios || []).flatMap((s) => s.required_items || []));
+    const hasScenarios = (window.CONTENT_DATA.scenarios || []).length > 0;
+    const isRoleplay = hasScenarios
+      ? (it) => scenarioIds.has(it.id)
+      : (it) => it.priority <= 2 && (it.ru_plain.includes(" ") || it.tags.includes("toast"));
+    return {
+      recognition: unlockedItems.length,
+      recall: unlockedItems.length,
+      produce: unlockedItems.length,
+      listen: unlockedItems.filter((it) => it.syllables >= 1).length,
+      roleplay: unlockedItems.filter(isRoleplay).length,
+      cloze: cloze_cards.filter(hasLessonAccess),
+      dictation: dictation_cards.filter(hasLessonAccess),
+      stress: stress_cards.filter(hasLessonAccess),
+      pronounce: pronunciation_cards.filter(hasLessonAccess),
+      backtranslate: backtranslation_cards.filter(hasLessonAccess),
+      contrast: contrast_cards.filter(hasLessonAccess),
+    };
+  }, expected.lessonNumber);
+
+  for (const stageKey of ["recognition", "recall", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"]) {
+    const available = unlockedByStage[stageKey];
+    const count = Array.isArray(available) ? available.length : available;
+    if (!count) {
+      continue;
+    }
+    await page.goto(withHash(baseUrl, `#/quiz/${stageKey}`), { waitUntil: "networkidle" });
+    await page.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 5000 });
+    const promptedStage = await page.locator(".quiz").evaluate((el) => ({
+      stage: el.dataset.stage,
+      id: el.dataset.itemId,
+      lessonNumber: Number(el.dataset.lessonNumber || 0),
+    }));
+    if (promptedStage.stage !== stageKey) {
+      throw new Error(`Expected ${stageKey} stage, got ${promptedStage.stage}`);
+    }
+    if (promptedStage.lessonNumber > expected.lessonNumber) {
+      throw new Error(`Lesson lock violated: ${promptedStage.id} in ${stageKey} is lesson ${promptedStage.lessonNumber}, expected <= ${expected.lessonNumber}`);
+    }
+  }
+
   await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
   const lastValue = await page.locator(".lessonlock select option").last().getAttribute("value");
   await select.selectOption(lastValue);
