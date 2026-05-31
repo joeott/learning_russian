@@ -58,6 +58,35 @@
       "focus": ["reading", "news", "essay"],
       "discover_limit": 5,
       "discover_paths": ["/articles/"]
+    },
+    {
+      "url": "https://www.easyrussian.fm/110",
+      "name": "Easy Russian Episode 110",
+      "default_drill": ["listen", "dictation", "translate"],
+      "reason": "short beginner episode with interactive transcript and native speech",
+      "spoken": true,
+      "focus": ["spoken", "listening", "dictation", "transcript", "dialogue"],
+      "discover_limit": 2,
+      "discover_paths": ["/"]
+    },
+    {
+      "url": "https://www.easyrussian.fm/39",
+      "name": "Easy Russian Episode 39",
+      "default_drill": ["listen", "dictation", "translate"],
+      "reason": "slow dialogue suitable for beginner winter/season phrases",
+      "spoken": true,
+      "focus": ["spoken", "listening", "dictation", "transcript", "dialogue"],
+      "discover_limit": 2,
+      "discover_paths": ["/"]
+    },
+    {
+      "url": "https://www.goethe-verlag.com/book2/RU/RUTI/RUTI.HTM",
+      "name": "Goethe-Verlag Russian conversation book",
+      "default_drill": ["read", "dictation", "translate", "listen"],
+      "reason": "short phrasebook-style practical dialogues with Russian text and audio references",
+      "focus": ["spoken", "dialogue", "textbook", "reading"],
+      "discover_limit": 3,
+      "discover_paths": ["/book2/RU/RUTI/"]
     }
   ]
 }
