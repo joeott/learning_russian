@@ -214,6 +214,15 @@ body {
 .stagecard__d { font-size:.85rem; color: var(--ink-soft); }
 .stagecard__bar { height:6px; background:var(--cream-line); border:1px solid var(--ink); border-radius:20px; margin-top:12px; overflow:hidden; }
 .stagecard__bar > span { display:block; height:100%; background: var(--ok); }
+.mastery { display:grid; grid-template-columns: repeat(auto-fit, minmax(96px,1fr)); gap: 12px; margin: 0 0 18px; }
+.ring { display:flex; align-items:center; gap: 10px; background: var(--paper-2); border:2px solid var(--ink); border-radius: var(--radius); padding: 10px; box-shadow: var(--shadow-sm); }
+.ring__dial {
+  width: 54px; height: 54px; border-radius: 50%; display:grid; place-items:center;
+  background: conic-gradient(var(--ok) calc(var(--pct) * 1%), var(--cream-line) 0);
+  border: 2px solid var(--ink); font-family: var(--font-display); font-weight: 700; color: var(--ink);
+}
+.ring__dial small { font-size: .62em; }
+.ring__label { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .06em; font-size: .76rem; color: var(--ink-soft); }
 
 .quiz { max-width: 640px; margin: 0 auto; }
 .quiz__progress { display:flex; gap:4px; margin-bottom: 18px; }
@@ -249,6 +258,8 @@ body {
 .feedback.bad { background: rgba(181,31,35,.14); }
 .feedback .fb-ru { font-family: var(--font-serif); font-weight:700; font-size: 1.5rem; }
 .selfrate { display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px; }
+.errorpick { display:flex; align-items:center; flex-wrap:wrap; gap: 8px; margin-top: 12px; }
+.errorpick span { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.06em; font-size:.72rem; color: var(--ink-soft); }
 
 /* ---------- Plan / generic prose ---------- */
 .prose { max-width: 760px; }
@@ -260,6 +271,16 @@ body {
 .prose th { background: var(--ink); color: var(--paper); font-family: var(--font-display); text-transform:uppercase; letter-spacing:.04em; font-size:.78rem; }
 .prose tr:nth-child(even) td { background: var(--paper-2); }
 .linkrow { display:flex; flex-wrap:wrap; gap:12px; margin: 20px 0; }
+.ghost-dark { color: var(--ink); border-color: var(--ink); }
+.offlinebox {
+  display:grid; grid-template-columns: minmax(0,1fr) auto; gap: 16px; align-items:center;
+  background: var(--paper-2); border:2px solid var(--ink); border-radius: var(--radius);
+  padding: 16px 18px; margin: 20px 0; box-shadow: var(--shadow-sm);
+}
+.offlinebox h3 { margin: 0 0 4px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .04em; }
+.offlinebox p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
+.offlinebox__actions { display:flex; flex-wrap:wrap; gap: 8px; justify-content:flex-end; }
+.offlinebox__status { grid-column: 1 / -1; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); font-size: .75rem; }
 
 .callout { background: var(--paper-2); border:2px solid var(--ink); border-left: 6px solid var(--red); border-radius: 0 var(--radius) var(--radius) 0; padding: 14px 18px; margin: 18px 0; box-shadow: var(--shadow-sm); }
 .callout strong { color: var(--red); }
@@ -288,6 +309,8 @@ body {
   .section-head__sub { margin-left: 0; flex-basis: 100%; }
   .countdown { transform: none; }
   .card { padding: 22px 18px; min-height: 280px; }
+  .offlinebox { grid-template-columns: 1fr; }
+  .offlinebox__actions { justify-content:flex-start; }
 }
 
 .footer-note { max-width: var(--maxw); margin: 30px auto 0; padding: 0 20px; color: var(--ink-soft); font-size:.82rem; text-align:center; }

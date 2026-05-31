@@ -7,10 +7,16 @@
 
   const DATA = window.CONTENT_DATA;
   if (!DATA) { document.getElementById("view").innerHTML = "<p>Content failed to load.</p>"; return; }
+  const COURSE = DATA.course || {};
+  const MISSION = COURSE.mission || {};
   const ITEMS = DATA.items;
   const MODULES = DATA.modules;
   const MOD_BY_ID = Object.fromEntries(MODULES.map(m => [m.id, m]));
-  const TARGET = new Date(2026, 5, 15); // June 15, 2026 (month is 0-indexed)
+  const TARGET = MISSION.target_date ? new Date(MISSION.target_date + "T00:00:00") : new Date(2026, 5, 15);
+  const ERROR_TYPES = DATA.error_types || [];
+  const ERROR_BY_ID = Object.fromEntries(ERROR_TYPES.map(e => [e.id, e]));
+  const STAGE_KEYS = ["recognition", "recall", "produce", "listen", "roleplay"];
+  const LEGACY_STAGE = { production: "produce", listening: "listen" };
 
   const ACUTE = "́";
   const $ = (sel, el = document) => el.querySelector(sel);
@@ -18,14 +24,58 @@
   const toastEl = document.getElementById("toast");
 
   /* ---------- persistence ---------- */
-  const KEY = "zastolom.v1";
+  const KEY = COURSE.storage_namespace || "zastolom.russian_family_visit.v2";
+  const LEGACY_KEY = "zastolom.v1";
   let store = load();
   function load() {
-    try { return JSON.parse(localStorage.getItem(KEY)) || {}; }
+    try {
+      const current = JSON.parse(localStorage.getItem(KEY)) || {};
+      if (Object.keys(current).length) return current;
+      const legacy = JSON.parse(localStorage.getItem(LEGACY_KEY)) || {};
+      if (Object.keys(legacy).length) {
+        const migrated = {};
+        Object.keys(legacy).forEach(id => { migrated[id] = migrateRec(legacy[id]); });
+        localStorage.setItem(KEY, JSON.stringify(migrated));
+        return migrated;
+      }
+      return {};
+    }
     catch (e) { return {}; }
   }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {} }
-  function rec(id) { return (store[id] = store[id] || { seen: 0, correct: 0, stages: {}, known: false }); }
+  function emptyRec() { return { seen: 0, correct: 0, known: false, stages: {}, errors: {}, last_seen_at: "" }; }
+  function migrateRec(value) {
+    const r = Object.assign(emptyRec(), value || {});
+    r.stages = r.stages || {};
+    Object.keys(LEGACY_STAGE).forEach(oldKey => {
+      if (r.stages[oldKey] && !r.stages[LEGACY_STAGE[oldKey]]) r.stages[LEGACY_STAGE[oldKey]] = r.stages[oldKey];
+    });
+    STAGE_KEYS.forEach(k => { if (typeof r.stages[k] === "number") r.stages[k] = stageSeed(r.stages[k]); });
+    r.errors = r.errors || {};
+    return r;
+  }
+  function stageSeed(count) {
+    return {
+      seen: count,
+      correct: count,
+      success_sessions: count,
+      due_at: count ? new Date(Date.now() + 86400000).toISOString() : new Date().toISOString(),
+      stability: Math.max(1, count),
+      difficulty: 5,
+      retrievability: count ? 0.9 : 0,
+      lapses: 0,
+      last_grade: count ? "good" : "",
+      last_error_type: "",
+      last_seen_at: "",
+      mastered: count >= 2,
+    };
+  }
+  function rec(id) { store[id] = migrateRec(store[id]); return store[id]; }
+  function stageRec(id, stageKey) {
+    const r = rec(id);
+    r.stages[stageKey] = r.stages[stageKey] && typeof r.stages[stageKey] === "object" ? r.stages[stageKey] : stageSeed(0);
+    return r.stages[stageKey];
+  }
 
   /* ---------- helpers ---------- */
   function colorStress(ru) {
@@ -41,7 +91,44 @@
   function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]]; } return a; }
   function sample(arr, n, exclude) { return shuffle(arr.filter(x => x !== exclude)).slice(0, n); }
   function daysLeft() { const ms = TARGET - new Date(); return Math.max(0, Math.ceil(ms / 86400000)); }
+  function targetLabel() {
+    return TARGET.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  }
   function toast(msg) { toastEl.textContent = msg; toastEl.classList.add("show"); clearTimeout(toast._t); toast._t = setTimeout(() => toastEl.classList.remove("show"), 1800); }
+  function stageState(id, stageKey) {
+    const r = store[id] ? migrateRec(store[id]) : null;
+    return r && r.stages ? r.stages[stageKey] : null;
+  }
+  function isDue(state) { return !state || !state.due_at || new Date(state.due_at) <= new Date(); }
+  function stageScore(it, stageKey) {
+    const st = stageState(it.id, stageKey);
+    const due = isDue(st) ? 0 : 1;
+    const lapses = st ? st.lapses || 0 : 0;
+    const correct = st ? st.correct || 0 : 0;
+    return [due, it.priority, correct - lapses];
+  }
+  function dueItems(stageKey) {
+    return stagePool(stageKey).filter(it => isDue(stageState(it.id, stageKey)));
+  }
+  function fragileItems() {
+    return ITEMS.filter(it => {
+      const r = store[it.id] ? migrateRec(store[it.id]) : null;
+      if (!r) return it.priority === 1;
+      return STAGE_KEYS.some(k => {
+        const st = r.stages[k];
+        return st && (st.lapses || 0) > 0 && isDue(st);
+      });
+    });
+  }
+  function readiness() {
+    const required = ITEMS.filter(i => i.priority <= 2);
+    const total = required.length * STAGE_KEYS.length;
+    const mastered = required.reduce((n, it) => n + STAGE_KEYS.filter(k => {
+      const st = stageState(it.id, k);
+      return st && st.mastered;
+    }).length, 0);
+    return total ? Math.round(mastered / total * 100) : 0;
+  }
 
   function moduleProgress(modId) {
     const items = ITEMS.filter(i => i.module === modId);
@@ -145,9 +232,10 @@
       <div class="stats">
         <div class="stat rise"><div class="stat__num">${op.done}<small>/${op.total}</small></div><div class="stat__label">Phrases touched</div>
           <div class="progressbar"><span style="width:${op.pct}%"></span></div></div>
-        <div class="stat rise"><div class="stat__num">${ITEMS.filter(i => i.priority === 1).length}</div><div class="stat__label">Doorway must-knows (P1)</div></div>
-        <div class="stat rise"><div class="stat__num">${MODULES.length}</div><div class="stat__label">Modules</div></div>
-        <div class="stat rise"><div class="stat__num">${d}</div><div class="stat__label">Days to 15 June</div></div>
+        <div class="stat rise"><div class="stat__num">${dueItems("recall").length}</div><div class="stat__label">Recall due now</div></div>
+        <div class="stat rise"><div class="stat__num">${fragileItems().length}</div><div class="stat__label">Fragile phrases</div></div>
+        <div class="stat rise"><div class="stat__num">${readiness()}<small>%</small></div><div class="stat__label">Dinner readiness</div></div>
+        <div class="stat rise"><div class="stat__num">${d}</div><div class="stat__label">Days to ${escapeHtml(targetLabel())}</div></div>
       </div>
 
       <div class="section-head"><span class="section-head__num">★</span><span class="section-head__title">The Table, module by module</span>
@@ -232,8 +320,24 @@
   }
   function stageProgress(stageKey) {
     const pool = stagePool(stageKey);
-    const done = pool.filter(i => store[i.id] && store[i.id].stages && store[i.id].stages[stageKey]).length;
+    const done = pool.filter(i => {
+      const st = stageState(i.id, stageKey);
+      return st && st.mastered;
+    }).length;
     return { done, total: pool.length, pct: pool.length ? Math.round(done / pool.length * 100) : 0 };
+  }
+  function masteryRings() {
+    const labels = [
+      ["recognition", "Know"],
+      ["recall", "Recall"],
+      ["listen", "Hear"],
+      ["produce", "Say"],
+      ["roleplay", "Use"],
+    ];
+    return labels.map(([key, label]) => {
+      const p = stageProgress(key);
+      return `<div class="ring" style="--pct:${p.pct}"><div class="ring__dial">${p.pct}<small>%</small></div><div class="ring__label">${label}</div></div>`;
+    }).join("");
   }
   function renderQuizMenu() {
     const cards = STAGES.map(s => {
@@ -248,7 +352,8 @@
     view.innerHTML = `
       <div class="section-head"><span class="section-head__num">03</span><span class="section-head__title">Drill</span>
         <span class="section-head__sub">Graduated difficulty: recognise → recall → produce → listen → role-play. Retrieval practice beats re-reading.</span></div>
-      <div class="callout">Each round is 10 questions, drawn first from what you haven't mastered. Aim for one round a day; do Listen + Role-play on weekends.</div>
+      <div class="mastery rise">${masteryRings()}</div>
+      <div class="callout">Each round is 10 questions: due reviews first, fragile high-priority phrases next, new cards only after the review load is under control.</div>
       <div class="stagegrid">${cards}</div>`;
   }
 
@@ -258,12 +363,12 @@
     if (!stage) { location.hash = "#/quiz"; return; }
     if (!quiz || quiz.stageKey !== stageKey) {
       const pool = stagePool(stageKey);
-      // prioritise un-mastered, then by priority, then sample 10
+      // Due reviews first, then fragile high-priority items, then new/unmastered.
       const ranked = pool.slice().sort((a, b) => {
-        const am = store[a.id] && store[a.id].stages && store[a.id].stages[stageKey] ? 1 : 0;
-        const bm = store[b.id] && store[b.id].stages && store[b.id].stages[stageKey] ? 1 : 0;
-        if (am !== bm) return am - bm;
-        return a.priority - b.priority;
+        const as = stageScore(a, stageKey);
+        const bs = stageScore(b, stageKey);
+        for (let i = 0; i < as.length; i++) if (as[i] !== bs[i]) return as[i] - bs[i];
+        return a.id.localeCompare(b.id);
       });
       const head = ranked.slice(0, 16);
       quiz = { stageKey, stage, q: shuffle(head).slice(0, Math.min(10, head.length)), i: 0, correct: 0, answered: false };
@@ -314,8 +419,44 @@
     if (stage.key === "produce") setTimeout(() => { const el = $("#prodIn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkProd(it.id); }); } }, 50);
   }
 
-  function gradeItem(id, ok, stageKey) {
-    const r = rec(id); r.seen++; if (ok) { r.correct++; r.stages[stageKey] = (r.stages[stageKey] || 0) + 1; } save();
+  function nextDue(st, ok) {
+    const minutes = ok ? [240, 1440, 4320, 10080, 21600] : [10, 30, 240];
+    const index = ok ? Math.min(st.success_sessions || 0, minutes.length - 1) : Math.min(st.lapses || 0, minutes.length - 1);
+    return new Date(Date.now() + minutes[index] * 60000).toISOString();
+  }
+  function gradeItem(id, ok, stageKey, errorType) {
+    const r = rec(id);
+    const st = stageRec(id, stageKey);
+    r.seen++;
+    r.last_seen_at = new Date().toISOString();
+    st.seen++;
+    st.last_seen_at = r.last_seen_at;
+    if (ok) {
+      r.correct++;
+      st.correct++;
+      st.success_sessions = (st.success_sessions || 0) + 1;
+      st.stability = Math.min(30, (st.stability || 1) + 0.7 + (st.success_sessions * 0.2));
+      st.difficulty = Math.max(1, (st.difficulty || 5) - 0.25);
+      st.retrievability = 0.95;
+      st.last_grade = "good";
+      st.mastered = st.success_sessions >= 2;
+    } else {
+      st.lapses = (st.lapses || 0) + 1;
+      st.success_sessions = 0;
+      st.stability = Math.max(0.5, (st.stability || 1) * 0.55);
+      st.difficulty = Math.min(10, (st.difficulty || 5) + 0.7);
+      st.retrievability = 0.25;
+      st.last_grade = "again";
+      st.mastered = false;
+      st.last_error_type = errorType || st.last_error_type || "forgot_phrase";
+      r.errors[st.last_error_type] = (r.errors[st.last_error_type] || 0) + 1;
+    }
+    st.due_at = nextDue(st, ok);
+    save();
+  }
+  function errorButtons(it) {
+    const ids = (it.error_types && it.error_types.length ? it.error_types : ["forgot_phrase", "stress"]).slice(0, 5);
+    return `<div class="errorpick"><span>What failed?</span>${ids.map(id => `<button class="chip" onclick="ZS.markError('${it.id}','${quiz.stageKey}','${id}')">${escapeHtml((ERROR_BY_ID[id] && ERROR_BY_ID[id].label) || id)}</button>`).join("")}</div>`;
   }
   function showFeedback(ok, it, extra) {
     quiz.answered = true;
@@ -326,6 +467,7 @@
         <div style="font-style:italic;font-family:var(--font-serif)">${escapeHtml(it.en)}</div>
         ${it.hint ? `<div class="card__hint">🔈 ${escapeHtml(it.hint)}</div>` : ""}
         ${extra || ""}
+        ${ok ? "" : errorButtons(it)}
         <div style="margin-top:12px"><button class="iconbtn iconbtn--play" onclick="ZS.sayItem('${it.id}')">▶</button>
           <button class="btn" style="margin-left:8px" onclick="ZS.nextQ()">Next →</button></div>
       </div>`;
@@ -388,7 +530,24 @@
         <a class="btn" href="../RESOURCES.md" target="_blank">🔗 Videos, podcasts & apps</a>
         <a class="btn" href="../anki/README.md" target="_blank">📱 Phone deck (Anki)</a>
       </div>
+      ${renderOfflinePanel()}
       <div class="footer-note">Open links work when the app is served (e.g. <code>python3 -m http.server</code> from the repo root, then open <code>/web/</code>).</div>`;
+  }
+  function renderOfflinePanel() {
+    const native = AUDIO_IDS.size;
+    return `<div class="offlinebox rise">
+      <div>
+        <h3>Offline packs</h3>
+        <p>Cache the app shell plus native audio before travel. Browser storage limits vary, so high-priority audio is the safest phone pack.</p>
+      </div>
+      <div class="offlinebox__actions">
+        <button class="btn btn--sm" onclick="ZS.cachePack('core')">Core course</button>
+        <button class="btn btn--sm" onclick="ZS.cachePack('p1')">P1 audio</button>
+        <button class="btn btn--sm" onclick="ZS.cachePack('all')">All audio (${native})</button>
+        <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.clearOffline()">Clear media</button>
+      </div>
+      <div id="offlineStatus" class="offlinebox__status">Ready to cache.</div>
+    </div>`;
   }
 
   function todayLabel() {
@@ -412,7 +571,21 @@
     prev() { learnState.idx = (learnState.idx - 1 + learnState.list.length) % learnState.list.length; renderCard(); },
     say() { speak(learnState.list[learnState.idx]); },
     sayItem(id) { speak(ITEMS.find(i => i.id === id)); },
-    known() { const it = learnState.list[learnState.idx]; const r = rec(it.id); r.known = true; r.stages.learned = 1; save(); toast("Marked ✓ — " + it.en); ZS.next(); },
+    known() {
+      const it = learnState.list[learnState.idx];
+      const r = rec(it.id);
+      r.known = true;
+      ["recognition", "recall"].forEach(k => {
+        const st = stageRec(it.id, k);
+        st.correct = Math.max(st.correct || 0, 2);
+        st.success_sessions = Math.max(st.success_sessions || 0, 2);
+        st.mastered = true;
+        st.due_at = new Date(Date.now() + 432000000).toISOString();
+      });
+      save();
+      toast("Marked ✓ — " + it.en);
+      ZS.next();
+    },
     answer(chosen, correctId, btn) {
       if (quiz.answered) return;
       const it = ITEMS.find(i => i.id === correctId);
@@ -437,6 +610,15 @@
       showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em></div>`);
     },
     giveUp(id) { const it = ITEMS.find(i => i.id === id); gradeItem(id, false, quiz.stageKey); showFeedback(false, it); },
+    markError(id, stageKey, errorType) {
+      const st = stageRec(id, stageKey);
+      const r = rec(id);
+      st.last_error_type = errorType;
+      r.errors[errorType] = (r.errors[errorType] || 0) + 1;
+      save();
+      const label = (ERROR_BY_ID[errorType] && ERROR_BY_ID[errorType].label) || errorType;
+      toast("Repair queued: " + label);
+    },
     revealRP(id) {
       const it = ITEMS.find(i => i.id === id);
       $("#rpReveal").innerHTML = `<div class="feedback good rise"><div class="fb-ru">${colorStress(it.ru)}</div>
@@ -452,6 +634,30 @@
     rateRP(id, ok) { const it = ITEMS.find(i => i.id === id); gradeItem(id, ok, quiz.stageKey); quiz.answered = true; if (ok) quiz.correct++; ZS.nextQ(); },
     nextQ() { quiz.i++; drawQuestion(); },
     retry() { const k = location.hash.split("/")[2]; quiz = null; renderQuizRun(k); },
+    async cachePack(kind) {
+      if (!("caches" in window)) { toast("Offline cache unavailable"); return; }
+      const status = $("#offlineStatus");
+      if (status) status.textContent = "Caching…";
+      const core = ["./", "./index.html", "./styles.css", "./app.js", "./content.js", "./audio.js", "./manifest.webmanifest", "./assets/icon.svg"];
+      const ids = kind === "all" ? Array.from(AUDIO_IDS) : kind === "p1" ? ITEMS.filter(i => i.priority === 1 && AUDIO_IDS.has(i.id)).map(i => i.id) : [];
+      const urls = core.concat(ids.map(id => AUDIO.base + id + ".mp3"));
+      try {
+        const cache = await caches.open("zastolom-offline-pack");
+        await cache.addAll(urls);
+        if (status) status.textContent = `Cached ${urls.length} files for ${kind === "all" ? "all audio" : kind === "p1" ? "P1 audio" : "the core course"}.`;
+        toast("Offline pack cached");
+      } catch (e) {
+        if (status) status.textContent = "Caching failed; try the smaller P1 pack.";
+        toast("Caching failed");
+      }
+    },
+    async clearOffline() {
+      if (!("caches" in window)) return;
+      await caches.delete("zastolom-offline-pack");
+      const status = $("#offlineStatus");
+      if (status) status.textContent = "Offline media pack cleared.";
+      toast("Offline media cleared");
+    },
   };
 
   /* ---------- service worker ---------- */

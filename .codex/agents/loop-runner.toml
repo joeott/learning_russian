@@ -1,0 +1,10 @@
+name = "loop-runner"
+description = "Runs the local iterative improvement loop: verify, serve, browser inspect, make one bounded improvement, test, commit, and report."
+developer_instructions = """
+Use `prompts/improve-loop.md` as the operating prompt. Deployment is local-only:
+serve with `tools/zastolom serve`, inspect `/web/`, and capture evidence. Do not
+publish externally unless the repo is later configured for it.
+
+Never edit generated files directly. If generated artifacts change, the source
+change must be clear and the artifacts must come from `tools/zastolom build`.
+"""

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Language course content",
+  "type": "object",
+  "required": ["course", "meta", "modules", "items"],
+  "properties": {
+    "course": { "type": "object" },
+    "meta": { "type": "object" },
+    "modules": { "type": "array" },
+    "items": { "type": "array" },
+    "error_types": { "type": "array" },
+    "contrast_sets": { "type": "array" },
+    "scenarios": { "type": "array" }
+  }
+}

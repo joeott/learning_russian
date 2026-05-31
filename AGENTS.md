@@ -1,4 +1,4 @@
-# CLAUDE.md — За столо́м (Russian study system)
+# AGENTS.md — За столо́м (Russian study system)
 
 Guide for any agent working in this repo. Read this first.
 
@@ -48,7 +48,7 @@ web/            installable PWA (vanilla JS); audio.js = audio manifest; assets/
 anki/           deck (.txt) + media/ (mp3) + import README
 printable/      cheatsheet.html (print-to-PDF)
 schedule/       16_day_plan.md
-tutor/          roleplay_protocol.md (AI-tutor sessions; Claude plays тёща/тесть)
+tutor/          roleplay_protocol.md (AI-tutor sessions; Codex plays тёща/тесть)
 source/         ekaterina_guide.md + research/ (verified provenance)
 scripts/        build_content.py · build_anki.py · build_cheatsheet.py
 tests/          stdlib validation and generated-artifact tests

@@ -21,8 +21,136 @@ import json
 import os
 import unicodedata
 
+from course_config import DEFAULT_COURSE_ID, load_course
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ACUTE = "́"  # combining acute accent
+
+ERROR_TYPES = [
+    {
+        "id": "stress",
+        "label": "Stress",
+        "repair": "Replay native audio, mark the stressed vowel, then say it twice.",
+    },
+    {
+        "id": "vowel_reduction",
+        "label": "Vowel reduction",
+        "repair": "Shadow the phrase slowly, then at table speed.",
+    },
+    {
+        "id": "gendered_form",
+        "label": "Gendered form",
+        "repair": "Contrast the male/female form and produce the speaker-appropriate one.",
+    },
+    {
+        "id": "case_or_inflection",
+        "label": "Case / inflection",
+        "repair": "Recall the whole verified phrase rather than assembling it word by word.",
+    },
+    {
+        "id": "register",
+        "label": "Register",
+        "repair": "Choose the formal/polite option for elders and hosts.",
+    },
+    {
+        "id": "word_order",
+        "label": "Word order",
+        "repair": "Repeat the complete model answer and compare chunks.",
+    },
+    {
+        "id": "listening_misparse",
+        "label": "Listening misparse",
+        "repair": "Listen with full text, then keyword hints, then no text.",
+    },
+    {
+        "id": "cultural_usage",
+        "label": "Cultural usage",
+        "repair": "Review the usage note and choose the phrase in context.",
+    },
+    {
+        "id": "forgot_phrase",
+        "label": "Forgot phrase",
+        "repair": "Do cued recall, then production, then a role-play prompt.",
+    },
+]
+
+CONTRAST_SETS = [
+    {
+        "id": "russian_toast_vs_youre_welcome",
+        "title": "Toast vs. you're welcome",
+        "items": ["toas007", "poli003"],
+        "risk": "high",
+        "usage_note": "Use «За здоро́вье!» for a toast. Use «Пожа́луйста» for please / you're welcome.",
+        "drill_type": "choose_in_context",
+    },
+    {
+        "id": "formal_elder_address",
+        "title": "Formal elder address",
+        "items": ["firs001", "poli010", "poli011"],
+        "risk": "high",
+        "usage_note": "Use formal «вы» forms and polite repair phrases with parents and elders.",
+        "drill_type": "choose_in_context",
+    },
+    {
+        "id": "male_speaker_forms",
+        "title": "Joe's male speaker forms",
+        "items": ["firs008", "food006"],
+        "risk": "high",
+        "usage_note": "Joe should keep male forms like «рад» and «наелся».",
+        "drill_type": "contrast_say_aloud",
+    },
+]
+
+SCENARIOS = [
+    {
+        "id": "doorway_greeting",
+        "setting": "Doorway",
+        "goal": "Greet the family formally and introduce yourself.",
+        "required_items": ["firs001", "firs005", "firs006", "firs010"],
+        "success_criteria": [
+            "uses_formal_greeting",
+            "introduces_self",
+            "thanks_hosts",
+        ],
+    },
+    {
+        "id": "dinner_table_food_offer",
+        "setting": "Dinner table",
+        "goal": "Accept, decline, and compliment food politely.",
+        "required_items": ["food002", "food006", "food008", "food009"],
+        "success_criteria": [
+            "compliments_food",
+            "declines_politely",
+            "uses_correct_male_form",
+        ],
+    },
+    {
+        "id": "first_toast",
+        "setting": "Dinner table toast",
+        "goal": "Raise a safe warm toast without using the wrong formula.",
+        "required_items": ["toas001", "toas002", "toas006", "toas007"],
+        "success_criteria": [
+            "uses_za_toast_formula",
+            "avoids_na_zdorovie_misfire",
+            "keeps_stress_clear",
+        ],
+    },
+]
+
+
+def infer_error_types(item):
+    tags = set(item.get("tags", []))
+    errors = {"stress"}
+    if item.get("gender"):
+        errors.add("gendered_form")
+    if item.get("recognize"):
+        errors.add("listening_misparse")
+    if "toast" in tags or item.get("module") in {"toasts", "politeness"}:
+        errors.add("cultural_usage")
+    if item.get("module") in {"first_contact", "politeness"}:
+        errors.add("register")
+    return sorted(errors)
+
 
 # ---------------------------------------------------------------------------
 # Modules: display order, title, the "why", priority tier, default stage.
@@ -581,6 +709,7 @@ def syllable_count(s: str) -> int:
 
 
 def build():
+    course = load_course(os.environ.get("ZASTOLOM_COURSE", DEFAULT_COURSE_ID))
     mod_index = {m[0]: idx for idx, m in enumerate(MODULES)}
     modules = [
         {
@@ -606,29 +735,39 @@ def build():
         if key in seen:
             raise SystemExit(f"DUPLICATE Russian item: {ru} (also {seen[key]})")
         seen[key] = iid
-        items.append(
-            {
-                "id": iid,
-                "module": module,
-                "ru": ru_nfc,
-                "ru_plain": strip_stress(ru_nfc),
-                "en": en,
-                "hint": hint,
-                "priority": priority,
-                "syllables": syllable_count(ru_nfc),
-                "conf": flags.get("conf", "high"),
-                "gender": flags.get("gender"),
-                "rehearse": bool(flags.get("rehearse", False)),
-                "recognize": bool(flags.get("recognize", False)),
-                "note": flags.get("note", ""),
-                "tags": flags.get("tags", []),
-            }
-        )
+        item = {
+            "id": iid,
+            "module": module,
+            "ru": ru_nfc,
+            "ru_plain": strip_stress(ru_nfc),
+            "en": en,
+            "hint": hint,
+            "priority": priority,
+            "syllables": syllable_count(ru_nfc),
+            "conf": flags.get("conf", "high"),
+            "gender": flags.get("gender"),
+            "rehearse": bool(flags.get("rehearse", False)),
+            "recognize": bool(flags.get("recognize", False)),
+            "note": flags.get("note", ""),
+            "tags": flags.get("tags", []),
+        }
+        item["error_types"] = infer_error_types(item)
+        item["stages"] = [
+            "recognition",
+            "recall",
+            "listening",
+            "production",
+            "roleplay",
+            "maintenance",
+        ]
+        items.append(item)
     data = {
+        "course": course,
         "meta": {
-            "title": "Russian for Meeting Kadriya's Family",
-            "goal": "Be understood and understand at a St. Petersburg family dinner on June 15.",
+            "title": course["title"],
+            "goal": course["mission"]["performance_goal"],
             "generated_from": "scripts/build_content.py",
+            "course_source": f"courses/{course['course_id']}/course.yaml",
             "source": "source/research/verified_phrases.md",
             "stress_marks": "Unicode combining acute U+0301; ru_plain is stress-stripped for TTS.",
             "counts": {m: counters.get(m, 0) for m in mod_index},
@@ -636,6 +775,9 @@ def build():
         },
         "modules": modules,
         "items": items,
+        "error_types": ERROR_TYPES,
+        "contrast_sets": CONTRAST_SETS,
+        "scenarios": SCENARIOS,
     }
     out = os.path.join(ROOT, "content", "content.json")
     os.makedirs(os.path.dirname(out), exist_ok=True)

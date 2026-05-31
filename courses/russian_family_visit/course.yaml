@@ -1,0 +1,23 @@
+course_id: russian_family_visit
+title: "Russian for Kadriya's Family"
+target_language: ru
+learner_language: en
+script: cyrillic
+storage_namespace: zastolom.russian_family_visit.v2
+mission:
+  scenario: "family dinner"
+  target_date: "2026-06-15"
+  performance_goal: "survive and participate politely at the table"
+learner_profile:
+  known_languages: ["en"]
+  pain_points: ["stress", "listening speed", "gendered forms"]
+outputs:
+  web: true
+  anki: true
+  cheat_sheet: true
+  tutor_protocol: true
+audio:
+  model: eleven_multilingual_v2
+  format: mp3_44100_128
+  preferred_voice: ScaQ3utur72x93jqMMeU
+  preferred_voice_name: "Elena (Warm, Calm & Clear)"
