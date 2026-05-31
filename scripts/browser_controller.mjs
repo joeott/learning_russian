@@ -65,6 +65,10 @@ Examples:
 `;
 }
 
+function escapeRegex(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 const VIEWPORTS = {
   desktop: { width: 1280, height: 900 },
   mobile: { width: 390, height: 844 },
@@ -116,17 +120,31 @@ export async function runInspection(opts) {
       const logs = [];
       page.on("console", (msg) => logs.push({ type: msg.type(), text: msg.text() }));
       page.on("pageerror", (err) => logs.push({ type: "pageerror", text: err.message }));
+      await page.setDefaultTimeout(12000);
       await page.goto(opts.url, { waitUntil: "networkidle" });
       await page.waitForTimeout(opts.waitMs);
       const before = await inspectPage(page, `${viewportName}-before`, opts.out);
       const steps = [];
       for (const [index, clickText] of opts.clickTexts.entries()) {
-        await page.getByText(clickText, { exact: true }).click();
+        const step = { clickText };
+        try {
+          const exact = page.getByText(clickText, { exact: true });
+          await exact.click();
+        } catch (exactErr) {
+          logs.push({ type: "controller", text: `exact click miss: ${clickText}` });
+          try {
+            const loose = page.getByText(new RegExp(escapeRegex(clickText), "i"));
+            await loose.click();
+          } catch (looseErr) {
+            logs.push({ type: "controller", text: `loose click miss: ${clickText} (${(looseErr && looseErr.message) || looseErr})` });
+            step.error = `Could not click '${clickText}'`;
+            steps.push(step);
+            continue;
+          }
+        }
         await page.waitForTimeout(opts.waitMs);
-        steps.push({
-          clickText,
-          snapshot: await inspectPage(page, `${viewportName}-step-${index + 1}`, opts.out),
-        });
+        step.snapshot = await inspectPage(page, `${viewportName}-step-${index + 1}`, opts.out);
+        steps.push(step);
       }
       results.push({ viewport: viewportName, url: opts.url, before, steps, after: steps.length ? steps[steps.length - 1].snapshot : null, logs });
       await page.close();

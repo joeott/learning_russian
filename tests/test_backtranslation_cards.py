@@ -30,6 +30,18 @@ class BackTranslationCardTests(unittest.TestCase):
         for card in self.content["backtranslation_cards"]:
             self.assertTrue(required <= set(card["allowed_error_types"]))
 
+    def test_backtranslation_cards_include_stress_variant_when_available(self) -> None:
+        cards_with_accent = 0
+        for card in self.content["backtranslation_cards"]:
+            source = next(
+                item for item in self.content["items"] if item["id"] == card["item_id"]
+            )
+            if "́" in source["ru"]:
+                self.assertIn(source["ru"], card["accepted_answers"])
+                self.assertTrue(len(card["accepted_answers"]) >= 2)
+                cards_with_accent += 1
+        self.assertGreater(cards_with_accent, 0)
+
 
 if __name__ == "__main__":
     unittest.main()
