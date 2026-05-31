@@ -1136,12 +1136,12 @@
           <button id="listenHintBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.listenHint('${it.id}')">Next hint</button>
         </div>
         <div class="options">${opts.map(o => `<button class="opt" onclick="ZS.answer('${o.id}','${it.id}',this)">${escapeHtml(o.en)}</button>`).join("")}</div>`;
-  } else { // roleplay
+    } else { // roleplay
       scenario = scenarioForItem(it.id);
       promptHtml = `<div class="q-instr">${stage.instr}</div>${scenarioCard(it)}<div class="q-en">${escapeHtml(it.en)}</div>`;
       const tutor = tutorCardForItem(it.id);
       body = `<div style="text-align:center;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-        ${tutor ? `<button class="btn btn--red" onclick="ZS.openTutor('${it.id}')">Tutor setup</button>` : ""}
+        ${tutor ? `<button class="btn btn--red" onclick="ZS.openTutor('${it.id}','${scenario ? scenario.id : ""}')">Tutor setup</button>` : ""}
         <button class="btn" onclick="ZS.revealRP('${it.id}')">Reveal model answer</button>
       </div><div id="tutorPanel"></div><div id="rpReveal"></div>`;
     }

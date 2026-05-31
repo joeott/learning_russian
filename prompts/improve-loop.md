@@ -32,6 +32,12 @@ For source-scouting work (reading/dictation/translation material discovery),
 run `tools/zastolom source-loop` instead of this prompt and keep output in
 `source/candidate_materials.md`.
 
+For spoken-source discovery (listening/dictation loops), run:
+
+```text
+tools/zastolom future-loop --spoken --run --write-canvas
+```
+
 Constraints:
 - Never free-generate new Russian content.
 - Do not edit generated files directly.
