@@ -719,12 +719,20 @@
         <div style="margin:10px 0"><button class="iconbtn iconbtn--play" onclick="ZS.sayItem('${it.id}')">▶</button></div>
         <div style="font-family:var(--font-display);text-transform:uppercase;font-size:.78rem;letter-spacing:.06em">How did you do, out loud?</div>
         <div class="selfrate">
-          <button class="btn btn--sm" onclick="ZS.rateRP('${id}',true)">😊 Nailed it</button>
-          <button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.rateRP('${id}',false)">😬 Needs work</button>
+          <button class="btn btn--sm" onclick="ZS.rateRP('${id}',true,false)">😊 Nailed it</button>
+          <button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.rateRP('${id}',true,true)">Close with model</button>
+          <button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.rateRP('${id}',false,false)">😬 Needs work</button>
         </div></div>`;
       speak(it);
     },
-    rateRP(id, ok) { const it = ITEMS.find(i => i.id === id); gradeItem(id, ok, quiz.stageKey); quiz.answered = true; if (ok) quiz.correct++; ZS.nextQ(); },
+    rateRP(id, ok, assisted) {
+      const it = ITEMS.find(i => i.id === id);
+      gradeItem(id, ok, quiz.stageKey, null, { assisted });
+      quiz.answered = true;
+      if (ok && !assisted) quiz.correct++;
+      if (assisted) toast("Hard role-play review scheduled");
+      ZS.nextQ();
+    },
     nextQ() { quiz.i++; quiz.listenHintLevel = 0; drawQuestion(); },
     retry() { const k = location.hash.split("/")[2]; quiz = null; renderQuizRun(k); },
     async cachePack(kind) {
