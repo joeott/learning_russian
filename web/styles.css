@@ -242,6 +242,17 @@ body {
 .scenario__goal { margin-top: 4px; color: rgba(243,233,210,.9); font-size:.95rem; }
 .scenario__criteria { display:flex; flex-wrap:wrap; gap:6px; margin-top: 10px; }
 .scenario__criteria span { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; font-size:.62rem; border:1px solid rgba(243,233,210,.42); padding:2px 6px; color: var(--paper); }
+.listenhint {
+  display: inline-block; min-width: min(100%, 280px); margin-top: 12px; padding: 10px 12px;
+  background: rgba(243,233,210,.12); border:1px solid rgba(243,233,210,.36); text-align:left;
+}
+.listenhint > span {
+  display:block; margin-bottom: 4px; font-family: var(--font-display); text-transform: uppercase;
+  letter-spacing:.08em; font-size:.62rem; color: var(--amber);
+}
+.listenhint div { font-family: var(--font-serif); font-weight:700; font-size: 1.15rem; color: var(--paper); overflow-wrap:anywhere; }
+.listenhint .stress { color: var(--amber); }
+.listenactions { display:flex; justify-content:center; margin: -4px 0 14px; }
 .options { display:grid; gap: 10px; }
 .opt {
   font-family: var(--font-serif); font-size: 1.15rem; text-align:left; cursor:pointer;
