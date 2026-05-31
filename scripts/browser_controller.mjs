@@ -69,26 +69,76 @@ function escapeRegex(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+function normalizeTextForMatch(value) {
+  return String(value || "")
+    .replace(/\u00a0/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function makeLooseTextPattern(value) {
+  return normalizeTextForMatch(value).split(/\s+/).map(escapeRegex).join("\\s+");
+}
+
 async function clickByText(page, clickText, logs) {
   const cleanText = String(clickText || "").trim();
   if (!cleanText) {
     return false;
   }
+  const directNeedle = normalizeTextForMatch(cleanText);
+  const directCandidates = await page.locator("button, [role='button'], a, [role='link']").all();
+  for (const candidate of directCandidates) {
+    const texts = await candidate.evaluate((el) => {
+      const primary = (el.textContent || "").trim();
+      const aria = el.getAttribute("aria-label") || "";
+      const placeholder = el.getAttribute("placeholder") || "";
+      const value = el.getAttribute("value") || "";
+      return [primary, aria, placeholder, value].filter(Boolean);
+    });
+    const matches = texts.some((text) => {
+      const normalized = normalizeTextForMatch(text);
+      return normalized === directNeedle || normalized.includes(directNeedle) || directNeedle.includes(normalized);
+    });
+    if (!matches) {
+      continue;
+    }
+    try {
+      await candidate.scrollIntoViewIfNeeded();
+      await candidate.click({ timeout: 2000 });
+      logs.push({ type: "controller", text: `clicked '${cleanText}' via direct element scan` });
+      return true;
+    } catch (err) {
+      logs.push({
+        type: "controller",
+        text: `direct element scan click failed for '${cleanText}': ${(err && err.message) ? err.message : String(err)}`,
+      });
+    }
+  }
   const patterns = [
-    { label: "exact", locator: () => page.getByText(cleanText, { exact: true }) },
-    { label: "link exact", locator: () => page.getByRole("link", { name: cleanText, exact: true }) },
-    { label: "button exact", locator: () => page.getByRole("button", { name: cleanText, exact: true }) },
+    {
+      label: "exact text",
+      locator: () => page.getByText(new RegExp(`^${makeLooseTextPattern(cleanText)}$`, "i")),
+    },
+    {
+      label: "exact link",
+      locator: () => page.getByRole("link", { name: new RegExp(`^${makeLooseTextPattern(cleanText)}$`, "i") }),
+    },
+    {
+      label: "exact button",
+      locator: () => page.getByRole("button", { name: new RegExp(`^${makeLooseTextPattern(cleanText)}$`, "i") }),
+    },
     {
       label: "fuzzy",
-      locator: () => page.getByText(new RegExp(escapeRegex(cleanText), "i")),
+      locator: () => page.getByText(new RegExp(makeLooseTextPattern(cleanText), "i")),
     },
     {
       label: "link fuzzy",
-      locator: () => page.getByRole("link", { name: new RegExp(escapeRegex(cleanText), "i") }),
+      locator: () => page.getByRole("link", { name: new RegExp(makeLooseTextPattern(cleanText), "i") }),
     },
     {
       label: "button fuzzy",
-      locator: () => page.getByRole("button", { name: new RegExp(escapeRegex(cleanText), "i") }),
+      locator: () => page.getByRole("button", { name: new RegExp(makeLooseTextPattern(cleanText), "i") }),
     },
   ];
 
@@ -103,7 +153,7 @@ async function clickByText(page, clickText, logs) {
         logs.push({ type: "controller", text: `${label} candidate not visible for '${cleanText}', trying fallback` });
       }
       await target.scrollIntoViewIfNeeded();
-      await target.click();
+      await target.click({ timeout: 2000 });
       logs.push({ type: "controller", text: `clicked '${cleanText}' via ${label} (${count} match) -> ${await target.evaluate((el) => (el.innerText || "").trim().slice(0, 120))}` });
       return true;
     } catch (err) {
@@ -112,6 +162,46 @@ async function clickByText(page, clickText, logs) {
         text: `${label} click attempt failed for '${cleanText}': ${(err && err.message) ? err.message : String(err)}`,
       });
     }
+  }
+
+  try {
+    const fallbackNeedle = normalizeTextForMatch(cleanText);
+    const allCandidates = await page.locator("button, [role='button'], a, [role='link']").all();
+    for (const candidate of allCandidates) {
+      const candidateTexts = await candidate.evaluate((el) => {
+        return [
+          (el.textContent || "").trim(),
+          el.getAttribute("aria-label") || "",
+          el.getAttribute("placeholder") || "",
+          el.getAttribute("value") || "",
+        ].filter(Boolean);
+      });
+      const matchesNeedle = candidateTexts.some((text) => {
+        const normalized = normalizeTextForMatch(text);
+        return normalized === fallbackNeedle || normalized.includes(fallbackNeedle) || fallbackNeedle.includes(normalized);
+      });
+      if (!matchesNeedle) continue;
+      try {
+        const visible = await candidate.isVisible().catch(() => true);
+        if (!visible) {
+          logs.push({ type: "controller", text: `fallback candidate not visible for '${cleanText}', forcing click attempt` });
+        }
+        await candidate.scrollIntoViewIfNeeded();
+        await candidate.click({ timeout: 3000 });
+        logs.push({ type: "controller", text: `clicked '${cleanText}' via fallback element match` });
+        return true;
+      } catch (fallbackErr) {
+        logs.push({
+          type: "controller",
+          text: `fallback click attempt failed for '${cleanText}': ${(fallbackErr && fallbackErr.message) ? fallbackErr.message : String(fallbackErr)}`,
+        });
+      }
+    }
+  } catch (fallbackErr) {
+    logs.push({
+      type: "controller",
+      text: `fallback search failed for '${cleanText}': ${(fallbackErr && fallbackErr.message) ? fallbackErr.message : String(fallbackErr)}`,
+    });
   }
   return false;
 }
