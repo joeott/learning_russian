@@ -15,6 +15,7 @@
   const TARGET = MISSION.target_date ? new Date(MISSION.target_date + "T00:00:00") : new Date(2026, 5, 15);
   const ERROR_TYPES = DATA.error_types || [];
   const ERROR_BY_ID = Object.fromEntries(ERROR_TYPES.map(e => [e.id, e]));
+  const SCENARIOS = DATA.scenarios || [];
   const STAGE_KEYS = ["recognition", "recall", "produce", "listen", "roleplay"];
   const LEGACY_STAGE = { production: "produce", listening: "listen" };
 
@@ -128,6 +129,20 @@
       return st && st.mastered;
     }).length, 0);
     return total ? Math.round(mastered / total * 100) : 0;
+  }
+  function scenarioForItem(id) {
+    return SCENARIOS.find(s => (s.required_items || []).includes(id));
+  }
+  function scenarioCard(it) {
+    const s = scenarioForItem(it.id);
+    if (!s) return "";
+    const criteria = (s.success_criteria || []).slice(0, 3)
+      .map(c => `<span>${escapeHtml(c.replace(/_/g, " "))}</span>`).join("");
+    return `<div class="scenario">
+      <div class="scenario__setting">${escapeHtml(s.setting || "Scenario")}</div>
+      <div class="scenario__goal">${escapeHtml(s.goal || "")}</div>
+      ${criteria ? `<div class="scenario__criteria">${criteria}</div>` : ""}
+    </div>`;
   }
 
   function moduleProgress(modId) {
@@ -316,6 +331,10 @@
   ];
   function stagePool(stageKey) {
     if (stageKey === "listen") return ITEMS.filter(i => i.syllables >= 1);
+    if (stageKey === "roleplay" && SCENARIOS.length) {
+      const scenarioIds = new Set(SCENARIOS.flatMap(s => s.required_items || []));
+      return ITEMS.filter(i => scenarioIds.has(i.id));
+    }
     if (stageKey === "roleplay") return ITEMS.filter(i => i.priority <= 2 && (i.ru_plain.includes(" ") || i.tags.includes("toast")));
     return ITEMS;
   }
@@ -403,7 +422,7 @@
       body = `<div style="text-align:center;margin-bottom:14px"><button class="iconbtn iconbtn--play" onclick="ZS.sayItem('${it.id}')">▶</button></div>
         <div class="options">${opts.map(o => `<button class="opt" onclick="ZS.answer('${o.id}','${it.id}',this)">${escapeHtml(o.en)}</button>`).join("")}</div>`;
     } else { // roleplay
-      promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-en">${escapeHtml(it.en)}</div>`;
+      promptHtml = `<div class="q-instr">${stage.instr}</div>${scenarioCard(it)}<div class="q-en">${escapeHtml(it.en)}</div>`;
       body = `<div style="text-align:center"><button class="btn" onclick="ZS.revealRP('${it.id}')">Reveal model answer</button></div><div id="rpReveal"></div>`;
     }
 
