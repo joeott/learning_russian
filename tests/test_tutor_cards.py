@@ -21,7 +21,8 @@ class TutorCardTests(unittest.TestCase):
     def test_tutor_cards_map_to_scenarios_and_boundaries(self) -> None:
         cards = self.content.get("tutor_cards", [])
         scenarios = {scenario["id"]: scenario for scenario in self.content["scenarios"]}
-        self.assertGreaterEqual(len(cards), 3)
+        scenario_ids = list(scenarios)
+        self.assertEqual(len(cards), len(scenarios))
         for card in cards:
             scenario = scenarios[card["scenario_id"]]
             boundary = lesson_boundary(self.content, card["lesson_id"])
@@ -35,6 +36,12 @@ class TutorCardTests(unittest.TestCase):
                 set(card["required_items"]), set(card["allowed_item_ids"])
             )
             self.assertLessEqual(set(card["structures"]), boundary["structures"])
+        missing = [
+            sid
+            for sid in scenario_ids
+            if sid not in {card["scenario_id"] for card in cards}
+        ]
+        self.assertFalse(missing, f"Missing tutor cards for: {', '.join(missing)}")
 
     def test_tutor_prompts_use_verified_phrases_and_correction_policy(self) -> None:
         items = {item["id"]: item for item in self.content["items"]}

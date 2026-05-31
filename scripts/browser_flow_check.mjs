@@ -276,17 +276,27 @@ async function assertLessonLockedRecognition(page, baseUrl) {
   }
 
   await page.goto(withHash(baseUrl, "#/quiz/recognition"), { waitUntil: "networkidle" });
-  await page.waitForTimeout(250);
-  const prompted = await page.evaluate(() => {
-    const prompt = document.querySelector(".quiz__prompt")?.innerText || "";
-    const item = window.CONTENT_DATA.items.find((candidate) => prompt.includes(candidate.ru));
-    return item ? { id: item.id, lesson_number: item.lesson_number, ru: item.ru } : null;
-  });
-  if (!prompted) throw new Error("Could not map lesson-locked recognition prompt to a content item");
-  if (prompted.lesson_number > expected.lessonNumber) {
-    throw new Error(`Lesson lock violated: ${prompted.id} is lesson ${prompted.lesson_number}, expected <= ${expected.lessonNumber}`);
+  await page.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 5000 });
+  const prompted = await page.locator(".quiz").evaluate((el) => ({
+    id: el.dataset.itemId,
+    lessonNumber: Number(el.dataset.lessonNumber || 0),
+    stage: el.dataset.stage,
+  }));
+  if (!prompted || !prompted.id || !prompted.lessonNumber) {
+    const fallback = await page.evaluate(() => {
+      const prompt = document.querySelector(".quiz__prompt")?.innerText || "";
+      const item = window.CONTENT_DATA.items.find((candidate) => prompt.includes(candidate.ru));
+      if (!item) return null;
+      return { id: item.id, lessonNumber: item.lesson_number, ru: item.ru };
+    });
+    if (fallback) Object.assign(prompted, fallback);
+    if (!fallback) {
+      throw new Error("Could not map lesson-locked recognition prompt to a content item");
+    }
   }
-
+  if (prompted.lessonNumber > expected.lessonNumber) {
+    throw new Error(`Lesson lock violated: ${prompted.id} is lesson ${prompted.lessonNumber}, expected <= ${expected.lessonNumber}`);
+  }
   for (const stageKey of ["recognition", "recall", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"]) {
     const available = expected[stageKey];
     if (!available) {
@@ -345,7 +355,11 @@ async function assertLessonLockedRecognition(page, baseUrl) {
   if (terminal.phrasesUnlocked !== terminal.phrasesTotal) {
     throw new Error(`Terminal lesson should unlock all phrases at selected boundary ${terminal.lessonNumber}, got ${terminal.phrasesUnlocked}/${terminal.phrasesTotal}`);
   }
-  return prompted;
+  return {
+    id: prompted.id || "",
+    lesson_number: prompted.lessonNumber || 0,
+    stage: prompted.stage || "",
+  };
 }
 
 async function checkStage(page, baseUrl, stageKey, interact) {
@@ -712,9 +726,34 @@ async function assertRoleplayTutorPanel(page, baseUrl) {
   const roleplayState = await page.locator(".quiz").evaluate((el) => ({
     itemId: el.dataset.itemId,
     lessonNumber: Number(el.dataset.lessonNumber || 0),
+    scenarioId: el.dataset.scenarioId || "",
   }));
   if (!roleplayState.itemId) {
     throw new Error("Role-play card missing item id for tutor setup verification");
+  }
+  if (!roleplayState.scenarioId) {
+    throw new Error("Role-play card missing scenario binding in data attributes");
+  }
+  const scenarioMeta = await page.evaluate((scenarioId) => {
+    const scenario = (window.CONTENT_DATA.scenarios || []).find((candidate) => candidate.id === scenarioId);
+    if (!scenario) return null;
+    return {
+      id: scenario.id,
+      setting: scenario.setting || "",
+      goal: scenario.goal || "",
+      lessonNumber: scenario.lesson_number || null,
+      requiredItems: scenario.required_items || [],
+      successCriteria: scenario.success_criteria || [],
+    };
+  }, roleplayState.scenarioId);
+  if (!scenarioMeta) {
+    throw new Error(`Role-play scenario missing from generated content: ${roleplayState.scenarioId}`);
+  }
+  if (!scenarioMeta.requiredItems.includes(roleplayState.itemId)) {
+    throw new Error(`Role-play card item ${roleplayState.itemId} is not required in scenario ${roleplayState.scenarioId}`);
+  }
+  if (!scenarioMeta.successCriteria.length) {
+    throw new Error(`Scenario ${roleplayState.scenarioId} has no success criteria`);
   }
   const beforeOpenCount = await page.evaluate((itemId) => {
     const ns = window.CONTENT_DATA.course.storage_namespace;
@@ -739,6 +778,17 @@ async function assertRoleplayTutorPanel(page, baseUrl) {
   if (!promptText.includes("curriculum boundary")) {
     throw new Error("Tutor prompt did not preserve curriculum-boundary constraint");
   }
+  const tutorPanel = await page.locator("#tutorPanel").innerText();
+  if (!tutorPanel.toLowerCase().includes((scenarioMeta.setting || "").toLowerCase())) {
+    throw new Error(`Tutor panel missing expected scenario context for ${roleplayState.scenarioId}`);
+  }
+  const requiredScenarioTotal = await page.evaluate((scenarioId) => {
+    const set = new Set((window.CONTENT_DATA.scenarios || []).map((s) => s.id));
+    return set.has(scenarioId) ? set.size : 0;
+  }, roleplayState.scenarioId);
+  if (!requiredScenarioTotal) {
+    throw new Error(`Generated scenario coverage missing for role-play scenario ${roleplayState.scenarioId}`);
+  }
   const afterOpenCount = await page.evaluate((itemId) => {
     const ns = window.CONTENT_DATA.course.storage_namespace;
     const store = JSON.parse(localStorage.getItem(ns) || "{}");
@@ -749,6 +799,60 @@ async function assertRoleplayTutorPanel(page, baseUrl) {
   }
   if (!(await page.locator("#tutorPromptText").count())) {
     throw new Error("Tutor panel did not render raw prompt text");
+  }
+}
+
+async function assertListenLadderSupportsNoise(page, baseUrl) {
+  // listening ladder
+  await page.goto(withHash(baseUrl, "#/quiz/listen"), { waitUntil: "networkidle" });
+  await page.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 5000 });
+
+  const activeListenStep = async () => {
+    return await page.evaluate(() => {
+      const active = document.querySelector(".listenladder .chip.is-on");
+      if (!active || !active.id) return "";
+      return active.id.replace("listenStep_", "");
+    });
+  };
+
+  const stepSeq = ["first_letter", "cloze", "full_caption"];
+  const nextHint = page.locator("#listenHintBtn");
+
+  for (const step of stepSeq) {
+    await nextHint.waitFor({ state: "visible", timeout: 5000 });
+    if (!(await nextHint.isVisible())) throw new Error("listen Next hint button missing");
+    if (await nextHint.isDisabled()) {
+      const stepText = await nextHint.innerText();
+      throw new Error(`listen Next hint disabled before reaching ${step}; current label=${stepText}`);
+    }
+    await nextHint.click();
+    await page.waitForTimeout(120);
+    const actual = await activeListenStep();
+    if (actual !== step) {
+      throw new Error(`Listening ladder did not advance to ${step}; current is ${actual}`);
+    }
+  }
+
+  const controls = ["Slow pass", "Table speed", "Room noise"];
+  for (const control of controls) {
+    const btn = page.getByRole("button", { name: new RegExp(`^${control}$`, "i") });
+    if (!(await btn.count())) throw new Error(`Listening control missing: ${control}`);
+    await btn.first().click();
+    await page.waitForTimeout(120);
+  }
+
+  if (!(await nextHint.isDisabled())) {
+    await nextHint.click();
+    await page.waitForTimeout(60);
+    const actual = await activeListenStep();
+    if (actual && actual !== "full_caption") {
+      throw new Error(`Listening ladder should stay at full caption after full progression; got ${actual}`);
+    }
+  }
+
+  const fullCaption = await page.locator("#listenStep_full_caption");
+  if (!(await fullCaption.isVisible())) {
+    throw new Error("Listening full-caption step chip missing");
   }
 }
 
@@ -854,6 +958,7 @@ export async function runFlowCheck(opts) {
     completed.push("produce");
 
     await checkStage(page, opts.url, "listen", async () => {
+      await assertListenLadderSupportsNoise(page, opts.url);
       await page.locator(".opt").first().click();
     });
     completed.push("listen");

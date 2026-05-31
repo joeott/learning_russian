@@ -257,31 +257,37 @@ export async function runInspection(opts) {
       const logs = [];
       page.on("console", (msg) => logs.push({ type: msg.type(), text: msg.text() }));
       page.on("pageerror", (err) => logs.push({ type: "pageerror", text: err.message }));
+      page.on("requestfailed", (req) => {
+        const errorText = req.failure()?.errorText || "failed";
+        logs.push({ type: "requestfailed", text: `${req.method()} ${req.url()} -> ${errorText}` });
+      });
       await page.setDefaultTimeout(12000);
       await page.goto(opts.url, { waitUntil: "networkidle" });
+      await page.waitForFunction(() => Boolean(document.body && document.body.innerText !== undefined));
       await page.waitForTimeout(opts.waitMs);
       const before = await inspectPage(page, `${viewportName}-before`, opts.out);
       const steps = [];
-    for (const [index, clickText] of opts.clickTexts.entries()) {
-      const step = { clickText };
-      try {
-        const clicked = await clickByText(page, clickText, logs);
-        if (!clicked) {
-          logs.push({ type: "controller", text: `Could not click '${clickText}'` });
+      for (const [index, clickText] of opts.clickTexts.entries()) {
+        const step = { clickText };
+        try {
+          const clicked = await clickByText(page, clickText, logs);
+          if (!clicked) {
+            logs.push({ type: "controller", text: `Could not click '${clickText}'` });
+            step.error = `Could not click '${clickText}'`;
+            steps.push(step);
+            continue;
+          }
+        } catch (err) {
+          logs.push({ type: "controller", text: `click error for '${clickText}': ${(err && err.message) || err}` });
           step.error = `Could not click '${clickText}'`;
           steps.push(step);
           continue;
         }
-      } catch (err) {
-        logs.push({ type: "controller", text: `click error for '${clickText}': ${(err && err.message) || err}` });
-        step.error = `Could not click '${clickText}'`;
+        await page.waitForFunction(() => Boolean(document.body));
+        await page.waitForTimeout(Math.max(200, opts.waitMs));
+        step.snapshot = await inspectPage(page, `${viewportName}-step-${index + 1}`, opts.out);
         steps.push(step);
-        continue;
       }
-      await page.waitForTimeout(opts.waitMs);
-      step.snapshot = await inspectPage(page, `${viewportName}-step-${index + 1}`, opts.out);
-      steps.push(step);
-    }
       results.push({ viewport: viewportName, url: opts.url, before, steps, after: steps.length ? steps[steps.length - 1].snapshot : null, logs });
       await page.close();
     }

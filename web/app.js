@@ -33,6 +33,9 @@
   const TUTOR_BY_SCENARIO = Object.fromEntries(TUTOR_CARDS.map(c => [c.scenario_id, c]));
   const STAGE_KEYS = ["recognition", "recall", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"];
   const LEGACY_STAGE = { production: "produce", listening: "listen" };
+  const SCENARIO_INDEX = Object.create(null);
+  SCENARIOS.forEach((s, i) => { SCENARIO_INDEX[s.id] = i; });
+  const LISTEN_STEPS = ["no_text", "first_letter", "cloze", "full_caption"];
   const CRITERIA_LABELS = {
     uses_formal_greeting: "formal greeting",
     introduces_self: "introduces self",
@@ -454,6 +457,20 @@
     if (["case_or_inflection", "word_order"].includes(errorType)) return "backtranslate";
     return "produce";
   }
+  function recordRepairFocus(id, stageKey, errorTypes) {
+    if (!errorTypes || !errorTypes.length) return;
+    const r = rec(id);
+    const st = stageRec(id, stageKey);
+    (errorTypes || []).forEach((err) => {
+      if (!err || !ERROR_BY_ID[err]) return;
+      st.last_repair_focus = err;
+      st.repair_focus_counts = st.repair_focus_counts || {};
+      st.repair_focus_counts[err] = (st.repair_focus_counts[err] || 0) + 1;
+      r.errors[err] = (r.errors[err] || 0) + 1;
+      r.repair_focus_counts = r.repair_focus_counts || {};
+      r.repair_focus_counts[err] = (r.repair_focus_counts[err] || 0) + 1;
+    });
+  }
   function repairProfile() {
     const rows = [];
     Object.keys(store).forEach(id => {
@@ -533,7 +550,17 @@
   }
   function scenarioForItem(id) {
     const limit = activeLesson().lesson_number || 99;
-    return SCENARIOS.find(s => scenarioLesson(s) <= limit && (s.required_items || []).includes(id));
+    const candidates = SCENARIOS.filter(s => scenarioLesson(s) <= limit && (s.required_items || []).includes(id));
+    if (!candidates.length) return null;
+    const lessonFor = (s) => (Number.isFinite(scenarioLesson(s)) ? scenarioLesson(s) : 99);
+    return candidates.slice().sort((a, b) => {
+      const lessonCmp = lessonFor(b) - lessonFor(a);
+      if (lessonCmp !== 0) return lessonCmp;
+      const cpa = (a.success_criteria || []).length;
+      const cpb = (b.success_criteria || []).length;
+      if (cpb !== cpa) return cpb - cpa;
+      return (SCENARIO_INDEX[b.id] || 0) - (SCENARIO_INDEX[a.id] || 0);
+    })[0];
   }
   function scenarioLesson(s) {
     if (typeof s.lesson_number === "number") return s.lesson_number;
@@ -1028,7 +1055,9 @@
     const dots = quiz.q.map((_, k) => `<span class="${k < quiz.i ? "done" : k === quiz.i ? "cur" : ""}"></span>`).join("");
     let promptHtml = "", body = "";
 
-    if (stage.key === "recognition") {
+  let scenario = null;
+
+  if (stage.key === "recognition") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru">${colorStress(it.ru)}</div>`;
       const opts = shuffle([it].concat(sample(optionPool, 3, it)));
       body = `<div class="options">${opts.map(o => `<button class="opt" onclick="ZS.answer('${o.id}','${it.id}',this)">${escapeHtml(o.en)}</button>`).join("")}</div>`;
@@ -1091,7 +1120,7 @@
       body = `<div class="answerbox"><input id="prodIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Печатайте по-русски…" />
         <button class="btn btn--red" onclick="ZS.checkProd('${it.id}')">Check</button></div>
         <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>`;
-    } else if (stage.key === "listen") {
+  } else if (stage.key === "listen") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru" style="font-size:2.6rem">🔊</div><div id="listenHint">${listeningHintHtml(it)}</div>`;
       const opts = shuffle([it].concat(sample(optionPool, 3, it)));
       body = `<div style="text-align:center;margin-bottom:14px"><button class="iconbtn iconbtn--play" onclick="ZS.sayItem('${it.id}')">▶</button></div>
@@ -1103,7 +1132,8 @@
           <button id="listenHintBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.listenHint('${it.id}')">Next hint</button>
         </div>
         <div class="options">${opts.map(o => `<button class="opt" onclick="ZS.answer('${o.id}','${it.id}',this)">${escapeHtml(o.en)}</button>`).join("")}</div>`;
-    } else { // roleplay
+  } else { // roleplay
+      scenario = scenarioForItem(it.id);
       promptHtml = `<div class="q-instr">${stage.instr}</div>${scenarioCard(it)}<div class="q-en">${escapeHtml(it.en)}</div>`;
       const tutor = tutorCardForItem(it.id);
       body = `<div style="text-align:center;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
@@ -1115,7 +1145,7 @@
     $("#view").innerHTML = `
       <div class="section-head"><span class="section-head__num">${String(stage.n).padStart(2, "0")}</span><span class="section-head__title">${stage.title}</span>
         <span class="section-head__sub"><a href="#/quiz" style="color:var(--red)">← all drills</a></span></div>
-      <div class="quiz" data-stage="${escapeHtml(stage.key)}" data-item-id="${escapeHtml(it.id)}" data-lesson-number="${escapeHtml(String(it.lesson_number || ""))}">
+      <div class="quiz" data-stage="${escapeHtml(stage.key)}" data-item-id="${escapeHtml(it.id)}" data-scenario-id="${scenario ? escapeHtml(scenario.id) : ""}" data-lesson-number="${escapeHtml(String(it.lesson_number || ""))}">
         <div class="quiz__progress">${dots}</div>
         <div class="quiz__prompt">${promptHtml}</div>
         <div id="qbody">${body}</div>
@@ -1581,7 +1611,7 @@
     listenHint(id) {
       if (!quiz || quiz.stageKey !== "listen") return;
       const it = practiceItem(id);
-      const order = ["no_text", "first_letter", "cloze", "full_caption"];
+  const order = LISTEN_STEPS.slice();
       const current = Math.max(0, order.indexOf(quiz.listenStep || "no_text"));
       quiz.listenStep = order[Math.min(current + 1, order.length - 1)];
       quiz.listenAssistance = Math.max(quiz.listenAssistance || 0, ladderAssistance(quiz.listenStep));
@@ -1721,15 +1751,18 @@
       if (missed.length) {
         const r = rec(id);
         r.roleplay_criteria_misses = r.roleplay_criteria_misses || {};
+        const missErrorTypes = [];
         missed.forEach(c => {
           r.roleplay_criteria_misses[c] = (r.roleplay_criteria_misses[c] || 0) + 1;
+          missErrorTypes.push(criterionErrorType(c));
         });
+        if (missErrorTypes.length) {
+          const extras = missErrorTypes.filter((_, idx) => idx > 0);
+          if (extras.length) {
+            recordRepairFocus(id, quiz.stageKey, extras);
+          }
+        }
       }
-      missed.slice(1).forEach(c => {
-        const r = rec(id);
-        const err = criterionErrorType(c);
-        r.errors[err] = (r.errors[err] || 0) + 1;
-      });
       save();
       quiz.answered = true;
       if (ok && !assisted) quiz.correct++;
