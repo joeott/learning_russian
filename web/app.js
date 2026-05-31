@@ -24,7 +24,7 @@
   const ERROR_BY_ID = Object.fromEntries(ERROR_TYPES.map(e => [e.id, e]));
   const SCENARIOS = DATA.scenarios || [];
   const TUTOR_BY_SCENARIO = Object.fromEntries(TUTOR_CARDS.map(c => [c.scenario_id, c]));
-  const STAGE_KEYS = ["recognition", "recall", "produce", "listen", "roleplay"];
+  const STAGE_KEYS = ["recognition", "recall", "cloze", "dictation", "backtranslate", "produce", "listen", "roleplay"];
   const LEGACY_STAGE = { production: "produce", listening: "listen" };
   const CRITERIA_LABELS = {
     uses_formal_greeting: "formal greeting",
@@ -172,13 +172,41 @@
     });
   }
   function readiness() {
-    const required = ITEMS.filter(i => i.priority <= 2);
-    const total = required.length * STAGE_KEYS.length;
-    const mastered = required.reduce((n, it) => n + STAGE_KEYS.filter(k => {
-      const st = stageState(it.id, k);
+    const requiredStages = STAGE_KEYS.map(stageKey =>
+      stagePool(stageKey).filter(it => !it.priority || it.priority <= 2).map(it => [it, stageKey])
+    ).flat();
+    const total = requiredStages.length;
+    const mastered = requiredStages.filter(([it, stageKey]) => {
+      const st = stageState(it.id, stageKey);
       return st && st.mastered;
-    }).length, 0);
+    }).length;
     return total ? Math.round(mastered / total * 100) : 0;
+  }
+  function stageAccuracy(stageKey) {
+    const states = stagePool(stageKey).map(it => stageState(it.id, stageKey)).filter(Boolean);
+    const seen = states.reduce((n, st) => n + (st.seen || 0), 0);
+    const correct = states.reduce((n, st) => n + (st.correct || 0), 0);
+    return seen ? Math.round(correct / seen * 100) : 0;
+  }
+  function analytics() {
+    const now = Date.now();
+    const day = 86400000;
+    const due = STAGE_KEYS.reduce((n, stageKey) => n + stagePool(stageKey).filter(it => {
+      const st = stageState(it.id, stageKey);
+      return st && isDue(st);
+    }).length, 0);
+    const overdue = STAGE_KEYS.reduce((n, stageKey) => n + stagePool(stageKey).filter(it => {
+      const st = stageState(it.id, stageKey);
+      return st && st.due_at && new Date(st.due_at).getTime() < now - day;
+    }).length, 0);
+    return {
+      due,
+      overdue,
+      listenAccuracy: stageAccuracy("listen"),
+      productionAccuracy: stageAccuracy("produce"),
+      roleplayPass: stageAccuracy("roleplay"),
+      dictationAccuracy: stageAccuracy("dictation"),
+    };
   }
   function repairStageFor(errorType) {
     if (["listening_misparse", "stress", "vowel_reduction"].includes(errorType)) return "dictation";
@@ -367,6 +395,7 @@
      ==================================================================== */
   function renderHome() {
     const op = overallProgress();
+    const a = analytics();
     const d = daysLeft();
     const mods = MODULES.map((m, i) => {
       const p = moduleProgress(m.id);
@@ -393,10 +422,20 @@
       <div class="stats">
         <div class="stat rise"><div class="stat__num">${op.done}<small>/${op.total}</small></div><div class="stat__label">Phrases touched</div>
           <div class="progressbar"><span style="width:${op.pct}%"></span></div></div>
-        <div class="stat rise"><div class="stat__num">${dueItems("recall").length}</div><div class="stat__label">Recall due now</div></div>
-        <div class="stat rise"><div class="stat__num">${fragileItems().length}</div><div class="stat__label">Fragile phrases</div></div>
+        <div class="stat rise"><div class="stat__num">${a.due}</div><div class="stat__label">Due reviews</div></div>
+        <div class="stat rise"><div class="stat__num">${a.overdue}</div><div class="stat__label">Overdue reviews</div></div>
         <div class="stat rise"><div class="stat__num">${readiness()}<small>%</small></div><div class="stat__label">Dinner readiness</div></div>
         <div class="stat rise"><div class="stat__num">${d}</div><div class="stat__label">Days to ${escapeHtml(targetLabel())}</div></div>
+      </div>
+      <div class="analyticsbox rise">
+        <div><h3>Performance signals</h3><p>Readiness now includes cloze, dictation, back-translation, production, listening, and role-play mastery.</p></div>
+        <div class="analyticsgrid">
+          <div><strong>${a.dictationAccuracy}<small>%</small></strong><span>dictation accuracy</span></div>
+          <div><strong>${a.productionAccuracy}<small>%</small></strong><span>production accuracy</span></div>
+          <div><strong>${a.listenAccuracy}<small>%</small></strong><span>listening accuracy</span></div>
+          <div><strong>${a.roleplayPass}<small>%</small></strong><span>role-play pass rate</span></div>
+          <div><strong>${fragileItems().length}</strong><span>fragile high-priority phrases</span></div>
+        </div>
       </div>
 
       <div class="section-head"><span class="section-head__num">★</span><span class="section-head__title">The Table, module by module</span>
