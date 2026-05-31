@@ -320,6 +320,15 @@ body {
   .learnbar--scroll .chip { flex: 0 0 auto; }
   .learnbar--tools { gap: 8px; }
   .learnbar--tools .spacer { display: none; }
+  .mastery {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-right: -20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .mastery .ring { flex: 0 0 112px; }
   .offlinebox { grid-template-columns: 1fr; }
   .offlinebox__actions { justify-content:flex-start; }
 }
