@@ -19,6 +19,7 @@ preserved so the UI can surface "rehearse with Kadriya" items.
 
 import json
 import os
+import re
 import unicodedata
 
 from course_config import DEFAULT_COURSE_ID, load_course
@@ -214,6 +215,52 @@ MODULES = [
         "⚙️",
     ),
 ]
+
+MODULE_STRUCTURES = {
+    "first_contact": [
+        "register:formal_you",
+        "phrase:greeting",
+        "phrase:introduction",
+        "phrase:guest_gratitude",
+    ],
+    "politeness": [
+        "register:formal_you",
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+    ],
+    "toasts": [
+        "culture:toast_etiquette",
+        "phrase:toast_za_accusative",
+        "phrase:table_toast",
+    ],
+    "family": [
+        "lexical:kinship_terms",
+        "register:name_patronymic",
+        "phrase:family_affection",
+    ],
+    "food": [
+        "phrase:food_offer",
+        "phrase:compliment_food",
+        "phrase:polite_decline",
+        "morphology:gendered_short_form",
+    ],
+    "smalltalk": [
+        "phrase:personal_origin",
+        "phrase:work_identity",
+        "grammar:present_first_person",
+    ],
+    "listening": [
+        "skill:listening_question_recognition",
+        "grammar:formal_question",
+        "phrase:host_question",
+    ],
+    "verbs": [
+        "grammar:present_first_person",
+        "grammar:formal_second_person",
+        "lexical:core_verbs",
+    ],
+}
 
 # ---------------------------------------------------------------------------
 # Items. Tuple form:
@@ -708,6 +755,100 @@ def syllable_count(s: str) -> int:
     return sum(1 for ch in strip_stress(s) if ch in vowels)
 
 
+def lexemes_for_phrase(ru_plain: str) -> list[str]:
+    phrase = ru_plain.lower().strip()
+    tokens = re.findall(r"[а-яё]+", phrase, flags=re.IGNORECASE)
+    lexemes = set(tokens)
+    if " " in phrase:
+        lexemes.add(phrase)
+    return sorted(lexemes)
+
+
+def structures_for_item(item: dict) -> list[str]:
+    structures = set(MODULE_STRUCTURES[item["module"]])
+    tags = set(item.get("tags", []))
+    if "greeting" in tags:
+        structures.add("phrase:greeting")
+    if "intro" in tags:
+        structures.add("phrase:introduction")
+    if "rescue" in tags:
+        structures.add("phrase:repair")
+    if "toast" in tags or "toast-vocab" in tags:
+        structures.add("culture:toast_etiquette")
+        structures.add("phrase:toast_za_accusative")
+    if item.get("gender"):
+        structures.add("morphology:gendered_short_form")
+    if item.get("recognize"):
+        structures.add("skill:listening_question_recognition")
+    return sorted(structures)
+
+
+def build_curriculum(course: dict, modules: list[dict], items: list[dict]) -> dict:
+    default_lesson_id = course.get("curriculum", {}).get("default_lesson_id")
+    lessons = []
+    prior_lesson_id = None
+    for idx, module in enumerate(modules, 1):
+        lesson_id = f"family_visit_{idx:03d}"
+        module_items = [i for i in items if i["module"] == module["id"]]
+        active_vocab = sorted(
+            {
+                lexeme
+                for item in module_items
+                if not item.get("recognize")
+                for lexeme in item.get("lexemes", [])
+            }
+        )
+        passive_vocab = sorted(
+            {
+                lexeme
+                for item in module_items
+                if item.get("recognize")
+                for lexeme in item.get("lexemes", [])
+            }
+        )
+        structures = sorted(
+            set(MODULE_STRUCTURES[module["id"]]).union(
+                *(set(item.get("structures", [])) for item in module_items)
+            )
+        )
+        errors = sorted(
+            {
+                error
+                for item in module_items
+                for error in item.get("allowed_error_types", [])
+            }
+        )
+        lessons.append(
+            {
+                "lesson_id": lesson_id,
+                "lesson_number": idx,
+                "module": module["id"],
+                "title": module["title"],
+                "introduced_lexemes": sorted(
+                    {
+                        lexeme
+                        for item in module_items
+                        for lexeme in item.get("lexemes", [])
+                    }
+                ),
+                "active_vocab": active_vocab,
+                "passive_vocab": passive_vocab,
+                "introduced_structures": structures,
+                "allowed_error_types": errors,
+                "prerequisites": [prior_lesson_id] if prior_lesson_id else [],
+            }
+        )
+        prior_lesson_id = lesson_id
+    lesson_ids = {lesson["lesson_id"] for lesson in lessons}
+    if default_lesson_id not in lesson_ids:
+        default_lesson_id = lessons[-1]["lesson_id"] if lessons else ""
+    return {
+        "model": "lesson_locked_i_plus_1",
+        "default_lesson_id": default_lesson_id,
+        "lessons": lessons,
+    }
+
+
 def build():
     course = load_course(os.environ.get("ZASTOLOM_COURSE", DEFAULT_COURSE_ID))
     mod_index = {m[0]: idx for idx, m in enumerate(MODULES)}
@@ -752,6 +893,9 @@ def build():
             "tags": flags.get("tags", []),
         }
         item["error_types"] = infer_error_types(item)
+        item["allowed_error_types"] = item["error_types"]
+        item["lexemes"] = lexemes_for_phrase(item["ru_plain"])
+        item["structures"] = structures_for_item(item)
         item["stages"] = [
             "recognition",
             "recall",
@@ -761,6 +905,30 @@ def build():
             "maintenance",
         ]
         items.append(item)
+    curriculum = build_curriculum(course, modules, items)
+    lesson_for_module = {
+        lesson["module"]: lesson for lesson in curriculum.get("lessons", [])
+    }
+    for item in items:
+        lesson = lesson_for_module[item["module"]]
+        item["lesson_id"] = lesson["lesson_id"]
+        item["lesson_number"] = lesson["lesson_number"]
+        item["prerequisites"] = lesson["prerequisites"]
+    item_by_id = {item["id"]: item for item in items}
+    scenarios = []
+    for scenario in SCENARIOS:
+        enriched = dict(scenario)
+        required = [
+            item_by_id[item_id] for item_id in scenario.get("required_items", [])
+        ]
+        if required:
+            lesson_number = max(item["lesson_number"] for item in required)
+            lesson = next(
+                l for l in curriculum["lessons"] if l["lesson_number"] == lesson_number
+            )
+            enriched["lesson_id"] = lesson["lesson_id"]
+            enriched["lesson_number"] = lesson_number
+        scenarios.append(enriched)
     data = {
         "course": course,
         "meta": {
@@ -773,11 +941,12 @@ def build():
             "counts": {m: counters.get(m, 0) for m in mod_index},
             "total_items": len(items),
         },
+        "curriculum": curriculum,
         "modules": modules,
         "items": items,
         "error_types": ERROR_TYPES,
         "contrast_sets": CONTRAST_SETS,
-        "scenarios": SCENARIOS,
+        "scenarios": scenarios,
     }
     out = os.path.join(ROOT, "content", "content.json")
     os.makedirs(os.path.dirname(out), exist_ok=True)

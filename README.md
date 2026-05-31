@@ -86,6 +86,8 @@ prompts/        local iterative improvement-loop prompt
 
 The web app now tracks stage-specific mastery and due reviews locally: recognition, recall, listening, production, and role-play are scheduled separately, with lapse/error data feeding repair drills.
 
+The content contract also includes a lesson-locked curriculum graph. Each item carries its lesson boundary, lexemes, structures, prerequisites, and allowed error types so future dictation, cloze, back-translation, and AI tutor features can reject out-of-sequence material instead of free-generating beyond the learner's unlocked Russian.
+
 ---
 
 ## The evidence behind the method
