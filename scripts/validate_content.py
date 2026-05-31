@@ -13,6 +13,31 @@ from curriculum import lesson_boundary
 
 ROOT = Path(__file__).resolve().parent.parent
 ACUTE = "\u0301"
+PROTOCOL_SCENARIO_RE = re.compile(
+    r"^###\s*Scenario\s+(\d+)\s*[—-]\s*(.+)$", re.MULTILINE
+)
+STOPWORDS = {
+    "the",
+    "and",
+    "a",
+    "an",
+    "to",
+    "for",
+    "of",
+    "in",
+    "on",
+    "with",
+    "at",
+    "from",
+    "up",
+    "your",
+    "you",
+    "it",
+    "i",
+    "i'm",
+    "i‘m",
+    "i’m",
+}
 REQUIRED_ITEM_FIELDS = {
     "id",
     "module",
@@ -34,6 +59,68 @@ REQUIRED_ITEM_FIELDS = {
 
 def strip_stress(value: str) -> str:
     return unicodedata.normalize("NFC", value).replace(ACUTE, "")
+
+
+def parse_protocol_scenarios(path: Path) -> list[tuple[int, str]]:
+    text = path.read_text(encoding="utf-8")
+    parsed = []
+    for match in PROTOCOL_SCENARIO_RE.finditer(text):
+        number = int(match.group(1))
+        title = match.group(2).strip()
+        parsed.append((number, title))
+    return parsed
+
+
+def tokenize_words(value: str) -> set[str]:
+    tokens = {
+        token.lower()
+        for token in re.findall(r"[a-zа-яё]{2,}", value.lower(), flags=re.IGNORECASE)
+    }
+    return {token for token in tokens if token not in STOPWORDS}
+
+
+def validate_protocol_scenarios(data: dict, protocol: Path) -> list[str]:
+    errors: list[str] = []
+    parsed = parse_protocol_scenarios(protocol)
+    if not parsed:
+        errors.append("tutor protocol scenarios not found")
+        return errors
+    numbers = [number for number, _ in parsed]
+    if numbers != list(range(1, len(parsed) + 1)):
+        errors.append("protocol scenario headings must be 1..N in order")
+
+    scenarios = data.get("scenarios", [])
+    if len(parsed) != len(scenarios):
+        errors.append(
+            "protocol scenario count does not match generated scenarios: "
+            f"{len(parsed)} != {len(scenarios)}"
+        )
+        return errors
+
+    scenario_tokens = {
+        scenario.get("id"): tokenize_words(
+            f"{scenario.get('id')} {scenario.get('setting', '')} {scenario.get('goal', '')}"
+        )
+        for scenario in scenarios
+    }
+    for number, title in parsed:
+        protocol_tokens = tokenize_words(title)
+        if not protocol_tokens:
+            errors.append(
+                f"scenario heading {number} in protocol has no parseable tokens"
+            )
+            continue
+        if not any(protocol_tokens & tokens for tokens in scenario_tokens.values()):
+            errors.append(
+                f"protocol scenario {number} '{title}' did not match any generated scenario"
+            )
+
+    for scenario_id, tokens in scenario_tokens.items():
+        if not any(tokens & tokenize_words(title) for _, title in parsed):
+            errors.append(
+                f"generated scenario '{scenario_id}' is not represented in protocol headings"
+            )
+    return errors
 
 
 def fail(errors: list[str], message: str) -> None:
@@ -569,6 +656,7 @@ def validate_content(data: dict) -> list[str]:
         for error_type in item.get("error_types", []):
             if error_type not in error_types:
                 fail(errors, f"{item.get('id')}: unknown error_type {error_type}")
+    errors += validate_protocol_scenarios(data, ROOT / "tutor" / "roleplay_protocol.md")
     return errors
 
 
