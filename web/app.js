@@ -900,6 +900,7 @@
         <a class="btn" href="../anki/README.md" target="_blank">📱 Phone deck (Anki)</a>
       </div>
       <div class="footer-note">Open links work when the app is served (e.g. <code>python3 -m http.server</code> from the repo root, then open <code>/web/</code>).</div>`;
+    setTimeout(() => ZS.updateOfflineStatus(), 50);
   }
   function renderOfflinePanel() {
     const native = AUDIO_IDS.size;
@@ -912,10 +913,34 @@
         <button class="btn btn--sm" onclick="ZS.cachePack('core')">Core course</button>
         <button class="btn btn--sm" onclick="ZS.cachePack('p1')">P1 audio</button>
         <button class="btn btn--sm" onclick="ZS.cachePack('all')">All audio (${native})</button>
+        <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.updateOfflineStatus()">Check readiness</button>
         <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.clearOffline()">Clear media</button>
       </div>
-      <div id="offlineStatus" class="offlinebox__status">Ready to cache.</div>
+      <div id="offlineStatus" class="offlinebox__status">Checking offline readiness...</div>
     </div>`;
+  }
+  function coreOfflineUrls() {
+    return ["./", "./index.html", "./styles.css", "./app.js", "./content.js", "./audio.js", "./manifest.webmanifest", "./assets/icon.svg"];
+  }
+  function p1AudioIds() {
+    return ITEMS.filter(i => i.priority === 1 && AUDIO_IDS.has(i.id)).map(i => i.id);
+  }
+  function packUrls(kind) {
+    const ids = kind === "all" ? Array.from(AUDIO_IDS) : kind === "p1" ? p1AudioIds() : [];
+    return coreOfflineUrls().concat(ids.map(id => AUDIO.base + id + ".mp3"));
+  }
+  async function cachedCount(urls) {
+    let count = 0;
+    for (const url of urls) {
+      const absolute = new URL(url, location.href).href;
+      if (await caches.match(absolute)) count++;
+    }
+    return count;
+  }
+  function formatStorage(bytes) {
+    if (!bytes && bytes !== 0) return "";
+    if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+    return `${Math.round(bytes / 1024 / 1024)} MB`;
   }
 
   function todayLabel() {
@@ -1223,17 +1248,39 @@
     },
     nextQ() { quiz.i++; quiz.listenHintLevel = 0; drawQuestion(); },
     retry() { const k = location.hash.split("/")[2]; quiz = null; renderQuizRun(k); },
+    async updateOfflineStatus() {
+      const status = $("#offlineStatus");
+      if (!status) return;
+      if (!("caches" in window)) {
+        status.textContent = "Offline cache unavailable in this browser.";
+        return;
+      }
+      const coreUrls = coreOfflineUrls();
+      const p1Urls = p1AudioIds().map(id => AUDIO.base + id + ".mp3");
+      const allAudioUrls = Array.from(AUDIO_IDS).map(id => AUDIO.base + id + ".mp3");
+      try {
+        const [coreCached, p1Cached, audioCached, estimate] = await Promise.all([
+          cachedCount(coreUrls),
+          cachedCount(p1Urls),
+          cachedCount(allAudioUrls),
+          navigator.storage && navigator.storage.estimate ? navigator.storage.estimate() : Promise.resolve({}),
+        ]);
+        const storage = estimate && estimate.usage ? ` · storage ${formatStorage(estimate.usage)} used` : "";
+        const ready = coreCached === coreUrls.length && p1Cached === p1Urls.length;
+        status.innerHTML = `<span class="${ready ? "is-ready" : "is-partial"}">${ready ? "Travel core ready" : "Offline pack incomplete"}</span> · core ${coreCached}/${coreUrls.length} · P1 audio ${p1Cached}/${p1Urls.length} · all audio ${audioCached}/${allAudioUrls.length}${storage}`;
+      } catch (e) {
+        status.textContent = "Could not inspect offline readiness.";
+      }
+    },
     async cachePack(kind) {
       if (!("caches" in window)) { toast("Offline cache unavailable"); return; }
       const status = $("#offlineStatus");
       if (status) status.textContent = "Caching…";
-      const core = ["./", "./index.html", "./styles.css", "./app.js", "./content.js", "./audio.js", "./manifest.webmanifest", "./assets/icon.svg"];
-      const ids = kind === "all" ? Array.from(AUDIO_IDS) : kind === "p1" ? ITEMS.filter(i => i.priority === 1 && AUDIO_IDS.has(i.id)).map(i => i.id) : [];
-      const urls = core.concat(ids.map(id => AUDIO.base + id + ".mp3"));
+      const urls = packUrls(kind);
       try {
         const cache = await caches.open("zastolom-offline-pack");
         await cache.addAll(urls);
-        if (status) status.textContent = `Cached ${urls.length} files for ${kind === "all" ? "all audio" : kind === "p1" ? "P1 audio" : "the core course"}.`;
+        await ZS.updateOfflineStatus();
         toast("Offline pack cached");
       } catch (e) {
         if (status) status.textContent = "Caching failed; try the smaller P1 pack.";
@@ -1245,6 +1292,7 @@
       await caches.delete("zastolom-offline-pack");
       const status = $("#offlineStatus");
       if (status) status.textContent = "Offline media pack cleared.";
+      await ZS.updateOfflineStatus();
       toast("Offline media cleared");
     },
   };

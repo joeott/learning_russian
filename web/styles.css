@@ -349,6 +349,8 @@ body {
 .offlinebox p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
 .offlinebox__actions { display:flex; flex-wrap:wrap; gap: 8px; justify-content:flex-end; }
 .offlinebox__status { grid-column: 1 / -1; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); font-size: .75rem; }
+.offlinebox__status .is-ready { color: var(--ok); }
+.offlinebox__status .is-partial { color: var(--warn); }
 
 .callout { background: var(--paper-2); border:2px solid var(--ink); border-left: 6px solid var(--red); border-radius: 0 var(--radius) var(--radius) 0; padding: 14px 18px; margin: 18px 0; box-shadow: var(--shadow-sm); }
 .callout strong { color: var(--red); }
