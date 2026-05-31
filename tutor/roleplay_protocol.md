@@ -277,49 +277,55 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 **You produce:** short answers from the `calendar_weather` module: today/yesterday/tomorrow weather, day names, and `на выходны́х`.
 **Success:** You answer in short Russian without switching to English and keep stress clear on `сего́дня`, `пого́да`, and the day names.
 
-### Scenario 23 — Quick descriptions and pace repair (id: adverb_adjective_survival)
+### Scenario 23 — Numbers, prices, months, and quantities (id: numbers_quantities_checkin)
+**Goal:** Survive source-guide number questions about time, cost, months, people, hours, and years.
+**Tutor:** asks `Ско́лько сто́ит?`, `Ско́лько сейча́с вре́мени?`, `Како́й сейча́с ме́сяц?`, `Ско́лько бы́ло челове́к?`, and one hours-worked prompt.
+**You produce:** either the exact known pattern (`Сейча́с три двена́дцать`, `Бы́ло се́мьдесят челове́к`) or a repair line before guessing.
+**Success:** You recognize the question type, keep stress on number words clear, and do not freeze when a quantity appears inside a family/work/travel prompt.
+
+### Scenario 24 — Quick descriptions and pace repair (id: adverb_adjective_survival)
 **Goal:** Use original-guide adverbs and weather adjectives in short spoken answers.
 **Tutor:** asks whether something is interesting, difficult, convenient, important, too fast, and what the weather is like.
 **You produce:** compact lines from `adverbs_adjectives`: `Э́то о́чень интере́сно`, `Э́то немно́го тру́дно`, `Э́то не о́чень удо́бно`, `Ме́дленно, пожа́луйста`, and one `Пого́да ...` adjective line.
 **Success:** You keep answers short and distinguish adverbs like `со́лнечно` from feminine adjective lines like `Пого́да со́лнечная`.
 
-### Scenario 24 — Budva trip check-in (id: budva_trip_checkin)
+### Scenario 25 — Budva trip check-in (id: budva_trip_checkin)
 **Goal:** Talk about arriving in Budva, the hotel, the sea, and simple plans without overexplaining.
 **Tutor:** asks travel prompts around `Бу́два`, `Черного́рия`, hotel/taxi logistics, beach, sea, and dinner plans.
 **You produce:** short answers from the `travel_budva` module: `Мы е́дем в Бу́дву`, `Мы бу́дем в Бу́две`, `Где на́ш о́тель?`, `Где пляж?`, and one simple plan.
 **Success:** You keep the case switch clear between `в Бу́дву` and `в Бу́две`, stay in Russian, and recover with repair lines if needed.
 
-### Scenario 25 — Daily routine check-in (id: daily_routine_checkin)
+### Scenario 26 — Daily routine check-in (id: daily_routine_checkin)
 **Goal:** Answer original-guide `Мой день` questions about eating, working, resting, and evening routine.
 **Tutor:** asks `Когда́ вы обе́даете?`, `Когда́ вы у́жинаете?`, `Когда́ вы рабо́таете?`, `Когда́ вы отдыха́ете?`, and `Что ты сего́дня де́лал?`
 **You produce:** short answers from the `daily_routine` module: lunch/day, dinner/evening, work morning/evening, rest evening, and one worked-today answer.
 **Success:** You use `у́тром`, `днём`, and `ве́чером` without switching to English and keep `рабо́таю` / `рабо́тал` distinct.
 
-### Scenario 26 — My day mini-story (id: daily_routine_story)
+### Scenario 27 — My day mini-story (id: daily_routine_story)
 **Goal:** Tell a short version of the original-guide `Мой день` essay.
 **Tutor:** asks for a one-minute story about morning, work, and evening, then interrupts once with `А пото́м?` or `Что ты де́лаешь на рабо́те?`
 **You produce:** four to six linked lines from `daily_routine`: early morning, coffee/guitar, work at ten, client problems/calls/court, and after-work dinner.
 **Success:** You keep the story short, use `у́тром` / `по́сле` / `по́сле рабо́ты`, and only use the cooking-more-often joke if Kadriya has rehearsed it with you.
 
-### Scenario 27 — Work and clients check-in (id: work_business_checkin)
+### Scenario 28 — Work and clients check-in (id: work_business_checkin)
 **Goal:** Answer predictable lawyer/work questions while keeping the explanation short and beginner-safe.
 **Tutor:** asks `Кем вы рабо́таете?`, `У вас мно́го клие́нтов?`, `У вас мно́го дел?`, `Ты сего́дня о́чень за́нят?`, and one court/client follow-up.
 **You produce:** `Я юри́ст`, `У меня́ своя́ компа́ния`, `Да, у меня́ мно́го клие́нтов`, `Да, у меня́ мно́го дел`, and one short today-work sentence.
 **Success:** You do not overexplain legal details; you answer, pause, and use repair lines if the follow-up is too fast.
 
-### Scenario 28 — Holiday and family plans (id: holiday_celebration_checkin)
+### Scenario 29 — Holiday and family plans (id: holiday_celebration_checkin)
 **Goal:** Answer original-guide Christmas/Thanksgiving/family-plan prompts in simple Russian.
 **Tutor:** asks `Каки́е пла́ны на Рождество́?`, `Как вы с Кадри́ей отпра́здновали Рождество́?`, `Ско́лько дней вы бу́дете в О́регоне?`, and `Что вы де́лали на День Благодаре́ния?`
 **You produce:** one short holiday plan, one family celebration answer, and one Thanksgiving dinner answer from the `celebrations` module.
 **Success:** You keep the story to one or two sentences and recover with repair lines instead of trying a long holiday narrative.
 
-### Scenario 29 — Cultural extras recognition (id: cultural_bonus_recognition)
+### Scenario 30 — Cultural extras recognition (id: cultural_bonus_recognition)
 **Goal:** Recognize source-guide proverbs and lawyer jokes without trying to perform them.
 **Tutor:** plays or says one proverb/joke line at a time and asks for the rough English meaning.
 **You produce:** recognition only: identify whether it is a proverb, idiom, or lawyer joke, then give the approximate meaning in English.
 **Success:** You recognize the familiar lines and use repair phrases if the proverb is too fast; do not try to be funny in Russian unless Kadriya has rehearsed it with you.
 
-### Scenario 30 — Airport and hotel arrival (id: budva_airport_hotel_checkin)
+### Scenario 31 — Airport and hotel arrival (id: budva_airport_hotel_checkin)
 **Goal:** Handle airport and hotel arrival basics without switching to English.
 **Tutor:** asks fast practical prompts around `аэропо́рт`, `бага́ж`, passport, baggage claim, hotel reservation, room, key, elevator, and check-out.
 **You produce:** short survival lines from `travel_budva`: `Вот мой па́спорт`, `Я хочу́ сда́ть бага́ж`, `Где выда́ча багажа́?`, `У меня́ есть брони́рование`, `Ключ, пожа́луйста`, and one check-in/check-out question.

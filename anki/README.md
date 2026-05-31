@@ -1,7 +1,7 @@
 # Anki Deck — Russian for Meeting Kadriya's Family
 
-`russian_family_visit.txt` is a TAB-separated Anki import file (271 cards across
-16 modules). `russian_family_visit_contextual.txt` is a companion import with
+`russian_family_visit.txt` is a TAB-separated Anki import file (299 cards across
+17 modules). `russian_family_visit_contextual.txt` is a companion import with
 typed cloze, dictation, stress, pronunciation, back-translation, contrast, and
 scenario cards generated from the same verified phrases. Both are generated
 deterministically from `../content/content.json` by `../scripts/build_anki.py`.
@@ -80,7 +80,7 @@ To **also** drill RU → EN (recognition), change the notetype to
 - select the notes → **Notes → Change Notetype** → Basic (and reversed card).
 
 This generates a second card per note (Russian prompt → English answer). For the
-80 `recognize`-tagged items (questions relatives will fire at you), the reverse
+105 `recognize`-tagged items (questions relatives will fire at you), the reverse
 direction is exactly what you want — those are about understanding when heard.
 
 ---
@@ -92,7 +92,7 @@ The goal is **oral**, so the Russian must be spoken aloud.
 ### ★ Option 0 — Bundled native audio (recommended, already done for you)
 Every card already contains a `[sound:zastolom_<id>.mp3]` tag, and the matching
 **real ElevenLabs recordings** (voice: *Elena — native Russian*) are staged in
-[`anki/media/`](media/) (271 files). To make them play:
+[`anki/media/`](media/) (299 files). To make them play:
 
 1. Import the deck (section 2 above).
 2. Copy the audio into Anki's media folder so it finds the files:
@@ -171,13 +171,13 @@ phrases you'll actually rehearse out loud.
 
 ## 4. Study settings
 
-- **New cards/day: 10–15.** With 271 cards that ramps you in fully over ~2.5
+- **New cards/day: 10–15.** With 299 cards that ramps you in fully over ~3
   weeks while leaving review headroom. Set in the deck's **Options → New cards →
   New cards/day**.
 - **FSRS:** turn it **on** (Deck Options → FSRS toggle, then "Optimize" once you
   have a few days of reviews). FSRS schedules far more efficiently than the old
   SM-2 algorithm — worth it for a deadline-driven push.
-- **Study priority phrases first.** The deck has **271 cards across 16 modules**,
+- **Study priority phrases first.** The deck has **299 cards across 17 modules**,
   tagged `p1`/`p2`/`p3`. Drill the **p1** essentials before anything else:
   - **Tools → Create Filtered Deck** (or **Custom Study → Study by tag**),
     search `tag:p1`, build it, and grind those greetings/politeness/rescue lines
@@ -194,14 +194,15 @@ phrases you'll actually rehearse out loud.
 
 ## Card counts (for reference)
 
-- 271 cards total, 16 modules:
+- 299 cards total, 17 modules:
   first_contact (13), politeness (17), toasts (16), family (28), food (16),
-  smalltalk (9), listening (18), calendar_weather (19), adverbs_adjectives (14),
-  daily_routine (29), work_business (16), legal_recognition (15), celebrations (14),
-  cultural_bonus (9), travel_budva (28), verbs (10).
-- 80 cards tagged `recognize` (18 listening + 7 family + 6 food + 3 calendar/weather + 5 daily-routine + 2 work/business + 15 legal + 5 celebrations + 9 cultural bonus + 10 Budva/travel items you mainly need to
+  smalltalk (9), listening (18), calendar_weather (19), numbers_quantities (28),
+  adverbs_adjectives (14), daily_routine (29), work_business (16),
+  legal_recognition (15), celebrations (14), cultural_bonus (9),
+  travel_budva (28), verbs (10).
+- 105 cards tagged `recognize` (18 listening + 7 family + 6 food + 3 calendar/weather + 25 numbers/quantities + 5 daily-routine + 2 work/business + 15 legal + 5 celebrations + 9 cultural bonus + 10 Budva/travel items you mainly need to
   *understand when heard*).
 - 9 cards currently carry a "⚠ rehearse with your wife" reminder.
-- 11 cards show a "(male form)" marker — say these in the masculine.
+- 12 cards show a "(male form)" marker — say these in the masculine.
 - The web app also generates 60 typed conjugation drills from the core verb
   cards; these are app practice cards, not Anki import rows.

@@ -6,7 +6,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 ## Current generated course
 
 - Source of truth: `scripts/build_content.py`
-- Generated content: 271 items across 16 modules, plus 60 generated conjugation drills
+- Generated content: 299 items across 17 modules, plus 60 generated conjugation drills
 - Strongest coverage today:
   - greetings and first contact
   - politeness and repair phrases
@@ -15,6 +15,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
   - food/table compliments and requests
   - common and native-speed family check-in questions
   - calendar and weather small talk
+  - numbers, months, prices, hours worked, years, and headcounts
   - practical adverbs, pace repair, and weather adjective agreement
   - daily-routine, time-of-day answers, and a short `Мой день` story mode
   - lawyer/work/client small talk
@@ -30,7 +31,8 @@ iterations can close the real beginner-course gaps without inventing Russian.
 | --- | --- | --- | --- |
 | Verb reactivation and conjugation | `source/ekaterina_guide.md:23`, `source/ekaterina_guide.md:120-220`, `source/ekaterina_guide.md:1289-1293`, `source/ekaterina_guide.md:1670-1675`, `source/ekaterina_guide.md:2031-2062`, `source/research/verb_drills.md` | Covered by `verbs` plus 60 generated `conjugate` drill cards across `я`, `ты`, `он/она`, `мы`, `вы`, and `они` | Later: add new verbs only when they come from mission-critical production phrases. |
 | Greetings and lesson check-ins | `source/ekaterina_guide.md:840-850`, `source/ekaterina_guide.md:977-981`, `source/ekaterina_guide.md:1197-1211`, `source/ekaterina_guide.md:1224-1234`, `source/ekaterina_guide.md:1792-1803`, `source/research/native_speed_checkins.md` | Covered by `listening` basics plus native-speed check-in recognition cards | Later: add only live family variants Joe actually hears. |
-| Calendar, days, dates | `source/ekaterina_guide.md:303-317`, `source/ekaterina_guide.md:668-679`, `source/ekaterina_guide.md:820-850` | Covered by `calendar_weather` basics | Later: add dates/months only if they support actual travel/family prompts. |
+| Calendar, days, dates | `source/ekaterina_guide.md:303-317`, `source/ekaterina_guide.md:668-679`, `source/ekaterina_guide.md:820-850`, `source/ekaterina_guide.md:2070`, `source/ekaterina_guide.md:2247`, `source/research/numbers_quantities.md` | Covered by `calendar_weather` basics plus month recognition in `numbers_quantities` | Later: add only live birthday/date lines after Kadriya confirms exact dates. |
+| Numbers, prices, time, and quantities | `source/ekaterina_guide.md:236`, `source/ekaterina_guide.md:823-824`, `source/ekaterina_guide.md:987-989`, `source/ekaterina_guide.md:1023-1025`, `source/ekaterina_guide.md:1205-1211`, `source/ekaterina_guide.md:1335`, `source/ekaterina_guide.md:1471-1493`, `source/ekaterina_guide.md:2518`, `source/research/numbers_quantities.md` | Covered by `numbers_quantities` cards and a dedicated role-play scenario | Later: add exact birthday/date production only when the date facts are confirmed. |
 | Weather and outside conditions | `source/ekaterina_guide.md:840-850`, `source/ekaterina_guide.md:897-910`, `source/ekaterina_guide.md:1799-1803` | Covered by `calendar_weather` basics | Later: add adjective-agreement contrast only if it improves spoken answers. |
 | Budva/Montenegro trip logistics | `source/ekaterina_guide.md:1461-1467`, `source/ekaterina_guide.md:1501`, `source/ekaterina_guide.md:1969`, `source/ekaterina_guide.md:2031-2043`, `source/research/budva_travel.md` | Covered by `travel_budva` basics, including airport arrival and hotel check-in/out variants | Later: add only Kadriya-confirmed local wording or transport-specific variants. |
 | Daily routine and time of day | `source/ekaterina_guide.md:1113-1120`, `source/ekaterina_guide.md:1198-1212`, `source/ekaterina_guide.md:1366-1368`, `source/ekaterina_guide.md:1378-1399`, `source/research/daily_routine.md` | Covered by `daily_routine` basics plus a short original-guide `Мой день` story mode | Later: tune the personal cooking joke only after rehearsal with Kadriya. |

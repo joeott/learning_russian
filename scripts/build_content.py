@@ -257,6 +257,10 @@ ROLEPLAY_CRITERIA = {
         "label": "answers calendar/weather prompts",
         "error_type": "forgot_phrase",
     },
+    "handles_numbers_quantities": {
+        "label": "handles numbers, months, prices, and quantities",
+        "error_type": "case_or_inflection",
+    },
     "uses_adverbs_adjectives": {
         "label": "uses practical adverbs and adjectives",
         "error_type": "case_or_inflection",
@@ -768,6 +772,34 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "numbers_quantities_checkin",
+        "setting": "Numbers, prices, months, and quantities",
+        "goal": "Recognize and answer original-guide quantity questions about time, cost, months, people, hours, and years.",
+        "required_items": [
+            "numb001",
+            "numb002",
+            "numb003",
+            "numb004",
+            "numb005",
+            "numb006",
+            "numb007",
+            "numb008",
+            "numb009",
+            "numb010",
+            "numb011",
+            "numb012",
+            "numb013",
+            "numb014",
+            "numb015",
+            "numb016",
+        ],
+        "success_criteria": [
+            "handles_numbers_quantities",
+            "uses_repair_lines",
+            "stays_in_russian",
+        ],
+    },
+    {
         "id": "adverb_adjective_survival",
         "setting": "Quick descriptions and pace repair",
         "goal": "Use short adverbs and adjective-agreement weather lines from the original guide.",
@@ -1044,6 +1076,13 @@ MODULES = [
         "☀️",
     ),
     (
+        "numbers_quantities",
+        "Numbers & Quantities",
+        "Original-guide quantities: prices, months, hours worked, years, and headcounts.",
+        2,
+        "🔢",
+    ),
+    (
         "adverbs_adjectives",
         "Adverbs & Descriptions",
         "Original-guide adverbs and adjective agreement turned into short spoken survival lines.",
@@ -1145,6 +1184,13 @@ MODULE_STRUCTURES = {
         "phrase:weather_answer",
         "phrase:calendar_question",
         "grammar:time_expression",
+    ],
+    "numbers_quantities": [
+        "lexical:months",
+        "lexical:numbers",
+        "phrase:quantity_question",
+        "phrase:price_question",
+        "grammar:number_noun_agreement",
     ],
     "adverbs_adjectives": [
         "lexical:adverbs",
@@ -1922,6 +1968,228 @@ add(
     "[na vy-had-nýh]",
     3,
     tags=["calendar"],
+)
+
+# --- NUMBERS & QUANTITIES (prices, months, hours, and headcounts) ---
+add(
+    "numbers_quantities",
+    "Ско́лько?",
+    "How many? / How much?",
+    "[skól'-ka]",
+    2,
+    recognize=True,
+)
+add(
+    "numbers_quantities",
+    "Ско́лько сто́ит?",
+    "How much does it cost?",
+    "[skól'-ka stó-it]",
+    2,
+    recognize=True,
+    note="Use for one item or a whole purchase; plural items may trigger «сто́ят».",
+    tags=["quantity", "price", "travel"],
+)
+add(
+    "numbers_quantities",
+    "Ско́лько сто́ят?",
+    "How much do they cost?",
+    "[skól'-ka stó-yat]",
+    3,
+    recognize=True,
+    note="Plural cost question from the original guide's сто́ить drill.",
+    tags=["quantity", "price", "travel"],
+)
+add(
+    "numbers_quantities",
+    "ты́сяча",
+    "thousand",
+    "[tý-sya-cha]",
+    3,
+    recognize=True,
+    tags=["number"],
+)
+add(
+    "numbers_quantities",
+    "две ты́сячи",
+    "two thousand",
+    "[dvye tý-sya-chi]",
+    3,
+    recognize=True,
+    tags=["number"],
+)
+add(
+    "numbers_quantities",
+    "пять ты́сяч",
+    "five thousand",
+    "[pyat' tý-syach]",
+    3,
+    recognize=True,
+    tags=["number"],
+)
+add(
+    "numbers_quantities",
+    "Ско́лько сейча́с вре́мени?",
+    "What time is it now?",
+    "[skól'-ka si-chás vryé-me-ni]",
+    2,
+    recognize=True,
+    tags=["time", "question"],
+)
+add(
+    "numbers_quantities",
+    "Сейча́с три двена́дцать.",
+    "It's 3:12 now.",
+    "[si-chás tri dvi-ná-tsat']",
+    3,
+    recognize=True,
+    tags=["time"],
+)
+add(
+    "numbers_quantities",
+    "Сего́дня я рабо́тал четы́ре часа́ три́дцать мину́т.",
+    "Today I worked four hours and thirty minutes.",
+    "[si-vód-nya ya ra-bó-tal chi-tý-rye cha-sá trí-tsat' mi-nút]",
+    2,
+    gender="m",
+    tags=["time", "work", "hours"],
+)
+add(
+    "numbers_quantities",
+    "Ну́жно рабо́тать ещё два часа́.",
+    "Need to work two more hours.",
+    "[núzh-na ra-bó-tat' ye-shchó dva cha-sá]",
+    2,
+    tags=["time", "work", "hours"],
+)
+add(
+    "numbers_quantities",
+    "Мы потра́тили семь или во́семь часо́в.",
+    "We spent seven or eight hours.",
+    "[my pa-trá-ti-li syem' í-li vó-syem' cha-sóf]",
+    3,
+    recognize=True,
+    tags=["time", "hours"],
+)
+add(
+    "numbers_quantities",
+    "Ско́лько бы́ло челове́к?",
+    "How many people were there?",
+    "[skól'-ka bý-la chi-la-vyék]",
+    2,
+    recognize=True,
+    tags=["quantity", "people", "question"],
+)
+add(
+    "numbers_quantities",
+    "Бы́ло се́мьдесят челове́к.",
+    "There were seventy people.",
+    "[bý-la syém-di-syat chi-la-vyék]",
+    3,
+    recognize=True,
+    tags=["quantity", "people"],
+)
+add(
+    "numbers_quantities",
+    "Ско́лько лет ты живёшь в до́ме?",
+    "How many years have you lived in the house?",
+    "[skól'-ka let ty zhi-vyósh v dó-me]",
+    2,
+    recognize=True,
+    tags=["quantity", "years", "question"],
+)
+add(
+    "numbers_quantities",
+    "Я живу́ в до́ме пять лет.",
+    "I have lived in the house for five years.",
+    "[ya zhi-vú v dó-me pyat' let]",
+    3,
+    note="Source-guide pattern; adapt the number only after rehearsal.",
+    tags=["quantity", "years"],
+)
+add(
+    "numbers_quantities",
+    "Како́й сейча́с ме́сяц?",
+    "What month is it now?",
+    "[ka-kóy si-chás myé-syats]",
+    2,
+    recognize=True,
+    tags=["month", "question"],
+)
+add(
+    "numbers_quantities",
+    "янва́рь",
+    "January",
+    "[yan-vár']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add(
+    "numbers_quantities",
+    "февра́ль",
+    "February",
+    "[fi-vrál']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add("numbers_quantities", "март", "March", "[mart]", 3, recognize=True, tags=["month"])
+add(
+    "numbers_quantities",
+    "апре́ль",
+    "April",
+    "[a-pryél']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add("numbers_quantities", "май", "May", "[may]", 3, recognize=True, tags=["month"])
+add("numbers_quantities", "ию́нь", "June", "[i-yún']", 3, recognize=True, tags=["month"])
+add("numbers_quantities", "ию́ль", "July", "[i-yúl']", 3, recognize=True, tags=["month"])
+add(
+    "numbers_quantities",
+    "а́вгуст",
+    "August",
+    "[áv-gust]",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add(
+    "numbers_quantities",
+    "сентя́брь",
+    "September",
+    "[sin-tyábr']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add(
+    "numbers_quantities",
+    "октя́брь",
+    "October",
+    "[ak-tyábr']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add(
+    "numbers_quantities",
+    "ноя́брь",
+    "November",
+    "[na-yábr']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add(
+    "numbers_quantities",
+    "дека́брь",
+    "December",
+    "[di-kábr']",
+    3,
+    recognize=True,
+    tags=["month"],
 )
 
 # --- ADVERBS & DESCRIPTIONS (original-guide survival grammar) ---
