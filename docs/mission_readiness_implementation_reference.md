@@ -21,7 +21,9 @@ generalization.
 2. Keep feature additions small and performance-focused.
 3. Run the end-to-end preflight before each merge:
    - `tools/zastolom preflight http://localhost:8000/web/ --offline`
-4. Rehearse on phone with real noise and validate P1 + repair phrases with Kadriya.
+4. Curate spoken source materials only if it directly supports real transfer:
+   - `tools/zastolom source-loop --spoken --run --limit 3 --write-canvas`
+5. Rehearse on phone with real noise and validate P1 + repair phrases with Kadriya.
 
 ## Key files touched
 

@@ -38,6 +38,28 @@ class SourceMaterialLoopTests(unittest.TestCase):
         self.assertGreaterEqual(len(fallback), 2)
         self.assertIn("url", fallback[0])
 
+    def test_read_source_targets_spoken_filter(self) -> None:
+        with NamedTemporaryFile("w", delete=False, encoding="utf-8") as f:
+            f.write(
+                """
+                {
+                  "targets": [
+                    {"url": "https://spoken.example.org", "name": "spoken", "default_drill": ["dictation"], "spoken": true},
+                    {"url": "https://read.example.org", "name": "read", "default_drill": ["read"], "focus": ["reading"]}
+                  ]
+                }
+                """
+            )
+            path = f.name
+        try:
+            only_spoken = zastolom._read_source_targets(path, spoken=True)
+            self.assertEqual(len(only_spoken), 1)
+            self.assertEqual(only_spoken[0]["url"], "https://spoken.example.org")
+            fallback = zastolom._read_source_targets(path, spoken=False)
+            self.assertEqual(len(fallback), 2)
+        finally:
+            os.unlink(path)
+
     def test_score_source_text_thresholds(self) -> None:
         short = zastolom._score_source_text("u", "u", "Привет", ["read"])
         self.assertEqual(short["status"], "rejected")
