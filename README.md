@@ -85,7 +85,7 @@ docs/           ICALL implementation plan and validation standard
 prompts/        local iterative improvement-loop prompt
 ```
 
-The web app now tracks stage-specific mastery and due reviews locally: recognition, recall, cloze, dictation, stress, pronunciation, back-translation, contrast, listening, production, and role-play are scheduled separately, with lapse/error data feeding repair drills.
+The web app now tracks stage-specific mastery and due reviews locally: recognition, recall, cloze, dictation, stress, pronunciation, back-translation, contrast, listening, production, and role-play are scheduled separately, with lapse/error data feeding repair drills. Listening practice includes a fading-caption ladder and speed controls so assisted comprehension is scheduled as a harder review.
 
 The content contract also includes a lesson-locked curriculum graph. Each item carries its lesson boundary, lexemes, structures, prerequisites, and allowed error types so dictation, stress, pronunciation, cloze, back-translation, contrast, and AI tutor features can reject out-of-sequence material instead of free-generating beyond the learner's unlocked Russian. The ongoing roadmap is tracked in [`docs/ICALL_IMPLEMENTATION_PLAN.md`](docs/ICALL_IMPLEMENTATION_PLAN.md).
 

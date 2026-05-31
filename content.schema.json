@@ -182,6 +182,7 @@
       }
     },
     "error_types": { "type": "array" },
+    "listening_ladder": { "type": "array" },
     "contrast_sets": { "type": "array" },
     "scenarios": { "type": "array" }
   }

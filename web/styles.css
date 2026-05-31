@@ -277,7 +277,10 @@ body {
 }
 .listenhint div { font-family: var(--font-serif); font-weight:700; font-size: 1.15rem; color: var(--paper); overflow-wrap:anywhere; }
 .listenhint .stress { color: var(--amber); }
-.listenactions { display:flex; justify-content:center; margin: -4px 0 14px; }
+.listenactions { display:flex; justify-content:center; gap: 8px; flex-wrap:wrap; margin: -4px 0 14px; }
+.listenladder { display:flex; justify-content:center; gap: 7px; flex-wrap:wrap; margin: 0 0 12px; }
+.listenladder .chip { background: var(--paper); }
+.listenladder .chip.is-on { background: var(--ink); color: var(--paper); }
 .pronbox {
   background: var(--paper-2); border:2px solid var(--ink); border-radius: var(--radius);
   padding: 14px; box-shadow: var(--shadow-sm);
