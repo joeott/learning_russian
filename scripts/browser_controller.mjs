@@ -37,6 +37,7 @@ function parseArgs(argv) {
     viewports: ["desktop", "mobile"],
     clickTexts: [],
     waitMs: 500,
+    strict: false,
   };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
@@ -47,6 +48,7 @@ function parseArgs(argv) {
     else if (a === "--both") args.viewports = ["desktop", "mobile"];
     else if (a === "--click-text") args.clickTexts.push(argv[++i]);
     else if (a === "--wait-ms") args.waitMs = Number(argv[++i] || args.waitMs);
+    else if (a === "--strict") args.strict = true;
     else if (a === "--help" || a === "-h") args.help = true;
     else if (!a.startsWith("-")) args.url = a;
     else throw new Error(`Unknown option: ${a}`);
@@ -56,7 +58,7 @@ function parseArgs(argv) {
 
 function help() {
   return `Usage:
-  tools/zastolom browser [url] [--desktop|--mobile|--both] [--click-text TEXT ...] [--out DIR]
+  tools/zastolom browser [url] [--desktop|--mobile|--both] [--click-text TEXT ...] [--strict] [--out DIR]
 
 Examples:
   tools/zastolom browser http://localhost:8000/web/
@@ -287,6 +289,10 @@ export async function runInspection(opts) {
         await page.waitForTimeout(Math.max(200, opts.waitMs));
         step.snapshot = await inspectPage(page, `${viewportName}-step-${index + 1}`, opts.out);
         steps.push(step);
+      }
+      if (opts.strict && steps.some((step) => step.error)) {
+        const failures = steps.filter((step) => step.error).length;
+        throw new Error(`browser controller strict mode failed: ${failures}/${steps.length} click steps failed`);
       }
       results.push({ viewport: viewportName, url: opts.url, before, steps, after: steps.length ? steps[steps.length - 1].snapshot : null, logs });
       await page.close();

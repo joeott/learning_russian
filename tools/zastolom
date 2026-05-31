@@ -638,6 +638,8 @@ def cmd_browser(args):
         command.append("--both")
     for click_text in args.click_text or []:
         command += ["--click-text", click_text]
+    if args.strict:
+        command.append("--strict")
     if args.out:
         command += ["--out", args.out]
     if args.wait_ms:
@@ -797,6 +799,7 @@ def main():
     group.add_argument("--mobile", action="store_true")
     group.add_argument("--both", action="store_true")
     br.add_argument("--click-text", action="append")
+    br.add_argument("--strict", action="store_true", help="fail command when requested clicks are not found")
     br.add_argument("--out")
     br.add_argument("--wait-ms", type=int)
     fl = sub.add_parser("flow")
