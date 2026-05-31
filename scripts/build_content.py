@@ -157,6 +157,46 @@ ROLEPLAY_CRITERIA = {
         "label": "clear stress",
         "error_type": "stress",
     },
+    "answers_host_questions": {
+        "label": "answers host questions",
+        "error_type": "forgot_phrase",
+    },
+    "uses_learning_safety_line": {
+        "label": "uses learning-safe line",
+        "error_type": "forgot_phrase",
+    },
+    "uses_repair_lines": {
+        "label": "uses repair lines",
+        "error_type": "forgot_phrase",
+    },
+    "recovers_from_unknown": {
+        "label": "recovers from unclear prompt",
+        "error_type": "forgot_phrase",
+    },
+    "tells_short_story": {
+        "label": "tells the short story",
+        "error_type": "forgot_phrase",
+    },
+    "handles_follow_up": {
+        "label": "handles one follow-up",
+        "error_type": "forgot_phrase",
+    },
+    "stays_in_russian": {
+        "label": "stays in Russian",
+        "error_type": "forgot_phrase",
+    },
+    "delivers_full_dinner_arc": {
+        "label": "completes the dinner arc",
+        "error_type": "forgot_phrase",
+    },
+    "recovers_curveball": {
+        "label": "recovers from curveball",
+        "error_type": "forgot_phrase",
+    },
+    "mentions_host_or_food": {
+        "label": "mentions host or food naturally",
+        "error_type": "forgot_phrase",
+    },
 }
 
 CONTRAST_SETS = [
@@ -217,6 +257,88 @@ SCENARIOS = [
         "success_criteria": [
             "uses_za_toast_formula",
             "avoids_na_zdorovie_misfire",
+            "keeps_stress_clear",
+        ],
+    },
+    {
+        "id": "introduce_and_learning_safety",
+        "setting": "Introduction + learning safety",
+        "goal": "Introduce yourself clearly and set the safety expectation.",
+        "required_items": ["firs005", "firs008", "poli009", "firs011"],
+        "success_criteria": [
+            "introduces_self",
+            "uses_learning_safety_line",
+        ],
+    },
+    {
+        "id": "rapid_host_questions",
+        "setting": "Rapid host questions",
+        "goal": "Catch fast family questions and answer in short Russian sentences.",
+        "required_items": [
+            "list002",
+            "list003",
+            "list004",
+            "list005",
+            "list006",
+            "poli010",
+            "poli012",
+        ],
+        "success_criteria": [
+            "answers_host_questions",
+            "mentions_host_or_food",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "how_we_met",
+        "setting": "How we met",
+        "goal": "Tell a short, confident story and answer one follow-up.",
+        "required_items": ["smal005", "smal004", "fami019"],
+        "success_criteria": [
+            "tells_short_story",
+            "handles_follow_up",
+            "uses_correct_male_form",
+        ],
+    },
+    {
+        "id": "off_script_recovery",
+        "setting": "Off-script recovery",
+        "goal": "Recover calmly when asked something unexpected.",
+        "required_items": [
+            "poli004",
+            "poli005",
+            "poli010",
+            "poli011",
+            "poli012",
+            "poli017",
+        ],
+        "success_criteria": [
+            "uses_repair_lines",
+            "recovers_from_unknown",
+            "stays_in_russian",
+        ],
+    },
+    {
+        "id": "full_dinner_simulation",
+        "setting": "Full dinner simulation",
+        "goal": "Hold together the full dinner flow from greeting through close.",
+        "required_items": [
+            "firs001",
+            "firs005",
+            "list002",
+            "smal004",
+            "smal005",
+            "food002",
+            "food004",
+            "toas006",
+            "toas001",
+            "fami019",
+            "poli009",
+        ],
+        "success_criteria": [
+            "delivers_full_dinner_arc",
+            "mentions_host_or_food",
+            "recovers_curveball",
             "keeps_stress_clear",
         ],
     },

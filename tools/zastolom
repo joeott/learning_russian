@@ -18,6 +18,7 @@ COMMANDS
   serve                 Serve the repo over HTTP and print the app URL
   browser               Inspect the local web app with the JS browser controller
   flow                  Run browser-verified learner flow assertions
+  preflight             Run build + verify + test + flow
   verify                Run all health checks (JSON, JS syntax, audio coverage)
   test                  Run stdlib validation/unit tests
   loop-prompt           Print the local iterative improvement-loop prompt
@@ -35,6 +36,7 @@ EXAMPLES
   tools/zastolom browser http://localhost:8000/web/#/quiz --mobile
   tools/zastolom browser http://localhost:8000/web/#/quiz/roleplay --mobile --click-text "Reveal model answer" --click-text "Close with model"
   tools/zastolom flow http://localhost:8000/web/
+  tools/zastolom preflight http://localhost:8000/web/
   tools/zastolom verify
   tools/zastolom source-loop --run               # discover and score source targets
   tools/zastolom future-loop --run --write-canvas # discover and score linked candidate pages
@@ -664,6 +666,29 @@ def cmd_flow(args):
         print(err("browser flow check failed"))
         sys.exit(r.returncode)
 
+
+def _run_subcommand(argv):
+    command = [sys.executable, os.path.join(ROOT, "tools", "zastolom"), *argv]
+    label = argv[0]
+    print(head(f"preflight:{label}"))
+    print("  → " + " ".join(command))
+    r = subprocess.run(command, cwd=ROOT)
+    if r.returncode != 0:
+        print(err(f"{argv[0]} failed"))
+        sys.exit(r.returncode)
+
+
+def cmd_preflight(args):
+    if not which("node"):
+        print(err("node not found — preflight requires node for flow step"))
+        sys.exit(2)
+    _run_subcommand(["build", "all"])
+    _run_subcommand(["verify"])
+    _run_subcommand(["test"])
+    _run_subcommand(
+        ["flow", args.url] + (["--out", args.out] if args.out else [])
+    )
+
 def cmd_verify(args):
     fails = 0
     print(head("verify"))
@@ -773,6 +798,9 @@ def main():
     fl = sub.add_parser("flow")
     fl.add_argument("url", nargs="?", default="http://localhost:8000/web/")
     fl.add_argument("--out")
+    pr = sub.add_parser("preflight")
+    pr.add_argument("url", nargs="?", default="http://localhost:8000/web/")
+    pr.add_argument("--out")
     sub.add_parser("verify")
     sub.add_parser("test")
     sub.add_parser("loop-prompt")
@@ -800,6 +828,7 @@ def main():
     elif args.cmd == "serve": cmd_serve(args)
     elif args.cmd == "browser": cmd_browser(args)
     elif args.cmd == "flow": cmd_flow(args)
+    elif args.cmd == "preflight": cmd_preflight(args)
     elif args.cmd == "verify": cmd_verify(args)
     elif args.cmd == "test": cmd_test(args)
     elif args.cmd == "loop-prompt": cmd_loop_prompt(args)

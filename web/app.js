@@ -43,6 +43,16 @@
     uses_za_toast_formula: "safe toast formula",
     avoids_na_zdorovie_misfire: "avoids false toast reply",
     keeps_stress_clear: "clear stress",
+    answers_host_questions: "answers host questions",
+    uses_learning_safety_line: "learning-safe line",
+    uses_repair_lines: "uses repair lines",
+    recovers_from_unknown: "recovers from unclear prompt",
+    tells_short_story: "short story",
+    handles_follow_up: "follow-up response",
+    stays_in_russian: "stays in Russian",
+    delivers_full_dinner_arc: "full dinner flow",
+    recovers_curveball: "recovers from curveball",
+    mentions_host_or_food: "mentions host or food",
   };
 
   const ACUTE = "́";
