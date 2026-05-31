@@ -39,6 +39,8 @@ function parseArgs(argv) {
     waitMs: 500,
     strict: false,
     failOnErrors: false,
+    offline: false,
+    serviceWorkers: "allow",
   };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
@@ -51,6 +53,11 @@ function parseArgs(argv) {
     else if (a === "--wait-ms") args.waitMs = Number(argv[++i] || args.waitMs);
     else if (a === "--strict") args.strict = true;
     else if (a === "--fail-on-errors") args.failOnErrors = true;
+    else if (a === "--offline") args.offline = true;
+    else if (a === "--service-workers") {
+      const mode = argv[++i];
+      args.serviceWorkers = mode === "block" || mode === "disable" || mode === "allow" ? mode : "allow";
+    }
     else if (a === "--help" || a === "-h") args.help = true;
     else if (!a.startsWith("-")) args.url = a;
     else throw new Error(`Unknown option: ${a}`);
@@ -60,11 +67,12 @@ function parseArgs(argv) {
 
 function help() {
   return `Usage:
-  tools/zastolom browser [url] [--desktop|--mobile|--both] [--click-text TEXT ...] [--strict] [--fail-on-errors] [--out DIR]
+  tools/zastolom browser [url] [--desktop|--mobile|--both] [--offline] [--service-workers allow|block|disable] [--click-text TEXT ...] [--strict] [--fail-on-errors] [--out DIR]
 
 Examples:
   tools/zastolom browser http://localhost:8000/web/
   tools/zastolom browser http://localhost:8000/web/#/quiz/listen --mobile --click-text "Show caption hint"
+  tools/zastolom browser http://localhost:8000/web/#/quiz/listen --mobile --offline --service-workers block
   tools/zastolom browser http://localhost:8000/web/#/quiz/roleplay --mobile --click-text "Reveal model answer" --click-text "Close with model"
 `;
 }
@@ -286,7 +294,12 @@ export async function runInspection(opts) {
   const results = [];
   try {
     for (const viewportName of opts.viewports) {
-      const page = await browser.newPage({ viewport: VIEWPORTS[viewportName] });
+      const context = await browser.newContext({
+        viewport: VIEWPORTS[viewportName],
+        offline: opts.offline,
+        serviceWorkers: opts.serviceWorkers,
+      });
+      const page = await context.newPage();
       const logs = [];
       page.on("console", (msg) => {
         const text = msg.text();
@@ -347,7 +360,7 @@ export async function runInspection(opts) {
         }
       }
       results.push({ viewport: viewportName, url: opts.url, before, steps, after: steps.length ? steps[steps.length - 1].snapshot : null, logs });
-      await page.close();
+      await context.close();
     }
   } finally {
     await browser.close();

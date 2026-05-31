@@ -12,18 +12,21 @@ generalization.
 
 ## Near-term priorities
 
-1. Complete structured role-play coverage from the scenario set:
-   - Rapid host questions
-   - How we met
-   - Lawyer / Missouri small talk
-   - Full dinner simulation
-   - Noisy table recovery
-2. Keep feature additions small and performance-focused.
-3. Run the end-to-end preflight before each merge:
+1. **Scenario coverage first**
+   - Ensure all protocol scenarios stay represented as structured `SCENARIOS` entries.
+   - Keep required items, success criteria, and lesson boundaries present for each.
+2. **Small, high-impact fixes only**
+   - No generalization work unless it directly improves a June 15 use-case.
+3. **Preflight every patch**
    - `tools/zastolom preflight http://localhost:8000/web/ --offline`
-4. Curate spoken source materials only if it directly supports real transfer:
-   - `tools/zastolom source-loop --spoken --run --limit 3 --write-canvas`
-5. Rehearse on phone with real noise and validate P1 + repair phrases with Kadriya.
+   - `tools/zastolom preflight http://localhost:8000/web/ --mobile --offline`
+4. **Phone-first validation**
+   - Run the app installed on the phone in offline mode and complete the minimal smoke flow:
+     cache core/P1 audio, reboot with airplane mode, open at least one drill, and run one scenario.
+5. **Manual source capture only when it converts directly**
+   - Keep source scouting for spoken material when it creates immediate dinner-readiness drills:
+     `tools/zastolom future-loop --spoken --run --limit 3 --write-canvas`
+   - Prefer clips/passages that map straight to role-play recovery or stress drills.
 
 ## Key files touched
 
@@ -38,4 +41,12 @@ generalization.
 Use this in terminal once you launch the app at `http://localhost:8000/web/`:
 
 - `/goal "Keep mission focus on transfer, not platform generalization."`
-- `/loop "Run preflight, patch blocking issues from live role-play, run flow check + offline path, and re-run."`
+- `/loop "Run preflight + one focused scenario rehearsal. Fix only blocking regression for live role-play or offline behavior. Re-run preflight and document next blocking test."`
+
+## Reference for immediate changes
+
+- Structured scenario cards now follow protocol order in `scripts/build_content.py`.
+- Any new scenario work should update all three:
+  - `tutor/roleplay_protocol.md`
+  - `scripts/build_content.py` (`SCENARIOS`)
+  - generated `content/content.json` via `tools/zastolom build`
