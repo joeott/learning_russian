@@ -47,6 +47,23 @@
         ]
       }
     },
+    "cloze_cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "item_id",
+          "lesson_id",
+          "lesson_number",
+          "prompt_ru",
+          "answer",
+          "accepted_answers",
+          "structures",
+          "allowed_error_types"
+        ]
+      }
+    },
     "error_types": { "type": "array" },
     "contrast_sets": { "type": "array" },
     "scenarios": { "type": "array" }

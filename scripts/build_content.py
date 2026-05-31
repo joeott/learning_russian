@@ -764,6 +764,19 @@ def lexemes_for_phrase(ru_plain: str) -> list[str]:
     return sorted(lexemes)
 
 
+def cloze_answer_for_phrase(ru_plain: str) -> tuple[str, str] | None:
+    skip = {"джо"}
+    matches = list(re.finditer(r"[А-Яа-яЁё]+", ru_plain))
+    candidates = [
+        m for m in matches if len(m.group(0)) >= 3 and m.group(0).lower() not in skip
+    ]
+    if len(matches) < 2 or not candidates:
+        return None
+    chosen = max(candidates, key=lambda m: (len(m.group(0)), -m.start()))
+    prompt = ru_plain[: chosen.start()] + "____" + ru_plain[chosen.end() :]
+    return prompt, chosen.group(0)
+
+
 def structures_for_item(item: dict) -> list[str]:
     structures = set(MODULE_STRUCTURES[item["module"]])
     tags = set(item.get("tags", []))
@@ -849,6 +862,37 @@ def build_curriculum(course: dict, modules: list[dict], items: list[dict]) -> di
     }
 
 
+def build_cloze_cards(items: list[dict]) -> list[dict]:
+    cards = []
+    for item in items:
+        cloze = cloze_answer_for_phrase(item["ru_plain"])
+        if not cloze:
+            continue
+        prompt_ru, answer = cloze
+        cards.append(
+            {
+                "id": f"cloze_{item['id']}_01",
+                "item_id": item["id"],
+                "module": item["module"],
+                "lesson_id": item["lesson_id"],
+                "lesson_number": item["lesson_number"],
+                "ru": item["ru"],
+                "ru_plain": item["ru_plain"],
+                "prompt_ru": prompt_ru,
+                "answer": answer,
+                "accepted_answers": [answer],
+                "en": item["en"],
+                "priority": item["priority"],
+                "lexemes": item["lexemes"],
+                "structures": item["structures"],
+                "allowed_error_types": item["allowed_error_types"],
+                "error_types": item["error_types"],
+                "tags": sorted(set(item.get("tags", []) + ["cloze"])),
+            }
+        )
+    return cards
+
+
 def build():
     course = load_course(os.environ.get("ZASTOLOM_COURSE", DEFAULT_COURSE_ID))
     mod_index = {m[0]: idx for idx, m in enumerate(MODULES)}
@@ -929,6 +973,7 @@ def build():
             enriched["lesson_id"] = lesson["lesson_id"]
             enriched["lesson_number"] = lesson_number
         scenarios.append(enriched)
+    cloze_cards = build_cloze_cards(items)
     data = {
         "course": course,
         "meta": {
@@ -944,6 +989,7 @@ def build():
         "curriculum": curriculum,
         "modules": modules,
         "items": items,
+        "cloze_cards": cloze_cards,
         "error_types": ERROR_TYPES,
         "contrast_sets": CONTRAST_SETS,
         "scenarios": scenarios,

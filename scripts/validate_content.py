@@ -97,6 +97,7 @@ def validate_content(data: dict) -> list[str]:
     ids: set[str] = set()
     plain_ru: dict[str, str] = {}
     error_types = {e.get("id") for e in data.get("error_types", [])}
+    item_by_id: dict[str, dict] = {}
     for idx, item in enumerate(data.get("items", []), 1):
         missing = REQUIRED_ITEM_FIELDS - item.keys()
         if missing:
@@ -105,6 +106,7 @@ def validate_content(data: dict) -> list[str]:
         if item_id in ids:
             fail(errors, f"duplicate item id: {item_id}")
         ids.add(item_id)
+        item_by_id[item_id] = item
         if item.get("module") not in modules:
             fail(errors, f"{item_id}: unknown module {item.get('module')}")
         lesson = lesson_by_id.get(item.get("lesson_id"))
@@ -154,6 +156,48 @@ def validate_content(data: dict) -> list[str]:
     declared = data.get("meta", {}).get("total_items")
     if declared != len(data.get("items", [])):
         fail(errors, f"meta.total_items {declared} != actual item count")
+
+    cloze_ids: set[str] = set()
+    for card in data.get("cloze_cards", []):
+        card_id = card.get("id", "")
+        if card_id in cloze_ids:
+            fail(errors, f"duplicate cloze card id: {card_id}")
+        cloze_ids.add(card_id)
+        source = item_by_id.get(card.get("item_id"))
+        if not source:
+            fail(errors, f"{card_id}: unknown source item {card.get('item_id')}")
+            continue
+        if card.get("lesson_id") != source.get("lesson_id"):
+            fail(errors, f"{card_id}: lesson_id does not match source item")
+        if card.get("lesson_number") != source.get("lesson_number"):
+            fail(errors, f"{card_id}: lesson_number does not match source item")
+        if card.get("module") != source.get("module"):
+            fail(errors, f"{card_id}: module does not match source item")
+        answer = card.get("answer", "")
+        if answer not in source.get("ru_plain", ""):
+            fail(errors, f"{card_id}: answer is not present in source phrase")
+        if "____" not in card.get("prompt_ru", ""):
+            fail(errors, f"{card_id}: prompt_ru must contain a blank")
+        if card.get("prompt_ru", "").replace("____", answer) != source.get("ru_plain"):
+            fail(
+                errors,
+                f"{card_id}: prompt_ru plus answer must reconstruct source phrase",
+            )
+        try:
+            boundary = lesson_boundary(data, card.get("lesson_id"))
+            if source["id"] not in boundary["item_ids"]:
+                fail(errors, f"{card_id}: source item outside lesson boundary")
+            locked_structures = set(card.get("structures", [])) - boundary["structures"]
+            if locked_structures:
+                fail(
+                    errors,
+                    f"{card_id}: structures outside lesson boundary: {sorted(locked_structures)}",
+                )
+        except KeyError as exc:
+            fail(errors, f"{card_id}: {exc}")
+        for error_type in card.get("allowed_error_types", []):
+            if error_type not in error_types:
+                fail(errors, f"{card_id}: unknown allowed_error_type {error_type}")
 
     for scenario in data.get("scenarios", []):
         scenario_lesson_id = scenario.get("lesson_id")

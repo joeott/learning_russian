@@ -5909,6 +5909,2653 @@
       ]
     }
   ],
+  "cloze_cards": [
+    {
+      "id": "cloze_firs002_01",
+      "item_id": "firs002",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "До́брый ве́чер",
+      "ru_plain": "Добрый вечер",
+      "prompt_ru": "____ вечер",
+      "answer": "Добрый",
+      "accepted_answers": [
+        "Добрый"
+      ],
+      "en": "Good evening",
+      "priority": 1,
+      "lexemes": [
+        "вечер",
+        "добрый",
+        "добрый вечер"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "greeting"
+      ]
+    },
+    {
+      "id": "cloze_firs003_01",
+      "item_id": "firs003",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "До́брый день",
+      "ru_plain": "Добрый день",
+      "prompt_ru": "____ день",
+      "answer": "Добрый",
+      "accepted_answers": [
+        "Добрый"
+      ],
+      "en": "Good afternoon",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "добрый",
+        "добрый день"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "greeting"
+      ]
+    },
+    {
+      "id": "cloze_firs004_01",
+      "item_id": "firs004",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "До́брое у́тро",
+      "ru_plain": "Доброе утро",
+      "prompt_ru": "____ утро",
+      "answer": "Доброе",
+      "accepted_answers": [
+        "Доброе"
+      ],
+      "en": "Good morning",
+      "priority": 2,
+      "lexemes": [
+        "доброе",
+        "доброе утро",
+        "утро"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "greeting"
+      ]
+    },
+    {
+      "id": "cloze_firs005_01",
+      "item_id": "firs005",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Меня́ зову́т Джо",
+      "ru_plain": "Меня зовут Джо",
+      "prompt_ru": "Меня ____ Джо",
+      "answer": "зовут",
+      "accepted_answers": [
+        "зовут"
+      ],
+      "en": "My name is Joe",
+      "priority": 1,
+      "lexemes": [
+        "джо",
+        "зовут",
+        "меня",
+        "меня зовут джо"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "intro"
+      ]
+    },
+    {
+      "id": "cloze_firs006_01",
+      "item_id": "firs006",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "О́чень прия́тно",
+      "ru_plain": "Очень приятно",
+      "prompt_ru": "Очень ____",
+      "answer": "приятно",
+      "accepted_answers": [
+        "приятно"
+      ],
+      "en": "Very nice to meet you",
+      "priority": 1,
+      "lexemes": [
+        "очень",
+        "очень приятно",
+        "приятно"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "intro"
+      ]
+    },
+    {
+      "id": "cloze_firs007_01",
+      "item_id": "firs007",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Прия́тно познако́миться",
+      "ru_plain": "Приятно познакомиться",
+      "prompt_ru": "Приятно ____",
+      "answer": "познакомиться",
+      "accepted_answers": [
+        "познакомиться"
+      ],
+      "en": "Pleased to meet you",
+      "priority": 2,
+      "lexemes": [
+        "познакомиться",
+        "приятно",
+        "приятно познакомиться"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "intro"
+      ]
+    },
+    {
+      "id": "cloze_firs008_01",
+      "item_id": "firs008",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Рад познако́миться",
+      "ru_plain": "Рад познакомиться",
+      "prompt_ru": "Рад ____",
+      "answer": "познакомиться",
+      "accepted_answers": [
+        "познакомиться"
+      ],
+      "en": "Glad to meet you",
+      "priority": 2,
+      "lexemes": [
+        "познакомиться",
+        "рад",
+        "рад познакомиться"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "gendered_form",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "intro"
+      ]
+    },
+    {
+      "id": "cloze_firs009_01",
+      "item_id": "firs009",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Разреши́те предста́виться",
+      "ru_plain": "Разрешите представиться",
+      "prompt_ru": "Разрешите ____",
+      "answer": "представиться",
+      "accepted_answers": [
+        "представиться"
+      ],
+      "en": "Allow me to introduce myself",
+      "priority": 3,
+      "lexemes": [
+        "представиться",
+        "разрешите",
+        "разрешите представиться"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "intro"
+      ]
+    },
+    {
+      "id": "cloze_firs010_01",
+      "item_id": "firs010",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Спаси́бо, что пригласи́ли",
+      "ru_plain": "Спасибо, что пригласили",
+      "prompt_ru": "Спасибо, что ____",
+      "answer": "пригласили",
+      "accepted_answers": [
+        "пригласили"
+      ],
+      "en": "Thank you for inviting me",
+      "priority": 1,
+      "lexemes": [
+        "пригласили",
+        "спасибо",
+        "спасибо, что пригласили",
+        "что"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "intro",
+        "politeness"
+      ]
+    },
+    {
+      "id": "cloze_firs011_01",
+      "item_id": "firs011",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Спаси́бо, что приня́ли",
+      "ru_plain": "Спасибо, что приняли",
+      "prompt_ru": "____, что приняли",
+      "answer": "Спасибо",
+      "accepted_answers": [
+        "Спасибо"
+      ],
+      "en": "Thank you for having me",
+      "priority": 2,
+      "lexemes": [
+        "приняли",
+        "спасибо",
+        "спасибо, что приняли",
+        "что"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_firs012_01",
+      "item_id": "firs012",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "До свида́ния",
+      "ru_plain": "До свидания",
+      "prompt_ru": "До ____",
+      "answer": "свидания",
+      "accepted_answers": [
+        "свидания"
+      ],
+      "en": "Goodbye",
+      "priority": 2,
+      "lexemes": [
+        "до",
+        "до свидания",
+        "свидания"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "greeting"
+      ]
+    },
+    {
+      "id": "cloze_firs013_01",
+      "item_id": "firs013",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Споко́йной но́чи",
+      "ru_plain": "Спокойной ночи",
+      "prompt_ru": "____ ночи",
+      "answer": "Спокойной",
+      "accepted_answers": [
+        "Спокойной"
+      ],
+      "en": "Good night",
+      "priority": 3,
+      "lexemes": [
+        "ночи",
+        "спокойной",
+        "спокойной ночи"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "greeting"
+      ]
+    },
+    {
+      "id": "cloze_poli002_01",
+      "item_id": "poli002",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Спаси́бо большо́е",
+      "ru_plain": "Спасибо большое",
+      "prompt_ru": "____ большое",
+      "answer": "Спасибо",
+      "accepted_answers": [
+        "Спасибо"
+      ],
+      "en": "Thank you very much",
+      "priority": 1,
+      "lexemes": [
+        "большое",
+        "спасибо",
+        "спасибо большое"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_poli008_01",
+      "item_id": "poli008",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Нет, спаси́бо",
+      "ru_plain": "Нет, спасибо",
+      "prompt_ru": "Нет, ____",
+      "answer": "спасибо",
+      "accepted_answers": [
+        "спасибо"
+      ],
+      "en": "No, thank you",
+      "priority": 1,
+      "lexemes": [
+        "нет",
+        "нет, спасибо",
+        "спасибо"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_poli009_01",
+      "item_id": "poli009",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Я ещё учу́ ру́сский",
+      "ru_plain": "Я ещё учу русский",
+      "prompt_ru": "Я ещё учу ____",
+      "answer": "русский",
+      "accepted_answers": [
+        "русский"
+      ],
+      "en": "I'm still learning Russian",
+      "priority": 1,
+      "lexemes": [
+        "ещё",
+        "русский",
+        "учу",
+        "я",
+        "я ещё учу русский"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "rescue"
+      ]
+    },
+    {
+      "id": "cloze_poli010_01",
+      "item_id": "poli010",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Повтори́те, пожа́луйста",
+      "ru_plain": "Повторите, пожалуйста",
+      "prompt_ru": "Повторите, ____",
+      "answer": "пожалуйста",
+      "accepted_answers": [
+        "пожалуйста"
+      ],
+      "en": "Could you repeat, please",
+      "priority": 1,
+      "lexemes": [
+        "повторите",
+        "повторите, пожалуйста",
+        "пожалуйста"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "rescue"
+      ]
+    },
+    {
+      "id": "cloze_poli011_01",
+      "item_id": "poli011",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Поме́дленнее, пожа́луйста",
+      "ru_plain": "Помедленнее, пожалуйста",
+      "prompt_ru": "____, пожалуйста",
+      "answer": "Помедленнее",
+      "accepted_answers": [
+        "Помедленнее"
+      ],
+      "en": "Slower, please",
+      "priority": 1,
+      "lexemes": [
+        "пожалуйста",
+        "помедленнее",
+        "помедленнее, пожалуйста"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "rescue"
+      ]
+    },
+    {
+      "id": "cloze_poli012_01",
+      "item_id": "poli012",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Я не понима́ю",
+      "ru_plain": "Я не понимаю",
+      "prompt_ru": "Я не ____",
+      "answer": "понимаю",
+      "accepted_answers": [
+        "понимаю"
+      ],
+      "en": "I don't understand",
+      "priority": 1,
+      "lexemes": [
+        "не",
+        "понимаю",
+        "я",
+        "я не понимаю"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "rescue"
+      ]
+    },
+    {
+      "id": "cloze_poli013_01",
+      "item_id": "poli013",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Я понима́ю",
+      "ru_plain": "Я понимаю",
+      "prompt_ru": "Я ____",
+      "answer": "понимаю",
+      "accepted_answers": [
+        "понимаю"
+      ],
+      "en": "I understand",
+      "priority": 2,
+      "lexemes": [
+        "понимаю",
+        "я",
+        "я понимаю"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_poli017_01",
+      "item_id": "poli017",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Как по-ру́сски …?",
+      "ru_plain": "Как по-русски …?",
+      "prompt_ru": "Как по-____ …?",
+      "answer": "русски",
+      "accepted_answers": [
+        "русски"
+      ],
+      "en": "How do you say … in Russian?",
+      "priority": 3,
+      "lexemes": [
+        "как",
+        "как по-русски …?",
+        "по",
+        "русски"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_toas001_01",
+      "item_id": "toas001",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За встре́чу!",
+      "ru_plain": "За встречу!",
+      "prompt_ru": "За ____!",
+      "answer": "встречу",
+      "accepted_answers": [
+        "встречу"
+      ],
+      "en": "To our getting together!",
+      "priority": 1,
+      "lexemes": [
+        "встречу",
+        "за",
+        "за встречу!"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas002_01",
+      "item_id": "toas002",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За знако́мство!",
+      "ru_plain": "За знакомство!",
+      "prompt_ru": "За ____!",
+      "answer": "знакомство",
+      "accepted_answers": [
+        "знакомство"
+      ],
+      "en": "To getting to know each other!",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за знакомство!",
+        "знакомство"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas003_01",
+      "item_id": "toas003",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За роди́телей!",
+      "ru_plain": "За родителей!",
+      "prompt_ru": "За ____!",
+      "answer": "родителей",
+      "accepted_answers": [
+        "родителей"
+      ],
+      "en": "To the parents!",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за родителей!",
+        "родителей"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas004_01",
+      "item_id": "toas004",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За хозя́йку!",
+      "ru_plain": "За хозяйку!",
+      "prompt_ru": "За ____!",
+      "answer": "хозяйку",
+      "accepted_answers": [
+        "хозяйку"
+      ],
+      "en": "To the hostess! (who cooked)",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за хозяйку!",
+        "хозяйку"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas005_01",
+      "item_id": "toas005",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За хозя́ев!",
+      "ru_plain": "За хозяев!",
+      "prompt_ru": "За ____!",
+      "answer": "хозяев",
+      "accepted_answers": [
+        "хозяев"
+      ],
+      "en": "To the hosts!",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за хозяев!",
+        "хозяев"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas006_01",
+      "item_id": "toas006",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За ва́ше здоро́вье!",
+      "ru_plain": "За ваше здоровье!",
+      "prompt_ru": "За ваше ____!",
+      "answer": "здоровье",
+      "accepted_answers": [
+        "здоровье"
+      ],
+      "en": "To your health! (formal)",
+      "priority": 1,
+      "lexemes": [
+        "ваше",
+        "за",
+        "за ваше здоровье!",
+        "здоровье"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas007_01",
+      "item_id": "toas007",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За здоро́вье!",
+      "ru_plain": "За здоровье!",
+      "prompt_ru": "За ____!",
+      "answer": "здоровье",
+      "accepted_answers": [
+        "здоровье"
+      ],
+      "en": "To health!",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за здоровье!",
+        "здоровье"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas008_01",
+      "item_id": "toas008",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За семью́!",
+      "ru_plain": "За семью!",
+      "prompt_ru": "За ____!",
+      "answer": "семью",
+      "accepted_answers": [
+        "семью"
+      ],
+      "en": "To the family!",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за семью!",
+        "семью"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas009_01",
+      "item_id": "toas009",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За любо́вь!",
+      "ru_plain": "За любовь!",
+      "prompt_ru": "За ____!",
+      "answer": "любовь",
+      "accepted_answers": [
+        "любовь"
+      ],
+      "en": "To love!",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за любовь!",
+        "любовь"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas010_01",
+      "item_id": "toas010",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За молоды́х!",
+      "ru_plain": "За молодых!",
+      "prompt_ru": "За ____!",
+      "answer": "молодых",
+      "accepted_answers": [
+        "молодых"
+      ],
+      "en": "To the newlyweds!",
+      "priority": 3,
+      "lexemes": [
+        "за",
+        "за молодых!",
+        "молодых"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas011_01",
+      "item_id": "toas011",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "Бу́дем здоро́вы!",
+      "ru_plain": "Будем здоровы!",
+      "prompt_ru": "Будем ____!",
+      "answer": "здоровы",
+      "accepted_answers": [
+        "здоровы"
+      ],
+      "en": "Let's be healthy! (full toast)",
+      "priority": 2,
+      "lexemes": [
+        "будем",
+        "будем здоровы!",
+        "здоровы"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas012_01",
+      "item_id": "toas012",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "Я хочу́ сказа́ть тост за …",
+      "ru_plain": "Я хочу сказать тост за …",
+      "prompt_ru": "Я хочу ____ тост за …",
+      "answer": "сказать",
+      "accepted_answers": [
+        "сказать"
+      ],
+      "en": "I want to make a toast to …",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "сказать",
+        "тост",
+        "хочу",
+        "я",
+        "я хочу сказать тост за …"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas013_01",
+      "item_id": "toas013",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "Дава́йте вы́пьем за э́то!",
+      "ru_plain": "Давайте выпьем за это!",
+      "prompt_ru": "____ выпьем за это!",
+      "answer": "Давайте",
+      "accepted_answers": [
+        "Давайте"
+      ],
+      "en": "Let's drink to that!",
+      "priority": 3,
+      "lexemes": [
+        "выпьем",
+        "давайте",
+        "давайте выпьем за это!",
+        "за",
+        "это"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast"
+      ]
+    },
+    {
+      "id": "cloze_toas014_01",
+      "item_id": "toas014",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "до дна́",
+      "ru_plain": "до дна",
+      "prompt_ru": "до ____",
+      "answer": "дна",
+      "accepted_answers": [
+        "дна"
+      ],
+      "en": "'to the bottom' (drain the glass)",
+      "priority": 3,
+      "lexemes": [
+        "дна",
+        "до",
+        "до дна"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "toast-vocab"
+      ]
+    },
+    {
+      "id": "cloze_fami008_01",
+      "item_id": "fami008",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "сестра́ жены́",
+      "ru_plain": "сестра жены",
+      "prompt_ru": "____ жены",
+      "answer": "сестра",
+      "accepted_answers": [
+        "сестра"
+      ],
+      "en": "wife's sister (your sister-in-law)",
+      "priority": 3,
+      "lexemes": [
+        "жены",
+        "сестра",
+        "сестра жены"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_fami019_01",
+      "item_id": "fami019",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "Я люблю́ ва́шу дочь",
+      "ru_plain": "Я люблю вашу дочь",
+      "prompt_ru": "Я ____ вашу дочь",
+      "answer": "люблю",
+      "accepted_answers": [
+        "люблю"
+      ],
+      "en": "I love your daughter",
+      "priority": 1,
+      "lexemes": [
+        "вашу",
+        "дочь",
+        "люблю",
+        "я",
+        "я люблю вашу дочь"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_food001_01",
+      "item_id": "food001",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Прия́тного аппети́та!",
+      "ru_plain": "Приятного аппетита!",
+      "prompt_ru": "____ аппетита!",
+      "answer": "Приятного",
+      "accepted_answers": [
+        "Приятного"
+      ],
+      "en": "Bon appétit!",
+      "priority": 1,
+      "lexemes": [
+        "аппетита",
+        "приятного",
+        "приятного аппетита!"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_food002_01",
+      "item_id": "food002",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "О́чень вку́сно!",
+      "ru_plain": "Очень вкусно!",
+      "prompt_ru": "Очень ____!",
+      "answer": "вкусно",
+      "accepted_answers": [
+        "вкусно"
+      ],
+      "en": "Very tasty!",
+      "priority": 1,
+      "lexemes": [
+        "вкусно",
+        "очень",
+        "очень вкусно!"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_food004_01",
+      "item_id": "food004",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Спаси́бо, бы́ло о́чень вку́сно",
+      "ru_plain": "Спасибо, было очень вкусно",
+      "prompt_ru": "____, было очень вкусно",
+      "answer": "Спасибо",
+      "accepted_answers": [
+        "Спасибо"
+      ],
+      "en": "Thank you, it was delicious",
+      "priority": 1,
+      "lexemes": [
+        "было",
+        "вкусно",
+        "очень",
+        "спасибо",
+        "спасибо, было очень вкусно"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_food005_01",
+      "item_id": "food005",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Мне о́чень нра́вится",
+      "ru_plain": "Мне очень нравится",
+      "prompt_ru": "Мне очень ____",
+      "answer": "нравится",
+      "accepted_answers": [
+        "нравится"
+      ],
+      "en": "I really like it",
+      "priority": 2,
+      "lexemes": [
+        "мне",
+        "мне очень нравится",
+        "нравится",
+        "очень"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_food006_01",
+      "item_id": "food006",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Я нае́лся",
+      "ru_plain": "Я наелся",
+      "prompt_ru": "Я ____",
+      "answer": "наелся",
+      "accepted_answers": [
+        "наелся"
+      ],
+      "en": "I'm full (I've eaten my fill)",
+      "priority": 2,
+      "lexemes": [
+        "наелся",
+        "я",
+        "я наелся"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_food007_01",
+      "item_id": "food007",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Мо́жно ещё?",
+      "ru_plain": "Можно ещё?",
+      "prompt_ru": "____ ещё?",
+      "answer": "Можно",
+      "accepted_answers": [
+        "Можно"
+      ],
+      "en": "May I have more?",
+      "priority": 2,
+      "lexemes": [
+        "ещё",
+        "можно",
+        "можно ещё?"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_food008_01",
+      "item_id": "food008",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Спаси́бо, не на́до",
+      "ru_plain": "Спасибо, не надо",
+      "prompt_ru": "____, не надо",
+      "answer": "Спасибо",
+      "accepted_answers": [
+        "Спасибо"
+      ],
+      "en": "Thanks, I'm good (no need)",
+      "priority": 2,
+      "lexemes": [
+        "надо",
+        "не",
+        "спасибо",
+        "спасибо, не надо"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_food009_01",
+      "item_id": "food009",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Переда́йте, пожа́луйста, хлеб",
+      "ru_plain": "Передайте, пожалуйста, хлеб",
+      "prompt_ru": "Передайте, ____, хлеб",
+      "answer": "пожалуйста",
+      "accepted_answers": [
+        "пожалуйста"
+      ],
+      "en": "Please pass the bread",
+      "priority": 3,
+      "lexemes": [
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "пожалуйста",
+        "хлеб"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_food010_01",
+      "item_id": "food010",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Мо́жно ча́ю?",
+      "ru_plain": "Можно чаю?",
+      "prompt_ru": "____ чаю?",
+      "answer": "Можно",
+      "accepted_answers": [
+        "Можно"
+      ],
+      "en": "May I have some tea?",
+      "priority": 3,
+      "lexemes": [
+        "можно",
+        "можно чаю?",
+        "чаю"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_smal001_01",
+      "item_id": "smal001",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Я юри́ст",
+      "ru_plain": "Я юрист",
+      "prompt_ru": "Я ____",
+      "answer": "юрист",
+      "accepted_answers": [
+        "юрист"
+      ],
+      "en": "I'm a lawyer (general — use this)",
+      "priority": 2,
+      "lexemes": [
+        "юрист",
+        "я",
+        "я юрист"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_smal002_01",
+      "item_id": "smal002",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Я из Аме́рики",
+      "ru_plain": "Я из Америки",
+      "prompt_ru": "Я из ____",
+      "answer": "Америки",
+      "accepted_answers": [
+        "Америки"
+      ],
+      "en": "I'm from America",
+      "priority": 2,
+      "lexemes": [
+        "америки",
+        "из",
+        "я",
+        "я из америки"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_smal003_01",
+      "item_id": "smal003",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Я из шта́та Миссу́ри",
+      "ru_plain": "Я из штата Миссури",
+      "prompt_ru": "Я из штата ____",
+      "answer": "Миссури",
+      "accepted_answers": [
+        "Миссури"
+      ],
+      "en": "I'm from the state of Missouri",
+      "priority": 3,
+      "lexemes": [
+        "из",
+        "миссури",
+        "штата",
+        "я",
+        "я из штата миссури"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_smal004_01",
+      "item_id": "smal004",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Я живу́ в Аме́рике",
+      "ru_plain": "Я живу в Америке",
+      "prompt_ru": "Я живу в ____",
+      "answer": "Америке",
+      "accepted_answers": [
+        "Америке"
+      ],
+      "en": "I live in America",
+      "priority": 3,
+      "lexemes": [
+        "америке",
+        "в",
+        "живу",
+        "я",
+        "я живу в америке"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_smal005_01",
+      "item_id": "smal005",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Мы познако́мились …",
+      "ru_plain": "Мы познакомились …",
+      "prompt_ru": "Мы ____ …",
+      "answer": "познакомились",
+      "accepted_answers": [
+        "познакомились"
+      ],
+      "en": "We met …",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "мы познакомились …",
+        "познакомились"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_smal006_01",
+      "item_id": "smal006",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Я немно́го говорю́ по-ру́сски",
+      "ru_plain": "Я немного говорю по-русски",
+      "prompt_ru": "Я ____ говорю по-русски",
+      "answer": "немного",
+      "accepted_answers": [
+        "немного"
+      ],
+      "en": "I speak a little Russian",
+      "priority": 1,
+      "lexemes": [
+        "говорю",
+        "немного",
+        "по",
+        "русски",
+        "я",
+        "я немного говорю по-русски"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_smal007_01",
+      "item_id": "smal007",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Хорошо́, спаси́бо",
+      "ru_plain": "Хорошо, спасибо",
+      "prompt_ru": "Хорошо, ____",
+      "answer": "спасибо",
+      "accepted_answers": [
+        "спасибо"
+      ],
+      "en": "Good, thank you (answer to 'how are you')",
+      "priority": 1,
+      "lexemes": [
+        "спасибо",
+        "хорошо",
+        "хорошо, спасибо"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_smal009_01",
+      "item_id": "smal009",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Да, немно́го",
+      "ru_plain": "Да, немного",
+      "prompt_ru": "Да, ____",
+      "answer": "немного",
+      "accepted_answers": [
+        "немного"
+      ],
+      "en": "Yes, a little (answer)",
+      "priority": 2,
+      "lexemes": [
+        "да",
+        "да, немного",
+        "немного"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_list001_01",
+      "item_id": "list001",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Как дела́?",
+      "ru_plain": "Как дела?",
+      "prompt_ru": "Как ____?",
+      "answer": "дела",
+      "accepted_answers": [
+        "дела"
+      ],
+      "en": "How are you?",
+      "priority": 1,
+      "lexemes": [
+        "дела",
+        "как",
+        "как дела?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_list002_01",
+      "item_id": "list002",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Отку́да вы?",
+      "ru_plain": "Откуда вы?",
+      "prompt_ru": "____ вы?",
+      "answer": "Откуда",
+      "accepted_answers": [
+        "Откуда"
+      ],
+      "en": "Where are you from?",
+      "priority": 1,
+      "lexemes": [
+        "вы",
+        "откуда",
+        "откуда вы?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_list003_01",
+      "item_id": "list003",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Кем вы рабо́таете?",
+      "ru_plain": "Кем вы работаете?",
+      "prompt_ru": "Кем вы ____?",
+      "answer": "работаете",
+      "accepted_answers": [
+        "работаете"
+      ],
+      "en": "What do you do for work?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "кем",
+        "кем вы работаете?",
+        "работаете"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_list004_01",
+      "item_id": "list004",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Вы говори́те по-ру́сски?",
+      "ru_plain": "Вы говорите по-русски?",
+      "prompt_ru": "Вы ____ по-русски?",
+      "answer": "говорите",
+      "accepted_answers": [
+        "говорите"
+      ],
+      "en": "Do you speak Russian?",
+      "priority": 1,
+      "lexemes": [
+        "вы",
+        "вы говорите по-русски?",
+        "говорите",
+        "по",
+        "русски"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_list005_01",
+      "item_id": "list005",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Как ва́м Росси́я?",
+      "ru_plain": "Как вам Россия?",
+      "prompt_ru": "Как вам ____?",
+      "answer": "Россия",
+      "accepted_answers": [
+        "Россия"
+      ],
+      "en": "How do you like Russia?",
+      "priority": 2,
+      "lexemes": [
+        "вам",
+        "как",
+        "как вам россия?",
+        "россия"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_list006_01",
+      "item_id": "list006",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Как вы познако́мились?",
+      "ru_plain": "Как вы познакомились?",
+      "prompt_ru": "Как вы ____?",
+      "answer": "познакомились",
+      "accepted_answers": [
+        "познакомились"
+      ],
+      "en": "How did you two meet?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "как",
+        "как вы познакомились?",
+        "познакомились"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_list007_01",
+      "item_id": "list007",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Вам нра́вится …?",
+      "ru_plain": "Вам нравится …?",
+      "prompt_ru": "Вам ____ …?",
+      "answer": "нравится",
+      "accepted_answers": [
+        "нравится"
+      ],
+      "en": "Do you like …?",
+      "priority": 2,
+      "lexemes": [
+        "вам",
+        "вам нравится …?",
+        "нравится"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_verb001_01",
+      "item_id": "verb001",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "хочу́ / хоти́те",
+      "ru_plain": "хочу / хотите",
+      "prompt_ru": "хочу / ____",
+      "answer": "хотите",
+      "accepted_answers": [
+        "хотите"
+      ],
+      "en": "I want / you (pl/formal) want — хоте́ть",
+      "priority": 3,
+      "lexemes": [
+        "хотите",
+        "хочу",
+        "хочу / хотите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_verb002_01",
+      "item_id": "verb002",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "могу́ / мо́жете",
+      "ru_plain": "могу / можете",
+      "prompt_ru": "могу / ____",
+      "answer": "можете",
+      "accepted_answers": [
+        "можете"
+      ],
+      "en": "I can / you can — мочь",
+      "priority": 3,
+      "lexemes": [
+        "могу",
+        "могу / можете",
+        "можете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_verb003_01",
+      "item_id": "verb003",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "говорю́ / говори́те",
+      "ru_plain": "говорю / говорите",
+      "prompt_ru": "говорю / ____",
+      "answer": "говорите",
+      "accepted_answers": [
+        "говорите"
+      ],
+      "en": "I speak / you speak — говори́ть",
+      "priority": 3,
+      "lexemes": [
+        "говорите",
+        "говорю",
+        "говорю / говорите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_verb004_01",
+      "item_id": "verb004",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "понима́ю / понима́ете",
+      "ru_plain": "понимаю / понимаете",
+      "prompt_ru": "понимаю / ____",
+      "answer": "понимаете",
+      "accepted_answers": [
+        "понимаете"
+      ],
+      "en": "I understand / you understand — понима́ть",
+      "priority": 3,
+      "lexemes": [
+        "понимаете",
+        "понимаю",
+        "понимаю / понимаете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_verb005_01",
+      "item_id": "verb005",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "люблю́ / лю́бите",
+      "ru_plain": "люблю / любите",
+      "prompt_ru": "люблю / ____",
+      "answer": "любите",
+      "accepted_answers": [
+        "любите"
+      ],
+      "en": "I love / you love — люби́ть",
+      "priority": 3,
+      "lexemes": [
+        "любите",
+        "люблю",
+        "люблю / любите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_verb006_01",
+      "item_id": "verb006",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "рабо́таю / рабо́таете",
+      "ru_plain": "работаю / работаете",
+      "prompt_ru": "работаю / ____",
+      "answer": "работаете",
+      "accepted_answers": [
+        "работаете"
+      ],
+      "en": "I work / you work — рабо́тать",
+      "priority": 3,
+      "lexemes": [
+        "работаете",
+        "работаю",
+        "работаю / работаете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_verb007_01",
+      "item_id": "verb007",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "живу́ / живёте",
+      "ru_plain": "живу / живёте",
+      "prompt_ru": "живу / ____",
+      "answer": "живёте",
+      "accepted_answers": [
+        "живёте"
+      ],
+      "en": "I live / you live — жить",
+      "priority": 3,
+      "lexemes": [
+        "живу",
+        "живу / живёте",
+        "живёте"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_verb008_01",
+      "item_id": "verb008",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "ем / еди́те",
+      "ru_plain": "ем / едите",
+      "prompt_ru": "ем / ____",
+      "answer": "едите",
+      "accepted_answers": [
+        "едите"
+      ],
+      "en": "I eat / you eat — есть",
+      "priority": 3,
+      "lexemes": [
+        "едите",
+        "ем",
+        "ем / едите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_verb009_01",
+      "item_id": "verb009",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "пью / пьёте",
+      "ru_plain": "пью / пьёте",
+      "prompt_ru": "пью / ____",
+      "answer": "пьёте",
+      "accepted_answers": [
+        "пьёте"
+      ],
+      "en": "I drink / you drink — пить",
+      "priority": 3,
+      "lexemes": [
+        "пью",
+        "пью / пьёте",
+        "пьёте"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_verb010_01",
+      "item_id": "verb010",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "зна́ю / зна́ете",
+      "ru_plain": "знаю / знаете",
+      "prompt_ru": "знаю / ____",
+      "answer": "знаете",
+      "accepted_answers": [
+        "знаете"
+      ],
+      "en": "I know / you know — знать",
+      "priority": 3,
+      "lexemes": [
+        "знаете",
+        "знаю",
+        "знаю / знаете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze"
+      ]
+    }
+  ],
   "error_types": [
     {
       "id": "stress",

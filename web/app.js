@@ -10,6 +10,7 @@
   const COURSE = DATA.course || {};
   const MISSION = COURSE.mission || {};
   const ITEMS = DATA.items;
+  const CLOZE_CARDS = DATA.cloze_cards || [];
   const MODULES = DATA.modules;
   const CURRICULUM = DATA.curriculum || {};
   const LESSONS = (CURRICULUM.lessons || []).slice().sort((a, b) => a.lesson_number - b.lesson_number);
@@ -210,10 +211,18 @@
     const n = activeLesson().lesson_number || 99;
     return items.filter(i => !i.lesson_number || i.lesson_number <= n);
   }
+  function unlockedClozeCards(cards) {
+    const n = activeLesson().lesson_number || 99;
+    return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
+  }
+  function practiceItem(id) {
+    return ITEMS.find(i => i.id === id) || CLOZE_CARDS.find(c => c.id === id);
+  }
   function lessonLockHtml() {
     if (!LESSONS.length) return "";
     const lesson = activeLesson();
     const count = unlockedItems(ITEMS).length;
+    const clozeCount = unlockedClozeCards(CLOZE_CARDS).length;
     const options = LESSONS.map(l => `<option value="${escapeHtml(l.lesson_id)}" ${l.lesson_id === lesson.lesson_id ? "selected" : ""}>${String(l.lesson_number).padStart(2, "0")} · ${escapeHtml(l.title)}</option>`).join("");
     return `<div class="lessonlock rise">
       <div>
@@ -221,7 +230,7 @@
         <p>Practice is constrained to Lesson ${lesson.lesson_number}: ${escapeHtml(lesson.title)} and everything before it.</p>
       </div>
       <label><span>Unlocked through</span><select onchange="ZS.setLesson(this.value)">${options}</select></label>
-      <div class="lessonlock__meta">${count}/${ITEMS.length} phrases unlocked · ${(lesson.introduced_structures || []).length} structures in this lesson</div>
+      <div class="lessonlock__meta">${count}/${ITEMS.length} phrases unlocked · ${clozeCount}/${CLOZE_CARDS.length} cloze cards · ${(lesson.introduced_structures || []).length} structures in this lesson</div>
     </div>`;
   }
 
@@ -397,12 +406,14 @@
   const STAGES = [
     { n: 1, key: "recognition", title: "Recognise", desc: "See Russian → choose the meaning.", instr: "What does this mean?" },
     { n: 2, key: "recall", title: "Recall", desc: "See English → choose the Russian.", instr: "Pick the Russian" },
-    { n: 3, key: "produce", title: "Produce", desc: "See English → type the Russian (stress optional).", instr: "Type it in Russian" },
-    { n: 4, key: "listen", title: "Listen", desc: "Hear it → choose the meaning. No text.", instr: "What did you hear?" },
-    { n: 5, key: "roleplay", title: "Role-play", desc: "A table prompt → say it, then self-rate.", instr: "Say it out loud" },
+    { n: 3, key: "cloze", title: "Cloze", desc: "Fill the missing Russian word in context.", instr: "Fill the blank" },
+    { n: 4, key: "produce", title: "Produce", desc: "See English → type the Russian (stress optional).", instr: "Type it in Russian" },
+    { n: 5, key: "listen", title: "Listen", desc: "Hear it → choose the meaning. No text.", instr: "What did you hear?" },
+    { n: 6, key: "roleplay", title: "Role-play", desc: "A table prompt → say it, then self-rate.", instr: "Say it out loud" },
   ];
   function stagePool(stageKey) {
     const items = unlockedItems(ITEMS);
+    if (stageKey === "cloze") return unlockedClozeCards(CLOZE_CARDS);
     if (stageKey === "listen") return items.filter(i => i.syllables >= 1);
     if (stageKey === "roleplay" && SCENARIOS.length) {
       const scenarioIds = new Set(SCENARIOS.flatMap(s => s.required_items || []));
@@ -423,6 +434,7 @@
     const labels = [
       ["recognition", "Know"],
       ["recall", "Recall"],
+      ["cloze", "Fill"],
       ["listen", "Hear"],
       ["produce", "Say"],
       ["roleplay", "Use"],
@@ -487,6 +499,11 @@
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-en">${escapeHtml(it.en)}</div>`;
       const opts = shuffle([it].concat(sample(optionPool, 3, it)));
       body = `<div class="options">${opts.map(o => `<button class="opt" onclick="ZS.answer('${o.id}','${it.id}',this)">${colorStress(o.ru)}</button>`).join("")}</div>`;
+    } else if (stage.key === "cloze") {
+      promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru">${escapeHtml(it.prompt_ru)}</div><div class="q-en">${escapeHtml(it.en)}</div>`;
+      body = `<div class="answerbox"><input id="clozeIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Missing word…" />
+        <button class="btn btn--red" onclick="ZS.checkCloze('${it.id}')">Check</button></div>
+        <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>`;
     } else if (stage.key === "produce") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-en">${escapeHtml(it.en)}</div>`;
       body = `<div class="answerbox"><input id="prodIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Печатайте по-русски…" />
@@ -514,6 +531,7 @@
       </div>`;
     if (stage.key === "listen") setTimeout(() => speak(it), 250);
     if (stage.key === "produce") setTimeout(() => { const el = $("#prodIn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkProd(it.id); }); } }, 50);
+    if (stage.key === "cloze") setTimeout(() => { const el = $("#clozeIn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkCloze(it.id); }); } }, 50);
   }
 
   function nextDue(st, ok) {
@@ -566,6 +584,7 @@
     const byStage = {
       recognition: ["forgot_phrase", "cultural_usage", "register"],
       recall: ["forgot_phrase", "word_order", "register"],
+      cloze: ["forgot_phrase", "case_or_inflection", "word_order", "register"],
       produce: ["forgot_phrase", "stress", "gendered_form", "case_or_inflection", "word_order"],
       listen: ["listening_misparse", "stress", "vowel_reduction", "forgot_phrase"],
       roleplay: ["forgot_phrase", "register", "cultural_usage", "gendered_form"],
@@ -698,7 +717,10 @@
     next() { learnState.idx = (learnState.idx + 1) % learnState.list.length; renderCard(); },
     prev() { learnState.idx = (learnState.idx - 1 + learnState.list.length) % learnState.list.length; renderCard(); },
     say() { speak(learnState.list[learnState.idx]); },
-    sayItem(id) { speak(ITEMS.find(i => i.id === id)); },
+    sayItem(id) {
+      const it = practiceItem(id);
+      speak(it && it.item_id ? ITEMS.find(i => i.id === it.item_id) : it);
+    },
     known() {
       const it = learnState.list[learnState.idx];
       const r = rec(it.id);
@@ -732,16 +754,25 @@
     },
     checkProd(id) {
       if (quiz.answered) return;
-      const it = ITEMS.find(i => i.id === id);
+      const it = practiceItem(id);
       const val = $("#prodIn") ? $("#prodIn").value : "";
       const ok = normalize(val) === normalize(it.ru);
       gradeItem(id, ok, quiz.stageKey);
       showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em></div>`);
     },
-    giveUp(id) { const it = ITEMS.find(i => i.id === id); gradeItem(id, false, quiz.stageKey); showFeedback(false, it); },
+    checkCloze(id) {
+      if (quiz.answered) return;
+      const it = practiceItem(id);
+      const val = $("#clozeIn") ? $("#clozeIn").value : "";
+      const accepted = it.accepted_answers || [it.answer];
+      const ok = accepted.some(answer => normalize(val) === normalize(answer));
+      gradeItem(id, ok, quiz.stageKey);
+      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; answer: <strong>${escapeHtml(it.answer)}</strong></div>`);
+    },
+    giveUp(id) { const it = practiceItem(id); gradeItem(id, false, quiz.stageKey); showFeedback(false, it); },
     listenHint(id) {
       if (!quiz || quiz.stageKey !== "listen") return;
-      const it = ITEMS.find(i => i.id === id);
+      const it = practiceItem(id);
       quiz.listenHintLevel = Math.min((quiz.listenHintLevel || 0) + 1, 2);
       const el = $("#listenHint");
       if (it && el) el.innerHTML = listeningHintHtml(it);
