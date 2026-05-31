@@ -72,6 +72,7 @@
   const HISTORY_KEY = KEY + ".analytics_history";
   const LEARN_RATE_KEY = KEY + ".learn_audio_rate";
   const ADAPTIVE_KEY = KEY + ".adaptive_ratings";
+  const ANALYSIS_KEY = KEY + ".analysis_state";
   const SYNC_QUEUE_KEY = KEY + ".sync_queue";
   const DEVICE_KEY = KEY + ".device_id";
   const SYNC_API_KEY = KEY + ".sync_api";
@@ -79,6 +80,8 @@
   const SYNC_API = window.ZASTOLOM_SYNC_API || localStorage.getItem(SYNC_API_KEY) || "";
   let store = load();
   let adaptiveRatings = loadAdaptiveRatings();
+  let analysisState = loadAnalysisState();
+  let analysisTimer = 0;
   let activeLessonId = loadLessonBoundary();
   function load() {
     try {
@@ -135,6 +138,17 @@
   }
   function saveAdaptiveRatings() {
     try { localStorage.setItem(ADAPTIVE_KEY, JSON.stringify(adaptiveRatings)); } catch (e) {}
+  }
+  function loadAnalysisState() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(ANALYSIS_KEY)) || {};
+      return parsed && parsed.version ? parsed : { version: 1, engine_active: false, cycle: 0 };
+    } catch (e) {
+      return { version: 1, engine_active: false, cycle: 0 };
+    }
+  }
+  function saveAnalysisState() {
+    try { localStorage.setItem(ANALYSIS_KEY, JSON.stringify(analysisState)); } catch (e) {}
   }
   function deviceId() {
     try {
@@ -522,8 +536,80 @@
       </div>
       <div class="adaptivebox__next">
         <strong>Current bottleneck:</strong> ${escapeHtml(bottleneck)}
-        ${recs.length ? `<div class="adaptivequeue">${recs.map(row => `<button onclick="location.hash='#/quiz/${row.stageKey}'"><span>${escapeHtml(METRICS.bucketLabel(row.adaptive.bucket))}</span>${escapeHtml(row.item.en || row.item.title || row.item.id)}</button>`).join("")}</div>` : ""}
+        ${recs.length ? `<div class="adaptivequeue">${recs.map(row => `<button onclick="location.hash='#/quiz/${row.stageKey}'"><span>${escapeHtml(METRICS.bucketLabel(row.adaptive.bucket))} · ${Math.round(row.adaptive.expected * 100)}%</span>${escapeHtml(row.item.en || row.item.title || row.item.id)}</button>`).join("")}</div>` : ""}
       </div>
+    </div>`;
+  }
+  function analysisFlags(perf, adaptive) {
+    const flags = [];
+    if (perf.overdue > 0) flags.push(`${perf.overdue} overdue review${perf.overdue === 1 ? "" : "s"} before new material`);
+    if (adaptive.frictionIndex >= 35) flags.push("friction is high: slow down and repair misses");
+    if (adaptive.nPlusOneFit > 0 && adaptive.nPlusOneFit < 45) flags.push("too little practice is landing in the n+1 band");
+    if (adaptive.confidence < 25) flags.push("confidence is still low: collect more attempts");
+    if (!flags.length) flags.push("analysis clear: stay in adaptive drill flow");
+    return flags.slice(0, 3);
+  }
+  function runAnalysisCycle(reason) {
+    const perf = analytics();
+    const adaptive = adaptiveStats();
+    const recs = adaptiveRecommendations(8);
+    const next = recs[0] || null;
+    analysisState = {
+      version: 1,
+      engine_active: true,
+      cycle: (analysisState.cycle || 0) + 1,
+      reason: reason || "interval",
+      last_run_at: new Date().toISOString(),
+      target_band: { low: METRICS ? METRICS.TARGET_LOW : 0.58, high: METRICS ? METRICS.TARGET_HIGH : 0.78 },
+      metrics: Object.assign({
+        readiness: readiness(),
+        due: perf.due,
+        overdue: perf.overdue,
+        delayedRecall: perf.delayedRecall,
+        averageResponseMs: perf.averageResponseMs,
+      }, adaptive),
+      flags: analysisFlags(perf, adaptive),
+      next_action: next ? {
+        item_id: next.item.id,
+        source_item_id: next.adaptive.meta.source_item_id,
+        stage_key: next.stageKey,
+        label: next.item.en || next.item.title || next.item.id,
+        bucket: next.adaptive.bucket,
+        expected_success: Math.round(next.adaptive.expected * 100),
+        reason: next.due ? "due adaptive review" : "best n+1 fit inside current lesson lock",
+      } : null,
+    };
+    saveAnalysisState();
+    return analysisState;
+  }
+  function startAnalysisEngine() {
+    if (analysisTimer) return;
+    runAnalysisCycle("startup");
+    analysisTimer = window.setInterval(() => runAnalysisCycle("interval"), 45000);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) runAnalysisCycle("visible");
+    });
+  }
+  function analysisPanelHtml(state) {
+    state = state && state.engine_active ? state : runAnalysisCycle("render");
+    const action = state.next_action;
+    const target = state.target_band || { low: 0.58, high: 0.78 };
+    const last = state.last_run_at ? new Date(state.last_run_at).toLocaleTimeString([], { hour: "numeric", minute: "2-digit", second: "2-digit" }) : "now";
+    return `<div class="analysisengine rise">
+      <div>
+        <h3>Analysis engine active</h3>
+        <p>Runs every 45 seconds while the app is open. Target n+1 band: ${Math.round(target.low * 100)}-${Math.round(target.high * 100)}% predicted success.</p>
+      </div>
+      <div class="analysisengine__status">
+        <div><strong>${escapeHtml(String(state.cycle || 0))}</strong><span>cycles</span></div>
+        <div><strong>${escapeHtml(last)}</strong><span>last analysis</span></div>
+        <div><strong>${state.metrics ? state.metrics.confidence : 0}<small>%</small></strong><span>signal confidence</span></div>
+      </div>
+      <div class="analysisengine__next">
+        <strong>Next action:</strong>
+        ${action ? `<button onclick="location.hash='#/quiz/${escapeHtml(action.stage_key)}'"><span>${escapeHtml(action.bucket)} · ${action.expected_success}%</span>${escapeHtml(action.stage_key)}: ${escapeHtml(action.label)}</button>` : "collect the first attempt"}
+      </div>
+      <div class="analysisengine__flags">${(state.flags || []).map(flag => `<span>${escapeHtml(flag)}</span>`).join("")}</div>
     </div>`;
   }
   function todayKey() { return new Date().toISOString().slice(0, 10); }
@@ -1014,6 +1100,7 @@
     const op = overallProgress();
     const a = analytics();
     const adaptive = adaptiveStats();
+    const analysis = runAnalysisCycle("home");
     const history = analyticsSnapshot(a);
     const roleSignals = roleplayFailureSignals();
     const repairFocusRows = repairFocusSummary();
@@ -1065,6 +1152,7 @@
           <div><strong>${formatLatency(a.averageResponseMs)}</strong><span>avg response time</span></div>
         </div>
       </div>
+      ${analysisPanelHtml(analysis)}
       ${adaptivePanelHtml(adaptive)}
       ${repairProfileHtml(repairFocusRows)}
       ${roleplaySignalsHtml(roleSignals)}
@@ -1683,6 +1771,7 @@
     }
     if (!opts.assisted) st.due_at = nextDue(st, ok);
     save();
+    runAnalysisCycle("attempt");
     const meta = adaptive ? adaptive.meta : itemMeta(id, stageKey);
     queueSyncEvent({
       item_id: id,
@@ -2411,6 +2500,7 @@
   }
 
   /* ---------- go ---------- */
+  startAnalysisEngine();
   router();
   updateCountdown();
   setInterval(updateCountdown, 60000);

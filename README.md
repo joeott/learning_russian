@@ -33,7 +33,7 @@ On the home screen: tap **Learn** → start with the red **P1** cards (that's th
 | 5 | **16-day plan** | Day-by-day schedule, risk-first, light weekdays / heavy weekends, with a 10-minute fallback. | [`schedule/16_day_plan.md`](schedule/16_day_plan.md) |
 | 6 | **Resources** | Curated, verified videos / podcasts / apps for listening practice. | [`RESOURCES.md`](RESOURCES.md) |
 | 7 | **Source loop** | Weekly scouting loop for original, easy Russian reading/dictation/translating material. | `tools/zastolom future-loop --run --write-canvas` |
-| 8 | **Manual validation** | Demo checklist for Learn, Drill, audio speed, recording, sonograph, Postgres sync, and offline/PWA behavior. | [`docs/manual_validation_checklist.md`](docs/manual_validation_checklist.md) |
+| 8 | **Manual validation** | Demo checklist for Learn, Drill, active analysis, audio speed, recording, sonograph, Postgres sync, and offline/PWA behavior. | [`docs/manual_validation_checklist.md`](docs/manual_validation_checklist.md) |
 
 A realistic day = **Learn the day's module → one Drill round → clear your Anki → 5–10 min role-play with the AI tutor.** Listen to a podcast on the commute. Rehearse the ★ items with Kadriya.
 

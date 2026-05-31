@@ -47,6 +47,8 @@ open http://localhost:8000/web/#/learn
 - [ ] Reload the app and confirm known/stuck/progress state persists locally.
 - [ ] Visit Home and confirm readiness, delayed recall, due reviews, role-play pass rate, repair focus, and history panels render.
 - [ ] Visit Home and confirm Mission Ability, Grammar Control, n+1 Fit, Friction Index, current bottleneck, and adaptive recommendations render.
+- [ ] Confirm `Analysis engine active` renders on Home with cycle count, last analysis time, confidence, next action, and target 58-78% n+1 band.
+- [ ] Complete one drill card and confirm DevTools localStorage key `zastolom.russian_family_visit.v2.analysis_state` updates `cycle`, `last_run_at`, and `next_action`.
 - [ ] Open `#/drill`, click `Adaptive next drill`, and confirm it routes to the recommended stage.
 - [ ] Optional Postgres sync: start Postgres, run `npm run db:migrate`, then `npm run sync:serve`.
 - [ ] In DevTools, set `localStorage.setItem("zastolom.russian_family_visit.v2.sync_api", "http://127.0.0.1:8787")`, reload, complete a card, and confirm `/api/learning/state?learner_id=joe` returns the event-backed state.

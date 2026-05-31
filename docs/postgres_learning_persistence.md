@@ -75,6 +75,23 @@ The target growth band is `0.58–0.78` predicted success. The app treats that a
 the operational version of `n+1`: still mostly comprehensible, but just above
 the learner's current automatic control.
 
+## Active analysis engine
+
+The browser keeps a local analysis engine active while the app is open. It runs
+on startup, every 45 seconds, after each graded attempt, and whenever the tab
+becomes visible again. The latest cycle is persisted in
+`zastolom.russian_family_visit.v2.analysis_state` with:
+
+- current mission/statistics rollup
+- target n+1 band
+- next recommended item/stage
+- active flags such as overdue reviews, high friction, low confidence, or weak
+  n+1 fit
+
+This is intentionally local-first so Joe can study at full speed with or without
+Postgres. When sync is enabled, the same attempt payloads carry adaptive
+metadata to Postgres so the server can publish durable metric snapshots.
+
 The published metrics are internal learning signals, not official CEFR/ACTFL
 certifications:
 
