@@ -45,6 +45,18 @@ class WebAnalyticsContractTests(unittest.TestCase):
         self.assertIn("rows.slice(-14)", self.app)
         self.assertIn("new Date().toISOString().slice(0, 10)", self.app)
 
+    def test_roleplay_failure_signals_surface_repair_drills(self) -> None:
+        for token in (
+            "roleplayFailureSignals",
+            "roleplaySignalsHtml",
+            "Role-play failure signals",
+            "last_roleplay_missed",
+            "ROLEPLAY_CRITERIA",
+            "ZS.startRepair",
+        ):
+            self.assertIn(token, self.app)
+        self.assertIn(".slice(0, 4)", self.app)
+
 
 if __name__ == "__main__":
     unittest.main()
