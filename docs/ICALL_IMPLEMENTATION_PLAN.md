@@ -58,11 +58,13 @@ Every slice should include the smallest useful vertical path:
 The current implementation has the curriculum graph, lesson-locked generated
 cards, repair queues, tutor prompt cards, stress selection, contrast selection,
 offline pronunciation record/compare practice, contextual Anki export, offline
-readiness checks, an explicit listening ladder, criterion-aware role-play
-outcomes, delayed-recall analytics, and local readiness history. The next
-foundations should broaden oral transfer without weakening the guardrails:
+readiness checks, an explicit listening ladder with speed and room-noise passes,
+criterion-aware role-play outcomes, delayed-recall analytics, and local
+readiness history. The next foundations should broaden oral transfer without
+weakening the guardrails:
 
-- add noisy/real-world audio variants or deterministic audio transformations,
+- add more high-variability listening variants beyond the current deterministic
+  room-noise transformation,
 - expand readiness analytics with richer trend charts and role-play failure signals,
 - keep any future ASR or LLM evaluation behind adapters that validate against
   unlocked vocabulary, structures, and verified phrase variants.
