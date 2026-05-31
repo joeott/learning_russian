@@ -32,7 +32,7 @@ On the home screen: tap **Learn** → start with the red **P1** cards (that's th
 | 4 | **Cheat sheet** | One printable "table survival sheet" for your pocket on the day. | [`printable/cheatsheet.html`](printable/cheatsheet.html) → Print / Save as PDF |
 | 5 | **16-day plan** | Day-by-day schedule, risk-first, light weekdays / heavy weekends, with a 10-minute fallback. | [`schedule/16_day_plan.md`](schedule/16_day_plan.md) |
 | 6 | **Resources** | Curated, verified videos / podcasts / apps for listening practice. | [`RESOURCES.md`](RESOURCES.md) |
-| 7 | **Source loop** | Weekly scouting loop for original, easy Russian reading/dictation/translating material. | `tools/zastolom source-loop` |
+| 7 | **Source loop** | Weekly scouting loop for original, easy Russian reading/dictation/translating material. | `tools/zastolom source-loop --run --write-canvas` |
 
 A realistic day = **Learn the day's module → one Drill round → clear your Anki → 5–10 min role-play with the AI tutor.** Listen to a podcast on the commute. Rehearse the ★ items with Kadriya.
 

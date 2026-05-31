@@ -81,7 +81,7 @@ error-repair paths.
 
 - add more high-variability listening variants beyond the current deterministic
   room-noise transformation,
-- add a recurring source loop: `tools/zastolom source-loop` + `source/candidate_materials.md`
+- add a recurring source loop: `tools/zastolom source-loop --run --write-canvas` + `source/candidate_materials.md`
   entries that pass lesson-lock approval for dictation/back-translation content,
 - expand readiness analytics with richer trend charts and better stage-specific
   failure summaries,

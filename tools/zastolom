@@ -21,7 +21,7 @@ COMMANDS
   verify                Run all health checks (JSON, JS syntax, audio coverage)
   test                  Run stdlib validation/unit tests
   loop-prompt           Print the local iterative improvement-loop prompt
-  source-loop           Print the source-sourcing loop prompt for reading/dictation/translation
+  source-loop           Show source-sourcing loop prompt or run a future scan pass
   stats                 Print content statistics
   help                  Show this help
 
@@ -35,21 +35,25 @@ EXAMPLES
   tools/zastolom browser http://localhost:8000/web/#/quiz/roleplay --mobile --click-text "Reveal model answer" --click-text "Close with model"
   tools/zastolom flow http://localhost:8000/web/
   tools/zastolom verify
-  tools/zastolom source-loop
+  tools/zastolom source-loop --run       # discover and score candidate source pages
+  tools/zastolom source-loop               # print the loop prompt only
 
 ELEVENLABS KEY RESOLUTION (first hit wins)
   $ELEVENLABS_API_KEY  →  <repo>/.env  →  ~/Projects/ott_law_redesign/.env  →  ~/Projects/.env
 VOICE: $ZASTOLOM_VOICE or --voice (default: Elena «Warm, Calm & Clear» ScaQ3utur72x93jqMMeU)
 """
 import argparse
+import html
 import json
+import urllib.parse
 import os
 import re
 import subprocess
 import sys
 import unicodedata
+from datetime import datetime, timezone
+from html.parser import HTMLParser
 import urllib.request
-import urllib.parse
 import urllib.error
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -57,7 +61,11 @@ CONTENT = os.path.join(ROOT, "content", "content.json")
 AUDIO_DIR = os.path.join(ROOT, "web", "assets", "audio")
 AUDIO_MANIFEST_JS = os.path.join(ROOT, "web", "audio.js")
 ANKI_MEDIA = os.path.join(ROOT, "anki", "media")
+SOURCE_TARGETS = os.path.join(ROOT, "source", "source_loop_targets.json")
+SOURCE_LOOP_LOG = os.path.join(ROOT, "tmp", "source-loop-latest.json")
+SOURCE_CANDIDATE_FILE = os.path.join(ROOT, "source", "candidate_materials.md")
 ACUTE = "́"
+CYRILLIC_CHAR_RE = re.compile(r"[А-Яа-яЁё]")
 
 EL_API = "https://api.elevenlabs.io/v1"
 EL_MODEL = "eleven_multilingual_v2"
@@ -79,6 +87,221 @@ def load_content():
 
 def strip_stress(s):
     return unicodedata.normalize("NFC", s).replace(ACUTE, "")
+
+
+class _VisibleTextParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self._chunks = []
+        self._skip = 0
+
+    def handle_starttag(self, tag, attrs):
+        tag = tag.lower()
+        if tag in {"script", "style", "noscript", "header", "footer", "nav", "aside"}:
+            self._skip += 1
+
+    def handle_endtag(self, tag):
+        tag = tag.lower()
+        if tag in {"script", "style", "noscript", "header", "footer", "nav", "aside"} and self._skip:
+            self._skip -= 1
+
+    def handle_data(self, data):
+        if self._skip:
+            return
+        s = data.strip()
+        if s:
+            self._chunks.append(s)
+
+    @property
+    def text(self):
+        return "\n".join(self._chunks)
+
+
+def _extract_visible_text(html_body):
+    parser = _VisibleTextParser()
+    parser.feed(html_body)
+    return re.sub(r"\s+", " ", html.unescape(parser.text)).strip()
+
+
+def _read_source_targets(path=None):
+    target_path = path or SOURCE_TARGETS
+    try:
+        with open(target_path, encoding="utf-8") as f:
+            payload = json.load(f)
+        targets = payload.get("targets", [])
+    except (OSError, json.JSONDecodeError):
+        targets = []
+    if not targets:
+        targets = [
+            {"url": "https://russian.rt.com/", "name": "RT Russian", "default_drill": ["read", "dictation", "translate"], "reason": "short news pieces"},
+            {"url": "https://www.culture.ru", "name": "Culture.ru", "default_drill": ["read", "dictation", "translate"], "reason": "editorial interviews/features"},
+            {"url": "https://gramota.ru", "name": "Gramota.ru", "default_drill": ["read", "translate"], "reason": "official language material"},
+            {"url": "https://www.russianpod101.com/welcome", "name": "RussianPod101", "default_drill": ["listen", "dictation", "translate"], "reason": "podcast lessons and transcripts"},
+            {"url": "https://www.youtube.com", "name": "YouTube Russian channels", "default_drill": ["dictation", "shadow"], "reason": "short slow-story channels"},
+            {"url": "https://www.ruslang.ru", "name": "Russian Language Blog", "default_drill": ["read", "translate"], "reason": "easy culture and language prose"},
+        ]
+    return targets
+
+
+def _fetch_source_page(url):
+    req = urllib.request.Request(
+        url, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; zastolom/1.0; +https://github.com/joeott/learning_russian)"
+        }
+    )
+    with urllib.request.urlopen(req, timeout=18) as r:
+        raw = r.read()
+    encoding = r.headers.get_content_charset() or "utf-8"
+    text = raw.decode(encoding, errors="replace")
+    return text
+
+
+def _score_source_text(url, title, text, default_drill):
+    letters = [ch for ch in text if ch.isalpha()]
+    cyrillic = [ch for ch in letters if CYRILLIC_CHAR_RE.match(ch)]
+    words = re.findall(r"[А-Яа-яЁёA-Za-z-']+", text)
+    word_count = len(words)
+    title_clean = re.sub(r"\s+", " ", (title or "").strip())[:120]
+    text_snippet = text[:260].replace("\n", " ").strip()
+    letter_ratio = len(cyrillic) / max(len(letters), 1)
+    length_score = 0
+    if 60 <= word_count <= 260:
+        length_score = 1.0
+    elif 40 <= word_count < 60 or 260 < word_count <= 420:
+        length_score = 0.7
+    elif 20 <= word_count < 40:
+        length_score = 0.5
+    elif word_count < 20:
+        length_score = 0.0
+    else:
+        length_score = 0.2
+    translation_hint = any(token in text.lower() for token in ("translate", "перевод", "перевести"))
+    original_score = 0.9 if translation_hint else 1.0
+    trust_score = min(1.0, (0.65 * letter_ratio) + (0.35 * length_score))
+    if word_count < 20:
+        trust_score *= 0.4
+    composite = round(trust_score * original_score, 3)
+    status = "rejected"
+    if composite >= 0.68:
+        status = "verified"
+    elif composite >= 0.45:
+        status = "needs_check"
+    why = []
+    if letter_ratio < 0.5:
+        why.append("not enough Cyrillic for beginner practice")
+    if word_count < 20:
+        why.append("too short for meaningful dictation")
+    if word_count > 420:
+        why.append("too long to fit fast drill pass")
+    drill = []
+    if status != "rejected":
+        drill = default_drill or ["read", "dictation", "translate"]
+        if composite > 0.72:
+            drill.append("shadow")
+    return {
+        "url": url,
+        "title": title_clean,
+        "status": status,
+        "scores": {
+            "cyrillic_ratio": round(letter_ratio, 3),
+            "word_count": word_count,
+            "length_score": length_score,
+            "composite": composite,
+        },
+        "notes": why,
+        "snippet": text_snippet[:220],
+        "suggested_drills": drill,
+    }
+
+
+def _extract_title(html_text):
+    match = re.search(r"<title[^>]*>(.*?)</title>", html_text, flags=re.I | re.S)
+    if not match:
+        return ""
+    raw = html.unescape(match.group(1))
+    return re.sub(r"\s+", " ", raw).strip()
+
+
+def cmd_source_loop(args):
+    if not args.run:
+        path = os.path.join(ROOT, "prompts", "source-material-loop.md")
+        with open(path, encoding="utf-8") as f:
+            print(f.read())
+        return
+    targets = _read_source_targets(args.targets)
+    if args.limit:
+        targets = targets[: args.limit]
+    rows = []
+    for idx, entry in enumerate(targets, 1):
+        url = entry.get("url")
+        if not url:
+            continue
+        try:
+            html_text = _fetch_source_page(url)
+            title = _extract_title(html_text)
+            visible = _extract_visible_text(html_text)
+            row = _score_source_text(url, title, visible, entry.get("default_drill"))
+            row["seed_note"] = entry.get("reason")
+            row["seed_name"] = entry.get("name", "")
+            rows.append(row)
+            status = row["status"]
+            print(head(f"[{idx}/{len(targets)}] {url}"))
+            print(f"  -> status: {status} | composite: {row['scores']['composite']} | words: {row['scores']['word_count']}")
+        except Exception as e:
+            msg = f"{type(e).__name__}: {e}"
+            rows.append({
+                "url": url,
+                "title": entry.get("name", ""),
+                "status": "rejected",
+                "scores": {
+                    "cyrillic_ratio": 0.0,
+                    "word_count": 0,
+                    "length_score": 0.0,
+                    "composite": 0.0,
+                },
+                "notes": [f"fetch_error: {msg}"],
+                "snippet": "",
+                "suggested_drills": [],
+            })
+            print(warn(f"[{idx}/{len(targets)}] {url} → {msg}"))
+
+    os.makedirs(os.path.dirname(SOURCE_LOOP_LOG), exist_ok=True)
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "candidates": rows,
+        "summary": {
+            "targets": len(rows),
+            "verified": sum(1 for r in rows if r["status"] == "verified"),
+            "needs_check": sum(1 for r in rows if r["status"] == "needs_check"),
+            "rejected": sum(1 for r in rows if r["status"] == "rejected"),
+        },
+    }
+    with open(SOURCE_LOOP_LOG, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2, sort_keys=True)
+    print(ok(f"source loop logged → {SOURCE_LOOP_LOG}"))
+
+    if args.write_canvas:
+        accepted = [r for r in rows if r["status"] in {"verified", "needs_check"}]
+        if not accepted:
+            print(warn("no sources passed the threshold for canvas write"))
+            return
+        with open(SOURCE_CANDIDATE_FILE, "a", encoding="utf-8") as f:
+            f.write(f"\n## Week {datetime.now(timezone.utc).date().isoformat()}\n")
+            f.write("- Generated by: `tools/zastolom source-loop --run --write-canvas`\n")
+            for row in accepted:
+                status = row["status"]
+                drill = ", ".join(row["suggested_drills"]) if row["suggested_drills"] else "to review"
+                f.write(f"- Source: [{row['title'] or row['url']}]({row['url']})\n")
+                f.write(f"- Notes: {', '.join(row['notes']) or 'quick check recommended'}\n")
+                f.write(f"- Level: {'L1-L2' if status == 'verified' else 'L1-L3'}\n")
+                f.write(f"- Use: {drill}\n")
+                f.write(f"- Status: {status}\n")
+                f.write("- Suggested drill fragment:\n")
+                f.write(f"  - {row['suggested_drills'][0] if row['suggested_drills'] else 'read'}\n")
+                f.write(f"  - {row['suggested_drills'][1] if len(row['suggested_drills']) > 1 else 'dictation'}\n")
+                f.write(f"  - {row['suggested_drills'][2] if len(row['suggested_drills']) > 2 else 'translate'}\n")
+            f.write("\n")
+        print(ok(f"candidate canvas updated → {SOURCE_CANDIDATE_FILE}"))
 
 # ---- key + voice resolution ----
 def _read_env_file(path, var):
@@ -345,11 +568,6 @@ def cmd_loop_prompt(args):
     with open(path, encoding="utf-8") as f:
         print(f.read())
 
-def cmd_source_loop(args):
-    path = os.path.join(ROOT, "prompts", "source-material-loop.md")
-    with open(path, encoding="utf-8") as f:
-        print(f.read())
-
 def cmd_stats(args):
     d = load_content()
     print(head(d["meta"]["title"]))
@@ -399,7 +617,11 @@ def main():
     sub.add_parser("verify")
     sub.add_parser("test")
     sub.add_parser("loop-prompt")
-    sub.add_parser("source-loop")
+    sl = sub.add_parser("source-loop")
+    sl.add_argument("--run", action="store_true", help="run the scouting scan")
+    sl.add_argument("--limit", type=int, default=0, help="max pages to scan in this run")
+    sl.add_argument("--write-canvas", action="store_true", help="append passing candidates to source/candidate_materials.md")
+    sl.add_argument("--targets", help="optional JSON target file (defaults to source/source_loop_targets.json)")
     sub.add_parser("stats")
     sub.add_parser("help")
 

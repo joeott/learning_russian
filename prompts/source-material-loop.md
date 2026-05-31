@@ -22,27 +22,31 @@ offline-first constraints.
 
 ## Loop (execute in bounded iterations)
 
-1. Use `tools/zastolom browser <url> --both` to open a candidate source page and inspect
+1. Run the loop command to score fresh candidates:
+   - `tools/zastolom source-loop --run --limit 5 --targets source/source_loop_targets.json`
+   - This refreshes `tmp/source-loop-latest.json` and can optionally append approved pages to
+     `source/candidate_materials.md` with `--write-canvas`.
+2. Use `tools/zastolom browser <url> --both` to open a candidate source page and inspect
    readability on desktop and mobile.
-2. Extract 1–2 short candidate passages and copy the exact source text.
-3. For each passage, score:
+3. Extract 1–2 short candidate passages and copy the exact source text.
+4. For each passage, score:
    - `lexical_density` (hard vs. known words),
    - `speech_clarity` (clear narration / clean sentence pace),
    - `register` (family-safe / formal / neutral),
    - `origin` (`original` source, not translated subtitles).
-4. Reject anything with hidden paywall friction or unstable content that breaks loading.
-5. Save approved passages to `source/candidate_materials.md` under `## Week YYYY-MM-DD` with:
+5. Reject anything with hidden paywall friction or unstable content that breaks loading.
+6. Save approved passages to `source/candidate_materials.md` under `## Week YYYY-MM-DD` with:
    - URL + title
    - why it is beginner-friendly
    - planned drill type (`read`, `dictation`, `translate`, `shadow`)
    - source status (`verified`, `needs_check`, `rehearse`)
-6. Create 2–4 deterministic drill seeds in local notes:
+7. Create 2–4 deterministic drill seeds in local notes:
    - one stress-targeted dictation prompt,
    - one translation prompt,
    - one cloze prompt,
    - one contrast / role-use prompt.
-7. Validate any generated learner-facing text against lesson lock rules before adding to app content.
-8. Build artifacts only through `tools/zastolom build` and verify with:
+8. Validate any generated learner-facing text against lesson lock rules before adding to app content.
+9. Build artifacts only through `tools/zastolom build` and verify with:
    - `tools/zastolom verify`
    - `tools/zastolom test`
    - `tools/zastolom flow`
@@ -68,3 +72,8 @@ At the end of each source loop, produce:
 - `source/candidate_materials.md` updated with 2–4 approved entries,
 - a short log in `tmp/source-loop-latest.json` with scores and acceptance decisions.
 
+For one-click capture:
+
+```bash
+tools/zastolom source-loop --run --limit 5 --write-canvas
+```

@@ -1,0 +1,40 @@
+{
+  "targets": [
+    {
+      "url": "https://russian.rt.com/",
+      "name": "RT Russian",
+      "default_drill": ["read", "dictation", "translate"],
+      "reason": "short news snippets with clear, short-form Russian"
+    },
+    {
+      "url": "https://www.culture.ru/",
+      "name": "Culture.ru",
+      "default_drill": ["read", "dictation", "translate"],
+      "reason": "short feature summaries and interview clips"
+    },
+    {
+      "url": "https://gramota.ru/",
+      "name": "Gramota.ru",
+      "default_drill": ["read", "translate"],
+      "reason": "official language and normative references"
+    },
+    {
+      "url": "https://www.russianpod101.com/welcome",
+      "name": "RussianPod101",
+      "default_drill": ["dictation", "translate"],
+      "reason": "podcast lesson pages with transcript opportunities"
+    },
+    {
+      "url": "https://www.youtube.com",
+      "name": "YouTube Russian channels",
+      "default_drill": ["dictation", "shadow", "translate"],
+      "reason": "captioned slow-story or interview channels"
+    },
+    {
+      "url": "https://www.ruslang.ru/",
+      "name": "RusLang",
+      "default_drill": ["read", "translate"],
+      "reason": "easy-reader style Russian learning copy"
+    }
+  ]
+}
