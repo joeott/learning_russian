@@ -151,11 +151,21 @@ async function assertLessonLockedRecognition(page, baseUrl) {
     throw new Error(`Lesson lock violated: ${prompted.id} is lesson ${prompted.lesson_number}, expected <= ${expected.lessonNumber}`);
   }
 
-  const lessonOneData = await page.evaluate((lessonNumber) => {
+  const unlockedByStage = await page.evaluate((lessonNumber) => {
     const { items = [], cloze_cards = [], dictation_cards = [], stress_cards = [], pronunciation_cards = [], backtranslation_cards = [], contrast_cards = [] } = window.CONTENT_DATA;
     const hasLessonAccess = (card) => !card.lesson_number || card.lesson_number <= lessonNumber;
     const unlockedItems = items.filter((it) => hasLessonAccess(it));
-    const unlockedByStage = {
+    const scenarioIds = new Set((window.CONTENT_DATA.scenarios || []).flatMap((s) => s.required_items || []));
+    const hasScenarios = (window.CONTENT_DATA.scenarios || []).length > 0;
+    const isRoleplay = hasScenarios
+      ? (it) => scenarioIds.has(it.id)
+      : (it) => it.priority <= 2 && (it.ru_plain.includes(" ") || it.tags.includes("toast"));
+    return {
+      recognition: unlockedItems.length,
+      recall: unlockedItems.length,
+      produce: unlockedItems.length,
+      listen: unlockedItems.filter((it) => it.syllables >= 1).length,
+      roleplay: unlockedItems.filter(isRoleplay).length,
       cloze: cloze_cards.filter(hasLessonAccess),
       dictation: dictation_cards.filter(hasLessonAccess),
       stress: stress_cards.filter(hasLessonAccess),
@@ -163,18 +173,12 @@ async function assertLessonLockedRecognition(page, baseUrl) {
       backtranslate: backtranslation_cards.filter(hasLessonAccess),
       contrast: contrast_cards.filter(hasLessonAccess),
     };
-    return {
-      cloze: unlockedByStage.cloze.length,
-      dictation: unlockedByStage.dictation.length,
-      stress: unlockedByStage.stress.length,
-      pronounce: unlockedByStage.pronounce.length,
-      backtranslate: unlockedByStage.backtranslate.length,
-      contrast: unlockedByStage.contrast.length,
-    };
   }, expected.lessonNumber);
 
-  for (const stageKey of ["cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast"]) {
-    if (!lessonOneData[stageKey]) {
+  for (const stageKey of ["recognition", "recall", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"]) {
+    const available = unlockedByStage[stageKey];
+    const count = Array.isArray(available) ? available.length : available;
+    if (!count) {
       continue;
     }
     await page.goto(withHash(baseUrl, `#/quiz/${stageKey}`), { waitUntil: "networkidle" });
