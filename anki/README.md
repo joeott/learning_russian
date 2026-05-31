@@ -1,7 +1,7 @@
 # Anki Deck — Russian for Meeting Kadriya's Family
 
-`russian_family_visit.txt` is a TAB-separated Anki import file (387 cards across
-22 modules). `russian_family_visit_contextual.txt` is a companion import with
+`russian_family_visit.txt` is a TAB-separated Anki import file (404 cards across
+23 modules). `russian_family_visit_contextual.txt` is a companion import with
 typed cloze, dictation, stress, pronunciation, back-translation, contrast, and
 scenario cards generated from the same verified phrases. Both are generated
 deterministically from `../content/content.json` by `../scripts/build_anki.py`.
@@ -80,7 +80,7 @@ To **also** drill RU → EN (recognition), change the notetype to
 - select the notes → **Notes → Change Notetype** → Basic (and reversed card).
 
 This generates a second card per note (Russian prompt → English answer). For the
-132 `recognize`-tagged items (questions relatives will fire at you), the reverse
+135 `recognize`-tagged items (questions relatives will fire at you), the reverse
 direction is exactly what you want — those are about understanding when heard.
 
 ---
@@ -92,7 +92,7 @@ The goal is **oral**, so the Russian must be spoken aloud.
 ### ★ Option 0 — Bundled native audio (recommended, already done for you)
 Every card already contains a `[sound:zastolom_<id>.mp3]` tag, and the matching
 **real ElevenLabs recordings** (voice: *Elena — native Russian*) are staged in
-[`anki/media/`](media/) (387 files). To make them play:
+[`anki/media/`](media/) (404 files). To make them play:
 
 1. Import the deck (section 2 above).
 2. Copy the audio into Anki's media folder so it finds the files:
@@ -171,13 +171,13 @@ phrases you'll actually rehearse out loud.
 
 ## 4. Study settings
 
-- **New cards/day: 10–15.** With 387 cards that ramps you in fully over ~4
+- **New cards/day: 10–15.** With 404 cards that ramps you in fully over ~4
   weeks while leaving review headroom. Set in the deck's **Options → New cards →
   New cards/day**.
 - **FSRS:** turn it **on** (Deck Options → FSRS toggle, then "Optimize" once you
   have a few days of reviews). FSRS schedules far more efficiently than the old
   SM-2 algorithm — worth it for a deadline-driven push.
-- **Study priority phrases first.** The deck has **387 cards across 22 modules**,
+- **Study priority phrases first.** The deck has **404 cards across 23 modules**,
   tagged `p1`/`p2`/`p3`. Drill the **p1** essentials before anything else:
   - **Tools → Create Filtered Deck** (or **Custom Study → Study by tag**),
     search `tag:p1`, build it, and grind those greetings/politeness/rescue lines
@@ -194,16 +194,16 @@ phrases you'll actually rehearse out loud.
 
 ## Card counts (for reference)
 
-- 387 cards total, 22 modules:
+- 404 cards total, 23 modules:
   first_contact (13), politeness (17), toasts (16), family (28), food (16),
   smalltalk (9), listening (18), calendar_weather (19), numbers_quantities (28),
   adverbs_adjectives (14), daily_routine (29), leisure_places (21),
-  physical_description (18), health_feelings (16), past_events (17),
+  physical_description (18), health_feelings (16), past_events (17), home_life (17),
   modal_ability (16), work_business (16), legal_recognition (15),
   celebrations (14), cultural_bonus (9), travel_budva (28), verbs (10).
-- 132 cards tagged `recognize` (questions and phrases you mainly need to
+- 135 cards tagged `recognize` (questions and phrases you mainly need to
   *understand when heard*).
-- 10 cards currently carry a "⚠ rehearse with your wife" reminder.
-- 13 cards show a "(male form)" marker — say these in the masculine.
+- 11 cards currently carry a "⚠ rehearse with your wife" reminder.
+- 15 cards show a "(male form)" marker — say these in the masculine.
 - The web app also generates 60 typed conjugation drills from the core verb
   cards; these are app practice cards, not Anki import rows.

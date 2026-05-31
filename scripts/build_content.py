@@ -305,6 +305,10 @@ ROLEPLAY_CRITERIA = {
         "label": "answers past-week and trip-event questions",
         "error_type": "case_or_inflection",
     },
+    "answers_home_chores_shopping": {
+        "label": "answers home, chores, homework, and shopping questions",
+        "error_type": "case_or_inflection",
+    },
     "uses_modal_survival": {
         "label": "uses can, know-how, want, need, and permission patterns",
         "error_type": "case_or_inflection",
@@ -997,6 +1001,35 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "home_chores_shopping_checkin",
+        "setting": "Home, chores, homework, and shopping",
+        "goal": "Answer simple original-guide questions about cleaning at home, dishes/trash/cats, homework time, shopping, and asking for help.",
+        "required_items": [
+            "home001",
+            "home002",
+            "home003",
+            "home004",
+            "home005",
+            "home006",
+            "home007",
+            "home008",
+            "home009",
+            "home010",
+            "home011",
+            "home012",
+            "home013",
+            "home014",
+            "home015",
+            "home016",
+            "home017",
+        ],
+        "success_criteria": [
+            "answers_home_chores_shopping",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
         "id": "budva_trip_checkin",
         "setting": "Budva family trip",
         "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
@@ -1295,6 +1328,13 @@ MODULES = [
         "🗓️",
     ),
     (
+        "home_life",
+        "Home, Chores & Shopping",
+        "Original-guide home life: cleaning, dishes, trash, cats, homework, stores, groceries, and help.",
+        2,
+        "🧹",
+    ),
+    (
         "modal_ability",
         "Can, Want & Need",
         "Original-guide modal survival: can, know how, want, need, allowed, not allowed, and should.",
@@ -1432,6 +1472,12 @@ MODULE_STRUCTURES = {
         "phrase:last_week_question",
         "phrase:trip_story",
         "phrase:what_happened",
+    ],
+    "home_life": [
+        "lexical:home_chores",
+        "phrase:homework_question",
+        "phrase:shopping_answer",
+        "phrase:help_request",
     ],
     "modal_ability": [
         "grammar:modal_verbs",
@@ -3400,6 +3446,152 @@ add(
     3,
     recognize=True,
     tags=["past", "police", "statement", "sensitive", "listening"],
+)
+
+# --- HOME, CHORES & SHOPPING (source-guide daily-life details) ---
+add(
+    "home_life",
+    "На вы́ходных мы убира́ли дом.",
+    "On the weekend we cleaned the house.",
+    "[na vý-had-nyh my u-bi-rá-li dom]",
+    2,
+    tags=["home", "chores", "weekend"],
+)
+add(
+    "home_life",
+    "Мы укра́сили дом к Рождеству́.",
+    "We decorated the house for Christmas.",
+    "[my u-krá-si-li dom k razh-dye-stvú]",
+    3,
+    tags=["home", "chores", "holiday"],
+)
+add(
+    "home_life",
+    "В мое́й семье́ ча́сто убира́ет моя́ жена́.",
+    "In my family, my wife often cleans.",
+    "[v ma-yéy sim-yé chá-sta u-bi-rá-yet ma-yá zhi-ná]",
+    3,
+    rehearse=True,
+    note="Personal home-life line from the guide; rehearse with Kadriya before using live.",
+    tags=["home", "chores", "family"],
+)
+add(
+    "home_life",
+    "Я убира́ю за кота́ми.",
+    "I clean up after the cats.",
+    "[ya u-bi-rá-yu za ka-tá-mi]",
+    2,
+    tags=["home", "chores", "cats"],
+)
+add(
+    "home_life",
+    "Я мо́ю посу́ду.",
+    "I wash the dishes.",
+    "[ya mó-yu pa-sú-du]",
+    2,
+    tags=["home", "chores", "dishes"],
+)
+add(
+    "home_life",
+    "Я выношу́ му́сор.",
+    "I take out the trash.",
+    "[ya vy-na-shú mú-sar]",
+    2,
+    tags=["home", "chores", "trash"],
+)
+add(
+    "home_life",
+    "У тебя́ бы́ло вре́мя на дома́шнее зада́ние?",
+    "Did you have time for homework?",
+    "[u ti-byá bý-la vryé-mya na da-másh-ni-ye za-dá-ni-ye]",
+    2,
+    recognize=True,
+    tags=["homework", "question", "listening"],
+)
+add(
+    "home_life",
+    "У меня́ не́ было вре́мени на дома́шнее зада́ние.",
+    "I didn't have time for homework.",
+    "[u mi-nyá nye bý-la vryé-me-ni na da-másh-ni-ye za-dá-ni-ye]",
+    2,
+    tags=["homework", "time"],
+)
+add(
+    "home_life",
+    "Я сде́лал почти́ всё дома́шнее зада́ние.",
+    "I did almost all the homework.",
+    "[ya sdyé-lal pach-tí vsyo da-másh-ni-ye za-dá-ni-ye]",
+    3,
+    gender="m",
+    tags=["homework", "past"],
+)
+add(
+    "home_life",
+    "Я де́лаю дома́шнее зада́ние ве́чером.",
+    "I do homework in the evening.",
+    "[ya dyé-la-yu da-másh-ni-ye za-dá-ni-ye vyé-che-ram]",
+    3,
+    tags=["homework", "routine"],
+)
+add(
+    "home_life",
+    "Сего́дня я был в магази́не.",
+    "Today I was at the store.",
+    "[si-vód-nya ya byl v ma-ga-zí-ne]",
+    2,
+    gender="m",
+    tags=["shopping", "store", "past"],
+)
+add(
+    "home_life",
+    "Я купи́л арбу́з.",
+    "I bought a watermelon.",
+    "[ya ku-píl ar-búz]",
+    3,
+    gender="m",
+    tags=["shopping", "food"],
+)
+add(
+    "home_life",
+    "Мы покупа́ем в магази́не мя́со.",
+    "We buy meat at the store.",
+    "[my pa-ku-pá-yem v ma-ga-zí-ne myá-sa]",
+    3,
+    tags=["shopping", "food"],
+)
+add(
+    "home_life",
+    "Где магази́н?",
+    "Where is the store?",
+    "[gdye ma-ga-zín]",
+    2,
+    recognize=True,
+    tags=["shopping", "question", "listening"],
+)
+add(
+    "home_life",
+    "Ско́лько сто́ит арбу́з?",
+    "How much does the watermelon cost?",
+    "[skól'-ka stó-it ar-búz]",
+    3,
+    recognize=True,
+    tags=["shopping", "price", "listening"],
+)
+add(
+    "home_life",
+    "Помоги́те, пожа́луйста.",
+    "Please help.",
+    "[pa-ma-gí-tye, pa-zhá-lus-ta]",
+    2,
+    tags=["help", "request", "formal"],
+)
+add(
+    "home_life",
+    "Мне ну́жна по́мощь.",
+    "I need help.",
+    "[mnye núzh-na pó-mashch']",
+    2,
+    tags=["help", "request"],
 )
 
 # --- CAN, WANT & NEED (modal survival patterns) ---

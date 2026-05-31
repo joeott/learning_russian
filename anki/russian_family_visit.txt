@@ -280,6 +280,23 @@ What happened?	<div style="font-size:2em">Что случи́лось?</div>[sou
 Last week I was at the police station.	<div style="font-size:2em">На про́шлой неде́ле я был в поли́ции.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_past015.mp3]	[na prósh-lay ni-dyé-lye ya byl v pa-lí-tsi-i]		past_events p3
 My wife's car was stolen.	<div style="font-size:2em">У мое́й жены́ укра́ли маши́ну.</div>[sound:zastolom_past016.mp3]	[u ma-yéy zhi-ný u-krá-li ma-shý-nu]	(focus: understand when heard)	past_events p3 recognize
 My wife wrote a police report / statement.	<div style="font-size:2em">Моя́ жена́ написа́ла заявле́ние.</div>[sound:zastolom_past017.mp3]	[ma-yá zhi-ná na-pi-sá-la za-yav-lyé-ni-ye]	(focus: understand when heard)	past_events p3 recognize
+On the weekend we cleaned the house.	<div style="font-size:2em">На вы́ходных мы убира́ли дом.</div>[sound:zastolom_home001.mp3]	[na vý-had-nyh my u-bi-rá-li dom]		home_life p2
+We decorated the house for Christmas.	<div style="font-size:2em">Мы укра́сили дом к Рождеству́.</div>[sound:zastolom_home002.mp3]	[my u-krá-si-li dom k razh-dye-stvú]		home_life p3
+In my family, my wife often cleans.	<div style="font-size:2em">В мое́й семье́ ча́сто убира́ет моя́ жена́.</div>[sound:zastolom_home003.mp3]	[v ma-yéy sim-yé chá-sta u-bi-rá-yet ma-yá zhi-ná]	Personal home-life line from the guide; rehearse with Kadriya before using live. ⚠ rehearse with your wife	home_life p3
+I clean up after the cats.	<div style="font-size:2em">Я убира́ю за кота́ми.</div>[sound:zastolom_home004.mp3]	[ya u-bi-rá-yu za ka-tá-mi]		home_life p2
+I wash the dishes.	<div style="font-size:2em">Я мо́ю посу́ду.</div>[sound:zastolom_home005.mp3]	[ya mó-yu pa-sú-du]		home_life p2
+I take out the trash.	<div style="font-size:2em">Я выношу́ му́сор.</div>[sound:zastolom_home006.mp3]	[ya vy-na-shú mú-sar]		home_life p2
+Did you have time for homework?	<div style="font-size:2em">У тебя́ бы́ло вре́мя на дома́шнее зада́ние?</div>[sound:zastolom_home007.mp3]	[u ti-byá bý-la vryé-mya na da-másh-ni-ye za-dá-ni-ye]	(focus: understand when heard)	home_life p2 recognize
+I didn't have time for homework.	<div style="font-size:2em">У меня́ не́ было вре́мени на дома́шнее зада́ние.</div>[sound:zastolom_home008.mp3]	[u mi-nyá nye bý-la vryé-me-ni na da-másh-ni-ye za-dá-ni-ye]		home_life p2
+I did almost all the homework.	<div style="font-size:2em">Я сде́лал почти́ всё дома́шнее зада́ние.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_home009.mp3]	[ya sdyé-lal pach-tí vsyo da-másh-ni-ye za-dá-ni-ye]		home_life p3
+I do homework in the evening.	<div style="font-size:2em">Я де́лаю дома́шнее зада́ние ве́чером.</div>[sound:zastolom_home010.mp3]	[ya dyé-la-yu da-másh-ni-ye za-dá-ni-ye vyé-che-ram]		home_life p3
+Today I was at the store.	<div style="font-size:2em">Сего́дня я был в магази́не.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_home011.mp3]	[si-vód-nya ya byl v ma-ga-zí-ne]		home_life p2
+I bought a watermelon.	<div style="font-size:2em">Я купи́л арбу́з.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_home012.mp3]	[ya ku-píl ar-búz]		home_life p3
+We buy meat at the store.	<div style="font-size:2em">Мы покупа́ем в магази́не мя́со.</div>[sound:zastolom_home013.mp3]	[my pa-ku-pá-yem v ma-ga-zí-ne myá-sa]		home_life p3
+Where is the store?	<div style="font-size:2em">Где магази́н?</div>[sound:zastolom_home014.mp3]	[gdye ma-ga-zín]	(focus: understand when heard)	home_life p2 recognize
+How much does the watermelon cost?	<div style="font-size:2em">Ско́лько сто́ит арбу́з?</div>[sound:zastolom_home015.mp3]	[skól'-ka stó-it ar-búz]	(focus: understand when heard)	home_life p3 recognize
+Please help.	<div style="font-size:2em">Помоги́те, пожа́луйста.</div>[sound:zastolom_home016.mp3]	[pa-ma-gí-tye, pa-zhá-lus-ta]		home_life p2
+I need help.	<div style="font-size:2em">Мне ну́жна по́мощь.</div>[sound:zastolom_home017.mp3]	[mnye núzh-na pó-mashch']		home_life p2
 I can dance.	<div style="font-size:2em">Я могу́ танцева́ть.</div>[sound:zastolom_moda001.mp3]	[ya ma-gú tan-tsi-vát']	мочь = can / have the possibility.	modal_ability p3
 I don't know how to dance salsa.	<div style="font-size:2em">Я не уме́ю танцева́ть са́льсу.</div>[sound:zastolom_moda002.mp3]	[ya nye u-myé-yu tan-tsi-vát' sál'-su]	уме́ть = know how / have the skill.	modal_ability p3
 I know how to dance salsa.	<div style="font-size:2em">Я зна́ю, как танцева́ть са́льсу.</div>[sound:zastolom_moda003.mp3]	[ya zná-yu kak tan-tsi-vát' sál'-su]	(focus: understand when heard)	modal_ability p3 recognize
