@@ -68,6 +68,7 @@ python3 scripts/build_content.py     # → content/content.json + web/content.js
 python3 scripts/build_anki.py        # → anki/russian_family_visit.txt
 python3 scripts/build_cheatsheet.py  # → printable/cheatsheet.html
 tools/zastolom test                  # validation + generated-artifact tests
+tools/zastolom flow http://localhost:8000/web/   # browser-assert core learner flow
 ```
 
 ```
@@ -85,7 +86,7 @@ docs/           ICALL implementation plan and validation standard
 prompts/        local iterative improvement-loop prompt
 ```
 
-The web app now tracks stage-specific mastery, delayed recall, response latency, due reviews, and daily readiness history locally: recognition, recall, cloze, dictation, stress, pronunciation, back-translation, contrast, listening, production, and role-play are scheduled separately, with lapse/error data feeding repair drills. Listening practice includes a fading-caption ladder, speed controls, and a room-noise pass so assisted comprehension is scheduled as a harder review while real-world listening remains unassisted. Role-play self-rating is criterion-aware, and the Home dashboard turns cumulative missed scenario goals into targeted repair signals.
+The web app now tracks stage-specific mastery, delayed recall, response latency, due reviews, and daily readiness history locally: recognition, recall, cloze, dictation, stress, pronunciation, back-translation, contrast, listening, production, and role-play are scheduled separately, with lapse/error data feeding repair drills. Listening practice includes a fading-caption ladder, speed controls, and a room-noise pass so assisted comprehension is scheduled as a harder review while real-world listening remains unassisted. Role-play self-rating is criterion-aware, and the Home dashboard turns cumulative missed scenario goals into targeted repair signals. The `tools/zastolom flow` check now verifies Home, Learn, recognition, cloze, dictation, back-translation, role-play, and analytics state in a real browser.
 
 The content contract also includes a lesson-locked curriculum graph. Each item carries its lesson boundary, lexemes, structures, prerequisites, and allowed error types so dictation, stress, pronunciation, cloze, back-translation, contrast, and AI tutor features can reject out-of-sequence material instead of free-generating beyond the learner's unlocked Russian. The ongoing roadmap is tracked in [`docs/ICALL_IMPLEMENTATION_PLAN.md`](docs/ICALL_IMPLEMENTATION_PLAN.md).
 
