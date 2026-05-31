@@ -35,7 +35,7 @@ function parseArgs(argv) {
     url: "http://localhost:8000/web/",
     out: path.join(ROOT, "tmp", "browser"),
     viewports: ["desktop", "mobile"],
-    clickText: "",
+    clickTexts: [],
     waitMs: 500,
   };
   for (let i = 0; i < argv.length; i++) {
@@ -45,7 +45,7 @@ function parseArgs(argv) {
     else if (a === "--desktop") args.viewports = ["desktop"];
     else if (a === "--mobile") args.viewports = ["mobile"];
     else if (a === "--both") args.viewports = ["desktop", "mobile"];
-    else if (a === "--click-text") args.clickText = argv[++i];
+    else if (a === "--click-text") args.clickTexts.push(argv[++i]);
     else if (a === "--wait-ms") args.waitMs = Number(argv[++i] || args.waitMs);
     else if (a === "--help" || a === "-h") args.help = true;
     else if (!a.startsWith("-")) args.url = a;
@@ -56,11 +56,12 @@ function parseArgs(argv) {
 
 function help() {
   return `Usage:
-  tools/zastolom browser [url] [--desktop|--mobile|--both] [--click-text TEXT] [--out DIR]
+  tools/zastolom browser [url] [--desktop|--mobile|--both] [--click-text TEXT ...] [--out DIR]
 
 Examples:
   tools/zastolom browser http://localhost:8000/web/
   tools/zastolom browser http://localhost:8000/web/#/quiz/listen --mobile --click-text "Show caption hint"
+  tools/zastolom browser http://localhost:8000/web/#/quiz/roleplay --mobile --click-text "Reveal model answer" --click-text "Close with model"
 `;
 }
 
@@ -117,13 +118,16 @@ export async function runInspection(opts) {
       await page.goto(opts.url, { waitUntil: "networkidle" });
       await page.waitForTimeout(opts.waitMs);
       const before = await inspectPage(page, `${viewportName}-before`, opts.out);
-      let after = null;
-      if (opts.clickText) {
-        await page.getByText(opts.clickText, { exact: true }).click();
+      const steps = [];
+      for (const [index, clickText] of opts.clickTexts.entries()) {
+        await page.getByText(clickText, { exact: true }).click();
         await page.waitForTimeout(opts.waitMs);
-        after = await inspectPage(page, `${viewportName}-after`, opts.out);
+        steps.push({
+          clickText,
+          snapshot: await inspectPage(page, `${viewportName}-step-${index + 1}`, opts.out),
+        });
       }
-      results.push({ viewport: viewportName, url: opts.url, before, after, logs });
+      results.push({ viewport: viewportName, url: opts.url, before, steps, after: steps.length ? steps[steps.length - 1].snapshot : null, logs });
       await page.close();
     }
   } finally {

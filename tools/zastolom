@@ -30,6 +30,7 @@ EXAMPLES
   tools/zastolom audio generate --ids firs001,toas001 --voice ScaQ3utur72x93jqMMeU
   tools/zastolom serve --port 8000
   tools/zastolom browser http://localhost:8000/web/#/quiz --mobile
+  tools/zastolom browser http://localhost:8000/web/#/quiz/roleplay --mobile --click-text "Reveal model answer" --click-text "Close with model"
   tools/zastolom verify
 
 ELEVENLABS KEY RESOLUTION (first hit wins)
@@ -247,8 +248,8 @@ def cmd_browser(args):
         command.append("--mobile")
     if args.both:
         command.append("--both")
-    if args.click_text:
-        command += ["--click-text", args.click_text]
+    for click_text in args.click_text or []:
+        command += ["--click-text", click_text]
     if args.out:
         command += ["--out", args.out]
     if args.wait_ms:
@@ -363,7 +364,7 @@ def main():
     group.add_argument("--desktop", action="store_true")
     group.add_argument("--mobile", action="store_true")
     group.add_argument("--both", action="store_true")
-    br.add_argument("--click-text")
+    br.add_argument("--click-text", action="append")
     br.add_argument("--out")
     br.add_argument("--wait-ms", type=int)
     sub.add_parser("verify"); sub.add_parser("test"); sub.add_parser("loop-prompt"); sub.add_parser("stats")

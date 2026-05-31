@@ -17,7 +17,7 @@ Operate in bounded iterations. In each iteration:
 1. Read AGENTS.md, current git status, and the latest loop report.
 2. Run tools/zastolom verify and tools/zastolom test if available.
 3. Start the local app with tools/zastolom serve on an available port.
-4. Use `tools/zastolom browser http://localhost:8000/web/ --both` or Browser automation to inspect /web/ at desktop and mobile widths.
+4. Use `tools/zastolom browser http://localhost:8000/web/ --both` or Browser automation to inspect /web/ at desktop and mobile widths. Pass repeated `--click-text` options for multi-step flows.
 5. Capture screenshots and console/network errors.
 6. Identify one high-leverage improvement to retention, oral performance,
    course generality, offline behavior, accessibility, or UI clarity.
