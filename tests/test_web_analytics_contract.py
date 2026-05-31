@@ -51,10 +51,12 @@ class WebAnalyticsContractTests(unittest.TestCase):
             "roleplaySignalsHtml",
             "Role-play failure signals",
             "last_roleplay_missed",
+            "roleplay_criteria_misses",
             "ROLEPLAY_CRITERIA",
             "ZS.startRepair",
         ):
             self.assertIn(token, self.app)
+        self.assertIn("historical ? historical[criterionId] : 1", self.app)
         self.assertIn(".slice(0, 4)", self.app)
 
 
