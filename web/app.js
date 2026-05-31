@@ -100,6 +100,27 @@
     return (s || "").normalize("NFC").replace(new RegExp(ACUTE, "g"), "")
       .toLowerCase().replace(/[.!?,…]+$/g, "").replace(/[«»"]/g, "").replace(/\s+/g, " ").trim();
   }
+  function stripStress(s) {
+    return (s || "").normalize("NFC").replace(new RegExp(ACUTE, "g"), "");
+  }
+  function listeningCloze(ru) {
+    return stripStress(ru).split(/(\s+)/).map(part => {
+      if (!part.trim()) return part;
+      let seenLetter = false;
+      return Array.from(part).map(ch => {
+        if (!/\p{L}/u.test(ch)) return ch;
+        if (!seenLetter) { seenLetter = true; return ch; }
+        return "·";
+      }).join("");
+    }).join("");
+  }
+  function listeningHintHtml(it) {
+    if (!quiz || quiz.stageKey !== "listen" || !(quiz.listenHintLevel || 0)) return "";
+    const level = quiz.listenHintLevel || 0;
+    const label = level === 1 ? "Caption hint" : "Full caption";
+    const text = level === 1 ? escapeHtml(listeningCloze(it.ru)) : colorStress(it.ru);
+    return `<div class="listenhint" aria-live="polite"><span>${label}</span><div>${text}</div></div>`;
+  }
   function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]]; } return a; }
   function sample(arr, n, exclude) { return shuffle(arr.filter(x => x !== exclude)).slice(0, n); }
   function daysLeft() { const ms = TARGET - new Date(); return Math.max(0, Math.ceil(ms / 86400000)); }
@@ -405,7 +426,7 @@
         return a.id.localeCompare(b.id);
       });
       const head = ranked.slice(0, 16);
-      quiz = { stageKey, stage, q: shuffle(head).slice(0, Math.min(10, head.length)), i: 0, correct: 0, answered: false };
+      quiz = { stageKey, stage, q: shuffle(head).slice(0, Math.min(10, head.length)), i: 0, correct: 0, answered: false, listenHintLevel: 0 };
     }
     drawQuestion();
   }
@@ -414,6 +435,7 @@
     if (quiz.i >= quiz.q.length) return drawSummary();
     const it = quiz.q[quiz.i];
     quiz.answered = false;
+    if (stage.key === "listen") quiz.listenHintLevel = quiz.listenHintLevel || 0;
     const dots = quiz.q.map((_, k) => `<span class="${k < quiz.i ? "done" : k === quiz.i ? "cur" : ""}"></span>`).join("");
     let promptHtml = "", body = "";
 
@@ -431,9 +453,10 @@
         <button class="btn btn--red" onclick="ZS.checkProd('${it.id}')">Check</button></div>
         <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>`;
     } else if (stage.key === "listen") {
-      promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru" style="font-size:2.6rem">🔊</div>`;
+      promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru" style="font-size:2.6rem">🔊</div><div id="listenHint">${listeningHintHtml(it)}</div>`;
       const opts = shuffle([it].concat(sample(ITEMS, 3, it)));
       body = `<div style="text-align:center;margin-bottom:14px"><button class="iconbtn iconbtn--play" onclick="ZS.sayItem('${it.id}')">▶</button></div>
+        <div class="listenactions"><button id="listenHintBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.listenHint('${it.id}')">Show caption hint</button></div>
         <div class="options">${opts.map(o => `<button class="opt" onclick="ZS.answer('${o.id}','${it.id}',this)">${escapeHtml(o.en)}</button>`).join("")}</div>`;
     } else { // roleplay
       promptHtml = `<div class="q-instr">${stage.instr}</div>${scenarioCard(it)}<div class="q-en">${escapeHtml(it.en)}</div>`;
@@ -657,6 +680,18 @@
       showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em></div>`);
     },
     giveUp(id) { const it = ITEMS.find(i => i.id === id); gradeItem(id, false, quiz.stageKey); showFeedback(false, it); },
+    listenHint(id) {
+      if (!quiz || quiz.stageKey !== "listen") return;
+      const it = ITEMS.find(i => i.id === id);
+      quiz.listenHintLevel = Math.min((quiz.listenHintLevel || 0) + 1, 2);
+      const el = $("#listenHint");
+      if (it && el) el.innerHTML = listeningHintHtml(it);
+      const btn = $("#listenHintBtn");
+      if (btn) {
+        btn.textContent = quiz.listenHintLevel >= 2 ? "Caption shown" : "Show full caption";
+        if (quiz.listenHintLevel >= 2) btn.setAttribute("disabled", "");
+      }
+    },
     markError(id, stageKey, errorType) {
       const st = stageRec(id, stageKey);
       const r = rec(id);
@@ -679,7 +714,7 @@
       speak(it);
     },
     rateRP(id, ok) { const it = ITEMS.find(i => i.id === id); gradeItem(id, ok, quiz.stageKey); quiz.answered = true; if (ok) quiz.correct++; ZS.nextQ(); },
-    nextQ() { quiz.i++; drawQuestion(); },
+    nextQ() { quiz.i++; quiz.listenHintLevel = 0; drawQuestion(); },
     retry() { const k = location.hash.split("/")[2]; quiz = null; renderQuizRun(k); },
     async cachePack(kind) {
       if (!("caches" in window)) { toast("Offline cache unavailable"); return; }
