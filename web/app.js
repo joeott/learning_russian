@@ -69,6 +69,11 @@
   const LESSON_KEY = KEY + ".lesson_boundary";
   const HISTORY_KEY = KEY + ".analytics_history";
   const LEARN_RATE_KEY = KEY + ".learn_audio_rate";
+  const SYNC_QUEUE_KEY = KEY + ".sync_queue";
+  const DEVICE_KEY = KEY + ".device_id";
+  const SYNC_API_KEY = KEY + ".sync_api";
+  const LEARNER_ID = (COURSE.learner_profile && COURSE.learner_profile.id) || "joe";
+  const SYNC_API = window.ZASTOLOM_SYNC_API || localStorage.getItem(SYNC_API_KEY) || "http://127.0.0.1:8787";
   let store = load();
   let activeLessonId = loadLessonBoundary();
   function load() {
@@ -116,6 +121,58 @@
   function saveLearnRate(value) {
     try { localStorage.setItem(LEARN_RATE_KEY, String(value)); } catch (e) {}
   }
+  function deviceId() {
+    try {
+      let id = localStorage.getItem(DEVICE_KEY);
+      if (!id) {
+        id = (crypto.randomUUID && crypto.randomUUID()) || "dev_" + Date.now() + "_" + Math.random().toString(16).slice(2);
+        localStorage.setItem(DEVICE_KEY, id);
+      }
+      return id;
+    } catch (e) {
+      return "dev_ephemeral";
+    }
+  }
+  function syncQueue() {
+    try {
+      const rows = JSON.parse(localStorage.getItem(SYNC_QUEUE_KEY)) || [];
+      return Array.isArray(rows) ? rows : [];
+    } catch (e) { return []; }
+  }
+  function saveSyncQueue(rows) {
+    try { localStorage.setItem(SYNC_QUEUE_KEY, JSON.stringify(rows.slice(-500))); } catch (e) {}
+  }
+  function queueSyncEvent(event) {
+    const rows = syncQueue();
+    rows.push(Object.assign({
+      event_id: (crypto.randomUUID && crypto.randomUUID()) || "evt_" + Date.now() + "_" + Math.random().toString(16).slice(2),
+      learner_id: LEARNER_ID,
+      device_id: deviceId(),
+      course_id: COURSE.course_id || "russian_family_visit",
+      client_created_at: new Date().toISOString(),
+    }, event));
+    saveSyncQueue(rows);
+    flushLearningSync();
+  }
+  let syncInFlight = false;
+  async function flushLearningSync() {
+    const rows = syncQueue();
+    if (!rows.length || syncInFlight || !SYNC_API) return;
+    syncInFlight = true;
+    try {
+      const response = await fetch(`${SYNC_API}/api/learning/events`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ learner_id: LEARNER_ID, device_id: deviceId(), events: rows }),
+      });
+      if (response.ok) saveSyncQueue([]);
+    } catch (e) {
+      // Offline-first: keep the queue for the next reachable sync server.
+    } finally {
+      syncInFlight = false;
+    }
+  }
+  window.addEventListener("online", flushLearningSync);
   function emptyRec() { return { seen: 0, correct: 0, known: false, stages: {}, errors: {}, last_seen_at: "" }; }
   function migrateRec(value) {
     const r = Object.assign(emptyRec(), value || {});
@@ -393,6 +450,13 @@
     const rows = loadAnalyticsHistory().filter(row => row && row.date !== snapshot.date);
     rows.push(snapshot);
     saveAnalyticsHistory(rows);
+    try {
+      fetch(`${SYNC_API}/api/learning/snapshots`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ learner_id: LEARNER_ID, snapshot }),
+      }).catch(() => {});
+    } catch (e) {}
     return rows;
   }
   function delta(current, previous, key) {
@@ -1434,6 +1498,23 @@
     }
     if (!opts.assisted) st.due_at = nextDue(st, ok);
     save();
+    queueSyncEvent({
+      item_id: id,
+      stage_key: stageKey,
+      ok,
+      assisted: !!opts.assisted,
+      latency_ms: latencyMs || 0,
+      error_type: errorType || "",
+      lesson_id: (practiceItem(id) || {}).lesson_id || "",
+      scenario_id: opts.roleplay ? opts.roleplay.scenario_id || "" : "",
+      due_at: st.due_at || "",
+      payload: {
+        listen_ladder: opts.listen_ladder || null,
+        roleplay: opts.roleplay || null,
+        repair_focus: st.last_repair_focus || "",
+        last_grade: st.last_grade || "",
+      },
+    });
   }
   function errorButtons(it) {
     const itemErrors = it.error_types && it.error_types.length ? it.error_types : [];
@@ -1616,6 +1697,13 @@
       learnState.idx = 0;
       quiz = null;
       saveLessonBoundary();
+      queueSyncEvent({
+        item_id: "__lesson_boundary__",
+        stage_key: "lesson_boundary",
+        ok: true,
+        lesson_id: id,
+        payload: { active_lesson_id: id },
+      });
       router();
     },
     toggleEn() { learnState.hideEn = !learnState.hideEn; renderLearn(); },
@@ -1713,6 +1801,13 @@
         st.due_at = new Date(Date.now() + 432000000).toISOString();
       });
       save();
+      queueSyncEvent({
+        item_id: it.id,
+        stage_key: "learn_known",
+        ok: true,
+        lesson_id: it.lesson_id || "",
+        payload: { known: true },
+      });
       toast("Marked ✓ — " + it.en);
       ZS.next();
     },
