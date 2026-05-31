@@ -687,6 +687,8 @@ def cmd_browser(args):
         command += ["--click-text", click_text]
     if args.strict:
         command.append("--strict")
+    if args.fail_on_errors:
+        command.append("--fail-on-errors")
     if args.out:
         command += ["--out", args.out]
     if args.wait_ms:
@@ -912,6 +914,7 @@ def main():
     group.add_argument("--both", action="store_true")
     br.add_argument("--click-text", action="append")
     br.add_argument("--strict", action="store_true", help="fail command when requested clicks are not found")
+    br.add_argument("--fail-on-errors", action="store_true", help="treat browser runtime errors as command failure")
     br.add_argument("--out")
     br.add_argument("--wait-ms", type=int)
     fl = sub.add_parser("flow")
