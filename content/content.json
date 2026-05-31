@@ -12439,6 +12439,4115 @@
       ]
     }
   ],
+  "backtranslation_cards": [
+    {
+      "id": "back_firs001_01",
+      "item_id": "firs001",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Здра́вствуйте",
+      "ru_plain": "Здравствуйте",
+      "accepted_answers": [
+        "Здравствуйте"
+      ],
+      "en": "Hello (formal)",
+      "priority": 1,
+      "lexemes": [
+        "здравствуйте"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "greeting"
+      ]
+    },
+    {
+      "id": "back_firs002_01",
+      "item_id": "firs002",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "До́брый ве́чер",
+      "ru_plain": "Добрый вечер",
+      "accepted_answers": [
+        "Добрый вечер"
+      ],
+      "en": "Good evening",
+      "priority": 1,
+      "lexemes": [
+        "вечер",
+        "добрый",
+        "добрый вечер"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "greeting"
+      ]
+    },
+    {
+      "id": "back_firs003_01",
+      "item_id": "firs003",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "До́брый день",
+      "ru_plain": "Добрый день",
+      "accepted_answers": [
+        "Добрый день"
+      ],
+      "en": "Good afternoon",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "добрый",
+        "добрый день"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "greeting"
+      ]
+    },
+    {
+      "id": "back_firs004_01",
+      "item_id": "firs004",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "До́брое у́тро",
+      "ru_plain": "Доброе утро",
+      "accepted_answers": [
+        "Доброе утро"
+      ],
+      "en": "Good morning",
+      "priority": 2,
+      "lexemes": [
+        "доброе",
+        "доброе утро",
+        "утро"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "greeting"
+      ]
+    },
+    {
+      "id": "back_firs005_01",
+      "item_id": "firs005",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Меня́ зову́т Джо",
+      "ru_plain": "Меня зовут Джо",
+      "accepted_answers": [
+        "Меня зовут Джо"
+      ],
+      "en": "My name is Joe",
+      "priority": 1,
+      "lexemes": [
+        "джо",
+        "зовут",
+        "меня",
+        "меня зовут джо"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "intro"
+      ]
+    },
+    {
+      "id": "back_firs006_01",
+      "item_id": "firs006",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "О́чень прия́тно",
+      "ru_plain": "Очень приятно",
+      "accepted_answers": [
+        "Очень приятно"
+      ],
+      "en": "Very nice to meet you",
+      "priority": 1,
+      "lexemes": [
+        "очень",
+        "очень приятно",
+        "приятно"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "intro"
+      ]
+    },
+    {
+      "id": "back_firs007_01",
+      "item_id": "firs007",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Прия́тно познако́миться",
+      "ru_plain": "Приятно познакомиться",
+      "accepted_answers": [
+        "Приятно познакомиться"
+      ],
+      "en": "Pleased to meet you",
+      "priority": 2,
+      "lexemes": [
+        "познакомиться",
+        "приятно",
+        "приятно познакомиться"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "intro"
+      ]
+    },
+    {
+      "id": "back_firs008_01",
+      "item_id": "firs008",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Рад познако́миться",
+      "ru_plain": "Рад познакомиться",
+      "accepted_answers": [
+        "Рад познакомиться"
+      ],
+      "en": "Glad to meet you",
+      "priority": 2,
+      "lexemes": [
+        "познакомиться",
+        "рад",
+        "рад познакомиться"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "intro"
+      ]
+    },
+    {
+      "id": "back_firs009_01",
+      "item_id": "firs009",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Разреши́те предста́виться",
+      "ru_plain": "Разрешите представиться",
+      "accepted_answers": [
+        "Разрешите представиться"
+      ],
+      "en": "Allow me to introduce myself",
+      "priority": 3,
+      "lexemes": [
+        "представиться",
+        "разрешите",
+        "разрешите представиться"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "intro"
+      ]
+    },
+    {
+      "id": "back_firs010_01",
+      "item_id": "firs010",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Спаси́бо, что пригласи́ли",
+      "ru_plain": "Спасибо, что пригласили",
+      "accepted_answers": [
+        "Спасибо, что пригласили"
+      ],
+      "en": "Thank you for inviting me",
+      "priority": 1,
+      "lexemes": [
+        "пригласили",
+        "спасибо",
+        "спасибо, что пригласили",
+        "что"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "intro",
+        "politeness"
+      ]
+    },
+    {
+      "id": "back_firs011_01",
+      "item_id": "firs011",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Спаси́бо, что приня́ли",
+      "ru_plain": "Спасибо, что приняли",
+      "accepted_answers": [
+        "Спасибо, что приняли"
+      ],
+      "en": "Thank you for having me",
+      "priority": 2,
+      "lexemes": [
+        "приняли",
+        "спасибо",
+        "спасибо, что приняли",
+        "что"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_firs012_01",
+      "item_id": "firs012",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "До свида́ния",
+      "ru_plain": "До свидания",
+      "accepted_answers": [
+        "До свидания"
+      ],
+      "en": "Goodbye",
+      "priority": 2,
+      "lexemes": [
+        "до",
+        "до свидания",
+        "свидания"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "greeting"
+      ]
+    },
+    {
+      "id": "back_firs013_01",
+      "item_id": "firs013",
+      "module": "first_contact",
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "ru": "Споко́йной но́чи",
+      "ru_plain": "Спокойной ночи",
+      "accepted_answers": [
+        "Спокойной ночи"
+      ],
+      "en": "Good night",
+      "priority": 3,
+      "lexemes": [
+        "ночи",
+        "спокойной",
+        "спокойной ночи"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "greeting"
+      ]
+    },
+    {
+      "id": "back_poli001_01",
+      "item_id": "poli001",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Спаси́бо",
+      "ru_plain": "Спасибо",
+      "accepted_answers": [
+        "Спасибо"
+      ],
+      "en": "Thank you",
+      "priority": 1,
+      "lexemes": [
+        "спасибо"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_poli002_01",
+      "item_id": "poli002",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Спаси́бо большо́е",
+      "ru_plain": "Спасибо большое",
+      "accepted_answers": [
+        "Спасибо большое"
+      ],
+      "en": "Thank you very much",
+      "priority": 1,
+      "lexemes": [
+        "большое",
+        "спасибо",
+        "спасибо большое"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_poli003_01",
+      "item_id": "poli003",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Пожа́луйста",
+      "ru_plain": "Пожалуйста",
+      "accepted_answers": [
+        "Пожалуйста"
+      ],
+      "en": "Please / You're welcome",
+      "priority": 1,
+      "lexemes": [
+        "пожалуйста"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_poli004_01",
+      "item_id": "poli004",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Извини́те",
+      "ru_plain": "Извините",
+      "accepted_answers": [
+        "Извините"
+      ],
+      "en": "Excuse me / sorry (formal)",
+      "priority": 1,
+      "lexemes": [
+        "извините"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_poli005_01",
+      "item_id": "poli005",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Прости́те",
+      "ru_plain": "Простите",
+      "accepted_answers": [
+        "Простите"
+      ],
+      "en": "Pardon me / sorry (formal)",
+      "priority": 2,
+      "lexemes": [
+        "простите"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_poli006_01",
+      "item_id": "poli006",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Мо́жно?",
+      "ru_plain": "Можно?",
+      "accepted_answers": [
+        "Можно?"
+      ],
+      "en": "May I?",
+      "priority": 2,
+      "lexemes": [
+        "можно"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_poli008_01",
+      "item_id": "poli008",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Нет, спаси́бо",
+      "ru_plain": "Нет, спасибо",
+      "accepted_answers": [
+        "Нет, спасибо"
+      ],
+      "en": "No, thank you",
+      "priority": 1,
+      "lexemes": [
+        "нет",
+        "нет, спасибо",
+        "спасибо"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_poli009_01",
+      "item_id": "poli009",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Я ещё учу́ ру́сский",
+      "ru_plain": "Я ещё учу русский",
+      "accepted_answers": [
+        "Я ещё учу русский"
+      ],
+      "en": "I'm still learning Russian",
+      "priority": 1,
+      "lexemes": [
+        "ещё",
+        "русский",
+        "учу",
+        "я",
+        "я ещё учу русский"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "rescue"
+      ]
+    },
+    {
+      "id": "back_poli010_01",
+      "item_id": "poli010",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Повтори́те, пожа́луйста",
+      "ru_plain": "Повторите, пожалуйста",
+      "accepted_answers": [
+        "Повторите, пожалуйста"
+      ],
+      "en": "Could you repeat, please",
+      "priority": 1,
+      "lexemes": [
+        "повторите",
+        "повторите, пожалуйста",
+        "пожалуйста"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "rescue"
+      ]
+    },
+    {
+      "id": "back_poli011_01",
+      "item_id": "poli011",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Поме́дленнее, пожа́луйста",
+      "ru_plain": "Помедленнее, пожалуйста",
+      "accepted_answers": [
+        "Помедленнее, пожалуйста"
+      ],
+      "en": "Slower, please",
+      "priority": 1,
+      "lexemes": [
+        "пожалуйста",
+        "помедленнее",
+        "помедленнее, пожалуйста"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "rescue"
+      ]
+    },
+    {
+      "id": "back_poli012_01",
+      "item_id": "poli012",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Я не понима́ю",
+      "ru_plain": "Я не понимаю",
+      "accepted_answers": [
+        "Я не понимаю"
+      ],
+      "en": "I don't understand",
+      "priority": 1,
+      "lexemes": [
+        "не",
+        "понимаю",
+        "я",
+        "я не понимаю"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "rescue"
+      ]
+    },
+    {
+      "id": "back_poli013_01",
+      "item_id": "poli013",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Я понима́ю",
+      "ru_plain": "Я понимаю",
+      "accepted_answers": [
+        "Я понимаю"
+      ],
+      "en": "I understand",
+      "priority": 2,
+      "lexemes": [
+        "понимаю",
+        "я",
+        "я понимаю"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_poli014_01",
+      "item_id": "poli014",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Поня́тно",
+      "ru_plain": "Понятно",
+      "accepted_answers": [
+        "Понятно"
+      ],
+      "en": "Got it / I see",
+      "priority": 2,
+      "lexemes": [
+        "понятно"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_poli015_01",
+      "item_id": "poli015",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Хорошо́",
+      "ru_plain": "Хорошо",
+      "accepted_answers": [
+        "Хорошо"
+      ],
+      "en": "Good / OK",
+      "priority": 1,
+      "lexemes": [
+        "хорошо"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_poli016_01",
+      "item_id": "poli016",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Отли́чно",
+      "ru_plain": "Отлично",
+      "accepted_answers": [
+        "Отлично"
+      ],
+      "en": "Great",
+      "priority": 2,
+      "lexemes": [
+        "отлично"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_poli017_01",
+      "item_id": "poli017",
+      "module": "politeness",
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "ru": "Как по-ру́сски …?",
+      "ru_plain": "Как по-русски …?",
+      "accepted_answers": [
+        "Как по-русски …?"
+      ],
+      "en": "How do you say … in Russian?",
+      "priority": 3,
+      "lexemes": [
+        "как",
+        "как по-русски …?",
+        "по",
+        "русски"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "register",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_toas001_01",
+      "item_id": "toas001",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За встре́чу!",
+      "ru_plain": "За встречу!",
+      "accepted_answers": [
+        "За встречу!"
+      ],
+      "en": "To our getting together!",
+      "priority": 1,
+      "lexemes": [
+        "встречу",
+        "за",
+        "за встречу!"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas002_01",
+      "item_id": "toas002",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За знако́мство!",
+      "ru_plain": "За знакомство!",
+      "accepted_answers": [
+        "За знакомство!"
+      ],
+      "en": "To getting to know each other!",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за знакомство!",
+        "знакомство"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas003_01",
+      "item_id": "toas003",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За роди́телей!",
+      "ru_plain": "За родителей!",
+      "accepted_answers": [
+        "За родителей!"
+      ],
+      "en": "To the parents!",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за родителей!",
+        "родителей"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas004_01",
+      "item_id": "toas004",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За хозя́йку!",
+      "ru_plain": "За хозяйку!",
+      "accepted_answers": [
+        "За хозяйку!"
+      ],
+      "en": "To the hostess! (who cooked)",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за хозяйку!",
+        "хозяйку"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas005_01",
+      "item_id": "toas005",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За хозя́ев!",
+      "ru_plain": "За хозяев!",
+      "accepted_answers": [
+        "За хозяев!"
+      ],
+      "en": "To the hosts!",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за хозяев!",
+        "хозяев"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas006_01",
+      "item_id": "toas006",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За ва́ше здоро́вье!",
+      "ru_plain": "За ваше здоровье!",
+      "accepted_answers": [
+        "За ваше здоровье!"
+      ],
+      "en": "To your health! (formal)",
+      "priority": 1,
+      "lexemes": [
+        "ваше",
+        "за",
+        "за ваше здоровье!",
+        "здоровье"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas007_01",
+      "item_id": "toas007",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За здоро́вье!",
+      "ru_plain": "За здоровье!",
+      "accepted_answers": [
+        "За здоровье!"
+      ],
+      "en": "To health!",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за здоровье!",
+        "здоровье"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas008_01",
+      "item_id": "toas008",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За семью́!",
+      "ru_plain": "За семью!",
+      "accepted_answers": [
+        "За семью!"
+      ],
+      "en": "To the family!",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за семью!",
+        "семью"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas009_01",
+      "item_id": "toas009",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За любо́вь!",
+      "ru_plain": "За любовь!",
+      "accepted_answers": [
+        "За любовь!"
+      ],
+      "en": "To love!",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "за любовь!",
+        "любовь"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas010_01",
+      "item_id": "toas010",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "За молоды́х!",
+      "ru_plain": "За молодых!",
+      "accepted_answers": [
+        "За молодых!"
+      ],
+      "en": "To the newlyweds!",
+      "priority": 3,
+      "lexemes": [
+        "за",
+        "за молодых!",
+        "молодых"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas011_01",
+      "item_id": "toas011",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "Бу́дем здоро́вы!",
+      "ru_plain": "Будем здоровы!",
+      "accepted_answers": [
+        "Будем здоровы!"
+      ],
+      "en": "Let's be healthy! (full toast)",
+      "priority": 2,
+      "lexemes": [
+        "будем",
+        "будем здоровы!",
+        "здоровы"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas012_01",
+      "item_id": "toas012",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "Я хочу́ сказа́ть тост за …",
+      "ru_plain": "Я хочу сказать тост за …",
+      "accepted_answers": [
+        "Я хочу сказать тост за …"
+      ],
+      "en": "I want to make a toast to …",
+      "priority": 2,
+      "lexemes": [
+        "за",
+        "сказать",
+        "тост",
+        "хочу",
+        "я",
+        "я хочу сказать тост за …"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas013_01",
+      "item_id": "toas013",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "Дава́йте вы́пьем за э́то!",
+      "ru_plain": "Давайте выпьем за это!",
+      "accepted_answers": [
+        "Давайте выпьем за это!"
+      ],
+      "en": "Let's drink to that!",
+      "priority": 3,
+      "lexemes": [
+        "выпьем",
+        "давайте",
+        "давайте выпьем за это!",
+        "за",
+        "это"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast"
+      ]
+    },
+    {
+      "id": "back_toas014_01",
+      "item_id": "toas014",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "до дна́",
+      "ru_plain": "до дна",
+      "accepted_answers": [
+        "до дна"
+      ],
+      "en": "'to the bottom' (drain the glass)",
+      "priority": 3,
+      "lexemes": [
+        "дна",
+        "до",
+        "до дна"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast-vocab"
+      ]
+    },
+    {
+      "id": "back_toas015_01",
+      "item_id": "toas015",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "бока́л",
+      "ru_plain": "бокал",
+      "accepted_answers": [
+        "бокал"
+      ],
+      "en": "(wine) glass",
+      "priority": 3,
+      "lexemes": [
+        "бокал"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast-vocab"
+      ]
+    },
+    {
+      "id": "back_toas016_01",
+      "item_id": "toas016",
+      "module": "toasts",
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "ru": "рю́мка",
+      "ru_plain": "рюмка",
+      "accepted_answers": [
+        "рюмка"
+      ],
+      "en": "shot glass (for vodka)",
+      "priority": 3,
+      "lexemes": [
+        "рюмка"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "cultural_usage",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "toast-vocab"
+      ]
+    },
+    {
+      "id": "back_fami001_01",
+      "item_id": "fami001",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "семья́",
+      "ru_plain": "семья",
+      "accepted_answers": [
+        "семья"
+      ],
+      "en": "family",
+      "priority": 2,
+      "lexemes": [
+        "семья"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_fami002_01",
+      "item_id": "fami002",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "жена́",
+      "ru_plain": "жена",
+      "accepted_answers": [
+        "жена"
+      ],
+      "en": "wife",
+      "priority": 2,
+      "lexemes": [
+        "жена"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_fami005_01",
+      "item_id": "fami005",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "тёща",
+      "ru_plain": "тёща",
+      "accepted_answers": [
+        "тёща"
+      ],
+      "en": "mother-in-law (wife's mother — yours)",
+      "priority": 2,
+      "lexemes": [
+        "тёща"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_fami007_01",
+      "item_id": "fami007",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "шу́рин",
+      "ru_plain": "шурин",
+      "accepted_answers": [
+        "шурин"
+      ],
+      "en": "wife's brother (your brother-in-law)",
+      "priority": 3,
+      "lexemes": [
+        "шурин"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_fami008_01",
+      "item_id": "fami008",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "сестра́ жены́",
+      "ru_plain": "сестра жены",
+      "accepted_answers": [
+        "сестра жены"
+      ],
+      "en": "wife's sister (your sister-in-law)",
+      "priority": 3,
+      "lexemes": [
+        "жены",
+        "сестра",
+        "сестра жены"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_fami009_01",
+      "item_id": "fami009",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "ма́ма",
+      "ru_plain": "мама",
+      "accepted_answers": [
+        "мама"
+      ],
+      "en": "mom",
+      "priority": 2,
+      "lexemes": [
+        "мама"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_fami010_01",
+      "item_id": "fami010",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "па́па",
+      "ru_plain": "папа",
+      "accepted_answers": [
+        "папа"
+      ],
+      "en": "dad",
+      "priority": 2,
+      "lexemes": [
+        "папа"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_fami011_01",
+      "item_id": "fami011",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "роди́тели",
+      "ru_plain": "родители",
+      "accepted_answers": [
+        "родители"
+      ],
+      "en": "parents",
+      "priority": 2,
+      "lexemes": [
+        "родители"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_fami012_01",
+      "item_id": "fami012",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "ба́бушка",
+      "ru_plain": "бабушка",
+      "accepted_answers": [
+        "бабушка"
+      ],
+      "en": "grandmother",
+      "priority": 2,
+      "lexemes": [
+        "бабушка"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_fami013_01",
+      "item_id": "fami013",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "де́душка",
+      "ru_plain": "дедушка",
+      "accepted_answers": [
+        "дедушка"
+      ],
+      "en": "grandfather",
+      "priority": 2,
+      "lexemes": [
+        "дедушка"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_fami017_01",
+      "item_id": "fami017",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "сестра́",
+      "ru_plain": "сестра",
+      "accepted_answers": [
+        "сестра"
+      ],
+      "en": "sister",
+      "priority": 3,
+      "lexemes": [
+        "сестра"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_fami018_01",
+      "item_id": "fami018",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "де́ти",
+      "ru_plain": "дети",
+      "accepted_answers": [
+        "дети"
+      ],
+      "en": "children",
+      "priority": 3,
+      "lexemes": [
+        "дети"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_fami019_01",
+      "item_id": "fami019",
+      "module": "family",
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "ru": "Я люблю́ ва́шу дочь",
+      "ru_plain": "Я люблю вашу дочь",
+      "accepted_answers": [
+        "Я люблю вашу дочь"
+      ],
+      "en": "I love your daughter",
+      "priority": 1,
+      "lexemes": [
+        "вашу",
+        "дочь",
+        "люблю",
+        "я",
+        "я люблю вашу дочь"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food001_01",
+      "item_id": "food001",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Прия́тного аппети́та!",
+      "ru_plain": "Приятного аппетита!",
+      "accepted_answers": [
+        "Приятного аппетита!"
+      ],
+      "en": "Bon appétit!",
+      "priority": 1,
+      "lexemes": [
+        "аппетита",
+        "приятного",
+        "приятного аппетита!"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food002_01",
+      "item_id": "food002",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "О́чень вку́сно!",
+      "ru_plain": "Очень вкусно!",
+      "accepted_answers": [
+        "Очень вкусно!"
+      ],
+      "en": "Very tasty!",
+      "priority": 1,
+      "lexemes": [
+        "вкусно",
+        "очень",
+        "очень вкусно!"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food003_01",
+      "item_id": "food003",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Вку́сно!",
+      "ru_plain": "Вкусно!",
+      "accepted_answers": [
+        "Вкусно!"
+      ],
+      "en": "Tasty!",
+      "priority": 2,
+      "lexemes": [
+        "вкусно"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food004_01",
+      "item_id": "food004",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Спаси́бо, бы́ло о́чень вку́сно",
+      "ru_plain": "Спасибо, было очень вкусно",
+      "accepted_answers": [
+        "Спасибо, было очень вкусно"
+      ],
+      "en": "Thank you, it was delicious",
+      "priority": 1,
+      "lexemes": [
+        "было",
+        "вкусно",
+        "очень",
+        "спасибо",
+        "спасибо, было очень вкусно"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food005_01",
+      "item_id": "food005",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Мне о́чень нра́вится",
+      "ru_plain": "Мне очень нравится",
+      "accepted_answers": [
+        "Мне очень нравится"
+      ],
+      "en": "I really like it",
+      "priority": 2,
+      "lexemes": [
+        "мне",
+        "мне очень нравится",
+        "нравится",
+        "очень"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food006_01",
+      "item_id": "food006",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Я нае́лся",
+      "ru_plain": "Я наелся",
+      "accepted_answers": [
+        "Я наелся"
+      ],
+      "en": "I'm full (I've eaten my fill)",
+      "priority": 2,
+      "lexemes": [
+        "наелся",
+        "я",
+        "я наелся"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food007_01",
+      "item_id": "food007",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Мо́жно ещё?",
+      "ru_plain": "Можно ещё?",
+      "accepted_answers": [
+        "Можно ещё?"
+      ],
+      "en": "May I have more?",
+      "priority": 2,
+      "lexemes": [
+        "ещё",
+        "можно",
+        "можно ещё?"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food008_01",
+      "item_id": "food008",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Спаси́бо, не на́до",
+      "ru_plain": "Спасибо, не надо",
+      "accepted_answers": [
+        "Спасибо, не надо"
+      ],
+      "en": "Thanks, I'm good (no need)",
+      "priority": 2,
+      "lexemes": [
+        "надо",
+        "не",
+        "спасибо",
+        "спасибо, не надо"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food009_01",
+      "item_id": "food009",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Переда́йте, пожа́луйста, хлеб",
+      "ru_plain": "Передайте, пожалуйста, хлеб",
+      "accepted_answers": [
+        "Передайте, пожалуйста, хлеб"
+      ],
+      "en": "Please pass the bread",
+      "priority": 3,
+      "lexemes": [
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "пожалуйста",
+        "хлеб"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food010_01",
+      "item_id": "food010",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "Мо́жно ча́ю?",
+      "ru_plain": "Можно чаю?",
+      "accepted_answers": [
+        "Можно чаю?"
+      ],
+      "en": "May I have some tea?",
+      "priority": 3,
+      "lexemes": [
+        "можно",
+        "можно чаю?",
+        "чаю"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food012_01",
+      "item_id": "food012",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "пельме́ни",
+      "ru_plain": "пельмени",
+      "accepted_answers": [
+        "пельмени"
+      ],
+      "en": "meat dumplings",
+      "priority": 3,
+      "lexemes": [
+        "пельмени"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food013_01",
+      "item_id": "food013",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "блины́",
+      "ru_plain": "блины",
+      "accepted_answers": [
+        "блины"
+      ],
+      "en": "blini (thin pancakes)",
+      "priority": 3,
+      "lexemes": [
+        "блины"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food014_01",
+      "item_id": "food014",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "оливье́",
+      "ru_plain": "оливье",
+      "accepted_answers": [
+        "оливье"
+      ],
+      "en": "Olivier (Russian potato salad)",
+      "priority": 3,
+      "lexemes": [
+        "оливье"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_food016_01",
+      "item_id": "food016",
+      "module": "food",
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "ru": "во́дка",
+      "ru_plain": "водка",
+      "accepted_answers": [
+        "водка"
+      ],
+      "en": "vodka",
+      "priority": 3,
+      "lexemes": [
+        "водка"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_smal001_01",
+      "item_id": "smal001",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Я юри́ст",
+      "ru_plain": "Я юрист",
+      "accepted_answers": [
+        "Я юрист"
+      ],
+      "en": "I'm a lawyer (general — use this)",
+      "priority": 2,
+      "lexemes": [
+        "юрист",
+        "я",
+        "я юрист"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_smal002_01",
+      "item_id": "smal002",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Я из Аме́рики",
+      "ru_plain": "Я из Америки",
+      "accepted_answers": [
+        "Я из Америки"
+      ],
+      "en": "I'm from America",
+      "priority": 2,
+      "lexemes": [
+        "америки",
+        "из",
+        "я",
+        "я из америки"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_smal003_01",
+      "item_id": "smal003",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Я из шта́та Миссу́ри",
+      "ru_plain": "Я из штата Миссури",
+      "accepted_answers": [
+        "Я из штата Миссури"
+      ],
+      "en": "I'm from the state of Missouri",
+      "priority": 3,
+      "lexemes": [
+        "из",
+        "миссури",
+        "штата",
+        "я",
+        "я из штата миссури"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_smal004_01",
+      "item_id": "smal004",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Я живу́ в Аме́рике",
+      "ru_plain": "Я живу в Америке",
+      "accepted_answers": [
+        "Я живу в Америке"
+      ],
+      "en": "I live in America",
+      "priority": 3,
+      "lexemes": [
+        "америке",
+        "в",
+        "живу",
+        "я",
+        "я живу в америке"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_smal005_01",
+      "item_id": "smal005",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Мы познако́мились …",
+      "ru_plain": "Мы познакомились …",
+      "accepted_answers": [
+        "Мы познакомились …"
+      ],
+      "en": "We met …",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "мы познакомились …",
+        "познакомились"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_smal006_01",
+      "item_id": "smal006",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Я немно́го говорю́ по-ру́сски",
+      "ru_plain": "Я немного говорю по-русски",
+      "accepted_answers": [
+        "Я немного говорю по-русски"
+      ],
+      "en": "I speak a little Russian",
+      "priority": 1,
+      "lexemes": [
+        "говорю",
+        "немного",
+        "по",
+        "русски",
+        "я",
+        "я немного говорю по-русски"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_smal007_01",
+      "item_id": "smal007",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Хорошо́, спаси́бо",
+      "ru_plain": "Хорошо, спасибо",
+      "accepted_answers": [
+        "Хорошо, спасибо"
+      ],
+      "en": "Good, thank you (answer to 'how are you')",
+      "priority": 1,
+      "lexemes": [
+        "спасибо",
+        "хорошо",
+        "хорошо, спасибо"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_smal008_01",
+      "item_id": "smal008",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Норма́льно",
+      "ru_plain": "Нормально",
+      "accepted_answers": [
+        "Нормально"
+      ],
+      "en": "Fine / OK (answer)",
+      "priority": 2,
+      "lexemes": [
+        "нормально"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_smal009_01",
+      "item_id": "smal009",
+      "module": "smalltalk",
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "ru": "Да, немно́го",
+      "ru_plain": "Да, немного",
+      "accepted_answers": [
+        "Да, немного"
+      ],
+      "en": "Yes, a little (answer)",
+      "priority": 2,
+      "lexemes": [
+        "да",
+        "да, немного",
+        "немного"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_list001_01",
+      "item_id": "list001",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Как дела́?",
+      "ru_plain": "Как дела?",
+      "accepted_answers": [
+        "Как дела?"
+      ],
+      "en": "How are you?",
+      "priority": 1,
+      "lexemes": [
+        "дела",
+        "как",
+        "как дела?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_list002_01",
+      "item_id": "list002",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Отку́да вы?",
+      "ru_plain": "Откуда вы?",
+      "accepted_answers": [
+        "Откуда вы?"
+      ],
+      "en": "Where are you from?",
+      "priority": 1,
+      "lexemes": [
+        "вы",
+        "откуда",
+        "откуда вы?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_list003_01",
+      "item_id": "list003",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Кем вы рабо́таете?",
+      "ru_plain": "Кем вы работаете?",
+      "accepted_answers": [
+        "Кем вы работаете?"
+      ],
+      "en": "What do you do for work?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "кем",
+        "кем вы работаете?",
+        "работаете"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_list004_01",
+      "item_id": "list004",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Вы говори́те по-ру́сски?",
+      "ru_plain": "Вы говорите по-русски?",
+      "accepted_answers": [
+        "Вы говорите по-русски?"
+      ],
+      "en": "Do you speak Russian?",
+      "priority": 1,
+      "lexemes": [
+        "вы",
+        "вы говорите по-русски?",
+        "говорите",
+        "по",
+        "русски"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_list005_01",
+      "item_id": "list005",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Как ва́м Росси́я?",
+      "ru_plain": "Как вам Россия?",
+      "accepted_answers": [
+        "Как вам Россия?"
+      ],
+      "en": "How do you like Russia?",
+      "priority": 2,
+      "lexemes": [
+        "вам",
+        "как",
+        "как вам россия?",
+        "россия"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_list006_01",
+      "item_id": "list006",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Как вы познако́мились?",
+      "ru_plain": "Как вы познакомились?",
+      "accepted_answers": [
+        "Как вы познакомились?"
+      ],
+      "en": "How did you two meet?",
+      "priority": 2,
+      "lexemes": [
+        "вы",
+        "как",
+        "как вы познакомились?",
+        "познакомились"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_list007_01",
+      "item_id": "list007",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Вам нра́вится …?",
+      "ru_plain": "Вам нравится …?",
+      "accepted_answers": [
+        "Вам нравится …?"
+      ],
+      "en": "Do you like …?",
+      "priority": 2,
+      "lexemes": [
+        "вам",
+        "вам нравится …?",
+        "нравится"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_list008_01",
+      "item_id": "list008",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Ещё?",
+      "ru_plain": "Ещё?",
+      "accepted_answers": [
+        "Ещё?"
+      ],
+      "en": "More? (offering food/drink)",
+      "priority": 1,
+      "lexemes": [
+        "ещё"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_list009_01",
+      "item_id": "list009",
+      "module": "listening",
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "ru": "Бу́дете …?",
+      "ru_plain": "Будете …?",
+      "accepted_answers": [
+        "Будете …?"
+      ],
+      "en": "Will you have …? (offering)",
+      "priority": 3,
+      "lexemes": [
+        "будете",
+        "будете …?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_verb001_01",
+      "item_id": "verb001",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "хочу́ / хоти́те",
+      "ru_plain": "хочу / хотите",
+      "accepted_answers": [
+        "хочу / хотите"
+      ],
+      "en": "I want / you (pl/formal) want — хоте́ть",
+      "priority": 3,
+      "lexemes": [
+        "хотите",
+        "хочу",
+        "хочу / хотите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_verb002_01",
+      "item_id": "verb002",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "могу́ / мо́жете",
+      "ru_plain": "могу / можете",
+      "accepted_answers": [
+        "могу / можете"
+      ],
+      "en": "I can / you can — мочь",
+      "priority": 3,
+      "lexemes": [
+        "могу",
+        "могу / можете",
+        "можете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_verb003_01",
+      "item_id": "verb003",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "говорю́ / говори́те",
+      "ru_plain": "говорю / говорите",
+      "accepted_answers": [
+        "говорю / говорите"
+      ],
+      "en": "I speak / you speak — говори́ть",
+      "priority": 3,
+      "lexemes": [
+        "говорите",
+        "говорю",
+        "говорю / говорите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_verb004_01",
+      "item_id": "verb004",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "понима́ю / понима́ете",
+      "ru_plain": "понимаю / понимаете",
+      "accepted_answers": [
+        "понимаю / понимаете"
+      ],
+      "en": "I understand / you understand — понима́ть",
+      "priority": 3,
+      "lexemes": [
+        "понимаете",
+        "понимаю",
+        "понимаю / понимаете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_verb005_01",
+      "item_id": "verb005",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "люблю́ / лю́бите",
+      "ru_plain": "люблю / любите",
+      "accepted_answers": [
+        "люблю / любите"
+      ],
+      "en": "I love / you love — люби́ть",
+      "priority": 3,
+      "lexemes": [
+        "любите",
+        "люблю",
+        "люблю / любите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_verb006_01",
+      "item_id": "verb006",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "рабо́таю / рабо́таете",
+      "ru_plain": "работаю / работаете",
+      "accepted_answers": [
+        "работаю / работаете"
+      ],
+      "en": "I work / you work — рабо́тать",
+      "priority": 3,
+      "lexemes": [
+        "работаете",
+        "работаю",
+        "работаю / работаете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_verb007_01",
+      "item_id": "verb007",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "живу́ / живёте",
+      "ru_plain": "живу / живёте",
+      "accepted_answers": [
+        "живу / живёте"
+      ],
+      "en": "I live / you live — жить",
+      "priority": 3,
+      "lexemes": [
+        "живу",
+        "живу / живёте",
+        "живёте"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_verb008_01",
+      "item_id": "verb008",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "ем / еди́те",
+      "ru_plain": "ем / едите",
+      "accepted_answers": [
+        "ем / едите"
+      ],
+      "en": "I eat / you eat — есть",
+      "priority": 3,
+      "lexemes": [
+        "едите",
+        "ем",
+        "ем / едите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_verb009_01",
+      "item_id": "verb009",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "пью / пьёте",
+      "ru_plain": "пью / пьёте",
+      "accepted_answers": [
+        "пью / пьёте"
+      ],
+      "en": "I drink / you drink — пить",
+      "priority": 3,
+      "lexemes": [
+        "пью",
+        "пью / пьёте",
+        "пьёте"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    },
+    {
+      "id": "back_verb010_01",
+      "item_id": "verb010",
+      "module": "verbs",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "зна́ю / зна́ете",
+      "ru_plain": "знаю / знаете",
+      "accepted_answers": [
+        "знаю / знаете"
+      ],
+      "en": "I know / you know — знать",
+      "priority": 3,
+      "lexemes": [
+        "знаете",
+        "знаю",
+        "знаю / знаете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation"
+      ]
+    }
+  ],
   "error_types": [
     {
       "id": "stress",

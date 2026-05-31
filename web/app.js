@@ -12,6 +12,7 @@
   const ITEMS = DATA.items;
   const CLOZE_CARDS = DATA.cloze_cards || [];
   const DICTATION_CARDS = DATA.dictation_cards || [];
+  const BACKTRANSLATION_CARDS = DATA.backtranslation_cards || [];
   const MODULES = DATA.modules;
   const CURRICULUM = DATA.curriculum || {};
   const LESSONS = (CURRICULUM.lessons || []).slice().sort((a, b) => a.lesson_number - b.lesson_number);
@@ -220,8 +221,12 @@
     const n = activeLesson().lesson_number || 99;
     return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
   }
+  function unlockedBacktranslationCards(cards) {
+    const n = activeLesson().lesson_number || 99;
+    return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
+  }
   function practiceItem(id) {
-    return ITEMS.find(i => i.id === id) || CLOZE_CARDS.find(c => c.id === id) || DICTATION_CARDS.find(c => c.id === id);
+    return ITEMS.find(i => i.id === id) || CLOZE_CARDS.find(c => c.id === id) || DICTATION_CARDS.find(c => c.id === id) || BACKTRANSLATION_CARDS.find(c => c.id === id);
   }
   function lessonLockHtml() {
     if (!LESSONS.length) return "";
@@ -229,6 +234,7 @@
     const count = unlockedItems(ITEMS).length;
     const clozeCount = unlockedClozeCards(CLOZE_CARDS).length;
     const dictationCount = unlockedDictationCards(DICTATION_CARDS).length;
+    const backCount = unlockedBacktranslationCards(BACKTRANSLATION_CARDS).length;
     const options = LESSONS.map(l => `<option value="${escapeHtml(l.lesson_id)}" ${l.lesson_id === lesson.lesson_id ? "selected" : ""}>${String(l.lesson_number).padStart(2, "0")} · ${escapeHtml(l.title)}</option>`).join("");
     return `<div class="lessonlock rise">
       <div>
@@ -236,7 +242,7 @@
         <p>Practice is constrained to Lesson ${lesson.lesson_number}: ${escapeHtml(lesson.title)} and everything before it.</p>
       </div>
       <label><span>Unlocked through</span><select onchange="ZS.setLesson(this.value)">${options}</select></label>
-      <div class="lessonlock__meta">${count}/${ITEMS.length} phrases unlocked · ${clozeCount}/${CLOZE_CARDS.length} cloze · ${dictationCount}/${DICTATION_CARDS.length} dictation · ${(lesson.introduced_structures || []).length} structures in this lesson</div>
+      <div class="lessonlock__meta">${count}/${ITEMS.length} phrases unlocked · ${clozeCount}/${CLOZE_CARDS.length} cloze · ${dictationCount}/${DICTATION_CARDS.length} dictation · ${backCount}/${BACKTRANSLATION_CARDS.length} back-translation · ${(lesson.introduced_structures || []).length} structures in this lesson</div>
     </div>`;
   }
 
@@ -414,14 +420,16 @@
     { n: 2, key: "recall", title: "Recall", desc: "See English → choose the Russian.", instr: "Pick the Russian" },
     { n: 3, key: "cloze", title: "Cloze", desc: "Fill the missing Russian word in context.", instr: "Fill the blank" },
     { n: 4, key: "dictation", title: "Dictation", desc: "Hear Russian audio → type the Cyrillic phrase.", instr: "Type what you hear" },
-    { n: 5, key: "produce", title: "Produce", desc: "See English → type the Russian (stress optional).", instr: "Type it in Russian" },
-    { n: 6, key: "listen", title: "Listen", desc: "Hear it → choose the meaning. No text.", instr: "What did you hear?" },
-    { n: 7, key: "roleplay", title: "Role-play", desc: "A table prompt → say it, then self-rate.", instr: "Say it out loud" },
+    { n: 5, key: "backtranslate", title: "Back-translate", desc: "Translate to English, then rebuild the Russian.", instr: "Translate, hide, rebuild" },
+    { n: 6, key: "produce", title: "Produce", desc: "See English → type the Russian (stress optional).", instr: "Type it in Russian" },
+    { n: 7, key: "listen", title: "Listen", desc: "Hear it → choose the meaning. No text.", instr: "What did you hear?" },
+    { n: 8, key: "roleplay", title: "Role-play", desc: "A table prompt → say it, then self-rate.", instr: "Say it out loud" },
   ];
   function stagePool(stageKey) {
     const items = unlockedItems(ITEMS);
     if (stageKey === "cloze") return unlockedClozeCards(CLOZE_CARDS);
     if (stageKey === "dictation") return unlockedDictationCards(DICTATION_CARDS);
+    if (stageKey === "backtranslate") return unlockedBacktranslationCards(BACKTRANSLATION_CARDS);
     if (stageKey === "listen") return items.filter(i => i.syllables >= 1);
     if (stageKey === "roleplay" && SCENARIOS.length) {
       const scenarioIds = new Set(SCENARIOS.flatMap(s => s.required_items || []));
@@ -444,6 +452,7 @@
       ["recall", "Recall"],
       ["cloze", "Fill"],
       ["dictation", "Write"],
+      ["backtranslate", "Rebuild"],
       ["listen", "Hear"],
       ["produce", "Say"],
       ["roleplay", "Use"],
@@ -519,6 +528,19 @@
         <div class="answerbox"><input id="dictIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Печатайте по-русски…" />
         <button class="btn btn--red" onclick="ZS.checkDictation('${it.id}')">Check</button></div>
         <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>`;
+    } else if (stage.key === "backtranslate") {
+      promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru" id="btSource">${colorStress(it.ru)}</div>`;
+      body = `<div id="btStep1">
+        <div class="answerbox"><input id="btEn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="English meaning note…" />
+        <button class="btn btn--red" onclick="ZS.startBack('${it.id}')">Hide Russian</button></div>
+        <div class="card__hint">First write what it means. Then rebuild the Russian from your own note.</div>
+      </div>
+      <div id="btStep2" style="display:none">
+        <div class="q-en" id="btNote" style="margin-bottom:10px"></div>
+        <div class="answerbox"><input id="btRu" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Rebuild in Russian…" />
+        <button class="btn btn--red" onclick="ZS.checkBack('${it.id}')">Check</button></div>
+        <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>
+      </div>`;
     } else if (stage.key === "produce") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-en">${escapeHtml(it.en)}</div>`;
       body = `<div class="answerbox"><input id="prodIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Печатайте по-русски…" />
@@ -549,6 +571,7 @@
     if (stage.key === "produce") setTimeout(() => { const el = $("#prodIn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkProd(it.id); }); } }, 50);
     if (stage.key === "cloze") setTimeout(() => { const el = $("#clozeIn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkCloze(it.id); }); } }, 50);
     if (stage.key === "dictation") setTimeout(() => { const el = $("#dictIn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkDictation(it.id); }); } }, 50);
+    if (stage.key === "backtranslate") setTimeout(() => { const el = $("#btEn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.startBack(it.id); }); } }, 50);
   }
 
   function nextDue(st, ok) {
@@ -603,6 +626,7 @@
       recall: ["forgot_phrase", "word_order", "register"],
       cloze: ["forgot_phrase", "case_or_inflection", "word_order", "register"],
       dictation: ["listening_misparse", "stress", "vowel_reduction", "forgot_phrase"],
+      backtranslate: ["forgot_phrase", "case_or_inflection", "word_order", "register"],
       produce: ["forgot_phrase", "stress", "gendered_form", "case_or_inflection", "word_order"],
       listen: ["listening_misparse", "stress", "vowel_reduction", "forgot_phrase"],
       roleplay: ["forgot_phrase", "register", "cultural_usage", "gendered_form"],
@@ -794,6 +818,28 @@
       const accepted = it.accepted_answers || [it.ru_plain];
       const ok = accepted.some(answer => normalize(val) === normalize(answer));
       gradeItem(id, ok, quiz.stageKey, ok ? null : "listening_misparse");
+      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`);
+    },
+    startBack(id) {
+      if (quiz.answered) return;
+      const note = $("#btEn") ? $("#btEn").value.trim() : "";
+      $("#btSource").style.display = "none";
+      $("#btStep1").style.display = "none";
+      $("#btStep2").style.display = "";
+      $("#btNote").textContent = note || "Your English note was blank. Rebuild the Russian from memory.";
+      const el = $("#btRu");
+      if (el) {
+        el.focus();
+        el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkBack(id); }, { once: true });
+      }
+    },
+    checkBack(id) {
+      if (quiz.answered) return;
+      const it = practiceItem(id);
+      const val = $("#btRu") ? $("#btRu").value : "";
+      const accepted = it.accepted_answers || [it.ru_plain];
+      const ok = accepted.some(answer => normalize(val) === normalize(answer));
+      gradeItem(id, ok, quiz.stageKey, ok ? null : "forgot_phrase");
       showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`);
     },
     giveUp(id) { const it = practiceItem(id); gradeItem(id, false, quiz.stageKey); showFeedback(false, it); },
