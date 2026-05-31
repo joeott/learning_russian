@@ -224,6 +224,50 @@ async function assertLessonLockedRecognition(page, baseUrl) {
   await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
   const lastValue = await page.locator(".lessonlock select option").last().getAttribute("value");
   await select.selectOption(lastValue);
+  const terminal = await page.evaluate((lessonId) => {
+    const { items = [], cloze_cards = [], dictation_cards = [], stress_cards = [], pronunciation_cards = [], backtranslation_cards = [], contrast_cards = [] } = window.CONTENT_DATA;
+    const { lessons = [] } = window.CONTENT_DATA.curriculum || {};
+    const target = lessons.find((lesson) => lesson.lesson_id === lessonId);
+    const lessonNumber = target ? target.lesson_number : (lessons[lessons.length - 1] || {}).lesson_number || 1;
+    const hasLessonAccess = (card) => !card.lesson_number || card.lesson_number <= lessonNumber;
+    const unlockedItems = items.filter((it) => hasLessonAccess(it));
+    const scenarioIds = new Set((window.CONTENT_DATA.scenarios || []).flatMap((s) => s.required_items || []));
+    const hasScenarios = (window.CONTENT_DATA.scenarios || []).length > 0;
+    const isRoleplay = hasScenarios
+      ? (it) => scenarioIds.has(it.id)
+      : (it) => it.priority <= 2 && (it.ru_plain.includes(" ") || it.tags.includes("toast"));
+    return {
+      lessonNumber,
+      phrasesUnlocked: unlockedItems.length,
+      phrasesTotal: items.length,
+      recognition: unlockedItems.length,
+      recall: unlockedItems.length,
+      produce: unlockedItems.length,
+      listen: unlockedItems.filter((it) => it.syllables >= 1).length,
+      roleplay: unlockedItems.filter(isRoleplay).length,
+      cloze: cloze_cards.filter(hasLessonAccess).length,
+      dictation: dictation_cards.filter(hasLessonAccess).length,
+      stress: stress_cards.filter(hasLessonAccess).length,
+      pronounce: pronunciation_cards.filter(hasLessonAccess).length,
+      backtranslate: backtranslation_cards.filter(hasLessonAccess).length,
+      contrast: contrast_cards.filter(hasLessonAccess).length,
+      totals: {
+        cloze: cloze_cards.length,
+        dictation: dictation_cards.length,
+        stress: stress_cards.length,
+        pronounce: pronunciation_cards.length,
+        backtranslate: backtranslation_cards.length,
+        contrast: contrast_cards.length,
+      },
+    };
+  }, lastValue);
+  const terminalMetaText = (await page.locator(".lessonlock__meta").innerText()).toLowerCase();
+  if (!terminalMetaText.includes(`${terminal.phrasesUnlocked}/${terminal.phrasesTotal} phrases unlocked`)) {
+    throw new Error(`Lesson lock terminal meta mismatch: phrases unlocked expected ${terminal.phrasesUnlocked}/${terminal.phrasesTotal}`);
+  }
+  if (terminal.phrasesUnlocked !== terminal.phrasesTotal) {
+    throw new Error(`Terminal lesson should unlock all phrases at selected boundary ${terminal.lessonNumber}, got ${terminal.phrasesUnlocked}/${terminal.phrasesTotal}`);
+  }
   return prompted;
 }
 
