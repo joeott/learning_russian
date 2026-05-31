@@ -97,6 +97,19 @@ async function roleplayCriteriaMissed(page) {
   });
 }
 
+async function assertRepairQueueStartsRound(page, baseUrl) {
+  await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
+  await page.waitForFunction(() => document.body.innerText.toLowerCase().includes("repair queue"));
+  const cards = await page.locator(".repaircard").count();
+  if (cards < 1) throw new Error("repair queue did not render logged error patterns");
+  await page.locator(".repaircard").first().getByRole("button", { name: /Repair now/i }).click();
+  await page.waitForFunction(() => location.hash.startsWith("#/quiz/"));
+  const hash = await page.evaluate(() => location.hash);
+  if (hash === "#/quiz" || !hash.match(/^#\/quiz\/(produce|dictation|stress|pronounce|contrast|roleplay|backtranslate)$/)) {
+    throw new Error(`repair queue opened an unexpected target: ${hash}`);
+  }
+}
+
 async function assertLessonLockedRecognition(page, baseUrl) {
   await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
   const select = page.locator(".lessonlock select");
@@ -254,6 +267,9 @@ export async function runFlowCheck(opts) {
       throw new Error("roleplay did not persist criterion-level miss history");
     }
     completed.push("roleplay");
+
+    await assertRepairQueueStartsRound(page, opts.url);
+    completed.push("repair-queue");
 
     await page.goto(withHash(opts.url, "#/home"), { waitUntil: "networkidle" });
     await assertText(page, "AVG RESPONSE TIME");
