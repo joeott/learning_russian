@@ -980,6 +980,47 @@ def build_stress_cards(items: list[dict]) -> list[dict]:
     return cards
 
 
+def build_pronunciation_cards(items: list[dict]) -> list[dict]:
+    cards = []
+    for item in items:
+        if item["syllables"] < 2:
+            continue
+        cards.append(
+            {
+                "id": f"pron_{item['id']}_01",
+                "item_id": item["id"],
+                "module": item["module"],
+                "lesson_id": item["lesson_id"],
+                "lesson_number": item["lesson_number"],
+                "ru": item["ru"],
+                "ru_plain": item["ru_plain"],
+                "en": item["en"],
+                "priority": item["priority"],
+                "lexemes": item["lexemes"],
+                "structures": item["structures"],
+                "practice_steps": [
+                    "listen_native",
+                    "record_self",
+                    "playback_compare",
+                    "self_rate",
+                ],
+                "feedback_targets": ["stress", "vowel_reduction"],
+                "allowed_error_types": sorted(
+                    set(item["allowed_error_types"]).union(
+                        {"stress", "vowel_reduction", "forgot_phrase"}
+                    )
+                ),
+                "error_types": sorted(
+                    set(item["error_types"]).union(
+                        {"stress", "vowel_reduction", "forgot_phrase"}
+                    )
+                ),
+                "tags": sorted(set(item.get("tags", []) + ["pronunciation"])),
+            }
+        )
+    return cards
+
+
 def build_backtranslation_cards(items: list[dict]) -> list[dict]:
     cards = []
     for item in items:
@@ -1274,6 +1315,7 @@ def build():
     cloze_cards = build_cloze_cards(items)
     dictation_cards = build_dictation_cards(items)
     stress_cards = build_stress_cards(items)
+    pronunciation_cards = build_pronunciation_cards(items)
     backtranslation_cards = build_backtranslation_cards(items)
     tutor_cards = build_tutor_cards(scenarios, items, curriculum, course)
     contrast_cards = build_contrast_cards(CONTRAST_SETS, items)
@@ -1295,6 +1337,7 @@ def build():
         "cloze_cards": cloze_cards,
         "dictation_cards": dictation_cards,
         "stress_cards": stress_cards,
+        "pronunciation_cards": pronunciation_cards,
         "backtranslation_cards": backtranslation_cards,
         "tutor_cards": tutor_cards,
         "contrast_cards": contrast_cards,

@@ -99,6 +99,25 @@
         ]
       }
     },
+    "pronunciation_cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "item_id",
+          "lesson_id",
+          "lesson_number",
+          "ru",
+          "ru_plain",
+          "en",
+          "practice_steps",
+          "feedback_targets",
+          "structures",
+          "allowed_error_types"
+        ]
+      }
+    },
     "backtranslation_cards": {
       "type": "array",
       "items": {
