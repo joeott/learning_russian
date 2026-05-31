@@ -1,0 +1,25 @@
+{
+  "name": "learning_russian",
+  "version": "1.0.0",
+  "description": "Speech-first language-learning PWA and course generator.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "browser": "node scripts/browser_controller.mjs",
+    "check:js": "node --check web/app.js && node --check web/service-worker.js && node --check scripts/browser_controller.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeott/learning_russian.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joeott/learning_russian/issues"
+  },
+  "homepage": "https://github.com/joeott/learning_russian#readme",
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}

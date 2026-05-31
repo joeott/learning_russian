@@ -4,6 +4,7 @@ node_modules/
 .venv/
 __pycache__/
 .ruff_cache/
+tmp/
 # secrets — never commit
 .env
 .env.*

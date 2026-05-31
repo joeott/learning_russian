@@ -16,6 +16,7 @@ COMMANDS
   audio voices          List Russian voices (your library + shared library)
   audio coverage        Report which phrases have audio
   serve                 Serve the repo over HTTP and print the app URL
+  browser               Inspect the local web app with the JS browser controller
   verify                Run all health checks (JSON, JS syntax, audio coverage)
   test                  Run stdlib validation/unit tests
   loop-prompt           Print the local iterative improvement-loop prompt
@@ -28,6 +29,7 @@ EXAMPLES
   tools/zastolom audio generate --force    # re-synthesize everything
   tools/zastolom audio generate --ids firs001,toas001 --voice ScaQ3utur72x93jqMMeU
   tools/zastolom serve --port 8000
+  tools/zastolom browser http://localhost:8000/web/#/quiz --mobile
   tools/zastolom verify
 
 ELEVENLABS KEY RESOLUTION (first hit wins)
@@ -231,6 +233,33 @@ def cmd_serve(args):
     except KeyboardInterrupt:
         pass
 
+def cmd_browser(args):
+    if not which("node"):
+        print(err("node not found — cannot run JS browser controller"))
+        sys.exit(2)
+    script = os.path.join(ROOT, "scripts", "browser_controller.mjs")
+    command = ["node", script]
+    if args.url:
+        command.append(args.url)
+    if args.desktop:
+        command.append("--desktop")
+    if args.mobile:
+        command.append("--mobile")
+    if args.both:
+        command.append("--both")
+    if args.click_text:
+        command += ["--click-text", args.click_text]
+    if args.out:
+        command += ["--out", args.out]
+    if args.wait_ms:
+        command += ["--wait-ms", str(args.wait_ms)]
+    print(head("browser"), flush=True)
+    print("  → " + " ".join(command), flush=True)
+    r = subprocess.run(command, cwd=ROOT)
+    if r.returncode != 0:
+        print(err("browser controller failed"))
+        sys.exit(r.returncode)
+
 def cmd_verify(args):
     fails = 0
     print(head("verify"))
@@ -328,6 +357,15 @@ def main():
     g.add_argument("--force", action="store_true"); g.add_argument("--ids"); g.add_argument("--voice"); g.add_argument("--limit", type=int)
     asub.add_parser("voices"); asub.add_parser("coverage")
     s = sub.add_parser("serve"); s.add_argument("--port", type=int, default=8000)
+    br = sub.add_parser("browser")
+    br.add_argument("url", nargs="?", default="http://localhost:8000/web/")
+    group = br.add_mutually_exclusive_group()
+    group.add_argument("--desktop", action="store_true")
+    group.add_argument("--mobile", action="store_true")
+    group.add_argument("--both", action="store_true")
+    br.add_argument("--click-text")
+    br.add_argument("--out")
+    br.add_argument("--wait-ms", type=int)
     sub.add_parser("verify"); sub.add_parser("test"); sub.add_parser("loop-prompt"); sub.add_parser("stats")
     sub.add_parser("help")
 
@@ -339,6 +377,7 @@ def main():
         {"generate": cmd_audio_generate, "voices": cmd_audio_voices,
          "coverage": cmd_audio_coverage}.get(args.acmd, lambda a: print(__doc__))(args)
     elif args.cmd == "serve": cmd_serve(args)
+    elif args.cmd == "browser": cmd_browser(args)
     elif args.cmd == "verify": cmd_verify(args)
     elif args.cmd == "test": cmd_test(args)
     elif args.cmd == "loop-prompt": cmd_loop_prompt(args)

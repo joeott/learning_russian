@@ -15,6 +15,6 @@ tools/zastolom test
 tools/zastolom serve --port 8000
 ```
 
-Then inspect `http://localhost:8000/web/` with browser automation at desktop and
-mobile widths. Make one bounded improvement, rebuild via `tools/zastolom build`,
+Then inspect `http://localhost:8000/web/` with `tools/zastolom browser --both`
+or browser automation at desktop and mobile widths. Make one bounded improvement, rebuild via `tools/zastolom build`,
 rerun verification, and commit only when green.
