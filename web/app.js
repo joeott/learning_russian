@@ -481,14 +481,24 @@
     const index = ok ? Math.min(st.success_sessions || 0, minutes.length - 1) : Math.min(st.lapses || 0, minutes.length - 1);
     return new Date(Date.now() + minutes[index] * 60000).toISOString();
   }
-  function gradeItem(id, ok, stageKey, errorType) {
+  function gradeItem(id, ok, stageKey, errorType, opts) {
+    opts = opts || {};
     const r = rec(id);
     const st = stageRec(id, stageKey);
     r.seen++;
     r.last_seen_at = new Date().toISOString();
     st.seen++;
     st.last_seen_at = r.last_seen_at;
-    if (ok) {
+    if (ok && opts.assisted) {
+      r.correct++;
+      st.correct++;
+      st.stability = Math.min(30, (st.stability || 1) + 0.25);
+      st.difficulty = Math.min(10, (st.difficulty || 5) + 0.15);
+      st.retrievability = 0.65;
+      st.last_grade = "hard";
+      st.mastered = false;
+      st.due_at = new Date(Date.now() + 1800000).toISOString();
+    } else if (ok) {
       r.correct++;
       st.correct++;
       st.success_sessions = (st.success_sessions || 0) + 1;
@@ -508,7 +518,7 @@
       st.last_error_type = errorType || st.last_error_type || "forgot_phrase";
       r.errors[st.last_error_type] = (r.errors[st.last_error_type] || 0) + 1;
     }
-    st.due_at = nextDue(st, ok);
+    if (!opts.assisted) st.due_at = nextDue(st, ok);
     save();
   }
   function errorButtons(it) {
@@ -668,8 +678,9 @@
         const right = buttons.find(o => normalize(o.textContent) === want);
         if (right) right.classList.add("correct");
       }
-      gradeItem(correctId, ok, quiz.stageKey);
-      showFeedback(ok, it);
+      const assisted = ok && quiz.stageKey === "listen" && (quiz.listenHintLevel || 0) > 0;
+      gradeItem(correctId, ok, quiz.stageKey, null, { assisted });
+      showFeedback(ok, it, assisted ? `<div class="card__hint">Caption used: scheduled as a hard listening review.</div>` : "");
     },
     checkProd(id) {
       if (quiz.answered) return;
