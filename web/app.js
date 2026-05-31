@@ -18,6 +18,17 @@
   const SCENARIOS = DATA.scenarios || [];
   const STAGE_KEYS = ["recognition", "recall", "produce", "listen", "roleplay"];
   const LEGACY_STAGE = { production: "produce", listening: "listen" };
+  const CRITERIA_LABELS = {
+    uses_formal_greeting: "formal greeting",
+    introduces_self: "introduces self",
+    thanks_hosts: "thanks hosts",
+    compliments_food: "compliments food",
+    declines_politely: "declines politely",
+    uses_correct_male_form: "male form",
+    uses_za_toast_formula: "safe toast formula",
+    avoids_na_zdorovie_misfire: "avoids false toast reply",
+    keeps_stress_clear: "clear stress",
+  };
 
   const ACUTE = "́";
   const $ = (sel, el = document) => el.querySelector(sel);
@@ -133,11 +144,14 @@
   function scenarioForItem(id) {
     return SCENARIOS.find(s => (s.required_items || []).includes(id));
   }
+  function criterionLabel(id) {
+    return CRITERIA_LABELS[id] || id.replace(/_/g, " ");
+  }
   function scenarioCard(it) {
     const s = scenarioForItem(it.id);
     if (!s) return "";
     const criteria = (s.success_criteria || []).slice(0, 3)
-      .map(c => `<span>${escapeHtml(c.replace(/_/g, " "))}</span>`).join("");
+      .map(c => `<span>${escapeHtml(criterionLabel(c))}</span>`).join("");
     return `<div class="scenario">
       <div class="scenario__setting">${escapeHtml(s.setting || "Scenario")}</div>
       <div class="scenario__goal">${escapeHtml(s.goal || "")}</div>
