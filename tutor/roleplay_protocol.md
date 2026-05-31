@@ -205,6 +205,44 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 
 ---
 
+### Scenario 11 — Greetings and farewells
+**Goal:** Keep your opening and closing lines natural, polite, and short.
+**Tutor:** use short scripted transitions at table boundaries.
+**You produce:** `До́брый день`, `До́брый ве́чер`, `До свида́ния`, and respectful exit phrases.
+**Success:** You can switch registers smoothly between greeting and close without overloading.
+
+### Scenario 12 — Politeness baseline
+**Goal:** Maintain polite Russian on every request, refusal, and acknowledgment.
+**Tutor:** prompt two neutral mini-dialogues; you answer each with short polite Russian.
+**You produce:** `Пожа́луйста`, `Спаси́бо`, `Извини́те`, and brief acknowledgement phrases.
+**Success:** Register is safe, calm, and complete even under low pressure.
+
+### Scenario 13 — Toast repertoire recall
+**Goal:** Choose the right toast formula quickly in likely dinner moments.
+**Tutor:** gives 3 random cue stems (`За ...`) and you respond with safe toast forms.
+**You produce:** safe `За ...` toast phrases, avoiding non-safe formulas.
+**Success:** One correct toast comes out with clear stress and safe wording.
+
+### Scenario 14 — Family context practice
+**Goal:** Navigate family-relations language without overreaching.
+**Tutor:** role-plays a brief kinship-safe check-in.
+**You produce:** respectful kinship references and short affiliative lines from your deck.
+**Success:** No avoidable register slips in family role references.
+
+### Scenario 15 — Dinner navigation
+**Goal:** Mix requesting, accepting, declining, complimenting, and passing food with composure.
+**Tutor:** simulates a rapid food-flow round at the table.
+**You produce:** standard food request/accept/decline / compliment phrases.
+**Success:** You answer naturally, and one polite decline sounds natural.
+
+### Scenario 16 — Verb fluency check
+**Goal:** Answer profile and logistics questions under mild pressure using core verbs.
+**Tutor:** asks short first/second-person present-tense questions.
+**You produce:** concise answers from `verbs` and `smalltalk` items.
+**Success:** Core verbs are produced with expected agreement and case marking.
+
+---
+
 ## Session templates
 
 ### ⏱ Daily 10-minute session (busy-lawyer days)
