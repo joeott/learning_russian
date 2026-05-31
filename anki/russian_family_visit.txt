@@ -136,6 +136,22 @@ I start working at ten in the morning.	<div style="font-size:2em">Я начин�
 Usually I work seven hours.	<div style="font-size:2em">Обы́чно я рабо́таю семь часо́в.</div>[sound:zastolom_dail015.mp3]	[a-bých-na ya ra-bó-ta-yu syem' cha-sóf]		daily_routine p2
 I have time until ten.	<div style="font-size:2em">У меня́ есть вре́мя до десяти́.</div>[sound:zastolom_dail016.mp3]	[u mi-nyá yest' vryé-mya da di-si-tí]		daily_routine p3
 Today I worked four hours.	<div style="font-size:2em">Сего́дня я рабо́тал четы́ре часа́.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_dail017.mp3]	[si-vód-nya ya ra-bó-tal chi-tý-re cha-sá]		daily_routine p3
+I have my own company.	<div style="font-size:2em">У меня́ своя́ компа́ния.</div>[sound:zastolom_work001.mp3]	[u mi-nyá sva-yá kam-pá-ni-ya]		work_business p2
+Kadriya works together with me.	<div style="font-size:2em">Кадри́я рабо́тает вме́сте со мной.</div>[sound:zastolom_work002.mp3]	[kad-rí-ya ra-bó-ta-yet vmyés-te sa mnoy]		work_business p2
+We work together.	<div style="font-size:2em">Мы рабо́таем вме́сте.</div>[sound:zastolom_work003.mp3]	[my ra-bó-ta-yem vmyés-te]		work_business p2
+I have a lot of work.	<div style="font-size:2em">У меня́ мно́го рабо́ты.</div>[sound:zastolom_work004.mp3]	[u mi-nyá mnó-ga ra-bó-ty]		work_business p2
+I'm very busy.	<div style="font-size:2em">Я о́чень за́нят.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_work005.mp3]	[ya ó-chen' zá-nyat]		work_business p2
+Good. I work a lot.	<div style="font-size:2em">Хорошо́. Я мно́го рабо́таю.</div>[sound:zastolom_work006.mp3]	[ha-ra-shó ya mnó-ga ra-bó-ta-yu]		work_business p2
+Do you have many clients?	<div style="font-size:2em">У вас мно́го клие́нтов?</div>[sound:zastolom_work007.mp3]	[u vas mnó-ga kli-yén-tav]	(focus: understand when heard)	work_business p2 recognize
+Yes, I have many clients.	<div style="font-size:2em">Да, у меня́ мно́го клие́нтов.</div>[sound:zastolom_work008.mp3]	[da u mi-nyá mnó-ga kli-yén-tav]		work_business p2
+Do you have many cases?	<div style="font-size:2em">У вас мно́го дел?</div>[sound:zastolom_work009.mp3]	[u vas mnó-ga dyel]	(focus: understand when heard)	work_business p2 recognize
+Yes, I have many cases.	<div style="font-size:2em">Да, у меня́ мно́го дел.</div>[sound:zastolom_work010.mp3]	[da u mi-nyá mnó-ga dyel]		work_business p2
+Today I worked with a client.	<div style="font-size:2em">Сего́дня я рабо́тал с клие́нтом.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_work011.mp3]	[si-vód-nya ya ra-bó-tal s kli-yén-tam]		work_business p2
+I called clients.	<div style="font-size:2em">Я звони́л клие́нтам.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_work012.mp3]	[ya zva-níl kli-yén-tam]		work_business p2
+I worked on the computer.	<div style="font-size:2em">Я рабо́тал на компью́тере.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_work013.mp3]	[ya ra-bó-tal na kam-pyú-te-re]		work_business p2
+I work in court.	<div style="font-size:2em">Я рабо́таю в суде́.</div>[sound:zastolom_work014.mp3]	[ya ra-bó-ta-yu f su-dyé]		work_business p2
+We're pleased with the result.	<div style="font-size:2em">Мы дово́льны результа́том.</div>[sound:zastolom_work015.mp3]	[my da-vól'-ny ri-zul'-tá-tam]		work_business p2
+I'm happy to work for myself.	<div style="font-size:2em">Я сча́стлив рабо́тать на себя́.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_work016.mp3]	[ya shchás-liv ra-bó-tat' na si-byá]		work_business p3
 We're going to Budva.	<div style="font-size:2em">Мы е́дем в Бу́дву.</div>[sound:zastolom_trav001.mp3]	[my yé-dem v búd-vu]		travel_budva p2
 We'll be in Montenegro.	<div style="font-size:2em">Мы бу́дем в Черного́рии.</div>[sound:zastolom_trav002.mp3]	[my bú-dem f chir-na-gó-ri-i]		travel_budva p2
 We'll be in Budva.	<div style="font-size:2em">Мы бу́дем в Бу́две.</div>[sound:zastolom_trav003.mp3]	[my bú-dem v búd-vye]		travel_budva p2

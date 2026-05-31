@@ -178,7 +178,7 @@ phrases you'll actually rehearse out loud.
 - **FSRS:** turn it **on** (Deck Options → FSRS toggle, then "Optimize" once you
   have a few days of reviews). FSRS schedules far more efficiently than the old
   SM-2 algorithm — worth it for a deadline-driven push.
-- **Study priority phrases first.** The deck has **~159 cards across 11 modules**,
+- **Study priority phrases first.** The deck has **~175 cards across 12 modules**,
   tagged `p1`/`p2`/`p3`. Drill the **p1** essentials before anything else:
   - **Tools → Create Filtered Deck** (or **Custom Study → Study by tag**),
     search `tag:p1`, build it, and grind those greetings/politeness/rescue lines
@@ -195,11 +195,11 @@ phrases you'll actually rehearse out loud.
 
 ## Card counts (for reference)
 
-- 159 cards total, 11 modules:
+- 175 cards total, 12 modules:
   first_contact (13), politeness (17), toasts (16), family (19), food (16),
   smalltalk (9), listening (9), calendar_weather (19), daily_routine (17),
-  travel_budva (14), verbs (10).
-- 26 cards tagged `recognize` (9 listening + 6 food + 3 calendar/weather + 5 daily-routine + 3 Budva/travel items you mainly need to
+  work_business (16), travel_budva (14), verbs (10).
+- 28 cards tagged `recognize` (9 listening + 6 food + 3 calendar/weather + 5 daily-routine + 2 work/business + 3 Budva/travel items you mainly need to
   *understand when heard*).
 - 0 cards currently carry a "⚠ rehearse with your wife" reminder.
-- 3 cards show a "(male form)" marker — say these in the masculine.
+- 8 cards show a "(male form)" marker — say these in the masculine.

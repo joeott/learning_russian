@@ -162,6 +162,22 @@ window.AUDIO = {
     "verb007",
     "verb008",
     "verb009",
-    "verb010"
+    "verb010",
+    "work001",
+    "work002",
+    "work003",
+    "work004",
+    "work005",
+    "work006",
+    "work007",
+    "work008",
+    "work009",
+    "work010",
+    "work011",
+    "work012",
+    "work013",
+    "work014",
+    "work015",
+    "work016"
   ]
 };

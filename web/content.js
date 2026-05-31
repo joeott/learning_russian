@@ -55,10 +55,11 @@ window.CONTENT_DATA = {
       "listening": 9,
       "calendar_weather": 19,
       "daily_routine": 17,
+      "work_business": 16,
       "travel_budva": 14,
       "verbs": 10
     },
-    "total_items": 159
+    "total_items": 175
   },
   "curriculum": {
     "model": "lesson_locked_i_plus_1",
@@ -915,6 +916,144 @@ window.CONTENT_DATA = {
       {
         "lesson_id": "family_visit_010",
         "lesson_number": 10,
+        "module": "work_business",
+        "title": "Work & Clients",
+        "introduced_lexemes": [
+          "в",
+          "вас",
+          "вместе",
+          "да",
+          "да, у меня много дел.",
+          "да, у меня много клиентов.",
+          "дел",
+          "довольны",
+          "занят",
+          "звонил",
+          "кадрия",
+          "кадрия работает вместе со мной.",
+          "клиентам",
+          "клиентов",
+          "клиентом",
+          "компания",
+          "компьютере",
+          "меня",
+          "много",
+          "мной",
+          "мы",
+          "мы довольны результатом.",
+          "мы работаем вместе.",
+          "на",
+          "очень",
+          "работаем",
+          "работает",
+          "работал",
+          "работать",
+          "работаю",
+          "работы",
+          "результатом",
+          "с",
+          "своя",
+          "себя",
+          "сегодня",
+          "сегодня я работал с клиентом.",
+          "со",
+          "суде",
+          "счастлив",
+          "у",
+          "у вас много дел?",
+          "у вас много клиентов?",
+          "у меня много работы.",
+          "у меня своя компания.",
+          "хорошо",
+          "хорошо. я много работаю.",
+          "я",
+          "я звонил клиентам.",
+          "я очень занят.",
+          "я работал на компьютере.",
+          "я работаю в суде.",
+          "я счастлив работать на себя."
+        ],
+        "active_vocab": [
+          "в",
+          "вместе",
+          "да",
+          "да, у меня много дел.",
+          "да, у меня много клиентов.",
+          "дел",
+          "довольны",
+          "занят",
+          "звонил",
+          "кадрия",
+          "кадрия работает вместе со мной.",
+          "клиентам",
+          "клиентов",
+          "клиентом",
+          "компания",
+          "компьютере",
+          "меня",
+          "много",
+          "мной",
+          "мы",
+          "мы довольны результатом.",
+          "мы работаем вместе.",
+          "на",
+          "очень",
+          "работаем",
+          "работает",
+          "работал",
+          "работать",
+          "работаю",
+          "работы",
+          "результатом",
+          "с",
+          "своя",
+          "себя",
+          "сегодня",
+          "сегодня я работал с клиентом.",
+          "со",
+          "суде",
+          "счастлив",
+          "у",
+          "у меня много работы.",
+          "у меня своя компания.",
+          "хорошо",
+          "хорошо. я много работаю.",
+          "я",
+          "я звонил клиентам.",
+          "я очень занят.",
+          "я работал на компьютере.",
+          "я работаю в суде.",
+          "я счастлив работать на себя."
+        ],
+        "passive_vocab": [
+          "вас",
+          "дел",
+          "клиентов",
+          "много",
+          "у",
+          "у вас много дел?",
+          "у вас много клиентов?"
+        ],
+        "introduced_structures": [
+          "grammar:past_masculine_work",
+          "lexical:work_vocab",
+          "morphology:gendered_short_form",
+          "phrase:client_case_answer",
+          "phrase:work_identity",
+          "skill:listening_question_recognition"
+        ],
+        "allowed_error_types": [
+          "gendered_form",
+          "listening_misparse",
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_009"
+        ]
+      },
+      {
+        "lesson_id": "family_visit_011",
+        "lesson_number": 11,
         "module": "travel_budva",
         "title": "Budva Trip",
         "introduced_lexemes": [
@@ -1035,12 +1174,12 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_009"
+          "family_visit_010"
         ]
       },
       {
-        "lesson_id": "family_visit_011",
-        "lesson_number": 11,
+        "lesson_id": "family_visit_012",
+        "lesson_number": 12,
         "module": "verbs",
         "title": "Core Verbs (reactivation)",
         "introduced_lexemes": [
@@ -1117,7 +1256,7 @@ window.CONTENT_DATA = {
           "stress"
         ],
         "prerequisites": [
-          "family_visit_010"
+          "family_visit_011"
         ]
       }
     ]
@@ -1196,12 +1335,20 @@ window.CONTENT_DATA = {
       "order": 8
     },
     {
+      "id": "work_business",
+      "title": "Work & Clients",
+      "why": "Short lawyer/work answers from the guide: clients, cases, court, and being busy.",
+      "priority": 2,
+      "icon": "💼",
+      "order": 9
+    },
+    {
       "id": "travel_budva",
       "title": "Budva Trip",
       "why": "Montenegro travel phrases for airport, hotel, beach, and old-town plans.",
       "priority": 2,
       "icon": "🧳",
-      "order": 9
+      "order": 10
     },
     {
       "id": "verbs",
@@ -1209,7 +1356,7 @@ window.CONTENT_DATA = {
       "why": "High-frequency verbs from Ekaterina's guide — я / вы forms.",
       "priority": 3,
       "icon": "⚙️",
-      "order": 10
+      "order": 11
     }
   ],
   "items": [
@@ -7689,6 +7836,845 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "work001",
+      "module": "work_business",
+      "ru": "У меня́ своя́ компа́ния.",
+      "ru_plain": "У меня своя компания.",
+      "en": "I have my own company.",
+      "hint": "[u mi-nyá sva-yá kam-pá-ni-ya]",
+      "priority": 2,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "business"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "компания",
+        "меня",
+        "своя",
+        "у",
+        "у меня своя компания."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work002",
+      "module": "work_business",
+      "ru": "Кадри́я рабо́тает вме́сте со мной.",
+      "ru_plain": "Кадрия работает вместе со мной.",
+      "en": "Kadriya works together with me.",
+      "hint": "[kad-rí-ya ra-bó-ta-yet vmyés-te sa mnoy]",
+      "priority": 2,
+      "syllables": 11,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "kadriya"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вместе",
+        "кадрия",
+        "кадрия работает вместе со мной.",
+        "мной",
+        "работает",
+        "со"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work003",
+      "module": "work_business",
+      "ru": "Мы рабо́таем вме́сте.",
+      "ru_plain": "Мы работаем вместе.",
+      "en": "We work together.",
+      "hint": "[my ra-bó-ta-yem vmyés-te]",
+      "priority": 2,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "kadriya"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вместе",
+        "мы",
+        "мы работаем вместе.",
+        "работаем"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work004",
+      "module": "work_business",
+      "ru": "У меня́ мно́го рабо́ты.",
+      "ru_plain": "У меня много работы.",
+      "en": "I have a lot of work.",
+      "hint": "[u mi-nyá mnó-ga ra-bó-ty]",
+      "priority": 2,
+      "syllables": 8,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "busy"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "меня",
+        "много",
+        "работы",
+        "у",
+        "у меня много работы."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work005",
+      "module": "work_business",
+      "ru": "Я о́чень за́нят.",
+      "ru_plain": "Я очень занят.",
+      "en": "I'm very busy.",
+      "hint": "[ya ó-chen' zá-nyat]",
+      "priority": 2,
+      "syllables": 5,
+      "conf": "high",
+      "gender": "m",
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "busy"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "lexemes": [
+        "занят",
+        "очень",
+        "я",
+        "я очень занят."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work006",
+      "module": "work_business",
+      "ru": "Хорошо́. Я мно́го рабо́таю.",
+      "ru_plain": "Хорошо. Я много работаю.",
+      "en": "Good. I work a lot.",
+      "hint": "[ha-ra-shó ya mnó-ga ra-bó-ta-yu]",
+      "priority": 2,
+      "syllables": 10,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "answer"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "много",
+        "работаю",
+        "хорошо",
+        "хорошо. я много работаю.",
+        "я"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work007",
+      "module": "work_business",
+      "ru": "У вас мно́го клие́нтов?",
+      "ru_plain": "У вас много клиентов?",
+      "en": "Do you have many clients?",
+      "hint": "[u vas mnó-ga kli-yén-tav]",
+      "priority": 2,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "work",
+        "clients",
+        "question"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вас",
+        "клиентов",
+        "много",
+        "у",
+        "у вас много клиентов?"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work008",
+      "module": "work_business",
+      "ru": "Да, у меня́ мно́го клие́нтов.",
+      "ru_plain": "Да, у меня много клиентов.",
+      "en": "Yes, I have many clients.",
+      "hint": "[da u mi-nyá mnó-ga kli-yén-tav]",
+      "priority": 2,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "clients"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "да",
+        "да, у меня много клиентов.",
+        "клиентов",
+        "меня",
+        "много",
+        "у"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work009",
+      "module": "work_business",
+      "ru": "У вас мно́го дел?",
+      "ru_plain": "У вас много дел?",
+      "en": "Do you have many cases?",
+      "hint": "[u vas mnó-ga dyel]",
+      "priority": 2,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "work",
+        "cases",
+        "question"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вас",
+        "дел",
+        "много",
+        "у",
+        "у вас много дел?"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work010",
+      "module": "work_business",
+      "ru": "Да, у меня́ мно́го дел.",
+      "ru_plain": "Да, у меня много дел.",
+      "en": "Yes, I have many cases.",
+      "hint": "[da u mi-nyá mnó-ga dyel]",
+      "priority": 2,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "cases"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "да",
+        "да, у меня много дел.",
+        "дел",
+        "меня",
+        "много",
+        "у"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work011",
+      "module": "work_business",
+      "ru": "Сего́дня я рабо́тал с клие́нтом.",
+      "ru_plain": "Сегодня я работал с клиентом.",
+      "en": "Today I worked with a client.",
+      "hint": "[si-vód-nya ya ra-bó-tal s kli-yén-tam]",
+      "priority": 2,
+      "syllables": 10,
+      "conf": "high",
+      "gender": "m",
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "clients"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "lexemes": [
+        "клиентом",
+        "работал",
+        "с",
+        "сегодня",
+        "сегодня я работал с клиентом.",
+        "я"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work012",
+      "module": "work_business",
+      "ru": "Я звони́л клие́нтам.",
+      "ru_plain": "Я звонил клиентам.",
+      "en": "I called clients.",
+      "hint": "[ya zva-níl kli-yén-tam]",
+      "priority": 2,
+      "syllables": 6,
+      "conf": "high",
+      "gender": "m",
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "clients"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "lexemes": [
+        "звонил",
+        "клиентам",
+        "я",
+        "я звонил клиентам."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work013",
+      "module": "work_business",
+      "ru": "Я рабо́тал на компью́тере.",
+      "ru_plain": "Я работал на компьютере.",
+      "en": "I worked on the computer.",
+      "hint": "[ya ra-bó-tal na kam-pyú-te-re]",
+      "priority": 2,
+      "syllables": 9,
+      "conf": "high",
+      "gender": "m",
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "lexemes": [
+        "компьютере",
+        "на",
+        "работал",
+        "я",
+        "я работал на компьютере."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work014",
+      "module": "work_business",
+      "ru": "Я рабо́таю в суде́.",
+      "ru_plain": "Я работаю в суде.",
+      "en": "I work in court.",
+      "hint": "[ya ra-bó-ta-yu f su-dyé]",
+      "priority": 2,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "court"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "в",
+        "работаю",
+        "суде",
+        "я",
+        "я работаю в суде."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work015",
+      "module": "work_business",
+      "ru": "Мы дово́льны результа́том.",
+      "ru_plain": "Мы довольны результатом.",
+      "en": "We're pleased with the result.",
+      "hint": "[my da-vól'-ny ri-zul'-tá-tam]",
+      "priority": 2,
+      "syllables": 8,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "outcome"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "довольны",
+        "мы",
+        "мы довольны результатом.",
+        "результатом"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
+      "id": "work016",
+      "module": "work_business",
+      "ru": "Я сча́стлив рабо́тать на себя́.",
+      "ru_plain": "Я счастлив работать на себя.",
+      "en": "I'm happy to work for myself.",
+      "hint": "[ya shchás-liv ra-bó-tat' na si-byá]",
+      "priority": 3,
+      "syllables": 9,
+      "conf": "high",
+      "gender": "m",
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "work",
+        "business"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "lexemes": [
+        "на",
+        "работать",
+        "себя",
+        "счастлив",
+        "я",
+        "я счастлив работать на себя."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "prerequisites": [
+        "family_visit_009"
+      ]
+    },
+    {
       "id": "trav001",
       "module": "travel_budva",
       "ru": "Мы е́дем в Бу́дву.",
@@ -7733,10 +8719,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7784,10 +8770,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7835,10 +8821,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7888,10 +8874,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7937,10 +8923,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -7992,10 +8978,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -8044,10 +9030,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -8096,10 +9082,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -8147,10 +9133,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -8197,10 +9183,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -8246,10 +9232,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -8297,10 +9283,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -8346,10 +9332,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -8396,10 +9382,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "prerequisites": [
-        "family_visit_009"
+        "family_visit_010"
       ]
     },
     {
@@ -8441,10 +9427,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8486,10 +9472,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8531,10 +9517,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8576,10 +9562,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8621,10 +9607,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8666,10 +9652,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8711,10 +9697,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8756,10 +9742,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8801,10 +9787,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     },
     {
@@ -8846,10 +9832,10 @@ window.CONTENT_DATA = {
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "prerequisites": [
-        "family_visit_010"
+        "family_visit_011"
       ]
     }
   ],
@@ -12408,11 +13394,690 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "cloze_work001_01",
+      "item_id": "work001",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У меня́ своя́ компа́ния.",
+      "ru_plain": "У меня своя компания.",
+      "prompt_ru": "У меня своя ____.",
+      "answer": "компания",
+      "accepted_answers": [
+        "компа́ния",
+        "компания"
+      ],
+      "en": "I have my own company.",
+      "priority": 2,
+      "lexemes": [
+        "компания",
+        "меня",
+        "своя",
+        "у",
+        "у меня своя компания."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "business",
+        "cloze",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work002_01",
+      "item_id": "work002",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Кадри́я рабо́тает вме́сте со мной.",
+      "ru_plain": "Кадрия работает вместе со мной.",
+      "prompt_ru": "Кадрия ____ вместе со мной.",
+      "answer": "работает",
+      "accepted_answers": [
+        "рабо́тает",
+        "работает"
+      ],
+      "en": "Kadriya works together with me.",
+      "priority": 2,
+      "lexemes": [
+        "вместе",
+        "кадрия",
+        "кадрия работает вместе со мной.",
+        "мной",
+        "работает",
+        "со"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "kadriya",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work003_01",
+      "item_id": "work003",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Мы рабо́таем вме́сте.",
+      "ru_plain": "Мы работаем вместе.",
+      "prompt_ru": "Мы ____ вместе.",
+      "answer": "работаем",
+      "accepted_answers": [
+        "рабо́таем",
+        "работаем"
+      ],
+      "en": "We work together.",
+      "priority": 2,
+      "lexemes": [
+        "вместе",
+        "мы",
+        "мы работаем вместе.",
+        "работаем"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "kadriya",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work004_01",
+      "item_id": "work004",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У меня́ мно́го рабо́ты.",
+      "ru_plain": "У меня много работы.",
+      "prompt_ru": "У меня много ____.",
+      "answer": "работы",
+      "accepted_answers": [
+        "рабо́ты",
+        "работы"
+      ],
+      "en": "I have a lot of work.",
+      "priority": 2,
+      "lexemes": [
+        "меня",
+        "много",
+        "работы",
+        "у",
+        "у меня много работы."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "busy",
+        "cloze",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work005_01",
+      "item_id": "work005",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я о́чень за́нят.",
+      "ru_plain": "Я очень занят.",
+      "prompt_ru": "Я ____ занят.",
+      "answer": "очень",
+      "accepted_answers": [
+        "о́чень",
+        "очень"
+      ],
+      "en": "I'm very busy.",
+      "priority": 2,
+      "lexemes": [
+        "занят",
+        "очень",
+        "я",
+        "я очень занят."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "busy",
+        "cloze",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work006_01",
+      "item_id": "work006",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Хорошо́. Я мно́го рабо́таю.",
+      "ru_plain": "Хорошо. Я много работаю.",
+      "prompt_ru": "Хорошо. Я много ____.",
+      "answer": "работаю",
+      "accepted_answers": [
+        "рабо́таю",
+        "работаю"
+      ],
+      "en": "Good. I work a lot.",
+      "priority": 2,
+      "lexemes": [
+        "много",
+        "работаю",
+        "хорошо",
+        "хорошо. я много работаю.",
+        "я"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "answer",
+        "cloze",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work007_01",
+      "item_id": "work007",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У вас мно́го клие́нтов?",
+      "ru_plain": "У вас много клиентов?",
+      "prompt_ru": "У вас много ____?",
+      "answer": "клиентов",
+      "accepted_answers": [
+        "клие́нтов",
+        "клиентов"
+      ],
+      "en": "Do you have many clients?",
+      "priority": 2,
+      "lexemes": [
+        "вас",
+        "клиентов",
+        "много",
+        "у",
+        "у вас много клиентов?"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "clients",
+        "cloze",
+        "question",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work008_01",
+      "item_id": "work008",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Да, у меня́ мно́го клие́нтов.",
+      "ru_plain": "Да, у меня много клиентов.",
+      "prompt_ru": "Да, у меня много ____.",
+      "answer": "клиентов",
+      "accepted_answers": [
+        "клие́нтов",
+        "клиентов"
+      ],
+      "en": "Yes, I have many clients.",
+      "priority": 2,
+      "lexemes": [
+        "да",
+        "да, у меня много клиентов.",
+        "клиентов",
+        "меня",
+        "много",
+        "у"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "clients",
+        "cloze",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work009_01",
+      "item_id": "work009",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У вас мно́го дел?",
+      "ru_plain": "У вас много дел?",
+      "prompt_ru": "У вас ____ дел?",
+      "answer": "много",
+      "accepted_answers": [
+        "мно́го",
+        "много"
+      ],
+      "en": "Do you have many cases?",
+      "priority": 2,
+      "lexemes": [
+        "вас",
+        "дел",
+        "много",
+        "у",
+        "у вас много дел?"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cases",
+        "cloze",
+        "question",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work010_01",
+      "item_id": "work010",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Да, у меня́ мно́го дел.",
+      "ru_plain": "Да, у меня много дел.",
+      "prompt_ru": "Да, у меня ____ дел.",
+      "answer": "много",
+      "accepted_answers": [
+        "мно́го",
+        "много"
+      ],
+      "en": "Yes, I have many cases.",
+      "priority": 2,
+      "lexemes": [
+        "да",
+        "да, у меня много дел.",
+        "дел",
+        "меня",
+        "много",
+        "у"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cases",
+        "cloze",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work011_01",
+      "item_id": "work011",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Сего́дня я рабо́тал с клие́нтом.",
+      "ru_plain": "Сегодня я работал с клиентом.",
+      "prompt_ru": "Сегодня я работал с ____.",
+      "answer": "клиентом",
+      "accepted_answers": [
+        "клие́нтом",
+        "клиентом"
+      ],
+      "en": "Today I worked with a client.",
+      "priority": 2,
+      "lexemes": [
+        "клиентом",
+        "работал",
+        "с",
+        "сегодня",
+        "сегодня я работал с клиентом.",
+        "я"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "clients",
+        "cloze",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work012_01",
+      "item_id": "work012",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я звони́л клие́нтам.",
+      "ru_plain": "Я звонил клиентам.",
+      "prompt_ru": "Я звонил ____.",
+      "answer": "клиентам",
+      "accepted_answers": [
+        "клие́нтам",
+        "клиентам"
+      ],
+      "en": "I called clients.",
+      "priority": 2,
+      "lexemes": [
+        "звонил",
+        "клиентам",
+        "я",
+        "я звонил клиентам."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "clients",
+        "cloze",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work013_01",
+      "item_id": "work013",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я рабо́тал на компью́тере.",
+      "ru_plain": "Я работал на компьютере.",
+      "prompt_ru": "Я работал на ____.",
+      "answer": "компьютере",
+      "accepted_answers": [
+        "компью́тере",
+        "компьютере"
+      ],
+      "en": "I worked on the computer.",
+      "priority": 2,
+      "lexemes": [
+        "компьютере",
+        "на",
+        "работал",
+        "я",
+        "я работал на компьютере."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work014_01",
+      "item_id": "work014",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я рабо́таю в суде́.",
+      "ru_plain": "Я работаю в суде.",
+      "prompt_ru": "Я ____ в суде.",
+      "answer": "работаю",
+      "accepted_answers": [
+        "рабо́таю",
+        "работаю"
+      ],
+      "en": "I work in court.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "работаю",
+        "суде",
+        "я",
+        "я работаю в суде."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "court",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work015_01",
+      "item_id": "work015",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Мы дово́льны результа́том.",
+      "ru_plain": "Мы довольны результатом.",
+      "prompt_ru": "Мы довольны ____.",
+      "answer": "результатом",
+      "accepted_answers": [
+        "результа́том",
+        "результатом"
+      ],
+      "en": "We're pleased with the result.",
+      "priority": 2,
+      "lexemes": [
+        "довольны",
+        "мы",
+        "мы довольны результатом.",
+        "результатом"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "outcome",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_work016_01",
+      "item_id": "work016",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я сча́стлив рабо́тать на себя́.",
+      "ru_plain": "Я счастлив работать на себя.",
+      "prompt_ru": "Я ____ работать на себя.",
+      "answer": "счастлив",
+      "accepted_answers": [
+        "сча́стлив",
+        "счастлив"
+      ],
+      "en": "I'm happy to work for myself.",
+      "priority": 3,
+      "lexemes": [
+        "на",
+        "работать",
+        "себя",
+        "счастлив",
+        "я",
+        "я счастлив работать на себя."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "business",
+        "cloze",
+        "work"
+      ]
+    },
+    {
       "id": "cloze_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "prompt_ru": "Мы едем в ____.",
@@ -12452,8 +14117,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "prompt_ru": "Мы будем в ____.",
@@ -12493,8 +14158,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "prompt_ru": "Мы ____ в Будве.",
@@ -12534,8 +14199,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "prompt_ru": "Где наш ____?",
@@ -12577,8 +14242,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "prompt_ru": "____ такси?",
@@ -12616,8 +14281,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "prompt_ru": "____ ехать до отеля?",
@@ -12661,8 +14326,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "prompt_ru": "Где ____?",
@@ -12702,8 +14367,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "prompt_ru": "Я хочу ____ у моря.",
@@ -12744,8 +14409,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "prompt_ru": "Старый город очень ____.",
@@ -12785,8 +14450,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "prompt_ru": "Море очень ____.",
@@ -12825,8 +14490,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "prompt_ru": "Мы ____.",
@@ -12864,8 +14529,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "prompt_ru": "Мы здесь с ____.",
@@ -12904,8 +14569,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "prompt_ru": "Счёт, ____.",
@@ -12943,8 +14608,8 @@ window.CONTENT_DATA = {
       "id": "cloze_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "prompt_ru": "Мы хотим ____.",
@@ -12983,8 +14648,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "prompt_ru": "хочу / ____",
@@ -13019,8 +14684,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "prompt_ru": "могу / ____",
@@ -13055,8 +14720,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "prompt_ru": "говорю / ____",
@@ -13091,8 +14756,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "prompt_ru": "понимаю / ____",
@@ -13127,8 +14792,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "prompt_ru": "люблю / ____",
@@ -13163,8 +14828,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "prompt_ru": "работаю / ____",
@@ -13199,8 +14864,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "prompt_ru": "живу / ____",
@@ -13234,8 +14899,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "prompt_ru": "ем / ____",
@@ -13270,8 +14935,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "prompt_ru": "пью / ____",
@@ -13305,8 +14970,8 @@ window.CONTENT_DATA = {
       "id": "cloze_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "prompt_ru": "знаю / ____",
@@ -18445,11 +20110,718 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "dict_work001_01",
+      "item_id": "work001",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У меня́ своя́ компа́ния.",
+      "ru_plain": "У меня своя компания.",
+      "accepted_answers": [
+        "У меня своя компания.",
+        "У меня́ своя́ компа́ния."
+      ],
+      "en": "I have my own company.",
+      "priority": 2,
+      "lexemes": [
+        "компания",
+        "меня",
+        "своя",
+        "у",
+        "у меня своя компания."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "business",
+        "dictation",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work002_01",
+      "item_id": "work002",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Кадри́я рабо́тает вме́сте со мной.",
+      "ru_plain": "Кадрия работает вместе со мной.",
+      "accepted_answers": [
+        "Кадри́я рабо́тает вме́сте со мной.",
+        "Кадрия работает вместе со мной."
+      ],
+      "en": "Kadriya works together with me.",
+      "priority": 2,
+      "lexemes": [
+        "вместе",
+        "кадрия",
+        "кадрия работает вместе со мной.",
+        "мной",
+        "работает",
+        "со"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "kadriya",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work003_01",
+      "item_id": "work003",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Мы рабо́таем вме́сте.",
+      "ru_plain": "Мы работаем вместе.",
+      "accepted_answers": [
+        "Мы рабо́таем вме́сте.",
+        "Мы работаем вместе."
+      ],
+      "en": "We work together.",
+      "priority": 2,
+      "lexemes": [
+        "вместе",
+        "мы",
+        "мы работаем вместе.",
+        "работаем"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "kadriya",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work004_01",
+      "item_id": "work004",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У меня́ мно́го рабо́ты.",
+      "ru_plain": "У меня много работы.",
+      "accepted_answers": [
+        "У меня много работы.",
+        "У меня́ мно́го рабо́ты."
+      ],
+      "en": "I have a lot of work.",
+      "priority": 2,
+      "lexemes": [
+        "меня",
+        "много",
+        "работы",
+        "у",
+        "у меня много работы."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "busy",
+        "dictation",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work005_01",
+      "item_id": "work005",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я о́чень за́нят.",
+      "ru_plain": "Я очень занят.",
+      "accepted_answers": [
+        "Я о́чень за́нят.",
+        "Я очень занят."
+      ],
+      "en": "I'm very busy.",
+      "priority": 2,
+      "lexemes": [
+        "занят",
+        "очень",
+        "я",
+        "я очень занят."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "busy",
+        "dictation",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work006_01",
+      "item_id": "work006",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Хорошо́. Я мно́го рабо́таю.",
+      "ru_plain": "Хорошо. Я много работаю.",
+      "accepted_answers": [
+        "Хорошо. Я много работаю.",
+        "Хорошо́. Я мно́го рабо́таю."
+      ],
+      "en": "Good. I work a lot.",
+      "priority": 2,
+      "lexemes": [
+        "много",
+        "работаю",
+        "хорошо",
+        "хорошо. я много работаю.",
+        "я"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "answer",
+        "dictation",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work007_01",
+      "item_id": "work007",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У вас мно́го клие́нтов?",
+      "ru_plain": "У вас много клиентов?",
+      "accepted_answers": [
+        "У вас мно́го клие́нтов?",
+        "У вас много клиентов?"
+      ],
+      "en": "Do you have many clients?",
+      "priority": 2,
+      "lexemes": [
+        "вас",
+        "клиентов",
+        "много",
+        "у",
+        "у вас много клиентов?"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "clients",
+        "dictation",
+        "question",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work008_01",
+      "item_id": "work008",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Да, у меня́ мно́го клие́нтов.",
+      "ru_plain": "Да, у меня много клиентов.",
+      "accepted_answers": [
+        "Да, у меня много клиентов.",
+        "Да, у меня́ мно́го клие́нтов."
+      ],
+      "en": "Yes, I have many clients.",
+      "priority": 2,
+      "lexemes": [
+        "да",
+        "да, у меня много клиентов.",
+        "клиентов",
+        "меня",
+        "много",
+        "у"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "clients",
+        "dictation",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work009_01",
+      "item_id": "work009",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У вас мно́го дел?",
+      "ru_plain": "У вас много дел?",
+      "accepted_answers": [
+        "У вас мно́го дел?",
+        "У вас много дел?"
+      ],
+      "en": "Do you have many cases?",
+      "priority": 2,
+      "lexemes": [
+        "вас",
+        "дел",
+        "много",
+        "у",
+        "у вас много дел?"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "cases",
+        "dictation",
+        "question",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work010_01",
+      "item_id": "work010",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Да, у меня́ мно́го дел.",
+      "ru_plain": "Да, у меня много дел.",
+      "accepted_answers": [
+        "Да, у меня много дел.",
+        "Да, у меня́ мно́го дел."
+      ],
+      "en": "Yes, I have many cases.",
+      "priority": 2,
+      "lexemes": [
+        "да",
+        "да, у меня много дел.",
+        "дел",
+        "меня",
+        "много",
+        "у"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "cases",
+        "dictation",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work011_01",
+      "item_id": "work011",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Сего́дня я рабо́тал с клие́нтом.",
+      "ru_plain": "Сегодня я работал с клиентом.",
+      "accepted_answers": [
+        "Сего́дня я рабо́тал с клие́нтом.",
+        "Сегодня я работал с клиентом."
+      ],
+      "en": "Today I worked with a client.",
+      "priority": 2,
+      "lexemes": [
+        "клиентом",
+        "работал",
+        "с",
+        "сегодня",
+        "сегодня я работал с клиентом.",
+        "я"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "clients",
+        "dictation",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work012_01",
+      "item_id": "work012",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я звони́л клие́нтам.",
+      "ru_plain": "Я звонил клиентам.",
+      "accepted_answers": [
+        "Я звони́л клие́нтам.",
+        "Я звонил клиентам."
+      ],
+      "en": "I called clients.",
+      "priority": 2,
+      "lexemes": [
+        "звонил",
+        "клиентам",
+        "я",
+        "я звонил клиентам."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "clients",
+        "dictation",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work013_01",
+      "item_id": "work013",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я рабо́тал на компью́тере.",
+      "ru_plain": "Я работал на компьютере.",
+      "accepted_answers": [
+        "Я рабо́тал на компью́тере.",
+        "Я работал на компьютере."
+      ],
+      "en": "I worked on the computer.",
+      "priority": 2,
+      "lexemes": [
+        "компьютере",
+        "на",
+        "работал",
+        "я",
+        "я работал на компьютере."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work014_01",
+      "item_id": "work014",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я рабо́таю в суде́.",
+      "ru_plain": "Я работаю в суде.",
+      "accepted_answers": [
+        "Я рабо́таю в суде́.",
+        "Я работаю в суде."
+      ],
+      "en": "I work in court.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "работаю",
+        "суде",
+        "я",
+        "я работаю в суде."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "court",
+        "dictation",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work015_01",
+      "item_id": "work015",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Мы дово́льны результа́том.",
+      "ru_plain": "Мы довольны результатом.",
+      "accepted_answers": [
+        "Мы дово́льны результа́том.",
+        "Мы довольны результатом."
+      ],
+      "en": "We're pleased with the result.",
+      "priority": 2,
+      "lexemes": [
+        "довольны",
+        "мы",
+        "мы довольны результатом.",
+        "результатом"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "outcome",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_work016_01",
+      "item_id": "work016",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я сча́стлив рабо́тать на себя́.",
+      "ru_plain": "Я счастлив работать на себя.",
+      "accepted_answers": [
+        "Я сча́стлив рабо́тать на себя́.",
+        "Я счастлив работать на себя."
+      ],
+      "en": "I'm happy to work for myself.",
+      "priority": 3,
+      "lexemes": [
+        "на",
+        "работать",
+        "себя",
+        "счастлив",
+        "я",
+        "я счастлив работать на себя."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "business",
+        "dictation",
+        "work"
+      ]
+    },
+    {
       "id": "dict_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "accepted_answers": [
@@ -18491,8 +20863,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "accepted_answers": [
@@ -18534,8 +20906,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "accepted_answers": [
@@ -18577,8 +20949,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "accepted_answers": [
@@ -18620,8 +20992,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "accepted_answers": [
@@ -18661,8 +21033,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "accepted_answers": [
@@ -18706,8 +21078,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "accepted_answers": [
@@ -18747,8 +21119,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "accepted_answers": [
@@ -18791,8 +21163,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "accepted_answers": [
@@ -18834,8 +21206,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "accepted_answers": [
@@ -18876,8 +21248,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "accepted_answers": [
@@ -18917,8 +21289,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "accepted_answers": [
@@ -18959,8 +21331,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "accepted_answers": [
@@ -19000,8 +21372,8 @@ window.CONTENT_DATA = {
       "id": "dict_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "accepted_answers": [
@@ -19042,8 +21414,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "accepted_answers": [
@@ -19080,8 +21452,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "accepted_answers": [
@@ -19118,8 +21490,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "accepted_answers": [
@@ -19156,8 +21528,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "accepted_answers": [
@@ -19194,8 +21566,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "accepted_answers": [
@@ -19232,8 +21604,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "accepted_answers": [
@@ -19270,8 +21642,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "accepted_answers": [
@@ -19308,8 +21680,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "accepted_answers": [
@@ -19346,8 +21718,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "accepted_answers": [
@@ -19383,8 +21755,8 @@ window.CONTENT_DATA = {
       "id": "dict_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "accepted_answers": [
@@ -24484,11 +26856,738 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "stress_work001_01",
+      "item_id": "work001",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У меня́ своя́ компа́ния.",
+      "ru_plain": "У меня своя компания.",
+      "options": [
+        "У ме́ня своя компания.",
+        "У меня́ своя компания.",
+        "У меня́ своя́ компа́ния.",
+        "У́ меня своя компания."
+      ],
+      "answer": "У меня́ своя́ компа́ния.",
+      "en": "I have my own company.",
+      "priority": 2,
+      "lexemes": [
+        "компания",
+        "меня",
+        "своя",
+        "у",
+        "у меня своя компания."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "business",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work002_01",
+      "item_id": "work002",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Кадри́я рабо́тает вме́сте со мной.",
+      "ru_plain": "Кадрия работает вместе со мной.",
+      "options": [
+        "Ка́дрия работает вместе со мной.",
+        "Кадри́я рабо́тает вме́сте со мной.",
+        "Кадри́я работает вместе со мной.",
+        "Кадрия́ работает вместе со мной."
+      ],
+      "answer": "Кадри́я рабо́тает вме́сте со мной.",
+      "en": "Kadriya works together with me.",
+      "priority": 2,
+      "lexemes": [
+        "вместе",
+        "кадрия",
+        "кадрия работает вместе со мной.",
+        "мной",
+        "работает",
+        "со"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "kadriya",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work003_01",
+      "item_id": "work003",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Мы рабо́таем вме́сте.",
+      "ru_plain": "Мы работаем вместе.",
+      "options": [
+        "Мы ра́ботаем вместе.",
+        "Мы рабо́таем вме́сте.",
+        "Мы рабо́таем вместе.",
+        "Мы́ работаем вместе."
+      ],
+      "answer": "Мы рабо́таем вме́сте.",
+      "en": "We work together.",
+      "priority": 2,
+      "lexemes": [
+        "вместе",
+        "мы",
+        "мы работаем вместе.",
+        "работаем"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "kadriya",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work004_01",
+      "item_id": "work004",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У меня́ мно́го рабо́ты.",
+      "ru_plain": "У меня много работы.",
+      "options": [
+        "У ме́ня много работы.",
+        "У меня́ мно́го рабо́ты.",
+        "У меня́ много работы.",
+        "У́ меня много работы."
+      ],
+      "answer": "У меня́ мно́го рабо́ты.",
+      "en": "I have a lot of work.",
+      "priority": 2,
+      "lexemes": [
+        "меня",
+        "много",
+        "работы",
+        "у",
+        "у меня много работы."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "busy",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work005_01",
+      "item_id": "work005",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я о́чень за́нят.",
+      "ru_plain": "Я очень занят.",
+      "options": [
+        "Я о́чень за́нят.",
+        "Я о́чень занят.",
+        "Я оче́нь занят.",
+        "Я́ очень занят."
+      ],
+      "answer": "Я о́чень за́нят.",
+      "en": "I'm very busy.",
+      "priority": 2,
+      "lexemes": [
+        "занят",
+        "очень",
+        "я",
+        "я очень занят."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "busy",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work006_01",
+      "item_id": "work006",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Хорошо́. Я мно́го рабо́таю.",
+      "ru_plain": "Хорошо. Я много работаю.",
+      "options": [
+        "Хо́рошо. Я много работаю.",
+        "Хоро́шо. Я много работаю.",
+        "Хорошо́. Я мно́го рабо́таю.",
+        "Хорошо́. Я много работаю."
+      ],
+      "answer": "Хорошо́. Я мно́го рабо́таю.",
+      "en": "Good. I work a lot.",
+      "priority": 2,
+      "lexemes": [
+        "много",
+        "работаю",
+        "хорошо",
+        "хорошо. я много работаю.",
+        "я"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "answer",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work007_01",
+      "item_id": "work007",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У вас мно́го клие́нтов?",
+      "ru_plain": "У вас много клиентов?",
+      "options": [
+        "У ва́с много клиентов?",
+        "У вас мно́го клие́нтов?",
+        "У вас мно́го клиентов?",
+        "У́ вас много клиентов?"
+      ],
+      "answer": "У вас мно́го клие́нтов?",
+      "en": "Do you have many clients?",
+      "priority": 2,
+      "lexemes": [
+        "вас",
+        "клиентов",
+        "много",
+        "у",
+        "у вас много клиентов?"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "clients",
+        "question",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work008_01",
+      "item_id": "work008",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Да, у меня́ мно́го клие́нтов.",
+      "ru_plain": "Да, у меня много клиентов.",
+      "options": [
+        "Да, у ме́ня много клиентов.",
+        "Да, у меня́ мно́го клие́нтов.",
+        "Да, у́ меня много клиентов.",
+        "Да́, у меня много клиентов."
+      ],
+      "answer": "Да, у меня́ мно́го клие́нтов.",
+      "en": "Yes, I have many clients.",
+      "priority": 2,
+      "lexemes": [
+        "да",
+        "да, у меня много клиентов.",
+        "клиентов",
+        "меня",
+        "много",
+        "у"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "clients",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work009_01",
+      "item_id": "work009",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У вас мно́го дел?",
+      "ru_plain": "У вас много дел?",
+      "options": [
+        "У ва́с много дел?",
+        "У вас мно́го дел?",
+        "У вас много́ дел?",
+        "У́ вас много дел?"
+      ],
+      "answer": "У вас мно́го дел?",
+      "en": "Do you have many cases?",
+      "priority": 2,
+      "lexemes": [
+        "вас",
+        "дел",
+        "много",
+        "у",
+        "у вас много дел?"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cases",
+        "question",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work010_01",
+      "item_id": "work010",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Да, у меня́ мно́го дел.",
+      "ru_plain": "Да, у меня много дел.",
+      "options": [
+        "Да, у ме́ня много дел.",
+        "Да, у меня́ мно́го дел.",
+        "Да, у́ меня много дел.",
+        "Да́, у меня много дел."
+      ],
+      "answer": "Да, у меня́ мно́го дел.",
+      "en": "Yes, I have many cases.",
+      "priority": 2,
+      "lexemes": [
+        "да",
+        "да, у меня много дел.",
+        "дел",
+        "меня",
+        "много",
+        "у"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "cases",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work011_01",
+      "item_id": "work011",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Сего́дня я рабо́тал с клие́нтом.",
+      "ru_plain": "Сегодня я работал с клиентом.",
+      "options": [
+        "Се́годня я работал с клиентом.",
+        "Сего́дня я рабо́тал с клие́нтом.",
+        "Сего́дня я работал с клиентом.",
+        "Сегодня́ я работал с клиентом."
+      ],
+      "answer": "Сего́дня я рабо́тал с клие́нтом.",
+      "en": "Today I worked with a client.",
+      "priority": 2,
+      "lexemes": [
+        "клиентом",
+        "работал",
+        "с",
+        "сегодня",
+        "сегодня я работал с клиентом.",
+        "я"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "clients",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work012_01",
+      "item_id": "work012",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я звони́л клие́нтам.",
+      "ru_plain": "Я звонил клиентам.",
+      "options": [
+        "Я зво́нил клиентам.",
+        "Я звони́л клие́нтам.",
+        "Я звони́л клиентам.",
+        "Я́ звонил клиентам."
+      ],
+      "answer": "Я звони́л клие́нтам.",
+      "en": "I called clients.",
+      "priority": 2,
+      "lexemes": [
+        "звонил",
+        "клиентам",
+        "я",
+        "я звонил клиентам."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "clients",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work013_01",
+      "item_id": "work013",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я рабо́тал на компью́тере.",
+      "ru_plain": "Я работал на компьютере.",
+      "options": [
+        "Я ра́ботал на компьютере.",
+        "Я рабо́тал на компью́тере.",
+        "Я рабо́тал на компьютере.",
+        "Я́ работал на компьютере."
+      ],
+      "answer": "Я рабо́тал на компью́тере.",
+      "en": "I worked on the computer.",
+      "priority": 2,
+      "lexemes": [
+        "компьютере",
+        "на",
+        "работал",
+        "я",
+        "я работал на компьютере."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work014_01",
+      "item_id": "work014",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я рабо́таю в суде́.",
+      "ru_plain": "Я работаю в суде.",
+      "options": [
+        "Я ра́ботаю в суде.",
+        "Я рабо́таю в суде.",
+        "Я рабо́таю в суде́.",
+        "Я́ работаю в суде."
+      ],
+      "answer": "Я рабо́таю в суде́.",
+      "en": "I work in court.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "работаю",
+        "суде",
+        "я",
+        "я работаю в суде."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "court",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work015_01",
+      "item_id": "work015",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Мы дово́льны результа́том.",
+      "ru_plain": "Мы довольны результатом.",
+      "options": [
+        "Мы до́вольны результатом.",
+        "Мы дово́льны результа́том.",
+        "Мы дово́льны результатом.",
+        "Мы́ довольны результатом."
+      ],
+      "answer": "Мы дово́льны результа́том.",
+      "en": "We're pleased with the result.",
+      "priority": 2,
+      "lexemes": [
+        "довольны",
+        "мы",
+        "мы довольны результатом.",
+        "результатом"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "outcome",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_work016_01",
+      "item_id": "work016",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я сча́стлив рабо́тать на себя́.",
+      "ru_plain": "Я счастлив работать на себя.",
+      "options": [
+        "Я сча́стлив рабо́тать на себя́.",
+        "Я сча́стлив работать на себя.",
+        "Я счастли́в работать на себя.",
+        "Я́ счастлив работать на себя."
+      ],
+      "answer": "Я сча́стлив рабо́тать на себя́.",
+      "en": "I'm happy to work for myself.",
+      "priority": 3,
+      "lexemes": [
+        "на",
+        "работать",
+        "себя",
+        "счастлив",
+        "я",
+        "я счастлив работать на себя."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "business",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
       "id": "stress_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "options": [
@@ -24531,8 +27630,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "options": [
@@ -24575,8 +27674,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "options": [
@@ -24619,8 +27718,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "options": [
@@ -24665,8 +27764,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "options": [
@@ -24707,8 +27806,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "options": [
@@ -24755,8 +27854,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "options": [
@@ -24800,8 +27899,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "options": [
@@ -24844,8 +27943,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "options": [
@@ -24887,8 +27986,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "options": [
@@ -24929,8 +28028,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "options": [
@@ -24971,8 +28070,8 @@ window.CONTENT_DATA = {
       "id": "stress_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "options": [
@@ -25014,8 +28113,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "options": [
@@ -25053,8 +28152,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "options": [
@@ -25092,8 +28191,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "options": [
@@ -25131,8 +28230,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "options": [
@@ -25170,8 +28269,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "options": [
@@ -25209,8 +28308,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "options": [
@@ -25248,8 +28347,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "options": [
@@ -25287,8 +28386,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "options": [
@@ -25326,8 +28425,8 @@ window.CONTENT_DATA = {
       "id": "stress_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "options": [
@@ -31271,11 +34370,818 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "pron_work001_01",
+      "item_id": "work001",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У меня́ своя́ компа́ния.",
+      "ru_plain": "У меня своя компания.",
+      "en": "I have my own company.",
+      "priority": 2,
+      "lexemes": [
+        "компания",
+        "меня",
+        "своя",
+        "у",
+        "у меня своя компания."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "business",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work002_01",
+      "item_id": "work002",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Кадри́я рабо́тает вме́сте со мной.",
+      "ru_plain": "Кадрия работает вместе со мной.",
+      "en": "Kadriya works together with me.",
+      "priority": 2,
+      "lexemes": [
+        "вместе",
+        "кадрия",
+        "кадрия работает вместе со мной.",
+        "мной",
+        "работает",
+        "со"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "kadriya",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work003_01",
+      "item_id": "work003",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Мы рабо́таем вме́сте.",
+      "ru_plain": "Мы работаем вместе.",
+      "en": "We work together.",
+      "priority": 2,
+      "lexemes": [
+        "вместе",
+        "мы",
+        "мы работаем вместе.",
+        "работаем"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "kadriya",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work004_01",
+      "item_id": "work004",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У меня́ мно́го рабо́ты.",
+      "ru_plain": "У меня много работы.",
+      "en": "I have a lot of work.",
+      "priority": 2,
+      "lexemes": [
+        "меня",
+        "много",
+        "работы",
+        "у",
+        "у меня много работы."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "busy",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work005_01",
+      "item_id": "work005",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я о́чень за́нят.",
+      "ru_plain": "Я очень занят.",
+      "en": "I'm very busy.",
+      "priority": 2,
+      "lexemes": [
+        "занят",
+        "очень",
+        "я",
+        "я очень занят."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "busy",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work006_01",
+      "item_id": "work006",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Хорошо́. Я мно́го рабо́таю.",
+      "ru_plain": "Хорошо. Я много работаю.",
+      "en": "Good. I work a lot.",
+      "priority": 2,
+      "lexemes": [
+        "много",
+        "работаю",
+        "хорошо",
+        "хорошо. я много работаю.",
+        "я"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "answer",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work007_01",
+      "item_id": "work007",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У вас мно́го клие́нтов?",
+      "ru_plain": "У вас много клиентов?",
+      "en": "Do you have many clients?",
+      "priority": 2,
+      "lexemes": [
+        "вас",
+        "клиентов",
+        "много",
+        "у",
+        "у вас много клиентов?"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "clients",
+        "pronunciation",
+        "question",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work008_01",
+      "item_id": "work008",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Да, у меня́ мно́го клие́нтов.",
+      "ru_plain": "Да, у меня много клиентов.",
+      "en": "Yes, I have many clients.",
+      "priority": 2,
+      "lexemes": [
+        "да",
+        "да, у меня много клиентов.",
+        "клиентов",
+        "меня",
+        "много",
+        "у"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "clients",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work009_01",
+      "item_id": "work009",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У вас мно́го дел?",
+      "ru_plain": "У вас много дел?",
+      "en": "Do you have many cases?",
+      "priority": 2,
+      "lexemes": [
+        "вас",
+        "дел",
+        "много",
+        "у",
+        "у вас много дел?"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "cases",
+        "pronunciation",
+        "question",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work010_01",
+      "item_id": "work010",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Да, у меня́ мно́го дел.",
+      "ru_plain": "Да, у меня много дел.",
+      "en": "Yes, I have many cases.",
+      "priority": 2,
+      "lexemes": [
+        "да",
+        "да, у меня много дел.",
+        "дел",
+        "меня",
+        "много",
+        "у"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "cases",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work011_01",
+      "item_id": "work011",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Сего́дня я рабо́тал с клие́нтом.",
+      "ru_plain": "Сегодня я работал с клиентом.",
+      "en": "Today I worked with a client.",
+      "priority": 2,
+      "lexemes": [
+        "клиентом",
+        "работал",
+        "с",
+        "сегодня",
+        "сегодня я работал с клиентом.",
+        "я"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "clients",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work012_01",
+      "item_id": "work012",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я звони́л клие́нтам.",
+      "ru_plain": "Я звонил клиентам.",
+      "en": "I called clients.",
+      "priority": 2,
+      "lexemes": [
+        "звонил",
+        "клиентам",
+        "я",
+        "я звонил клиентам."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "clients",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work013_01",
+      "item_id": "work013",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я рабо́тал на компью́тере.",
+      "ru_plain": "Я работал на компьютере.",
+      "en": "I worked on the computer.",
+      "priority": 2,
+      "lexemes": [
+        "компьютере",
+        "на",
+        "работал",
+        "я",
+        "я работал на компьютере."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work014_01",
+      "item_id": "work014",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я рабо́таю в суде́.",
+      "ru_plain": "Я работаю в суде.",
+      "en": "I work in court.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "работаю",
+        "суде",
+        "я",
+        "я работаю в суде."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "court",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work015_01",
+      "item_id": "work015",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Мы дово́льны результа́том.",
+      "ru_plain": "Мы довольны результатом.",
+      "en": "We're pleased with the result.",
+      "priority": 2,
+      "lexemes": [
+        "довольны",
+        "мы",
+        "мы довольны результатом.",
+        "результатом"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "outcome",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_work016_01",
+      "item_id": "work016",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я сча́стлив рабо́тать на себя́.",
+      "ru_plain": "Я счастлив работать на себя.",
+      "en": "I'm happy to work for myself.",
+      "priority": 3,
+      "lexemes": [
+        "на",
+        "работать",
+        "себя",
+        "счастлив",
+        "я",
+        "я счастлив работать на себя."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "business",
+        "pronunciation",
+        "work"
+      ]
+    },
+    {
       "id": "pron_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "en": "We're going to Budva.",
@@ -31323,8 +35229,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "en": "We'll be in Montenegro.",
@@ -31372,8 +35278,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "en": "We'll be in Budva.",
@@ -31421,8 +35327,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "en": "Where is our hotel?",
@@ -31472,8 +35378,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "en": "Can we get a taxi?",
@@ -31519,8 +35425,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "en": "How long is the ride to the hotel?",
@@ -31572,8 +35478,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "en": "Where is the beach?",
@@ -31622,8 +35528,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "en": "I want to walk by the sea.",
@@ -31672,8 +35578,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "en": "The old town is very beautiful.",
@@ -31721,8 +35627,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "en": "The sea is very beautiful.",
@@ -31769,8 +35675,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "en": "We're relaxing / on vacation.",
@@ -31816,8 +35722,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "en": "We're here with family.",
@@ -31865,8 +35771,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "en": "The check, please.",
@@ -31912,8 +35818,8 @@ window.CONTENT_DATA = {
       "id": "pron_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "en": "We want to have dinner.",
@@ -31960,8 +35866,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "en": "I want / you (pl/formal) want — хоте́ть",
@@ -32004,8 +35910,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "en": "I can / you can — мочь",
@@ -32048,8 +35954,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "en": "I speak / you speak — говори́ть",
@@ -32092,8 +35998,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "en": "I understand / you understand — понима́ть",
@@ -32136,8 +36042,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "en": "I love / you love — люби́ть",
@@ -32180,8 +36086,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "en": "I work / you work — рабо́тать",
@@ -32224,8 +36130,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "en": "I live / you live — жить",
@@ -32268,8 +36174,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "en": "I eat / you eat — есть",
@@ -32312,8 +36218,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "en": "I drink / you drink — пить",
@@ -32356,8 +36262,8 @@ window.CONTENT_DATA = {
       "id": "pron_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "en": "I know / you know — знать",
@@ -37798,11 +41704,754 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "back_work001_01",
+      "item_id": "work001",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У меня́ своя́ компа́ния.",
+      "ru_plain": "У меня своя компания.",
+      "accepted_answers": [
+        "У меня своя компания.",
+        "У меня́ своя́ компа́ния."
+      ],
+      "en": "I have my own company.",
+      "priority": 2,
+      "lexemes": [
+        "компания",
+        "меня",
+        "своя",
+        "у",
+        "у меня своя компания."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "business",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work002_01",
+      "item_id": "work002",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Кадри́я рабо́тает вме́сте со мной.",
+      "ru_plain": "Кадрия работает вместе со мной.",
+      "accepted_answers": [
+        "Кадри́я рабо́тает вме́сте со мной.",
+        "Кадрия работает вместе со мной."
+      ],
+      "en": "Kadriya works together with me.",
+      "priority": 2,
+      "lexemes": [
+        "вместе",
+        "кадрия",
+        "кадрия работает вместе со мной.",
+        "мной",
+        "работает",
+        "со"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "kadriya",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work003_01",
+      "item_id": "work003",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Мы рабо́таем вме́сте.",
+      "ru_plain": "Мы работаем вместе.",
+      "accepted_answers": [
+        "Мы рабо́таем вме́сте.",
+        "Мы работаем вместе."
+      ],
+      "en": "We work together.",
+      "priority": 2,
+      "lexemes": [
+        "вместе",
+        "мы",
+        "мы работаем вместе.",
+        "работаем"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "kadriya",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work004_01",
+      "item_id": "work004",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У меня́ мно́го рабо́ты.",
+      "ru_plain": "У меня много работы.",
+      "accepted_answers": [
+        "У меня много работы.",
+        "У меня́ мно́го рабо́ты."
+      ],
+      "en": "I have a lot of work.",
+      "priority": 2,
+      "lexemes": [
+        "меня",
+        "много",
+        "работы",
+        "у",
+        "у меня много работы."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "busy",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work005_01",
+      "item_id": "work005",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я о́чень за́нят.",
+      "ru_plain": "Я очень занят.",
+      "accepted_answers": [
+        "Я о́чень за́нят.",
+        "Я очень занят."
+      ],
+      "en": "I'm very busy.",
+      "priority": 2,
+      "lexemes": [
+        "занят",
+        "очень",
+        "я",
+        "я очень занят."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "busy",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work006_01",
+      "item_id": "work006",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Хорошо́. Я мно́го рабо́таю.",
+      "ru_plain": "Хорошо. Я много работаю.",
+      "accepted_answers": [
+        "Хорошо. Я много работаю.",
+        "Хорошо́. Я мно́го рабо́таю."
+      ],
+      "en": "Good. I work a lot.",
+      "priority": 2,
+      "lexemes": [
+        "много",
+        "работаю",
+        "хорошо",
+        "хорошо. я много работаю.",
+        "я"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "answer",
+        "back_translation",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work007_01",
+      "item_id": "work007",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У вас мно́го клие́нтов?",
+      "ru_plain": "У вас много клиентов?",
+      "accepted_answers": [
+        "У вас мно́го клие́нтов?",
+        "У вас много клиентов?"
+      ],
+      "en": "Do you have many clients?",
+      "priority": 2,
+      "lexemes": [
+        "вас",
+        "клиентов",
+        "много",
+        "у",
+        "у вас много клиентов?"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "clients",
+        "question",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work008_01",
+      "item_id": "work008",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Да, у меня́ мно́го клие́нтов.",
+      "ru_plain": "Да, у меня много клиентов.",
+      "accepted_answers": [
+        "Да, у меня много клиентов.",
+        "Да, у меня́ мно́го клие́нтов."
+      ],
+      "en": "Yes, I have many clients.",
+      "priority": 2,
+      "lexemes": [
+        "да",
+        "да, у меня много клиентов.",
+        "клиентов",
+        "меня",
+        "много",
+        "у"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "clients",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work009_01",
+      "item_id": "work009",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "У вас мно́го дел?",
+      "ru_plain": "У вас много дел?",
+      "accepted_answers": [
+        "У вас мно́го дел?",
+        "У вас много дел?"
+      ],
+      "en": "Do you have many cases?",
+      "priority": 2,
+      "lexemes": [
+        "вас",
+        "дел",
+        "много",
+        "у",
+        "у вас много дел?"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "cases",
+        "question",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work010_01",
+      "item_id": "work010",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Да, у меня́ мно́го дел.",
+      "ru_plain": "Да, у меня много дел.",
+      "accepted_answers": [
+        "Да, у меня много дел.",
+        "Да, у меня́ мно́го дел."
+      ],
+      "en": "Yes, I have many cases.",
+      "priority": 2,
+      "lexemes": [
+        "да",
+        "да, у меня много дел.",
+        "дел",
+        "меня",
+        "много",
+        "у"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "cases",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work011_01",
+      "item_id": "work011",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Сего́дня я рабо́тал с клие́нтом.",
+      "ru_plain": "Сегодня я работал с клиентом.",
+      "accepted_answers": [
+        "Сего́дня я рабо́тал с клие́нтом.",
+        "Сегодня я работал с клиентом."
+      ],
+      "en": "Today I worked with a client.",
+      "priority": 2,
+      "lexemes": [
+        "клиентом",
+        "работал",
+        "с",
+        "сегодня",
+        "сегодня я работал с клиентом.",
+        "я"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "clients",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work012_01",
+      "item_id": "work012",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я звони́л клие́нтам.",
+      "ru_plain": "Я звонил клиентам.",
+      "accepted_answers": [
+        "Я звони́л клие́нтам.",
+        "Я звонил клиентам."
+      ],
+      "en": "I called clients.",
+      "priority": 2,
+      "lexemes": [
+        "звонил",
+        "клиентам",
+        "я",
+        "я звонил клиентам."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "clients",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work013_01",
+      "item_id": "work013",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я рабо́тал на компью́тере.",
+      "ru_plain": "Я работал на компьютере.",
+      "accepted_answers": [
+        "Я рабо́тал на компью́тере.",
+        "Я работал на компьютере."
+      ],
+      "en": "I worked on the computer.",
+      "priority": 2,
+      "lexemes": [
+        "компьютере",
+        "на",
+        "работал",
+        "я",
+        "я работал на компьютере."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work014_01",
+      "item_id": "work014",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я рабо́таю в суде́.",
+      "ru_plain": "Я работаю в суде.",
+      "accepted_answers": [
+        "Я рабо́таю в суде́.",
+        "Я работаю в суде."
+      ],
+      "en": "I work in court.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "работаю",
+        "суде",
+        "я",
+        "я работаю в суде."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "court",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work015_01",
+      "item_id": "work015",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Мы дово́льны результа́том.",
+      "ru_plain": "Мы довольны результатом.",
+      "accepted_answers": [
+        "Мы дово́льны результа́том.",
+        "Мы довольны результатом."
+      ],
+      "en": "We're pleased with the result.",
+      "priority": 2,
+      "lexemes": [
+        "довольны",
+        "мы",
+        "мы довольны результатом.",
+        "результатом"
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "outcome",
+        "work"
+      ]
+    },
+    {
+      "id": "back_work016_01",
+      "item_id": "work016",
+      "module": "work_business",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "ru": "Я сча́стлив рабо́тать на себя́.",
+      "ru_plain": "Я счастлив работать на себя.",
+      "accepted_answers": [
+        "Я сча́стлив рабо́тать на себя́.",
+        "Я счастлив работать на себя."
+      ],
+      "en": "I'm happy to work for myself.",
+      "priority": 3,
+      "lexemes": [
+        "на",
+        "работать",
+        "себя",
+        "счастлив",
+        "я",
+        "я счастлив работать на себя."
+      ],
+      "structures": [
+        "grammar:past_masculine_work",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:client_case_answer",
+        "phrase:work_identity"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "business",
+        "work"
+      ]
+    },
+    {
       "id": "back_trav001_01",
       "item_id": "trav001",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы е́дем в Бу́дву.",
       "ru_plain": "Мы едем в Будву.",
       "accepted_answers": [
@@ -37846,8 +42495,8 @@ window.CONTENT_DATA = {
       "id": "back_trav002_01",
       "item_id": "trav002",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы бу́дем в Черного́рии.",
       "ru_plain": "Мы будем в Черногории.",
       "accepted_answers": [
@@ -37891,8 +42540,8 @@ window.CONTENT_DATA = {
       "id": "back_trav003_01",
       "item_id": "trav003",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы бу́дем в Бу́две.",
       "ru_plain": "Мы будем в Будве.",
       "accepted_answers": [
@@ -37936,8 +42585,8 @@ window.CONTENT_DATA = {
       "id": "back_trav004_01",
       "item_id": "trav004",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Где на́ш о́тель?",
       "ru_plain": "Где наш отель?",
       "accepted_answers": [
@@ -37983,8 +42632,8 @@ window.CONTENT_DATA = {
       "id": "back_trav005_01",
       "item_id": "trav005",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мо́жно такси́?",
       "ru_plain": "Можно такси?",
       "accepted_answers": [
@@ -38026,8 +42675,8 @@ window.CONTENT_DATA = {
       "id": "back_trav006_01",
       "item_id": "trav006",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Ско́лько е́хать до о́теля?",
       "ru_plain": "Сколько ехать до отеля?",
       "accepted_answers": [
@@ -38075,8 +42724,8 @@ window.CONTENT_DATA = {
       "id": "back_trav007_01",
       "item_id": "trav007",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Где пляж?",
       "ru_plain": "Где пляж?",
       "accepted_answers": [
@@ -38120,8 +42769,8 @@ window.CONTENT_DATA = {
       "id": "back_trav008_01",
       "item_id": "trav008",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Я хочу́ погуля́ть у мо́ря.",
       "ru_plain": "Я хочу погулять у моря.",
       "accepted_answers": [
@@ -38166,8 +42815,8 @@ window.CONTENT_DATA = {
       "id": "back_trav009_01",
       "item_id": "trav009",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Ста́рый го́род о́чень краси́вый.",
       "ru_plain": "Старый город очень красивый.",
       "accepted_answers": [
@@ -38211,8 +42860,8 @@ window.CONTENT_DATA = {
       "id": "back_trav010_01",
       "item_id": "trav010",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мо́ре о́чень краси́вое.",
       "ru_plain": "Море очень красивое.",
       "accepted_answers": [
@@ -38255,8 +42904,8 @@ window.CONTENT_DATA = {
       "id": "back_trav011_01",
       "item_id": "trav011",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы отдыха́ем.",
       "ru_plain": "Мы отдыхаем.",
       "accepted_answers": [
@@ -38298,8 +42947,8 @@ window.CONTENT_DATA = {
       "id": "back_trav012_01",
       "item_id": "trav012",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы здесь с семьёй.",
       "ru_plain": "Мы здесь с семьёй.",
       "accepted_answers": [
@@ -38342,8 +42991,8 @@ window.CONTENT_DATA = {
       "id": "back_trav013_01",
       "item_id": "trav013",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Счёт, пожа́луйста.",
       "ru_plain": "Счёт, пожалуйста.",
       "accepted_answers": [
@@ -38385,8 +43034,8 @@ window.CONTENT_DATA = {
       "id": "back_trav014_01",
       "item_id": "trav014",
       "module": "travel_budva",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "ru": "Мы хоти́м поу́жинать.",
       "ru_plain": "Мы хотим поужинать.",
       "accepted_answers": [
@@ -38429,8 +43078,8 @@ window.CONTENT_DATA = {
       "id": "back_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "accepted_answers": [
@@ -38469,8 +43118,8 @@ window.CONTENT_DATA = {
       "id": "back_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "accepted_answers": [
@@ -38509,8 +43158,8 @@ window.CONTENT_DATA = {
       "id": "back_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "accepted_answers": [
@@ -38549,8 +43198,8 @@ window.CONTENT_DATA = {
       "id": "back_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "accepted_answers": [
@@ -38589,8 +43238,8 @@ window.CONTENT_DATA = {
       "id": "back_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "accepted_answers": [
@@ -38629,8 +43278,8 @@ window.CONTENT_DATA = {
       "id": "back_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "accepted_answers": [
@@ -38669,8 +43318,8 @@ window.CONTENT_DATA = {
       "id": "back_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "accepted_answers": [
@@ -38709,8 +43358,8 @@ window.CONTENT_DATA = {
       "id": "back_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "accepted_answers": [
@@ -38749,8 +43398,8 @@ window.CONTENT_DATA = {
       "id": "back_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "accepted_answers": [
@@ -38788,8 +43437,8 @@ window.CONTENT_DATA = {
       "id": "back_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "accepted_answers": [
@@ -43297,8 +47946,8 @@ window.CONTENT_DATA = {
     {
       "id": "tutor_verb_fluency_check",
       "scenario_id": "verb_fluency_check",
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11,
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12,
       "setting": "Core verb fluency",
       "goal": "Produce core verbs under real interview-style pressure.",
       "learner_role": "guest",
@@ -43393,7 +48042,8 @@ window.CONTENT_DATA = {
         "family_visit_008",
         "family_visit_009",
         "family_visit_010",
-        "family_visit_011"
+        "family_visit_011",
+        "family_visit_012"
       ],
       "allowed_item_ids": [
         "firs001",
@@ -43531,6 +48181,22 @@ window.CONTENT_DATA = {
         "dail015",
         "dail016",
         "dail017",
+        "work001",
+        "work002",
+        "work003",
+        "work004",
+        "work005",
+        "work006",
+        "work007",
+        "work008",
+        "work009",
+        "work010",
+        "work011",
+        "work012",
+        "work013",
+        "work014",
+        "work015",
+        "work016",
         "trav001",
         "trav002",
         "trav003",
@@ -43576,6 +48242,7 @@ window.CONTENT_DATA = {
         "вечер",
         "вечером",
         "вкусно",
+        "вместе",
         "воскресенье",
         "время",
         "встречу",
@@ -43590,9 +48257,12 @@ window.CONTENT_DATA = {
         "город",
         "да",
         "да, немного",
+        "да, у меня много дел.",
+        "да, у меня много клиентов.",
         "давайте",
         "давайте выпьем за это!",
         "дедушка",
+        "дел",
         "день",
         "десяти",
         "десять",
@@ -43611,6 +48281,7 @@ window.CONTENT_DATA = {
         "добрый вечер.",
         "добрый день",
         "добрый день.",
+        "довольны",
         "дождь",
         "дочь",
         "едем",
@@ -43638,6 +48309,8 @@ window.CONTENT_DATA = {
         "за хозяйку!",
         "завтра",
         "завтра будет тепло.",
+        "занят",
+        "звонил",
         "здесь",
         "здоровы",
         "здоровье",
@@ -43654,8 +48327,15 @@ window.CONTENT_DATA = {
         "идёт снег.",
         "из",
         "извините",
+        "кадрия",
+        "кадрия работает вместе со мной.",
         "как",
         "как по-русски …?",
+        "клиентам",
+        "клиентов",
+        "клиентом",
+        "компания",
+        "компьютере",
         "красивое",
         "красивый",
         "любите",
@@ -43668,6 +48348,8 @@ window.CONTENT_DATA = {
         "миссури",
         "мне",
         "мне очень нравится",
+        "много",
+        "мной",
         "могу",
         "могу / можете",
         "можете",
@@ -43683,11 +48365,13 @@ window.CONTENT_DATA = {
         "мы",
         "мы будем в будве.",
         "мы будем в черногории.",
+        "мы довольны результатом.",
         "мы едем в будву.",
         "мы едим и смотрим телевизор.",
         "мы здесь с семьёй.",
         "мы отдыхаем.",
         "мы познакомились …",
+        "мы работаем вместе.",
         "мы хотим поужинать.",
         "на",
         "на выходных",
@@ -43742,15 +48426,19 @@ window.CONTENT_DATA = {
         "пью / пьёте",
         "пьёте",
         "пятница",
+        "работаем",
+        "работает",
         "работаете",
         "работал",
         "работать",
         "работаю",
         "работаю / работаете",
+        "работы",
         "рад",
         "рад познакомиться",
         "разрешите",
         "разрешите представиться",
+        "результатом",
         "родителей",
         "родители",
         "русски",
@@ -43758,11 +48446,14 @@ window.CONTENT_DATA = {
         "рюмка",
         "с",
         "свидания",
+        "своя",
+        "себя",
         "сегодня",
         "сегодня облачно.",
         "сегодня солнечно.",
         "сегодня тепло.",
         "сегодня холодно.",
+        "сегодня я работал с клиентом.",
         "сегодня я работал четыре часа.",
         "семь",
         "семью",
@@ -43773,6 +48464,7 @@ window.CONTENT_DATA = {
         "сказать",
         "смотрим",
         "снег",
+        "со",
         "солнечно",
         "спасибо",
         "спасибо большое",
@@ -43786,6 +48478,8 @@ window.CONTENT_DATA = {
         "старый",
         "старый город очень красивый.",
         "суббота",
+        "суде",
+        "счастлив",
         "счёт",
         "счёт, пожалуйста.",
         "сын",
@@ -43797,6 +48491,8 @@ window.CONTENT_DATA = {
         "тёща",
         "у",
         "у меня есть время до десяти.",
+        "у меня много работы.",
+        "у меня своя компания.",
         "ужинаю",
         "утра",
         "утро",
@@ -43808,6 +48504,7 @@ window.CONTENT_DATA = {
         "холодно",
         "хорошо",
         "хорошо, спасибо",
+        "хорошо. я много работаю.",
         "хотим",
         "хотите",
         "хочу",
@@ -43826,6 +48523,7 @@ window.CONTENT_DATA = {
         "я",
         "я ещё учу русский",
         "я живу в америке",
+        "я звонил клиентам.",
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
@@ -43834,8 +48532,12 @@ window.CONTENT_DATA = {
         "я не понимаю",
         "я немного говорю по-русски",
         "я обедаю днём.",
+        "я очень занят.",
         "я понимаю",
+        "я работал на компьютере.",
+        "я работаю в суде.",
         "я работаю утром и вечером.",
+        "я счастлив работать на себя.",
         "я ужинаю вечером.",
         "я хочу погулять у моря.",
         "я хочу сказать тост за …",
@@ -43848,6 +48550,7 @@ window.CONTENT_DATA = {
         "будете …?",
         "вам",
         "вам нравится …?",
+        "вас",
         "водка",
         "вы",
         "вы говорите по-русски?",
@@ -43855,6 +48558,7 @@ window.CONTENT_DATA = {
         "где наш отель?",
         "где пляж?",
         "говорите",
+        "дел",
         "дела",
         "делал",
         "день",
@@ -43872,11 +48576,13 @@ window.CONTENT_DATA = {
         "какой сегодня день недели?",
         "кем",
         "кем вы работаете?",
+        "клиентов",
         "когда",
         "когда вы обедаете?",
         "когда вы отдыхаете?",
         "когда вы работаете?",
         "когда вы ужинаете?",
+        "много",
         "на",
         "наш",
         "недели",
@@ -43901,6 +48607,9 @@ window.CONTENT_DATA = {
         "сколько ехать до отеля?",
         "там",
         "ты",
+        "у",
+        "у вас много дел?",
+        "у вас много клиентов?",
         "ужинаете",
         "улице",
         "чай",
@@ -43912,6 +48621,7 @@ window.CONTENT_DATA = {
         "discourse:politeness",
         "grammar:formal_question",
         "grammar:formal_second_person",
+        "grammar:past_masculine_work",
         "grammar:prepositional_place",
         "grammar:present_first_person",
         "grammar:time_expression",
@@ -43921,8 +48631,10 @@ window.CONTENT_DATA = {
         "lexical:days_of_week",
         "lexical:kinship_terms",
         "lexical:travel_vocab",
+        "lexical:work_vocab",
         "morphology:gendered_short_form",
         "phrase:calendar_question",
+        "phrase:client_case_answer",
         "phrase:compliment_food",
         "phrase:family_affection",
         "phrase:food_offer",
@@ -43957,7 +48669,7 @@ window.CONTENT_DATA = {
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Core verb fluency — Produce core verbs under real interview-style pressure.\nCurriculum boundary: Lesson 11 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- хочу / хотите — I want / you (pl/formal) want — хоте́ть\n- могу / можете — I can / you can — мочь\n- говорю / говорите — I speak / you speak — говори́ть\n- понимаю / понимаете — I understand / you understand — понима́ть\n- люблю / любите — I love / you love — люби́ть\n- работаю / работаете — I work / you work — рабо́тать\n- живу / живёте — I live / you live — жить\n- ем / едите — I eat / you eat — есть\n- пью / пьёте — I drink / you drink — пить\n- знаю / знаете — I know / you know — знать\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Core verb fluency — Produce core verbs under real interview-style pressure.\nCurriculum boundary: Lesson 12 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- хочу / хотите — I want / you (pl/formal) want — хоте́ть\n- могу / можете — I can / you can — мочь\n- говорю / говорите — I speak / you speak — говори́ть\n- понимаю / понимаете — I understand / you understand — понима́ть\n- люблю / любите — I love / you love — люби́ть\n- работаю / работаете — I work / you work — рабо́тать\n- живу / живёте — I live / you live — жить\n- ем / едите — I eat / you eat — есть\n- пью / пьёте — I drink / you drink — пить\n- знаю / знаете — I know / you know — знать\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
       "id": "tutor_extended_family_family_tree",
@@ -45477,8 +50189,8 @@ window.CONTENT_DATA = {
     {
       "id": "tutor_budva_trip_checkin",
       "scenario_id": "budva_trip_checkin",
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10,
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11,
       "setting": "Budva family trip",
       "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
       "learner_role": "guest",
@@ -45580,7 +50292,8 @@ window.CONTENT_DATA = {
         "family_visit_007",
         "family_visit_008",
         "family_visit_009",
-        "family_visit_010"
+        "family_visit_010",
+        "family_visit_011"
       ],
       "allowed_item_ids": [
         "firs001",
@@ -45718,6 +50431,22 @@ window.CONTENT_DATA = {
         "dail015",
         "dail016",
         "dail017",
+        "work001",
+        "work002",
+        "work003",
+        "work004",
+        "work005",
+        "work006",
+        "work007",
+        "work008",
+        "work009",
+        "work010",
+        "work011",
+        "work012",
+        "work013",
+        "work014",
+        "work015",
+        "work016",
         "trav001",
         "trav002",
         "trav003",
@@ -45753,6 +50482,7 @@ window.CONTENT_DATA = {
         "вечер",
         "вечером",
         "вкусно",
+        "вместе",
         "воскресенье",
         "время",
         "встречу",
@@ -45765,9 +50495,12 @@ window.CONTENT_DATA = {
         "город",
         "да",
         "да, немного",
+        "да, у меня много дел.",
+        "да, у меня много клиентов.",
         "давайте",
         "давайте выпьем за это!",
         "дедушка",
+        "дел",
         "день",
         "десяти",
         "десять",
@@ -45786,6 +50519,7 @@ window.CONTENT_DATA = {
         "добрый вечер.",
         "добрый день",
         "добрый день.",
+        "довольны",
         "дождь",
         "дочь",
         "едем",
@@ -45808,6 +50542,8 @@ window.CONTENT_DATA = {
         "за хозяйку!",
         "завтра",
         "завтра будет тепло.",
+        "занят",
+        "звонил",
         "здесь",
         "здоровы",
         "здоровье",
@@ -45821,8 +50557,15 @@ window.CONTENT_DATA = {
         "идёт снег.",
         "из",
         "извините",
+        "кадрия",
+        "кадрия работает вместе со мной.",
         "как",
         "как по-русски …?",
+        "клиентам",
+        "клиентов",
+        "клиентом",
+        "компания",
+        "компьютере",
         "красивое",
         "красивый",
         "люблю",
@@ -45833,6 +50576,8 @@ window.CONTENT_DATA = {
         "миссури",
         "мне",
         "мне очень нравится",
+        "много",
+        "мной",
         "можно",
         "можно ещё?",
         "можно такси?",
@@ -45845,11 +50590,13 @@ window.CONTENT_DATA = {
         "мы",
         "мы будем в будве.",
         "мы будем в черногории.",
+        "мы довольны результатом.",
         "мы едем в будву.",
         "мы едим и смотрим телевизор.",
         "мы здесь с семьёй.",
         "мы отдыхаем.",
         "мы познакомились …",
+        "мы работаем вместе.",
         "мы хотим поужинать.",
         "на",
         "на выходных",
@@ -45899,13 +50646,17 @@ window.CONTENT_DATA = {
         "приятного аппетита!",
         "простите",
         "пятница",
+        "работаем",
+        "работает",
         "работал",
         "работать",
         "работаю",
+        "работы",
         "рад",
         "рад познакомиться",
         "разрешите",
         "разрешите представиться",
+        "результатом",
         "родителей",
         "родители",
         "русски",
@@ -45913,11 +50664,14 @@ window.CONTENT_DATA = {
         "рюмка",
         "с",
         "свидания",
+        "своя",
+        "себя",
         "сегодня",
         "сегодня облачно.",
         "сегодня солнечно.",
         "сегодня тепло.",
         "сегодня холодно.",
+        "сегодня я работал с клиентом.",
         "сегодня я работал четыре часа.",
         "семь",
         "семью",
@@ -45928,6 +50682,7 @@ window.CONTENT_DATA = {
         "сказать",
         "смотрим",
         "снег",
+        "со",
         "солнечно",
         "спасибо",
         "спасибо большое",
@@ -45941,6 +50696,8 @@ window.CONTENT_DATA = {
         "старый",
         "старый город очень красивый.",
         "суббота",
+        "суде",
+        "счастлив",
         "счёт",
         "счёт, пожалуйста.",
         "сын",
@@ -45952,6 +50709,8 @@ window.CONTENT_DATA = {
         "тёща",
         "у",
         "у меня есть время до десяти.",
+        "у меня много работы.",
+        "у меня своя компания.",
         "ужинаю",
         "утра",
         "утро",
@@ -45963,6 +50722,7 @@ window.CONTENT_DATA = {
         "холодно",
         "хорошо",
         "хорошо, спасибо",
+        "хорошо. я много работаю.",
         "хотим",
         "хочу",
         "часа",
@@ -45979,6 +50739,7 @@ window.CONTENT_DATA = {
         "я",
         "я ещё учу русский",
         "я живу в америке",
+        "я звонил клиентам.",
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
@@ -45987,8 +50748,12 @@ window.CONTENT_DATA = {
         "я не понимаю",
         "я немного говорю по-русски",
         "я обедаю днём.",
+        "я очень занят.",
         "я понимаю",
+        "я работал на компьютере.",
+        "я работаю в суде.",
         "я работаю утром и вечером.",
+        "я счастлив работать на себя.",
         "я ужинаю вечером.",
         "я хочу погулять у моря.",
         "я хочу сказать тост за …",
@@ -46001,6 +50766,7 @@ window.CONTENT_DATA = {
         "будете …?",
         "вам",
         "вам нравится …?",
+        "вас",
         "водка",
         "вы",
         "вы говорите по-русски?",
@@ -46008,6 +50774,7 @@ window.CONTENT_DATA = {
         "где наш отель?",
         "где пляж?",
         "говорите",
+        "дел",
         "дела",
         "делал",
         "день",
@@ -46025,11 +50792,13 @@ window.CONTENT_DATA = {
         "какой сегодня день недели?",
         "кем",
         "кем вы работаете?",
+        "клиентов",
         "когда",
         "когда вы обедаете?",
         "когда вы отдыхаете?",
         "когда вы работаете?",
         "когда вы ужинаете?",
+        "много",
         "на",
         "наш",
         "недели",
@@ -46054,6 +50823,9 @@ window.CONTENT_DATA = {
         "сколько ехать до отеля?",
         "там",
         "ты",
+        "у",
+        "у вас много дел?",
+        "у вас много клиентов?",
         "ужинаете",
         "улице",
         "чай",
@@ -46064,6 +50836,7 @@ window.CONTENT_DATA = {
         "culture:toast_etiquette",
         "discourse:politeness",
         "grammar:formal_question",
+        "grammar:past_masculine_work",
         "grammar:prepositional_place",
         "grammar:present_first_person",
         "grammar:time_expression",
@@ -46072,8 +50845,10 @@ window.CONTENT_DATA = {
         "lexical:days_of_week",
         "lexical:kinship_terms",
         "lexical:travel_vocab",
+        "lexical:work_vocab",
         "morphology:gendered_short_form",
         "phrase:calendar_question",
+        "phrase:client_case_answer",
         "phrase:compliment_food",
         "phrase:family_affection",
         "phrase:food_offer",
@@ -46109,7 +50884,7 @@ window.CONTENT_DATA = {
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Budva family trip — Talk about arriving in Budva, the hotel, the sea, and simple plans.\nCurriculum boundary: Lesson 10 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Мы едем в Будву. — We're going to Budva.\n- Мы будем в Черногории. — We'll be in Montenegro.\n- Мы будем в Будве. — We'll be in Budva.\n- Где наш отель? — Where is our hotel?\n- Можно такси? — Can we get a taxi?\n- Сколько ехать до отеля? — How long is the ride to the hotel?\n- Где пляж? — Where is the beach?\n- Я хочу погулять у моря. — I want to walk by the sea.\n- Старый город очень красивый. — The old town is very beautiful.\n- Мы здесь с семьёй. — We're here with family.\n- Счёт, пожалуйста. — The check, please.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Budva family trip — Talk about arriving in Budva, the hotel, the sea, and simple plans.\nCurriculum boundary: Lesson 11 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Мы едем в Будву. — We're going to Budva.\n- Мы будем в Черногории. — We'll be in Montenegro.\n- Мы будем в Будве. — We'll be in Budva.\n- Где наш отель? — Where is our hotel?\n- Можно такси? — Can we get a taxi?\n- Сколько ехать до отеля? — How long is the ride to the hotel?\n- Где пляж? — Where is the beach?\n- Я хочу погулять у моря. — I want to walk by the sea.\n- Старый город очень красивый. — The old town is very beautiful.\n- Мы здесь с семьёй. — We're here with family.\n- Счёт, пожалуйста. — The check, please.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
       "id": "tutor_daily_routine_checkin",
@@ -46694,6 +51469,662 @@ window.CONTENT_DATA = {
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
       "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Everyday family check-in — Answer simple questions about eating, working, resting, and the evening routine.\nCurriculum boundary: Lesson 9 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Когда вы обедаете? — When do you have lunch?\n- Я обедаю днём. — I have lunch during the day.\n- Когда вы ужинаете? — When do you have dinner?\n- Я ужинаю вечером. — I have dinner in the evening.\n- Когда вы работаете? — When do you work?\n- Я работаю утром и вечером. — I work in the morning and evening.\n- Когда вы отдыхаете? — When do you rest?\n- Обычно я отдыхаю вечером. — Usually I rest in the evening.\n- Что ты сегодня делал? — What did you do today?\n- Мы едим и смотрим телевизор. — We eat and watch TV.\n- Я начинаю работать в десять утра. — I start working at ten in the morning.\n- Обычно я работаю семь часов. — Usually I work seven hours.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+    },
+    {
+      "id": "tutor_work_business_checkin",
+      "scenario_id": "work_business_checkin",
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10,
+      "setting": "Lawyer work small talk",
+      "goal": "Answer predictable questions about clients, cases, court, and being busy without overexplaining.",
+      "learner_role": "guest",
+      "tutor_role": "host family member",
+      "required_items": [
+        "smal001",
+        "work001",
+        "work002",
+        "work003",
+        "work004",
+        "work005",
+        "work006",
+        "work007",
+        "work008",
+        "work009",
+        "work010",
+        "work011",
+        "work012"
+      ],
+      "required_phrases": [
+        {
+          "id": "smal001",
+          "ru": "Я юри́ст",
+          "ru_plain": "Я юрист",
+          "en": "I'm a lawyer (general — use this)"
+        },
+        {
+          "id": "work001",
+          "ru": "У меня́ своя́ компа́ния.",
+          "ru_plain": "У меня своя компания.",
+          "en": "I have my own company."
+        },
+        {
+          "id": "work002",
+          "ru": "Кадри́я рабо́тает вме́сте со мной.",
+          "ru_plain": "Кадрия работает вместе со мной.",
+          "en": "Kadriya works together with me."
+        },
+        {
+          "id": "work003",
+          "ru": "Мы рабо́таем вме́сте.",
+          "ru_plain": "Мы работаем вместе.",
+          "en": "We work together."
+        },
+        {
+          "id": "work004",
+          "ru": "У меня́ мно́го рабо́ты.",
+          "ru_plain": "У меня много работы.",
+          "en": "I have a lot of work."
+        },
+        {
+          "id": "work005",
+          "ru": "Я о́чень за́нят.",
+          "ru_plain": "Я очень занят.",
+          "en": "I'm very busy."
+        },
+        {
+          "id": "work006",
+          "ru": "Хорошо́. Я мно́го рабо́таю.",
+          "ru_plain": "Хорошо. Я много работаю.",
+          "en": "Good. I work a lot."
+        },
+        {
+          "id": "work007",
+          "ru": "У вас мно́го клие́нтов?",
+          "ru_plain": "У вас много клиентов?",
+          "en": "Do you have many clients?"
+        },
+        {
+          "id": "work008",
+          "ru": "Да, у меня́ мно́го клие́нтов.",
+          "ru_plain": "Да, у меня много клиентов.",
+          "en": "Yes, I have many clients."
+        },
+        {
+          "id": "work009",
+          "ru": "У вас мно́го дел?",
+          "ru_plain": "У вас много дел?",
+          "en": "Do you have many cases?"
+        },
+        {
+          "id": "work010",
+          "ru": "Да, у меня́ мно́го дел.",
+          "ru_plain": "Да, у меня много дел.",
+          "en": "Yes, I have many cases."
+        },
+        {
+          "id": "work011",
+          "ru": "Сего́дня я рабо́тал с клие́нтом.",
+          "ru_plain": "Сегодня я работал с клиентом.",
+          "en": "Today I worked with a client."
+        },
+        {
+          "id": "work012",
+          "ru": "Я звони́л клие́нтам.",
+          "ru_plain": "Я звонил клиентам.",
+          "en": "I called clients."
+        }
+      ],
+      "success_criteria": [
+        "answers_work_questions",
+        "keeps_work_brief",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "allowed_lesson_ids": [
+        "family_visit_001",
+        "family_visit_002",
+        "family_visit_003",
+        "family_visit_004",
+        "family_visit_005",
+        "family_visit_006",
+        "family_visit_007",
+        "family_visit_008",
+        "family_visit_009",
+        "family_visit_010"
+      ],
+      "allowed_item_ids": [
+        "firs001",
+        "firs002",
+        "firs003",
+        "firs004",
+        "firs005",
+        "firs006",
+        "firs007",
+        "firs008",
+        "firs009",
+        "firs010",
+        "firs011",
+        "firs012",
+        "firs013",
+        "poli001",
+        "poli002",
+        "poli003",
+        "poli004",
+        "poli005",
+        "poli006",
+        "poli007",
+        "poli008",
+        "poli009",
+        "poli010",
+        "poli011",
+        "poli012",
+        "poli013",
+        "poli014",
+        "poli015",
+        "poli016",
+        "poli017",
+        "toas001",
+        "toas002",
+        "toas003",
+        "toas004",
+        "toas005",
+        "toas006",
+        "toas007",
+        "toas008",
+        "toas009",
+        "toas010",
+        "toas011",
+        "toas012",
+        "toas013",
+        "toas014",
+        "toas015",
+        "toas016",
+        "fami001",
+        "fami002",
+        "fami003",
+        "fami004",
+        "fami005",
+        "fami006",
+        "fami007",
+        "fami008",
+        "fami009",
+        "fami010",
+        "fami011",
+        "fami012",
+        "fami013",
+        "fami014",
+        "fami015",
+        "fami016",
+        "fami017",
+        "fami018",
+        "fami019",
+        "food001",
+        "food002",
+        "food003",
+        "food004",
+        "food005",
+        "food006",
+        "food007",
+        "food008",
+        "food009",
+        "food010",
+        "food011",
+        "food012",
+        "food013",
+        "food014",
+        "food015",
+        "food016",
+        "smal001",
+        "smal002",
+        "smal003",
+        "smal004",
+        "smal005",
+        "smal006",
+        "smal007",
+        "smal008",
+        "smal009",
+        "list001",
+        "list002",
+        "list003",
+        "list004",
+        "list005",
+        "list006",
+        "list007",
+        "list008",
+        "list009",
+        "cale001",
+        "cale002",
+        "cale003",
+        "cale004",
+        "cale005",
+        "cale006",
+        "cale007",
+        "cale008",
+        "cale009",
+        "cale010",
+        "cale011",
+        "cale012",
+        "cale013",
+        "cale014",
+        "cale015",
+        "cale016",
+        "cale017",
+        "cale018",
+        "cale019",
+        "dail001",
+        "dail002",
+        "dail003",
+        "dail004",
+        "dail005",
+        "dail006",
+        "dail007",
+        "dail008",
+        "dail009",
+        "dail010",
+        "dail011",
+        "dail012",
+        "dail013",
+        "dail014",
+        "dail015",
+        "dail016",
+        "dail017",
+        "work001",
+        "work002",
+        "work003",
+        "work004",
+        "work005",
+        "work006",
+        "work007",
+        "work008",
+        "work009",
+        "work010",
+        "work011",
+        "work012",
+        "work013",
+        "work014",
+        "work015",
+        "work016"
+      ],
+      "active_vocab": [
+        "америке",
+        "америки",
+        "аппетита",
+        "бабушка",
+        "бокал",
+        "большое",
+        "брат",
+        "будем",
+        "будем здоровы!",
+        "будет",
+        "было",
+        "в",
+        "ваше",
+        "вашу",
+        "вечер",
+        "вечером",
+        "вкусно",
+        "вместе",
+        "воскресенье",
+        "время",
+        "встречу",
+        "вторник",
+        "вчера",
+        "вчера было солнечно.",
+        "выпьем",
+        "выходных",
+        "говорю",
+        "да",
+        "да, немного",
+        "да, у меня много дел.",
+        "да, у меня много клиентов.",
+        "давайте",
+        "давайте выпьем за это!",
+        "дедушка",
+        "дел",
+        "день",
+        "десяти",
+        "десять",
+        "дети",
+        "джо",
+        "дна",
+        "днём",
+        "до",
+        "до дна",
+        "до свидания",
+        "доброе",
+        "доброе утро",
+        "доброе утро.",
+        "добрый",
+        "добрый вечер",
+        "добрый вечер.",
+        "добрый день",
+        "добрый день.",
+        "довольны",
+        "дождь",
+        "дочь",
+        "едим",
+        "есть",
+        "ещё",
+        "жена",
+        "жены",
+        "живу",
+        "за",
+        "за ваше здоровье!",
+        "за встречу!",
+        "за здоровье!",
+        "за знакомство!",
+        "за любовь!",
+        "за молодых!",
+        "за родителей!",
+        "за семью!",
+        "за хозяев!",
+        "за хозяйку!",
+        "завтра",
+        "завтра будет тепло.",
+        "занят",
+        "звонил",
+        "здоровы",
+        "здоровье",
+        "здравствуйте",
+        "знакомство",
+        "зовут",
+        "зять",
+        "и",
+        "идёт",
+        "идёт дождь.",
+        "идёт снег.",
+        "из",
+        "извините",
+        "кадрия",
+        "кадрия работает вместе со мной.",
+        "как",
+        "как по-русски …?",
+        "клиентам",
+        "клиентов",
+        "клиентом",
+        "компания",
+        "компьютере",
+        "люблю",
+        "любовь",
+        "мама",
+        "меня",
+        "меня зовут джо",
+        "миссури",
+        "мне",
+        "мне очень нравится",
+        "много",
+        "мной",
+        "можно",
+        "можно ещё?",
+        "можно чаю?",
+        "молодых",
+        "муж",
+        "мы",
+        "мы довольны результатом.",
+        "мы едим и смотрим телевизор.",
+        "мы познакомились …",
+        "мы работаем вместе.",
+        "на",
+        "на выходных",
+        "надо",
+        "наелся",
+        "начинаю",
+        "не",
+        "немного",
+        "нет",
+        "нет, спасибо",
+        "нормально",
+        "ночи",
+        "нравится",
+        "обедаю",
+        "облачно",
+        "обычно",
+        "обычно я отдыхаю вечером.",
+        "обычно я работаю семь часов.",
+        "отдыхаю",
+        "отлично",
+        "очень",
+        "очень вкусно!",
+        "очень приятно",
+        "папа",
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "по",
+        "повторите",
+        "повторите, пожалуйста",
+        "пожалуйста",
+        "познакомились",
+        "познакомиться",
+        "помедленнее",
+        "помедленнее, пожалуйста",
+        "понедельник",
+        "понимаю",
+        "понятно",
+        "представиться",
+        "пригласили",
+        "приняли",
+        "приятно",
+        "приятно познакомиться",
+        "приятного",
+        "приятного аппетита!",
+        "простите",
+        "пятница",
+        "работаем",
+        "работает",
+        "работал",
+        "работать",
+        "работаю",
+        "работы",
+        "рад",
+        "рад познакомиться",
+        "разрешите",
+        "разрешите представиться",
+        "результатом",
+        "родителей",
+        "родители",
+        "русски",
+        "русский",
+        "рюмка",
+        "с",
+        "свидания",
+        "своя",
+        "себя",
+        "сегодня",
+        "сегодня облачно.",
+        "сегодня солнечно.",
+        "сегодня тепло.",
+        "сегодня холодно.",
+        "сегодня я работал с клиентом.",
+        "сегодня я работал четыре часа.",
+        "семь",
+        "семью",
+        "семья",
+        "сестра",
+        "сестра жены",
+        "сказать",
+        "смотрим",
+        "снег",
+        "со",
+        "солнечно",
+        "спасибо",
+        "спасибо большое",
+        "спасибо, было очень вкусно",
+        "спасибо, не надо",
+        "спасибо, что пригласили",
+        "спасибо, что приняли",
+        "спокойной",
+        "спокойной ночи",
+        "среда",
+        "суббота",
+        "суде",
+        "счастлив",
+        "сын",
+        "телевизор",
+        "тепло",
+        "тесть",
+        "тост",
+        "тёща",
+        "у",
+        "у меня есть время до десяти.",
+        "у меня много работы.",
+        "у меня своя компания.",
+        "ужинаю",
+        "утра",
+        "утро",
+        "утром",
+        "учу",
+        "хлеб",
+        "хозяев",
+        "хозяйку",
+        "холодно",
+        "хорошо",
+        "хорошо, спасибо",
+        "хорошо. я много работаю.",
+        "хочу",
+        "часа",
+        "часов",
+        "чаю",
+        "четверг",
+        "четыре",
+        "что",
+        "штата",
+        "шурин",
+        "это",
+        "юрист",
+        "я",
+        "я ещё учу русский",
+        "я живу в америке",
+        "я звонил клиентам.",
+        "я из америки",
+        "я из штата миссури",
+        "я люблю вашу дочь",
+        "я наелся",
+        "я начинаю работать в десять утра.",
+        "я не понимаю",
+        "я немного говорю по-русски",
+        "я обедаю днём.",
+        "я очень занят.",
+        "я понимаю",
+        "я работал на компьютере.",
+        "я работаю в суде.",
+        "я работаю утром и вечером.",
+        "я счастлив работать на себя.",
+        "я ужинаю вечером.",
+        "я хочу сказать тост за …",
+        "я юрист"
+      ],
+      "passive_vocab": [
+        "блины",
+        "борщ",
+        "будете",
+        "будете …?",
+        "вам",
+        "вам нравится …?",
+        "вас",
+        "водка",
+        "вы",
+        "вы говорите по-русски?",
+        "говорите",
+        "дел",
+        "дела",
+        "делал",
+        "день",
+        "ещё",
+        "как",
+        "как вам россия?",
+        "как вы познакомились?",
+        "как дела?",
+        "как там на улице?",
+        "какая",
+        "какая сегодня погода?",
+        "какой",
+        "какой сегодня день недели?",
+        "кем",
+        "кем вы работаете?",
+        "клиентов",
+        "когда",
+        "когда вы обедаете?",
+        "когда вы отдыхаете?",
+        "когда вы работаете?",
+        "когда вы ужинаете?",
+        "много",
+        "на",
+        "недели",
+        "нравится",
+        "обедаете",
+        "оливье",
+        "отдыхаете",
+        "откуда",
+        "откуда вы?",
+        "пельмени",
+        "по",
+        "погода",
+        "познакомились",
+        "работаете",
+        "россия",
+        "русски",
+        "сегодня",
+        "там",
+        "ты",
+        "у",
+        "у вас много дел?",
+        "у вас много клиентов?",
+        "ужинаете",
+        "улице",
+        "чай",
+        "что",
+        "что ты сегодня делал?"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "discourse:politeness",
+        "grammar:formal_question",
+        "grammar:past_masculine_work",
+        "grammar:present_first_person",
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "lexical:days_of_week",
+        "lexical:kinship_terms",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:calendar_question",
+        "phrase:client_case_answer",
+        "phrase:compliment_food",
+        "phrase:family_affection",
+        "phrase:food_offer",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:host_question",
+        "phrase:introduction",
+        "phrase:personal_origin",
+        "phrase:polite_decline",
+        "phrase:repair",
+        "phrase:routine_answer",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative",
+        "phrase:weather_answer",
+        "phrase:work_identity",
+        "phrase:yes_no",
+        "register:formal_you",
+        "register:name_patronymic",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "gendered_form",
+        "listening_misparse",
+        "register",
+        "stress"
+      ],
+      "correction_policy": [
+        "Minor error: recast briefly and continue the role-play.",
+        "Repeated error: give one short rule, then return to Russian practice.",
+        "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
+        "Communication-breaking error: clarify in English, provide the verified model, then retry."
+      ],
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Lawyer work small talk — Answer predictable questions about clients, cases, court, and being busy without overexplaining.\nCurriculum boundary: Lesson 10 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Я юрист — I'm a lawyer (general — use this)\n- У меня своя компания. — I have my own company.\n- Кадрия работает вместе со мной. — Kadriya works together with me.\n- Мы работаем вместе. — We work together.\n- У меня много работы. — I have a lot of work.\n- Я очень занят. — I'm very busy.\n- Хорошо. Я много работаю. — Good. I work a lot.\n- У вас много клиентов? — Do you have many clients?\n- Да, у меня много клиентов. — Yes, I have many clients.\n- У вас много дел? — Do you have many cases?\n- Да, у меня много дел. — Yes, I have many cases.\n- Сегодня я работал с клиентом. — Today I worked with a client.\n- Я звонил клиентам. — I called clients.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     }
   ],
   "contrast_cards": [
@@ -47310,6 +52741,14 @@ window.CONTENT_DATA = {
     "uses_day_parts": {
       "label": "uses morning/day/evening words",
       "error_type": "case_or_inflection"
+    },
+    "answers_work_questions": {
+      "label": "answers work/client questions",
+      "error_type": "forgot_phrase"
+    },
+    "keeps_work_brief": {
+      "label": "keeps legal work details brief",
+      "error_type": "forgot_phrase"
     }
   },
   "contrast_sets": [
@@ -47696,8 +53135,8 @@ window.CONTENT_DATA = {
         "answers_personalized_questions",
         "uses_formal_greeting"
       ],
-      "lesson_id": "family_visit_011",
-      "lesson_number": 11
+      "lesson_id": "family_visit_012",
+      "lesson_number": 12
     },
     {
       "id": "extended_family_family_tree",
@@ -47819,8 +53258,8 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
-      "lesson_id": "family_visit_010",
-      "lesson_number": 10
+      "lesson_id": "family_visit_011",
+      "lesson_number": 11
     },
     {
       "id": "daily_routine_checkin",
@@ -47848,6 +53287,34 @@ window.CONTENT_DATA = {
       ],
       "lesson_id": "family_visit_009",
       "lesson_number": 9
+    },
+    {
+      "id": "work_business_checkin",
+      "setting": "Lawyer work small talk",
+      "goal": "Answer predictable questions about clients, cases, court, and being busy without overexplaining.",
+      "required_items": [
+        "smal001",
+        "work001",
+        "work002",
+        "work003",
+        "work004",
+        "work005",
+        "work006",
+        "work007",
+        "work008",
+        "work009",
+        "work010",
+        "work011",
+        "work012"
+      ],
+      "success_criteria": [
+        "answers_work_questions",
+        "keeps_work_brief",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "lesson_id": "family_visit_010",
+      "lesson_number": 10
     }
   ]
 };

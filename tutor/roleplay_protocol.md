@@ -277,6 +277,12 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 **You produce:** short answers from the `daily_routine` module: lunch/day, dinner/evening, work morning/evening, rest evening, and one worked-today answer.
 **Success:** You use `у́тром`, `днём`, and `ве́чером` without switching to English and keep `рабо́таю` / `рабо́тал` distinct.
 
+### Scenario 23 — Work and clients check-in (id: work_business_checkin)
+**Goal:** Answer predictable lawyer/work questions while keeping the explanation short and beginner-safe.
+**Tutor:** asks `Кем вы рабо́таете?`, `У вас мно́го клие́нтов?`, `У вас мно́го дел?`, `Ты сего́дня о́чень за́нят?`, and one court/client follow-up.
+**You produce:** `Я юри́ст`, `У меня́ своя́ компа́ния`, `Да, у меня́ мно́го клие́нтов`, `Да, у меня́ мно́го дел`, and one short today-work sentence.
+**Success:** You do not overexplain legal details; you answer, pause, and use repair lines if the follow-up is too fast.
+
 ---
 
 ## Session templates

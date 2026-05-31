@@ -277,6 +277,14 @@ ROLEPLAY_CRITERIA = {
         "label": "uses morning/day/evening words",
         "error_type": "case_or_inflection",
     },
+    "answers_work_questions": {
+        "label": "answers work/client questions",
+        "error_type": "forgot_phrase",
+    },
+    "keeps_work_brief": {
+        "label": "keeps legal work details brief",
+        "error_type": "forgot_phrase",
+    },
 }
 
 CONTRAST_SETS = [
@@ -734,6 +742,32 @@ SCENARIOS = [
             "uses_repair_lines",
         ],
     },
+    {
+        "id": "work_business_checkin",
+        "setting": "Lawyer work small talk",
+        "goal": "Answer predictable questions about clients, cases, court, and being busy without overexplaining.",
+        "required_items": [
+            "smal001",
+            "work001",
+            "work002",
+            "work003",
+            "work004",
+            "work005",
+            "work006",
+            "work007",
+            "work008",
+            "work009",
+            "work010",
+            "work011",
+            "work012",
+        ],
+        "success_criteria": [
+            "answers_work_questions",
+            "keeps_work_brief",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
 ]
 
 
@@ -820,6 +854,13 @@ MODULES = [
         "🕰️",
     ),
     (
+        "work_business",
+        "Work & Clients",
+        "Short lawyer/work answers from the guide: clients, cases, court, and being busy.",
+        2,
+        "💼",
+    ),
+    (
         "travel_budva",
         "Budva Trip",
         "Montenegro travel phrases for airport, hotel, beach, and old-town plans.",
@@ -885,6 +926,12 @@ MODULE_STRUCTURES = {
         "phrase:routine_answer",
         "grammar:when_question",
         "grammar:time_expression",
+    ],
+    "work_business": [
+        "lexical:work_vocab",
+        "phrase:work_identity",
+        "phrase:client_case_answer",
+        "grammar:past_masculine_work",
     ],
     "travel_budva": [
         "lexical:travel_vocab",
@@ -1601,6 +1648,143 @@ add(
     3,
     gender="m",
     tags=["routine", "work", "time"],
+)
+
+# --- WORK & CLIENTS (lawyer/business small-talk lane) ---
+add(
+    "work_business",
+    "У меня́ своя́ компа́ния.",
+    "I have my own company.",
+    "[u mi-nyá sva-yá kam-pá-ni-ya]",
+    2,
+    tags=["work", "business"],
+)
+add(
+    "work_business",
+    "Кадри́я рабо́тает вме́сте со мной.",
+    "Kadriya works together with me.",
+    "[kad-rí-ya ra-bó-ta-yet vmyés-te sa mnoy]",
+    2,
+    tags=["work", "kadriya"],
+)
+add(
+    "work_business",
+    "Мы рабо́таем вме́сте.",
+    "We work together.",
+    "[my ra-bó-ta-yem vmyés-te]",
+    2,
+    tags=["work", "kadriya"],
+)
+add(
+    "work_business",
+    "У меня́ мно́го рабо́ты.",
+    "I have a lot of work.",
+    "[u mi-nyá mnó-ga ra-bó-ty]",
+    2,
+    tags=["work", "busy"],
+)
+add(
+    "work_business",
+    "Я о́чень за́нят.",
+    "I'm very busy.",
+    "[ya ó-chen' zá-nyat]",
+    2,
+    gender="m",
+    tags=["work", "busy"],
+)
+add(
+    "work_business",
+    "Хорошо́. Я мно́го рабо́таю.",
+    "Good. I work a lot.",
+    "[ha-ra-shó ya mnó-ga ra-bó-ta-yu]",
+    2,
+    tags=["work", "answer"],
+)
+add(
+    "work_business",
+    "У вас мно́го клие́нтов?",
+    "Do you have many clients?",
+    "[u vas mnó-ga kli-yén-tav]",
+    2,
+    recognize=True,
+    tags=["work", "clients", "question"],
+)
+add(
+    "work_business",
+    "Да, у меня́ мно́го клие́нтов.",
+    "Yes, I have many clients.",
+    "[da u mi-nyá mnó-ga kli-yén-tav]",
+    2,
+    tags=["work", "clients"],
+)
+add(
+    "work_business",
+    "У вас мно́го дел?",
+    "Do you have many cases?",
+    "[u vas mnó-ga dyel]",
+    2,
+    recognize=True,
+    tags=["work", "cases", "question"],
+)
+add(
+    "work_business",
+    "Да, у меня́ мно́го дел.",
+    "Yes, I have many cases.",
+    "[da u mi-nyá mnó-ga dyel]",
+    2,
+    tags=["work", "cases"],
+)
+add(
+    "work_business",
+    "Сего́дня я рабо́тал с клие́нтом.",
+    "Today I worked with a client.",
+    "[si-vód-nya ya ra-bó-tal s kli-yén-tam]",
+    2,
+    gender="m",
+    tags=["work", "clients"],
+)
+add(
+    "work_business",
+    "Я звони́л клие́нтам.",
+    "I called clients.",
+    "[ya zva-níl kli-yén-tam]",
+    2,
+    gender="m",
+    tags=["work", "clients"],
+)
+add(
+    "work_business",
+    "Я рабо́тал на компью́тере.",
+    "I worked on the computer.",
+    "[ya ra-bó-tal na kam-pyú-te-re]",
+    2,
+    gender="m",
+    tags=["work"],
+)
+add(
+    "work_business",
+    "Я рабо́таю в суде́.",
+    "I work in court.",
+    "[ya ra-bó-ta-yu f su-dyé]",
+    2,
+    tags=["work", "court"],
+)
+add(
+    "work_business",
+    "Мы дово́льны результа́том.",
+    "We're pleased with the result.",
+    "[my da-vól'-ny ri-zul'-tá-tam]",
+    2,
+    tags=["work", "outcome"],
+)
+add(
+    "work_business",
+    "Я сча́стлив рабо́тать на себя́.",
+    "I'm happy to work for myself.",
+    "[ya shchás-liv ra-bó-tat' na si-byá]",
+    3,
+    gender="m",
+    tags=["work", "business"],
 )
 
 # --- BUDVA TRIP (Montenegro travel lane) ---
