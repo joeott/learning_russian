@@ -301,6 +301,10 @@ ROLEPLAY_CRITERIA = {
         "label": "keeps celebration story short",
         "error_type": "forgot_phrase",
     },
+    "recognizes_cultural_bonus": {
+        "label": "recognizes proverbs and legal jokes",
+        "error_type": "listening_misparse",
+    },
 }
 
 CONTRAST_SETS = [
@@ -833,6 +837,27 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "cultural_bonus_recognition",
+        "setting": "Recognition-only cultural extras",
+        "goal": "Recognize source-guide proverbs and lawyer jokes without trying to perform them.",
+        "required_items": [
+            "cult001",
+            "cult002",
+            "cult003",
+            "cult004",
+            "cult005",
+            "cult006",
+            "cult007",
+            "cult008",
+            "cult009",
+        ],
+        "success_criteria": [
+            "recognizes_cultural_bonus",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
         "id": "budva_airport_hotel_checkin",
         "setting": "Airport and hotel arrival",
         "goal": "Handle airport check-in, luggage, hotel reservation, room, key, elevator, and checkout basics.",
@@ -966,6 +991,13 @@ MODULES = [
         "🎄",
     ),
     (
+        "cultural_bonus",
+        "Cultural Extras (Recognition)",
+        "Recognition-only proverbs, idioms, and lawyer jokes from the saved guide.",
+        3,
+        "🎭",
+    ),
+    (
         "travel_budva",
         "Budva Trip",
         "Montenegro travel phrases for airport, hotel, beach, and old-town plans.",
@@ -1048,6 +1080,12 @@ MODULE_STRUCTURES = {
         "phrase:holiday_plan",
         "phrase:family_celebration",
         "grammar:future_plan",
+    ],
+    "cultural_bonus": [
+        "lexical:proverbs",
+        "lexical:idioms",
+        "skill:listening_question_recognition",
+        "strategy:recognition_only",
     ],
     "travel_budva": [
         "lexical:travel_vocab",
@@ -2248,6 +2286,98 @@ add(
     "[é-ta byl bal'-shóy ú-zhin]",
     3,
     tags=["holiday", "thanksgiving", "family"],
+)
+
+# --- CULTURAL EXTRAS (recognition-only idioms, proverbs, legal jokes) ---
+add(
+    "cultural_bonus",
+    "Ка́мень с души́ упа́л.",
+    "A weight has been lifted.",
+    "[ká-men' s du-shí u-pál]",
+    3,
+    recognize=True,
+    note="Recognition-only idiom from the source guide; do not force it in conversation.",
+    tags=["idiom", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "Жизнь бьёт ключо́м.",
+    "Life is in full swing.",
+    "[zhizn' byot klyu-chóm]",
+    3,
+    recognize=True,
+    note="Recognition-only idiom from the source guide.",
+    tags=["idiom", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "В гостя́х хорошо́, а до́ма лу́чше.",
+    "Being a guest is good, but home is better.",
+    "[v gas-tyáh ha-ra-shó a dó-ma lúch-she]",
+    3,
+    recognize=True,
+    note="Recognition-only proverb from the source guide.",
+    tags=["proverb", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "Нет ху́да без добра́.",
+    "Every cloud has a silver lining.",
+    "[nyet hú-da bez da-brá]",
+    3,
+    recognize=True,
+    note="Recognition-only proverb from the source guide.",
+    tags=["proverb", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "У сосе́да трава́ зелене́е.",
+    "The neighbor's grass is greener.",
+    "[u sa-syé-da tra-vá zi-li-nyé-ye]",
+    3,
+    recognize=True,
+    note="Recognition-only proverb from the source guide.",
+    tags=["proverb", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "Семь раз отме́рь, оди́н раз отре́жь.",
+    "Measure seven times, cut once.",
+    "[syem' raz at-myér' a-dín raz at-ryézh]",
+    3,
+    recognize=True,
+    note="Recognition-only proverb from the source guide.",
+    tags=["proverb", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "Чем отлича́ется адвока́т от прокуро́ра?",
+    "How is a defense lawyer different from a prosecutor?",
+    "[chem at-li-chá-ye-tsa ad-va-kát at pra-ku-ró-ra]",
+    3,
+    recognize=True,
+    note="Recognition-only lawyer joke setup from the source guide.",
+    tags=["legal", "joke", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "Адвока́т озабо́чен бу́дущим своего́ клие́нта, а прокуро́р — его́ про́шлым.",
+    "The lawyer is concerned with the client's future; the prosecutor with his past.",
+    "[ad-va-kát a-za-bó-chen bú-du-shchim sva-ye-vó kli-yén-ta a pra-ku-rór yi-vó pró-shlym]",
+    3,
+    recognize=True,
+    note="Recognition-only lawyer joke answer from the source guide; do not perform it unless rehearsed.",
+    tags=["legal", "joke", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "Цивилиза́ция привела́ к тому́, что уже́ не ва́жно, чей адвока́т лу́чше.",
+    "Civilization made it so what matters is whose lawyer is better.",
+    "[tsi-vi-li-zá-tsi-ya pri-vi-lá k ta-mú shto u-zhé ni vázh-na chey ad-va-kát lúch-she]",
+    3,
+    recognize=True,
+    note="Condensed recognition-only legal joke from the source guide.",
+    tags=["legal", "joke", "recognition"],
 )
 
 # --- BUDVA TRIP (Montenegro travel lane) ---

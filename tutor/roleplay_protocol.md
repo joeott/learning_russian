@@ -295,7 +295,13 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 **You produce:** one short holiday plan, one family celebration answer, and one Thanksgiving dinner answer from the `celebrations` module.
 **Success:** You keep the story to one or two sentences and recover with repair lines instead of trying a long holiday narrative.
 
-### Scenario 26 — Airport and hotel arrival (id: budva_airport_hotel_checkin)
+### Scenario 26 — Cultural extras recognition (id: cultural_bonus_recognition)
+**Goal:** Recognize source-guide proverbs and lawyer jokes without trying to perform them.
+**Tutor:** plays or says one proverb/joke line at a time and asks for the rough English meaning.
+**You produce:** recognition only: identify whether it is a proverb, idiom, or lawyer joke, then give the approximate meaning in English.
+**Success:** You recognize the familiar lines and use repair phrases if the proverb is too fast; do not try to be funny in Russian unless Kadriya has rehearsed it with you.
+
+### Scenario 27 — Airport and hotel arrival (id: budva_airport_hotel_checkin)
 **Goal:** Handle airport and hotel arrival basics without switching to English.
 **Tutor:** asks fast practical prompts around `аэропо́рт`, `бага́ж`, passport, baggage claim, hotel reservation, room, key, elevator, and check-out.
 **You produce:** short survival lines from `travel_budva`: `Вот мой па́спорт`, `Я хочу́ сда́ть бага́ж`, `Где выда́ча багажа́?`, `У меня́ есть брони́рование`, `Ключ, пожа́луйста`, and one check-in/check-out question.
