@@ -269,8 +269,8 @@
     view.innerHTML = `
       <div class="section-head"><span class="section-head__num">02</span><span class="section-head__title">Learn</span>
         <span class="section-head__sub">Hear it, say it aloud, then flip for the meaning. Mark what's stuck.</span></div>
-      <div class="learnbar">${modChips}</div>
-      <div class="learnbar">${priChips}<span class="spacer"></span>
+      <div class="learnbar learnbar--scroll">${modChips}</div>
+      <div class="learnbar learnbar--tools">${priChips}<span class="spacer"></span>
         <button class="chip ${learnState.hideEn ? "is-on" : ""}" onclick="ZS.toggleEn()">🙈 Hide English</button></div>
       <div id="cardslot"></div>
     `;

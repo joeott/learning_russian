@@ -309,6 +309,17 @@ body {
   .section-head__sub { margin-left: 0; flex-basis: 100%; }
   .countdown { transform: none; }
   .card { padding: 22px 18px; min-height: 280px; }
+  .learnbar--scroll {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-right: -20px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .learnbar--scroll .chip { flex: 0 0 auto; }
+  .learnbar--tools { gap: 8px; }
+  .learnbar--tools .spacer { display: none; }
   .offlinebox { grid-template-columns: 1fr; }
   .offlinebox__actions { justify-content:flex-start; }
 }
