@@ -86,7 +86,9 @@ class BrowserFlowContractTests(unittest.TestCase):
             'sub.add_parser("flow")',
             'elif args.cmd == "flow"',
             'fl.add_argument("--offline"',
+            'fl.add_argument("--mobile"',
             'pr.add_argument("--offline"',
+            'pr.add_argument("--mobile"',
         ):
             self.assertIn(token, self.cli)
 

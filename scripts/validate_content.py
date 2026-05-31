@@ -149,7 +149,9 @@ def validate_protocol_scenarios(data: dict, protocol: Path) -> list[str]:
                 f"protocol scenario {number} '{title}' did not match any generated scenario"
             )
 
-    represented: set[str] = {scenario_id for _, _, scenario_id in protocol_ids if scenario_id}
+    represented: set[str] = {
+        scenario_id for _, _, scenario_id in protocol_ids if scenario_id
+    }
 
     protocol_titles = [title for _, title, _ in protocol_ids]
     protocol_tokens = [tokenize_words(title) for title in protocol_titles]

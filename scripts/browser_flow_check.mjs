@@ -11,6 +11,10 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
+const VIEWPORTS = {
+  desktop: { width: 1280, height: 900 },
+  mobile: { width: 390, height: 844 },
+};
 
 async function importPlaywright() {
   const candidates = [
@@ -33,12 +37,14 @@ function parseArgs(argv) {
     url: "http://localhost:8000/web/",
     out: path.join(ROOT, "tmp", "flow-check"),
     offline: false,
+    mobile: false,
   };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === "--url") args.url = argv[++i];
     else if (a === "--out") args.out = path.resolve(argv[++i]);
     else if (a === "--offline") args.offline = true;
+    else if (a === "--mobile") args.mobile = true;
     else if (a === "--help" || a === "-h") args.help = true;
     else if (!a.startsWith("-")) args.url = a;
     else throw new Error(`Unknown option: ${a}`);
@@ -48,11 +54,13 @@ function parseArgs(argv) {
 
 function help() {
   return `Usage:
-  tools/zastolom flow [url] [--out DIR] [--offline]
+  tools/zastolom flow [url] [--out DIR] [--offline] [--mobile]
 
 Examples:
   tools/zastolom flow http://localhost:8000/web/
+  tools/zastolom flow http://localhost:8000/web/ --mobile
   tools/zastolom flow http://localhost:8000/web/ --offline
+  tools/zastolom flow http://localhost:8000/web/ --mobile --offline
 `;
 }
 
@@ -126,9 +134,9 @@ async function assertOfflinePackCachesCore(page, baseUrl) {
   });
 }
 
-  async function assertOfflineFlow(browser, baseUrl) {
+async function assertOfflineFlow(browser, baseUrl, opts) {
   const offlineContext = await browser.newContext({
-    viewport: { width: 1280, height: 900 },
+    viewport: opts && opts.mobile ? VIEWPORTS.mobile : VIEWPORTS.desktop,
     serviceWorkers: "allow",
   });
   const offlinePage = await offlineContext.newPage();
@@ -931,7 +939,7 @@ export async function runFlowCheck(opts) {
   await fs.mkdir(opts.out, { recursive: true });
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({
-    viewport: { width: 1280, height: 900 },
+    viewport: opts.mobile ? VIEWPORTS.mobile : VIEWPORTS.desktop,
     serviceWorkers: "block",
   });
   const page = await context.newPage();
@@ -1073,7 +1081,7 @@ export async function runFlowCheck(opts) {
     completed.push("analytics");
 
     if (opts.offline) {
-      await assertOfflineFlow(browser, opts.url);
+      await assertOfflineFlow(browser, opts.url, opts);
       completed.push("offline");
     }
 
