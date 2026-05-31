@@ -80,6 +80,26 @@ class LearningMetricsTests(unittest.TestCase):
         self.assertLess(out["slow"], out["unassisted"])
         self.assertEqual(out["wrong"], 0)
 
+    def test_metric_snapshot_confidence_uses_zero_as_zero(self) -> None:
+        out = self.run_node(
+            """
+            const m = require('./scripts/learning_metrics.cjs');
+            const ratings = m.emptyRatings();
+            m.applyAttempt(ratings, {
+              item_id: 'demo001',
+              stage_key: 'produce',
+              ok: true,
+              assisted: false,
+              latency_ms: 4200,
+              meta: { priority: 1, structures: ['speech_act:greeting'] },
+              at: '2026-05-31T12:00:00.000Z'
+            });
+            console.log(JSON.stringify(m.metricSnapshot(ratings)));
+            """
+        )
+        self.assertGreaterEqual(out["confidence"], 0)
+        self.assertLessEqual(out["confidence"], 4)
+
 
 if __name__ == "__main__":
     unittest.main()

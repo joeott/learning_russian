@@ -185,7 +185,14 @@
     const grammarRows = Object.keys(skills)
       .filter(k => k.indexOf(STRUCTURE_PREFIX + "grammar:") === 0 || k.indexOf(STRUCTURE_PREFIX + "verb:") === 0 || k.indexOf(STRUCTURE_PREFIX + "case") === 0)
       .map(k => skills[k]);
-    const avg = rows => rows.length ? rows.reduce((n, row) => n + (row.rating || DEFAULT_RATING), 0) / rows.length : DEFAULT_RATING;
+    const avg = rows => rows.length ? rows.reduce((n, row) => {
+      const rating = Number(row.rating);
+      return n + (Number.isFinite(rating) ? rating : DEFAULT_RATING);
+    }, 0) / rows.length : DEFAULT_RATING;
+    const avgConfidence = rows => rows.length ? rows.reduce((n, row) => {
+      const value = Number(row.confidence);
+      return n + (Number.isFinite(value) ? value : 0);
+    }, 0) / rows.length : 0;
     const missionRows = [get(MISSION_PREFIX + "core"), get(MISSION_PREFIX + "listening"), get(MISSION_PREFIX + "production")];
     const bottlenecks = Object.values(skills)
       .filter(row => (row.attempts || 0) >= 2)
@@ -196,7 +203,7 @@
       grammarControl: Math.round(avg(grammarRows)),
       listeningDiscrimination: Math.round(get(MISSION_PREFIX + "listening").rating || DEFAULT_RATING),
       productionControl: Math.round(get(MISSION_PREFIX + "production").rating || DEFAULT_RATING),
-      confidence: Math.round(avg(missionRows.map(row => ({ rating: (row.confidence || 0) * 100 }))) || 0),
+      confidence: Math.round(avgConfidence(missionRows) * 100),
       bottlenecks,
     };
   }
