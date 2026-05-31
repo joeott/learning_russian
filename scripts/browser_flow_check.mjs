@@ -151,6 +151,47 @@ async function assertLessonLockedRecognition(page, baseUrl) {
     throw new Error(`Lesson lock violated: ${prompted.id} is lesson ${prompted.lesson_number}, expected <= ${expected.lessonNumber}`);
   }
 
+  const lessonOneData = await page.evaluate((lessonNumber) => {
+    const { items = [], cloze_cards = [], dictation_cards = [], stress_cards = [], pronunciation_cards = [], backtranslation_cards = [], contrast_cards = [] } = window.CONTENT_DATA;
+    const hasLessonAccess = (card) => !card.lesson_number || card.lesson_number <= lessonNumber;
+    const unlockedItems = items.filter((it) => hasLessonAccess(it));
+    const unlockedByStage = {
+      cloze: cloze_cards.filter(hasLessonAccess),
+      dictation: dictation_cards.filter(hasLessonAccess),
+      stress: stress_cards.filter(hasLessonAccess),
+      pronounce: pronunciation_cards.filter(hasLessonAccess),
+      backtranslate: backtranslation_cards.filter(hasLessonAccess),
+      contrast: contrast_cards.filter(hasLessonAccess),
+    };
+    return {
+      cloze: unlockedByStage.cloze.length,
+      dictation: unlockedByStage.dictation.length,
+      stress: unlockedByStage.stress.length,
+      pronounce: unlockedByStage.pronounce.length,
+      backtranslate: unlockedByStage.backtranslate.length,
+      contrast: unlockedByStage.contrast.length,
+    };
+  }, expected.lessonNumber);
+
+  for (const stageKey of ["cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast"]) {
+    if (!lessonOneData[stageKey]) {
+      continue;
+    }
+    await page.goto(withHash(baseUrl, `#/quiz/${stageKey}`), { waitUntil: "networkidle" });
+    await page.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 5000 });
+    const promptedStage = await page.locator(".quiz").evaluate((el) => ({
+      stage: el.dataset.stage,
+      id: el.dataset.itemId,
+      lessonNumber: Number(el.dataset.lessonNumber || 0),
+    }));
+    if (promptedStage.stage !== stageKey) {
+      throw new Error(`Expected ${stageKey} stage, got ${promptedStage.stage}`);
+    }
+    if (promptedStage.lessonNumber > expected.lessonNumber) {
+      throw new Error(`Lesson lock violated: ${promptedStage.id} in ${stageKey} is lesson ${promptedStage.lessonNumber}, expected <= ${expected.lessonNumber}`);
+    }
+  }
+
   await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
   const lastValue = await page.locator(".lessonlock select option").last().getAttribute("value");
   await select.selectOption(lastValue);

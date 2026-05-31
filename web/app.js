@@ -996,7 +996,7 @@
     $("#view").innerHTML = `
       <div class="section-head"><span class="section-head__num">${String(stage.n).padStart(2, "0")}</span><span class="section-head__title">${stage.title}</span>
         <span class="section-head__sub"><a href="#/quiz" style="color:var(--red)">← all drills</a></span></div>
-      <div class="quiz">
+      <div class="quiz" data-stage="${escapeHtml(stage.key)}" data-item-id="${escapeHtml(it.id)}" data-lesson-number="${escapeHtml(String(it.lesson_number || ""))}">
         <div class="quiz__progress">${dots}</div>
         <div class="quiz__prompt">${promptHtml}</div>
         <div id="qbody">${body}</div>
