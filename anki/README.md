@@ -203,3 +203,5 @@ phrases you'll actually rehearse out loud.
   *understand when heard*).
 - 0 cards currently carry a "⚠ rehearse with your wife" reminder.
 - 8 cards show a "(male form)" marker — say these in the masculine.
+- The web app also generates 20 typed conjugation drills from the core verb
+  cards; these are app practice cards, not Anki import rows.

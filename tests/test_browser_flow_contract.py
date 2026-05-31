@@ -38,6 +38,7 @@ class BrowserFlowContractTests(unittest.TestCase):
             "adaptive-ordering mismatch",
             "recognition",
             "recall",
+            "conjugate",
             "cloze",
             "dictation",
             "stress",

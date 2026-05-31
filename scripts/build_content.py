@@ -2602,6 +2602,70 @@ def build_contrast_cards(contrast_sets: list[dict], items: list[dict]) -> list[d
     return cards
 
 
+def build_verb_drill_cards(items: list[dict]) -> list[dict]:
+    cards = []
+    for item in items:
+        if item["module"] != "verbs":
+            continue
+        forms = [part.strip() for part in item["ru"].split("/")]
+        plain_forms = [strip_stress(part) for part in forms]
+        infinitive = ""
+        if "—" in item["en"]:
+            infinitive = item["en"].split("—", 1)[1].strip()
+        if len(forms) < 2 or not infinitive:
+            continue
+        meanings = item["en"].split("—", 1)[0].split("/")
+        meanings = [meaning.strip() for meaning in meanings]
+        prompts = [
+            ("ya", "я", forms[0], plain_forms[0], meanings[0] if meanings else ""),
+            (
+                "vy",
+                "вы",
+                forms[1],
+                plain_forms[1],
+                meanings[1] if len(meanings) > 1 else "",
+            ),
+        ]
+        for pronoun_key, pronoun, answer, plain_answer, meaning in prompts:
+            cards.append(
+                {
+                    "id": f"conj_{item['id']}_{pronoun_key}",
+                    "item_id": item["id"],
+                    "module": item["module"],
+                    "lesson_id": item["lesson_id"],
+                    "lesson_number": item["lesson_number"],
+                    "ru": answer,
+                    "ru_plain": plain_answer,
+                    "en": f"{pronoun} + {infinitive}: {meaning or item['en']}",
+                    "prompt": f"{pronoun} + {infinitive}",
+                    "answer": plain_answer,
+                    "accepted_answers": sorted({plain_answer, answer}),
+                    "hint": f"Source verb card: {item['ru']}",
+                    "priority": item["priority"],
+                    "syllables": syllable_count(answer),
+                    "conf": item["conf"],
+                    "gender": item["gender"],
+                    "rehearse": item["rehearse"],
+                    "recognize": False,
+                    "note": item.get("note", ""),
+                    "tags": sorted(
+                        set(item.get("tags", [])) | {"verb_drill", pronoun_key}
+                    ),
+                    "error_types": sorted(
+                        set(item["error_types"]) | {"case_or_inflection"}
+                    ),
+                    "allowed_error_types": sorted(
+                        set(item["allowed_error_types"]) | {"case_or_inflection"}
+                    ),
+                    "lexemes": lexemes_for_phrase(plain_answer),
+                    "structures": sorted(
+                        set(item["structures"]) | {"grammar:verb_conjugation"}
+                    ),
+                }
+            )
+    return cards
+
+
 def build():
     course = load_course(os.environ.get("ZASTOLOM_COURSE", DEFAULT_COURSE_ID))
     mod_index = {m[0]: idx for idx, m in enumerate(MODULES)}
@@ -2689,6 +2753,7 @@ def build():
     backtranslation_cards = build_backtranslation_cards(items)
     tutor_cards = build_tutor_cards(scenarios, items, curriculum, course)
     contrast_cards = build_contrast_cards(CONTRAST_SETS, items)
+    verb_drill_cards = build_verb_drill_cards(items)
     data = {
         "course": course,
         "meta": {
@@ -2711,6 +2776,7 @@ def build():
         "backtranslation_cards": backtranslation_cards,
         "tutor_cards": tutor_cards,
         "contrast_cards": contrast_cards,
+        "verb_drill_cards": verb_drill_cards,
         "error_types": ERROR_TYPES,
         "listening_ladder": LISTENING_LADDER,
         "roleplay_criteria": ROLEPLAY_CRITERIA,

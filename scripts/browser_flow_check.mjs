@@ -199,7 +199,7 @@ async function assertLessonLockedRecognition(page, baseUrl) {
   await select.selectOption({ index: 0 });
   const firstValue = await page.locator(".lessonlock select option").first().getAttribute("value");
   const lessonSummaryById = async (lessonId) => await page.evaluate((lessonId) => {
-    const { items = [], cloze_cards = [], dictation_cards = [], stress_cards = [], pronunciation_cards = [], backtranslation_cards = [], contrast_cards = [], scenarios = [] } = window.CONTENT_DATA;
+    const { items = [], cloze_cards = [], dictation_cards = [], stress_cards = [], pronunciation_cards = [], backtranslation_cards = [], contrast_cards = [], verb_drill_cards = [], scenarios = [] } = window.CONTENT_DATA;
     const { lessons = [] } = window.CONTENT_DATA.curriculum || {};
     const target = lessons.find((lesson) => lesson.lesson_id === lessonId);
     const lessonNumber = target ? target.lesson_number : (lessons[0] || {}).lesson_number || 1;
@@ -225,6 +225,7 @@ async function assertLessonLockedRecognition(page, baseUrl) {
       pronounce: pronunciation_cards.filter(hasLessonAccess).length,
       backtranslate: backtranslation_cards.filter(hasLessonAccess).length,
       contrast: contrast_cards.filter(hasLessonAccess).length,
+      conjugate: verb_drill_cards.filter(hasLessonAccess).length,
       totals: {
         cloze: cloze_cards.length,
         dictation: dictation_cards.length,
@@ -232,6 +233,7 @@ async function assertLessonLockedRecognition(page, baseUrl) {
         pronounce: pronunciation_cards.length,
         backtranslate: backtranslation_cards.length,
         contrast: contrast_cards.length,
+        conjugate: verb_drill_cards.length,
       },
     };
   }, lessonId);
@@ -261,6 +263,9 @@ async function assertLessonLockedRecognition(page, baseUrl) {
   }
   if (!metaText.includes(`${expected.contrast}/${expected.totals.contrast} contrast`)) {
     throw new Error(`Lesson lock meta mismatch: contrast unlocked expected ${expected.contrast}/${expected.totals.contrast}`);
+  }
+  if (!metaText.includes(`${expected.conjugate}/${expected.totals.conjugate} conjugation`)) {
+    throw new Error(`Lesson lock meta mismatch: conjugation unlocked expected ${expected.conjugate}/${expected.totals.conjugate}`);
   }
   const optionCount = await page.locator(".lessonlock select option").count();
   if (optionCount > 1) {
@@ -305,7 +310,7 @@ async function assertLessonLockedRecognition(page, baseUrl) {
   if (prompted.lessonNumber > expected.lessonNumber) {
     throw new Error(`Lesson lock violated: ${prompted.id} is lesson ${prompted.lessonNumber}, expected <= ${expected.lessonNumber}`);
   }
-  for (const stageKey of ["recognition", "recall", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"]) {
+  for (const stageKey of ["recognition", "recall", "conjugate", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"]) {
     const available = expected[stageKey];
     if (!available) {
       continue;
@@ -333,6 +338,7 @@ async function assertLessonLockedRecognition(page, baseUrl) {
         pronounce: DATA.pronunciation_cards || [],
         backtranslate: DATA.backtranslation_cards || [],
         contrast: DATA.contrast_cards || [],
+        conjugate: DATA.verb_drill_cards || [],
       };
       if (sourceCardByStage[stage]) {
         const card = sourceCardByStage[stage].find((c) => c.id === itemId);
@@ -979,6 +985,14 @@ export async function runFlowCheck(opts) {
       await page.locator(".opt").first().click();
     });
     completed.push("recall");
+
+    await checkStage(page, opts.url, "conjugate", async () => {
+      await page.locator("#conjIn").fill("x");
+      await page.getByRole("button", { name: /^Check$/i }).click();
+      await checkRepairFocus(page);
+      await checkRepairFocusState(page, "conjugate");
+    });
+    completed.push("conjugate");
 
     await checkStage(page, opts.url, "cloze", async () => {
       await page.locator("#clozeIn").fill("x");
