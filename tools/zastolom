@@ -21,6 +21,7 @@ COMMANDS
   verify                Run all health checks (JSON, JS syntax, audio coverage)
   test                  Run stdlib validation/unit tests
   loop-prompt           Print the local iterative improvement-loop prompt
+  source-loop           Print the source-sourcing loop prompt for reading/dictation/translation
   stats                 Print content statistics
   help                  Show this help
 
@@ -34,6 +35,7 @@ EXAMPLES
   tools/zastolom browser http://localhost:8000/web/#/quiz/roleplay --mobile --click-text "Reveal model answer" --click-text "Close with model"
   tools/zastolom flow http://localhost:8000/web/
   tools/zastolom verify
+  tools/zastolom source-loop
 
 ELEVENLABS KEY RESOLUTION (first hit wins)
   $ELEVENLABS_API_KEY  →  <repo>/.env  →  ~/Projects/ott_law_redesign/.env  →  ~/Projects/.env
@@ -343,6 +345,11 @@ def cmd_loop_prompt(args):
     with open(path, encoding="utf-8") as f:
         print(f.read())
 
+def cmd_source_loop(args):
+    path = os.path.join(ROOT, "prompts", "source-material-loop.md")
+    with open(path, encoding="utf-8") as f:
+        print(f.read())
+
 def cmd_stats(args):
     d = load_content()
     print(head(d["meta"]["title"]))
@@ -389,7 +396,11 @@ def main():
     fl = sub.add_parser("flow")
     fl.add_argument("url", nargs="?", default="http://localhost:8000/web/")
     fl.add_argument("--out")
-    sub.add_parser("verify"); sub.add_parser("test"); sub.add_parser("loop-prompt"); sub.add_parser("stats")
+    sub.add_parser("verify")
+    sub.add_parser("test")
+    sub.add_parser("loop-prompt")
+    sub.add_parser("source-loop")
+    sub.add_parser("stats")
     sub.add_parser("help")
 
     args = p.parse_args()
@@ -405,6 +416,7 @@ def main():
     elif args.cmd == "verify": cmd_verify(args)
     elif args.cmd == "test": cmd_test(args)
     elif args.cmd == "loop-prompt": cmd_loop_prompt(args)
+    elif args.cmd == "source-loop": cmd_source_loop(args)
     elif args.cmd == "stats": cmd_stats(args)
 
 if __name__ == "__main__":

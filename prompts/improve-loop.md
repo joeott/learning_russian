@@ -28,6 +28,10 @@ Operate in bounded iterations. In each iteration:
 11. Write a loop report with objective, changed files, screenshots, test output,
     residual risks, and the next best improvement.
 
+For source-scouting work (reading/dictation/translation material discovery),
+run `tools/zastolom source-loop` instead of this prompt and keep output in
+`source/candidate_materials.md`.
+
 Constraints:
 - Never free-generate new Russian content.
 - Do not edit generated files directly.

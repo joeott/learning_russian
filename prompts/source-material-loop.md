@@ -1,0 +1,70 @@
+# Russian Source-Material Loop (Reading → Dictation → Translation)
+
+## Goal
+
+Build a weekly loop that surfaces **easy, original Russian web content** and converts it
+into short reading/dictation/back-translation drills while preserving the lesson lock and
+offline-first constraints.
+
+### Default success criteria
+
+- Pull at least **2 new source texts per week**.
+- Each selected text should be:
+  - Cyrillic-based, preferably with built-in subtitles/transcripts,
+  - culturally safe and non-offensive for family-meal contexts,
+  - short enough for 30–90 seconds of focused practice,
+  - understandable with mostly unlocked lesson vocabulary plus 1 new lexical item.
+- Every retained source must include:
+  - a direct URL,
+  - a short `why_relevant` note,
+  - extraction level estimate,
+  - one recommended drill mapping: read → dictation → translate.
+
+## Loop (execute in bounded iterations)
+
+1. Use `tools/zastolom browser <url> --both` to open a candidate source page and inspect
+   readability on desktop and mobile.
+2. Extract 1–2 short candidate passages and copy the exact source text.
+3. For each passage, score:
+   - `lexical_density` (hard vs. known words),
+   - `speech_clarity` (clear narration / clean sentence pace),
+   - `register` (family-safe / formal / neutral),
+   - `origin` (`original` source, not translated subtitles).
+4. Reject anything with hidden paywall friction or unstable content that breaks loading.
+5. Save approved passages to `source/candidate_materials.md` under `## Week YYYY-MM-DD` with:
+   - URL + title
+   - why it is beginner-friendly
+   - planned drill type (`read`, `dictation`, `translate`, `shadow`)
+   - source status (`verified`, `needs_check`, `rehearse`)
+6. Create 2–4 deterministic drill seeds in local notes:
+   - one stress-targeted dictation prompt,
+   - one translation prompt,
+   - one cloze prompt,
+   - one contrast / role-use prompt.
+7. Validate any generated learner-facing text against lesson lock rules before adding to app content.
+8. Build artifacts only through `tools/zastolom build` and verify with:
+   - `tools/zastolom verify`
+   - `tools/zastolom test`
+   - `tools/zastolom flow`
+
+## Browser-controller target list
+
+Use these first, then expand by niche and source quality:
+
+- `https://russian.rt.com/` (news snippets, short posts)
+- `https://www.culture.ru/` (feature/interview summaries)
+- `https://gramota.ru/` (short official materials)
+- `https://www.russianpod101.com/welcome` (lesson transcripts)
+- `https://www.youtube.com` + playlist of slow Russian story channels
+
+Avoid:
+- paywalled full-text articles,
+- slang-heavy social media comments,
+- machine-translated or dub-heavy sources.
+
+## Deliverable
+
+At the end of each source loop, produce:
+- `source/candidate_materials.md` updated with 2–4 approved entries,
+- a short log in `tmp/source-loop-latest.json` with scores and acceptance decisions.
+

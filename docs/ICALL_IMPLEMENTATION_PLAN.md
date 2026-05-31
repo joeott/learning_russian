@@ -40,6 +40,7 @@ merge.
 11. Richer Anki export with sibling control for production, listening, scenario,
     and contrast cards.
 12. Course templates for reusable scenario-driven language courses.
+13. Source loop for original Russian reading/dictation material discovery under lesson lock.
 
 ## Validation Standard
 
@@ -80,6 +81,8 @@ error-repair paths.
 
 - add more high-variability listening variants beyond the current deterministic
   room-noise transformation,
+- add a recurring source loop: `tools/zastolom source-loop` + `source/candidate_materials.md`
+  entries that pass lesson-lock approval for dictation/back-translation content,
 - expand readiness analytics with richer trend charts and better stage-specific
   failure summaries,
 - keep any future ASR or LLM evaluation behind adapters that validate against

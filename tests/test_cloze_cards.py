@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -33,6 +34,40 @@ class ClozeCardTests(unittest.TestCase):
         ]
         self.assertGreaterEqual(len(lesson_one), 8)
         self.assertEqual({card["module"] for card in lesson_one}, {"first_contact"})
+
+    def test_cloze_cards_include_stress_variant_when_available(self) -> None:
+        strip = lambda value: value.replace("\u0301", "")
+        cards_with_accent = 0
+        cards_checked = 0
+        for card in self.content["cloze_cards"]:
+            source = next(
+                item for item in self.content["items"] if item["id"] == card["item_id"]
+            )
+            self.assertTrue(
+                card.get("accepted_answers"), f"{card['id']} missing accepted_answers"
+            )
+            source_tokens = re.findall(r"[А-Яа-яЁё́]+", source["ru"])
+            source_token = next(
+                (
+                    token
+                    for token in source_tokens
+                    if strip(token) == strip(card["answer"])
+                ),
+                "",
+            )
+            if source_token:
+                cards_checked += 1
+            if "́" in source["ru"]:
+                if "́" in source_token:
+                    self.assertGreaterEqual(
+                        len(set(card["accepted_answers"])),
+                        2,
+                        f"{card['id']} expected >1 accepted answers when answer token is stressed in source",
+                    )
+                self.assertIn(card["answer"], card["accepted_answers"])
+                cards_with_accent += 1
+        self.assertGreater(cards_with_accent, 0)
+        self.assertGreater(cards_checked, 0)
 
 
 if __name__ == "__main__":

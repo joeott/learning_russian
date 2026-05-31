@@ -379,6 +379,69 @@ async function assertDictationAcceptedResponse(page, baseUrl) {
   }
 }
 
+async function assertClozeAcceptedResponse(page, baseUrl) {
+  await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
+  await page.waitForTimeout(120);
+  await page.goto(withHash(baseUrl, "#/quiz/cloze"), { waitUntil: "networkidle" });
+  await page.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 5000 });
+
+  const clozeCard = await page.locator(".quiz").evaluate((el) => ({
+    itemId: el.dataset.itemId,
+  }));
+  if (!clozeCard.itemId) {
+    throw new Error("Cloze card missing item id for accepted-answer verification");
+  }
+
+  const cardData = await page.evaluate((itemId) => {
+    const card = (window.CONTENT_DATA.cloze_cards || []).find((c) => c.id === itemId);
+    if (!card) return null;
+    const accepted = (card.accepted_answers && card.accepted_answers[0]) || card.answer;
+    return {
+      itemId: card.id,
+      accepted,
+      prompt: card.prompt_ru || "",
+    };
+  }, clozeCard.itemId);
+  if (!cardData || !cardData.accepted) {
+    throw new Error(`Cloze accepted-answer metadata missing for ${clozeCard.itemId}`);
+  }
+  if (!cardData.prompt.includes("____")) {
+    throw new Error(`Cloze prompt missing blank for ${cardData.itemId}`);
+  }
+
+  const before = await stageStateFor(page, cardData.itemId, "cloze");
+  await page.locator("#clozeIn").fill(cardData.accepted);
+  await page.getByRole("button", { name: /^Check$/i }).click();
+  await page.waitForTimeout(250);
+
+  if (await page.locator("#clozeIn").count()) {
+    const nextBtn = page.getByRole("button", { name: /^Next/i });
+    if (await nextBtn.count()) {
+      await nextBtn.first().click();
+      await page.waitForTimeout(150);
+      await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
+      await page.waitForTimeout(120);
+      await page.goto(withHash(baseUrl, "#/quiz/cloze"), { waitUntil: "networkidle" });
+      await page.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 5000 });
+      const retriedCard = await page.locator(".quiz").evaluate((el) => el.dataset.itemId);
+      if (retriedCard === cardData.itemId) {
+        await page.locator("#clozeIn").fill(cardData.accepted);
+        await page.getByRole("button", { name: /^Check$/i }).click();
+        await page.waitForTimeout(250);
+      }
+    }
+  }
+
+  const after = await stageStateFor(page, cardData.itemId, "cloze");
+  if (after.correct <= before.correct) {
+    throw new Error(`Cloze accepted response did not increase correct count for ${cardData.itemId}: ${before.correct} -> ${after.correct}`);
+  }
+  const nextBtn = page.getByRole("button", { name: /^Next/i });
+  if (await nextBtn.count()) {
+    await nextBtn.first().click();
+  }
+}
+
 async function assertBacktranslateAcceptedResponse(page, baseUrl) {
   await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
   await page.waitForTimeout(120);
@@ -680,6 +743,8 @@ export async function runFlowCheck(opts) {
       await checkRepairFocusState(page, "cloze");
     });
     completed.push("cloze");
+    await assertClozeAcceptedResponse(page, opts.url);
+    completed.push("cloze-accepted");
 
     await checkStage(page, opts.url, "dictation", async () => {
       await page.locator("#dictIn").fill("x");
