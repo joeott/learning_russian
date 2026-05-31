@@ -37,6 +37,7 @@ class BrowserFlowContractTests(unittest.TestCase):
             "stageSeen",
             "roleplayCriteriaMissed",
             "AVG RESPONSE TIME",
+            "repair focus:",
             'serviceWorkers: "block"',
         ):
             self.assertIn(token, self.flow)

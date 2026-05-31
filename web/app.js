@@ -1062,15 +1062,33 @@
     if (!ids.length) ids = ["forgot_phrase"];
     return `<div class="errorpick"><span>What failed?</span>${ids.map(id => `<button class="chip" onclick="ZS.markError('${it.id}','${quiz.stageKey}','${id}')">${escapeHtml((ERROR_BY_ID[id] && ERROR_BY_ID[id].label) || id)}</button>`).join("")}</div>`;
   }
-  function showFeedback(ok, it, extra) {
+  function inferredErrorType(it, stageKey) {
+    const allowed = new Set(it && (it.allowed_error_types || it.error_types || []));
+    if (stageKey === "dictation" || stageKey === "listen") return "listening_misparse";
+    if (stageKey === "stress" || stageKey === "pronounce") return "stress";
+    if (stageKey === "contrast") return "cultural_usage";
+    if (stageKey === "cloze" && allowed.has("case_or_inflection")) return "case_or_inflection";
+    if (stageKey === "backtranslate" && allowed.has("word_order")) return "word_order";
+    if (stageKey === "produce" && allowed.has("gendered_form")) return "gendered_form";
+    if (stageKey === "produce" && allowed.has("case_or_inflection")) return "case_or_inflection";
+    return "forgot_phrase";
+  }
+  function repairFocusHtml(errorType) {
+    const e = ERROR_BY_ID[errorType] || ERROR_BY_ID.forgot_phrase;
+    if (!e) return "";
+    return `<div class="repairfocus"><strong>Repair focus: ${escapeHtml(e.label)}</strong><span>${escapeHtml(e.repair)}</span></div>`;
+  }
+  function showFeedback(ok, it, extra, errorType) {
     quiz.answered = true;
     if (ok) quiz.correct++;
+    const repair = ok ? "" : repairFocusHtml(errorType || inferredErrorType(it, quiz.stageKey));
     $("#qfeedback").innerHTML = `<div class="feedback ${ok ? "good" : "bad"} rise">
         <div style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem">${ok ? "✓ Correct" : "✗ Not quite"}</div>
         <div class="fb-ru">${colorStress(it.ru)}</div>
         <div style="font-style:italic;font-family:var(--font-serif)">${escapeHtml(it.en)}</div>
         ${it.hint ? `<div class="card__hint">🔈 ${escapeHtml(it.hint)}</div>` : ""}
         ${extra || ""}
+        ${repair}
         ${ok ? "" : errorButtons(it)}
         <div style="margin-top:12px"><button class="iconbtn iconbtn--play" onclick="ZS.sayItem('${it.id}')">▶</button>
           <button class="btn" style="margin-left:8px" onclick="ZS.nextQ()">Next →</button></div>
@@ -1240,19 +1258,21 @@
       }
       const listenAssistance = quiz.stageKey === "listen" ? (quiz.listenAssistance || ladderAssistance(quiz.listenStep || "no_text")) : 0;
       const assisted = ok && quiz.stageKey === "listen" && listenAssistance > 0;
-      gradeItem(correctId, ok, quiz.stageKey, ok ? null : "listening_misparse", {
+      const errorType = ok ? null : inferredErrorType(it, quiz.stageKey);
+      gradeItem(correctId, ok, quiz.stageKey, errorType, {
         assisted,
         listen_ladder: quiz.stageKey === "listen" ? { step: quiz.listenStep || "no_text", assistance: listenAssistance } : null,
       });
-      showFeedback(ok, it, assisted ? `<div class="card__hint">Listening ladder assistance (${escapeHtml(ladderLabel(quiz.listenStep || "no_text"))}): scheduled as a hard review.</div>` : "");
+      showFeedback(ok, it, assisted ? `<div class="card__hint">Listening ladder assistance (${escapeHtml(ladderLabel(quiz.listenStep || "no_text"))}): scheduled as a hard review.</div>` : "", errorType);
     },
     checkProd(id) {
       if (quiz.answered) return;
       const it = practiceItem(id);
       const val = $("#prodIn") ? $("#prodIn").value : "";
       const ok = normalize(val) === normalize(it.ru);
-      gradeItem(id, ok, quiz.stageKey);
-      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em></div>`);
+      const errorType = ok ? null : inferredErrorType(it, quiz.stageKey);
+      gradeItem(id, ok, quiz.stageKey, errorType);
+      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em></div>`, errorType);
     },
     checkCloze(id) {
       if (quiz.answered) return;
@@ -1260,8 +1280,9 @@
       const val = $("#clozeIn") ? $("#clozeIn").value : "";
       const accepted = it.accepted_answers || [it.answer];
       const ok = accepted.some(answer => normalize(val) === normalize(answer));
-      gradeItem(id, ok, quiz.stageKey);
-      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; answer: <strong>${escapeHtml(it.answer)}</strong></div>`);
+      const errorType = ok ? null : inferredErrorType(it, quiz.stageKey);
+      gradeItem(id, ok, quiz.stageKey, errorType);
+      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; answer: <strong>${escapeHtml(it.answer)}</strong></div>`, errorType);
     },
     checkDictation(id) {
       if (quiz.answered) return;
@@ -1269,8 +1290,9 @@
       const val = $("#dictIn") ? $("#dictIn").value : "";
       const accepted = it.accepted_answers || [it.ru_plain];
       const ok = accepted.some(answer => normalize(val) === normalize(answer));
-      gradeItem(id, ok, quiz.stageKey, ok ? null : "listening_misparse");
-      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`);
+      const errorType = ok ? null : "listening_misparse";
+      gradeItem(id, ok, quiz.stageKey, errorType);
+      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`, errorType);
     },
     checkStress(id, chosen, btn) {
       if (quiz.answered) return;
@@ -1283,8 +1305,9 @@
         const right = buttons.find(o => normalize(o.textContent) === normalize(it.answer));
         if (right) right.classList.add("correct");
       }
-      gradeItem(id, ok, quiz.stageKey, ok ? null : "stress");
-      showFeedback(ok, it, ok ? `<div class="card__hint">Stress locked: <strong>${colorStress(it.answer)}</strong></div>` : `<div class="card__hint">Correct stress: <strong>${colorStress(it.answer)}</strong></div>`);
+      const errorType = ok ? null : "stress";
+      gradeItem(id, ok, quiz.stageKey, errorType);
+      showFeedback(ok, it, ok ? `<div class="card__hint">Stress locked: <strong>${colorStress(it.answer)}</strong></div>` : `<div class="card__hint">Correct stress: <strong>${colorStress(it.answer)}</strong></div>`, errorType);
     },
     async startPronunciation(id) {
       if (quiz.answered) return;
@@ -1344,8 +1367,9 @@
     ratePronunciation(id, ok, assisted, errorType) {
       if (quiz.answered) return;
       const it = practiceItem(id);
-      gradeItem(id, ok, quiz.stageKey, ok ? null : (errorType || "stress"), { assisted });
-      showFeedback(ok, it, assisted ? `<div class="card__hint">Used the model during comparison: scheduled as a hard pronunciation review.</div>` : `<div class="card__hint">Target: compare stress placement and unstressed vowel reduction against the native audio.</div>`);
+      const inferred = ok ? null : (errorType || "stress");
+      gradeItem(id, ok, quiz.stageKey, inferred, { assisted });
+      showFeedback(ok, it, assisted ? `<div class="card__hint">Used the model during comparison: scheduled as a hard pronunciation review.</div>` : `<div class="card__hint">Target: compare stress placement and unstressed vowel reduction against the native audio.</div>`, inferred);
     },
     startBack(id) {
       if (quiz.answered) return;
@@ -1366,8 +1390,9 @@
       const val = $("#btRu") ? $("#btRu").value : "";
       const accepted = it.accepted_answers || [it.ru_plain];
       const ok = accepted.some(answer => normalize(val) === normalize(answer));
-      gradeItem(id, ok, quiz.stageKey, ok ? null : "forgot_phrase");
-      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`);
+      const errorType = ok ? null : inferredErrorType(it, quiz.stageKey);
+      gradeItem(id, ok, quiz.stageKey, errorType);
+      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`, errorType);
     },
     checkContrast(id, chosenId, btn) {
       if (quiz.answered) return;
@@ -1380,10 +1405,11 @@
         const right = buttons.find(o => normalize(o.textContent).includes(normalize(it.ru_plain)));
         if (right) right.classList.add("correct");
       }
-      gradeItem(id, ok, quiz.stageKey, ok ? null : "cultural_usage");
-      showFeedback(ok, it, `<div class="card__hint">${escapeHtml(it.usage_note || "")}</div>`);
+      const errorType = ok ? null : "cultural_usage";
+      gradeItem(id, ok, quiz.stageKey, errorType);
+      showFeedback(ok, it, `<div class="card__hint">${escapeHtml(it.usage_note || "")}</div>`, errorType);
     },
-    giveUp(id) { const it = practiceItem(id); gradeItem(id, false, quiz.stageKey); showFeedback(false, it); },
+    giveUp(id) { const it = practiceItem(id); const errorType = inferredErrorType(it, quiz.stageKey); gradeItem(id, false, quiz.stageKey, errorType); showFeedback(false, it, "", errorType); },
     listenHint(id) {
       if (!quiz || quiz.stageKey !== "listen") return;
       const it = practiceItem(id);

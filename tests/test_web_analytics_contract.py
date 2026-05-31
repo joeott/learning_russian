@@ -58,6 +58,18 @@ class WebAnalyticsContractTests(unittest.TestCase):
             self.assertIn(token, self.app)
         self.assertIn("Math.min(300000", self.app)
 
+    def test_wrong_answers_show_targeted_repair_focus(self) -> None:
+        for token in (
+            "inferredErrorType",
+            "repairFocusHtml",
+            "Repair focus:",
+            "ERROR_BY_ID",
+            "case_or_inflection",
+            "gendered_form",
+            "listening_misparse",
+        ):
+            self.assertIn(token, self.app)
+
     def test_roleplay_failure_signals_surface_repair_drills(self) -> None:
         for token in (
             "roleplayFailureSignals",
