@@ -197,6 +197,62 @@ ROLEPLAY_CRITERIA = {
         "label": "mentions host or food naturally",
         "error_type": "forgot_phrase",
     },
+    "uses_time_greeting": {
+        "label": "uses time-of-day greeting",
+        "error_type": "forgot_phrase",
+    },
+    "uses_social_exit": {
+        "label": "uses social exit phrase",
+        "error_type": "forgot_phrase",
+    },
+    "uses_polite_basics": {
+        "label": "uses polite micro-dialogue basics",
+        "error_type": "register",
+    },
+    "uses_quick_responses": {
+        "label": "uses quick response phrases",
+        "error_type": "forgot_phrase",
+    },
+    "uses_positive_ack": {
+        "label": "acknowledges politely",
+        "error_type": "forgot_phrase",
+    },
+    "uses_safe_toast_formula": {
+        "label": "chooses safe toast formula",
+        "error_type": "cultural_usage",
+    },
+    "uses_toast_context": {
+        "label": "uses toast in context",
+        "error_type": "cultural_usage",
+    },
+    "uses_family_terms": {
+        "label": "uses family terms correctly",
+        "error_type": "register",
+    },
+    "uses_respectful_reference": {
+        "label": "uses respectful forms for elders",
+        "error_type": "register",
+    },
+    "requests_or_declines_polite": {
+        "label": "requests or declines politely",
+        "error_type": "register",
+    },
+    "passes_dishes": {
+        "label": "passes food request phrases",
+        "error_type": "forgot_phrase",
+    },
+    "appreciates_food": {
+        "label": "appreciates food naturally",
+        "error_type": "forgot_phrase",
+    },
+    "produces_present_forms": {
+        "label": "produces present-tense forms",
+        "error_type": "case_or_inflection",
+    },
+    "answers_personalized_questions": {
+        "label": "answers profile questions from prompts",
+        "error_type": "forgot_phrase",
+    },
 }
 
 CONTRAST_SETS = [
@@ -227,6 +283,141 @@ CONTRAST_SETS = [
 ]
 
 SCENARIOS = [
+    {
+        "id": "greeting_daypart_and_farewell",
+        "setting": "Greetings and farewells",
+        "goal": "Use polite Russian greetings and closings in social flow.",
+        "required_items": [
+            "firs002",
+            "firs003",
+            "firs004",
+            "firs009",
+            "firs012",
+            "firs013",
+            "poli003",
+        ],
+        "success_criteria": [
+            "uses_formal_greeting",
+            "uses_time_greeting",
+            "uses_social_exit",
+        ],
+    },
+    {
+        "id": "politeness_baseline",
+        "setting": "Politeness baseline",
+        "goal": "Keep every request/response in a safe polite register.",
+        "required_items": [
+            "poli001",
+            "poli002",
+            "poli003",
+            "poli006",
+            "poli007",
+            "poli008",
+            "poli013",
+            "poli014",
+            "poli015",
+            "poli016",
+        ],
+        "success_criteria": [
+            "uses_polite_basics",
+            "uses_quick_responses",
+            "uses_positive_ack",
+        ],
+    },
+    {
+        "id": "toast_repertoire_recall",
+        "setting": "Toast repertoire recall",
+        "goal": "Choose a safe toast quickly for different table moments.",
+        "required_items": [
+            "toas001",
+            "toas002",
+            "toas003",
+            "toas004",
+            "toas005",
+            "toas006",
+            "toas007",
+            "toas008",
+            "toas009",
+            "toas010",
+            "toas011",
+            "toas012",
+            "toas013",
+        ],
+        "success_criteria": [
+            "uses_safe_toast_formula",
+            "uses_toast_context",
+            "avoids_na_zdorovie_misfire",
+        ],
+    },
+    {
+        "id": "family_context_practice",
+        "setting": "Family context practice",
+        "goal": "Identify family relations and respond naturally during introductions.",
+        "required_items": [
+            "fami004",
+            "fami005",
+            "fami006",
+            "fami007",
+            "fami008",
+            "fami010",
+            "fami011",
+            "fami019",
+        ],
+        "success_criteria": [
+            "uses_family_terms",
+            "uses_respectful_reference",
+            "stays_in_russian",
+        ],
+    },
+    {
+        "id": "dinner_navigation",
+        "setting": "Dinner navigation",
+        "goal": "Request, decline, and appreciate food while sounding natural at table pace.",
+        "required_items": [
+            "food001",
+            "food002",
+            "food003",
+            "food004",
+            "food005",
+            "food007",
+            "food008",
+            "food009",
+            "food010",
+            "food011",
+            "food012",
+            "food013",
+            "food014",
+            "food015",
+            "food016",
+        ],
+        "success_criteria": [
+            "requests_or_declines_polite",
+            "passes_dishes",
+            "appreciates_food",
+        ],
+    },
+    {
+        "id": "verb_fluency_check",
+        "setting": "Core verb fluency",
+        "goal": "Produce core verbs under real interview-style pressure.",
+        "required_items": [
+            "verb001",
+            "verb002",
+            "verb003",
+            "verb004",
+            "verb005",
+            "verb006",
+            "verb007",
+            "verb008",
+            "verb009",
+            "verb010",
+        ],
+        "success_criteria": [
+            "produces_present_forms",
+            "answers_personalized_questions",
+            "uses_formal_greeting",
+        ],
+    },
     {
         "id": "doorway_greeting",
         "setting": "Doorway",
