@@ -11,7 +11,10 @@
   const MISSION = COURSE.mission || {};
   const ITEMS = DATA.items;
   const MODULES = DATA.modules;
+  const CURRICULUM = DATA.curriculum || {};
+  const LESSONS = (CURRICULUM.lessons || []).slice().sort((a, b) => a.lesson_number - b.lesson_number);
   const MOD_BY_ID = Object.fromEntries(MODULES.map(m => [m.id, m]));
+  const LESSON_BY_ID = Object.fromEntries(LESSONS.map(l => [l.lesson_id, l]));
   const TARGET = MISSION.target_date ? new Date(MISSION.target_date + "T00:00:00") : new Date(2026, 5, 15);
   const ERROR_TYPES = DATA.error_types || [];
   const ERROR_BY_ID = Object.fromEntries(ERROR_TYPES.map(e => [e.id, e]));
@@ -38,7 +41,9 @@
   /* ---------- persistence ---------- */
   const KEY = COURSE.storage_namespace || "zastolom.russian_family_visit.v2";
   const LEGACY_KEY = "zastolom.v1";
+  const LESSON_KEY = KEY + ".lesson_boundary";
   let store = load();
+  let activeLessonId = loadLessonBoundary();
   function load() {
     try {
       const current = JSON.parse(localStorage.getItem(KEY)) || {};
@@ -55,6 +60,14 @@
     catch (e) { return {}; }
   }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) {} }
+  function loadLessonBoundary() {
+    try {
+      const saved = localStorage.getItem(LESSON_KEY);
+      if (saved && LESSON_BY_ID[saved]) return saved;
+    } catch (e) {}
+    return CURRICULUM.default_lesson_id || (LESSONS.length ? LESSONS[LESSONS.length - 1].lesson_id : "");
+  }
+  function saveLessonBoundary() { try { localStorage.setItem(LESSON_KEY, activeLessonId); } catch (e) {} }
   function emptyRec() { return { seen: 0, correct: 0, known: false, stages: {}, errors: {}, last_seen_at: "" }; }
   function migrateRec(value) {
     const r = Object.assign(emptyRec(), value || {});
@@ -181,13 +194,35 @@
   }
 
   function moduleProgress(modId) {
-    const items = ITEMS.filter(i => i.module === modId);
+    const items = unlockedItems(ITEMS.filter(i => i.module === modId));
     const done = items.filter(i => { const r = store[i.id]; return r && (r.known || (r.stages && Object.keys(r.stages).length)); }).length;
     return { done, total: items.length, pct: items.length ? Math.round((done / items.length) * 100) : 0 };
   }
   function overallProgress() {
-    const done = ITEMS.filter(i => { const r = store[i.id]; return r && (r.known || (r.stages && Object.keys(r.stages).length)); }).length;
-    return { done, total: ITEMS.length, pct: ITEMS.length ? Math.round((done / ITEMS.length) * 100) : 0 };
+    const items = unlockedItems(ITEMS);
+    const done = items.filter(i => { const r = store[i.id]; return r && (r.known || (r.stages && Object.keys(r.stages).length)); }).length;
+    return { done, total: items.length, pct: items.length ? Math.round((done / items.length) * 100) : 0 };
+  }
+  function activeLesson() {
+    return LESSON_BY_ID[activeLessonId] || LESSONS[LESSONS.length - 1] || { lesson_number: 99, title: "All lessons" };
+  }
+  function unlockedItems(items) {
+    const n = activeLesson().lesson_number || 99;
+    return items.filter(i => !i.lesson_number || i.lesson_number <= n);
+  }
+  function lessonLockHtml() {
+    if (!LESSONS.length) return "";
+    const lesson = activeLesson();
+    const count = unlockedItems(ITEMS).length;
+    const options = LESSONS.map(l => `<option value="${escapeHtml(l.lesson_id)}" ${l.lesson_id === lesson.lesson_id ? "selected" : ""}>${String(l.lesson_number).padStart(2, "0")} · ${escapeHtml(l.title)}</option>`).join("");
+    return `<div class="lessonlock rise">
+      <div>
+        <h3>Curriculum lock</h3>
+        <p>Practice is constrained to Lesson ${lesson.lesson_number}: ${escapeHtml(lesson.title)} and everything before it.</p>
+      </div>
+      <label><span>Unlocked through</span><select onchange="ZS.setLesson(this.value)">${options}</select></label>
+      <div class="lessonlock__meta">${count}/${ITEMS.length} phrases unlocked · ${(lesson.introduced_structures || []).length} structures in this lesson</div>
+    </div>`;
   }
 
   /* ---------- text-to-speech ---------- */
@@ -304,7 +339,7 @@
      ==================================================================== */
   let learnState = { module: "all", priority: 0, idx: 0, list: [], hideEn: false };
   function buildLearnList() {
-    let list = ITEMS.slice();
+    let list = unlockedItems(ITEMS);
     if (learnState.module !== "all") list = list.filter(i => i.module === learnState.module);
     if (learnState.priority) list = list.filter(i => i.priority === learnState.priority);
     list.sort((a, b) => a.priority - b.priority);
@@ -321,6 +356,7 @@
     view.innerHTML = `
       <div class="section-head"><span class="section-head__num">02</span><span class="section-head__title">Learn</span>
         <span class="section-head__sub">Hear it, say it aloud, then flip for the meaning. Mark what's stuck.</span></div>
+      ${lessonLockHtml()}
       <div class="learnbar learnbar--scroll">${modChips}</div>
       <div class="learnbar learnbar--tools">${priChips}<span class="spacer"></span>
         <button class="chip ${learnState.hideEn ? "is-on" : ""}" onclick="ZS.toggleEn()">🙈 Hide English</button></div>
@@ -366,13 +402,14 @@
     { n: 5, key: "roleplay", title: "Role-play", desc: "A table prompt → say it, then self-rate.", instr: "Say it out loud" },
   ];
   function stagePool(stageKey) {
-    if (stageKey === "listen") return ITEMS.filter(i => i.syllables >= 1);
+    const items = unlockedItems(ITEMS);
+    if (stageKey === "listen") return items.filter(i => i.syllables >= 1);
     if (stageKey === "roleplay" && SCENARIOS.length) {
       const scenarioIds = new Set(SCENARIOS.flatMap(s => s.required_items || []));
-      return ITEMS.filter(i => scenarioIds.has(i.id));
+      return items.filter(i => scenarioIds.has(i.id));
     }
-    if (stageKey === "roleplay") return ITEMS.filter(i => i.priority <= 2 && (i.ru_plain.includes(" ") || i.tags.includes("toast")));
-    return ITEMS;
+    if (stageKey === "roleplay") return items.filter(i => i.priority <= 2 && (i.ru_plain.includes(" ") || i.tags.includes("toast")));
+    return items;
   }
   function stageProgress(stageKey) {
     const pool = stagePool(stageKey);
@@ -408,6 +445,7 @@
     view.innerHTML = `
       <div class="section-head"><span class="section-head__num">03</span><span class="section-head__title">Drill</span>
         <span class="section-head__sub">Graduated difficulty: recognise → recall → produce → listen → role-play. Retrieval practice beats re-reading.</span></div>
+      ${lessonLockHtml()}
       <div class="mastery rise">${masteryRings()}</div>
       <div class="callout">Each round is 10 questions: due reviews first, fragile high-priority phrases next, new cards only after the review load is under control.</div>
       <div class="stagegrid">${cards}</div>`;
@@ -437,16 +475,17 @@
     const it = quiz.q[quiz.i];
     quiz.answered = false;
     if (stage.key === "listen") quiz.listenHintLevel = quiz.listenHintLevel || 0;
+    const optionPool = stagePool(stage.key);
     const dots = quiz.q.map((_, k) => `<span class="${k < quiz.i ? "done" : k === quiz.i ? "cur" : ""}"></span>`).join("");
     let promptHtml = "", body = "";
 
     if (stage.key === "recognition") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru">${colorStress(it.ru)}</div>`;
-      const opts = shuffle([it].concat(sample(ITEMS, 3, it)));
+      const opts = shuffle([it].concat(sample(optionPool, 3, it)));
       body = `<div class="options">${opts.map(o => `<button class="opt" onclick="ZS.answer('${o.id}','${it.id}',this)">${escapeHtml(o.en)}</button>`).join("")}</div>`;
     } else if (stage.key === "recall") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-en">${escapeHtml(it.en)}</div>`;
-      const opts = shuffle([it].concat(sample(ITEMS, 3, it)));
+      const opts = shuffle([it].concat(sample(optionPool, 3, it)));
       body = `<div class="options">${opts.map(o => `<button class="opt" onclick="ZS.answer('${o.id}','${it.id}',this)">${colorStress(o.ru)}</button>`).join("")}</div>`;
     } else if (stage.key === "produce") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-en">${escapeHtml(it.en)}</div>`;
@@ -455,7 +494,7 @@
         <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>`;
     } else if (stage.key === "listen") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru" style="font-size:2.6rem">🔊</div><div id="listenHint">${listeningHintHtml(it)}</div>`;
-      const opts = shuffle([it].concat(sample(ITEMS, 3, it)));
+      const opts = shuffle([it].concat(sample(optionPool, 3, it)));
       body = `<div style="text-align:center;margin-bottom:14px"><button class="iconbtn iconbtn--play" onclick="ZS.sayItem('${it.id}')">▶</button></div>
         <div class="listenactions"><button id="listenHintBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.listenHint('${it.id}')">Show caption hint</button></div>
         <div class="options">${opts.map(o => `<button class="opt" onclick="ZS.answer('${o.id}','${it.id}',this)">${escapeHtml(o.en)}</button>`).join("")}</div>`;
@@ -647,6 +686,14 @@
   window.ZS = {
     setMod(m) { learnState.module = m; learnState.idx = 0; renderLearn(); },
     setPri(p) { learnState.priority = p; learnState.idx = 0; renderLearn(); },
+    setLesson(id) {
+      if (!LESSON_BY_ID[id]) return;
+      activeLessonId = id;
+      learnState.idx = 0;
+      quiz = null;
+      saveLessonBoundary();
+      router();
+    },
     toggleEn() { learnState.hideEn = !learnState.hideEn; renderLearn(); },
     next() { learnState.idx = (learnState.idx + 1) % learnState.list.length; renderCard(); },
     prev() { learnState.idx = (learnState.idx - 1 + learnState.list.length) % learnState.list.length; renderCard(); },

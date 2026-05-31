@@ -33,6 +33,9 @@ window.CONTENT_DATA = {
       "format": "mp3_44100_128",
       "preferred_voice": "ScaQ3utur72x93jqMMeU",
       "preferred_voice_name": "Elena (Warm, Calm & Clear)"
+    },
+    "curriculum": {
+      "default_lesson_id": "family_visit_008"
     }
   },
   "meta": {
@@ -53,6 +56,678 @@ window.CONTENT_DATA = {
       "verbs": 10
     },
     "total_items": 109
+  },
+  "curriculum": {
+    "model": "lesson_locked_i_plus_1",
+    "default_lesson_id": "family_visit_008",
+    "lessons": [
+      {
+        "lesson_id": "family_visit_001",
+        "lesson_number": 1,
+        "module": "first_contact",
+        "title": "First Contact",
+        "introduced_lexemes": [
+          "вечер",
+          "день",
+          "джо",
+          "до",
+          "до свидания",
+          "доброе",
+          "доброе утро",
+          "добрый",
+          "добрый вечер",
+          "добрый день",
+          "здравствуйте",
+          "зовут",
+          "меня",
+          "меня зовут джо",
+          "ночи",
+          "очень",
+          "очень приятно",
+          "познакомиться",
+          "представиться",
+          "пригласили",
+          "приняли",
+          "приятно",
+          "приятно познакомиться",
+          "рад",
+          "рад познакомиться",
+          "разрешите",
+          "разрешите представиться",
+          "свидания",
+          "спасибо",
+          "спасибо, что пригласили",
+          "спасибо, что приняли",
+          "спокойной",
+          "спокойной ночи",
+          "утро",
+          "что"
+        ],
+        "active_vocab": [
+          "вечер",
+          "день",
+          "джо",
+          "до",
+          "до свидания",
+          "доброе",
+          "доброе утро",
+          "добрый",
+          "добрый вечер",
+          "добрый день",
+          "здравствуйте",
+          "зовут",
+          "меня",
+          "меня зовут джо",
+          "ночи",
+          "очень",
+          "очень приятно",
+          "познакомиться",
+          "представиться",
+          "пригласили",
+          "приняли",
+          "приятно",
+          "приятно познакомиться",
+          "рад",
+          "рад познакомиться",
+          "разрешите",
+          "разрешите представиться",
+          "свидания",
+          "спасибо",
+          "спасибо, что пригласили",
+          "спасибо, что приняли",
+          "спокойной",
+          "спокойной ночи",
+          "утро",
+          "что"
+        ],
+        "passive_vocab": [],
+        "introduced_structures": [
+          "morphology:gendered_short_form",
+          "phrase:greeting",
+          "phrase:guest_gratitude",
+          "phrase:introduction",
+          "register:formal_you"
+        ],
+        "allowed_error_types": [
+          "gendered_form",
+          "register",
+          "stress"
+        ],
+        "prerequisites": []
+      },
+      {
+        "lesson_id": "family_visit_002",
+        "lesson_number": 2,
+        "module": "politeness",
+        "title": "Politeness & Repair",
+        "introduced_lexemes": [
+          "большое",
+          "да",
+          "ещё",
+          "извините",
+          "как",
+          "как по-русски …?",
+          "можно",
+          "не",
+          "нет",
+          "нет, спасибо",
+          "отлично",
+          "по",
+          "повторите",
+          "повторите, пожалуйста",
+          "пожалуйста",
+          "помедленнее",
+          "помедленнее, пожалуйста",
+          "понимаю",
+          "понятно",
+          "простите",
+          "русски",
+          "русский",
+          "спасибо",
+          "спасибо большое",
+          "учу",
+          "хорошо",
+          "я",
+          "я ещё учу русский",
+          "я не понимаю",
+          "я понимаю"
+        ],
+        "active_vocab": [
+          "большое",
+          "да",
+          "ещё",
+          "извините",
+          "как",
+          "как по-русски …?",
+          "можно",
+          "не",
+          "нет",
+          "нет, спасибо",
+          "отлично",
+          "по",
+          "повторите",
+          "повторите, пожалуйста",
+          "пожалуйста",
+          "помедленнее",
+          "помедленнее, пожалуйста",
+          "понимаю",
+          "понятно",
+          "простите",
+          "русски",
+          "русский",
+          "спасибо",
+          "спасибо большое",
+          "учу",
+          "хорошо",
+          "я",
+          "я ещё учу русский",
+          "я не понимаю",
+          "я понимаю"
+        ],
+        "passive_vocab": [],
+        "introduced_structures": [
+          "discourse:politeness",
+          "phrase:repair",
+          "phrase:yes_no",
+          "register:formal_you"
+        ],
+        "allowed_error_types": [
+          "cultural_usage",
+          "register",
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_001"
+        ]
+      },
+      {
+        "lesson_id": "family_visit_003",
+        "lesson_number": 3,
+        "module": "toasts",
+        "title": "Toasts",
+        "introduced_lexemes": [
+          "бокал",
+          "будем",
+          "будем здоровы!",
+          "ваше",
+          "встречу",
+          "выпьем",
+          "давайте",
+          "давайте выпьем за это!",
+          "дна",
+          "до",
+          "до дна",
+          "за",
+          "за ваше здоровье!",
+          "за встречу!",
+          "за здоровье!",
+          "за знакомство!",
+          "за любовь!",
+          "за молодых!",
+          "за родителей!",
+          "за семью!",
+          "за хозяев!",
+          "за хозяйку!",
+          "здоровы",
+          "здоровье",
+          "знакомство",
+          "любовь",
+          "молодых",
+          "родителей",
+          "рюмка",
+          "семью",
+          "сказать",
+          "тост",
+          "хозяев",
+          "хозяйку",
+          "хочу",
+          "это",
+          "я",
+          "я хочу сказать тост за …"
+        ],
+        "active_vocab": [
+          "бокал",
+          "будем",
+          "будем здоровы!",
+          "ваше",
+          "встречу",
+          "выпьем",
+          "давайте",
+          "давайте выпьем за это!",
+          "дна",
+          "до",
+          "до дна",
+          "за",
+          "за ваше здоровье!",
+          "за встречу!",
+          "за здоровье!",
+          "за знакомство!",
+          "за любовь!",
+          "за молодых!",
+          "за родителей!",
+          "за семью!",
+          "за хозяев!",
+          "за хозяйку!",
+          "здоровы",
+          "здоровье",
+          "знакомство",
+          "любовь",
+          "молодых",
+          "родителей",
+          "рюмка",
+          "семью",
+          "сказать",
+          "тост",
+          "хозяев",
+          "хозяйку",
+          "хочу",
+          "это",
+          "я",
+          "я хочу сказать тост за …"
+        ],
+        "passive_vocab": [],
+        "introduced_structures": [
+          "culture:toast_etiquette",
+          "phrase:table_toast",
+          "phrase:toast_za_accusative"
+        ],
+        "allowed_error_types": [
+          "cultural_usage",
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_002"
+        ]
+      },
+      {
+        "lesson_id": "family_visit_004",
+        "lesson_number": 4,
+        "module": "family",
+        "title": "Family & In-Laws",
+        "introduced_lexemes": [
+          "бабушка",
+          "брат",
+          "вашу",
+          "дедушка",
+          "дети",
+          "дочь",
+          "жена",
+          "жены",
+          "зять",
+          "люблю",
+          "мама",
+          "муж",
+          "папа",
+          "родители",
+          "семья",
+          "сестра",
+          "сестра жены",
+          "сын",
+          "тесть",
+          "тёща",
+          "шурин",
+          "я",
+          "я люблю вашу дочь"
+        ],
+        "active_vocab": [
+          "бабушка",
+          "брат",
+          "вашу",
+          "дедушка",
+          "дети",
+          "дочь",
+          "жена",
+          "жены",
+          "зять",
+          "люблю",
+          "мама",
+          "муж",
+          "папа",
+          "родители",
+          "семья",
+          "сестра",
+          "сестра жены",
+          "сын",
+          "тесть",
+          "тёща",
+          "шурин",
+          "я",
+          "я люблю вашу дочь"
+        ],
+        "passive_vocab": [],
+        "introduced_structures": [
+          "lexical:kinship_terms",
+          "phrase:family_affection",
+          "register:name_patronymic"
+        ],
+        "allowed_error_types": [
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_003"
+        ]
+      },
+      {
+        "lesson_id": "family_visit_005",
+        "lesson_number": 5,
+        "module": "food",
+        "title": "Food & Complimenting the Cook",
+        "introduced_lexemes": [
+          "аппетита",
+          "блины",
+          "борщ",
+          "было",
+          "вкусно",
+          "водка",
+          "ещё",
+          "мне",
+          "мне очень нравится",
+          "можно",
+          "можно ещё?",
+          "можно чаю?",
+          "надо",
+          "наелся",
+          "не",
+          "нравится",
+          "оливье",
+          "очень",
+          "очень вкусно!",
+          "пельмени",
+          "передайте",
+          "передайте, пожалуйста, хлеб",
+          "пожалуйста",
+          "приятного",
+          "приятного аппетита!",
+          "спасибо",
+          "спасибо, было очень вкусно",
+          "спасибо, не надо",
+          "хлеб",
+          "чай",
+          "чаю",
+          "я",
+          "я наелся"
+        ],
+        "active_vocab": [
+          "аппетита",
+          "было",
+          "вкусно",
+          "ещё",
+          "мне",
+          "мне очень нравится",
+          "можно",
+          "можно ещё?",
+          "можно чаю?",
+          "надо",
+          "наелся",
+          "не",
+          "нравится",
+          "очень",
+          "очень вкусно!",
+          "передайте",
+          "передайте, пожалуйста, хлеб",
+          "пожалуйста",
+          "приятного",
+          "приятного аппетита!",
+          "спасибо",
+          "спасибо, было очень вкусно",
+          "спасибо, не надо",
+          "хлеб",
+          "чаю",
+          "я",
+          "я наелся"
+        ],
+        "passive_vocab": [
+          "блины",
+          "борщ",
+          "водка",
+          "оливье",
+          "пельмени",
+          "чай"
+        ],
+        "introduced_structures": [
+          "morphology:gendered_short_form",
+          "phrase:compliment_food",
+          "phrase:food_offer",
+          "phrase:polite_decline",
+          "skill:listening_question_recognition"
+        ],
+        "allowed_error_types": [
+          "gendered_form",
+          "listening_misparse",
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_004"
+        ]
+      },
+      {
+        "lesson_id": "family_visit_006",
+        "lesson_number": 6,
+        "module": "smalltalk",
+        "title": "Small Talk About You",
+        "introduced_lexemes": [
+          "америке",
+          "америки",
+          "в",
+          "говорю",
+          "да",
+          "да, немного",
+          "живу",
+          "из",
+          "миссури",
+          "мы",
+          "мы познакомились …",
+          "немного",
+          "нормально",
+          "по",
+          "познакомились",
+          "русски",
+          "спасибо",
+          "хорошо",
+          "хорошо, спасибо",
+          "штата",
+          "юрист",
+          "я",
+          "я живу в америке",
+          "я из америки",
+          "я из штата миссури",
+          "я немного говорю по-русски",
+          "я юрист"
+        ],
+        "active_vocab": [
+          "америке",
+          "америки",
+          "в",
+          "говорю",
+          "да",
+          "да, немного",
+          "живу",
+          "из",
+          "миссури",
+          "мы",
+          "мы познакомились …",
+          "немного",
+          "нормально",
+          "по",
+          "познакомились",
+          "русски",
+          "спасибо",
+          "хорошо",
+          "хорошо, спасибо",
+          "штата",
+          "юрист",
+          "я",
+          "я живу в америке",
+          "я из америки",
+          "я из штата миссури",
+          "я немного говорю по-русски",
+          "я юрист"
+        ],
+        "passive_vocab": [],
+        "introduced_structures": [
+          "grammar:present_first_person",
+          "phrase:personal_origin",
+          "phrase:work_identity"
+        ],
+        "allowed_error_types": [
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_005"
+        ]
+      },
+      {
+        "lesson_id": "family_visit_007",
+        "lesson_number": 7,
+        "module": "listening",
+        "title": "Questions They'll Ask (Listening)",
+        "introduced_lexemes": [
+          "будете",
+          "будете …?",
+          "вам",
+          "вам нравится …?",
+          "вы",
+          "вы говорите по-русски?",
+          "говорите",
+          "дела",
+          "ещё",
+          "как",
+          "как вам россия?",
+          "как вы познакомились?",
+          "как дела?",
+          "кем",
+          "кем вы работаете?",
+          "нравится",
+          "откуда",
+          "откуда вы?",
+          "по",
+          "познакомились",
+          "работаете",
+          "россия",
+          "русски"
+        ],
+        "active_vocab": [],
+        "passive_vocab": [
+          "будете",
+          "будете …?",
+          "вам",
+          "вам нравится …?",
+          "вы",
+          "вы говорите по-русски?",
+          "говорите",
+          "дела",
+          "ещё",
+          "как",
+          "как вам россия?",
+          "как вы познакомились?",
+          "как дела?",
+          "кем",
+          "кем вы работаете?",
+          "нравится",
+          "откуда",
+          "откуда вы?",
+          "по",
+          "познакомились",
+          "работаете",
+          "россия",
+          "русски"
+        ],
+        "introduced_structures": [
+          "grammar:formal_question",
+          "phrase:host_question",
+          "skill:listening_question_recognition"
+        ],
+        "allowed_error_types": [
+          "listening_misparse",
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_006"
+        ]
+      },
+      {
+        "lesson_id": "family_visit_008",
+        "lesson_number": 8,
+        "module": "verbs",
+        "title": "Core Verbs (reactivation)",
+        "introduced_lexemes": [
+          "говорите",
+          "говорю",
+          "говорю / говорите",
+          "едите",
+          "ем",
+          "ем / едите",
+          "живу",
+          "живу / живёте",
+          "живёте",
+          "знаете",
+          "знаю",
+          "знаю / знаете",
+          "любите",
+          "люблю",
+          "люблю / любите",
+          "могу",
+          "могу / можете",
+          "можете",
+          "понимаете",
+          "понимаю",
+          "понимаю / понимаете",
+          "пью",
+          "пью / пьёте",
+          "пьёте",
+          "работаете",
+          "работаю",
+          "работаю / работаете",
+          "хотите",
+          "хочу",
+          "хочу / хотите"
+        ],
+        "active_vocab": [
+          "говорите",
+          "говорю",
+          "говорю / говорите",
+          "едите",
+          "ем",
+          "ем / едите",
+          "живу",
+          "живу / живёте",
+          "живёте",
+          "знаете",
+          "знаю",
+          "знаю / знаете",
+          "любите",
+          "люблю",
+          "люблю / любите",
+          "могу",
+          "могу / можете",
+          "можете",
+          "понимаете",
+          "понимаю",
+          "понимаю / понимаете",
+          "пью",
+          "пью / пьёте",
+          "пьёте",
+          "работаете",
+          "работаю",
+          "работаю / работаете",
+          "хотите",
+          "хочу",
+          "хочу / хотите"
+        ],
+        "passive_vocab": [],
+        "introduced_structures": [
+          "grammar:formal_second_person",
+          "grammar:present_first_person",
+          "lexical:core_verbs"
+        ],
+        "allowed_error_types": [
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_007"
+        ]
+      }
+    ]
   },
   "modules": [
     {
@@ -142,6 +817,19 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "здравствуйте"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -149,7 +837,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "firs002",
@@ -172,6 +863,21 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "вечер",
+        "добрый",
+        "добрый вечер"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -179,7 +885,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "firs003",
@@ -202,6 +911,21 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "день",
+        "добрый",
+        "добрый день"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -209,7 +933,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "firs004",
@@ -232,6 +959,21 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "доброе",
+        "доброе утро",
+        "утро"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -239,7 +981,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "firs005",
@@ -262,6 +1007,22 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "джо",
+        "зовут",
+        "меня",
+        "меня зовут джо"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -269,7 +1030,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "firs006",
@@ -292,6 +1056,21 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "очень",
+        "очень приятно",
+        "приятно"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -299,7 +1078,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "firs007",
@@ -322,6 +1104,21 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "познакомиться",
+        "приятно",
+        "приятно познакомиться"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -329,7 +1126,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "firs008",
@@ -353,6 +1153,23 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "gendered_form",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "познакомиться",
+        "рад",
+        "рад познакомиться"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -360,7 +1177,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "firs009",
@@ -383,6 +1203,21 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "представиться",
+        "разрешите",
+        "разрешите представиться"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -390,7 +1225,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "firs010",
@@ -414,6 +1252,22 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "пригласили",
+        "спасибо",
+        "спасибо, что пригласили",
+        "что"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -421,7 +1275,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "firs011",
@@ -442,6 +1299,22 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "приняли",
+        "спасибо",
+        "спасибо, что приняли",
+        "что"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -449,7 +1322,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "firs012",
@@ -472,6 +1348,21 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "до",
+        "до свидания",
+        "свидания"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -479,7 +1370,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "firs013",
@@ -502,6 +1396,21 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "ночи",
+        "спокойной",
+        "спокойной ночи"
+      ],
+      "structures": [
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:introduction",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -509,7 +1418,10 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1,
+      "prerequisites": []
     },
     {
       "id": "poli001",
@@ -531,6 +1443,20 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "спасибо"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -538,6 +1464,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -560,6 +1491,22 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "большое",
+        "спасибо",
+        "спасибо большое"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -567,6 +1514,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -589,6 +1541,20 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "пожалуйста"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -596,6 +1562,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -618,6 +1589,20 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "извините"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -625,6 +1610,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -647,6 +1637,20 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "простите"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -654,6 +1658,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -676,6 +1685,20 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "можно"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -683,6 +1706,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -705,6 +1733,20 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "да"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -712,6 +1754,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -734,6 +1781,22 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "нет",
+        "нет, спасибо",
+        "спасибо"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -741,6 +1804,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -765,6 +1833,24 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "ещё",
+        "русский",
+        "учу",
+        "я",
+        "я ещё учу русский"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -772,6 +1858,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -796,6 +1887,22 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "повторите",
+        "повторите, пожалуйста",
+        "пожалуйста"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -803,6 +1910,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -827,6 +1939,22 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "пожалуйста",
+        "помедленнее",
+        "помедленнее, пожалуйста"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -834,6 +1962,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -858,6 +1991,23 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "не",
+        "понимаю",
+        "я",
+        "я не понимаю"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -865,6 +2015,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -887,6 +2042,22 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "понимаю",
+        "я",
+        "я понимаю"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -894,6 +2065,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -916,6 +2092,20 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "понятно"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -923,6 +2113,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -945,6 +2140,20 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "хорошо"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -952,6 +2161,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -974,6 +2188,20 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "отлично"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -981,6 +2209,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -1003,6 +2236,23 @@ window.CONTENT_DATA = {
         "register",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "lexemes": [
+        "как",
+        "как по-русски …?",
+        "по",
+        "русски"
+      ],
+      "structures": [
+        "discourse:politeness",
+        "phrase:repair",
+        "phrase:yes_no",
+        "register:formal_you"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1010,6 +2260,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_002",
+      "lesson_number": 2,
+      "prerequisites": [
+        "family_visit_001"
       ]
     },
     {
@@ -1033,6 +2288,20 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "встречу",
+        "за",
+        "за встречу!"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1040,6 +2309,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1063,6 +2337,20 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "за",
+        "за знакомство!",
+        "знакомство"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1070,6 +2358,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1093,6 +2386,20 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "за",
+        "за родителей!",
+        "родителей"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1100,6 +2407,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1123,6 +2435,20 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "за",
+        "за хозяйку!",
+        "хозяйку"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1130,6 +2456,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1153,6 +2484,20 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "за",
+        "за хозяев!",
+        "хозяев"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1160,6 +2505,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1183,6 +2533,21 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "ваше",
+        "за",
+        "за ваше здоровье!",
+        "здоровье"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1190,6 +2555,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1213,6 +2583,20 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "за",
+        "за здоровье!",
+        "здоровье"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1220,6 +2604,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1243,6 +2632,20 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "за",
+        "за семью!",
+        "семью"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1250,6 +2653,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1273,6 +2681,20 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "за",
+        "за любовь!",
+        "любовь"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1280,6 +2702,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1303,6 +2730,20 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "за",
+        "за молодых!",
+        "молодых"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1310,6 +2751,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1333,6 +2779,20 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "будем",
+        "будем здоровы!",
+        "здоровы"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1340,6 +2800,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1363,6 +2828,23 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "за",
+        "сказать",
+        "тост",
+        "хочу",
+        "я",
+        "я хочу сказать тост за …"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1370,6 +2852,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1393,6 +2880,22 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "выпьем",
+        "давайте",
+        "давайте выпьем за это!",
+        "за",
+        "это"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1400,6 +2903,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1423,6 +2931,20 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "дна",
+        "до",
+        "до дна"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1430,6 +2952,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1453,6 +2980,18 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "бокал"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1460,6 +2999,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1483,6 +3027,18 @@ window.CONTENT_DATA = {
         "cultural_usage",
         "stress"
       ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "lexemes": [
+        "рюмка"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1490,6 +3046,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3,
+      "prerequisites": [
+        "family_visit_002"
       ]
     },
     {
@@ -1510,6 +3071,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "семья"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1517,6 +3089,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1537,6 +3114,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "жена"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1544,6 +3132,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1564,6 +3157,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "муж"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1571,6 +3175,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1591,6 +3200,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "тесть"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1598,6 +3218,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1618,6 +3243,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "тёща"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1625,6 +3261,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1645,6 +3286,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "зять"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1652,6 +3304,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1672,6 +3329,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "шурин"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1679,6 +3347,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1699,6 +3372,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "жены",
+        "сестра",
+        "сестра жены"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1706,6 +3392,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1726,6 +3417,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "мама"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1733,6 +3435,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1753,6 +3460,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "папа"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1760,6 +3478,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1780,6 +3503,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "родители"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1787,6 +3521,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1807,6 +3546,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "бабушка"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1814,6 +3564,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1834,6 +3589,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "дедушка"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1841,6 +3607,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1861,6 +3632,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "сын"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1868,6 +3650,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1888,6 +3675,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "дочь"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1895,6 +3693,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1915,6 +3718,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "брат"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1922,6 +3736,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1942,6 +3761,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "сестра"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1949,6 +3779,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1969,6 +3804,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "дети"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -1976,6 +3822,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -1996,6 +3847,21 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вашу",
+        "дочь",
+        "люблю",
+        "я",
+        "я люблю вашу дочь"
+      ],
+      "structures": [
+        "lexical:kinship_terms",
+        "phrase:family_affection",
+        "register:name_patronymic"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2003,6 +3869,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_004",
+      "lesson_number": 4,
+      "prerequisites": [
+        "family_visit_003"
       ]
     },
     {
@@ -2023,6 +3894,20 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "аппетита",
+        "приятного",
+        "приятного аппетита!"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2030,6 +3915,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2050,6 +3940,20 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вкусно",
+        "очень",
+        "очень вкусно!"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2057,6 +3961,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2077,6 +3986,18 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вкусно"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2084,6 +4005,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2104,6 +4030,22 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "было",
+        "вкусно",
+        "очень",
+        "спасибо",
+        "спасибо, было очень вкусно"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2111,6 +4053,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2131,6 +4078,21 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "мне",
+        "мне очень нравится",
+        "нравится",
+        "очень"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2138,6 +4100,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2159,6 +4126,21 @@ window.CONTENT_DATA = {
         "gendered_form",
         "stress"
       ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "lexemes": [
+        "наелся",
+        "я",
+        "я наелся"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2166,6 +4148,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2186,6 +4173,20 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "ещё",
+        "можно",
+        "можно ещё?"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2193,6 +4194,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2213,6 +4219,21 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "надо",
+        "не",
+        "спасибо",
+        "спасибо, не надо"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2220,6 +4241,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2240,6 +4266,21 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "пожалуйста",
+        "хлеб"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2247,6 +4288,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2267,6 +4313,20 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "можно",
+        "можно чаю?",
+        "чаю"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2274,6 +4334,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2295,6 +4360,20 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "борщ"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2302,6 +4381,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2323,6 +4407,20 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "пельмени"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2330,6 +4428,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2351,6 +4454,20 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "блины"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2358,6 +4475,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2379,6 +4501,20 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "оливье"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2386,6 +4522,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2407,6 +4548,20 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "чай"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2414,6 +4569,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2435,6 +4595,20 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "водка"
+      ],
+      "structures": [
+        "morphology:gendered_short_form",
+        "phrase:compliment_food",
+        "phrase:food_offer",
+        "phrase:polite_decline",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2442,6 +4616,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5,
+      "prerequisites": [
+        "family_visit_004"
       ]
     },
     {
@@ -2462,6 +4641,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "юрист",
+        "я",
+        "я юрист"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2469,6 +4661,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "prerequisites": [
+        "family_visit_005"
       ]
     },
     {
@@ -2489,6 +4686,20 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "америки",
+        "из",
+        "я",
+        "я из америки"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2496,6 +4707,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "prerequisites": [
+        "family_visit_005"
       ]
     },
     {
@@ -2516,6 +4732,21 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "из",
+        "миссури",
+        "штата",
+        "я",
+        "я из штата миссури"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2523,6 +4754,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "prerequisites": [
+        "family_visit_005"
       ]
     },
     {
@@ -2543,6 +4779,21 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "америке",
+        "в",
+        "живу",
+        "я",
+        "я живу в америке"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2550,6 +4801,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "prerequisites": [
+        "family_visit_005"
       ]
     },
     {
@@ -2570,6 +4826,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "мы",
+        "мы познакомились …",
+        "познакомились"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2577,6 +4846,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "prerequisites": [
+        "family_visit_005"
       ]
     },
     {
@@ -2597,6 +4871,22 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "говорю",
+        "немного",
+        "по",
+        "русски",
+        "я",
+        "я немного говорю по-русски"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2604,6 +4894,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "prerequisites": [
+        "family_visit_005"
       ]
     },
     {
@@ -2624,6 +4919,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "спасибо",
+        "хорошо",
+        "хорошо, спасибо"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2631,6 +4939,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "prerequisites": [
+        "family_visit_005"
       ]
     },
     {
@@ -2651,6 +4964,17 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "нормально"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2658,6 +4982,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "prerequisites": [
+        "family_visit_005"
       ]
     },
     {
@@ -2678,6 +5007,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "да",
+        "да, немного",
+        "немного"
+      ],
+      "structures": [
+        "grammar:present_first_person",
+        "phrase:personal_origin",
+        "phrase:work_identity"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2685,6 +5027,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_006",
+      "lesson_number": 6,
+      "prerequisites": [
+        "family_visit_005"
       ]
     },
     {
@@ -2706,6 +5053,20 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "дела",
+        "как",
+        "как дела?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2713,6 +5074,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
       ]
     },
     {
@@ -2734,6 +5100,20 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вы",
+        "откуда",
+        "откуда вы?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2741,6 +5121,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
       ]
     },
     {
@@ -2762,6 +5147,21 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вы",
+        "кем",
+        "кем вы работаете?",
+        "работаете"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2769,6 +5169,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
       ]
     },
     {
@@ -2790,6 +5195,22 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вы",
+        "вы говорите по-русски?",
+        "говорите",
+        "по",
+        "русски"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2797,6 +5218,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
       ]
     },
     {
@@ -2818,6 +5244,21 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вам",
+        "как",
+        "как вам россия?",
+        "россия"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2825,6 +5266,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
       ]
     },
     {
@@ -2846,6 +5292,21 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вы",
+        "как",
+        "как вы познакомились?",
+        "познакомились"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2853,6 +5314,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
       ]
     },
     {
@@ -2874,6 +5340,20 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "вам",
+        "вам нравится …?",
+        "нравится"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2881,6 +5361,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
       ]
     },
     {
@@ -2902,6 +5387,18 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "ещё"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2909,6 +5406,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
       ]
     },
     {
@@ -2930,6 +5432,19 @@ window.CONTENT_DATA = {
         "listening_misparse",
         "stress"
       ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "будете",
+        "будете …?"
+      ],
+      "structures": [
+        "grammar:formal_question",
+        "phrase:host_question",
+        "skill:listening_question_recognition"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2937,6 +5452,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_007",
+      "lesson_number": 7,
+      "prerequisites": [
+        "family_visit_006"
       ]
     },
     {
@@ -2957,6 +5477,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "хотите",
+        "хочу",
+        "хочу / хотите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2964,6 +5497,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
       ]
     },
     {
@@ -2984,6 +5522,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "могу",
+        "могу / можете",
+        "можете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -2991,6 +5542,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
       ]
     },
     {
@@ -3011,6 +5567,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "говорите",
+        "говорю",
+        "говорю / говорите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -3018,6 +5587,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
       ]
     },
     {
@@ -3038,6 +5612,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "понимаете",
+        "понимаю",
+        "понимаю / понимаете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -3045,6 +5632,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
       ]
     },
     {
@@ -3065,6 +5657,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "любите",
+        "люблю",
+        "люблю / любите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -3072,6 +5677,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
       ]
     },
     {
@@ -3092,6 +5702,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "работаете",
+        "работаю",
+        "работаю / работаете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -3099,6 +5722,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
       ]
     },
     {
@@ -3119,6 +5747,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "живу",
+        "живу / живёте",
+        "живёте"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -3126,6 +5767,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
       ]
     },
     {
@@ -3146,6 +5792,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "едите",
+        "ем",
+        "ем / едите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -3153,6 +5812,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
       ]
     },
     {
@@ -3173,6 +5837,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "пью",
+        "пью / пьёте",
+        "пьёте"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -3180,6 +5857,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
       ]
     },
     {
@@ -3200,6 +5882,19 @@ window.CONTENT_DATA = {
       "error_types": [
         "stress"
       ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "знаете",
+        "знаю",
+        "знаю / знаете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "lexical:core_verbs"
+      ],
       "stages": [
         "recognition",
         "recall",
@@ -3207,6 +5902,11 @@ window.CONTENT_DATA = {
         "production",
         "roleplay",
         "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
       ]
     }
   ],
@@ -3308,7 +6008,9 @@ window.CONTENT_DATA = {
         "uses_formal_greeting",
         "introduces_self",
         "thanks_hosts"
-      ]
+      ],
+      "lesson_id": "family_visit_001",
+      "lesson_number": 1
     },
     {
       "id": "dinner_table_food_offer",
@@ -3324,7 +6026,9 @@ window.CONTENT_DATA = {
         "compliments_food",
         "declines_politely",
         "uses_correct_male_form"
-      ]
+      ],
+      "lesson_id": "family_visit_005",
+      "lesson_number": 5
     },
     {
       "id": "first_toast",
@@ -3340,7 +6044,9 @@ window.CONTENT_DATA = {
         "uses_za_toast_formula",
         "avoids_na_zdorovie_misfire",
         "keeps_stress_clear"
-      ]
+      ],
+      "lesson_id": "family_visit_003",
+      "lesson_number": 3
     }
   ]
 };

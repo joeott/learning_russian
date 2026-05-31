@@ -41,6 +41,9 @@ DEFAULT_COURSE = {
         "preferred_voice": "ScaQ3utur72x93jqMMeU",
         "preferred_voice_name": "Elena (Warm, Calm & Clear)",
     },
+    "curriculum": {
+        "default_lesson_id": "family_visit_008",
+    },
 }
 
 

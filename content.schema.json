@@ -2,12 +2,51 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Language course content",
   "type": "object",
-  "required": ["course", "meta", "modules", "items"],
+  "required": ["course", "meta", "curriculum", "modules", "items"],
   "properties": {
     "course": { "type": "object" },
     "meta": { "type": "object" },
+    "curriculum": {
+      "type": "object",
+      "required": ["default_lesson_id", "lessons"],
+      "properties": {
+        "model": { "type": "string" },
+        "default_lesson_id": { "type": "string" },
+        "lessons": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "lesson_id",
+              "lesson_number",
+              "module",
+              "title",
+              "introduced_lexemes",
+              "active_vocab",
+              "passive_vocab",
+              "introduced_structures",
+              "allowed_error_types",
+              "prerequisites"
+            ]
+          }
+        }
+      }
+    },
     "modules": { "type": "array" },
-    "items": { "type": "array" },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "lesson_id",
+          "lesson_number",
+          "lexemes",
+          "structures",
+          "prerequisites",
+          "allowed_error_types"
+        ]
+      }
+    },
     "error_types": { "type": "array" },
     "contrast_sets": { "type": "array" },
     "scenarios": { "type": "array" }
