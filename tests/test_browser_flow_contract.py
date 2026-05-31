@@ -18,6 +18,10 @@ class BrowserFlowContractTests(unittest.TestCase):
         for token in (
             "#/home",
             "#/learn",
+            "assertLessonLockedRecognition",
+            "Practice is constrained to Lesson 1",
+            "PHRASES UNLOCKED",
+            "prompted.lesson_number > expected.lessonNumber",
             "recognition",
             "recall",
             "cloze",

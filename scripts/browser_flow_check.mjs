@@ -86,6 +86,40 @@ async function roleplayCriteriaMissed(page) {
   });
 }
 
+async function assertLessonLockedRecognition(page, baseUrl) {
+  await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
+  const select = page.locator(".lessonlock select");
+  await select.selectOption({ index: 0 });
+  await assertText(page, "Practice is constrained to Lesson 1");
+  const expected = await page.evaluate(() => {
+    const first = window.CONTENT_DATA.curriculum.lessons[0];
+    const unlocked = window.CONTENT_DATA.items.filter((item) => item.lesson_number <= first.lesson_number);
+    return {
+      lessonNumber: first.lesson_number,
+      unlocked: unlocked.length,
+      total: window.CONTENT_DATA.items.length,
+    };
+  });
+  await assertText(page, `${expected.unlocked}/${expected.total} PHRASES UNLOCKED`);
+
+  await page.goto(withHash(baseUrl, "#/quiz/recognition"), { waitUntil: "networkidle" });
+  await page.waitForTimeout(250);
+  const prompted = await page.evaluate(() => {
+    const prompt = document.querySelector(".quiz__prompt")?.innerText || "";
+    const item = window.CONTENT_DATA.items.find((candidate) => prompt.includes(candidate.ru));
+    return item ? { id: item.id, lesson_number: item.lesson_number, ru: item.ru } : null;
+  });
+  if (!prompted) throw new Error("Could not map lesson-locked recognition prompt to a content item");
+  if (prompted.lesson_number > expected.lessonNumber) {
+    throw new Error(`Lesson lock violated: ${prompted.id} is lesson ${prompted.lesson_number}, expected <= ${expected.lessonNumber}`);
+  }
+
+  await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
+  const lastValue = await page.locator(".lessonlock select option").last().getAttribute("value");
+  await select.selectOption(lastValue);
+  return prompted;
+}
+
 async function checkStage(page, baseUrl, stageKey, interact) {
   await page.goto(withHash(baseUrl, `#/quiz/${stageKey}`), { waitUntil: "networkidle" });
   await page.waitForTimeout(250);
@@ -123,6 +157,9 @@ export async function runFlowCheck(opts) {
     await page.goto(withHash(opts.url, "#/learn"), { waitUntil: "networkidle" });
     await assertText(page, "CURRICULUM LOCK");
     completed.push("learn");
+
+    await assertLessonLockedRecognition(page, opts.url);
+    completed.push("lesson-lock");
 
     await checkStage(page, opts.url, "recognition", async () => {
       await page.locator(".opt").first().click();
