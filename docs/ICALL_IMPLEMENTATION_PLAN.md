@@ -7,8 +7,8 @@ deterministic, and grounded in verified Russian phrases.
 ## North Star
 
 A learner can open the PWA, set a current lesson boundary, study stress-marked
-Cyrillic with audio, complete recognition, recall, cloze, dictation,
-back-translation, production, listening, and role-play flows, receive targeted
+Cyrillic with audio, complete recognition, recall, cloze, dictation, stress,
+back-translation, contrast, production, listening, and role-play flows, receive targeted
 Russian-specific repair feedback, and have all progress reflected in local
 mastery state. Critical flows are verified by tests and browser automation before
 merge.

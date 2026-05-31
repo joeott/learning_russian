@@ -80,6 +80,25 @@
         ]
       }
     },
+    "stress_cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "item_id",
+          "lesson_id",
+          "lesson_number",
+          "ru",
+          "ru_plain",
+          "options",
+          "answer",
+          "en",
+          "structures",
+          "allowed_error_types"
+        ]
+      }
+    },
     "backtranslation_cards": {
       "type": "array",
       "items": {

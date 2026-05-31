@@ -755,6 +755,15 @@ def syllable_count(s: str) -> int:
     return sum(1 for ch in strip_stress(s) if ch in vowels)
 
 
+def stress_vowel_indexes(ru_plain: str) -> list[int]:
+    vowels = set("аеёиоуыэюяАЕЁИОУЫЭЮЯ")
+    return [idx for idx, ch in enumerate(ru_plain) if ch in vowels]
+
+
+def stress_marked_variant(ru_plain: str, vowel_index: int) -> str:
+    return ru_plain[: vowel_index + 1] + ACUTE + ru_plain[vowel_index + 1 :]
+
+
 def lexemes_for_phrase(ru_plain: str) -> list[str]:
     phrase = ru_plain.lower().strip()
     tokens = re.findall(r"[а-яё]+", phrase, flags=re.IGNORECASE)
@@ -923,6 +932,49 @@ def build_dictation_cards(items: list[dict]) -> list[dict]:
                     )
                 ),
                 "tags": sorted(set(item.get("tags", []) + ["dictation"])),
+            }
+        )
+    return cards
+
+
+def build_stress_cards(items: list[dict]) -> list[dict]:
+    cards = []
+    for item in items:
+        if item["syllables"] < 2 or ACUTE not in item["ru"]:
+            continue
+        vowel_indexes = stress_vowel_indexes(item["ru_plain"])
+        correct = item["ru"]
+        options = [correct]
+        for idx in vowel_indexes:
+            variant = stress_marked_variant(item["ru_plain"], idx)
+            if variant != correct and variant not in options:
+                options.append(variant)
+            if len(options) >= 4:
+                break
+        if len(options) < 2:
+            continue
+        cards.append(
+            {
+                "id": f"stress_{item['id']}_01",
+                "item_id": item["id"],
+                "module": item["module"],
+                "lesson_id": item["lesson_id"],
+                "lesson_number": item["lesson_number"],
+                "ru": item["ru"],
+                "ru_plain": item["ru_plain"],
+                "options": sorted(options),
+                "answer": item["ru"],
+                "en": item["en"],
+                "priority": item["priority"],
+                "lexemes": item["lexemes"],
+                "structures": item["structures"],
+                "allowed_error_types": sorted(
+                    set(item["allowed_error_types"]).union({"stress", "forgot_phrase"})
+                ),
+                "error_types": sorted(
+                    set(item["error_types"]).union({"stress", "forgot_phrase"})
+                ),
+                "tags": sorted(set(item.get("tags", []) + ["stress_drill"])),
             }
         )
     return cards
@@ -1221,6 +1273,7 @@ def build():
         scenarios.append(enriched)
     cloze_cards = build_cloze_cards(items)
     dictation_cards = build_dictation_cards(items)
+    stress_cards = build_stress_cards(items)
     backtranslation_cards = build_backtranslation_cards(items)
     tutor_cards = build_tutor_cards(scenarios, items, curriculum, course)
     contrast_cards = build_contrast_cards(CONTRAST_SETS, items)
@@ -1241,6 +1294,7 @@ def build():
         "items": items,
         "cloze_cards": cloze_cards,
         "dictation_cards": dictation_cards,
+        "stress_cards": stress_cards,
         "backtranslation_cards": backtranslation_cards,
         "tutor_cards": tutor_cards,
         "contrast_cards": contrast_cards,

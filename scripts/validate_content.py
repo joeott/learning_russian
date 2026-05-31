@@ -236,6 +236,47 @@ def validate_content(data: dict) -> list[str]:
             if error_type not in error_types:
                 fail(errors, f"{card_id}: unknown allowed_error_type {error_type}")
 
+    for card in data.get("stress_cards", []):
+        card_id = card.get("id", "")
+        source = item_by_id.get(card.get("item_id"))
+        if not source:
+            fail(errors, f"{card_id}: unknown source item {card.get('item_id')}")
+            continue
+        if card.get("lesson_id") != source.get("lesson_id"):
+            fail(errors, f"{card_id}: lesson_id does not match source item")
+        if card.get("lesson_number") != source.get("lesson_number"):
+            fail(errors, f"{card_id}: lesson_number does not match source item")
+        if card.get("ru_plain") != source.get("ru_plain"):
+            fail(errors, f"{card_id}: ru_plain does not match source item")
+        if card.get("answer") != source.get("ru"):
+            fail(errors, f"{card_id}: answer must be source stress-marked Russian")
+        if card.get("answer") not in card.get("options", []):
+            fail(errors, f"{card_id}: options must include answer")
+        if len(set(card.get("options", []))) != len(card.get("options", [])):
+            fail(errors, f"{card_id}: options must be unique")
+        if len(card.get("options", [])) < 2:
+            fail(errors, f"{card_id}: stress card needs at least two options")
+        for option in card.get("options", []):
+            if strip_stress(option) != source.get("ru_plain"):
+                fail(errors, f"{card_id}: option does not preserve ru_plain")
+        try:
+            boundary = lesson_boundary(data, card.get("lesson_id"))
+            if source["id"] not in boundary["item_ids"]:
+                fail(errors, f"{card_id}: source item outside lesson boundary")
+            locked_structures = set(card.get("structures", [])) - boundary["structures"]
+            if locked_structures:
+                fail(
+                    errors,
+                    f"{card_id}: structures outside lesson boundary: {sorted(locked_structures)}",
+                )
+        except KeyError as exc:
+            fail(errors, f"{card_id}: {exc}")
+        if "stress" not in card.get("allowed_error_types", []):
+            fail(errors, f"{card_id}: missing stress error type")
+        for error_type in card.get("allowed_error_types", []):
+            if error_type not in error_types:
+                fail(errors, f"{card_id}: unknown allowed_error_type {error_type}")
+
     for card in data.get("backtranslation_cards", []):
         card_id = card.get("id", "")
         source = item_by_id.get(card.get("item_id"))
