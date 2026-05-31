@@ -155,7 +155,7 @@ body {
 }
 .analyticsbox h3 { margin: 0 0 4px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .05em; }
 .analyticsbox p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
-.analyticsgrid { display:grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 8px; }
+.analyticsgrid { display:grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 8px; }
 .analyticsgrid div { border-left: 2px solid var(--cream-line); padding-left: 9px; }
 .analyticsgrid strong { display:block; font-family: var(--font-display); color: var(--red); font-size: 1.6rem; line-height: 1; }
 .analyticsgrid small { font-size: .82rem; }

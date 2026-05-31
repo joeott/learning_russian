@@ -103,6 +103,8 @@
       last_grade: count ? "good" : "",
       last_error_type: "",
       last_seen_at: "",
+      delayed_attempts: 0,
+      delayed_success: 0,
       mastered: count >= 2,
     };
   }
@@ -211,6 +213,14 @@
     const correct = states.reduce((n, st) => n + (st.correct || 0), 0);
     return seen ? Math.round(correct / seen * 100) : 0;
   }
+  function delayedRecallRate() {
+    const states = STAGE_KEYS.flatMap(stageKey =>
+      stagePool(stageKey).map(it => stageState(it.id, stageKey)).filter(Boolean)
+    );
+    const attempts = states.reduce((n, st) => n + (st.delayed_attempts || 0), 0);
+    const success = states.reduce((n, st) => n + (st.delayed_success || 0), 0);
+    return attempts ? Math.round(success / attempts * 100) : 0;
+  }
   function analytics() {
     const now = Date.now();
     const day = 86400000;
@@ -225,6 +235,7 @@
     return {
       due,
       overdue,
+      delayedRecall: delayedRecallRate(),
       listenAccuracy: stageAccuracy("listen"),
       productionAccuracy: stageAccuracy("produce"),
       roleplayPass: stageAccuracy("roleplay"),
@@ -483,8 +494,9 @@
         <div class="stat rise"><div class="stat__num">${d}</div><div class="stat__label">Days to ${escapeHtml(targetLabel())}</div></div>
       </div>
       <div class="analyticsbox rise">
-        <div><h3>Performance signals</h3><p>Readiness now includes cloze, dictation, stress, pronunciation, back-translation, contrast, production, listening, and role-play mastery.</p></div>
+        <div><h3>Performance signals</h3><p>Readiness now includes delayed recall, cloze, dictation, stress, pronunciation, back-translation, contrast, production, listening, and role-play mastery.</p></div>
         <div class="analyticsgrid">
+          <div><strong>${a.delayedRecall}<small>%</small></strong><span>delayed recall</span></div>
           <div><strong>${a.dictationAccuracy}<small>%</small></strong><span>dictation accuracy</span></div>
           <div><strong>${stageAccuracy("stress")}<small>%</small></strong><span>stress accuracy</span></div>
           <div><strong>${stageAccuracy("pronounce")}<small>%</small></strong><span>pronunciation accuracy</span></div>
@@ -817,10 +829,15 @@
     opts = opts || {};
     const r = rec(id);
     const st = stageRec(id, stageKey);
+    const wasDelayedReview = (st.seen || 0) > 0 && isDue(st);
     r.seen++;
     r.last_seen_at = new Date().toISOString();
     st.seen++;
     st.last_seen_at = r.last_seen_at;
+    if (wasDelayedReview) {
+      st.delayed_attempts = (st.delayed_attempts || 0) + 1;
+      if (ok && !opts.assisted) st.delayed_success = (st.delayed_success || 0) + 1;
+    }
     if (ok && opts.assisted) {
       r.correct++;
       st.correct++;
