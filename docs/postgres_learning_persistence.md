@@ -1,0 +1,104 @@
+# Postgres Learning Persistence
+
+The app remains offline-first: study progress is still written to browser
+`localStorage` immediately so drills work without a server. Postgres adds durable
+cross-session storage, queryable statistics, and backup/sync for long-term
+learning.
+
+## What is persisted
+
+- every graded attempt as an append-only event
+- learner/device provenance
+- item id, stage, lesson, scenario, success/failure, assisted status
+- latency, due date, error type, repair focus, and role-play criteria payloads
+- daily readiness snapshots
+- adaptive Elo-style learner skill ratings
+- adaptive item/stage difficulty ratings
+- daily metric snapshots for mission ability, grammar control, n+1 fit, and friction
+
+Audio recordings and sonograph data are intentionally not persisted.
+
+## Local setup
+
+```bash
+createdb zastolom
+export DATABASE_URL=postgres://localhost/zastolom
+npm run db:migrate
+npm run sync:serve
+```
+
+The sync API listens on `http://127.0.0.1:8787` by default. Override with:
+
+```bash
+export ZASTOLOM_SYNC_PORT=8790
+export ZASTOLOM_LEARNER_ID=joe
+```
+
+The CLI wrapper is:
+
+```bash
+DATABASE_URL=postgres://localhost/zastolom tools/zastolom sync-server
+```
+
+The browser does not contact Postgres by default during demos or offline
+replays. Enable sync explicitly in DevTools once the sync server is running:
+
+```js
+localStorage.setItem("zastolom.russian_family_visit.v2.sync_api", "http://127.0.0.1:8787");
+location.reload();
+```
+
+## API
+
+- `GET /api/health`
+- `POST /api/learning/events`
+- `GET /api/learning/state?learner_id=joe`
+- `GET /api/learning/metrics?learner_id=joe`
+- `GET /api/learning/recommendations?learner_id=joe&limit=20`
+- `POST /api/learning/snapshots`
+
+Events are idempotent by `event_id`, so retrying a failed sync is safe.
+
+## Adaptive metrics
+
+The browser asset `web/learning_metrics.js` and the sync-server copy
+`scripts/learning_metrics.cjs` use the same Elo-style math. Each graded attempt
+updates:
+
+- learner skill ratings such as `stage:listen`, `structure:grammar:*`, and
+  `mission:core`
+- item/stage difficulty such as `firs001:produce`
+- an expected-success estimate used to place work into `rescue`, `n+1`,
+  `consolidate`, or `too_easy`
+
+The target growth band is `0.58–0.78` predicted success. The app treats that as
+the operational version of `n+1`: still mostly comprehensible, but just above
+the learner's current automatic control.
+
+## Active analysis engine
+
+The browser keeps a local analysis engine active while the app is open. It runs
+on startup, every 45 seconds, after each graded attempt, and whenever the tab
+becomes visible again. The latest cycle is persisted in
+`zastolom.russian_family_visit.v2.analysis_state` with:
+
+- current mission/statistics rollup
+- target n+1 band
+- next recommended item/stage
+- active flags such as overdue reviews, high friction, low confidence, or weak
+  n+1 fit
+
+This is intentionally local-first so Joe can study at full speed with or without
+Postgres. When sync is enabled, the same attempt payloads carry adaptive
+metadata to Postgres so the server can publish durable metric snapshots.
+
+The published metrics are internal learning signals, not official CEFR/ACTFL
+certifications:
+
+- `missionAbility`: weighted ability across mission-critical structures
+- `grammarControl`: rating across grammar and verb structures
+- `listeningDiscrimination`: listening/dictation ability
+- `productionControl`: produce/back-translate/role-play ability
+- `nPlusOneFit`: share of recent attempts in the target growth band
+- `frictionIndex`: share of recent attempts with a miss, assistance, or slow
+  latency

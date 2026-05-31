@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "browser": "node scripts/browser_controller.mjs",
-    "check:js": "node --check web/app.js && node --check web/service-worker.js && node --check scripts/browser_controller.mjs && node --check scripts/browser_flow_check.mjs"
+    "check:js": "node --check web/app.js && node --check web/learning_metrics.js && node --check scripts/learning_metrics.cjs && node --check web/service-worker.js && node --check scripts/browser_controller.mjs && node --check scripts/browser_flow_check.mjs && node --check scripts/sync_server.mjs && node --check scripts/db_migrate.mjs",
+    "db:migrate": "node scripts/db_migrate.mjs",
+    "sync:serve": "node scripts/sync_server.mjs"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,8 @@
   "homepage": "https://github.com/joeott/learning_russian#readme",
   "devDependencies": {
     "playwright": "^1.60.0"
+  },
+  "dependencies": {
+    "pg": "^8.21.0"
   }
 }

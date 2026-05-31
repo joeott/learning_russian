@@ -253,6 +253,110 @@ ROLEPLAY_CRITERIA = {
         "label": "answers profile questions from prompts",
         "error_type": "forgot_phrase",
     },
+    "answers_calendar_weather": {
+        "label": "answers calendar/weather prompts",
+        "error_type": "forgot_phrase",
+    },
+    "talks_about_winter_activities": {
+        "label": "talks about winter words and riding/skating/skiing activities",
+        "error_type": "case_or_inflection",
+    },
+    "recognizes_question_words_connectors": {
+        "label": "recognizes core question words and connector words",
+        "error_type": "listening_misparse",
+    },
+    "handles_numbers_quantities": {
+        "label": "handles numbers, months, prices, and quantities",
+        "error_type": "case_or_inflection",
+    },
+    "uses_adverbs_adjectives": {
+        "label": "uses practical adverbs and adjectives",
+        "error_type": "case_or_inflection",
+    },
+    "uses_time_words": {
+        "label": "uses today/yesterday/tomorrow words",
+        "error_type": "case_or_inflection",
+    },
+    "handles_travel_logistics": {
+        "label": "handles travel logistics",
+        "error_type": "forgot_phrase",
+    },
+    "handles_airport_hotel": {
+        "label": "handles airport and hotel basics",
+        "error_type": "forgot_phrase",
+    },
+    "talks_about_budva": {
+        "label": "talks about Budva naturally",
+        "error_type": "forgot_phrase",
+    },
+    "answers_daily_routine": {
+        "label": "answers daily-routine prompts",
+        "error_type": "forgot_phrase",
+    },
+    "tells_daily_story": {
+        "label": "tells a short daily-routine story",
+        "error_type": "forgot_phrase",
+    },
+    "talks_about_leisure_places": {
+        "label": "talks about hobbies, home, and leisure places",
+        "error_type": "forgot_phrase",
+    },
+    "describes_people_appearance": {
+        "label": "describes people with simple appearance phrases",
+        "error_type": "case_or_inflection",
+    },
+    "handles_health_checkin": {
+        "label": "handles basic health and tiredness check-ins",
+        "error_type": "case_or_inflection",
+    },
+    "answers_past_week_events": {
+        "label": "answers past-week and trip-event questions",
+        "error_type": "case_or_inflection",
+    },
+    "answers_home_chores_shopping": {
+        "label": "answers home, chores, homework, and shopping questions",
+        "error_type": "case_or_inflection",
+    },
+    "uses_pronouns_possession": {
+        "label": "uses personal and possessive pronouns in short phrases",
+        "error_type": "case_or_inflection",
+    },
+    "uses_modal_survival": {
+        "label": "uses can, know-how, want, need, and permission patterns",
+        "error_type": "case_or_inflection",
+    },
+    "uses_day_parts": {
+        "label": "uses morning/day/evening words",
+        "error_type": "case_or_inflection",
+    },
+    "answers_work_questions": {
+        "label": "answers work/client questions",
+        "error_type": "forgot_phrase",
+    },
+    "keeps_work_brief": {
+        "label": "keeps legal work details brief",
+        "error_type": "forgot_phrase",
+    },
+    "answers_holiday_plans": {
+        "label": "answers holiday and celebration prompts",
+        "error_type": "forgot_phrase",
+    },
+    "keeps_celebration_story_short": {
+        "label": "keeps celebration story short",
+        "error_type": "forgot_phrase",
+    },
+    "recognizes_cultural_bonus": {
+        "label": "recognizes proverbs and legal jokes",
+        "error_type": "listening_misparse",
+    },
+    "recognizes_fast_checkins": {
+        "label": "recognizes fast family check-ins",
+        "error_type": "listening_misparse",
+    },
+    "handles_sensitive_family": {
+        "label": "handles sensitive family and baby questions carefully",
+        "error_type": "register",
+    },
 }
 
 CONTRAST_SETS = [
@@ -283,6 +387,156 @@ CONTRAST_SETS = [
 ]
 
 SCENARIOS = [
+    {
+        "id": "doorway_greeting",
+        "setting": "Doorway",
+        "goal": "Greet the family formally and introduce yourself.",
+        "required_items": ["firs001", "firs005", "firs006", "firs010"],
+        "success_criteria": [
+            "uses_formal_greeting",
+            "introduces_self",
+            "thanks_hosts",
+        ],
+    },
+    {
+        "id": "introduce_and_learning_safety",
+        "setting": "Introduction + learning safety",
+        "goal": "Introduce yourself clearly and set the safety expectation.",
+        "required_items": ["firs005", "firs008", "poli009", "firs011"],
+        "success_criteria": [
+            "introduces_self",
+            "uses_learning_safety_line",
+        ],
+    },
+    {
+        "id": "dinner_table_food_offer",
+        "setting": "Dinner table",
+        "goal": "Accept, decline, and compliment food politely.",
+        "required_items": ["food002", "food006", "food008", "food009"],
+        "success_criteria": [
+            "compliments_food",
+            "declines_politely",
+            "uses_correct_male_form",
+        ],
+    },
+    {
+        "id": "first_toast",
+        "setting": "Dinner table toast",
+        "goal": "Raise a safe warm toast without using the wrong formula.",
+        "required_items": ["toas001", "toas002", "toas006", "toas007"],
+        "success_criteria": [
+            "uses_za_toast_formula",
+            "avoids_na_zdorovie_misfire",
+            "keeps_stress_clear",
+        ],
+    },
+    {
+        "id": "rapid_host_questions",
+        "setting": "Rapid host questions",
+        "goal": "Catch fast family questions and answer in short Russian sentences.",
+        "required_items": [
+            "list001",
+            "list002",
+            "list003",
+            "list004",
+            "list005",
+            "list006",
+            "list007",
+            "list008",
+            "list009",
+            "poli010",
+            "poli012",
+        ],
+        "success_criteria": [
+            "answers_host_questions",
+            "mentions_host_or_food",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "how_we_met",
+        "setting": "How we met",
+        "goal": "Tell a short, confident story and answer one follow-up.",
+        "required_items": ["smal005", "smal004", "fami019"],
+        "success_criteria": [
+            "tells_short_story",
+            "handles_follow_up",
+            "uses_correct_male_form",
+        ],
+    },
+    {
+        "id": "off_script_recovery",
+        "setting": "Off-script recovery",
+        "goal": "Recover calmly when asked something unexpected.",
+        "required_items": [
+            "poli004",
+            "poli005",
+            "poli010",
+            "poli011",
+            "poli012",
+            "poli017",
+        ],
+        "success_criteria": [
+            "uses_repair_lines",
+            "recovers_from_unknown",
+            "stays_in_russian",
+        ],
+    },
+    {
+        "id": "full_dinner_simulation",
+        "setting": "Full dinner simulation",
+        "goal": "Hold together the full dinner flow from greeting through close.",
+        "required_items": [
+            "firs001",
+            "firs005",
+            "list002",
+            "smal004",
+            "smal005",
+            "food002",
+            "food004",
+            "toas006",
+            "toas001",
+            "fami019",
+            "poli009",
+        ],
+        "success_criteria": [
+            "delivers_full_dinner_arc",
+            "mentions_host_or_food",
+            "recovers_curveball",
+            "keeps_stress_clear",
+        ],
+    },
+    {
+        "id": "lawyer_small_talk",
+        "setting": "Lawyer / Missouri small talk",
+        "goal": "Answer profile questions naturally and keep the lawyer details safe.",
+        "required_items": ["smal001", "smal002", "smal003", "poli009"],
+        "success_criteria": [
+            "answers_host_questions",
+            "handles_follow_up",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "noisy_table",
+        "setting": "Noisy table role-play",
+        "goal": "Recover and keep confidence when relatives speak quickly around table noise.",
+        "required_items": [
+            "list002",
+            "list003",
+            "list005",
+            "list006",
+            "poli010",
+            "poli011",
+            "poli012",
+        ],
+        "success_criteria": [
+            "answers_host_questions",
+            "stays_in_russian",
+            "recovers_from_unknown",
+            "uses_repair_lines",
+        ],
+    },
     {
         "id": "greeting_daypart_and_farewell",
         "setting": "Greetings and farewells",
@@ -374,49 +628,6 @@ SCENARIOS = [
         ],
     },
     {
-        "id": "extended_family_family_tree",
-        "setting": "Family tree and kinship vocabulary",
-        "goal": "Use extended family terms naturally when introducing relationships.",
-        "required_items": [
-            "fami001",
-            "fami002",
-            "fami003",
-            "fami009",
-            "fami010",
-            "fami011",
-            "fami012",
-            "fami013",
-            "fami014",
-            "fami015",
-            "fami016",
-            "fami017",
-            "fami018",
-        ],
-        "success_criteria": [
-            "uses_family_terms",
-            "uses_respectful_reference",
-            "stays_in_russian",
-        ],
-    },
-    {
-        "id": "family_mini_checkin",
-        "setting": "Family mini-check-in",
-        "goal": "Respond naturally to short routine check-ins and keep the exchange warm.",
-        "required_items": [
-            "list001",
-            "poli007",
-            "smal007",
-            "smal008",
-            "poli010",
-            "poli011",
-        ],
-        "success_criteria": [
-            "uses_quick_responses",
-            "stays_in_russian",
-            "uses_repair_lines",
-        ],
-    },
-    {
         "id": "dinner_navigation",
         "setting": "Dinner navigation",
         "goal": "Request, decline, and appreciate food while sounding natural at table pace.",
@@ -466,153 +677,88 @@ SCENARIOS = [
         ],
     },
     {
-        "id": "doorway_greeting",
-        "setting": "Doorway",
-        "goal": "Greet the family formally and introduce yourself.",
-        "required_items": ["firs001", "firs005", "firs006", "firs010"],
+        "id": "extended_family_family_tree",
+        "setting": "Family tree and kinship vocabulary",
+        "goal": "Use extended family terms naturally when introducing relationships.",
+        "required_items": [
+            "fami001",
+            "fami002",
+            "fami003",
+            "fami009",
+            "fami010",
+            "fami011",
+            "fami012",
+            "fami013",
+            "fami014",
+            "fami015",
+            "fami016",
+            "fami017",
+            "fami018",
+        ],
         "success_criteria": [
-            "uses_formal_greeting",
-            "introduces_self",
-            "thanks_hosts",
+            "uses_family_terms",
+            "uses_respectful_reference",
+            "stays_in_russian",
         ],
     },
     {
-        "id": "dinner_table_food_offer",
-        "setting": "Dinner table",
-        "goal": "Accept, decline, and compliment food politely.",
-        "required_items": ["food002", "food006", "food008", "food009"],
-        "success_criteria": [
-            "compliments_food",
-            "declines_politely",
-            "uses_correct_male_form",
-        ],
-    },
-    {
-        "id": "first_toast",
-        "setting": "Dinner table toast",
-        "goal": "Raise a safe warm toast without using the wrong formula.",
-        "required_items": ["toas001", "toas002", "toas006", "toas007"],
-        "success_criteria": [
-            "uses_za_toast_formula",
-            "avoids_na_zdorovie_misfire",
-            "keeps_stress_clear",
-        ],
-    },
-    {
-        "id": "introduce_and_learning_safety",
-        "setting": "Introduction + learning safety",
-        "goal": "Introduce yourself clearly and set the safety expectation.",
-        "required_items": ["firs005", "firs008", "poli009", "firs011"],
-        "success_criteria": [
-            "introduces_self",
-            "uses_learning_safety_line",
-        ],
-    },
-    {
-        "id": "rapid_host_questions",
-        "setting": "Rapid host questions",
-        "goal": "Catch fast family questions and answer in short Russian sentences.",
+        "id": "family_mini_checkin",
+        "setting": "Family mini-check-in",
+        "goal": "Respond naturally to short routine check-ins and keep the exchange warm.",
         "required_items": [
             "list001",
-            "list002",
-            "list003",
-            "list004",
-            "list005",
-            "list006",
-            "list007",
-            "list008",
-            "list009",
-            "poli010",
-            "poli012",
-        ],
-        "success_criteria": [
-            "answers_host_questions",
-            "mentions_host_or_food",
-            "uses_repair_lines",
-        ],
-    },
-    {
-        "id": "lawyer_small_talk",
-        "setting": "Lawyer / Missouri small talk",
-        "goal": "Answer profile questions naturally and keep the lawyer details safe.",
-        "required_items": ["smal001", "smal002", "smal003", "poli009"],
-        "success_criteria": [
-            "answers_host_questions",
-            "handles_follow_up",
-            "uses_repair_lines",
-        ],
-    },
-    {
-        "id": "noisy_table",
-        "setting": "Noisy table role-play",
-        "goal": "Recover and keep confidence when relatives speak quickly around table noise.",
-        "required_items": [
-            "list002",
-            "list003",
-            "list005",
-            "list006",
+            "poli007",
+            "smal007",
+            "smal008",
             "poli010",
             "poli011",
-            "poli012",
         ],
         "success_criteria": [
-            "answers_host_questions",
+            "uses_quick_responses",
             "stays_in_russian",
-            "recovers_from_unknown",
             "uses_repair_lines",
         ],
     },
     {
-        "id": "how_we_met",
-        "setting": "How we met",
-        "goal": "Tell a short, confident story and answer one follow-up.",
-        "required_items": ["smal005", "smal004", "fami019"],
-        "success_criteria": [
-            "tells_short_story",
-            "handles_follow_up",
-            "uses_correct_male_form",
-        ],
-    },
-    {
-        "id": "off_script_recovery",
-        "setting": "Off-script recovery",
-        "goal": "Recover calmly when asked something unexpected.",
+        "id": "native_speed_checkins",
+        "setting": "Native-speed check-in questions",
+        "goal": "Recognize recurring original-guide check-in questions at family speed.",
         "required_items": [
-            "poli004",
-            "poli005",
-            "poli010",
-            "poli011",
-            "poli012",
-            "poli017",
+            "list010",
+            "list011",
+            "list012",
+            "list013",
+            "list014",
+            "list015",
+            "list016",
+            "list017",
+            "list018",
         ],
         "success_criteria": [
+            "recognizes_fast_checkins",
             "uses_repair_lines",
-            "recovers_from_unknown",
             "stays_in_russian",
         ],
     },
     {
-        "id": "full_dinner_simulation",
-        "setting": "Full dinner simulation",
-        "goal": "Hold together the full dinner flow from greeting through close.",
+        "id": "sensitive_family_health",
+        "setting": "Sensitive family health and baby-readiness check-in",
+        "goal": "Recognize family health and baby-readiness prompts from the original guide without overproducing.",
         "required_items": [
-            "firs001",
-            "firs005",
-            "list002",
-            "smal004",
-            "smal005",
-            "food002",
-            "food004",
-            "toas006",
-            "toas001",
-            "fami019",
-            "poli009",
+            "fami020",
+            "fami021",
+            "fami022",
+            "fami023",
+            "fami024",
+            "fami025",
+            "fami026",
+            "fami027",
+            "fami028",
         ],
         "success_criteria": [
-            "delivers_full_dinner_arc",
-            "mentions_host_or_food",
-            "recovers_curveball",
-            "keeps_stress_clear",
+            "handles_sensitive_family",
+            "uses_repair_lines",
+            "stays_in_russian",
         ],
     },
     {
@@ -635,6 +781,520 @@ SCENARIOS = [
             "uses_toast_context",
             "uses_social_exit",
             "avoids_na_zdorovie_misfire",
+        ],
+    },
+    {
+        "id": "calendar_weather_checkin",
+        "setting": "Calendar and weather check-in",
+        "goal": "Answer the original-guide day and weather questions as easy table small talk.",
+        "required_items": [
+            "cale001",
+            "cale002",
+            "cale003",
+            "cale004",
+            "cale005",
+            "cale006",
+            "cale009",
+            "cale010",
+            "cale011",
+            "cale018",
+            "cale019",
+        ],
+        "success_criteria": [
+            "answers_calendar_weather",
+            "uses_time_words",
+            "stays_in_russian",
+            "keeps_stress_clear",
+        ],
+    },
+    {
+        "id": "winter_activities_checkin",
+        "setting": "Winter words and seasonal activities",
+        "goal": "Recognize original-guide winter words and answer simple questions about sledding, skating, skiing, snowboarding, and walks in the snow.",
+        "required_items": [
+            "seas001",
+            "seas002",
+            "seas003",
+            "seas004",
+            "seas005",
+            "seas006",
+            "seas007",
+            "seas008",
+            "seas009",
+            "seas010",
+            "seas011",
+            "seas012",
+            "seas013",
+            "seas014",
+            "seas015",
+            "seas016",
+        ],
+        "success_criteria": [
+            "talks_about_winter_activities",
+            "answers_calendar_weather",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "question_words_connectors_checkin",
+        "setting": "Question words and connector words",
+        "goal": "Recognize the original-guide glue words that make fast family questions understandable: who, what, where, why, here/there, because, therefore, and quantity modifiers.",
+        "required_items": [
+            "ques001",
+            "ques002",
+            "ques003",
+            "ques004",
+            "ques005",
+            "ques006",
+            "ques007",
+            "ques008",
+            "ques009",
+            "ques010",
+            "ques011",
+            "ques012",
+            "ques013",
+            "ques014",
+            "ques015",
+            "ques016",
+        ],
+        "success_criteria": [
+            "recognizes_question_words_connectors",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "numbers_quantities_checkin",
+        "setting": "Numbers, prices, months, and quantities",
+        "goal": "Recognize and answer original-guide quantity questions about time, cost, months, people, hours, and years.",
+        "required_items": [
+            "numb001",
+            "numb002",
+            "numb003",
+            "numb004",
+            "numb005",
+            "numb006",
+            "numb007",
+            "numb008",
+            "numb009",
+            "numb010",
+            "numb011",
+            "numb012",
+            "numb013",
+            "numb014",
+            "numb015",
+            "numb016",
+        ],
+        "success_criteria": [
+            "handles_numbers_quantities",
+            "uses_repair_lines",
+            "stays_in_russian",
+        ],
+    },
+    {
+        "id": "adverb_adjective_survival",
+        "setting": "Quick descriptions and pace repair",
+        "goal": "Use short adverbs and adjective-agreement weather lines from the original guide.",
+        "required_items": [
+            "adve001",
+            "adve002",
+            "adve003",
+            "adve004",
+            "adve005",
+            "adve006",
+            "adve007",
+            "adve008",
+            "adve009",
+            "adve010",
+            "adve011",
+            "adve012",
+            "adve013",
+            "adve014",
+        ],
+        "success_criteria": [
+            "uses_adverbs_adjectives",
+            "answers_calendar_weather",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "leisure_places_checkin",
+        "setting": "Hobbies, home, and leisure places",
+        "goal": "Answer dinner-safe questions about music, films, cats, parks, stadiums, museums, and what you do when not working.",
+        "required_items": [
+            "leis001",
+            "leis002",
+            "leis003",
+            "leis004",
+            "leis005",
+            "leis006",
+            "leis007",
+            "leis008",
+            "leis009",
+            "leis010",
+            "leis011",
+            "leis012",
+            "leis013",
+            "leis014",
+            "leis015",
+            "leis016",
+            "leis017",
+            "leis018",
+            "leis019",
+            "leis020",
+            "leis021",
+        ],
+        "success_criteria": [
+            "talks_about_leisure_places",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "modal_ability_survival",
+        "setting": "Can, know how, want, need, and permission",
+        "goal": "Use the original-guide modal patterns for what Joe can do, wants to do, needs, and is allowed or not allowed to do.",
+        "required_items": [
+            "moda001",
+            "moda002",
+            "moda003",
+            "moda004",
+            "moda005",
+            "moda006",
+            "moda007",
+            "moda008",
+            "moda009",
+            "moda010",
+            "moda011",
+            "moda012",
+            "moda013",
+            "moda014",
+            "moda015",
+            "moda016",
+        ],
+        "success_criteria": [
+            "uses_modal_survival",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "physical_description_family",
+        "setting": "Describing family members",
+        "goal": "Answer simple questions about what someone looks like using height, eyes, hair, face, smile, and resemblance phrases from the original guide.",
+        "required_items": [
+            "phys001",
+            "phys002",
+            "phys003",
+            "phys004",
+            "phys005",
+            "phys006",
+            "phys007",
+            "phys008",
+            "phys009",
+            "phys010",
+            "phys011",
+            "phys012",
+            "phys013",
+            "phys014",
+            "phys015",
+            "phys016",
+            "phys017",
+            "phys018",
+        ],
+        "success_criteria": [
+            "describes_people_appearance",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "health_feelings_checkin",
+        "setting": "Health, tiredness, and feeling unwell",
+        "goal": "Recognize basic health prompts and answer briefly when Joe feels tired, has a headache, or hopes not to get sick.",
+        "required_items": [
+            "heal001",
+            "heal002",
+            "heal003",
+            "heal004",
+            "heal005",
+            "heal006",
+            "heal007",
+            "heal008",
+            "heal009",
+            "heal010",
+            "heal011",
+            "heal012",
+            "heal013",
+            "heal014",
+            "heal015",
+            "heal016",
+        ],
+        "success_criteria": [
+            "handles_health_checkin",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "past_week_events_checkin",
+        "setting": "Past week, trips, and what happened",
+        "goal": "Answer recurring original-guide past-event prompts about last week, weekend, travel, good news, and a simple what-happened story.",
+        "required_items": [
+            "list013",
+            "list014",
+            "past001",
+            "past002",
+            "past003",
+            "past004",
+            "past005",
+            "past006",
+            "past007",
+            "past008",
+            "past009",
+            "past010",
+            "past011",
+            "past012",
+            "past013",
+            "past014",
+            "past015",
+            "past016",
+            "past017",
+        ],
+        "success_criteria": [
+            "answers_past_week_events",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "home_chores_shopping_checkin",
+        "setting": "Home, chores, homework, and shopping",
+        "goal": "Answer simple original-guide questions about cleaning at home, dishes/trash/cats, homework time, shopping, and asking for help.",
+        "required_items": [
+            "home001",
+            "home002",
+            "home003",
+            "home004",
+            "home005",
+            "home006",
+            "home007",
+            "home008",
+            "home009",
+            "home010",
+            "home011",
+            "home012",
+            "home013",
+            "home014",
+            "home015",
+            "home016",
+            "home017",
+        ],
+        "success_criteria": [
+            "answers_home_chores_shopping",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "pronouns_possession_checkin",
+        "setting": "Pronouns, possession, and who has what",
+        "goal": "Use original-guide personal and possessive pronouns in short family/home/travel answers without overexplaining the grammar.",
+        "required_items": [
+            "pron001",
+            "pron002",
+            "pron003",
+            "pron004",
+            "pron005",
+            "pron006",
+            "pron007",
+            "pron008",
+            "pron009",
+            "pron010",
+            "pron011",
+            "pron012",
+            "pron013",
+            "pron014",
+            "pron015",
+            "pron016",
+        ],
+        "success_criteria": [
+            "uses_pronouns_possession",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "budva_trip_checkin",
+        "setting": "Budva family trip",
+        "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
+        "required_items": [
+            "trav001",
+            "trav002",
+            "trav003",
+            "trav004",
+            "trav005",
+            "trav006",
+            "trav007",
+            "trav008",
+            "trav009",
+            "trav012",
+            "trav013",
+        ],
+        "success_criteria": [
+            "handles_travel_logistics",
+            "talks_about_budva",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "daily_routine_checkin",
+        "setting": "Everyday family check-in",
+        "goal": "Answer simple questions about eating, working, resting, and the evening routine.",
+        "required_items": [
+            "dail004",
+            "dail005",
+            "dail006",
+            "dail007",
+            "dail008",
+            "dail009",
+            "dail010",
+            "dail011",
+            "dail012",
+            "dail013",
+            "dail014",
+            "dail015",
+        ],
+        "success_criteria": [
+            "answers_daily_routine",
+            "uses_day_parts",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "daily_routine_story",
+        "setting": "My day mini-story",
+        "goal": "Tell a short morning-work-evening story using the original guide's Мой день material.",
+        "required_items": [
+            "dail018",
+            "dail019",
+            "dail020",
+            "dail021",
+            "dail022",
+            "dail023",
+            "dail024",
+            "dail025",
+            "dail026",
+            "dail027",
+            "dail028",
+            "dail029",
+        ],
+        "success_criteria": [
+            "tells_daily_story",
+            "uses_day_parts",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "work_business_checkin",
+        "setting": "Lawyer work small talk",
+        "goal": "Answer predictable questions about clients, cases, court, and being busy without overexplaining.",
+        "required_items": [
+            "smal001",
+            "work001",
+            "work002",
+            "work003",
+            "work004",
+            "work005",
+            "work006",
+            "work007",
+            "work008",
+            "work009",
+            "work010",
+            "work011",
+            "work012",
+        ],
+        "success_criteria": [
+            "answers_work_questions",
+            "keeps_work_brief",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "holiday_celebration_checkin",
+        "setting": "Holiday and family celebration small talk",
+        "goal": "Answer Christmas/Thanksgiving/family-plan prompts from the original guide in short Russian.",
+        "required_items": [
+            "cele001",
+            "cele004",
+            "cele005",
+            "cele006",
+            "cele007",
+            "cele010",
+            "cele011",
+            "cele012",
+            "cele013",
+            "cele014",
+        ],
+        "success_criteria": [
+            "answers_holiday_plans",
+            "keeps_celebration_story_short",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "cultural_bonus_recognition",
+        "setting": "Recognition-only cultural extras",
+        "goal": "Recognize source-guide proverbs and lawyer jokes without trying to perform them.",
+        "required_items": [
+            "cult001",
+            "cult002",
+            "cult003",
+            "cult004",
+            "cult005",
+            "cult006",
+            "cult007",
+            "cult008",
+            "cult009",
+        ],
+        "success_criteria": [
+            "recognizes_cultural_bonus",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "budva_airport_hotel_checkin",
+        "setting": "Airport and hotel arrival",
+        "goal": "Handle airport check-in, luggage, hotel reservation, room, key, elevator, and checkout basics.",
+        "required_items": [
+            "trav015",
+            "trav016",
+            "trav017",
+            "trav018",
+            "trav019",
+            "trav020",
+            "trav021",
+            "trav022",
+            "trav023",
+            "trav024",
+            "trav025",
+            "trav026",
+            "trav027",
+            "trav028",
+        ],
+        "success_criteria": [
+            "handles_airport_hotel",
+            "handles_travel_logistics",
+            "stays_in_russian",
+            "uses_repair_lines",
         ],
     },
 ]
@@ -709,6 +1369,132 @@ MODULES = [
         "👂",
     ),
     (
+        "calendar_weather",
+        "Calendar & Weather",
+        "Original-guide day and weather questions for easy family small talk.",
+        2,
+        "☀️",
+    ),
+    (
+        "seasonal_activities",
+        "Winter & Seasonal Activities",
+        "Original-guide winter words and ката́ться-на activities for easy small talk.",
+        2,
+        "⛸️",
+    ),
+    (
+        "question_words",
+        "Question Words & Connectors",
+        "Original-guide glue words: who/what/where/why, here/there, because, therefore, and quantity modifiers.",
+        2,
+        "❓",
+    ),
+    (
+        "numbers_quantities",
+        "Numbers & Quantities",
+        "Original-guide quantities: prices, months, hours worked, years, and headcounts.",
+        2,
+        "🔢",
+    ),
+    (
+        "adverbs_adjectives",
+        "Adverbs & Descriptions",
+        "Original-guide adverbs and adjective agreement turned into short spoken survival lines.",
+        2,
+        "◒",
+    ),
+    (
+        "daily_routine",
+        "Daily Routine",
+        "Original-guide 'Мой день' phrases: eat, work, rest, homework, and evening plans.",
+        2,
+        "🕰️",
+    ),
+    (
+        "leisure_places",
+        "Hobbies & Places",
+        "Dinner-safe small talk from the guide: music, films, home, cats, parks, stadiums, cinema, and museums.",
+        2,
+        "🎸",
+    ),
+    (
+        "physical_description",
+        "Appearance & People",
+        "Original-guide person-description lane: height, eyes, hair, smile, face, and family resemblance.",
+        2,
+        "👤",
+    ),
+    (
+        "health_feelings",
+        "Health & Feelings",
+        "Original-guide health check-ins: feeling unwell, headache, tiredness, sleep, hope, and болеть.",
+        2,
+        "🩺",
+    ),
+    (
+        "past_events",
+        "Past Week & Events",
+        "Original-guide past-tense small talk: last week, weekend, trips, good news, and what happened.",
+        2,
+        "🗓️",
+    ),
+    (
+        "home_life",
+        "Home, Chores & Shopping",
+        "Original-guide home life: cleaning, dishes, trash, cats, homework, stores, groceries, and help.",
+        2,
+        "🧹",
+    ),
+    (
+        "pronouns_possession",
+        "Pronouns & Possession",
+        "Original-guide pronouns made oral: my/your/our, he/she/they, and у меня / у нас patterns.",
+        2,
+        "🔗",
+    ),
+    (
+        "modal_ability",
+        "Can, Want & Need",
+        "Original-guide modal survival: can, know how, want, need, allowed, not allowed, and should.",
+        2,
+        "🧭",
+    ),
+    (
+        "work_business",
+        "Work & Clients",
+        "Short lawyer/work answers from the guide: clients, cases, court, and being busy.",
+        2,
+        "💼",
+    ),
+    (
+        "legal_recognition",
+        "Legal Words (Recognition)",
+        "Recognition-only legal terms from the guide so deeper work questions are less jarring.",
+        3,
+        "⚖️",
+    ),
+    (
+        "celebrations",
+        "Holidays & Plans",
+        "Original-guide Christmas, Thanksgiving, and family-plan small talk.",
+        3,
+        "🎄",
+    ),
+    (
+        "cultural_bonus",
+        "Cultural Extras (Recognition)",
+        "Recognition-only proverbs, idioms, and lawyer jokes from the saved guide.",
+        3,
+        "🎭",
+    ),
+    (
+        "travel_budva",
+        "Budva Trip",
+        "Montenegro travel phrases for airport, hotel, beach, and old-town plans.",
+        2,
+        "🧳",
+    ),
+    (
         "verbs",
         "Core Verbs (reactivation)",
         "High-frequency verbs from Ekaterina's guide — я / вы forms.",
@@ -755,6 +1541,114 @@ MODULE_STRUCTURES = {
         "skill:listening_question_recognition",
         "grammar:formal_question",
         "phrase:host_question",
+    ],
+    "calendar_weather": [
+        "lexical:days_of_week",
+        "phrase:weather_answer",
+        "phrase:calendar_question",
+        "grammar:time_expression",
+    ],
+    "seasonal_activities": [
+        "lexical:winter_vocab",
+        "phrase:seasonal_activity",
+        "grammar:katatsya_na_instrumental",
+        "phrase:snow_smalltalk",
+    ],
+    "question_words": [
+        "lexical:question_words",
+        "lexical:deictics",
+        "discourse:cause_connector",
+        "lexical:quantity_modifiers",
+    ],
+    "numbers_quantities": [
+        "lexical:months",
+        "lexical:numbers",
+        "phrase:quantity_question",
+        "phrase:price_question",
+        "grammar:number_noun_agreement",
+    ],
+    "adverbs_adjectives": [
+        "lexical:adverbs",
+        "grammar:adjective_agreement",
+        "phrase:short_evaluation",
+        "phrase:pace_repair",
+    ],
+    "daily_routine": [
+        "lexical:day_parts",
+        "phrase:routine_answer",
+        "grammar:when_question",
+        "grammar:time_expression",
+    ],
+    "leisure_places": [
+        "lexical:hobbies",
+        "lexical:places",
+        "phrase:leisure_answer",
+        "grammar:igrat_v_na",
+    ],
+    "physical_description": [
+        "lexical:appearance_vocab",
+        "phrase:appearance_question",
+        "grammar:adjective_agreement",
+        "phrase:family_resemblance",
+    ],
+    "health_feelings": [
+        "lexical:health_vocab",
+        "phrase:health_question",
+        "grammar:u_menya_bolit",
+        "phrase:tiredness_answer",
+    ],
+    "past_events": [
+        "grammar:past_tense",
+        "phrase:last_week_question",
+        "phrase:trip_story",
+        "phrase:what_happened",
+    ],
+    "home_life": [
+        "lexical:home_chores",
+        "phrase:homework_question",
+        "phrase:shopping_answer",
+        "phrase:help_request",
+    ],
+    "pronouns_possession": [
+        "lexical:personal_pronouns",
+        "grammar:possessive_agreement",
+        "grammar:u_genitive_possession",
+        "phrase:relationship_reference",
+    ],
+    "modal_ability": [
+        "grammar:modal_verbs",
+        "grammar:impersonal_modal",
+        "phrase:wants_needs",
+        "phrase:permission",
+    ],
+    "work_business": [
+        "lexical:work_vocab",
+        "phrase:work_identity",
+        "phrase:client_case_answer",
+        "grammar:past_masculine_work",
+    ],
+    "legal_recognition": [
+        "lexical:legal_vocab",
+        "skill:listening_question_recognition",
+        "strategy:recognition_only",
+    ],
+    "celebrations": [
+        "lexical:holiday_vocab",
+        "phrase:holiday_plan",
+        "phrase:family_celebration",
+        "grammar:future_plan",
+    ],
+    "cultural_bonus": [
+        "lexical:proverbs",
+        "lexical:idioms",
+        "skill:listening_question_recognition",
+        "strategy:recognition_only",
+    ],
+    "travel_budva": [
+        "lexical:travel_vocab",
+        "phrase:travel_logistics",
+        "phrase:place_description",
+        "grammar:prepositional_place",
     ],
     "verbs": [
         "grammar:present_first_person",
@@ -1072,6 +1966,93 @@ add(
     "the line that wins the table: [ya lyu-blyú vá-shu doch']",
     1,
 )
+add("family", "малы́ш", "baby / little one", "[ma-lýsh]", 3, recognize=True)
+add(
+    "family",
+    "Как себя́ чу́вствует Кадри́я?",
+    "How is Kadriya feeling?",
+    "[kak se-byá chúv-stvu-yet ka-drí-ya]",
+    2,
+    recognize=True,
+    rehearse=True,
+    note="Sensitive family-health question from the original guide; rehearse with Kadriya before using.",
+    tags=["family", "health", "baby", "sensitive"],
+)
+add(
+    "family",
+    "Она́ о́чень уста́ла.",
+    "She is very tired.",
+    "[a-ná ó-chen' u-stá-la]",
+    2,
+    recognize=True,
+    rehearse=True,
+    note="Sensitive family-health answer from the original guide; use only with Kadriya's approval.",
+    tags=["family", "health", "baby", "sensitive"],
+)
+add(
+    "family",
+    "Немно́го боли́т спина́.",
+    "Her back hurts a little.",
+    "[nem-nó-ga ba-lít spi-ná]",
+    3,
+    recognize=True,
+    rehearse=True,
+    note="Health detail from the original guide; recognition-first, not casual small talk.",
+    tags=["family", "health", "baby", "sensitive"],
+)
+add(
+    "family",
+    "Вы гото́вы к рожде́нию малы́ша?",
+    "Are you ready for the baby's birth?",
+    "[vy ga-tó-vy k razh-dyé-ni-yu ma-lý-sha]",
+    2,
+    recognize=True,
+    rehearse=True,
+    note="Personal baby-readiness question from the original guide; practice as recognition unless Kadriya confirms.",
+    tags=["family", "baby", "sensitive"],
+)
+add(
+    "family",
+    "Да, мы гото́вы.",
+    "Yes, we are ready.",
+    "[da, my ga-tó-vy]",
+    2,
+    rehearse=True,
+    note="Short answer to the baby-readiness prompt; rehearse with Kadriya.",
+    tags=["family", "baby", "sensitive"],
+)
+add(
+    "family",
+    "Ты возьмёшь о́тпуск?",
+    "Will you take leave?",
+    "[ty vaz'-myósh ót-pusk]",
+    2,
+    recognize=True,
+    rehearse=True,
+    note="Original-guide family leave question; recognition-first because plans may change.",
+    tags=["family", "baby", "work", "sensitive"],
+)
+add(
+    "family",
+    "Я не зна́ю, смогу́ ли я взять о́тпуск.",
+    "I don't know whether I will be able to take leave.",
+    "[ya ne zná-yu, sma-gú li ya vzyat' ót-pusk]",
+    2,
+    rehearse=True,
+    note="Original-guide answer about leave; use only if it is still true.",
+    tags=["family", "baby", "work", "sensitive"],
+)
+add(
+    "family",
+    "Когда́ у вас роди́тся ребёнок?",
+    "When will your child be born?",
+    "[kag-dá u vas ra-dí-tsa re-byó-nak]",
+    3,
+    recognize=True,
+    rehearse=True,
+    note="Original-guide baby question; may be time-sensitive, so practice as recognition.",
+    tags=["family", "baby", "sensitive"],
+)
 
 # --- FOOD ---
 add(
@@ -1213,6 +2194,2810 @@ add(
     "[bú-dye-tye] — e.g. «Бу́дете чай?»",
     3,
     recognize=True,
+)
+add(
+    "listening",
+    "Чем ты сего́дня занима́лся?",
+    "What did you do today?",
+    "[chem ty si-vód-nya za-ni-mál-sya]",
+    2,
+    recognize=True,
+    tags=["question", "checkin", "listening"],
+)
+add(
+    "listening",
+    "Како́й сего́дня день?",
+    "What kind of day is it today?",
+    "[ka-kóy si-vód-nya dyen']",
+    2,
+    recognize=True,
+    tags=["question", "weather", "checkin"],
+)
+add(
+    "listening",
+    "Как на у́лице?",
+    "How is it outside?",
+    "[kak na ú-li-tse]",
+    2,
+    recognize=True,
+    tags=["question", "weather", "checkin"],
+)
+add(
+    "listening",
+    "Что вы де́лали на выходны́х?",
+    "What did you do on the weekend?",
+    "[shto vy dyé-la-li na vy-had-nýh]",
+    2,
+    recognize=True,
+    tags=["question", "weekend", "checkin"],
+)
+add(
+    "listening",
+    "Что ты де́лал на про́шлой неде́ле?",
+    "What did you do last week?",
+    "[shto ty dyé-lal na prósh-lay ni-dyé-lye]",
+    2,
+    recognize=True,
+    tags=["question", "week", "checkin"],
+)
+add(
+    "listening",
+    "Что ты де́лал на э́той неде́ле?",
+    "What did you do this week?",
+    "[shto ty dyé-lal na é-tay ni-dyé-lye]",
+    2,
+    recognize=True,
+    tags=["question", "week", "checkin"],
+)
+add(
+    "listening",
+    "Чем был за́нят?",
+    "What were you busy with?",
+    "[chem byl zá-nyat]",
+    2,
+    recognize=True,
+    gender="m",
+    tags=["question", "work", "checkin"],
+)
+add(
+    "listening",
+    "У вас бу́дут рожде́ственские кани́кулы?",
+    "Will you have Christmas vacation?",
+    "[u vas bú-dut razh-dyén-stven-ski-ye ka-ní-ku-ly]",
+    3,
+    recognize=True,
+    tags=["question", "holiday", "checkin"],
+)
+add(
+    "listening",
+    "Ско́лько часо́в ты рабо́тал?",
+    "How many hours did you work?",
+    "[skól'-ka cha-sóf ty ra-bó-tal]",
+    2,
+    recognize=True,
+    gender="m",
+    tags=["question", "work", "checkin"],
+)
+
+# --- CALENDAR & WEATHER (original-guide small-talk lane) ---
+add(
+    "calendar_weather",
+    "Ка́кая сего́дня пого́да?",
+    "What is the weather like today?",
+    "[ká-ka-ya si-vód-nya pa-gó-da]",
+    2,
+    recognize=True,
+    tags=["weather", "calendar"],
+)
+add(
+    "calendar_weather",
+    "Как там на у́лице?",
+    "How is it outside?",
+    "[kak tam na ú-li-tse]",
+    2,
+    recognize=True,
+    tags=["weather", "calendar"],
+)
+add(
+    "calendar_weather",
+    "Сего́дня хо́лодно.",
+    "Today it's cold.",
+    "[si-vód-nya hó-lad-na]",
+    2,
+    tags=["weather"],
+)
+add(
+    "calendar_weather",
+    "Сего́дня тепло́.",
+    "Today it's warm.",
+    "[si-vód-nya tip-ló]",
+    2,
+    tags=["weather"],
+)
+add(
+    "calendar_weather",
+    "Сего́дня со́лнечно.",
+    "Today it's sunny.",
+    "[si-vód-nya sól-nech-na]",
+    2,
+    tags=["weather"],
+)
+add(
+    "calendar_weather",
+    "Сего́дня о́блачно.",
+    "Today it's cloudy.",
+    "[si-vód-nya ób-lach-na]",
+    2,
+    tags=["weather"],
+)
+add(
+    "calendar_weather",
+    "Идёт дождь.",
+    "It's raining.",
+    "[i-dyót doshch]",
+    2,
+    tags=["weather"],
+)
+add(
+    "calendar_weather",
+    "Идёт снег.",
+    "It's snowing.",
+    "[i-dyót snyek]",
+    2,
+    tags=["weather"],
+)
+add(
+    "calendar_weather",
+    "Вчера́ бы́ло со́лнечно.",
+    "It was sunny yesterday.",
+    "[vchi-rá bý-la sól-nech-na]",
+    3,
+    tags=["weather", "time"],
+)
+add(
+    "calendar_weather",
+    "За́втра бу́дет тепло́.",
+    "Tomorrow it will be warm.",
+    "[záf-tra bú-dyet tip-ló]",
+    3,
+    tags=["weather", "time"],
+)
+add(
+    "calendar_weather",
+    "Како́й сего́дня день неде́ли?",
+    "What day of the week is it today?",
+    "[ka-kóy si-vód-nya dyen' ni-dyé-li]",
+    2,
+    recognize=True,
+    tags=["calendar"],
+)
+add("calendar_weather", "понеде́льник", "Monday", "[pa-ni-dyél'-nik]", 3, tags=["day"])
+add("calendar_weather", "вто́рник", "Tuesday", "[ftór-nik]", 3, tags=["day"])
+add("calendar_weather", "среда́", "Wednesday", "[sri-dá]", 3, tags=["day"])
+add("calendar_weather", "четве́рг", "Thursday", "[chit-vyérk]", 3, tags=["day"])
+add("calendar_weather", "пя́тница", "Friday", "[pyát-ni-tsa]", 3, tags=["day"])
+add("calendar_weather", "суббо́та", "Saturday", "[su-bó-ta]", 3, tags=["day"])
+add("calendar_weather", "воскресе́нье", "Sunday", "[vas-kri-syén'-ye]", 3, tags=["day"])
+add(
+    "calendar_weather",
+    "на выходны́х",
+    "on the weekend",
+    "[na vy-had-nýh]",
+    3,
+    tags=["calendar"],
+)
+
+# --- WINTER & SEASONAL ACTIVITIES (original-guide winter/кататься lane) ---
+add(
+    "seasonal_activities",
+    "зима́",
+    "winter",
+    "[zi-má]",
+    3,
+    recognize=True,
+    tags=["winter", "season"],
+)
+add(
+    "seasonal_activities",
+    "снег",
+    "snow",
+    "[snyek]",
+    3,
+    recognize=True,
+    tags=["winter", "weather"],
+)
+add(
+    "seasonal_activities",
+    "снежи́нка",
+    "snowflake",
+    "[sni-zhýn-ka]",
+    3,
+    recognize=True,
+    tags=["winter", "weather"],
+)
+add(
+    "seasonal_activities",
+    "снегови́к",
+    "snowman",
+    "[sni-ga-vík]",
+    3,
+    recognize=True,
+    tags=["winter", "weather"],
+)
+add(
+    "seasonal_activities",
+    "снегопа́д",
+    "snowfall",
+    "[sni-ga-pát]",
+    3,
+    recognize=True,
+    tags=["winter", "weather"],
+)
+add(
+    "seasonal_activities",
+    "моро́з",
+    "frost / hard cold",
+    "[ma-rós]",
+    3,
+    recognize=True,
+    tags=["winter", "cold"],
+)
+add(
+    "seasonal_activities",
+    "Дед Моро́з",
+    "Ded Moroz / Grandfather Frost",
+    "[dyed ma-rós]",
+    3,
+    recognize=True,
+    tags=["winter", "holiday", "culture"],
+)
+add(
+    "seasonal_activities",
+    "Снегу́рочка",
+    "Snegurochka / Snow Maiden",
+    "[sni-gú-rach-ka]",
+    3,
+    recognize=True,
+    tags=["winter", "holiday", "culture"],
+)
+add(
+    "seasonal_activities",
+    "Я ката́юсь на са́нках.",
+    "I go sledding.",
+    "[ya ka-tá-yus' na sán-kah]",
+    2,
+    tags=["winter", "activity", "katatsya"],
+)
+add(
+    "seasonal_activities",
+    "Я ката́юсь на конька́х.",
+    "I go skating.",
+    "[ya ka-tá-yus' na kan'-káh]",
+    2,
+    tags=["winter", "activity", "katatsya"],
+)
+add(
+    "seasonal_activities",
+    "Я ката́юсь на лы́жах.",
+    "I ski.",
+    "[ya ka-tá-yus' na lý-zhah]",
+    2,
+    tags=["winter", "activity", "katatsya"],
+)
+add(
+    "seasonal_activities",
+    "Я ката́юсь на бо́рде.",
+    "I snowboard.",
+    "[ya ka-tá-yus' na bór-de]",
+    3,
+    tags=["winter", "activity", "snowboard", "katatsya"],
+)
+add(
+    "seasonal_activities",
+    "Мы ката́емся на го́рке.",
+    "We ride down the hill.",
+    "[my ka-tá-yem-sya na gór-ke]",
+    3,
+    tags=["winter", "activity", "katatsya"],
+)
+add(
+    "seasonal_activities",
+    "Она́ ката́ется на лы́жах.",
+    "She skis.",
+    "[a-ná ka-tá-yet-sya na lý-zhah]",
+    3,
+    recognize=True,
+    tags=["winter", "activity", "katatsya", "listening"],
+)
+add(
+    "seasonal_activities",
+    "Вы ката́етесь на лы́жах?",
+    "Do you ski? (formal/plural)",
+    "[vy ka-tá-ye-tyes' na lý-zhah]",
+    2,
+    recognize=True,
+    tags=["winter", "activity", "question", "listening"],
+)
+add(
+    "seasonal_activities",
+    "Мы гуля́ли в па́рке и смотре́ли на снег.",
+    "We walked in the park and looked at the snow.",
+    "[my gu-lyá-li f pár-ke i smat-ryé-li na snyek]",
+    3,
+    tags=["winter", "park", "past_tense"],
+)
+
+# --- QUESTION WORDS & CONNECTORS (original-guide glue words) ---
+add(
+    "question_words", "Кто?", "Who?", "[kto]", 2, recognize=True, tags=["question_word"]
+)
+add(
+    "question_words",
+    "Что?",
+    "What?",
+    "[shto]",
+    2,
+    recognize=True,
+    tags=["question_word"],
+)
+add(
+    "question_words",
+    "Где?",
+    "Where? / Where at?",
+    "[gdye]",
+    2,
+    recognize=True,
+    tags=["question_word", "place"],
+)
+add(
+    "question_words",
+    "Куда́?",
+    "Where to?",
+    "[ku-dá]",
+    2,
+    recognize=True,
+    tags=["question_word", "direction"],
+)
+add(
+    "question_words",
+    "Отку́да?",
+    "Where from?",
+    "[at-kú-da]",
+    2,
+    recognize=True,
+    tags=["question_word", "direction"],
+)
+add(
+    "question_words",
+    "Когда́?",
+    "When?",
+    "[kag-dá]",
+    2,
+    recognize=True,
+    tags=["question_word", "time"],
+)
+add(
+    "question_words",
+    "Почему́?",
+    "Why?",
+    "[pa-chi-mú]",
+    2,
+    recognize=True,
+    tags=["question_word", "cause"],
+)
+add(
+    "question_words",
+    "Заче́м?",
+    "What for?",
+    "[za-chém]",
+    3,
+    recognize=True,
+    tags=["question_word", "purpose"],
+)
+add(
+    "question_words",
+    "Како́й / кака́я / како́е / каки́е?",
+    "What kind? / Which? (masc/fem/neut/plural)",
+    "[ka-kóy / ka-ká-ya / ka-kó-ye / ka-kí-ye]",
+    2,
+    recognize=True,
+    tags=["question_word", "adjective_agreement"],
+)
+add(
+    "question_words",
+    "здесь / тут",
+    "here",
+    "[zdyes' / tut]",
+    2,
+    recognize=True,
+    tags=["place", "deictic"],
+)
+add(
+    "question_words",
+    "там",
+    "there",
+    "[tam]",
+    2,
+    recognize=True,
+    tags=["place", "deictic"],
+)
+add(
+    "question_words",
+    "потому́ что",
+    "because",
+    "[pa-ta-mú shta]",
+    2,
+    recognize=True,
+    tags=["connector", "cause"],
+)
+add(
+    "question_words",
+    "поэ́тому",
+    "that's why / therefore",
+    "[pa-é-ta-mu]",
+    2,
+    recognize=True,
+    tags=["connector", "cause"],
+)
+add(
+    "question_words",
+    "коне́чно",
+    "of course",
+    "[ka-nyésh-na]",
+    2,
+    recognize=True,
+    tags=["connector", "agreement"],
+)
+add(
+    "question_words",
+    "мно́го / ма́ло",
+    "a lot / not much",
+    "[mnó-ga / má-la]",
+    3,
+    recognize=True,
+    tags=["quantity"],
+)
+add(
+    "question_words",
+    "немно́го / чуть-чу́ть",
+    "a little / a tiny bit",
+    "[nem-nó-ga / chut'-chút']",
+    3,
+    recognize=True,
+    tags=["quantity"],
+)
+
+# --- NUMBERS & QUANTITIES (prices, months, hours, and headcounts) ---
+add(
+    "numbers_quantities",
+    "Ско́лько?",
+    "How many? / How much?",
+    "[skól'-ka]",
+    2,
+    recognize=True,
+)
+add(
+    "numbers_quantities",
+    "Ско́лько сто́ит?",
+    "How much does it cost?",
+    "[skól'-ka stó-it]",
+    2,
+    recognize=True,
+    note="Use for one item or a whole purchase; plural items may trigger «сто́ят».",
+    tags=["quantity", "price", "travel"],
+)
+add(
+    "numbers_quantities",
+    "Ско́лько сто́ят?",
+    "How much do they cost?",
+    "[skól'-ka stó-yat]",
+    3,
+    recognize=True,
+    note="Plural cost question from the original guide's сто́ить drill.",
+    tags=["quantity", "price", "travel"],
+)
+add(
+    "numbers_quantities",
+    "ты́сяча",
+    "thousand",
+    "[tý-sya-cha]",
+    3,
+    recognize=True,
+    tags=["number"],
+)
+add(
+    "numbers_quantities",
+    "две ты́сячи",
+    "two thousand",
+    "[dvye tý-sya-chi]",
+    3,
+    recognize=True,
+    tags=["number"],
+)
+add(
+    "numbers_quantities",
+    "пять ты́сяч",
+    "five thousand",
+    "[pyat' tý-syach]",
+    3,
+    recognize=True,
+    tags=["number"],
+)
+add(
+    "numbers_quantities",
+    "Ско́лько сейча́с вре́мени?",
+    "What time is it now?",
+    "[skól'-ka si-chás vryé-me-ni]",
+    2,
+    recognize=True,
+    tags=["time", "question"],
+)
+add(
+    "numbers_quantities",
+    "Сейча́с три двена́дцать.",
+    "It's 3:12 now.",
+    "[si-chás tri dvi-ná-tsat']",
+    3,
+    recognize=True,
+    tags=["time"],
+)
+add(
+    "numbers_quantities",
+    "Сего́дня я рабо́тал четы́ре часа́ три́дцать мину́т.",
+    "Today I worked four hours and thirty minutes.",
+    "[si-vód-nya ya ra-bó-tal chi-tý-rye cha-sá trí-tsat' mi-nút]",
+    2,
+    gender="m",
+    tags=["time", "work", "hours"],
+)
+add(
+    "numbers_quantities",
+    "Ну́жно рабо́тать ещё два часа́.",
+    "Need to work two more hours.",
+    "[núzh-na ra-bó-tat' ye-shchó dva cha-sá]",
+    2,
+    tags=["time", "work", "hours"],
+)
+add(
+    "numbers_quantities",
+    "Мы потра́тили семь или во́семь часо́в.",
+    "We spent seven or eight hours.",
+    "[my pa-trá-ti-li syem' í-li vó-syem' cha-sóf]",
+    3,
+    recognize=True,
+    tags=["time", "hours"],
+)
+add(
+    "numbers_quantities",
+    "Ско́лько бы́ло челове́к?",
+    "How many people were there?",
+    "[skól'-ka bý-la chi-la-vyék]",
+    2,
+    recognize=True,
+    tags=["quantity", "people", "question"],
+)
+add(
+    "numbers_quantities",
+    "Бы́ло се́мьдесят челове́к.",
+    "There were seventy people.",
+    "[bý-la syém-di-syat chi-la-vyék]",
+    3,
+    recognize=True,
+    tags=["quantity", "people"],
+)
+add(
+    "numbers_quantities",
+    "Ско́лько лет ты живёшь в до́ме?",
+    "How many years have you lived in the house?",
+    "[skól'-ka let ty zhi-vyósh v dó-me]",
+    2,
+    recognize=True,
+    tags=["quantity", "years", "question"],
+)
+add(
+    "numbers_quantities",
+    "Я живу́ в до́ме пять лет.",
+    "I have lived in the house for five years.",
+    "[ya zhi-vú v dó-me pyat' let]",
+    3,
+    note="Source-guide pattern; adapt the number only after rehearsal.",
+    tags=["quantity", "years"],
+)
+add(
+    "numbers_quantities",
+    "Како́й сейча́с ме́сяц?",
+    "What month is it now?",
+    "[ka-kóy si-chás myé-syats]",
+    2,
+    recognize=True,
+    tags=["month", "question"],
+)
+add(
+    "numbers_quantities",
+    "янва́рь",
+    "January",
+    "[yan-vár']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add(
+    "numbers_quantities",
+    "февра́ль",
+    "February",
+    "[fi-vrál']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add("numbers_quantities", "март", "March", "[mart]", 3, recognize=True, tags=["month"])
+add(
+    "numbers_quantities",
+    "апре́ль",
+    "April",
+    "[a-pryél']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add("numbers_quantities", "май", "May", "[may]", 3, recognize=True, tags=["month"])
+add("numbers_quantities", "ию́нь", "June", "[i-yún']", 3, recognize=True, tags=["month"])
+add("numbers_quantities", "ию́ль", "July", "[i-yúl']", 3, recognize=True, tags=["month"])
+add(
+    "numbers_quantities",
+    "а́вгуст",
+    "August",
+    "[áv-gust]",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add(
+    "numbers_quantities",
+    "сентя́брь",
+    "September",
+    "[sin-tyábr']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add(
+    "numbers_quantities",
+    "октя́брь",
+    "October",
+    "[ak-tyábr']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add(
+    "numbers_quantities",
+    "ноя́брь",
+    "November",
+    "[na-yábr']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+add(
+    "numbers_quantities",
+    "дека́брь",
+    "December",
+    "[di-kábr']",
+    3,
+    recognize=True,
+    tags=["month"],
+)
+
+# --- ADVERBS & DESCRIPTIONS (original-guide survival grammar) ---
+add(
+    "adverbs_adjectives",
+    "Э́то о́чень интере́сно.",
+    "This is very interesting.",
+    "[é-ta ó-chen' in-ti-ryés-na]",
+    2,
+    tags=["adverb", "evaluation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то немно́го тру́дно.",
+    "This is a little difficult.",
+    "[é-ta nem-nó-ga trúd-na]",
+    2,
+    tags=["adverb", "evaluation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то не тру́дно.",
+    "This is not difficult.",
+    "[é-ta nye trúd-na]",
+    2,
+    tags=["adverb", "evaluation", "negation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то о́чень легко́.",
+    "This is very easy.",
+    "[é-ta ó-chen' lyi-khó]",
+    2,
+    tags=["adverb", "evaluation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то удо́бно.",
+    "This is convenient.",
+    "[é-ta u-dób-na]",
+    2,
+    tags=["adverb", "evaluation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то не о́чень удо́бно.",
+    "This is not very convenient.",
+    "[é-ta nye ó-chen' u-dób-na]",
+    2,
+    tags=["adverb", "evaluation", "negation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то сли́шком бы́стро.",
+    "This is too fast.",
+    "[é-ta slísh-kam bý-stra]",
+    2,
+    tags=["adverb", "pace", "repair"],
+)
+add(
+    "adverbs_adjectives",
+    "Ме́дленно, пожа́луйста.",
+    "Slowly, please.",
+    "[myéd-len-na pa-zhá-luy-sta]",
+    2,
+    tags=["adverb", "pace", "repair"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то ва́жно.",
+    "This is important.",
+    "[é-ta vázh-na]",
+    2,
+    tags=["adverb", "evaluation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то не ва́жно.",
+    "This is not important.",
+    "[é-ta nye vázh-na]",
+    3,
+    tags=["adverb", "evaluation", "negation"],
+)
+add(
+    "adverbs_adjectives",
+    "Пого́да хоро́шая.",
+    "The weather is good.",
+    "[pa-gó-da ha-ró-sha-ya]",
+    2,
+    tags=["adjective", "weather"],
+)
+add(
+    "adverbs_adjectives",
+    "Пого́да пло́хая.",
+    "The weather is bad.",
+    "[pa-gó-da pló-ha-ya]",
+    3,
+    tags=["adjective", "weather"],
+)
+add(
+    "adverbs_adjectives",
+    "Пого́да со́лнечная.",
+    "The weather is sunny.",
+    "[pa-gó-da sól-nech-na-ya]",
+    3,
+    tags=["adjective", "weather"],
+)
+add(
+    "adverbs_adjectives",
+    "Пого́да дождли́вая.",
+    "The weather is rainy.",
+    "[pa-gó-da dazhd-lí-va-ya]",
+    3,
+    tags=["adjective", "weather"],
+)
+
+# --- DAILY ROUTINE (original-guide "Мой день" lane) ---
+add(
+    "daily_routine",
+    "До́брое у́тро.",
+    "Good morning.",
+    "[dób-ra-ye ú-tra]",
+    2,
+    tags=["greeting", "day_part"],
+)
+add(
+    "daily_routine",
+    "До́брый день.",
+    "Good afternoon.",
+    "[dób-ryy dyen']",
+    2,
+    tags=["greeting", "day_part"],
+)
+add(
+    "daily_routine",
+    "До́брый ве́чер.",
+    "Good evening.",
+    "[dób-ryy vyé-cher]",
+    2,
+    tags=["greeting", "day_part"],
+)
+add(
+    "daily_routine",
+    "Когда́ вы обе́даете?",
+    "When do you have lunch?",
+    "[kag-dá vy a-byé-da-ye-tye]",
+    2,
+    recognize=True,
+    tags=["routine", "question", "food"],
+)
+add(
+    "daily_routine",
+    "Я обе́даю днём.",
+    "I have lunch during the day.",
+    "[ya a-byé-da-yu dnyom]",
+    2,
+    tags=["routine", "food", "day_part"],
+)
+add(
+    "daily_routine",
+    "Когда́ вы у́жинаете?",
+    "When do you have dinner?",
+    "[kag-dá vy ú-zhi-na-ye-tye]",
+    2,
+    recognize=True,
+    tags=["routine", "question", "food"],
+)
+add(
+    "daily_routine",
+    "Я у́жинаю ве́чером.",
+    "I have dinner in the evening.",
+    "[ya ú-zhi-na-yu vyé-che-ram]",
+    2,
+    tags=["routine", "food", "day_part"],
+)
+add(
+    "daily_routine",
+    "Когда́ вы рабо́таете?",
+    "When do you work?",
+    "[kag-dá vy ra-bó-ta-ye-tye]",
+    2,
+    recognize=True,
+    tags=["routine", "question", "work"],
+)
+add(
+    "daily_routine",
+    "Я рабо́таю у́тром и ве́чером.",
+    "I work in the morning and evening.",
+    "[ya ra-bó-ta-yu ú-tram i vyé-che-ram]",
+    2,
+    tags=["routine", "work", "day_part"],
+)
+add(
+    "daily_routine",
+    "Когда́ вы отдыха́ете?",
+    "When do you rest?",
+    "[kag-dá vy at-dy-há-ye-tye]",
+    2,
+    recognize=True,
+    tags=["routine", "question"],
+)
+add(
+    "daily_routine",
+    "Обы́чно я отдыха́ю ве́чером.",
+    "Usually I rest in the evening.",
+    "[a-bých-na ya at-dy-há-yu vyé-che-ram]",
+    2,
+    tags=["routine", "day_part"],
+)
+add(
+    "daily_routine",
+    "Что ты сего́дня де́лал?",
+    "What did you do today?",
+    "[shto ty si-vód-nya dyé-lal]",
+    2,
+    recognize=True,
+    tags=["routine", "question", "listening"],
+)
+add(
+    "daily_routine",
+    "Мы еди́м и смо́трим телеви́зор.",
+    "We eat and watch TV.",
+    "[my yi-dím i smót-rim ti-li-ví-zar]",
+    2,
+    tags=["routine", "evening"],
+)
+add(
+    "daily_routine",
+    "Я начина́ю рабо́тать в де́сять утра́.",
+    "I start working at ten in the morning.",
+    "[ya na-chi-ná-yu ra-bó-tat' v dyé-syat' u-trá]",
+    2,
+    tags=["routine", "work", "time"],
+)
+add(
+    "daily_routine",
+    "Обы́чно я рабо́таю семь часо́в.",
+    "Usually I work seven hours.",
+    "[a-bých-na ya ra-bó-ta-yu syem' cha-sóf]",
+    2,
+    tags=["routine", "work", "time"],
+)
+add(
+    "daily_routine",
+    "У меня́ есть вре́мя до десяти́.",
+    "I have time until ten.",
+    "[u mi-nyá yest' vryé-mya da di-si-tí]",
+    3,
+    tags=["routine", "time"],
+)
+add(
+    "daily_routine",
+    "Сего́дня я рабо́тал четы́ре часа́.",
+    "Today I worked four hours.",
+    "[si-vód-nya ya ra-bó-tal chi-tý-re cha-sá]",
+    3,
+    gender="m",
+    tags=["routine", "work", "time"],
+)
+add(
+    "daily_routine",
+    "Обы́чно я встаю́ ра́но у́тром.",
+    "Usually I get up early in the morning.",
+    "[a-bých-na ya fsta-yú rá-na ú-tram]",
+    2,
+    tags=["routine", "morning", "story"],
+)
+add(
+    "daily_routine",
+    "Я люблю́ ра́но встава́ть.",
+    "I like to get up early.",
+    "[ya lyub-lyú rá-na fsta-vát']",
+    2,
+    tags=["routine", "morning", "story"],
+)
+add(
+    "daily_routine",
+    "По́сле э́того я прихожу́ домо́й.",
+    "After that I come home.",
+    "[pós-li é-ta-va ya pri-ha-zhú da-móy]",
+    2,
+    tags=["routine", "sequence", "story"],
+)
+add(
+    "daily_routine",
+    "У́тром я ча́сто игра́ю на гита́ре.",
+    "In the morning I often play guitar.",
+    "[ú-tram ya chás-ta ig-rá-yu na gi-tá-rye]",
+    2,
+    tags=["routine", "morning", "music", "story"],
+)
+add(
+    "daily_routine",
+    "По́сле я гото́влю ко́фе для мое́й жены́.",
+    "Afterward I make coffee for my wife.",
+    "[pós-li ya ga-tóv-lyu kó-fe dlya ma-yéy zhi-ný]",
+    2,
+    tags=["routine", "morning", "family", "story"],
+)
+add(
+    "daily_routine",
+    "Обы́чно я не за́втракаю.",
+    "Usually I don't eat breakfast.",
+    "[a-bých-na ya ni záf-tra-ka-yu]",
+    2,
+    tags=["routine", "breakfast", "story"],
+)
+add(
+    "daily_routine",
+    "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+    "At ten I start solving clients' problems.",
+    "[v dyé-syat' ya na-chi-ná-yu ri-shát' pra-blyé-my kli-yén-taf]",
+    2,
+    tags=["routine", "work", "clients", "story"],
+)
+add(
+    "daily_routine",
+    "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+    "At work I do many different things.",
+    "[na ra-bó-tye ya dyé-la-yu mnó-ga ráz-nyh vi-shchéy]",
+    2,
+    tags=["routine", "work", "story"],
+)
+add(
+    "daily_routine",
+    "Я ча́сто звоню́ лю́дям.",
+    "I often call people.",
+    "[ya chás-ta zva-nyú lyú-dyam]",
+    2,
+    tags=["routine", "work", "story"],
+)
+add(
+    "daily_routine",
+    "Ча́сто я хожу́ в суд.",
+    "I often go to court.",
+    "[chás-ta ya ha-zhú f sut]",
+    2,
+    tags=["routine", "work", "court", "story"],
+)
+add(
+    "daily_routine",
+    "По́сле рабо́ты мы у́жинаем.",
+    "After work we have dinner.",
+    "[pós-li ra-bó-ty my ú-zhi-na-yem]",
+    2,
+    tags=["routine", "evening", "story"],
+)
+add(
+    "daily_routine",
+    "Она́ говори́т, что я до́лжен гото́вить ча́ще.",
+    "She says that I should cook more often.",
+    "[a-ná ga-va-rít shto ya dól-zhen ga-tó-vit' chá-shche]",
+    3,
+    gender="m",
+    rehearse=True,
+    note="Personal family joke; rehearse with Kadriya before saying it to relatives.",
+    tags=["routine", "family", "evening", "story"],
+)
+
+# --- HOBBIES & PLACES (dinner-safe personal small talk) ---
+add(
+    "leisure_places",
+    "Когда́ я не рабо́таю, я смотрю́ телеви́зор.",
+    "When I'm not working, I watch TV.",
+    "[kag-dá ya nye ra-bó-ta-yu, ya smat-ryú ti-li-ví-zar]",
+    2,
+    tags=["leisure", "tv"],
+)
+add(
+    "leisure_places",
+    "Я слу́шаю му́зыку.",
+    "I listen to music.",
+    "[ya slú-sha-yu mú-zy-ku]",
+    2,
+    tags=["leisure", "music"],
+)
+add(
+    "leisure_places",
+    "Я люблю́ игра́ть на гита́ре.",
+    "I like playing guitar.",
+    "[ya lyub-lyú ig-rát' na gi-tá-rye]",
+    2,
+    note="Use игра́ть на for musical instruments.",
+    tags=["leisure", "music", "instrument"],
+)
+add(
+    "leisure_places",
+    "Я игра́ю на гита́ре и на пиани́но.",
+    "I play guitar and piano.",
+    "[ya ig-rá-yu na gi-tá-rye i na pi-a-ní-na]",
+    2,
+    note="Instrument pattern: игра́ть на + instrument.",
+    tags=["leisure", "music", "instrument"],
+)
+add(
+    "leisure_places",
+    "Я пишу́ му́зыку.",
+    "I write music.",
+    "[ya pi-shú mú-zy-ku]",
+    2,
+    tags=["leisure", "music"],
+)
+add(
+    "leisure_places",
+    "Кадри́я лю́бит рисова́ть.",
+    "Kadriya likes to draw.",
+    "[kad-rí-ya lyú-bit ri-sa-vát']",
+    2,
+    tags=["leisure", "kadriya", "art"],
+)
+add(
+    "leisure_places",
+    "Я немно́го люблю́ танцева́ть.",
+    "I like dancing a little.",
+    "[ya nem-nó-ga lyub-lyú tan-tsi-vát']",
+    3,
+    tags=["leisure", "dance"],
+)
+add(
+    "leisure_places",
+    "Мы игра́ем с на́шими кота́ми.",
+    "We play with our cats.",
+    "[my ig-rá-yem s ná-shi-mi ka-tá-mi]",
+    2,
+    tags=["leisure", "cats", "home"],
+)
+add(
+    "leisure_places",
+    "Я люблю́ смотре́ть боевики́.",
+    "I like watching action movies.",
+    "[ya lyub-lyú smat-ryét' ba-ye-vi-kí]",
+    3,
+    tags=["leisure", "movies"],
+)
+add(
+    "leisure_places",
+    "Кадри́я лю́бит смотре́ть фи́льмы о любви́.",
+    "Kadriya likes watching love movies.",
+    "[kad-rí-ya lyú-bit smat-ryét' fíl'-my a lyub-ví]",
+    3,
+    tags=["leisure", "movies", "kadriya"],
+)
+add(
+    "leisure_places",
+    "Э́то дом.",
+    "This is home / a house.",
+    "[é-ta dom]",
+    3,
+    recognize=True,
+    tags=["place", "home"],
+)
+add(
+    "leisure_places",
+    "Здесь мы отдыха́ем.",
+    "Here we relax.",
+    "[zdyes' my at-dy-há-yem]",
+    3,
+    tags=["place", "home"],
+)
+add(
+    "leisure_places",
+    "Э́то стадио́н.",
+    "This is a stadium.",
+    "[é-ta sta-di-ón]",
+    3,
+    recognize=True,
+    tags=["place", "sports"],
+)
+add(
+    "leisure_places",
+    "Здесь мы игра́ем в футбо́л.",
+    "Here we play soccer.",
+    "[zdyes' my ig-rá-yem v fut-ból]",
+    3,
+    note="Use игра́ть в for sports and games.",
+    tags=["place", "sports"],
+)
+add(
+    "leisure_places",
+    "Там мо́жно уви́деть ра́зные спорти́вные и́гры.",
+    "There you can see different sports games.",
+    "[tam mózh-na u-ví-dyet' ráz-ny-ye spar-tív-ny-ye íg-ry]",
+    3,
+    recognize=True,
+    tags=["place", "sports"],
+)
+add(
+    "leisure_places",
+    "Э́то кинотеа́тр.",
+    "This is a movie theater.",
+    "[é-ta ki-na-ti-átr]",
+    3,
+    recognize=True,
+    tags=["place", "movies"],
+)
+add(
+    "leisure_places",
+    "Здесь я слу́шаю и смотрю́ фильм.",
+    "Here I listen and watch a film.",
+    "[zdyes' ya slú-sha-yu i smat-ryú fil'm]",
+    3,
+    tags=["place", "movies"],
+)
+add(
+    "leisure_places",
+    "Э́то музе́й.",
+    "This is a museum.",
+    "[é-ta mu-zyéy]",
+    3,
+    recognize=True,
+    tags=["place", "museum"],
+)
+add(
+    "leisure_places",
+    "Там я смотрю́ карти́ны и скульпту́ры.",
+    "There I look at paintings and sculptures.",
+    "[tam ya smat-ryú kar-tí-ny i skul'p-tú-ry]",
+    3,
+    recognize=True,
+    tags=["place", "museum"],
+)
+add(
+    "leisure_places",
+    "Мы гуля́ли в па́рке.",
+    "We walked in the park.",
+    "[my gu-lyá-li f pár-kye]",
+    3,
+    tags=["leisure", "park"],
+)
+add(
+    "leisure_places",
+    "Мы отдыха́ли и слу́шали му́зыку.",
+    "We rested and listened to music.",
+    "[my at-dy-há-li i slú-sha-li mú-zy-ku]",
+    3,
+    tags=["leisure", "music"],
+)
+
+# --- APPEARANCE & PEOPLE (original-guide physical-description lane) ---
+add(
+    "physical_description",
+    "Как он вы́глядит?",
+    "What does he look like?",
+    "[kak on vý-glya-dit]",
+    2,
+    recognize=True,
+    tags=["appearance", "question", "listening"],
+)
+add(
+    "physical_description",
+    "Как она́ вы́глядит?",
+    "What does she look like?",
+    "[kak a-ná vý-glya-dit]",
+    2,
+    recognize=True,
+    tags=["appearance", "question", "listening"],
+)
+add(
+    "physical_description",
+    "Он высо́кий.",
+    "He is tall.",
+    "[on vy-só-kiy]",
+    2,
+    tags=["appearance", "height"],
+)
+add(
+    "physical_description",
+    "Она́ сре́днего ро́ста.",
+    "She is of medium height.",
+    "[a-ná sréd-ni-va ró-sta]",
+    2,
+    tags=["appearance", "height"],
+)
+add(
+    "physical_description",
+    "Он на́ голову вы́ше меня́.",
+    "He is a head taller than me.",
+    "[on ná go-la-vu vý-she mi-nyá]",
+    3,
+    tags=["appearance", "height", "comparison"],
+)
+add(
+    "physical_description",
+    "У него́ ка́рие глаза́.",
+    "He has brown eyes.",
+    "[u ni-vó ká-ri-ye gla-zá]",
+    2,
+    tags=["appearance", "eyes"],
+)
+add(
+    "physical_description",
+    "У неё голубы́е глаза́.",
+    "She has blue eyes.",
+    "[u ni-yó ga-lu-bý-ye gla-zá]",
+    2,
+    tags=["appearance", "eyes"],
+)
+add(
+    "physical_description",
+    "У него́ дли́нные вью́щиеся во́лосы.",
+    "He has long curly hair.",
+    "[u ni-vó dlín-ny-ye vyú-shchi-ye vó-la-sy]",
+    3,
+    tags=["appearance", "hair"],
+)
+add(
+    "physical_description",
+    "У неё коро́ткие прямы́е во́лосы.",
+    "She has short straight hair.",
+    "[u ni-yó ka-rót-ki-ye pryá-my-ye vó-la-sy]",
+    3,
+    tags=["appearance", "hair"],
+)
+add(
+    "physical_description",
+    "У него́ ры́жие во́лосы.",
+    "He has red hair.",
+    "[u ni-vó rý-zhi-ye vó-la-sy]",
+    3,
+    tags=["appearance", "hair"],
+)
+add(
+    "physical_description",
+    "У неё кашта́новые во́лосы.",
+    "She has chestnut-brown hair.",
+    "[u ni-yó kash-tá-na-vy-ye vó-la-sy]",
+    3,
+    tags=["appearance", "hair"],
+)
+add(
+    "physical_description",
+    "У него́ у́зкое лицо́.",
+    "He has a narrow face.",
+    "[u ni-vó úz-ka-ye li-tsó]",
+    3,
+    tags=["appearance", "face"],
+)
+add(
+    "physical_description",
+    "У неё краси́вая улы́бка.",
+    "She has a beautiful smile.",
+    "[u ni-yó kra-sí-va-ya u-lýb-ka]",
+    2,
+    tags=["appearance", "smile"],
+)
+add(
+    "physical_description",
+    "У него́ до́брый взгляд.",
+    "He has a kind look.",
+    "[u ni-vó dób-ryy vzglyad]",
+    3,
+    tags=["appearance", "face"],
+)
+add(
+    "physical_description",
+    "У неё приве́тливая улы́бка.",
+    "She has a welcoming smile.",
+    "[u ni-yó pri-vyét-li-va-ya u-lýb-ka]",
+    3,
+    tags=["appearance", "smile"],
+)
+add(
+    "physical_description",
+    "Он похо́ж на па́пу.",
+    "He looks like his dad.",
+    "[on pa-hózh na pá-pu]",
+    2,
+    tags=["appearance", "family", "resemblance"],
+)
+add(
+    "physical_description",
+    "Она́ похо́жа на ма́му.",
+    "She looks like her mom.",
+    "[a-ná pa-hó-zha na má-mu]",
+    2,
+    tags=["appearance", "family", "resemblance"],
+)
+add(
+    "physical_description",
+    "У него́ большо́й дли́нный нос.",
+    "He has a big long nose.",
+    "[u ni-vó bal'-shóy dlín-nyy nos]",
+    3,
+    recognize=True,
+    tags=["appearance", "face", "listening"],
+)
+
+# --- HEALTH & FEELINGS (Joe feeling unwell, tired, or hoping not to get sick) ---
+add(
+    "health_feelings",
+    "Как вы себя́ чу́вствуете?",
+    "How are you feeling? (formal)",
+    "[kak vy si-byá chúv-stvu-ye-tye]",
+    2,
+    recognize=True,
+    tags=["health", "question", "formal", "listening"],
+)
+add(
+    "health_feelings",
+    "Как ты себя́ чу́вствуешь?",
+    "How are you feeling? (informal)",
+    "[kak ty si-byá chúv-stvu-yesh]",
+    2,
+    recognize=True,
+    tags=["health", "question", "informal", "listening"],
+)
+add(
+    "health_feelings",
+    "Я пло́хо себя́ чу́вствую.",
+    "I feel unwell.",
+    "[ya pló-ha si-byá chúv-stvu-yu]",
+    2,
+    tags=["health", "feeling"],
+)
+add(
+    "health_feelings",
+    "Я не о́чень хорошо́ себя́ чу́вствую.",
+    "I don't feel very well.",
+    "[ya nye ó-chen' ha-ra-shó si-byá chúv-stvu-yu]",
+    2,
+    tags=["health", "feeling"],
+)
+add(
+    "health_feelings",
+    "Ты заболе́л?",
+    "Did you get sick? (to a man, informal)",
+    "[ty za-ba-lyél]",
+    2,
+    recognize=True,
+    gender="m",
+    tags=["health", "question", "listening"],
+)
+add(
+    "health_feelings",
+    "Я ещё не зна́ю.",
+    "I don't know yet.",
+    "[ya ye-shchó nye zná-yu]",
+    2,
+    tags=["health", "answer"],
+)
+add(
+    "health_feelings",
+    "Наде́юсь, что нет.",
+    "I hope not.",
+    "[na-dyé-yus', shto nyet]",
+    2,
+    tags=["health", "hope"],
+)
+add(
+    "health_feelings",
+    "Что у тебя́ боли́т?",
+    "What hurts?",
+    "[shto u ti-byá ba-lít]",
+    2,
+    recognize=True,
+    tags=["health", "question", "listening"],
+)
+add(
+    "health_feelings",
+    "У меня́ боли́т голова́.",
+    "I have a headache.",
+    "[u mi-nyá ba-lít ga-la-vá]",
+    2,
+    note="Use у меня + болит + body part for aches.",
+    tags=["health", "pain", "head"],
+)
+add(
+    "health_feelings",
+    "У меня́ боли́т спина́.",
+    "My back hurts.",
+    "[u mi-nyá ba-lít spi-ná]",
+    2,
+    tags=["health", "pain", "back"],
+)
+add(
+    "health_feelings",
+    "Я ча́сто устаю́.",
+    "I often get tired.",
+    "[ya chá-sta us-ta-yú]",
+    2,
+    tags=["health", "tired"],
+)
+add(
+    "health_feelings",
+    "Я хочу́ спать.",
+    "I want to sleep.",
+    "[ya ha-chú spat']",
+    2,
+    tags=["health", "sleep"],
+)
+add(
+    "health_feelings",
+    "Я наде́юсь не заболе́ть.",
+    "I hope not to get sick.",
+    "[ya na-dyé-yus' nye za-ba-lyét']",
+    3,
+    tags=["health", "hope"],
+)
+add(
+    "health_feelings",
+    "Я не боле́ю.",
+    "I'm not sick.",
+    "[ya nye ba-lyé-yu]",
+    2,
+    tags=["health", "sick"],
+)
+add(
+    "health_feelings",
+    "Я боле́ю.",
+    "I'm sick.",
+    "[ya ba-lyé-yu]",
+    3,
+    tags=["health", "sick"],
+)
+add(
+    "health_feelings",
+    "Я боле́ю за Кардина́лов.",
+    "I root for the Cardinals.",
+    "[ya ba-lyé-yu za kar-di-ná-lav]",
+    3,
+    recognize=True,
+    note="Same verb as 'be sick', but боле́ть за + team means to root for a team.",
+    tags=["health", "sports", "contrast", "listening"],
+)
+
+# --- PAST WEEK & EVENTS (source-guide past-tense small talk) ---
+# `Что вы де́лали на выходны́х?` and
+# `Что ты де́лал на про́шлой неде́ле?` already live in listening as list013/list014.
+add(
+    "past_events",
+    "Где ты был на про́шлой неде́ле?",
+    "Where were you last week? (to a man)",
+    "[gdye ty byl na prósh-lay ni-dyé-lye]",
+    2,
+    recognize=True,
+    gender="m",
+    tags=["past", "question", "where", "listening"],
+)
+add(
+    "past_events",
+    "На про́шлой неде́ле я был в Вирджи́нии.",
+    "Last week I was in Virginia.",
+    "[na prósh-lay ni-dyé-lye ya byl v vir-dzhi-ni-i]",
+    2,
+    gender="m",
+    tags=["past", "travel", "place"],
+)
+add(
+    "past_events",
+    "Что вы там де́лали?",
+    "What did you do there?",
+    "[shto vy tam dyé-la-li]",
+    2,
+    recognize=True,
+    tags=["past", "question", "travel", "listening"],
+)
+add(
+    "past_events",
+    "Мы говори́ли о би́знесе.",
+    "We talked about business.",
+    "[my ga-va-rí-li a bíz-ni-se]",
+    2,
+    tags=["past", "business", "travel"],
+)
+add(
+    "past_events",
+    "Мы гуля́ли и смотре́ли достопримеча́тельности.",
+    "We walked and saw the sights.",
+    "[my gu-lyá-li i smat-ryé-li da-sta-pri-mi-chá-tyel'-na-sti]",
+    2,
+    tags=["past", "travel", "sightseeing"],
+)
+add(
+    "past_events",
+    "Куда́ ты лета́л?",
+    "Where did you fly? (to a man)",
+    "[ku-dá ty li-tál]",
+    2,
+    recognize=True,
+    gender="m",
+    tags=["past", "question", "travel", "listening"],
+)
+add(
+    "past_events",
+    "Мы лета́ли в Ри́чмонд и в Чика́го.",
+    "We flew to Richmond and Chicago.",
+    "[my li-tá-li v rích-mond i v chi-ká-go]",
+    2,
+    tags=["past", "travel", "motion"],
+)
+add(
+    "past_events",
+    "Э́то была́ хоро́шая пое́здка?",
+    "Was it a good trip?",
+    "[é-ta by-lá ha-ró-sha-ya pa-yézd-ka]",
+    2,
+    recognize=True,
+    tags=["past", "question", "travel", "listening"],
+)
+add(
+    "past_events",
+    "Пое́здка была́ о́чень хоро́шая.",
+    "The trip was very good.",
+    "[pa-yézd-ka by-lá ó-chen' ha-ró-sha-ya]",
+    2,
+    tags=["past", "travel", "answer"],
+)
+add(
+    "past_events",
+    "Мы обсуди́ли би́знес.",
+    "We discussed business.",
+    "[my ab-su-dí-li bíz-nes]",
+    2,
+    tags=["past", "business", "travel"],
+)
+add(
+    "past_events",
+    "Я наде́юсь на хоро́ший результа́т.",
+    "I hope for a good result.",
+    "[ya na-dyé-yus' na ha-ró-shiy ri-zul'-tát]",
+    2,
+    tags=["past", "business", "hope"],
+)
+add(
+    "past_events",
+    "Хоро́шие но́вости?",
+    "Good news?",
+    "[ha-ró-shi-ye nó-va-sti]",
+    2,
+    recognize=True,
+    tags=["past", "question", "news", "listening"],
+)
+add(
+    "past_events",
+    "Да, хоро́шие но́вости от мои́х клие́нтов.",
+    "Yes, good news from my clients.",
+    "[da, ha-ró-shi-ye nó-va-sti at ma-íh kli-yén-tav]",
+    2,
+    tags=["past", "news", "clients"],
+)
+add(
+    "past_events",
+    "Что случи́лось?",
+    "What happened?",
+    "[shto slu-chí-las']",
+    2,
+    recognize=True,
+    tags=["past", "question", "listening"],
+)
+add(
+    "past_events",
+    "На про́шлой неде́ле я был в поли́ции.",
+    "Last week I was at the police station.",
+    "[na prósh-lay ni-dyé-lye ya byl v pa-lí-tsi-i]",
+    3,
+    gender="m",
+    tags=["past", "police", "sensitive"],
+)
+add(
+    "past_events",
+    "У мое́й жены́ укра́ли маши́ну.",
+    "My wife's car was stolen.",
+    "[u ma-yéy zhi-ný u-krá-li ma-shý-nu]",
+    3,
+    recognize=True,
+    tags=["past", "police", "car", "sensitive", "listening"],
+)
+add(
+    "past_events",
+    "Моя́ жена́ написа́ла заявле́ние.",
+    "My wife wrote a police report / statement.",
+    "[ma-yá zhi-ná na-pi-sá-la za-yav-lyé-ni-ye]",
+    3,
+    recognize=True,
+    tags=["past", "police", "statement", "sensitive", "listening"],
+)
+
+# --- HOME, CHORES & SHOPPING (source-guide daily-life details) ---
+add(
+    "home_life",
+    "На вы́ходных мы убира́ли дом.",
+    "On the weekend we cleaned the house.",
+    "[na vý-had-nyh my u-bi-rá-li dom]",
+    2,
+    tags=["home", "chores", "weekend"],
+)
+add(
+    "home_life",
+    "Мы укра́сили дом к Рождеству́.",
+    "We decorated the house for Christmas.",
+    "[my u-krá-si-li dom k razh-dye-stvú]",
+    3,
+    tags=["home", "chores", "holiday"],
+)
+add(
+    "home_life",
+    "В мое́й семье́ ча́сто убира́ет моя́ жена́.",
+    "In my family, my wife often cleans.",
+    "[v ma-yéy sim-yé chá-sta u-bi-rá-yet ma-yá zhi-ná]",
+    3,
+    rehearse=True,
+    note="Personal home-life line from the guide; rehearse with Kadriya before using live.",
+    tags=["home", "chores", "family"],
+)
+add(
+    "home_life",
+    "Я убира́ю за кота́ми.",
+    "I clean up after the cats.",
+    "[ya u-bi-rá-yu za ka-tá-mi]",
+    2,
+    tags=["home", "chores", "cats"],
+)
+add(
+    "home_life",
+    "Я мо́ю посу́ду.",
+    "I wash the dishes.",
+    "[ya mó-yu pa-sú-du]",
+    2,
+    tags=["home", "chores", "dishes"],
+)
+add(
+    "home_life",
+    "Я выношу́ му́сор.",
+    "I take out the trash.",
+    "[ya vy-na-shú mú-sar]",
+    2,
+    tags=["home", "chores", "trash"],
+)
+add(
+    "home_life",
+    "У тебя́ бы́ло вре́мя на дома́шнее зада́ние?",
+    "Did you have time for homework?",
+    "[u ti-byá bý-la vryé-mya na da-másh-ni-ye za-dá-ni-ye]",
+    2,
+    recognize=True,
+    tags=["homework", "question", "listening"],
+)
+add(
+    "home_life",
+    "У меня́ не́ было вре́мени на дома́шнее зада́ние.",
+    "I didn't have time for homework.",
+    "[u mi-nyá nye bý-la vryé-me-ni na da-másh-ni-ye za-dá-ni-ye]",
+    2,
+    tags=["homework", "time"],
+)
+add(
+    "home_life",
+    "Я сде́лал почти́ всё дома́шнее зада́ние.",
+    "I did almost all the homework.",
+    "[ya sdyé-lal pach-tí vsyo da-másh-ni-ye za-dá-ni-ye]",
+    3,
+    gender="m",
+    tags=["homework", "past"],
+)
+add(
+    "home_life",
+    "Я де́лаю дома́шнее зада́ние ве́чером.",
+    "I do homework in the evening.",
+    "[ya dyé-la-yu da-másh-ni-ye za-dá-ni-ye vyé-che-ram]",
+    3,
+    tags=["homework", "routine"],
+)
+add(
+    "home_life",
+    "Сего́дня я был в магази́не.",
+    "Today I was at the store.",
+    "[si-vód-nya ya byl v ma-ga-zí-ne]",
+    2,
+    gender="m",
+    tags=["shopping", "store", "past"],
+)
+add(
+    "home_life",
+    "Я купи́л арбу́з.",
+    "I bought a watermelon.",
+    "[ya ku-píl ar-búz]",
+    3,
+    gender="m",
+    tags=["shopping", "food"],
+)
+add(
+    "home_life",
+    "Мы покупа́ем в магази́не мя́со.",
+    "We buy meat at the store.",
+    "[my pa-ku-pá-yem v ma-ga-zí-ne myá-sa]",
+    3,
+    tags=["shopping", "food"],
+)
+add(
+    "home_life",
+    "Где магази́н?",
+    "Where is the store?",
+    "[gdye ma-ga-zín]",
+    2,
+    recognize=True,
+    tags=["shopping", "question", "listening"],
+)
+add(
+    "home_life",
+    "Ско́лько сто́ит арбу́з?",
+    "How much does the watermelon cost?",
+    "[skól'-ka stó-it ar-búz]",
+    3,
+    recognize=True,
+    tags=["shopping", "price", "listening"],
+)
+add(
+    "home_life",
+    "Помоги́те, пожа́луйста.",
+    "Please help.",
+    "[pa-ma-gí-tye, pa-zhá-lus-ta]",
+    2,
+    tags=["help", "request", "formal"],
+)
+add(
+    "home_life",
+    "Мне ну́жна по́мощь.",
+    "I need help.",
+    "[mnye núzh-na pó-mashch']",
+    2,
+    tags=["help", "request"],
+)
+
+# --- PRONOUNS & POSSESSION (oral use from the source-guide pronoun tables) ---
+add(
+    "pronouns_possession",
+    "Э́то мой дом.",
+    "This is my house.",
+    "[é-ta moy dom]",
+    2,
+    tags=["pronouns", "possessive", "masculine"],
+)
+add(
+    "pronouns_possession",
+    "Э́то моя́ жена́.",
+    "This is my wife.",
+    "[é-ta ma-yá zhi-ná]",
+    2,
+    tags=["pronouns", "possessive", "family"],
+)
+add(
+    "pronouns_possession",
+    "Э́то моё люби́мое ме́сто.",
+    "This is my favorite place.",
+    "[é-ta ma-yó lyu-bí-ma-ye myés-ta]",
+    2,
+    tags=["pronouns", "possessive", "place"],
+)
+add(
+    "pronouns_possession",
+    "Э́то мои́ коты́.",
+    "These are my cats.",
+    "[é-ta ma-í ka-tý]",
+    2,
+    tags=["pronouns", "possessive", "cats"],
+)
+add(
+    "pronouns_possession",
+    "Я люблю́ мои́х кото́в.",
+    "I love my cats.",
+    "[ya lyub-lyú ma-íh ka-tóv]",
+    2,
+    tags=["pronouns", "possessive", "cats"],
+)
+add(
+    "pronouns_possession",
+    "Вот моя́ визи́тка.",
+    "Here is my business card.",
+    "[vot ma-yá vi-zít-ka]",
+    2,
+    tags=["pronouns", "possessive", "work"],
+)
+add(
+    "pronouns_possession",
+    "Э́то его́ дом.",
+    "This is his house.",
+    "[é-ta ye-vó dom]",
+    3,
+    recognize=True,
+    tags=["pronouns", "possessive", "listening"],
+)
+add(
+    "pronouns_possession",
+    "Э́то её маши́на.",
+    "This is her car.",
+    "[é-ta ye-yó ma-shý-na]",
+    3,
+    recognize=True,
+    tags=["pronouns", "possessive", "car", "listening"],
+)
+add(
+    "pronouns_possession",
+    "Э́то на́ши коты́.",
+    "These are our cats.",
+    "[é-ta ná-shi ka-tý]",
+    2,
+    tags=["pronouns", "possessive", "cats"],
+)
+add(
+    "pronouns_possession",
+    "Э́то ваш ключ?",
+    "Is this your key? (formal)",
+    "[é-ta vash klyuch]",
+    2,
+    recognize=True,
+    tags=["pronouns", "possessive", "formal", "listening"],
+)
+add(
+    "pronouns_possession",
+    "У меня́ есть два кота́.",
+    "I have two cats.",
+    "[u mi-nyá yest' dva ka-tá]",
+    2,
+    tags=["pronouns", "u-menya", "cats"],
+)
+add(
+    "pronouns_possession",
+    "У нас бы́ло мно́го госте́й.",
+    "We had many guests.",
+    "[u nas bý-la mnó-ga gas-tyéy]",
+    3,
+    tags=["pronouns", "u-nas", "guests"],
+)
+add(
+    "pronouns_possession",
+    "У вас есть вре́мя?",
+    "Do you have time? (formal)",
+    "[u vas yest' vryé-mya]",
+    2,
+    recognize=True,
+    tags=["pronouns", "u-vas", "question", "listening"],
+)
+add(
+    "pronouns_possession",
+    "Моя́ жена́ Кадри́я рабо́тает вме́сте со мной.",
+    "My wife Kadriya works together with me.",
+    "[ma-yá zhi-ná kad-rí-ya ra-bó-ta-yet vmyés-te sa mnoy]",
+    3,
+    tags=["pronouns", "family", "instrumental"],
+)
+add(
+    "pronouns_possession",
+    "Они́ рабо́тают вме́сте.",
+    "They work together.",
+    "[a-ní ra-bó-ta-yut vmyés-te]",
+    2,
+    recognize=True,
+    tags=["pronouns", "they", "work", "listening"],
+)
+add(
+    "pronouns_possession",
+    "Я соглашу́сь с тобо́й.",
+    "I will agree with you.",
+    "[ya sa-gla-shús' s ta-bóy]",
+    3,
+    recognize=True,
+    tags=["pronouns", "with-you", "listening"],
+)
+
+# --- CAN, WANT & NEED (modal survival patterns) ---
+add(
+    "modal_ability",
+    "Я могу́ танцева́ть.",
+    "I can dance.",
+    "[ya ma-gú tan-tsi-vát']",
+    3,
+    note="мочь = can / have the possibility.",
+    tags=["modal", "can", "dance"],
+)
+add(
+    "modal_ability",
+    "Я не уме́ю танцева́ть са́льсу.",
+    "I don't know how to dance salsa.",
+    "[ya nye u-myé-yu tan-tsi-vát' sál'-su]",
+    3,
+    note="уме́ть = know how / have the skill.",
+    tags=["modal", "skill", "dance"],
+)
+add(
+    "modal_ability",
+    "Я зна́ю, как танцева́ть са́льсу.",
+    "I know how to dance salsa.",
+    "[ya zná-yu kak tan-tsi-vát' sál'-su]",
+    3,
+    recognize=True,
+    tags=["modal", "skill", "dance"],
+)
+add(
+    "modal_ability",
+    "Я уме́ю танцева́ть са́льсу.",
+    "I know how to dance salsa.",
+    "[ya u-myé-yu tan-tsi-vát' sál'-su]",
+    3,
+    tags=["modal", "skill", "dance"],
+)
+add(
+    "modal_ability",
+    "Мне ну́жно бо́льше вре́мени.",
+    "I need more time.",
+    "[mnye núzh-na ból'-she vryé-me-ni]",
+    2,
+    tags=["modal", "need", "repair"],
+)
+add(
+    "modal_ability",
+    "Столько, ско́лько ну́жно.",
+    "As much as needed.",
+    "[stól'-ka, skól'-ka núzh-na]",
+    3,
+    recognize=True,
+    tags=["modal", "need", "quantity"],
+)
+add(
+    "modal_ability",
+    "Что тут мо́жно де́лать?",
+    "What is allowed / possible to do here?",
+    "[shto tut mózh-na dyé-lat']",
+    2,
+    recognize=True,
+    tags=["modal", "permission", "question"],
+)
+add(
+    "modal_ability",
+    "Что тут нельзя́ де́лать?",
+    "What is not allowed to do here?",
+    "[shto tut nil'-zyá dyé-lat']",
+    2,
+    recognize=True,
+    tags=["modal", "permission", "question"],
+)
+add(
+    "modal_ability",
+    "Что тут на́до де́лать?",
+    "What needs to be done here?",
+    "[shto tut ná-da dyé-lat']",
+    2,
+    recognize=True,
+    tags=["modal", "need", "question"],
+)
+add(
+    "modal_ability",
+    "Мо́жно не гото́вить до́ма, а пойти́ в рестора́н.",
+    "We can skip cooking at home and go to a restaurant.",
+    "[mózh-na nye ga-tó-vit' dó-ma, a pay-tí v ris-ta-rán]",
+    3,
+    tags=["modal", "permission", "food"],
+)
+add(
+    "modal_ability",
+    "Я хочу́ изуча́ть ру́сский язы́к.",
+    "I want to study the Russian language.",
+    "[ya ha-chú iz-u-chát' rús-kiy ya-zýk]",
+    2,
+    tags=["modal", "want", "russian"],
+)
+add(
+    "modal_ability",
+    "Я хочу́ говори́ть по-ру́сски.",
+    "I want to speak Russian.",
+    "[ya ha-chú ga-va-rít' pa-rús-ki]",
+    2,
+    tags=["modal", "want", "russian"],
+)
+add(
+    "modal_ability",
+    "Я люблю́ изуча́ть ру́сский язы́к.",
+    "I like studying the Russian language.",
+    "[ya lyub-lyú iz-u-chát' rús-kiy ya-zýk]",
+    2,
+    tags=["modal", "like", "russian"],
+)
+add(
+    "modal_ability",
+    "Я люблю́ говори́ть по-ру́сски.",
+    "I like speaking Russian.",
+    "[ya lyub-lyú ga-va-rít' pa-rús-ki]",
+    2,
+    tags=["modal", "like", "russian"],
+)
+add(
+    "modal_ability",
+    "Я о́чень хочу́ есть.",
+    "I'm very hungry.",
+    "[ya ó-chen' ha-chú yest']",
+    2,
+    note="Literal original-guide pattern: 'I very much want to eat.'",
+    tags=["modal", "want", "food"],
+)
+add(
+    "modal_ability",
+    "Я до́лжен гото́вить ча́ще.",
+    "I should cook more often.",
+    "[ya dól-zhen ga-tó-vit' chá-shche]",
+    3,
+    gender="m",
+    rehearse=True,
+    note="Modal-pattern drill from the family joke; rehearse with Kadriya before saying it live.",
+    tags=["modal", "should", "family"],
+)
+
+# --- WORK & CLIENTS (lawyer/business small-talk lane) ---
+add(
+    "work_business",
+    "У меня́ своя́ компа́ния.",
+    "I have my own company.",
+    "[u mi-nyá sva-yá kam-pá-ni-ya]",
+    2,
+    tags=["work", "business"],
+)
+add(
+    "work_business",
+    "Кадри́я рабо́тает вме́сте со мной.",
+    "Kadriya works together with me.",
+    "[kad-rí-ya ra-bó-ta-yet vmyés-te sa mnoy]",
+    2,
+    tags=["work", "kadriya"],
+)
+add(
+    "work_business",
+    "Мы рабо́таем вме́сте.",
+    "We work together.",
+    "[my ra-bó-ta-yem vmyés-te]",
+    2,
+    tags=["work", "kadriya"],
+)
+add(
+    "work_business",
+    "У меня́ мно́го рабо́ты.",
+    "I have a lot of work.",
+    "[u mi-nyá mnó-ga ra-bó-ty]",
+    2,
+    tags=["work", "busy"],
+)
+add(
+    "work_business",
+    "Я о́чень за́нят.",
+    "I'm very busy.",
+    "[ya ó-chen' zá-nyat]",
+    2,
+    gender="m",
+    tags=["work", "busy"],
+)
+add(
+    "work_business",
+    "Хорошо́. Я мно́го рабо́таю.",
+    "Good. I work a lot.",
+    "[ha-ra-shó ya mnó-ga ra-bó-ta-yu]",
+    2,
+    tags=["work", "answer"],
+)
+add(
+    "work_business",
+    "У вас мно́го клие́нтов?",
+    "Do you have many clients?",
+    "[u vas mnó-ga kli-yén-tav]",
+    2,
+    recognize=True,
+    tags=["work", "clients", "question"],
+)
+add(
+    "work_business",
+    "Да, у меня́ мно́го клие́нтов.",
+    "Yes, I have many clients.",
+    "[da u mi-nyá mnó-ga kli-yén-tav]",
+    2,
+    tags=["work", "clients"],
+)
+add(
+    "work_business",
+    "У вас мно́го дел?",
+    "Do you have many cases?",
+    "[u vas mnó-ga dyel]",
+    2,
+    recognize=True,
+    tags=["work", "cases", "question"],
+)
+add(
+    "work_business",
+    "Да, у меня́ мно́го дел.",
+    "Yes, I have many cases.",
+    "[da u mi-nyá mnó-ga dyel]",
+    2,
+    tags=["work", "cases"],
+)
+add(
+    "work_business",
+    "Сего́дня я рабо́тал с клие́нтом.",
+    "Today I worked with a client.",
+    "[si-vód-nya ya ra-bó-tal s kli-yén-tam]",
+    2,
+    gender="m",
+    tags=["work", "clients"],
+)
+add(
+    "work_business",
+    "Я звони́л клие́нтам.",
+    "I called clients.",
+    "[ya zva-níl kli-yén-tam]",
+    2,
+    gender="m",
+    tags=["work", "clients"],
+)
+add(
+    "work_business",
+    "Я рабо́тал на компью́тере.",
+    "I worked on the computer.",
+    "[ya ra-bó-tal na kam-pyú-te-re]",
+    2,
+    gender="m",
+    tags=["work"],
+)
+add(
+    "work_business",
+    "Я рабо́таю в суде́.",
+    "I work in court.",
+    "[ya ra-bó-ta-yu f su-dyé]",
+    2,
+    tags=["work", "court"],
+)
+add(
+    "work_business",
+    "Мы дово́льны результа́том.",
+    "We're pleased with the result.",
+    "[my da-vól'-ny ri-zul'-tá-tam]",
+    2,
+    tags=["work", "outcome"],
+)
+add(
+    "work_business",
+    "Я сча́стлив рабо́тать на себя́.",
+    "I'm happy to work for myself.",
+    "[ya shchás-liv ra-bó-tat' na si-byá]",
+    3,
+    gender="m",
+    tags=["work", "business"],
+)
+
+# --- LEGAL WORDS (recognition-only work vocabulary) ---
+add(
+    "legal_recognition",
+    "суд",
+    "court",
+    "[sut]",
+    3,
+    recognize=True,
+    tags=["legal", "court"],
+)
+add(
+    "legal_recognition",
+    "судья́",
+    "judge",
+    "[su-d'yá]",
+    3,
+    recognize=True,
+    tags=["legal", "court"],
+)
+add(
+    "legal_recognition",
+    "слу́шание",
+    "hearing",
+    "[slú-sha-ni-ye]",
+    3,
+    recognize=True,
+    tags=["legal", "court"],
+)
+add(
+    "legal_recognition",
+    "де́ло",
+    "case / matter",
+    "[dyé-la]",
+    3,
+    recognize=True,
+    tags=["legal", "case"],
+)
+add(
+    "legal_recognition",
+    "клие́нт",
+    "client",
+    "[kli-yént]",
+    3,
+    recognize=True,
+    tags=["legal", "client"],
+)
+add(
+    "legal_recognition",
+    "страхо́вка",
+    "insurance",
+    "[stra-hóf-ka]",
+    3,
+    recognize=True,
+    tags=["legal", "insurance"],
+)
+add(
+    "legal_recognition",
+    "мирно́е соглаше́ние",
+    "settlement agreement",
+    "[mir-nó-ye sa-gla-shé-ni-ye]",
+    3,
+    recognize=True,
+    tags=["legal", "settlement"],
+)
+add(
+    "legal_recognition",
+    "суде́бное де́ло",
+    "court case / lawsuit",
+    "[su-dyéb-na-ye dyé-la]",
+    3,
+    recognize=True,
+    tags=["legal", "court", "case"],
+)
+add(
+    "legal_recognition",
+    "тра́вма",
+    "injury",
+    "[tráv-ma]",
+    3,
+    recognize=True,
+    tags=["legal", "injury"],
+)
+add(
+    "legal_recognition",
+    "клевета́",
+    "defamation",
+    "[kle-ve-tá]",
+    3,
+    recognize=True,
+    tags=["legal"],
+)
+add("legal_recognition", "зако́н", "law", "[za-kón]", 3, recognize=True, tags=["legal"])
+add(
+    "legal_recognition",
+    "пра́во",
+    "law / right",
+    "[prá-va]",
+    3,
+    recognize=True,
+    tags=["legal"],
+)
+add(
+    "legal_recognition",
+    "прокуро́р",
+    "prosecutor",
+    "[pra-ku-rór]",
+    3,
+    recognize=True,
+    tags=["legal", "court"],
+)
+add(
+    "legal_recognition",
+    "защи́тник",
+    "defender / defense lawyer",
+    "[za-shchít-nik]",
+    3,
+    recognize=True,
+    tags=["legal", "court"],
+)
+add(
+    "legal_recognition",
+    "пове́стка",
+    "summons / subpoena",
+    "[pa-vyés-tka]",
+    3,
+    recognize=True,
+    tags=["legal", "court"],
+)
+
+# --- HOLIDAYS & PLANS (original-guide celebration lane) ---
+add(
+    "celebrations",
+    "Скоро́ Рождество́.",
+    "Christmas is soon.",
+    "[ska-ró razh-di-stvó]",
+    3,
+    tags=["holiday", "christmas"],
+)
+add(
+    "celebrations",
+    "Како́й сего́дня пра́здник?",
+    "What holiday is today?",
+    "[ka-kóy si-vód-nya prázd-nik]",
+    3,
+    recognize=True,
+    tags=["holiday", "question"],
+)
+add(
+    "celebrations",
+    "Сего́дня Рождество́.",
+    "Today is Christmas.",
+    "[si-vód-nya razh-di-stvó]",
+    3,
+    tags=["holiday", "christmas"],
+)
+add(
+    "celebrations",
+    "Как вы с Кадри́ей отпра́здновали Рождество́?",
+    "How did you and Kadriya celebrate Christmas?",
+    "[kak vy s kad-rí-yey at-prázd-na-va-li razh-di-stvó]",
+    3,
+    recognize=True,
+    tags=["holiday", "christmas", "question"],
+)
+add(
+    "celebrations",
+    "Мы отпра́здновали Рождество́ у мои́х роди́телей до́ма.",
+    "We celebrated Christmas at my parents' house.",
+    "[my at-prázd-na-va-li razh-di-stvó u ma-íh ra-dí-te-ley dó-ma]",
+    3,
+    tags=["holiday", "christmas", "family"],
+)
+add(
+    "celebrations",
+    "Каки́е пла́ны на Рождество́?",
+    "What are the plans for Christmas?",
+    "[ka-kí-ye plá-ny na razh-di-stvó]",
+    3,
+    recognize=True,
+    tags=["holiday", "christmas", "question"],
+)
+add(
+    "celebrations",
+    "На Рождество́ мы хоти́м полете́ть в О́регон.",
+    "For Christmas we want to fly to Oregon.",
+    "[na razh-di-stvó my ha-tím pa-li-tyét' v ó-re-gan]",
+    3,
+    tags=["holiday", "christmas", "plans"],
+)
+add(
+    "celebrations",
+    "Мы хоти́м ката́ться на лы́жах.",
+    "We want to ski.",
+    "[my ha-tím ka-tát'-sya na lý-zhah]",
+    3,
+    tags=["holiday", "plans"],
+)
+add(
+    "celebrations",
+    "Кадри́я бу́дет гуля́ть и отдыха́ть.",
+    "Kadriya will walk and relax.",
+    "[kad-rí-ya bú-det gu-lyát' i at-dy-hát']",
+    3,
+    tags=["holiday", "plans", "kadriya"],
+)
+add(
+    "celebrations",
+    "Ско́лько дней вы бу́дете в О́регоне?",
+    "How many days will you be in Oregon?",
+    "[skól'-ka dney vy bú-de-tye v ó-re-ga-ne]",
+    3,
+    recognize=True,
+    tags=["holiday", "plans", "question"],
+)
+add(
+    "celebrations",
+    "Мы бу́дем в О́регоне пять дней.",
+    "We'll be in Oregon for five days.",
+    "[my bú-dem v ó-re-ga-ne pyat' dney]",
+    3,
+    tags=["holiday", "plans"],
+)
+add(
+    "celebrations",
+    "Что вы де́лали на День Благодаре́ния?",
+    "What did you do for Thanksgiving?",
+    "[shto vy dyé-la-li na dyen' bla-ga-da-ryé-ni-ya]",
+    3,
+    recognize=True,
+    tags=["holiday", "thanksgiving", "question"],
+)
+add(
+    "celebrations",
+    "На День Благодаре́ния мы у́жинали всей семьёй.",
+    "For Thanksgiving we had dinner as a whole family.",
+    "[na dyen' bla-ga-da-ryé-ni-ya my ú-zhi-na-li fsey sim-yóy]",
+    3,
+    tags=["holiday", "thanksgiving", "family"],
+)
+add(
+    "celebrations",
+    "Э́то был большо́й у́жин.",
+    "It was a big dinner.",
+    "[é-ta byl bal'-shóy ú-zhin]",
+    3,
+    tags=["holiday", "thanksgiving", "family"],
+)
+
+# --- CULTURAL EXTRAS (recognition-only idioms, proverbs, legal jokes) ---
+add(
+    "cultural_bonus",
+    "Ка́мень с души́ упа́л.",
+    "A weight has been lifted.",
+    "[ká-men' s du-shí u-pál]",
+    3,
+    recognize=True,
+    note="Recognition-only idiom from the source guide; do not force it in conversation.",
+    tags=["idiom", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "Жизнь бьёт ключо́м.",
+    "Life is in full swing.",
+    "[zhizn' byot klyu-chóm]",
+    3,
+    recognize=True,
+    note="Recognition-only idiom from the source guide.",
+    tags=["idiom", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "В гостя́х хорошо́, а до́ма лу́чше.",
+    "Being a guest is good, but home is better.",
+    "[v gas-tyáh ha-ra-shó a dó-ma lúch-she]",
+    3,
+    recognize=True,
+    note="Recognition-only proverb from the source guide.",
+    tags=["proverb", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "Нет ху́да без добра́.",
+    "Every cloud has a silver lining.",
+    "[nyet hú-da bez da-brá]",
+    3,
+    recognize=True,
+    note="Recognition-only proverb from the source guide.",
+    tags=["proverb", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "У сосе́да трава́ зелене́е.",
+    "The neighbor's grass is greener.",
+    "[u sa-syé-da tra-vá zi-li-nyé-ye]",
+    3,
+    recognize=True,
+    note="Recognition-only proverb from the source guide.",
+    tags=["proverb", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "Семь раз отме́рь, оди́н раз отре́жь.",
+    "Measure seven times, cut once.",
+    "[syem' raz at-myér' a-dín raz at-ryézh]",
+    3,
+    recognize=True,
+    note="Recognition-only proverb from the source guide.",
+    tags=["proverb", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "Чем отлича́ется адвока́т от прокуро́ра?",
+    "How is a defense lawyer different from a prosecutor?",
+    "[chem at-li-chá-ye-tsa ad-va-kát at pra-ku-ró-ra]",
+    3,
+    recognize=True,
+    note="Recognition-only lawyer joke setup from the source guide.",
+    tags=["legal", "joke", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "Адвока́т озабо́чен бу́дущим своего́ клие́нта, а прокуро́р — его́ про́шлым.",
+    "The lawyer is concerned with the client's future; the prosecutor with his past.",
+    "[ad-va-kát a-za-bó-chen bú-du-shchim sva-ye-vó kli-yén-ta a pra-ku-rór yi-vó pró-shlym]",
+    3,
+    recognize=True,
+    note="Recognition-only lawyer joke answer from the source guide; do not perform it unless rehearsed.",
+    tags=["legal", "joke", "recognition"],
+)
+add(
+    "cultural_bonus",
+    "Цивилиза́ция привела́ к тому́, что уже́ не ва́жно, чей адвока́т лу́чше.",
+    "Civilization made it so what matters is whose lawyer is better.",
+    "[tsi-vi-li-zá-tsi-ya pri-vi-lá k ta-mú shto u-zhé ni vázh-na chey ad-va-kát lúch-she]",
+    3,
+    recognize=True,
+    note="Condensed recognition-only legal joke from the source guide.",
+    tags=["legal", "joke", "recognition"],
+)
+
+# --- BUDVA TRIP (Montenegro travel lane) ---
+add(
+    "travel_budva",
+    "Мы е́дем в Бу́дву.",
+    "We're going to Budva.",
+    "[my yé-dem v búd-vu]",
+    2,
+    tags=["travel", "budva"],
+)
+add(
+    "travel_budva",
+    "Мы бу́дем в Черного́рии.",
+    "We'll be in Montenegro.",
+    "[my bú-dem f chir-na-gó-ri-i]",
+    2,
+    tags=["travel", "montenegro"],
+)
+add(
+    "travel_budva",
+    "Мы бу́дем в Бу́две.",
+    "We'll be in Budva.",
+    "[my bú-dem v búd-vye]",
+    2,
+    tags=["travel", "budva"],
+)
+add(
+    "travel_budva",
+    "Где на́ш о́тель?",
+    "Where is our hotel?",
+    "[gdye nash ó-tel']",
+    2,
+    recognize=True,
+    tags=["hotel", "travel"],
+)
+add(
+    "travel_budva",
+    "Мо́жно такси́?",
+    "Can we get a taxi?",
+    "[mózh-na tak-sí]",
+    2,
+    tags=["taxi", "travel"],
+)
+add(
+    "travel_budva",
+    "Ско́лько е́хать до о́теля?",
+    "How long is the ride to the hotel?",
+    "[skól'-ka yé-hat' da ó-te-lya]",
+    2,
+    recognize=True,
+    tags=["taxi", "hotel", "travel"],
+)
+add(
+    "travel_budva",
+    "Где пляж?",
+    "Where is the beach?",
+    "[gdye plyazh]",
+    2,
+    recognize=True,
+    tags=["beach", "travel"],
+)
+add(
+    "travel_budva",
+    "Я хочу́ погуля́ть у мо́ря.",
+    "I want to walk by the sea.",
+    "[ya ha-chú pa-gu-lyát' u mó-rya]",
+    2,
+    tags=["sea", "plans"],
+)
+add(
+    "travel_budva",
+    "Ста́рый го́род о́чень краси́вый.",
+    "The old town is very beautiful.",
+    "[stá-ryy gó-rat ó-chen' kra-sí-vyy]",
+    2,
+    tags=["old_town", "budva"],
+)
+add(
+    "travel_budva",
+    "Мо́ре о́чень краси́вое.",
+    "The sea is very beautiful.",
+    "[mó-re ó-chen' kra-sí-va-ye]",
+    2,
+    tags=["sea", "budva"],
+)
+add(
+    "travel_budva",
+    "Мы отдыха́ем.",
+    "We're relaxing / on vacation.",
+    "[my at-dy-há-yem]",
+    2,
+    tags=["plans", "travel"],
+)
+add(
+    "travel_budva",
+    "Мы здесь с семьёй.",
+    "We're here with family.",
+    "[my zdyes' s sim-yóy]",
+    2,
+    tags=["family", "travel"],
+)
+add(
+    "travel_budva",
+    "Счёт, пожа́луйста.",
+    "The check, please.",
+    "[shchyot pa-zhá-luy-sta]",
+    2,
+    tags=["restaurant", "travel"],
+)
+add(
+    "travel_budva",
+    "Мы хоти́м поу́жинать.",
+    "We want to have dinner.",
+    "[my ha-tím pa-ú-zhi-nat']",
+    2,
+    tags=["restaurant", "plans"],
+)
+add(
+    "travel_budva",
+    "аэропо́рт",
+    "airport",
+    "[a-e-ra-pórt]",
+    3,
+    recognize=True,
+    tags=["airport", "travel"],
+)
+add(
+    "travel_budva",
+    "бага́ж",
+    "luggage",
+    "[ba-gázh]",
+    3,
+    recognize=True,
+    tags=["airport", "hotel", "travel"],
+)
+add(
+    "travel_budva",
+    "Вот мой па́спорт.",
+    "Here is my passport.",
+    "[vot moy pás-part]",
+    2,
+    tags=["airport", "hotel", "passport"],
+)
+add(
+    "travel_budva",
+    "Я хочу́ зарегистри́роваться.",
+    "I want to check in / register.",
+    "[ya ha-chú za-ri-gi-strí-ra-vat-sa]",
+    2,
+    tags=["airport", "hotel", "checkin"],
+)
+add(
+    "travel_budva",
+    "Я хочу́ сда́ть бага́ж.",
+    "I want to check my luggage.",
+    "[ya ha-chú zdat' ba-gázh]",
+    2,
+    tags=["airport", "luggage"],
+)
+add(
+    "travel_budva",
+    "Где выда́ча багажа́?",
+    "Where is baggage claim?",
+    "[gdye vy-dá-cha ba-ga-zhá]",
+    2,
+    recognize=True,
+    tags=["airport", "luggage"],
+)
+add(
+    "travel_budva",
+    "У меня́ есть брони́рование.",
+    "I have a reservation.",
+    "[u mi-nyá yest' bra-ní-ra-va-ni-ye]",
+    2,
+    tags=["hotel", "checkin"],
+)
+add(
+    "travel_budva",
+    "Ключ, пожа́луйста.",
+    "Key, please.",
+    "[klyuch pa-zhá-luy-sta]",
+    2,
+    tags=["hotel"],
+)
+add(
+    "travel_budva",
+    "Где лифт?",
+    "Where is the elevator?",
+    "[gdye lift]",
+    2,
+    tags=["hotel"],
+)
+add(
+    "travel_budva",
+    "В но́мере есть интерне́т?",
+    "Is there internet in the room?",
+    "[v nó-mi-rye yest' in-ter-nyét]",
+    2,
+    tags=["hotel", "room"],
+)
+add(
+    "travel_budva",
+    "Во ско́лько зае́зд?",
+    "What time is check-in?",
+    "[va skól'-ka za-yézd]",
+    2,
+    recognize=True,
+    tags=["hotel", "checkin", "time"],
+)
+add(
+    "travel_budva",
+    "Во ско́лько вы́езд?",
+    "What time is check-out?",
+    "[va skól'-ka vý-yezd]",
+    2,
+    recognize=True,
+    tags=["hotel", "checkout", "time"],
+)
+add(
+    "travel_budva",
+    "Э́то ваш ключ.",
+    "This is your key.",
+    "[é-ta vash klyuch]",
+    3,
+    recognize=True,
+    tags=["hotel", "listening"],
+)
+add(
+    "travel_budva",
+    "Како́й ваш но́мер?",
+    "What is your room number?",
+    "[ka-kóy vash nó-mer]",
+    3,
+    recognize=True,
+    tags=["hotel", "room", "listening"],
 )
 
 # --- CORE VERBS (reactivation; я / вы present) ---
@@ -1750,6 +5535,144 @@ def build_contrast_cards(contrast_sets: list[dict], items: list[dict]) -> list[d
     return cards
 
 
+VERB_DRILL_FORMS = {
+    "хотеть": [
+        ("ya", "я", "хочу́", "I want"),
+        ("ty", "ты", "хо́чешь", "you want"),
+        ("on_ona", "он/она", "хо́чет", "he/she wants"),
+        ("my", "мы", "хоти́м", "we want"),
+        ("vy", "вы", "хоти́те", "you want"),
+        ("oni", "они", "хотя́т", "they want"),
+    ],
+    "мочь": [
+        ("ya", "я", "могу́", "I can"),
+        ("ty", "ты", "мо́жешь", "you can"),
+        ("on_ona", "он/она", "мо́жет", "he/she can"),
+        ("my", "мы", "мо́жем", "we can"),
+        ("vy", "вы", "мо́жете", "you can"),
+        ("oni", "они", "мо́гут", "they can"),
+    ],
+    "говори́ть": [
+        ("ya", "я", "говорю́", "I speak"),
+        ("ty", "ты", "говори́шь", "you speak"),
+        ("on_ona", "он/она", "говори́т", "he/she speaks"),
+        ("my", "мы", "говори́м", "we speak"),
+        ("vy", "вы", "говори́те", "you speak"),
+        ("oni", "они", "говоря́т", "they speak"),
+    ],
+    "понима́ть": [
+        ("ya", "я", "понима́ю", "I understand"),
+        ("ty", "ты", "понима́ешь", "you understand"),
+        ("on_ona", "он/она", "понима́ет", "he/she understands"),
+        ("my", "мы", "понима́ем", "we understand"),
+        ("vy", "вы", "понима́ете", "you understand"),
+        ("oni", "они", "понима́ют", "they understand"),
+    ],
+    "люби́ть": [
+        ("ya", "я", "люблю́", "I love"),
+        ("ty", "ты", "лю́бишь", "you love"),
+        ("on_ona", "он/она", "лю́бит", "he/she loves"),
+        ("my", "мы", "лю́бим", "we love"),
+        ("vy", "вы", "лю́бите", "you love"),
+        ("oni", "они", "лю́бят", "they love"),
+    ],
+    "рабо́тать": [
+        ("ya", "я", "рабо́таю", "I work"),
+        ("ty", "ты", "рабо́таешь", "you work"),
+        ("on_ona", "он/она", "рабо́тает", "he/she works"),
+        ("my", "мы", "рабо́таем", "we work"),
+        ("vy", "вы", "рабо́таете", "you work"),
+        ("oni", "они", "рабо́тают", "they work"),
+    ],
+    "жить": [
+        ("ya", "я", "живу́", "I live"),
+        ("ty", "ты", "живёшь", "you live"),
+        ("on_ona", "он/она", "живёт", "he/she lives"),
+        ("my", "мы", "живём", "we live"),
+        ("vy", "вы", "живёте", "you live"),
+        ("oni", "они", "живу́т", "they live"),
+    ],
+    "есть": [
+        ("ya", "я", "ем", "I eat"),
+        ("ty", "ты", "ешь", "you eat"),
+        ("on_ona", "он/она", "ест", "he/she eats"),
+        ("my", "мы", "еди́м", "we eat"),
+        ("vy", "вы", "еди́те", "you eat"),
+        ("oni", "они", "едя́т", "they eat"),
+    ],
+    "пить": [
+        ("ya", "я", "пью", "I drink"),
+        ("ty", "ты", "пьёшь", "you drink"),
+        ("on_ona", "он/она", "пьёт", "he/she drinks"),
+        ("my", "мы", "пьём", "we drink"),
+        ("vy", "вы", "пьёте", "you drink"),
+        ("oni", "они", "пьют", "they drink"),
+    ],
+    "знать": [
+        ("ya", "я", "зна́ю", "I know"),
+        ("ty", "ты", "зна́ешь", "you know"),
+        ("on_ona", "он/она", "зна́ет", "he/she knows"),
+        ("my", "мы", "зна́ем", "we know"),
+        ("vy", "вы", "зна́ете", "you know"),
+        ("oni", "они", "зна́ют", "they know"),
+    ],
+}
+
+
+def build_verb_drill_cards(items: list[dict]) -> list[dict]:
+    cards = []
+    for item in items:
+        if item["module"] != "verbs":
+            continue
+        infinitive = ""
+        if "—" in item["en"]:
+            infinitive = item["en"].split("—", 1)[1].strip()
+        if not infinitive:
+            continue
+        prompts = VERB_DRILL_FORMS.get(infinitive) or VERB_DRILL_FORMS.get(
+            strip_stress(infinitive), []
+        )
+        for pronoun_key, pronoun, answer, meaning in prompts:
+            plain_answer = strip_stress(answer)
+            cards.append(
+                {
+                    "id": f"conj_{item['id']}_{pronoun_key}",
+                    "item_id": item["id"],
+                    "module": item["module"],
+                    "lesson_id": item["lesson_id"],
+                    "lesson_number": item["lesson_number"],
+                    "ru": answer,
+                    "ru_plain": plain_answer,
+                    "en": f"{pronoun} + {infinitive}: {meaning or item['en']}",
+                    "prompt": f"{pronoun} + {infinitive}",
+                    "answer": plain_answer,
+                    "accepted_answers": sorted({plain_answer, answer}),
+                    "hint": f"Source verb card: {item['ru']}",
+                    "priority": item["priority"],
+                    "syllables": syllable_count(answer),
+                    "conf": item["conf"],
+                    "gender": item["gender"],
+                    "rehearse": item["rehearse"],
+                    "recognize": False,
+                    "note": item.get("note", ""),
+                    "tags": sorted(
+                        set(item.get("tags", [])) | {"verb_drill", pronoun_key}
+                    ),
+                    "error_types": sorted(
+                        set(item["error_types"]) | {"case_or_inflection"}
+                    ),
+                    "allowed_error_types": sorted(
+                        set(item["allowed_error_types"]) | {"case_or_inflection"}
+                    ),
+                    "lexemes": lexemes_for_phrase(plain_answer),
+                    "structures": sorted(
+                        set(item["structures"]) | {"grammar:verb_conjugation"}
+                    ),
+                }
+            )
+    return cards
+
+
 def build():
     course = load_course(os.environ.get("ZASTOLOM_COURSE", DEFAULT_COURSE_ID))
     mod_index = {m[0]: idx for idx, m in enumerate(MODULES)}
@@ -1837,6 +5760,7 @@ def build():
     backtranslation_cards = build_backtranslation_cards(items)
     tutor_cards = build_tutor_cards(scenarios, items, curriculum, course)
     contrast_cards = build_contrast_cards(CONTRAST_SETS, items)
+    verb_drill_cards = build_verb_drill_cards(items)
     data = {
         "course": course,
         "meta": {
@@ -1859,6 +5783,7 @@ def build():
         "backtranslation_cards": backtranslation_cards,
         "tutor_cards": tutor_cards,
         "contrast_cards": contrast_cards,
+        "verb_drill_cards": verb_drill_cards,
         "error_types": ERROR_TYPES,
         "listening_ladder": LISTENING_LADDER,
         "roleplay_criteria": ROLEPLAY_CRITERIA,

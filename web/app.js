@@ -17,6 +17,7 @@
   const BACKTRANSLATION_CARDS = DATA.backtranslation_cards || [];
   const TUTOR_CARDS = DATA.tutor_cards || [];
   const CONTRAST_CARDS = DATA.contrast_cards || [];
+  const VERB_DRILL_CARDS = DATA.verb_drill_cards || [];
   const MODULES = DATA.modules;
   const CURRICULUM = DATA.curriculum || {};
   const LESSONS = (CURRICULUM.lessons || []).slice().sort((a, b) => a.lesson_number - b.lesson_number);
@@ -31,7 +32,8 @@
   const ROLEPLAY_CRITERIA = DATA.roleplay_criteria || {};
   const SCENARIOS = DATA.scenarios || [];
   const TUTOR_BY_SCENARIO = Object.fromEntries(TUTOR_CARDS.map(c => [c.scenario_id, c]));
-  const STAGE_KEYS = ["recognition", "recall", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"];
+  const METRICS = window.ZASTOLOM_METRICS || null;
+  const STAGE_KEYS = ["recognition", "recall", "conjugate", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"];
   const LEGACY_STAGE = { production: "produce", listening: "listen" };
   const SCENARIO_INDEX = Object.create(null);
   SCENARIOS.forEach((s, i) => { SCENARIO_INDEX[s.id] = i; });
@@ -68,7 +70,18 @@
   const LEGACY_KEY = "zastolom.v1";
   const LESSON_KEY = KEY + ".lesson_boundary";
   const HISTORY_KEY = KEY + ".analytics_history";
+  const LEARN_RATE_KEY = KEY + ".learn_audio_rate";
+  const ADAPTIVE_KEY = KEY + ".adaptive_ratings";
+  const ANALYSIS_KEY = KEY + ".analysis_state";
+  const SYNC_QUEUE_KEY = KEY + ".sync_queue";
+  const DEVICE_KEY = KEY + ".device_id";
+  const SYNC_API_KEY = KEY + ".sync_api";
+  const LEARNER_ID = (COURSE.learner_profile && COURSE.learner_profile.id) || "joe";
+  const SYNC_API = window.ZASTOLOM_SYNC_API || localStorage.getItem(SYNC_API_KEY) || "";
   let store = load();
+  let adaptiveRatings = loadAdaptiveRatings();
+  let analysisState = loadAnalysisState();
+  let analysisTimer = 0;
   let activeLessonId = loadLessonBoundary();
   function load() {
     try {
@@ -106,6 +119,89 @@
   function saveAnalyticsHistory(rows) {
     try { localStorage.setItem(HISTORY_KEY, JSON.stringify(rows.slice(-14))); } catch (e) {}
   }
+  function loadLearnRate() {
+    try {
+      const value = Number(localStorage.getItem(LEARN_RATE_KEY));
+      return [0.65, 0.85, 1, 1.15, 1.3].includes(value) ? value : 1;
+    } catch (e) { return 1; }
+  }
+  function saveLearnRate(value) {
+    try { localStorage.setItem(LEARN_RATE_KEY, String(value)); } catch (e) {}
+  }
+  function loadAdaptiveRatings() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(ADAPTIVE_KEY)) || {};
+      return parsed && parsed.version ? parsed : (METRICS ? METRICS.emptyRatings() : { version: 1, skills: {}, items: {} });
+    } catch (e) {
+      return METRICS ? METRICS.emptyRatings() : { version: 1, skills: {}, items: {} };
+    }
+  }
+  function saveAdaptiveRatings() {
+    try { localStorage.setItem(ADAPTIVE_KEY, JSON.stringify(adaptiveRatings)); } catch (e) {}
+  }
+  function loadAnalysisState() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(ANALYSIS_KEY)) || {};
+      return parsed && parsed.version ? parsed : { version: 1, engine_active: false, cycle: 0 };
+    } catch (e) {
+      return { version: 1, engine_active: false, cycle: 0 };
+    }
+  }
+  function saveAnalysisState() {
+    try { localStorage.setItem(ANALYSIS_KEY, JSON.stringify(analysisState)); } catch (e) {}
+  }
+  function deviceId() {
+    try {
+      let id = localStorage.getItem(DEVICE_KEY);
+      if (!id) {
+        id = (window.crypto && crypto.randomUUID && crypto.randomUUID()) || "dev_" + Date.now() + "_" + Math.random().toString(16).slice(2);
+        localStorage.setItem(DEVICE_KEY, id);
+      }
+      return id;
+    } catch (e) {
+      return "dev_ephemeral";
+    }
+  }
+  function syncQueue() {
+    try {
+      const rows = JSON.parse(localStorage.getItem(SYNC_QUEUE_KEY)) || [];
+      return Array.isArray(rows) ? rows : [];
+    } catch (e) { return []; }
+  }
+  function saveSyncQueue(rows) {
+    try { localStorage.setItem(SYNC_QUEUE_KEY, JSON.stringify(rows.slice(-500))); } catch (e) {}
+  }
+  function queueSyncEvent(event) {
+    const rows = syncQueue();
+    rows.push(Object.assign({
+      event_id: (window.crypto && crypto.randomUUID && crypto.randomUUID()) || "evt_" + Date.now() + "_" + Math.random().toString(16).slice(2),
+      learner_id: LEARNER_ID,
+      device_id: deviceId(),
+      course_id: COURSE.course_id || "russian_family_visit",
+      client_created_at: new Date().toISOString(),
+    }, event));
+    saveSyncQueue(rows);
+    flushLearningSync();
+  }
+  let syncInFlight = false;
+  async function flushLearningSync() {
+    const rows = syncQueue();
+    if (!rows.length || syncInFlight || !SYNC_API) return;
+    syncInFlight = true;
+    try {
+      const response = await fetch(`${SYNC_API}/api/learning/events`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ learner_id: LEARNER_ID, device_id: deviceId(), events: rows }),
+      });
+      if (response.ok) saveSyncQueue([]);
+    } catch (e) {
+      // Offline-first: keep the queue for the next reachable sync server.
+    } finally {
+      syncInFlight = false;
+    }
+  }
+  window.addEventListener("online", flushLearningSync);
   function emptyRec() { return { seen: 0, correct: 0, known: false, stages: {}, errors: {}, last_seen_at: "" }; }
   function migrateRec(value) {
     const r = Object.assign(emptyRec(), value || {});
@@ -368,6 +464,154 @@
       averageResponseMs: averageResponseMs(),
     };
   }
+  function adaptiveStats() {
+    if (!METRICS) return {
+      missionAbility: 1500,
+      grammarControl: 1500,
+      listeningDiscrimination: 1500,
+      productionControl: 1500,
+      confidence: 0,
+      bottlenecks: [],
+      nPlusOneFit: 0,
+      frictionIndex: 0,
+    };
+    const snapshot = METRICS.metricSnapshot(adaptiveRatings);
+    const recent = [];
+    STAGE_KEYS.forEach(stageKey => {
+      stagePool(stageKey).forEach(it => {
+        const st = stageState(it.id, stageKey);
+        if (!st || !st.seen) return;
+        const adaptive = adaptiveItemState(it.id, stageKey);
+        recent.push({
+          expected: adaptive.expected,
+          lapses: st.lapses || 0,
+          assisted: st.last_assistance || 0,
+          latency: st.last_latency_ms || 0,
+          targetLatency: METRICS.targetLatency(stageKey),
+        });
+      });
+    });
+    const nPlusOne = recent.filter(row => row.expected >= METRICS.TARGET_LOW && row.expected <= METRICS.TARGET_HIGH).length;
+    const friction = recent.filter(row => row.lapses > 0 || row.assisted > 0 || (row.latency && row.latency > row.targetLatency)).length;
+    return Object.assign(snapshot, {
+      nPlusOneFit: recent.length ? Math.round(nPlusOne / recent.length * 100) : 0,
+      frictionIndex: recent.length ? Math.round(friction / recent.length * 100) : 0,
+    });
+  }
+  function skillLabel(key) {
+    return String(key || "")
+      .replace(/^structure:/, "")
+      .replace(/^stage:/, "stage: ")
+      .replace(/^mission:/, "mission: ")
+      .replace(/[:_]/g, " ");
+  }
+  function adaptiveRecommendations(limit) {
+    if (!METRICS) return [];
+    const rows = STAGE_KEYS.flatMap(stageKey => stagePool(stageKey).map(it => {
+      const st = stageState(it.id, stageKey);
+      const adaptive = adaptiveItemState(it.id, stageKey);
+      const due = isDue(st);
+      const bucketRank = { rescue: 0, "n+1": 1, consolidate: 2, too_easy: 3 }[adaptive.bucket] || 4;
+      const dueRank = due ? 0 : 1;
+      const priority = it.priority || adaptive.meta.priority || 3;
+      return { item: it, stageKey, st, adaptive, due, sort: [dueRank, bucketRank, priority, Math.abs(adaptive.expected - 0.68)] };
+    }));
+    return rows.sort((a, b) => {
+      for (let i = 0; i < a.sort.length; i++) if (a.sort[i] !== b.sort[i]) return a.sort[i] - b.sort[i];
+      return a.item.id.localeCompare(b.item.id);
+    }).slice(0, limit || 8);
+  }
+  function adaptivePanelHtml(stats) {
+    const recs = adaptiveRecommendations(4);
+    const bottleneck = stats.bottlenecks && stats.bottlenecks.length ? skillLabel(stats.bottlenecks[0].skill_key) : "not enough attempts yet";
+    return `<div class="analyticsbox rise adaptivebox">
+      <div><h3>Adaptive progress model</h3><p>Elo-style ability and item difficulty estimates choose practice in the n+1 band: hard enough to grow, not so hard it collapses.</p></div>
+      <div class="analyticsgrid">
+        <div><strong>${stats.missionAbility}</strong><span>mission ability</span></div>
+        <div><strong>${stats.grammarControl}</strong><span>grammar control</span></div>
+        <div><strong>${stats.nPlusOneFit}<small>%</small></strong><span>n+1 fit</span></div>
+        <div><strong>${stats.frictionIndex}<small>%</small></strong><span>friction index</span></div>
+        <div><strong>${stats.listeningDiscrimination}</strong><span>listening rating</span></div>
+        <div><strong>${stats.productionControl}</strong><span>production rating</span></div>
+      </div>
+      <div class="adaptivebox__next">
+        <strong>Current bottleneck:</strong> ${escapeHtml(bottleneck)}
+        ${recs.length ? `<div class="adaptivequeue">${recs.map(row => `<button onclick="location.hash='#/quiz/${row.stageKey}'"><span>${escapeHtml(METRICS.bucketLabel(row.adaptive.bucket))} · ${Math.round(row.adaptive.expected * 100)}%</span>${escapeHtml(row.item.en || row.item.title || row.item.id)}</button>`).join("")}</div>` : ""}
+      </div>
+    </div>`;
+  }
+  function analysisFlags(perf, adaptive) {
+    const flags = [];
+    if (perf.overdue > 0) flags.push(`${perf.overdue} overdue review${perf.overdue === 1 ? "" : "s"} before new material`);
+    if (adaptive.frictionIndex >= 35) flags.push("friction is high: slow down and repair misses");
+    if (adaptive.nPlusOneFit > 0 && adaptive.nPlusOneFit < 45) flags.push("too little practice is landing in the n+1 band");
+    if (adaptive.confidence < 25) flags.push("confidence is still low: collect more attempts");
+    if (!flags.length) flags.push("analysis clear: stay in adaptive drill flow");
+    return flags.slice(0, 3);
+  }
+  function runAnalysisCycle(reason) {
+    const perf = analytics();
+    const adaptive = adaptiveStats();
+    const recs = adaptiveRecommendations(8);
+    const next = recs[0] || null;
+    analysisState = {
+      version: 1,
+      engine_active: true,
+      cycle: (analysisState.cycle || 0) + 1,
+      reason: reason || "interval",
+      last_run_at: new Date().toISOString(),
+      target_band: { low: METRICS ? METRICS.TARGET_LOW : 0.58, high: METRICS ? METRICS.TARGET_HIGH : 0.78 },
+      metrics: Object.assign({
+        readiness: readiness(),
+        due: perf.due,
+        overdue: perf.overdue,
+        delayedRecall: perf.delayedRecall,
+        averageResponseMs: perf.averageResponseMs,
+      }, adaptive),
+      flags: analysisFlags(perf, adaptive),
+      next_action: next ? {
+        item_id: next.item.id,
+        source_item_id: next.adaptive.meta.source_item_id,
+        stage_key: next.stageKey,
+        label: next.item.en || next.item.title || next.item.id,
+        bucket: next.adaptive.bucket,
+        expected_success: Math.round(next.adaptive.expected * 100),
+        reason: next.due ? "due adaptive review" : "best n+1 fit inside current lesson lock",
+      } : null,
+    };
+    saveAnalysisState();
+    return analysisState;
+  }
+  function startAnalysisEngine() {
+    if (analysisTimer) return;
+    runAnalysisCycle("startup");
+    analysisTimer = window.setInterval(() => runAnalysisCycle("interval"), 45000);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) runAnalysisCycle("visible");
+    });
+  }
+  function analysisPanelHtml(state) {
+    state = state && state.engine_active ? state : runAnalysisCycle("render");
+    const action = state.next_action;
+    const target = state.target_band || { low: 0.58, high: 0.78 };
+    const last = state.last_run_at ? new Date(state.last_run_at).toLocaleTimeString([], { hour: "numeric", minute: "2-digit", second: "2-digit" }) : "now";
+    return `<div class="analysisengine rise">
+      <div>
+        <h3>Analysis engine active</h3>
+        <p>Runs every 45 seconds while the app is open. Target n+1 band: ${Math.round(target.low * 100)}-${Math.round(target.high * 100)}% predicted success.</p>
+      </div>
+      <div class="analysisengine__status">
+        <div><strong>${escapeHtml(String(state.cycle || 0))}</strong><span>cycles</span></div>
+        <div><strong>${escapeHtml(last)}</strong><span>last analysis</span></div>
+        <div><strong>${state.metrics ? state.metrics.confidence : 0}<small>%</small></strong><span>signal confidence</span></div>
+      </div>
+      <div class="analysisengine__next">
+        <strong>Next action:</strong>
+        ${action ? `<button onclick="location.hash='#/quiz/${escapeHtml(action.stage_key)}'"><span>${escapeHtml(action.bucket)} · ${action.expected_success}%</span>${escapeHtml(action.stage_key)}: ${escapeHtml(action.label)}</button>` : "collect the first attempt"}
+      </div>
+      <div class="analysisengine__flags">${(state.flags || []).map(flag => `<span>${escapeHtml(flag)}</span>`).join("")}</div>
+    </div>`;
+  }
   function todayKey() { return new Date().toISOString().slice(0, 10); }
   function analyticsSnapshot(metrics) {
     const snapshot = {
@@ -383,6 +627,13 @@
     const rows = loadAnalyticsHistory().filter(row => row && row.date !== snapshot.date);
     rows.push(snapshot);
     saveAnalyticsHistory(rows);
+    try {
+      if (SYNC_API) fetch(`${SYNC_API}/api/learning/snapshots`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ learner_id: LEARNER_ID, snapshot }),
+      }).catch(() => {});
+    } catch (e) {}
     return rows;
   }
   function delta(current, previous, key) {
@@ -454,7 +705,8 @@
     if (errorType === "vowel_reduction") return "pronounce";
     if (errorType === "cultural_usage") return "contrast";
     if (errorType === "register") return "roleplay";
-    if (["case_or_inflection", "word_order"].includes(errorType)) return "backtranslate";
+    if (errorType === "case_or_inflection") return "conjugate";
+    if (errorType === "word_order") return "backtranslate";
     return "produce";
   }
   function recordRepairFocus(id, stageKey, errorTypes) {
@@ -650,8 +902,62 @@
       return lessonNumber != null && lessonNumber <= n;
     });
   }
+  function unlockedVerbDrillCards(cards) {
+    return activeLessonStageCards(cards);
+  }
   function practiceItem(id) {
-    return ITEMS.find(i => i.id === id) || CLOZE_CARDS.find(c => c.id === id) || DICTATION_CARDS.find(c => c.id === id) || STRESS_CARDS.find(c => c.id === id) || PRONUNCIATION_CARDS.find(c => c.id === id) || BACKTRANSLATION_CARDS.find(c => c.id === id) || CONTRAST_CARDS.find(c => c.id === id);
+    return ITEMS.find(i => i.id === id) || CLOZE_CARDS.find(c => c.id === id) || DICTATION_CARDS.find(c => c.id === id) || STRESS_CARDS.find(c => c.id === id) || PRONUNCIATION_CARDS.find(c => c.id === id) || BACKTRANSLATION_CARDS.find(c => c.id === id) || CONTRAST_CARDS.find(c => c.id === id) || VERB_DRILL_CARDS.find(c => c.id === id);
+  }
+  function sourceItemFor(item) {
+    if (!item) return null;
+    return ITEMS_BY_ID[item.item_id] || ITEMS_BY_ID[item.id] || item;
+  }
+  function itemMeta(id, stageKey) {
+    const item = practiceItem(id) || {};
+    const source = sourceItemFor(item) || {};
+    const structures = new Set([].concat(source.structures || [], item.structures || []));
+    const allowedErrorTypes = new Set([].concat(source.allowed_error_types || source.error_types || [], item.allowed_error_types || item.error_types || []));
+    return {
+      item_id: id,
+      source_item_id: source.id || item.item_id || id,
+      stage_key: stageKey,
+      module: source.module || item.module || "",
+      priority: source.priority || item.priority || 3,
+      lesson_id: source.lesson_id || item.lesson_id || "",
+      lesson_number: source.lesson_number || item.lesson_number || null,
+      structures: Array.from(structures).filter(Boolean),
+      allowed_error_types: Array.from(allowedErrorTypes).filter(Boolean),
+    };
+  }
+  function adaptiveItemState(id, stageKey) {
+    const meta = itemMeta(id, stageKey);
+    const itemKey = `${id}:${stageKey}`;
+    const itemRating = adaptiveRatings.items && adaptiveRatings.items[itemKey];
+    const skillKeys = METRICS ? METRICS.eventSkillKeys(meta, stageKey) : [];
+    const ability = skillKeys.length ? skillKeys.reduce((sum, key) => {
+      const row = adaptiveRatings.skills && adaptiveRatings.skills[key];
+      return sum + (row ? row.rating : METRICS.DEFAULT_RATING);
+    }, 0) / skillKeys.length : (METRICS ? METRICS.DEFAULT_RATING : 1500);
+    const difficulty = itemRating ? itemRating.difficulty : (METRICS ? METRICS.baseDifficulty(stageKey, meta.priority) : 1500);
+    const expected = METRICS ? METRICS.expectedSuccess(ability, difficulty) : 0.5;
+    const bucket = METRICS ? METRICS.bucket(expected) : "n+1";
+    return { meta, itemKey, skillKeys, ability, difficulty, expected, bucket };
+  }
+  function applyAdaptiveAttempt(id, stageKey, ok, opts, latencyMs) {
+    if (!METRICS) return null;
+    const meta = itemMeta(id, stageKey);
+    const result = METRICS.applyAttempt(adaptiveRatings, {
+      item_id: id,
+      stage_key: stageKey,
+      ok,
+      assisted: !!(opts && opts.assisted),
+      latency_ms: latencyMs || 0,
+      meta,
+      at: new Date().toISOString(),
+    });
+    adaptiveRatings = result.ratings;
+    saveAdaptiveRatings();
+    return Object.assign({ meta }, result);
   }
   function lessonLockHtml() {
     if (!LESSONS.length) return "";
@@ -663,6 +969,7 @@
     const pronunciationCount = unlockedPronunciationCards(PRONUNCIATION_CARDS).length;
     const backCount = unlockedBacktranslationCards(BACKTRANSLATION_CARDS).length;
     const contrastCount = unlockedContrastCards(CONTRAST_CARDS).length;
+    const verbDrillCount = unlockedVerbDrillCards(VERB_DRILL_CARDS).length;
     const options = LESSONS.map(l => `<option value="${escapeHtml(l.lesson_id)}" ${l.lesson_id === lesson.lesson_id ? "selected" : ""}>${String(l.lesson_number).padStart(2, "0")} · ${escapeHtml(l.title)}</option>`).join("");
     return `<div class="lessonlock rise">
       <div>
@@ -670,7 +977,7 @@
         <p>Practice is constrained to Lesson ${lesson.lesson_number}: ${escapeHtml(lesson.title)} and everything before it.</p>
       </div>
       <label><span>Unlocked through</span><select onchange="ZS.setLesson(this.value)">${options}</select></label>
-      <div class="lessonlock__meta">${count}/${ITEMS.length} phrases unlocked · ${clozeCount}/${CLOZE_CARDS.length} cloze · ${dictationCount}/${DICTATION_CARDS.length} dictation · ${stressCount}/${STRESS_CARDS.length} stress · ${pronunciationCount}/${PRONUNCIATION_CARDS.length} pronounce · ${backCount}/${BACKTRANSLATION_CARDS.length} back-translation · ${contrastCount}/${CONTRAST_CARDS.length} contrast · ${(lesson.introduced_structures || []).length} structures in this lesson</div>
+      <div class="lessonlock__meta">${count}/${ITEMS.length} phrases unlocked · ${clozeCount}/${CLOZE_CARDS.length} cloze · ${dictationCount}/${DICTATION_CARDS.length} dictation · ${stressCount}/${STRESS_CARDS.length} stress · ${pronunciationCount}/${PRONUNCIATION_CARDS.length} pronounce · ${backCount}/${BACKTRANSLATION_CARDS.length} back-translation · ${contrastCount}/${CONTRAST_CARDS.length} contrast · ${verbDrillCount}/${VERB_DRILL_CARDS.length} conjugation · ${(lesson.introduced_structures || []).length} structures in this lesson</div>
     </div>`;
   }
 
@@ -777,6 +1084,7 @@
     const activeRoute = route === "drill" ? "quiz" : (route || "home");
     document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("is-active", a.dataset.tab === activeRoute));
     view.scrollTop = 0; window.scrollTo(0, 0);
+    if (activeRoute !== "learn") cleanupLearnRecording();
     if (activeRoute === "learn") renderLearn(arg);
     else if (activeRoute === "quiz") arg ? renderQuizRun(arg) : renderQuizMenu();
     else if (activeRoute === "plan") renderPlan();
@@ -791,6 +1099,8 @@
   function renderHome() {
     const op = overallProgress();
     const a = analytics();
+    const adaptive = adaptiveStats();
+    const analysis = runAnalysisCycle("home");
     const history = analyticsSnapshot(a);
     const roleSignals = roleplayFailureSignals();
     const repairFocusRows = repairFocusSummary();
@@ -842,6 +1152,8 @@
           <div><strong>${formatLatency(a.averageResponseMs)}</strong><span>avg response time</span></div>
         </div>
       </div>
+      ${analysisPanelHtml(analysis)}
+      ${adaptivePanelHtml(adaptive)}
       ${repairProfileHtml(repairFocusRows)}
       ${roleplaySignalsHtml(roleSignals)}
       ${analyticsHistoryHtml(history)}
@@ -858,7 +1170,22 @@
   /* ====================================================================
      LEARN  (flashcards)
      ==================================================================== */
-  let learnState = { module: "all", priority: 0, idx: 0, list: [], hideEn: false };
+  let learnState = {
+    module: "all",
+    priority: 0,
+    idx: 0,
+    list: [],
+    hideEn: false,
+    audioRate: loadLearnRate(),
+    showVoiceLab: false,
+    showConjugation: false,
+  };
+  let learnRecorder = null;
+  let learnRecordStream = null;
+  let learnRecordChunks = [];
+  let learnRecordingUrl = "";
+  let learnRecordingItemId = "";
+  let learnSpectrogramToken = 0;
   function buildLearnList() {
     let list = unlockedItems(ITEMS);
     if (learnState.module !== "all") list = list.filter(i => i.module === learnState.module);
@@ -866,6 +1193,172 @@
     list.sort((a, b) => a.priority - b.priority);
     learnState.list = list;
     if (learnState.idx >= list.length) learnState.idx = 0;
+  }
+  function cleanupLearnRecording() {
+    const activeRecorder = learnRecorder;
+    learnRecorder = null;
+    if (activeRecorder && activeRecorder.state !== "inactive") {
+      activeRecorder.onstop = null;
+      try { activeRecorder.stop(); } catch (e) {}
+    }
+    if (learnRecordStream) {
+      learnRecordStream.getTracks().forEach(track => track.stop());
+      learnRecordStream = null;
+    }
+    if (learnRecordingUrl) {
+      URL.revokeObjectURL(learnRecordingUrl);
+      learnRecordingUrl = "";
+    }
+    learnRecordChunks = [];
+    learnRecordingItemId = "";
+  }
+  function setLearnStatus(message) {
+    const el = $("#learnRecordStatus");
+    if (el) el.textContent = message;
+  }
+  function activeLearnItem() {
+    return learnState.list[learnState.idx] || null;
+  }
+  function speedControlsHtml() {
+    return [
+      { rate: 0.65, label: "Slow" },
+      { rate: 0.85, label: "Careful" },
+      { rate: 1, label: "Normal" },
+      { rate: 1.15, label: "Table" },
+      { rate: 1.3, label: "Fast" },
+    ].map(({ rate, label }) =>
+      `<button class="chip chip--tight ${learnState.audioRate === rate ? "is-on" : ""}" title="${label} readback" aria-label="${label} readback speed ${rate}x" onclick="ZS.setLearnRate(${rate})">${rate}x</button>`
+    ).join("");
+  }
+  function verbConjugationFor(it) {
+    if (!it || it.module !== "verbs") return null;
+    const forms = (it.ru || "").split("/").map(s => s.trim()).filter(Boolean);
+    if (forms.length < 2) return null;
+    const infinitive = (it.en || "").split("—").pop().trim();
+    return {
+      infinitive: infinitive && infinitive !== it.en ? infinitive : "",
+      first: forms[0],
+      formal: forms[1],
+    };
+  }
+  function conjugationPanelHtml(it) {
+    const data = verbConjugationFor(it);
+    if (!data || !learnState.showConjugation) return "";
+    return `<div class="conjpanel">
+      <div class="conjpanel__head"><strong>Conjugation</strong>${data.infinitive ? `<span>${escapeHtml(data.infinitive)}</span>` : ""}</div>
+      <div class="conjgrid">
+        <div><span>я</span><strong>${colorStress(data.first)}</strong></div>
+        <div><span>вы</span><strong>${colorStress(data.formal)}</strong></div>
+      </div>
+    </div>`;
+  }
+  function voiceLabHtml(it) {
+    if (!learnState.showVoiceLab) return "";
+    const mineReady = learnRecordingUrl && learnRecordingItemId === it.id;
+    return `<div class="voicelab">
+      <div class="voicelab__head">
+        <div><strong>Voice sonograph</strong><span>Compare native audio with your attempt.</span></div>
+        <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.renderLearnSpectrograms()">Refresh</button>
+      </div>
+      <div class="sonorow"><span>Native</span><canvas id="nativeSpectrogram" width="620" height="150"></canvas></div>
+      <div class="sonorow"><span>Mine</span><canvas id="mineSpectrogram" width="620" height="150"></canvas></div>
+      <div id="learnRecordStatus" class="voicelab__status">${mineReady ? "Recording ready. Play yours or record again." : "Record yourself to compare against the native model."}</div>
+    </div>`;
+  }
+  function drawEmptySpectrogram(canvas, message) {
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const w = canvas.width;
+    const h = canvas.height;
+    ctx.fillStyle = "#0d0b09";
+    ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = "rgba(249,239,210,.6)";
+    ctx.strokeRect(0.5, 0.5, w - 1, h - 1);
+    ctx.fillStyle = "rgba(249,239,210,.76)";
+    ctx.font = "13px sans-serif";
+    ctx.fillText(message, 14, Math.round(h / 2));
+  }
+  async function audioBufferFromUrl(url) {
+    const response = await fetch(url);
+    const data = await response.arrayBuffer();
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    const ctx = new AudioContext();
+    try {
+      return await ctx.decodeAudioData(data.slice(0));
+    } finally {
+      if (ctx.close) ctx.close();
+    }
+  }
+  function drawSpectrogramFromBuffer(canvas, buffer) {
+    if (!canvas || !buffer) return;
+    const ctx = canvas.getContext("2d");
+    const w = canvas.width;
+    const h = canvas.height;
+    const samples = buffer.getChannelData(0);
+    const sampleRate = buffer.sampleRate;
+    const cols = Math.min(w, 240);
+    const bins = 52;
+    const windowSize = 512;
+    const maxHz = 5200;
+    ctx.fillStyle = "#050403";
+    ctx.fillRect(0, 0, w, h);
+    const step = Math.max(1, Math.floor(samples.length / cols));
+    for (let x = 0; x < cols; x++) {
+      const start = Math.max(0, Math.min(samples.length - windowSize, x * step));
+      for (let b = 0; b < bins; b++) {
+        const hz = 90 + (b / bins) * maxHz;
+        let re = 0;
+        let im = 0;
+        for (let n = 0; n < windowSize; n++) {
+          const sample = samples[start + n] || 0;
+          const win = 0.5 - 0.5 * Math.cos((2 * Math.PI * n) / (windowSize - 1));
+          const angle = 2 * Math.PI * hz * n / sampleRate;
+          re += sample * win * Math.cos(angle);
+          im -= sample * win * Math.sin(angle);
+        }
+        const mag = Math.min(1, Math.log10(1 + Math.sqrt(re * re + im * im) * 9));
+        const y = h - 18 - Math.round((b / bins) * (h - 30));
+        const red = Math.round(24 + mag * 40);
+        const green = Math.round(70 + mag * 180);
+        const blue = Math.round(130 + mag * 125);
+        ctx.fillStyle = `rgb(${red},${green},${blue})`;
+        ctx.fillRect(Math.floor(x * w / cols), y, Math.ceil(w / cols), Math.max(2, Math.ceil((h - 30) / bins)));
+      }
+    }
+    ctx.strokeStyle = "rgba(249,239,210,.75)";
+    ctx.strokeRect(0.5, 0.5, w - 1, h - 1);
+    ctx.fillStyle = "rgba(249,239,210,.82)";
+    ctx.font = "11px sans-serif";
+    ctx.fillText("kHz", 8, 14);
+    ctx.fillText("sec", w - 30, h - 8);
+  }
+  async function renderLearnSpectrograms() {
+    if (!learnState.showVoiceLab) return;
+    const token = ++learnSpectrogramToken;
+    const it = activeLearnItem();
+    const nativeCanvas = $("#nativeSpectrogram");
+    const mineCanvas = $("#mineSpectrogram");
+    if (!it) return;
+    drawEmptySpectrogram(nativeCanvas, "Rendering native model...");
+    try {
+      const src = AUDIO && AUDIO_IDS.has(it.id) ? AUDIO.base + it.id + ".mp3" : "";
+      if (!src) throw new Error("No native audio file");
+      const buffer = await audioBufferFromUrl(src);
+      if (token === learnSpectrogramToken) drawSpectrogramFromBuffer(nativeCanvas, buffer);
+    } catch (e) {
+      drawEmptySpectrogram(nativeCanvas, "Native spectrogram unavailable on this device.");
+    }
+    if (learnRecordingUrl && learnRecordingItemId === it.id) {
+      drawEmptySpectrogram(mineCanvas, "Rendering your recording...");
+      try {
+        const buffer = await audioBufferFromUrl(learnRecordingUrl);
+        if (token === learnSpectrogramToken) drawSpectrogramFromBuffer(mineCanvas, buffer);
+      } catch (e) {
+        drawEmptySpectrogram(mineCanvas, "Recording spectrogram unavailable.");
+      }
+    } else {
+      drawEmptySpectrogram(mineCanvas, "Record yourself to render this row.");
+    }
   }
   function renderLearn(modArg) {
     if (modArg && MOD_BY_ID[modArg]) learnState.module = modArg;
@@ -880,6 +1373,7 @@
       ${lessonLockHtml()}
       <div class="learnbar learnbar--scroll">${modChips}</div>
       <div class="learnbar learnbar--tools">${priChips}<span class="spacer"></span>
+        <div class="speedctl" aria-label="Learn audio speed">${speedControlsHtml()}</div>
         <button class="chip ${learnState.hideEn ? "is-on" : ""}" onclick="ZS.toggleEn()">🙈 Hide English</button></div>
       <div id="cardslot"></div>
     `;
@@ -892,6 +1386,7 @@
     const it = list[learnState.idx];
     rec(it.id).seen++;
     save();
+    const hasConjugation = !!verbConjugationFor(it);
     slot.innerHTML = `
       <div class="card rise ${learnState.hideEn ? "hidden-en" : ""}">
         <div class="card__meta"><span class="card__mod">${MOD_BY_ID[it.module].icon} ${escapeHtml(MOD_BY_ID[it.module].title)}</span>
@@ -901,6 +1396,8 @@
         ${it.hint ? `<div class="card__hint">🔈 ${escapeHtml(it.hint)}</div>` : ""}
         ${it.note ? `<div class="card__note">${escapeHtml(it.note)}</div>` : ""}
         <div class="card__foot">${badges(it)}</div>
+        ${conjugationPanelHtml(it)}
+        ${voiceLabHtml(it)}
       </div>
       <div class="cardnav">
         <button class="iconbtn" onclick="ZS.prev()" aria-label="Previous">‹</button>
@@ -908,8 +1405,16 @@
         <span class="cardnav__count">${learnState.idx + 1} / ${list.length}</span>
         <button class="iconbtn" onclick="ZS.known()" aria-label="Mark known" title="Mark as stuck">✓</button>
         <button class="iconbtn" onclick="ZS.next()" aria-label="Next">›</button>
+      </div>
+      <div class="learnvoice">
+        <button id="learnRecordBtn" class="btn btn--sm btn--red" title="Record your pronunciation for this card" onclick="ZS.startLearnRecording()">Record</button>
+        <button id="learnStopRecordBtn" class="btn btn--sm btn--ghost ghost-dark" title="Stop recording" onclick="ZS.stopLearnRecording()" disabled>Stop</button>
+        <button id="learnPlayRecordBtn" class="btn btn--sm btn--ghost ghost-dark" title="Play your latest recording for this card" onclick="ZS.playLearnRecording()" ${learnRecordingUrl && learnRecordingItemId === it.id ? "" : "disabled"}>Play mine</button>
+        <button class="btn btn--sm btn--ghost ghost-dark ${learnState.showVoiceLab ? "is-on" : ""}" title="Show native and self-recorded spectrograms" onclick="ZS.toggleVoiceLab()">Sonograph</button>
+        ${hasConjugation ? `<button class="btn btn--sm btn--ghost ghost-dark ${learnState.showConjugation ? "is-on" : ""}" title="Show the core verb forms for this card" onclick="ZS.toggleConjugation()">Conjugate</button>` : ""}
       </div>`;
-    speak(it, { quiet: true }); // try native audio, but do not show autoplay-blocked TTS warnings
+    speak(it, { quiet: true, rate: learnState.audioRate }); // try native audio, but do not show autoplay-blocked TTS warnings
+    if (learnState.showVoiceLab) setTimeout(renderLearnSpectrograms, 0);
   }
 
   /* ====================================================================
@@ -918,15 +1423,16 @@
   const STAGES = [
     { n: 1, key: "recognition", title: "Recognise", desc: "See Russian → choose the meaning.", instr: "What does this mean?" },
     { n: 2, key: "recall", title: "Recall", desc: "See English → choose the Russian.", instr: "Pick the Russian" },
-    { n: 3, key: "cloze", title: "Cloze", desc: "Fill the missing Russian word in context.", instr: "Fill the blank" },
-    { n: 4, key: "dictation", title: "Dictation", desc: "Hear Russian audio → type the Cyrillic phrase.", instr: "Type what you hear" },
-    { n: 5, key: "stress", title: "Stress", desc: "Choose the correct stressed Cyrillic form.", instr: "Where is the stress?" },
-    { n: 6, key: "pronounce", title: "Pronounce", desc: "Listen, record yourself, compare, then self-rate.", instr: "Record and compare" },
-    { n: 7, key: "backtranslate", title: "Back-translate", desc: "Translate to English, then rebuild the Russian.", instr: "Translate, hide, rebuild" },
-    { n: 8, key: "contrast", title: "Contrast", desc: "Choose the culturally safe phrase in context.", instr: "Choose the right phrase" },
-    { n: 9, key: "produce", title: "Produce", desc: "See English → type the Russian (stress optional).", instr: "Type it in Russian" },
-    { n: 10, key: "listen", title: "Listen", desc: "Hear it → choose the meaning. No text.", instr: "What did you hear?" },
-    { n: 11, key: "roleplay", title: "Role-play", desc: "A table prompt → say it, then self-rate.", instr: "Say it out loud" },
+    { n: 3, key: "conjugate", title: "Conjugate", desc: "Given a pronoun + infinitive, type the spoken form.", instr: "Type the verb form" },
+    { n: 4, key: "cloze", title: "Cloze", desc: "Fill the missing Russian word in context.", instr: "Fill the blank" },
+    { n: 5, key: "dictation", title: "Dictation", desc: "Hear Russian audio → type the Cyrillic phrase.", instr: "Type what you hear" },
+    { n: 6, key: "stress", title: "Stress", desc: "Choose the correct stressed Cyrillic form.", instr: "Where is the stress?" },
+    { n: 7, key: "pronounce", title: "Pronounce", desc: "Listen, record yourself, compare, then self-rate.", instr: "Record and compare" },
+    { n: 8, key: "backtranslate", title: "Back-translate", desc: "Translate to English, then rebuild the Russian.", instr: "Translate, hide, rebuild" },
+    { n: 9, key: "contrast", title: "Contrast", desc: "Choose the culturally safe phrase in context.", instr: "Choose the right phrase" },
+    { n: 10, key: "produce", title: "Produce", desc: "See English → type the Russian (stress optional).", instr: "Type it in Russian" },
+    { n: 11, key: "listen", title: "Listen", desc: "Hear it → choose the meaning. No text.", instr: "What did you hear?" },
+    { n: 12, key: "roleplay", title: "Role-play", desc: "A table prompt → say it, then self-rate.", instr: "Say it out loud" },
   ];
   function stagePool(stageKey) {
     const n = activeLesson().lesson_number || 99;
@@ -937,6 +1443,7 @@
     if (stageKey === "pronounce") return unlockedPronunciationCards(PRONUNCIATION_CARDS);
     if (stageKey === "backtranslate") return unlockedBacktranslationCards(BACKTRANSLATION_CARDS);
     if (stageKey === "contrast") return unlockedContrastCards(CONTRAST_CARDS);
+    if (stageKey === "conjugate") return unlockedVerbDrillCards(VERB_DRILL_CARDS);
     if (stageKey === "listen") return items.filter(i => i.lesson_number <= n && i.syllables >= 1);
     if (stageKey === "roleplay" && SCENARIOS.length) {
       const scenarioIds = activeRoleplayItemIds();
@@ -957,6 +1464,7 @@
     const labels = [
       ["recognition", "Know"],
       ["recall", "Recall"],
+      ["conjugate", "Verb"],
       ["cloze", "Fill"],
       ["dictation", "Write"],
       ["stress", "Stress"],
@@ -973,6 +1481,7 @@
     }).join("");
   }
   function renderQuizMenu() {
+    const topAdaptive = adaptiveRecommendations(1)[0];
     const cards = STAGES.map(s => {
       const p = stageProgress(s.key);
       return `<button class="stagecard rise" onclick="location.hash='#/quiz/${s.key}'">
@@ -984,12 +1493,18 @@
     }).join("");
     view.innerHTML = `
       <div class="section-head"><span class="section-head__num">03</span><span class="section-head__title">Drill</span>
-        <span class="section-head__sub">Graduated difficulty: recognise → recall → stress → pronounce → contrast → produce → listen → role-play. Retrieval practice beats re-reading.</span></div>
+        <span class="section-head__sub">Graduated difficulty: recognise → recall → conjugate → stress → pronounce → contrast → produce → listen → role-play. Retrieval practice beats re-reading.</span></div>
       ${lessonLockHtml()}
       <div class="mastery rise">${masteryRings()}</div>
       <div class="callout">Each round is 10 questions: due reviews first, fragile high-priority phrases next, new cards only after the review load is under control.</div>
-      ${repairQueueHtml()}
-      <div class="stagegrid">${cards}</div>`;
+      <button class="stagecard stagecard--adaptive rise" onclick="ZS.startAdaptive()">
+        <div class="stagecard__n">n+1</div>
+        <div class="stagecard__t">Adaptive next drill</div>
+        <div class="stagecard__d">${topAdaptive ? `Start ${escapeHtml(topAdaptive.stageKey)} on ${escapeHtml(topAdaptive.item.en || topAdaptive.item.id)} · ${escapeHtml(METRICS ? METRICS.bucketLabel(topAdaptive.adaptive.bucket) : topAdaptive.adaptive.bucket)}` : "Builds after your first attempts."}</div>
+        <div class="stagecard__bar"><span style="width:${topAdaptive ? Math.round(topAdaptive.adaptive.expected * 100) : 0}%"></span></div>
+      </button>
+      <div class="stagegrid">${cards}</div>
+      ${repairQueueHtml()}`;
   }
 
   let quiz = null;
@@ -1028,6 +1543,11 @@
     recordChunks = [];
   }
   function renderQuizRun(stageKey) {
+    if (stageKey === "adaptive") {
+      const rec = adaptiveRecommendations(1)[0];
+      location.hash = rec ? `#/quiz/${rec.stageKey}` : "#/quiz/recognition";
+      return;
+    }
     const stage = STAGES.find(s => s.key === stageKey);
     if (!stage) { location.hash = "#/quiz"; return; }
     if (!quiz || quiz.stageKey !== stageKey) {
@@ -1036,7 +1556,15 @@
       const ranked = pool.slice().sort((a, b) => {
         const as = stageScore(a, stageKey);
         const bs = stageScore(b, stageKey);
+        const aa = METRICS ? adaptiveItemState(a.id, stageKey) : null;
+        const ba = METRICS ? adaptiveItemState(b.id, stageKey) : null;
+        const ar = aa ? ({ rescue: 0, "n+1": 1, consolidate: 2, too_easy: 3 }[aa.bucket] || 4) : 0;
+        const br = ba ? ({ rescue: 0, "n+1": 1, consolidate: 2, too_easy: 3 }[ba.bucket] || 4) : 0;
         for (let i = 0; i < as.length; i++) if (as[i] !== bs[i]) return as[i] - bs[i];
+        if (ar !== br) return ar - br;
+        if (aa && ba && Math.abs(aa.expected - 0.68) !== Math.abs(ba.expected - 0.68)) {
+          return Math.abs(aa.expected - 0.68) - Math.abs(ba.expected - 0.68);
+        }
         return a.id.localeCompare(b.id);
       });
       const head = ranked.slice(0, 16);
@@ -1073,6 +1601,11 @@
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru">${escapeHtml(it.prompt_ru)}</div><div class="q-en">${escapeHtml(it.en)}</div>`;
       body = `<div class="answerbox"><input id="clozeIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Missing word…" />
         <button class="btn btn--red" onclick="ZS.checkCloze('${it.id}')">Check</button></div>
+        <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>`;
+    } else if (stage.key === "conjugate") {
+      promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-en">${escapeHtml(it.prompt)}</div><div class="card__hint">${escapeHtml(it.en)}</div>`;
+      body = `<div class="answerbox"><input id="conjIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Verb form…" />
+        <button class="btn btn--red" onclick="ZS.checkConjugate('${it.id}')">Check</button></div>
         <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>`;
     } else if (stage.key === "dictation") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru" style="font-size:2.6rem">🔊</div><div class="q-en">${escapeHtml(it.en)}</div>`;
@@ -1158,6 +1691,7 @@
     if (stage.key === "listen") setTimeout(() => speak(it), 250);
     if (stage.key === "dictation" || stage.key === "pronounce") setTimeout(() => speak(ITEMS.find(i => i.id === it.item_id) || it, { quiet: true }), 250);
     if (stage.key === "produce") setTimeout(() => { const el = $("#prodIn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkProd(it.id); }); } }, 50);
+    if (stage.key === "conjugate") setTimeout(() => { const el = $("#conjIn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkConjugate(it.id); }); } }, 50);
     if (stage.key === "cloze") setTimeout(() => { const el = $("#clozeIn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkCloze(it.id); }); } }, 50);
     if (stage.key === "dictation") setTimeout(() => { const el = $("#dictIn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkDictation(it.id); }); } }, 50);
     if (stage.key === "backtranslate") setTimeout(() => { const el = $("#btEn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.startBack(it.id); }); } }, 50);
@@ -1173,6 +1707,7 @@
     const st = stageRec(id, stageKey);
     const r = store[id];
     const latencyMs = opts.latency_ms || (quiz && quiz.questionStartedAt ? Date.now() - quiz.questionStartedAt : 0);
+    const adaptive = applyAdaptiveAttempt(id, stageKey, ok, opts, latencyMs);
     const wasDelayedReview = (st.seen || 0) > 0 && isDue(st);
     r.seen++;
     r.last_seen_at = new Date().toISOString();
@@ -1236,6 +1771,34 @@
     }
     if (!opts.assisted) st.due_at = nextDue(st, ok);
     save();
+    runAnalysisCycle("attempt");
+    const meta = adaptive ? adaptive.meta : itemMeta(id, stageKey);
+    queueSyncEvent({
+      item_id: id,
+      stage_key: stageKey,
+      ok,
+      assisted: !!opts.assisted,
+      latency_ms: latencyMs || 0,
+      error_type: errorType || "",
+      lesson_id: meta.lesson_id || "",
+      scenario_id: opts.roleplay ? opts.roleplay.scenario_id || "" : "",
+      due_at: st.due_at || "",
+      payload: {
+        adaptive: adaptive ? {
+          expected_success: adaptive.expected,
+          outcome: adaptive.outcome,
+          bucket: adaptive.bucket,
+          skill_keys: adaptive.skill_keys,
+          item_difficulty: adaptive.item.difficulty,
+        } : null,
+        item_meta: meta,
+        assistance_level: opts.listen_ladder ? opts.listen_ladder.assistance : (opts.assisted ? 1 : 0),
+        listen_ladder: opts.listen_ladder || null,
+        roleplay: opts.roleplay || null,
+        repair_focus: st.last_repair_focus || "",
+        last_grade: st.last_grade || "",
+      },
+    });
   }
   function errorButtons(it) {
     const itemErrors = it.error_types && it.error_types.length ? it.error_types : [];
@@ -1248,6 +1811,7 @@
       pronounce: ["stress", "vowel_reduction", "forgot_phrase"],
       backtranslate: ["forgot_phrase", "case_or_inflection", "word_order", "register"],
       contrast: ["cultural_usage", "register", "forgot_phrase"],
+      conjugate: ["case_or_inflection", "forgot_phrase", "stress"],
       produce: ["forgot_phrase", "stress", "gendered_form", "case_or_inflection", "word_order"],
       listen: ["listening_misparse", "stress", "vowel_reduction", "forgot_phrase"],
       roleplay: ["forgot_phrase", "register", "cultural_usage", "gendered_form"],
@@ -1265,6 +1829,7 @@
     if (stageKey === "dictation" || stageKey === "listen") return "listening_misparse";
     if (stageKey === "stress" || stageKey === "pronounce") return "stress";
     if (stageKey === "contrast") return "cultural_usage";
+    if (stageKey === "conjugate") return "case_or_inflection";
     if (stageKey === "cloze" && allowed.has("case_or_inflection")) return "case_or_inflection";
     if (stageKey === "backtranslate" && allowed.has("word_order")) return "word_order";
     if (stageKey === "produce" && allowed.has("gendered_form")) return "gendered_form";
@@ -1372,7 +1937,7 @@
     </div>`;
   }
   function coreOfflineUrls() {
-    return ["./", "./index.html", "./styles.css", "./app.js", "./content.js", "./audio.js", "./manifest.webmanifest", "./assets/icon.svg"];
+    return ["./", "./index.html", "./styles.css", "./app.js", "./learning_metrics.js", "./content.js", "./audio.js", "./manifest.webmanifest", "./assets/icon.svg"];
   }
   function p1AudioIds() {
     return ITEMS.filter(i => i.priority === 1 && AUDIO_IDS.has(i.id)).map(i => i.id);
@@ -1409,24 +1974,111 @@
      public handlers (referenced from inline onclick)
      ==================================================================== */
   window.ZS = {
-    setMod(m) { learnState.module = m; learnState.idx = 0; renderLearn(); },
-    setPri(p) { learnState.priority = p; learnState.idx = 0; renderLearn(); },
+    setMod(m) { cleanupLearnRecording(); learnState.module = m; learnState.idx = 0; renderLearn(); },
+    setPri(p) { cleanupLearnRecording(); learnState.priority = p; learnState.idx = 0; renderLearn(); },
     setLesson(id) {
       if (!LESSON_BY_ID[id]) return;
+      cleanupLearnRecording();
       activeLessonId = id;
       learnState.idx = 0;
       quiz = null;
       saveLessonBoundary();
+      queueSyncEvent({
+        item_id: "__lesson_boundary__",
+        stage_key: "lesson_boundary",
+        ok: true,
+        lesson_id: id,
+        payload: { active_lesson_id: id },
+      });
       router();
     },
+    startAdaptive() {
+      const rec = adaptiveRecommendations(1)[0];
+      location.hash = rec ? `#/quiz/${rec.stageKey}` : "#/quiz/recognition";
+    },
     toggleEn() { learnState.hideEn = !learnState.hideEn; renderLearn(); },
-    next() { learnState.idx = (learnState.idx + 1) % learnState.list.length; renderCard(); },
-    prev() { learnState.idx = (learnState.idx - 1 + learnState.list.length) % learnState.list.length; renderCard(); },
-    say() { speak(learnState.list[learnState.idx]); },
+    setLearnRate(rate) {
+      if (![0.65, 0.85, 1, 1.15, 1.3].includes(rate)) return;
+      learnState.audioRate = rate;
+      saveLearnRate(rate);
+      renderLearn();
+    },
+    toggleVoiceLab() {
+      learnState.showVoiceLab = !learnState.showVoiceLab;
+      renderCard();
+    },
+    toggleConjugation() {
+      learnState.showConjugation = !learnState.showConjugation;
+      renderCard();
+    },
+    next() { cleanupLearnRecording(); learnState.idx = (learnState.idx + 1) % learnState.list.length; renderCard(); },
+    prev() { cleanupLearnRecording(); learnState.idx = (learnState.idx - 1 + learnState.list.length) % learnState.list.length; renderCard(); },
+    say() { speak(learnState.list[learnState.idx], { rate: learnState.audioRate }); },
     sayItem(id) {
       const it = practiceItem(id);
       speak(it && it.item_id ? ITEMS.find(i => i.id === it.item_id) : it);
     },
+    async startLearnRecording() {
+      const it = activeLearnItem();
+      if (!it) return;
+      if (!navigator.mediaDevices || !window.MediaRecorder) {
+        setLearnStatus("Recording is not available in this browser.");
+        return;
+      }
+      cleanupLearnRecording();
+      try {
+        learnRecordStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const activeRecorder = new MediaRecorder(learnRecordStream);
+        learnRecorder = activeRecorder;
+        learnRecordChunks = [];
+        learnRecordingItemId = it.id;
+        activeRecorder.ondataavailable = event => {
+          if (event.data && event.data.size) learnRecordChunks.push(event.data);
+        };
+        activeRecorder.onstop = () => {
+          if (learnRecordingUrl) URL.revokeObjectURL(learnRecordingUrl);
+          const blob = new Blob(learnRecordChunks, { type: activeRecorder.mimeType || "audio/webm" });
+          learnRecordingUrl = URL.createObjectURL(blob);
+          learnRecorder = null;
+          if (learnRecordStream) {
+            learnRecordStream.getTracks().forEach(track => track.stop());
+            learnRecordStream = null;
+          }
+          const playBtn = $("#learnPlayRecordBtn");
+          if (playBtn) playBtn.removeAttribute("disabled");
+          const recordBtn = $("#learnRecordBtn");
+          const stopBtn = $("#learnStopRecordBtn");
+          if (recordBtn) recordBtn.removeAttribute("disabled");
+          if (stopBtn) stopBtn.setAttribute("disabled", "");
+          setLearnStatus("Recording ready. Play yours or open the sonograph comparison.");
+          if (learnState.showVoiceLab) renderLearnSpectrograms();
+        };
+        activeRecorder.start();
+        const recordBtn = $("#learnRecordBtn");
+        const stopBtn = $("#learnStopRecordBtn");
+        const playBtn = $("#learnPlayRecordBtn");
+        if (recordBtn) recordBtn.setAttribute("disabled", "");
+        if (stopBtn) stopBtn.removeAttribute("disabled");
+        if (playBtn) playBtn.setAttribute("disabled", "");
+        setLearnStatus("Recording... keep it short and natural.");
+      } catch (e) {
+        setLearnStatus("Microphone permission was not available.");
+      }
+    },
+    stopLearnRecording() {
+      if (!learnRecorder || learnRecorder.state === "inactive") return;
+      const activeRecorder = learnRecorder;
+      activeRecorder.stop();
+    },
+    playLearnRecording() {
+      if (!learnRecordingUrl || learnRecordingItemId !== (activeLearnItem() || {}).id) {
+        setLearnStatus("Record yourself first.");
+        return;
+      }
+      const audio = new Audio(learnRecordingUrl);
+      audio.play().catch(() => setLearnStatus("Playback was blocked. Tap Play mine again."));
+    },
+    renderLearnSpectrograms,
     known() {
       const it = learnState.list[learnState.idx];
       const r = rec(it.id);
@@ -1439,6 +2091,13 @@
         st.due_at = new Date(Date.now() + 432000000).toISOString();
       });
       save();
+      queueSyncEvent({
+        item_id: it.id,
+        stage_key: "learn_known",
+        ok: true,
+        lesson_id: it.lesson_id || "",
+        payload: { known: true },
+      });
       toast("Marked ✓ — " + it.en);
       ZS.next();
     },
@@ -1481,6 +2140,16 @@
       const errorType = ok ? null : inferBacktranslateErrorType(it, val, quiz.stageKey);
       gradeItem(id, ok, quiz.stageKey, errorType);
       showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; answer: <strong>${escapeHtml(it.answer)}</strong></div>`, errorType);
+    },
+    checkConjugate(id) {
+      if (quiz.answered) return;
+      const it = practiceItem(id);
+      const val = $("#conjIn") ? $("#conjIn").value : "";
+      const accepted = it.accepted_answers || [it.answer || it.ru_plain];
+      const ok = accepted.some(answer => normalize(val) === normalize(answer));
+      const errorType = ok ? null : "case_or_inflection";
+      gradeItem(id, ok, quiz.stageKey, errorType);
+      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; answer: <strong>${colorStress(it.ru)}</strong></div>`, errorType);
     },
     checkDictation(id) {
       if (quiz.answered) return;
@@ -1831,6 +2500,7 @@
   }
 
   /* ---------- go ---------- */
+  startAnalysisEngine();
   router();
   updateCountdown();
   setInterval(updateCountdown, 60000);

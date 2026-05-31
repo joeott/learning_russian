@@ -89,6 +89,29 @@ class WebAnalyticsContractTests(unittest.TestCase):
         self.assertIn("historical ? historical[criterionId] : 1", self.app)
         self.assertIn(".slice(0, 4)", self.app)
 
+    def test_adaptive_elo_metrics_are_visible_and_synced(self) -> None:
+        for token in (
+            ".adaptive_ratings",
+            "applyAdaptiveAttempt",
+            "adaptiveStats",
+            "adaptiveRecommendations",
+            ".analysis_state",
+            "runAnalysisCycle",
+            "startAnalysisEngine",
+            "Analysis engine active",
+            "Runs every 45 seconds",
+            "target_band",
+            "Adaptive progress model",
+            "mission ability",
+            "grammar control",
+            "n+1 fit",
+            "friction index",
+            "expected_success",
+            "item_meta",
+            "ZS.startAdaptive",
+        ):
+            self.assertIn(token, self.app)
+
 
 if __name__ == "__main__":
     unittest.main()

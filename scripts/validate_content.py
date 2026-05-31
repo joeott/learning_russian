@@ -149,7 +149,29 @@ def validate_protocol_scenarios(data: dict, protocol: Path) -> list[str]:
                 f"protocol scenario {number} '{title}' did not match any generated scenario"
             )
 
-    represented: set[str] = {scenario_id for _, _, scenario_id in protocol_ids if scenario_id}
+    represented: set[str] = {
+        scenario_id for _, _, scenario_id in protocol_ids if scenario_id
+    }
+
+    protocol_ids_only = [
+        scenario_id for _, _, scenario_id in protocol_ids if scenario_id
+    ]
+    generated_ids = [scenario.get("id") for scenario in scenarios if scenario.get("id")]
+    generated_positions = {
+        scenario_id: i for i, scenario_id in enumerate(generated_ids)
+    }
+    last_pos = -1
+    for scenario_id in protocol_ids_only:
+        pos = generated_positions.get(scenario_id)
+        if pos is None:
+            continue
+        if pos < last_pos:
+            errors.append(
+                "protocol and generated scenario ordering diverged: "
+                f"scenario '{scenario_id}' is out of protocol order"
+            )
+            break
+        last_pos = pos
 
     protocol_titles = [title for _, title, _ in protocol_ids]
     protocol_tokens = [tokenize_words(title) for title in protocol_titles]

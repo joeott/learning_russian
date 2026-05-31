@@ -35,27 +35,30 @@ offline-first constraints.
    - This opens each target, pulls in-page links that match discover paths in the target config, and scores them as candidate materials.
    - Spoken mode for source discovery:  
      `tools/zastolom future-loop --spoken --run --limit 3 --targets source/source_loop_targets.json`
-3. Use `tools/zastolom browser <url> --both` to open a candidate source page and inspect
+3. For immediate integration into drills, keep only short, beginner-safe candidates:
+   - `tools/zastolom future-loop --spoken --easy --run --limit 3 --write-canvas --targets source/source_loop_targets.json`
+   - This keeps short verified passages that are likely suitable for 30–90 sec read/dictation loops.
+4. Use `tools/zastolom browser <url> --both` to open a candidate source page and inspect
    readability on desktop and mobile.
-4. Extract 1–2 short candidate passages and copy the exact source text.
-5. For each passage, score:
+5. Extract 1–2 short candidate passages and copy the exact source text.
+6. For each passage, score:
    - `lexical_density` (hard vs. known words),
    - `speech_clarity` (clear narration / clean sentence pace),
    - `register` (family-safe / formal / neutral),
    - `origin` (`original` source, not translated subtitles).
-6. Reject anything with hidden paywall friction or unstable content that breaks loading.
-7. Save approved passages to `source/candidate_materials.md` under `## Week YYYY-MM-DD` with:
+7. Reject anything with hidden paywall friction or unstable content that breaks loading.
+8. Save approved passages to `source/candidate_materials.md` under `## Week YYYY-MM-DD` with:
    - URL + title
    - why it is beginner-friendly
    - planned drill type (`read`, `dictation`, `translate`, `shadow`)
    - source status (`verified`, `needs_check`, `rehearse`)
-8. Create 2–4 deterministic drill seeds in local notes:
+9. Create 2–4 deterministic drill seeds in local notes:
    - one stress-targeted dictation prompt,
    - one translation prompt,
    - one cloze prompt,
    - one contrast / role-use prompt.
-9. Validate any generated learner-facing text against lesson lock rules before adding to app content.
-10. Build artifacts only through `tools/zastolom build` and verify with:
+10. Validate any generated learner-facing text against lesson lock rules before adding to app content.
+11. Build artifacts only through `tools/zastolom build` and verify with:
    - `tools/zastolom verify`
    - `tools/zastolom test`
    - `tools/zastolom flow`

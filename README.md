@@ -22,17 +22,18 @@ On the home screen: tap **Learn** → start with the red **P1** cards (that's th
 
 ---
 
-## The six tools (and when to use each)
+## The eight tools (and when to use each)
 
 | # | Tool | What it's for | Where |
 |---|------|---------------|-------|
 | 1 | **The web app** | Daily lessons + staged drills: recognise, recall, cloze, dictation, stress, pronounce, back-translation, contrast, produce, listen, role-play. | [`web/`](web/) — serve & open |
 | 2 | **AI tutor** | Live spoken role-play — Claude plays your тёща/тесть and corrects you. Highest-leverage thing you can do for a *speaking* goal. | [`tutor/roleplay_protocol.md`](tutor/roleplay_protocol.md) |
-| 3 | **Anki deck** | Spaced repetition on your phone — a 109-card base deck plus optional contextual cloze/dictation/stress/pronunciation/scenario siblings. | [`anki/`](anki/) — see its README to import |
+| 3 | **Anki deck** | Spaced repetition on your phone — a 452-card base deck plus optional contextual cloze/dictation/stress/pronunciation/scenario siblings. | [`anki/`](anki/) — see its README to import |
 | 4 | **Cheat sheet** | One printable "table survival sheet" for your pocket on the day. | [`printable/cheatsheet.html`](printable/cheatsheet.html) → Print / Save as PDF |
 | 5 | **16-day plan** | Day-by-day schedule, risk-first, light weekdays / heavy weekends, with a 10-minute fallback. | [`schedule/16_day_plan.md`](schedule/16_day_plan.md) |
 | 6 | **Resources** | Curated, verified videos / podcasts / apps for listening practice. | [`RESOURCES.md`](RESOURCES.md) |
 | 7 | **Source loop** | Weekly scouting loop for original, easy Russian reading/dictation/translating material. | `tools/zastolom future-loop --run --write-canvas` |
+| 8 | **Manual validation** | Demo checklist for Learn, Drill, active analysis, audio speed, recording, sonograph, Postgres sync, and offline/PWA behavior. | [`docs/manual_validation_checklist.md`](docs/manual_validation_checklist.md) |
 
 A realistic day = **Learn the day's module → one Drill round → clear your Anki → 5–10 min role-play with the AI tutor.** Listen to a podcast on the commute. Rehearse the ★ items with Kadriya.
 

@@ -44,6 +44,12 @@ def main():
         "food",
         "smalltalk",
         "listening",
+        "calendar_weather",
+        "daily_routine",
+        "work_business",
+        "legal_recognition",
+        "celebrations",
+        "travel_budva",
         "verbs",
     ]
 

@@ -1,10 +1,11 @@
 /* За столо́м — offline app shell cache */
-const CACHE = "zastolom-v5";
+const CACHE = "zastolom-v6";
 const ASSETS = [
   "./",
   "./index.html",
   "./styles.css",
   "./app.js",
+  "./learning_metrics.js",
   "./content.js",
   "./audio.js",
   "./manifest.webmanifest",

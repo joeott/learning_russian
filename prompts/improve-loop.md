@@ -3,9 +3,10 @@
 Goal:
 
 ```text
-Continuously improve the learning_russian PWA as a reusable, speech-oriented
-language-learning system while preserving the current Russian family visit
-course, verified content rules, deterministic builds, and offline-first behavior.
+Keep this repo focused on one outcome: spoken readiness for Kadriya’s
+June 15 family dinner in St. Petersburg.
+Preserve the Russian family-visit flow, verified phrases, lesson-lock safety,
+and offline reliability over broad platform refactors.
 ```
 
 Prompt:
@@ -14,34 +15,34 @@ Prompt:
 You are working in /Users/joe/Projects/learning_russian.
 
 Operate in bounded iterations. In each iteration:
-1. Read AGENTS.md, current git status, and the latest loop report.
-2. Run tools/zastolom verify and tools/zastolom test if available.
-3. Start the local app with tools/zastolom serve on an available port.
-4. Use `tools/zastolom browser http://localhost:8000/web/ --both` or Browser automation to inspect /web/ at desktop and mobile widths. Pass repeated `--click-text` options for multi-step flows.
-5. Capture screenshots and console/network errors.
-6. Identify one high-leverage improvement to retention, oral performance,
-   course generality, offline behavior, accessibility, or UI clarity.
-7. Implement only that bounded improvement.
-8. Rebuild generated artifacts through tools/zastolom, never by hand.
-9. Re-run verification, tests, and browser checks.
-10. Commit with a clear conventional message if the iteration is green.
-11. Write a loop report with objective, changed files, screenshots, test output,
-    residual risks, and the next best improvement.
+1. Read AGENTS.md, current git status, and docs/mission_readiness_implementation_reference.md.
+2. Run: tools/zastolom preflight http://localhost:8000/web/ --mobile --offline.
+3. If needed, launch with tools/zastolom serve.
+4. Use tools/zastolom browser (or Browser automation) with mobile width and
+   explicit --click-text steps for the failure case you are patching.
+5. Capture screenshots and console/error logs (including JS and network failures).
+6. Identify one blocking issue that reduces real-table performance.
+7. Implement only that bounded patch (one change set).
+8. Re-run tools/zastolom build|verify|test as needed, then preflight.
+9. Re-run a focused live scenario rehearsal on phone where possible.
+10. Commit only if green; keep commit scope narrow and reversible.
+11. Write a short next-step note: blocked behavior, residual risk, and next patch.
 
-For source-scouting work (reading/dictation/translation material discovery),
-run `tools/zastolom source-loop` instead of this prompt and keep output in
-`source/candidate_materials.md`.
+Primary constraints:
+- Keep to the mission scope: role-play, listening stability, and offline use.
+- No generalization, analytics expansion, ASR/LLM architecture changes.
+- Never hand-edit generated outputs.
+- Never free-generate Russian learner text.
+- Keep the current Russian course usable after each change.
 
-For spoken-source discovery (listening/dictation loops), run:
+Default focus loop:
+/goal "Preserve mission readiness: this is a real dinner-table speech simulator."
+/loop "Run preflight, patch only the highest-impact blocking issue for live role-play/offline readiness, rerun preflight, and capture the next blocking test."
 
-```text
+For source-scouting work (reading/dictation/translation discovery):
+run tools/zastolom source-loop.
+
+For spoken-source discovery (dictation/listening loops), run:
+
 tools/zastolom future-loop --spoken --run --write-canvas
-```
-
-Constraints:
-- Never free-generate new Russian content.
-- Do not edit generated files directly.
-- Do not print secrets.
-- Keep the current Russian course usable at every commit.
-- Do not run external deployment unless the repo is later configured for it.
 ```
