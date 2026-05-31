@@ -277,6 +277,10 @@ ROLEPLAY_CRITERIA = {
         "label": "answers daily-routine prompts",
         "error_type": "forgot_phrase",
     },
+    "tells_daily_story": {
+        "label": "tells a short daily-routine story",
+        "error_type": "forgot_phrase",
+    },
     "uses_day_parts": {
         "label": "uses morning/day/evening words",
         "error_type": "case_or_inflection",
@@ -749,6 +753,31 @@ SCENARIOS = [
         ],
         "success_criteria": [
             "answers_daily_routine",
+            "uses_day_parts",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "daily_routine_story",
+        "setting": "My day mini-story",
+        "goal": "Tell a short morning-work-evening story using the original guide's Мой день material.",
+        "required_items": [
+            "dail018",
+            "dail019",
+            "dail020",
+            "dail021",
+            "dail022",
+            "dail023",
+            "dail024",
+            "dail025",
+            "dail026",
+            "dail027",
+            "dail028",
+            "dail029",
+        ],
+        "success_criteria": [
+            "tells_daily_story",
             "uses_day_parts",
             "stays_in_russian",
             "uses_repair_lines",
@@ -1735,6 +1764,105 @@ add(
     3,
     gender="m",
     tags=["routine", "work", "time"],
+)
+add(
+    "daily_routine",
+    "Обы́чно я встаю́ ра́но у́тром.",
+    "Usually I get up early in the morning.",
+    "[a-bých-na ya fsta-yú rá-na ú-tram]",
+    2,
+    tags=["routine", "morning", "story"],
+)
+add(
+    "daily_routine",
+    "Я люблю́ ра́но встава́ть.",
+    "I like to get up early.",
+    "[ya lyub-lyú rá-na fsta-vát']",
+    2,
+    tags=["routine", "morning", "story"],
+)
+add(
+    "daily_routine",
+    "По́сле э́того я прихожу́ домо́й.",
+    "After that I come home.",
+    "[pós-li é-ta-va ya pri-ha-zhú da-móy]",
+    2,
+    tags=["routine", "sequence", "story"],
+)
+add(
+    "daily_routine",
+    "У́тром я ча́сто игра́ю на гита́ре.",
+    "In the morning I often play guitar.",
+    "[ú-tram ya chás-ta ig-rá-yu na gi-tá-rye]",
+    2,
+    tags=["routine", "morning", "music", "story"],
+)
+add(
+    "daily_routine",
+    "По́сле я гото́влю ко́фе для мое́й жены́.",
+    "Afterward I make coffee for my wife.",
+    "[pós-li ya ga-tóv-lyu kó-fe dlya ma-yéy zhi-ný]",
+    2,
+    tags=["routine", "morning", "family", "story"],
+)
+add(
+    "daily_routine",
+    "Обы́чно я не за́втракаю.",
+    "Usually I don't eat breakfast.",
+    "[a-bých-na ya ni záf-tra-ka-yu]",
+    2,
+    tags=["routine", "breakfast", "story"],
+)
+add(
+    "daily_routine",
+    "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+    "At ten I start solving clients' problems.",
+    "[v dyé-syat' ya na-chi-ná-yu ri-shát' pra-blyé-my kli-yén-taf]",
+    2,
+    tags=["routine", "work", "clients", "story"],
+)
+add(
+    "daily_routine",
+    "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+    "At work I do many different things.",
+    "[na ra-bó-tye ya dyé-la-yu mnó-ga ráz-nyh vi-shchéy]",
+    2,
+    tags=["routine", "work", "story"],
+)
+add(
+    "daily_routine",
+    "Я ча́сто звоню́ лю́дям.",
+    "I often call people.",
+    "[ya chás-ta zva-nyú lyú-dyam]",
+    2,
+    tags=["routine", "work", "story"],
+)
+add(
+    "daily_routine",
+    "Ча́сто я хожу́ в суд.",
+    "I often go to court.",
+    "[chás-ta ya ha-zhú f sut]",
+    2,
+    tags=["routine", "work", "court", "story"],
+)
+add(
+    "daily_routine",
+    "По́сле рабо́ты мы у́жинаем.",
+    "After work we have dinner.",
+    "[pós-li ra-bó-ty my ú-zhi-na-yem]",
+    2,
+    tags=["routine", "evening", "story"],
+)
+add(
+    "daily_routine",
+    "Она́ говори́т, что я до́лжен гото́вить ча́ще.",
+    "She says that I should cook more often.",
+    "[a-ná ga-va-rít shto ya dól-zhen ga-tó-vit' chá-shche]",
+    3,
+    gender="m",
+    rehearse=True,
+    note="Personal family joke; rehearse with Kadriya before saying it to relatives.",
+    tags=["routine", "family", "evening", "story"],
 )
 
 # --- WORK & CLIENTS (lawyer/business small-talk lane) ---

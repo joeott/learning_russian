@@ -136,6 +136,18 @@ I start working at ten in the morning.	<div style="font-size:2em">Я начин�
 Usually I work seven hours.	<div style="font-size:2em">Обы́чно я рабо́таю семь часо́в.</div>[sound:zastolom_dail015.mp3]	[a-bých-na ya ra-bó-ta-yu syem' cha-sóf]		daily_routine p2
 I have time until ten.	<div style="font-size:2em">У меня́ есть вре́мя до десяти́.</div>[sound:zastolom_dail016.mp3]	[u mi-nyá yest' vryé-mya da di-si-tí]		daily_routine p3
 Today I worked four hours.	<div style="font-size:2em">Сего́дня я рабо́тал четы́ре часа́.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_dail017.mp3]	[si-vód-nya ya ra-bó-tal chi-tý-re cha-sá]		daily_routine p3
+Usually I get up early in the morning.	<div style="font-size:2em">Обы́чно я встаю́ ра́но у́тром.</div>[sound:zastolom_dail018.mp3]	[a-bých-na ya fsta-yú rá-na ú-tram]		daily_routine p2
+I like to get up early.	<div style="font-size:2em">Я люблю́ ра́но встава́ть.</div>[sound:zastolom_dail019.mp3]	[ya lyub-lyú rá-na fsta-vát']		daily_routine p2
+After that I come home.	<div style="font-size:2em">По́сле э́того я прихожу́ домо́й.</div>[sound:zastolom_dail020.mp3]	[pós-li é-ta-va ya pri-ha-zhú da-móy]		daily_routine p2
+In the morning I often play guitar.	<div style="font-size:2em">У́тром я ча́сто игра́ю на гита́ре.</div>[sound:zastolom_dail021.mp3]	[ú-tram ya chás-ta ig-rá-yu na gi-tá-rye]		daily_routine p2
+Afterward I make coffee for my wife.	<div style="font-size:2em">По́сле я гото́влю ко́фе для мое́й жены́.</div>[sound:zastolom_dail022.mp3]	[pós-li ya ga-tóv-lyu kó-fe dlya ma-yéy zhi-ný]		daily_routine p2
+Usually I don't eat breakfast.	<div style="font-size:2em">Обы́чно я не за́втракаю.</div>[sound:zastolom_dail023.mp3]	[a-bých-na ya ni záf-tra-ka-yu]		daily_routine p2
+At ten I start solving clients' problems.	<div style="font-size:2em">В де́сять я начина́ю реша́ть пробле́мы клие́нтов.</div>[sound:zastolom_dail024.mp3]	[v dyé-syat' ya na-chi-ná-yu ri-shát' pra-blyé-my kli-yén-taf]		daily_routine p2
+At work I do many different things.	<div style="font-size:2em">На рабо́те я де́лаю мно́го ра́зных веще́й.</div>[sound:zastolom_dail025.mp3]	[na ra-bó-tye ya dyé-la-yu mnó-ga ráz-nyh vi-shchéy]		daily_routine p2
+I often call people.	<div style="font-size:2em">Я ча́сто звоню́ лю́дям.</div>[sound:zastolom_dail026.mp3]	[ya chás-ta zva-nyú lyú-dyam]		daily_routine p2
+I often go to court.	<div style="font-size:2em">Ча́сто я хожу́ в суд.</div>[sound:zastolom_dail027.mp3]	[chás-ta ya ha-zhú f sut]		daily_routine p2
+After work we have dinner.	<div style="font-size:2em">По́сле рабо́ты мы у́жинаем.</div>[sound:zastolom_dail028.mp3]	[pós-li ra-bó-ty my ú-zhi-na-yem]		daily_routine p2
+She says that I should cook more often.	<div style="font-size:2em">Она́ говори́т, что я до́лжен гото́вить ча́ще.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_dail029.mp3]	[a-ná ga-va-rít shto ya dól-zhen ga-tó-vit' chá-shche]	Personal family joke; rehearse with Kadriya before saying it to relatives. ⚠ rehearse with your wife	daily_routine p3
 I have my own company.	<div style="font-size:2em">У меня́ своя́ компа́ния.</div>[sound:zastolom_work001.mp3]	[u mi-nyá sva-yá kam-pá-ni-ya]		work_business p2
 Kadriya works together with me.	<div style="font-size:2em">Кадри́я рабо́тает вме́сте со мной.</div>[sound:zastolom_work002.mp3]	[kad-rí-ya ra-bó-ta-yet vmyés-te sa mnoy]		work_business p2
 We work together.	<div style="font-size:2em">Мы рабо́таем вме́сте.</div>[sound:zastolom_work003.mp3]	[my ra-bó-ta-yem vmyés-te]		work_business p2

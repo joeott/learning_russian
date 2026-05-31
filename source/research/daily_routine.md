@@ -22,6 +22,10 @@ spoken prompts Joe can answer at the family table.
 
 - The module favors short answers over the full essay so Joe can answer quickly
   under pressure.
+- The story-mode additions now preserve a compact version of the longer essay:
+  early morning, coming home, guitar, coffee for Kadriya, breakfast, client
+  problems, calls, court, after-work dinner, and the personal cooking-more-often
+  joke.
 - Formal `вы` is used for the main routine questions where it is natural with
   elders; the guide's `Что ты сегодня делал?` is preserved because it is a likely
   family-style prompt to Joe.
@@ -29,9 +33,13 @@ spoken prompts Joe can answer at the family table.
   is Joe-specific.
 - `Мы еди́м и смо́трим телеви́зор.` is retained from the guide's after-work
   evening pattern and kept as a compact family answer.
+- `Она́ говори́т, что я до́лжен гото́вить ча́ще.` is marked rehearse-with-Kadriya
+  because it is a personal family joke, not a generic survival line.
 
 ## Verification notes
 
 - Stress marks use combining acute. `днём` carries stress through `ё`.
 - The source has a typo `телевозор`; the learner-facing phrase uses standard
   `телеви́зор`.
+- The source guide has unstressed plain Cyrillic; learner-facing items add stress
+  marks without changing the underlying phrase patterns.

@@ -54,14 +54,14 @@ window.CONTENT_DATA = {
       "smalltalk": 9,
       "listening": 9,
       "calendar_weather": 19,
-      "daily_routine": 17,
+      "daily_routine": 29,
       "work_business": 16,
       "legal_recognition": 15,
       "celebrations": 14,
       "travel_budva": 28,
       "verbs": 10
     },
-    "total_items": 218
+    "total_items": 230
   },
   "curriculum": {
     "model": "lesson_locked_i_plus_1",
@@ -768,14 +768,24 @@ window.CONTENT_DATA = {
         "title": "Daily Routine",
         "introduced_lexemes": [
           "в",
+          "в десять я начинаю решать проблемы клиентов.",
           "вечер",
           "вечером",
+          "вещей",
           "время",
+          "вставать",
+          "встаю",
           "вы",
+          "гитаре",
+          "говорит",
+          "готовить",
+          "готовлю",
           "делал",
+          "делаю",
           "день",
           "десяти",
           "десять",
+          "для",
           "днём",
           "до",
           "доброе",
@@ -783,61 +793,111 @@ window.CONTENT_DATA = {
           "добрый",
           "добрый вечер.",
           "добрый день.",
+          "должен",
+          "домой",
           "едим",
           "есть",
+          "жены",
+          "завтракаю",
+          "звоню",
           "и",
+          "играю",
+          "клиентов",
           "когда",
           "когда вы обедаете?",
           "когда вы отдыхаете?",
           "когда вы работаете?",
           "когда вы ужинаете?",
+          "кофе",
+          "люблю",
+          "людям",
           "меня",
+          "много",
+          "моей",
           "мы",
           "мы едим и смотрим телевизор.",
+          "на",
+          "на работе я делаю много разных вещей.",
           "начинаю",
+          "не",
           "обедаете",
           "обедаю",
           "обычно",
+          "обычно я встаю рано утром.",
+          "обычно я не завтракаю.",
           "обычно я отдыхаю вечером.",
           "обычно я работаю семь часов.",
+          "она",
+          "она говорит, что я должен готовить чаще.",
           "отдыхаете",
           "отдыхаю",
+          "после",
+          "после работы мы ужинаем.",
+          "после этого я прихожу домой.",
+          "после я готовлю кофе для моей жены.",
+          "прихожу",
+          "проблемы",
           "работаете",
           "работал",
           "работать",
           "работаю",
+          "работе",
+          "работы",
+          "разных",
+          "рано",
+          "решать",
           "сегодня",
           "сегодня я работал четыре часа.",
           "семь",
           "смотрим",
+          "суд",
           "телевизор",
           "ты",
           "у",
           "у меня есть время до десяти.",
+          "ужинаем",
           "ужинаете",
           "ужинаю",
           "утра",
           "утро",
           "утром",
+          "утром я часто играю на гитаре.",
+          "хожу",
           "часа",
           "часов",
+          "часто",
+          "часто я хожу в суд.",
+          "чаще",
           "четыре",
           "что",
           "что ты сегодня делал?",
+          "этого",
           "я",
+          "я люблю рано вставать.",
           "я начинаю работать в десять утра.",
           "я обедаю днём.",
           "я работаю утром и вечером.",
-          "я ужинаю вечером."
+          "я ужинаю вечером.",
+          "я часто звоню людям."
         ],
         "active_vocab": [
           "в",
+          "в десять я начинаю решать проблемы клиентов.",
           "вечер",
           "вечером",
+          "вещей",
           "время",
+          "вставать",
+          "встаю",
+          "гитаре",
+          "говорит",
+          "готовить",
+          "готовлю",
+          "делаю",
           "день",
           "десяти",
           "десять",
+          "для",
           "днём",
           "до",
           "доброе",
@@ -845,40 +905,81 @@ window.CONTENT_DATA = {
           "добрый",
           "добрый вечер.",
           "добрый день.",
+          "должен",
+          "домой",
           "едим",
           "есть",
+          "жены",
+          "завтракаю",
+          "звоню",
           "и",
+          "играю",
+          "клиентов",
+          "кофе",
+          "люблю",
+          "людям",
           "меня",
+          "много",
+          "моей",
           "мы",
           "мы едим и смотрим телевизор.",
+          "на",
+          "на работе я делаю много разных вещей.",
           "начинаю",
+          "не",
           "обедаю",
           "обычно",
+          "обычно я встаю рано утром.",
+          "обычно я не завтракаю.",
           "обычно я отдыхаю вечером.",
           "обычно я работаю семь часов.",
+          "она",
+          "она говорит, что я должен готовить чаще.",
           "отдыхаю",
+          "после",
+          "после работы мы ужинаем.",
+          "после этого я прихожу домой.",
+          "после я готовлю кофе для моей жены.",
+          "прихожу",
+          "проблемы",
           "работал",
           "работать",
           "работаю",
+          "работе",
+          "работы",
+          "разных",
+          "рано",
+          "решать",
           "сегодня",
           "сегодня я работал четыре часа.",
           "семь",
           "смотрим",
+          "суд",
           "телевизор",
           "у",
           "у меня есть время до десяти.",
+          "ужинаем",
           "ужинаю",
           "утра",
           "утро",
           "утром",
+          "утром я часто играю на гитаре.",
+          "хожу",
           "часа",
           "часов",
+          "часто",
+          "часто я хожу в суд.",
+          "чаще",
           "четыре",
+          "что",
+          "этого",
           "я",
+          "я люблю рано вставать.",
           "я начинаю работать в десять утра.",
           "я обедаю днём.",
           "я работаю утром и вечером.",
-          "я ужинаю вечером."
+          "я ужинаю вечером.",
+          "я часто звоню людям."
         ],
         "passive_vocab": [
           "вы",
@@ -8117,6 +8218,655 @@ window.CONTENT_DATA = {
         "сегодня я работал четыре часа.",
         "часа",
         "четыре",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "morphology:gendered_short_form",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail018",
+      "module": "daily_routine",
+      "ru": "Обы́чно я встаю́ ра́но у́тром.",
+      "ru_plain": "Обычно я встаю рано утром.",
+      "en": "Usually I get up early in the morning.",
+      "hint": "[a-bých-na ya fsta-yú rá-na ú-tram]",
+      "priority": 2,
+      "syllables": 10,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "morning",
+        "story"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "встаю",
+        "обычно",
+        "обычно я встаю рано утром.",
+        "рано",
+        "утром",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail019",
+      "module": "daily_routine",
+      "ru": "Я люблю́ ра́но встава́ть.",
+      "ru_plain": "Я люблю рано вставать.",
+      "en": "I like to get up early.",
+      "hint": "[ya lyub-lyú rá-na fsta-vát']",
+      "priority": 2,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "morning",
+        "story"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вставать",
+        "люблю",
+        "рано",
+        "я",
+        "я люблю рано вставать."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail020",
+      "module": "daily_routine",
+      "ru": "По́сле э́того я прихожу́ домо́й.",
+      "ru_plain": "После этого я прихожу домой.",
+      "en": "After that I come home.",
+      "hint": "[pós-li é-ta-va ya pri-ha-zhú da-móy]",
+      "priority": 2,
+      "syllables": 11,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "sequence",
+        "story"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "домой",
+        "после",
+        "после этого я прихожу домой.",
+        "прихожу",
+        "этого",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail021",
+      "module": "daily_routine",
+      "ru": "У́тром я ча́сто игра́ю на гита́ре.",
+      "ru_plain": "Утром я часто играю на гитаре.",
+      "en": "In the morning I often play guitar.",
+      "hint": "[ú-tram ya chás-ta ig-rá-yu na gi-tá-rye]",
+      "priority": 2,
+      "syllables": 12,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "morning",
+        "music",
+        "story"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "гитаре",
+        "играю",
+        "на",
+        "утром",
+        "утром я часто играю на гитаре.",
+        "часто",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail022",
+      "module": "daily_routine",
+      "ru": "По́сле я гото́влю ко́фе для мое́й жены́.",
+      "ru_plain": "После я готовлю кофе для моей жены.",
+      "en": "Afterward I make coffee for my wife.",
+      "hint": "[pós-li ya ga-tóv-lyu kó-fe dlya ma-yéy zhi-ný]",
+      "priority": 2,
+      "syllables": 13,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "morning",
+        "family",
+        "story"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "готовлю",
+        "для",
+        "жены",
+        "кофе",
+        "моей",
+        "после",
+        "после я готовлю кофе для моей жены.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail023",
+      "module": "daily_routine",
+      "ru": "Обы́чно я не за́втракаю.",
+      "ru_plain": "Обычно я не завтракаю.",
+      "en": "Usually I don't eat breakfast.",
+      "hint": "[a-bých-na ya ni záf-tra-ka-yu]",
+      "priority": 2,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "breakfast",
+        "story"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "завтракаю",
+        "не",
+        "обычно",
+        "обычно я не завтракаю.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail024",
+      "module": "daily_routine",
+      "ru": "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+      "ru_plain": "В десять я начинаю решать проблемы клиентов.",
+      "en": "At ten I start solving clients' problems.",
+      "hint": "[v dyé-syat' ya na-chi-ná-yu ri-shát' pra-blyé-my kli-yén-taf]",
+      "priority": 2,
+      "syllables": 15,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "work",
+        "clients",
+        "story"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "в",
+        "в десять я начинаю решать проблемы клиентов.",
+        "десять",
+        "клиентов",
+        "начинаю",
+        "проблемы",
+        "решать",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail025",
+      "module": "daily_routine",
+      "ru": "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+      "ru_plain": "На работе я делаю много разных вещей.",
+      "en": "At work I do many different things.",
+      "hint": "[na ra-bó-tye ya dyé-la-yu mnó-ga ráz-nyh vi-shchéy]",
+      "priority": 2,
+      "syllables": 14,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "work",
+        "story"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вещей",
+        "делаю",
+        "много",
+        "на",
+        "на работе я делаю много разных вещей.",
+        "работе",
+        "разных",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail026",
+      "module": "daily_routine",
+      "ru": "Я ча́сто звоню́ лю́дям.",
+      "ru_plain": "Я часто звоню людям.",
+      "en": "I often call people.",
+      "hint": "[ya chás-ta zva-nyú lyú-dyam]",
+      "priority": 2,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "work",
+        "story"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "звоню",
+        "людям",
+        "часто",
+        "я",
+        "я часто звоню людям."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail027",
+      "module": "daily_routine",
+      "ru": "Ча́сто я хожу́ в суд.",
+      "ru_plain": "Часто я хожу в суд.",
+      "en": "I often go to court.",
+      "hint": "[chás-ta ya ha-zhú f sut]",
+      "priority": 2,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "work",
+        "court",
+        "story"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "в",
+        "суд",
+        "хожу",
+        "часто",
+        "часто я хожу в суд.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail028",
+      "module": "daily_routine",
+      "ru": "По́сле рабо́ты мы у́жинаем.",
+      "ru_plain": "После работы мы ужинаем.",
+      "en": "After work we have dinner.",
+      "hint": "[pós-li ra-bó-ty my ú-zhi-na-yem]",
+      "priority": 2,
+      "syllables": 10,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "routine",
+        "evening",
+        "story"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "мы",
+        "после",
+        "после работы мы ужинаем.",
+        "работы",
+        "ужинаем"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "prerequisites": [
+        "family_visit_008"
+      ]
+    },
+    {
+      "id": "dail029",
+      "module": "daily_routine",
+      "ru": "Она́ говори́т, что я до́лжен гото́вить ча́ще.",
+      "ru_plain": "Она говорит, что я должен готовить чаще.",
+      "en": "She says that I should cook more often.",
+      "hint": "[a-ná ga-va-rít shto ya dól-zhen ga-tó-vit' chá-shche]",
+      "priority": 3,
+      "syllables": 14,
+      "conf": "high",
+      "gender": "m",
+      "rehearse": true,
+      "recognize": false,
+      "note": "Personal family joke; rehearse with Kadriya before saying it to relatives.",
+      "tags": [
+        "routine",
+        "family",
+        "evening",
+        "story"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "lexemes": [
+        "говорит",
+        "готовить",
+        "должен",
+        "она",
+        "она говорит, что я должен готовить чаще.",
+        "чаще",
+        "что",
         "я"
       ],
       "structures": [
@@ -15890,6 +16640,535 @@ window.CONTENT_DATA = {
         "routine",
         "time",
         "work"
+      ]
+    },
+    {
+      "id": "cloze_dail018_01",
+      "item_id": "dail018",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я встаю́ ра́но у́тром.",
+      "ru_plain": "Обычно я встаю рано утром.",
+      "prompt_ru": "____ я встаю рано утром.",
+      "answer": "Обычно",
+      "accepted_answers": [
+        "Обы́чно",
+        "Обычно"
+      ],
+      "en": "Usually I get up early in the morning.",
+      "priority": 2,
+      "lexemes": [
+        "встаю",
+        "обычно",
+        "обычно я встаю рано утром.",
+        "рано",
+        "утром",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "morning",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "cloze_dail019_01",
+      "item_id": "dail019",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я люблю́ ра́но встава́ть.",
+      "ru_plain": "Я люблю рано вставать.",
+      "prompt_ru": "Я люблю рано ____.",
+      "answer": "вставать",
+      "accepted_answers": [
+        "встава́ть",
+        "вставать"
+      ],
+      "en": "I like to get up early.",
+      "priority": 2,
+      "lexemes": [
+        "вставать",
+        "люблю",
+        "рано",
+        "я",
+        "я люблю рано вставать."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "morning",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "cloze_dail020_01",
+      "item_id": "dail020",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле э́того я прихожу́ домо́й.",
+      "ru_plain": "После этого я прихожу домой.",
+      "prompt_ru": "После этого я ____ домой.",
+      "answer": "прихожу",
+      "accepted_answers": [
+        "прихожу",
+        "прихожу́"
+      ],
+      "en": "After that I come home.",
+      "priority": 2,
+      "lexemes": [
+        "домой",
+        "после",
+        "после этого я прихожу домой.",
+        "прихожу",
+        "этого",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "routine",
+        "sequence",
+        "story"
+      ]
+    },
+    {
+      "id": "cloze_dail021_01",
+      "item_id": "dail021",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "У́тром я ча́сто игра́ю на гита́ре.",
+      "ru_plain": "Утром я часто играю на гитаре.",
+      "prompt_ru": "Утром я часто играю на ____.",
+      "answer": "гитаре",
+      "accepted_answers": [
+        "гита́ре",
+        "гитаре"
+      ],
+      "en": "In the morning I often play guitar.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "играю",
+        "на",
+        "утром",
+        "утром я часто играю на гитаре.",
+        "часто",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "morning",
+        "music",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "cloze_dail022_01",
+      "item_id": "dail022",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле я гото́влю ко́фе для мое́й жены́.",
+      "ru_plain": "После я готовлю кофе для моей жены.",
+      "prompt_ru": "После я ____ кофе для моей жены.",
+      "answer": "готовлю",
+      "accepted_answers": [
+        "гото́влю",
+        "готовлю"
+      ],
+      "en": "Afterward I make coffee for my wife.",
+      "priority": 2,
+      "lexemes": [
+        "готовлю",
+        "для",
+        "жены",
+        "кофе",
+        "моей",
+        "после",
+        "после я готовлю кофе для моей жены.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "family",
+        "morning",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "cloze_dail023_01",
+      "item_id": "dail023",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я не за́втракаю.",
+      "ru_plain": "Обычно я не завтракаю.",
+      "prompt_ru": "Обычно я не ____.",
+      "answer": "завтракаю",
+      "accepted_answers": [
+        "за́втракаю",
+        "завтракаю"
+      ],
+      "en": "Usually I don't eat breakfast.",
+      "priority": 2,
+      "lexemes": [
+        "завтракаю",
+        "не",
+        "обычно",
+        "обычно я не завтракаю.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "breakfast",
+        "cloze",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "cloze_dail024_01",
+      "item_id": "dail024",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+      "ru_plain": "В десять я начинаю решать проблемы клиентов.",
+      "prompt_ru": "В десять я начинаю решать ____ клиентов.",
+      "answer": "проблемы",
+      "accepted_answers": [
+        "пробле́мы",
+        "проблемы"
+      ],
+      "en": "At ten I start solving clients' problems.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "в десять я начинаю решать проблемы клиентов.",
+        "десять",
+        "клиентов",
+        "начинаю",
+        "проблемы",
+        "решать",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "clients",
+        "cloze",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_dail025_01",
+      "item_id": "dail025",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+      "ru_plain": "На работе я делаю много разных вещей.",
+      "prompt_ru": "На ____ я делаю много разных вещей.",
+      "answer": "работе",
+      "accepted_answers": [
+        "рабо́те",
+        "работе"
+      ],
+      "en": "At work I do many different things.",
+      "priority": 2,
+      "lexemes": [
+        "вещей",
+        "делаю",
+        "много",
+        "на",
+        "на работе я делаю много разных вещей.",
+        "работе",
+        "разных",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_dail026_01",
+      "item_id": "dail026",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я ча́сто звоню́ лю́дям.",
+      "ru_plain": "Я часто звоню людям.",
+      "prompt_ru": "Я ____ звоню людям.",
+      "answer": "часто",
+      "accepted_answers": [
+        "ча́сто",
+        "часто"
+      ],
+      "en": "I often call people.",
+      "priority": 2,
+      "lexemes": [
+        "звоню",
+        "людям",
+        "часто",
+        "я",
+        "я часто звоню людям."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_dail027_01",
+      "item_id": "dail027",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ча́сто я хожу́ в суд.",
+      "ru_plain": "Часто я хожу в суд.",
+      "prompt_ru": "____ я хожу в суд.",
+      "answer": "Часто",
+      "accepted_answers": [
+        "Ча́сто",
+        "Часто"
+      ],
+      "en": "I often go to court.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "суд",
+        "хожу",
+        "часто",
+        "часто я хожу в суд.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "court",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "cloze_dail028_01",
+      "item_id": "dail028",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле рабо́ты мы у́жинаем.",
+      "ru_plain": "После работы мы ужинаем.",
+      "prompt_ru": "После работы мы ____.",
+      "answer": "ужинаем",
+      "accepted_answers": [
+        "у́жинаем",
+        "ужинаем"
+      ],
+      "en": "After work we have dinner.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "после",
+        "после работы мы ужинаем.",
+        "работы",
+        "ужинаем"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "evening",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "cloze_dail029_01",
+      "item_id": "dail029",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Она́ говори́т, что я до́лжен гото́вить ча́ще.",
+      "ru_plain": "Она говорит, что я должен готовить чаще.",
+      "prompt_ru": "Она говорит, что я должен ____ чаще.",
+      "answer": "готовить",
+      "accepted_answers": [
+        "гото́вить",
+        "готовить"
+      ],
+      "en": "She says that I should cook more often.",
+      "priority": 3,
+      "lexemes": [
+        "говорит",
+        "готовить",
+        "должен",
+        "она",
+        "она говорит, что я должен готовить чаще.",
+        "чаще",
+        "что",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "morphology:gendered_short_form",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "evening",
+        "family",
+        "routine",
+        "story"
       ]
     },
     {
@@ -23796,6 +25075,559 @@ window.CONTENT_DATA = {
         "routine",
         "time",
         "work"
+      ]
+    },
+    {
+      "id": "dict_dail018_01",
+      "item_id": "dail018",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я встаю́ ра́но у́тром.",
+      "ru_plain": "Обычно я встаю рано утром.",
+      "accepted_answers": [
+        "Обы́чно я встаю́ ра́но у́тром.",
+        "Обычно я встаю рано утром."
+      ],
+      "en": "Usually I get up early in the morning.",
+      "priority": 2,
+      "lexemes": [
+        "встаю",
+        "обычно",
+        "обычно я встаю рано утром.",
+        "рано",
+        "утром",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "morning",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "dict_dail019_01",
+      "item_id": "dail019",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я люблю́ ра́но встава́ть.",
+      "ru_plain": "Я люблю рано вставать.",
+      "accepted_answers": [
+        "Я люблю рано вставать.",
+        "Я люблю́ ра́но встава́ть."
+      ],
+      "en": "I like to get up early.",
+      "priority": 2,
+      "lexemes": [
+        "вставать",
+        "люблю",
+        "рано",
+        "я",
+        "я люблю рано вставать."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "morning",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "dict_dail020_01",
+      "item_id": "dail020",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле э́того я прихожу́ домо́й.",
+      "ru_plain": "После этого я прихожу домой.",
+      "accepted_answers": [
+        "По́сле э́того я прихожу́ домо́й.",
+        "После этого я прихожу домой."
+      ],
+      "en": "After that I come home.",
+      "priority": 2,
+      "lexemes": [
+        "домой",
+        "после",
+        "после этого я прихожу домой.",
+        "прихожу",
+        "этого",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "routine",
+        "sequence",
+        "story"
+      ]
+    },
+    {
+      "id": "dict_dail021_01",
+      "item_id": "dail021",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "У́тром я ча́сто игра́ю на гита́ре.",
+      "ru_plain": "Утром я часто играю на гитаре.",
+      "accepted_answers": [
+        "У́тром я ча́сто игра́ю на гита́ре.",
+        "Утром я часто играю на гитаре."
+      ],
+      "en": "In the morning I often play guitar.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "играю",
+        "на",
+        "утром",
+        "утром я часто играю на гитаре.",
+        "часто",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "morning",
+        "music",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "dict_dail022_01",
+      "item_id": "dail022",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле я гото́влю ко́фе для мое́й жены́.",
+      "ru_plain": "После я готовлю кофе для моей жены.",
+      "accepted_answers": [
+        "По́сле я гото́влю ко́фе для мое́й жены́.",
+        "После я готовлю кофе для моей жены."
+      ],
+      "en": "Afterward I make coffee for my wife.",
+      "priority": 2,
+      "lexemes": [
+        "готовлю",
+        "для",
+        "жены",
+        "кофе",
+        "моей",
+        "после",
+        "после я готовлю кофе для моей жены.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "family",
+        "morning",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "dict_dail023_01",
+      "item_id": "dail023",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я не за́втракаю.",
+      "ru_plain": "Обычно я не завтракаю.",
+      "accepted_answers": [
+        "Обы́чно я не за́втракаю.",
+        "Обычно я не завтракаю."
+      ],
+      "en": "Usually I don't eat breakfast.",
+      "priority": 2,
+      "lexemes": [
+        "завтракаю",
+        "не",
+        "обычно",
+        "обычно я не завтракаю.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "breakfast",
+        "dictation",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "dict_dail024_01",
+      "item_id": "dail024",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+      "ru_plain": "В десять я начинаю решать проблемы клиентов.",
+      "accepted_answers": [
+        "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+        "В десять я начинаю решать проблемы клиентов."
+      ],
+      "en": "At ten I start solving clients' problems.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "в десять я начинаю решать проблемы клиентов.",
+        "десять",
+        "клиентов",
+        "начинаю",
+        "проблемы",
+        "решать",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "clients",
+        "dictation",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_dail025_01",
+      "item_id": "dail025",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+      "ru_plain": "На работе я делаю много разных вещей.",
+      "accepted_answers": [
+        "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+        "На работе я делаю много разных вещей."
+      ],
+      "en": "At work I do many different things.",
+      "priority": 2,
+      "lexemes": [
+        "вещей",
+        "делаю",
+        "много",
+        "на",
+        "на работе я делаю много разных вещей.",
+        "работе",
+        "разных",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_dail026_01",
+      "item_id": "dail026",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я ча́сто звоню́ лю́дям.",
+      "ru_plain": "Я часто звоню людям.",
+      "accepted_answers": [
+        "Я ча́сто звоню́ лю́дям.",
+        "Я часто звоню людям."
+      ],
+      "en": "I often call people.",
+      "priority": 2,
+      "lexemes": [
+        "звоню",
+        "людям",
+        "часто",
+        "я",
+        "я часто звоню людям."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_dail027_01",
+      "item_id": "dail027",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ча́сто я хожу́ в суд.",
+      "ru_plain": "Часто я хожу в суд.",
+      "accepted_answers": [
+        "Ча́сто я хожу́ в суд.",
+        "Часто я хожу в суд."
+      ],
+      "en": "I often go to court.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "суд",
+        "хожу",
+        "часто",
+        "часто я хожу в суд.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "court",
+        "dictation",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "dict_dail028_01",
+      "item_id": "dail028",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле рабо́ты мы у́жинаем.",
+      "ru_plain": "После работы мы ужинаем.",
+      "accepted_answers": [
+        "По́сле рабо́ты мы у́жинаем.",
+        "После работы мы ужинаем."
+      ],
+      "en": "After work we have dinner.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "после",
+        "после работы мы ужинаем.",
+        "работы",
+        "ужинаем"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "evening",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "dict_dail029_01",
+      "item_id": "dail029",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Она́ говори́т, что я до́лжен гото́вить ча́ще.",
+      "ru_plain": "Она говорит, что я должен готовить чаще.",
+      "accepted_answers": [
+        "Она говорит, что я должен готовить чаще.",
+        "Она́ говори́т, что я до́лжен гото́вить ча́ще."
+      ],
+      "en": "She says that I should cook more often.",
+      "priority": 3,
+      "lexemes": [
+        "говорит",
+        "готовить",
+        "должен",
+        "она",
+        "она говорит, что я должен готовить чаще.",
+        "чаще",
+        "что",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "morphology:gendered_short_form",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "gendered_form",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "evening",
+        "family",
+        "routine",
+        "story"
       ]
     },
     {
@@ -32299,6 +34131,571 @@ window.CONTENT_DATA = {
         "stress_drill",
         "time",
         "work"
+      ]
+    },
+    {
+      "id": "stress_dail018_01",
+      "item_id": "dail018",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я встаю́ ра́но у́тром.",
+      "ru_plain": "Обычно я встаю рано утром.",
+      "options": [
+        "О́бычно я встаю рано утром.",
+        "Обы́чно я встаю рано утром.",
+        "Обы́чно я встаю́ ра́но у́тром.",
+        "Обычно́ я встаю рано утром."
+      ],
+      "answer": "Обы́чно я встаю́ ра́но у́тром.",
+      "en": "Usually I get up early in the morning.",
+      "priority": 2,
+      "lexemes": [
+        "встаю",
+        "обычно",
+        "обычно я встаю рано утром.",
+        "рано",
+        "утром",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "morning",
+        "routine",
+        "story",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail019_01",
+      "item_id": "dail019",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я люблю́ ра́но встава́ть.",
+      "ru_plain": "Я люблю рано вставать.",
+      "options": [
+        "Я лю́блю рано вставать.",
+        "Я люблю́ ра́но встава́ть.",
+        "Я люблю́ рано вставать.",
+        "Я́ люблю рано вставать."
+      ],
+      "answer": "Я люблю́ ра́но встава́ть.",
+      "en": "I like to get up early.",
+      "priority": 2,
+      "lexemes": [
+        "вставать",
+        "люблю",
+        "рано",
+        "я",
+        "я люблю рано вставать."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "morning",
+        "routine",
+        "story",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail020_01",
+      "item_id": "dail020",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле э́того я прихожу́ домо́й.",
+      "ru_plain": "После этого я прихожу домой.",
+      "options": [
+        "По́сле э́того я прихожу́ домо́й.",
+        "По́сле этого я прихожу домой.",
+        "После э́того я прихожу домой.",
+        "После́ этого я прихожу домой."
+      ],
+      "answer": "По́сле э́того я прихожу́ домо́й.",
+      "en": "After that I come home.",
+      "priority": 2,
+      "lexemes": [
+        "домой",
+        "после",
+        "после этого я прихожу домой.",
+        "прихожу",
+        "этого",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "routine",
+        "sequence",
+        "story",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail021_01",
+      "item_id": "dail021",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "У́тром я ча́сто игра́ю на гита́ре.",
+      "ru_plain": "Утром я часто играю на гитаре.",
+      "options": [
+        "У́тром я ча́сто игра́ю на гита́ре.",
+        "У́тром я часто играю на гитаре.",
+        "Утро́м я часто играю на гитаре.",
+        "Утром я́ часто играю на гитаре."
+      ],
+      "answer": "У́тром я ча́сто игра́ю на гита́ре.",
+      "en": "In the morning I often play guitar.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "играю",
+        "на",
+        "утром",
+        "утром я часто играю на гитаре.",
+        "часто",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "morning",
+        "music",
+        "routine",
+        "story",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail022_01",
+      "item_id": "dail022",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле я гото́влю ко́фе для мое́й жены́.",
+      "ru_plain": "После я готовлю кофе для моей жены.",
+      "options": [
+        "По́сле я гото́влю ко́фе для мое́й жены́.",
+        "По́сле я готовлю кофе для моей жены.",
+        "После я́ готовлю кофе для моей жены.",
+        "После́ я готовлю кофе для моей жены."
+      ],
+      "answer": "По́сле я гото́влю ко́фе для мое́й жены́.",
+      "en": "Afterward I make coffee for my wife.",
+      "priority": 2,
+      "lexemes": [
+        "готовлю",
+        "для",
+        "жены",
+        "кофе",
+        "моей",
+        "после",
+        "после я готовлю кофе для моей жены.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "family",
+        "morning",
+        "routine",
+        "story",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail023_01",
+      "item_id": "dail023",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я не за́втракаю.",
+      "ru_plain": "Обычно я не завтракаю.",
+      "options": [
+        "О́бычно я не завтракаю.",
+        "Обы́чно я не за́втракаю.",
+        "Обы́чно я не завтракаю.",
+        "Обычно́ я не завтракаю."
+      ],
+      "answer": "Обы́чно я не за́втракаю.",
+      "en": "Usually I don't eat breakfast.",
+      "priority": 2,
+      "lexemes": [
+        "завтракаю",
+        "не",
+        "обычно",
+        "обычно я не завтракаю.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "breakfast",
+        "routine",
+        "story",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail024_01",
+      "item_id": "dail024",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+      "ru_plain": "В десять я начинаю решать проблемы клиентов.",
+      "options": [
+        "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+        "В де́сять я начинаю решать проблемы клиентов.",
+        "В деся́ть я начинаю решать проблемы клиентов.",
+        "В десять я́ начинаю решать проблемы клиентов."
+      ],
+      "answer": "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+      "en": "At ten I start solving clients' problems.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "в десять я начинаю решать проблемы клиентов.",
+        "десять",
+        "клиентов",
+        "начинаю",
+        "проблемы",
+        "решать",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "clients",
+        "routine",
+        "story",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_dail025_01",
+      "item_id": "dail025",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+      "ru_plain": "На работе я делаю много разных вещей.",
+      "options": [
+        "На ра́боте я делаю много разных вещей.",
+        "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+        "На рабо́те я делаю много разных вещей.",
+        "На́ работе я делаю много разных вещей."
+      ],
+      "answer": "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+      "en": "At work I do many different things.",
+      "priority": 2,
+      "lexemes": [
+        "вещей",
+        "делаю",
+        "много",
+        "на",
+        "на работе я делаю много разных вещей.",
+        "работе",
+        "разных",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "routine",
+        "story",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_dail026_01",
+      "item_id": "dail026",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я ча́сто звоню́ лю́дям.",
+      "ru_plain": "Я часто звоню людям.",
+      "options": [
+        "Я ча́сто звоню людям.",
+        "Я ча́сто звоню́ лю́дям.",
+        "Я часто́ звоню людям.",
+        "Я́ часто звоню людям."
+      ],
+      "answer": "Я ча́сто звоню́ лю́дям.",
+      "en": "I often call people.",
+      "priority": 2,
+      "lexemes": [
+        "звоню",
+        "людям",
+        "часто",
+        "я",
+        "я часто звоню людям."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "routine",
+        "story",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_dail027_01",
+      "item_id": "dail027",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ча́сто я хожу́ в суд.",
+      "ru_plain": "Часто я хожу в суд.",
+      "options": [
+        "Ча́сто я хожу в суд.",
+        "Ча́сто я хожу́ в суд.",
+        "Часто я́ хожу в суд.",
+        "Часто́ я хожу в суд."
+      ],
+      "answer": "Ча́сто я хожу́ в суд.",
+      "en": "I often go to court.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "суд",
+        "хожу",
+        "часто",
+        "часто я хожу в суд.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "court",
+        "routine",
+        "story",
+        "stress_drill",
+        "work"
+      ]
+    },
+    {
+      "id": "stress_dail028_01",
+      "item_id": "dail028",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле рабо́ты мы у́жинаем.",
+      "ru_plain": "После работы мы ужинаем.",
+      "options": [
+        "По́сле рабо́ты мы у́жинаем.",
+        "По́сле работы мы ужинаем.",
+        "После ра́боты мы ужинаем.",
+        "После́ работы мы ужинаем."
+      ],
+      "answer": "По́сле рабо́ты мы у́жинаем.",
+      "en": "After work we have dinner.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "после",
+        "после работы мы ужинаем.",
+        "работы",
+        "ужинаем"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "evening",
+        "routine",
+        "story",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_dail029_01",
+      "item_id": "dail029",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Она́ говори́т, что я до́лжен гото́вить ча́ще.",
+      "ru_plain": "Она говорит, что я должен готовить чаще.",
+      "options": [
+        "О́на говорит, что я должен готовить чаще.",
+        "Она го́ворит, что я должен готовить чаще.",
+        "Она́ говори́т, что я до́лжен гото́вить ча́ще.",
+        "Она́ говорит, что я должен готовить чаще."
+      ],
+      "answer": "Она́ говори́т, что я до́лжен гото́вить ча́ще.",
+      "en": "She says that I should cook more often.",
+      "priority": 3,
+      "lexemes": [
+        "говорит",
+        "готовить",
+        "должен",
+        "она",
+        "она говорит, что я должен готовить чаще.",
+        "чаще",
+        "что",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "morphology:gendered_short_form",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress"
+      ],
+      "tags": [
+        "evening",
+        "family",
+        "routine",
+        "story",
+        "stress_drill"
       ]
     },
     {
@@ -41605,6 +44002,631 @@ window.CONTENT_DATA = {
         "routine",
         "time",
         "work"
+      ]
+    },
+    {
+      "id": "pron_dail018_01",
+      "item_id": "dail018",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я встаю́ ра́но у́тром.",
+      "ru_plain": "Обычно я встаю рано утром.",
+      "en": "Usually I get up early in the morning.",
+      "priority": 2,
+      "lexemes": [
+        "встаю",
+        "обычно",
+        "обычно я встаю рано утром.",
+        "рано",
+        "утром",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "morning",
+        "pronunciation",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "pron_dail019_01",
+      "item_id": "dail019",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я люблю́ ра́но встава́ть.",
+      "ru_plain": "Я люблю рано вставать.",
+      "en": "I like to get up early.",
+      "priority": 2,
+      "lexemes": [
+        "вставать",
+        "люблю",
+        "рано",
+        "я",
+        "я люблю рано вставать."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "morning",
+        "pronunciation",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "pron_dail020_01",
+      "item_id": "dail020",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле э́того я прихожу́ домо́й.",
+      "ru_plain": "После этого я прихожу домой.",
+      "en": "After that I come home.",
+      "priority": 2,
+      "lexemes": [
+        "домой",
+        "после",
+        "после этого я прихожу домой.",
+        "прихожу",
+        "этого",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "routine",
+        "sequence",
+        "story"
+      ]
+    },
+    {
+      "id": "pron_dail021_01",
+      "item_id": "dail021",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "У́тром я ча́сто игра́ю на гита́ре.",
+      "ru_plain": "Утром я часто играю на гитаре.",
+      "en": "In the morning I often play guitar.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "играю",
+        "на",
+        "утром",
+        "утром я часто играю на гитаре.",
+        "часто",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "morning",
+        "music",
+        "pronunciation",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "pron_dail022_01",
+      "item_id": "dail022",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле я гото́влю ко́фе для мое́й жены́.",
+      "ru_plain": "После я готовлю кофе для моей жены.",
+      "en": "Afterward I make coffee for my wife.",
+      "priority": 2,
+      "lexemes": [
+        "готовлю",
+        "для",
+        "жены",
+        "кофе",
+        "моей",
+        "после",
+        "после я готовлю кофе для моей жены.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "family",
+        "morning",
+        "pronunciation",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "pron_dail023_01",
+      "item_id": "dail023",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я не за́втракаю.",
+      "ru_plain": "Обычно я не завтракаю.",
+      "en": "Usually I don't eat breakfast.",
+      "priority": 2,
+      "lexemes": [
+        "завтракаю",
+        "не",
+        "обычно",
+        "обычно я не завтракаю.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "breakfast",
+        "pronunciation",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "pron_dail024_01",
+      "item_id": "dail024",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+      "ru_plain": "В десять я начинаю решать проблемы клиентов.",
+      "en": "At ten I start solving clients' problems.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "в десять я начинаю решать проблемы клиентов.",
+        "десять",
+        "клиентов",
+        "начинаю",
+        "проблемы",
+        "решать",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "clients",
+        "pronunciation",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_dail025_01",
+      "item_id": "dail025",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+      "ru_plain": "На работе я делаю много разных вещей.",
+      "en": "At work I do many different things.",
+      "priority": 2,
+      "lexemes": [
+        "вещей",
+        "делаю",
+        "много",
+        "на",
+        "на работе я делаю много разных вещей.",
+        "работе",
+        "разных",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_dail026_01",
+      "item_id": "dail026",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я ча́сто звоню́ лю́дям.",
+      "ru_plain": "Я часто звоню людям.",
+      "en": "I often call people.",
+      "priority": 2,
+      "lexemes": [
+        "звоню",
+        "людям",
+        "часто",
+        "я",
+        "я часто звоню людям."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_dail027_01",
+      "item_id": "dail027",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ча́сто я хожу́ в суд.",
+      "ru_plain": "Часто я хожу в суд.",
+      "en": "I often go to court.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "суд",
+        "хожу",
+        "часто",
+        "часто я хожу в суд.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "court",
+        "pronunciation",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "pron_dail028_01",
+      "item_id": "dail028",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле рабо́ты мы у́жинаем.",
+      "ru_plain": "После работы мы ужинаем.",
+      "en": "After work we have dinner.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "после",
+        "после работы мы ужинаем.",
+        "работы",
+        "ужинаем"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "evening",
+        "pronunciation",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "pron_dail029_01",
+      "item_id": "dail029",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Она́ говори́т, что я до́лжен гото́вить ча́ще.",
+      "ru_plain": "Она говорит, что я должен готовить чаще.",
+      "en": "She says that I should cook more often.",
+      "priority": 3,
+      "lexemes": [
+        "говорит",
+        "готовить",
+        "должен",
+        "она",
+        "она говорит, что я должен готовить чаще.",
+        "чаще",
+        "что",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "morphology:gendered_short_form",
+        "phrase:routine_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "evening",
+        "family",
+        "pronunciation",
+        "routine",
+        "story"
       ]
     },
     {
@@ -51004,6 +54026,583 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "back_dail018_01",
+      "item_id": "dail018",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я встаю́ ра́но у́тром.",
+      "ru_plain": "Обычно я встаю рано утром.",
+      "accepted_answers": [
+        "Обы́чно я встаю́ ра́но у́тром.",
+        "Обычно я встаю рано утром."
+      ],
+      "en": "Usually I get up early in the morning.",
+      "priority": 2,
+      "lexemes": [
+        "встаю",
+        "обычно",
+        "обычно я встаю рано утром.",
+        "рано",
+        "утром",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "morning",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "back_dail019_01",
+      "item_id": "dail019",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я люблю́ ра́но встава́ть.",
+      "ru_plain": "Я люблю рано вставать.",
+      "accepted_answers": [
+        "Я люблю рано вставать.",
+        "Я люблю́ ра́но встава́ть."
+      ],
+      "en": "I like to get up early.",
+      "priority": 2,
+      "lexemes": [
+        "вставать",
+        "люблю",
+        "рано",
+        "я",
+        "я люблю рано вставать."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "morning",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "back_dail020_01",
+      "item_id": "dail020",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле э́того я прихожу́ домо́й.",
+      "ru_plain": "После этого я прихожу домой.",
+      "accepted_answers": [
+        "По́сле э́того я прихожу́ домо́й.",
+        "После этого я прихожу домой."
+      ],
+      "en": "After that I come home.",
+      "priority": 2,
+      "lexemes": [
+        "домой",
+        "после",
+        "после этого я прихожу домой.",
+        "прихожу",
+        "этого",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "routine",
+        "sequence",
+        "story"
+      ]
+    },
+    {
+      "id": "back_dail021_01",
+      "item_id": "dail021",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "У́тром я ча́сто игра́ю на гита́ре.",
+      "ru_plain": "Утром я часто играю на гитаре.",
+      "accepted_answers": [
+        "У́тром я ча́сто игра́ю на гита́ре.",
+        "Утром я часто играю на гитаре."
+      ],
+      "en": "In the morning I often play guitar.",
+      "priority": 2,
+      "lexemes": [
+        "гитаре",
+        "играю",
+        "на",
+        "утром",
+        "утром я часто играю на гитаре.",
+        "часто",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "morning",
+        "music",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "back_dail022_01",
+      "item_id": "dail022",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле я гото́влю ко́фе для мое́й жены́.",
+      "ru_plain": "После я готовлю кофе для моей жены.",
+      "accepted_answers": [
+        "По́сле я гото́влю ко́фе для мое́й жены́.",
+        "После я готовлю кофе для моей жены."
+      ],
+      "en": "Afterward I make coffee for my wife.",
+      "priority": 2,
+      "lexemes": [
+        "готовлю",
+        "для",
+        "жены",
+        "кофе",
+        "моей",
+        "после",
+        "после я готовлю кофе для моей жены.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "family",
+        "morning",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "back_dail023_01",
+      "item_id": "dail023",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Обы́чно я не за́втракаю.",
+      "ru_plain": "Обычно я не завтракаю.",
+      "accepted_answers": [
+        "Обы́чно я не за́втракаю.",
+        "Обычно я не завтракаю."
+      ],
+      "en": "Usually I don't eat breakfast.",
+      "priority": 2,
+      "lexemes": [
+        "завтракаю",
+        "не",
+        "обычно",
+        "обычно я не завтракаю.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "breakfast",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "back_dail024_01",
+      "item_id": "dail024",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+      "ru_plain": "В десять я начинаю решать проблемы клиентов.",
+      "accepted_answers": [
+        "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+        "В десять я начинаю решать проблемы клиентов."
+      ],
+      "en": "At ten I start solving clients' problems.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "в десять я начинаю решать проблемы клиентов.",
+        "десять",
+        "клиентов",
+        "начинаю",
+        "проблемы",
+        "решать",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "clients",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "back_dail025_01",
+      "item_id": "dail025",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+      "ru_plain": "На работе я делаю много разных вещей.",
+      "accepted_answers": [
+        "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+        "На работе я делаю много разных вещей."
+      ],
+      "en": "At work I do many different things.",
+      "priority": 2,
+      "lexemes": [
+        "вещей",
+        "делаю",
+        "много",
+        "на",
+        "на работе я делаю много разных вещей.",
+        "работе",
+        "разных",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "back_dail026_01",
+      "item_id": "dail026",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Я ча́сто звоню́ лю́дям.",
+      "ru_plain": "Я часто звоню людям.",
+      "accepted_answers": [
+        "Я ча́сто звоню́ лю́дям.",
+        "Я часто звоню людям."
+      ],
+      "en": "I often call people.",
+      "priority": 2,
+      "lexemes": [
+        "звоню",
+        "людям",
+        "часто",
+        "я",
+        "я часто звоню людям."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "back_dail027_01",
+      "item_id": "dail027",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Ча́сто я хожу́ в суд.",
+      "ru_plain": "Часто я хожу в суд.",
+      "accepted_answers": [
+        "Ча́сто я хожу́ в суд.",
+        "Часто я хожу в суд."
+      ],
+      "en": "I often go to court.",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "суд",
+        "хожу",
+        "часто",
+        "часто я хожу в суд.",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "court",
+        "routine",
+        "story",
+        "work"
+      ]
+    },
+    {
+      "id": "back_dail028_01",
+      "item_id": "dail028",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "По́сле рабо́ты мы у́жинаем.",
+      "ru_plain": "После работы мы ужинаем.",
+      "accepted_answers": [
+        "По́сле рабо́ты мы у́жинаем.",
+        "После работы мы ужинаем."
+      ],
+      "en": "After work we have dinner.",
+      "priority": 2,
+      "lexemes": [
+        "мы",
+        "после",
+        "после работы мы ужинаем.",
+        "работы",
+        "ужинаем"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "evening",
+        "routine",
+        "story"
+      ]
+    },
+    {
+      "id": "back_dail029_01",
+      "item_id": "dail029",
+      "module": "daily_routine",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "ru": "Она́ говори́т, что я до́лжен гото́вить ча́ще.",
+      "ru_plain": "Она говорит, что я должен готовить чаще.",
+      "accepted_answers": [
+        "Она говорит, что я должен готовить чаще.",
+        "Она́ говори́т, что я до́лжен гото́вить ча́ще."
+      ],
+      "en": "She says that I should cook more often.",
+      "priority": 3,
+      "lexemes": [
+        "говорит",
+        "готовить",
+        "должен",
+        "она",
+        "она говорит, что я должен готовить чаще.",
+        "чаще",
+        "что",
+        "я"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "morphology:gendered_short_form",
+        "phrase:routine_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "gendered_form",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "evening",
+        "family",
+        "routine",
+        "story"
+      ]
+    },
+    {
       "id": "back_work001_01",
       "item_id": "work001",
       "module": "work_business",
@@ -59376,6 +62975,18 @@ window.CONTENT_DATA = {
         "dail015",
         "dail016",
         "dail017",
+        "dail018",
+        "dail019",
+        "dail020",
+        "dail021",
+        "dail022",
+        "dail023",
+        "dail024",
+        "dail025",
+        "dail026",
+        "dail027",
+        "dail028",
+        "dail029",
         "work001",
         "work002",
         "work003",
@@ -59480,11 +63091,13 @@ window.CONTENT_DATA = {
         "был",
         "было",
         "в",
+        "в десять я начинаю решать проблемы клиентов.",
         "в номере есть интернет?",
         "ваше",
         "вашу",
         "вечер",
         "вечером",
+        "вещей",
         "вкусно",
         "вместе",
         "воскресенье",
@@ -59492,6 +63105,8 @@ window.CONTENT_DATA = {
         "вот мой паспорт.",
         "время",
         "всей",
+        "вставать",
+        "встаю",
         "встречу",
         "вторник",
         "вчера",
@@ -59500,10 +63115,14 @@ window.CONTENT_DATA = {
         "выходных",
         "где",
         "где лифт?",
+        "гитаре",
+        "говорит",
         "говорите",
         "говорю",
         "говорю / говорите",
         "город",
+        "готовить",
+        "готовлю",
         "гулять",
         "да",
         "да, немного",
@@ -59513,11 +63132,13 @@ window.CONTENT_DATA = {
         "давайте выпьем за это!",
         "дедушка",
         "дел",
+        "делаю",
         "день",
         "десяти",
         "десять",
         "дети",
         "джо",
+        "для",
         "дна",
         "дней",
         "днём",
@@ -59534,7 +63155,9 @@ window.CONTENT_DATA = {
         "добрый день.",
         "довольны",
         "дождь",
+        "должен",
         "дома",
+        "домой",
         "дочь",
         "едем",
         "едим",
@@ -59561,9 +63184,11 @@ window.CONTENT_DATA = {
         "за хозяйку!",
         "завтра",
         "завтра будет тепло.",
+        "завтракаю",
         "занят",
         "зарегистрироваться",
         "звонил",
+        "звоню",
         "здесь",
         "здоровы",
         "здоровье",
@@ -59575,6 +63200,7 @@ window.CONTENT_DATA = {
         "зовут",
         "зять",
         "и",
+        "играю",
         "идёт",
         "идёт дождь.",
         "идёт снег.",
@@ -59594,6 +63220,7 @@ window.CONTENT_DATA = {
         "ключ, пожалуйста.",
         "компания",
         "компьютере",
+        "кофе",
         "красивое",
         "красивый",
         "лифт",
@@ -59602,6 +63229,7 @@ window.CONTENT_DATA = {
         "люблю",
         "люблю / любите",
         "любовь",
+        "людям",
         "мама",
         "меня",
         "меня зовут джо",
@@ -59612,6 +63240,7 @@ window.CONTENT_DATA = {
         "мной",
         "могу",
         "могу / можете",
+        "моей",
         "можете",
         "можно",
         "можно ещё?",
@@ -59641,6 +63270,7 @@ window.CONTENT_DATA = {
         "на",
         "на выходных",
         "на день благодарения мы ужинали всей семьёй.",
+        "на работе я делаю много разных вещей.",
         "на рождество мы хотим полететь в орегон.",
         "надо",
         "наелся",
@@ -59656,8 +63286,12 @@ window.CONTENT_DATA = {
         "обедаю",
         "облачно",
         "обычно",
+        "обычно я встаю рано утром.",
+        "обычно я не завтракаю.",
         "обычно я отдыхаю вечером.",
         "обычно я работаю семь часов.",
+        "она",
+        "она говорит, что я должен готовить чаще.",
         "орегон",
         "орегоне",
         "отдыхаем",
@@ -59687,14 +63321,20 @@ window.CONTENT_DATA = {
         "понимаю",
         "понимаю / понимаете",
         "понятно",
+        "после",
+        "после работы мы ужинаем.",
+        "после этого я прихожу домой.",
+        "после я готовлю кофе для моей жены.",
         "поужинать",
         "представиться",
         "пригласили",
         "приняли",
+        "прихожу",
         "приятно",
         "приятно познакомиться",
         "приятного",
         "приятного аппетита!",
+        "проблемы",
         "простите",
         "пью",
         "пью / пьёте",
@@ -59708,12 +63348,16 @@ window.CONTENT_DATA = {
         "работать",
         "работаю",
         "работаю / работаете",
+        "работе",
         "работы",
         "рад",
         "рад познакомиться",
+        "разных",
         "разрешите",
         "разрешите представиться",
+        "рано",
         "результатом",
+        "решать",
         "родителей",
         "родители",
         "рождество",
@@ -59758,6 +63402,7 @@ window.CONTENT_DATA = {
         "старый",
         "старый город очень красивый.",
         "суббота",
+        "суд",
         "суде",
         "счастлив",
         "счёт",
@@ -59775,13 +63420,16 @@ window.CONTENT_DATA = {
         "у меня много работы.",
         "у меня своя компания.",
         "ужин",
+        "ужинаем",
         "ужинали",
         "ужинаю",
         "утра",
         "утро",
         "утром",
+        "утром я часто играю на гитаре.",
         "учу",
         "хлеб",
+        "хожу",
         "хозяев",
         "хозяйку",
         "холодно",
@@ -59794,6 +63442,9 @@ window.CONTENT_DATA = {
         "хочу / хотите",
         "часа",
         "часов",
+        "часто",
+        "часто я хожу в суд.",
+        "чаще",
         "чаю",
         "черногории",
         "четверг",
@@ -59803,6 +63454,7 @@ window.CONTENT_DATA = {
         "шурин",
         "это",
         "это был большой ужин.",
+        "этого",
         "юрист",
         "я",
         "я ещё учу русский",
@@ -59811,6 +63463,7 @@ window.CONTENT_DATA = {
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
+        "я люблю рано вставать.",
         "я наелся",
         "я начинаю работать в десять утра.",
         "я не понимаю",
@@ -59827,6 +63480,7 @@ window.CONTENT_DATA = {
         "я хочу погулять у моря.",
         "я хочу сдать багаж.",
         "я хочу сказать тост за …",
+        "я часто звоню людям.",
         "я юрист"
       ],
       "passive_vocab": [
@@ -61776,6 +65430,18 @@ window.CONTENT_DATA = {
         "dail015",
         "dail016",
         "dail017",
+        "dail018",
+        "dail019",
+        "dail020",
+        "dail021",
+        "dail022",
+        "dail023",
+        "dail024",
+        "dail025",
+        "dail026",
+        "dail027",
+        "dail028",
+        "dail029",
         "work001",
         "work002",
         "work003",
@@ -61870,11 +65536,13 @@ window.CONTENT_DATA = {
         "был",
         "было",
         "в",
+        "в десять я начинаю решать проблемы клиентов.",
         "в номере есть интернет?",
         "ваше",
         "вашу",
         "вечер",
         "вечером",
+        "вещей",
         "вкусно",
         "вместе",
         "воскресенье",
@@ -61882,6 +65550,8 @@ window.CONTENT_DATA = {
         "вот мой паспорт.",
         "время",
         "всей",
+        "вставать",
+        "встаю",
         "встречу",
         "вторник",
         "вчера",
@@ -61890,8 +65560,12 @@ window.CONTENT_DATA = {
         "выходных",
         "где",
         "где лифт?",
+        "гитаре",
+        "говорит",
         "говорю",
         "город",
+        "готовить",
+        "готовлю",
         "гулять",
         "да",
         "да, немного",
@@ -61901,11 +65575,13 @@ window.CONTENT_DATA = {
         "давайте выпьем за это!",
         "дедушка",
         "дел",
+        "делаю",
         "день",
         "десяти",
         "десять",
         "дети",
         "джо",
+        "для",
         "дна",
         "дней",
         "днём",
@@ -61922,7 +65598,9 @@ window.CONTENT_DATA = {
         "добрый день.",
         "довольны",
         "дождь",
+        "должен",
         "дома",
+        "домой",
         "дочь",
         "едем",
         "едим",
@@ -61944,9 +65622,11 @@ window.CONTENT_DATA = {
         "за хозяйку!",
         "завтра",
         "завтра будет тепло.",
+        "завтракаю",
         "занят",
         "зарегистрироваться",
         "звонил",
+        "звоню",
         "здесь",
         "здоровы",
         "здоровье",
@@ -61955,6 +65635,7 @@ window.CONTENT_DATA = {
         "зовут",
         "зять",
         "и",
+        "играю",
         "идёт",
         "идёт дождь.",
         "идёт снег.",
@@ -61974,12 +65655,14 @@ window.CONTENT_DATA = {
         "ключ, пожалуйста.",
         "компания",
         "компьютере",
+        "кофе",
         "красивое",
         "красивый",
         "лифт",
         "лыжах",
         "люблю",
         "любовь",
+        "людям",
         "мама",
         "меня",
         "меня зовут джо",
@@ -61988,6 +65671,7 @@ window.CONTENT_DATA = {
         "мне очень нравится",
         "много",
         "мной",
+        "моей",
         "можно",
         "можно ещё?",
         "можно такси?",
@@ -62016,6 +65700,7 @@ window.CONTENT_DATA = {
         "на",
         "на выходных",
         "на день благодарения мы ужинали всей семьёй.",
+        "на работе я делаю много разных вещей.",
         "на рождество мы хотим полететь в орегон.",
         "надо",
         "наелся",
@@ -62031,8 +65716,12 @@ window.CONTENT_DATA = {
         "обедаю",
         "облачно",
         "обычно",
+        "обычно я встаю рано утром.",
+        "обычно я не завтракаю.",
         "обычно я отдыхаю вечером.",
         "обычно я работаю семь часов.",
+        "она",
+        "она говорит, что я должен готовить чаще.",
         "орегон",
         "орегоне",
         "отдыхаем",
@@ -62060,14 +65749,20 @@ window.CONTENT_DATA = {
         "понедельник",
         "понимаю",
         "понятно",
+        "после",
+        "после работы мы ужинаем.",
+        "после этого я прихожу домой.",
+        "после я готовлю кофе для моей жены.",
         "поужинать",
         "представиться",
         "пригласили",
         "приняли",
+        "прихожу",
         "приятно",
         "приятно познакомиться",
         "приятного",
         "приятного аппетита!",
+        "проблемы",
         "простите",
         "пятница",
         "пять",
@@ -62076,12 +65771,16 @@ window.CONTENT_DATA = {
         "работал",
         "работать",
         "работаю",
+        "работе",
         "работы",
         "рад",
         "рад познакомиться",
+        "разных",
         "разрешите",
         "разрешите представиться",
+        "рано",
         "результатом",
+        "решать",
         "родителей",
         "родители",
         "рождество",
@@ -62126,6 +65825,7 @@ window.CONTENT_DATA = {
         "старый",
         "старый город очень красивый.",
         "суббота",
+        "суд",
         "суде",
         "счастлив",
         "счёт",
@@ -62143,13 +65843,16 @@ window.CONTENT_DATA = {
         "у меня много работы.",
         "у меня своя компания.",
         "ужин",
+        "ужинаем",
         "ужинали",
         "ужинаю",
         "утра",
         "утро",
         "утром",
+        "утром я часто играю на гитаре.",
         "учу",
         "хлеб",
+        "хожу",
         "хозяев",
         "хозяйку",
         "холодно",
@@ -62160,6 +65863,9 @@ window.CONTENT_DATA = {
         "хочу",
         "часа",
         "часов",
+        "часто",
+        "часто я хожу в суд.",
+        "чаще",
         "чаю",
         "черногории",
         "четверг",
@@ -62169,6 +65875,7 @@ window.CONTENT_DATA = {
         "шурин",
         "это",
         "это был большой ужин.",
+        "этого",
         "юрист",
         "я",
         "я ещё учу русский",
@@ -62177,6 +65884,7 @@ window.CONTENT_DATA = {
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
+        "я люблю рано вставать.",
         "я наелся",
         "я начинаю работать в десять утра.",
         "я не понимаю",
@@ -62193,6 +65901,7 @@ window.CONTENT_DATA = {
         "я хочу погулять у моря.",
         "я хочу сдать багаж.",
         "я хочу сказать тост за …",
+        "я часто звоню людям.",
         "я юрист"
       ],
       "passive_vocab": [
@@ -62628,7 +66337,19 @@ window.CONTENT_DATA = {
         "dail014",
         "dail015",
         "dail016",
-        "dail017"
+        "dail017",
+        "dail018",
+        "dail019",
+        "dail020",
+        "dail021",
+        "dail022",
+        "dail023",
+        "dail024",
+        "dail025",
+        "dail026",
+        "dail027",
+        "dail028",
+        "dail029"
       ],
       "active_vocab": [
         "америке",
@@ -62643,30 +66364,40 @@ window.CONTENT_DATA = {
         "будет",
         "было",
         "в",
+        "в десять я начинаю решать проблемы клиентов.",
         "ваше",
         "вашу",
         "вечер",
         "вечером",
+        "вещей",
         "вкусно",
         "воскресенье",
         "время",
+        "вставать",
+        "встаю",
         "встречу",
         "вторник",
         "вчера",
         "вчера было солнечно.",
         "выпьем",
         "выходных",
+        "гитаре",
+        "говорит",
         "говорю",
+        "готовить",
+        "готовлю",
         "да",
         "да, немного",
         "давайте",
         "давайте выпьем за это!",
         "дедушка",
+        "делаю",
         "день",
         "десяти",
         "десять",
         "дети",
         "джо",
+        "для",
         "дна",
         "днём",
         "до",
@@ -62681,6 +66412,8 @@ window.CONTENT_DATA = {
         "добрый день",
         "добрый день.",
         "дождь",
+        "должен",
+        "домой",
         "дочь",
         "едим",
         "есть",
@@ -62701,6 +66434,8 @@ window.CONTENT_DATA = {
         "за хозяйку!",
         "завтра",
         "завтра будет тепло.",
+        "завтракаю",
+        "звоню",
         "здоровы",
         "здоровье",
         "здравствуйте",
@@ -62708,6 +66443,7 @@ window.CONTENT_DATA = {
         "зовут",
         "зять",
         "и",
+        "играю",
         "идёт",
         "идёт дождь.",
         "идёт снег.",
@@ -62715,14 +66451,19 @@ window.CONTENT_DATA = {
         "извините",
         "как",
         "как по-русски …?",
+        "клиентов",
+        "кофе",
         "люблю",
         "любовь",
+        "людям",
         "мама",
         "меня",
         "меня зовут джо",
         "миссури",
         "мне",
         "мне очень нравится",
+        "много",
+        "моей",
         "можно",
         "можно ещё?",
         "можно чаю?",
@@ -62733,6 +66474,7 @@ window.CONTENT_DATA = {
         "мы познакомились …",
         "на",
         "на выходных",
+        "на работе я делаю много разных вещей.",
         "надо",
         "наелся",
         "начинаю",
@@ -62746,8 +66488,12 @@ window.CONTENT_DATA = {
         "обедаю",
         "облачно",
         "обычно",
+        "обычно я встаю рано утром.",
+        "обычно я не завтракаю.",
         "обычно я отдыхаю вечером.",
         "обычно я работаю семь часов.",
+        "она",
+        "она говорит, что я должен готовить чаще.",
         "отдыхаю",
         "отлично",
         "очень",
@@ -62767,22 +66513,33 @@ window.CONTENT_DATA = {
         "понедельник",
         "понимаю",
         "понятно",
+        "после",
+        "после работы мы ужинаем.",
+        "после этого я прихожу домой.",
+        "после я готовлю кофе для моей жены.",
         "представиться",
         "пригласили",
         "приняли",
+        "прихожу",
         "приятно",
         "приятно познакомиться",
         "приятного",
         "приятного аппетита!",
+        "проблемы",
         "простите",
         "пятница",
         "работал",
         "работать",
         "работаю",
+        "работе",
+        "работы",
         "рад",
         "рад познакомиться",
+        "разных",
         "разрешите",
         "разрешите представиться",
+        "рано",
+        "решать",
         "родителей",
         "родители",
         "русски",
@@ -62814,6 +66571,7 @@ window.CONTENT_DATA = {
         "спокойной ночи",
         "среда",
         "суббота",
+        "суд",
         "сын",
         "телевизор",
         "тепло",
@@ -62822,12 +66580,15 @@ window.CONTENT_DATA = {
         "тёща",
         "у",
         "у меня есть время до десяти.",
+        "ужинаем",
         "ужинаю",
         "утра",
         "утро",
         "утром",
+        "утром я часто играю на гитаре.",
         "учу",
         "хлеб",
+        "хожу",
         "хозяев",
         "хозяйку",
         "холодно",
@@ -62836,6 +66597,9 @@ window.CONTENT_DATA = {
         "хочу",
         "часа",
         "часов",
+        "часто",
+        "часто я хожу в суд.",
+        "чаще",
         "чаю",
         "четверг",
         "четыре",
@@ -62843,6 +66607,7 @@ window.CONTENT_DATA = {
         "штата",
         "шурин",
         "это",
+        "этого",
         "юрист",
         "я",
         "я ещё учу русский",
@@ -62850,6 +66615,7 @@ window.CONTENT_DATA = {
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
+        "я люблю рано вставать.",
         "я наелся",
         "я начинаю работать в десять утра.",
         "я не понимаю",
@@ -62859,6 +66625,7 @@ window.CONTENT_DATA = {
         "я работаю утром и вечером.",
         "я ужинаю вечером.",
         "я хочу сказать тост за …",
+        "я часто звоню людям.",
         "я юрист"
       ],
       "passive_vocab": [
@@ -62962,6 +66729,648 @@ window.CONTENT_DATA = {
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
       "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Everyday family check-in — Answer simple questions about eating, working, resting, and the evening routine.\nCurriculum boundary: Lesson 9 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Когда вы обедаете? — When do you have lunch?\n- Я обедаю днём. — I have lunch during the day.\n- Когда вы ужинаете? — When do you have dinner?\n- Я ужинаю вечером. — I have dinner in the evening.\n- Когда вы работаете? — When do you work?\n- Я работаю утром и вечером. — I work in the morning and evening.\n- Когда вы отдыхаете? — When do you rest?\n- Обычно я отдыхаю вечером. — Usually I rest in the evening.\n- Что ты сегодня делал? — What did you do today?\n- Мы едим и смотрим телевизор. — We eat and watch TV.\n- Я начинаю работать в десять утра. — I start working at ten in the morning.\n- Обычно я работаю семь часов. — Usually I work seven hours.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+    },
+    {
+      "id": "tutor_daily_routine_story",
+      "scenario_id": "daily_routine_story",
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
+      "setting": "My day mini-story",
+      "goal": "Tell a short morning-work-evening story using the original guide's Мой день material.",
+      "learner_role": "guest",
+      "tutor_role": "host family member",
+      "required_items": [
+        "dail018",
+        "dail019",
+        "dail020",
+        "dail021",
+        "dail022",
+        "dail023",
+        "dail024",
+        "dail025",
+        "dail026",
+        "dail027",
+        "dail028",
+        "dail029"
+      ],
+      "required_phrases": [
+        {
+          "id": "dail018",
+          "ru": "Обы́чно я встаю́ ра́но у́тром.",
+          "ru_plain": "Обычно я встаю рано утром.",
+          "en": "Usually I get up early in the morning."
+        },
+        {
+          "id": "dail019",
+          "ru": "Я люблю́ ра́но встава́ть.",
+          "ru_plain": "Я люблю рано вставать.",
+          "en": "I like to get up early."
+        },
+        {
+          "id": "dail020",
+          "ru": "По́сле э́того я прихожу́ домо́й.",
+          "ru_plain": "После этого я прихожу домой.",
+          "en": "After that I come home."
+        },
+        {
+          "id": "dail021",
+          "ru": "У́тром я ча́сто игра́ю на гита́ре.",
+          "ru_plain": "Утром я часто играю на гитаре.",
+          "en": "In the morning I often play guitar."
+        },
+        {
+          "id": "dail022",
+          "ru": "По́сле я гото́влю ко́фе для мое́й жены́.",
+          "ru_plain": "После я готовлю кофе для моей жены.",
+          "en": "Afterward I make coffee for my wife."
+        },
+        {
+          "id": "dail023",
+          "ru": "Обы́чно я не за́втракаю.",
+          "ru_plain": "Обычно я не завтракаю.",
+          "en": "Usually I don't eat breakfast."
+        },
+        {
+          "id": "dail024",
+          "ru": "В де́сять я начина́ю реша́ть пробле́мы клие́нтов.",
+          "ru_plain": "В десять я начинаю решать проблемы клиентов.",
+          "en": "At ten I start solving clients' problems."
+        },
+        {
+          "id": "dail025",
+          "ru": "На рабо́те я де́лаю мно́го ра́зных веще́й.",
+          "ru_plain": "На работе я делаю много разных вещей.",
+          "en": "At work I do many different things."
+        },
+        {
+          "id": "dail026",
+          "ru": "Я ча́сто звоню́ лю́дям.",
+          "ru_plain": "Я часто звоню людям.",
+          "en": "I often call people."
+        },
+        {
+          "id": "dail027",
+          "ru": "Ча́сто я хожу́ в суд.",
+          "ru_plain": "Часто я хожу в суд.",
+          "en": "I often go to court."
+        },
+        {
+          "id": "dail028",
+          "ru": "По́сле рабо́ты мы у́жинаем.",
+          "ru_plain": "После работы мы ужинаем.",
+          "en": "After work we have dinner."
+        },
+        {
+          "id": "dail029",
+          "ru": "Она́ говори́т, что я до́лжен гото́вить ча́ще.",
+          "ru_plain": "Она говорит, что я должен готовить чаще.",
+          "en": "She says that I should cook more often."
+        }
+      ],
+      "success_criteria": [
+        "tells_daily_story",
+        "uses_day_parts",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "allowed_lesson_ids": [
+        "family_visit_001",
+        "family_visit_002",
+        "family_visit_003",
+        "family_visit_004",
+        "family_visit_005",
+        "family_visit_006",
+        "family_visit_007",
+        "family_visit_008",
+        "family_visit_009"
+      ],
+      "allowed_item_ids": [
+        "firs001",
+        "firs002",
+        "firs003",
+        "firs004",
+        "firs005",
+        "firs006",
+        "firs007",
+        "firs008",
+        "firs009",
+        "firs010",
+        "firs011",
+        "firs012",
+        "firs013",
+        "poli001",
+        "poli002",
+        "poli003",
+        "poli004",
+        "poli005",
+        "poli006",
+        "poli007",
+        "poli008",
+        "poli009",
+        "poli010",
+        "poli011",
+        "poli012",
+        "poli013",
+        "poli014",
+        "poli015",
+        "poli016",
+        "poli017",
+        "toas001",
+        "toas002",
+        "toas003",
+        "toas004",
+        "toas005",
+        "toas006",
+        "toas007",
+        "toas008",
+        "toas009",
+        "toas010",
+        "toas011",
+        "toas012",
+        "toas013",
+        "toas014",
+        "toas015",
+        "toas016",
+        "fami001",
+        "fami002",
+        "fami003",
+        "fami004",
+        "fami005",
+        "fami006",
+        "fami007",
+        "fami008",
+        "fami009",
+        "fami010",
+        "fami011",
+        "fami012",
+        "fami013",
+        "fami014",
+        "fami015",
+        "fami016",
+        "fami017",
+        "fami018",
+        "fami019",
+        "food001",
+        "food002",
+        "food003",
+        "food004",
+        "food005",
+        "food006",
+        "food007",
+        "food008",
+        "food009",
+        "food010",
+        "food011",
+        "food012",
+        "food013",
+        "food014",
+        "food015",
+        "food016",
+        "smal001",
+        "smal002",
+        "smal003",
+        "smal004",
+        "smal005",
+        "smal006",
+        "smal007",
+        "smal008",
+        "smal009",
+        "list001",
+        "list002",
+        "list003",
+        "list004",
+        "list005",
+        "list006",
+        "list007",
+        "list008",
+        "list009",
+        "cale001",
+        "cale002",
+        "cale003",
+        "cale004",
+        "cale005",
+        "cale006",
+        "cale007",
+        "cale008",
+        "cale009",
+        "cale010",
+        "cale011",
+        "cale012",
+        "cale013",
+        "cale014",
+        "cale015",
+        "cale016",
+        "cale017",
+        "cale018",
+        "cale019",
+        "dail001",
+        "dail002",
+        "dail003",
+        "dail004",
+        "dail005",
+        "dail006",
+        "dail007",
+        "dail008",
+        "dail009",
+        "dail010",
+        "dail011",
+        "dail012",
+        "dail013",
+        "dail014",
+        "dail015",
+        "dail016",
+        "dail017",
+        "dail018",
+        "dail019",
+        "dail020",
+        "dail021",
+        "dail022",
+        "dail023",
+        "dail024",
+        "dail025",
+        "dail026",
+        "dail027",
+        "dail028",
+        "dail029"
+      ],
+      "active_vocab": [
+        "америке",
+        "америки",
+        "аппетита",
+        "бабушка",
+        "бокал",
+        "большое",
+        "брат",
+        "будем",
+        "будем здоровы!",
+        "будет",
+        "было",
+        "в",
+        "в десять я начинаю решать проблемы клиентов.",
+        "ваше",
+        "вашу",
+        "вечер",
+        "вечером",
+        "вещей",
+        "вкусно",
+        "воскресенье",
+        "время",
+        "вставать",
+        "встаю",
+        "встречу",
+        "вторник",
+        "вчера",
+        "вчера было солнечно.",
+        "выпьем",
+        "выходных",
+        "гитаре",
+        "говорит",
+        "говорю",
+        "готовить",
+        "готовлю",
+        "да",
+        "да, немного",
+        "давайте",
+        "давайте выпьем за это!",
+        "дедушка",
+        "делаю",
+        "день",
+        "десяти",
+        "десять",
+        "дети",
+        "джо",
+        "для",
+        "дна",
+        "днём",
+        "до",
+        "до дна",
+        "до свидания",
+        "доброе",
+        "доброе утро",
+        "доброе утро.",
+        "добрый",
+        "добрый вечер",
+        "добрый вечер.",
+        "добрый день",
+        "добрый день.",
+        "дождь",
+        "должен",
+        "домой",
+        "дочь",
+        "едим",
+        "есть",
+        "ещё",
+        "жена",
+        "жены",
+        "живу",
+        "за",
+        "за ваше здоровье!",
+        "за встречу!",
+        "за здоровье!",
+        "за знакомство!",
+        "за любовь!",
+        "за молодых!",
+        "за родителей!",
+        "за семью!",
+        "за хозяев!",
+        "за хозяйку!",
+        "завтра",
+        "завтра будет тепло.",
+        "завтракаю",
+        "звоню",
+        "здоровы",
+        "здоровье",
+        "здравствуйте",
+        "знакомство",
+        "зовут",
+        "зять",
+        "и",
+        "играю",
+        "идёт",
+        "идёт дождь.",
+        "идёт снег.",
+        "из",
+        "извините",
+        "как",
+        "как по-русски …?",
+        "клиентов",
+        "кофе",
+        "люблю",
+        "любовь",
+        "людям",
+        "мама",
+        "меня",
+        "меня зовут джо",
+        "миссури",
+        "мне",
+        "мне очень нравится",
+        "много",
+        "моей",
+        "можно",
+        "можно ещё?",
+        "можно чаю?",
+        "молодых",
+        "муж",
+        "мы",
+        "мы едим и смотрим телевизор.",
+        "мы познакомились …",
+        "на",
+        "на выходных",
+        "на работе я делаю много разных вещей.",
+        "надо",
+        "наелся",
+        "начинаю",
+        "не",
+        "немного",
+        "нет",
+        "нет, спасибо",
+        "нормально",
+        "ночи",
+        "нравится",
+        "обедаю",
+        "облачно",
+        "обычно",
+        "обычно я встаю рано утром.",
+        "обычно я не завтракаю.",
+        "обычно я отдыхаю вечером.",
+        "обычно я работаю семь часов.",
+        "она",
+        "она говорит, что я должен готовить чаще.",
+        "отдыхаю",
+        "отлично",
+        "очень",
+        "очень вкусно!",
+        "очень приятно",
+        "папа",
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "по",
+        "повторите",
+        "повторите, пожалуйста",
+        "пожалуйста",
+        "познакомились",
+        "познакомиться",
+        "помедленнее",
+        "помедленнее, пожалуйста",
+        "понедельник",
+        "понимаю",
+        "понятно",
+        "после",
+        "после работы мы ужинаем.",
+        "после этого я прихожу домой.",
+        "после я готовлю кофе для моей жены.",
+        "представиться",
+        "пригласили",
+        "приняли",
+        "прихожу",
+        "приятно",
+        "приятно познакомиться",
+        "приятного",
+        "приятного аппетита!",
+        "проблемы",
+        "простите",
+        "пятница",
+        "работал",
+        "работать",
+        "работаю",
+        "работе",
+        "работы",
+        "рад",
+        "рад познакомиться",
+        "разных",
+        "разрешите",
+        "разрешите представиться",
+        "рано",
+        "решать",
+        "родителей",
+        "родители",
+        "русски",
+        "русский",
+        "рюмка",
+        "свидания",
+        "сегодня",
+        "сегодня облачно.",
+        "сегодня солнечно.",
+        "сегодня тепло.",
+        "сегодня холодно.",
+        "сегодня я работал четыре часа.",
+        "семь",
+        "семью",
+        "семья",
+        "сестра",
+        "сестра жены",
+        "сказать",
+        "смотрим",
+        "снег",
+        "солнечно",
+        "спасибо",
+        "спасибо большое",
+        "спасибо, было очень вкусно",
+        "спасибо, не надо",
+        "спасибо, что пригласили",
+        "спасибо, что приняли",
+        "спокойной",
+        "спокойной ночи",
+        "среда",
+        "суббота",
+        "суд",
+        "сын",
+        "телевизор",
+        "тепло",
+        "тесть",
+        "тост",
+        "тёща",
+        "у",
+        "у меня есть время до десяти.",
+        "ужинаем",
+        "ужинаю",
+        "утра",
+        "утро",
+        "утром",
+        "утром я часто играю на гитаре.",
+        "учу",
+        "хлеб",
+        "хожу",
+        "хозяев",
+        "хозяйку",
+        "холодно",
+        "хорошо",
+        "хорошо, спасибо",
+        "хочу",
+        "часа",
+        "часов",
+        "часто",
+        "часто я хожу в суд.",
+        "чаще",
+        "чаю",
+        "четверг",
+        "четыре",
+        "что",
+        "штата",
+        "шурин",
+        "это",
+        "этого",
+        "юрист",
+        "я",
+        "я ещё учу русский",
+        "я живу в америке",
+        "я из америки",
+        "я из штата миссури",
+        "я люблю вашу дочь",
+        "я люблю рано вставать.",
+        "я наелся",
+        "я начинаю работать в десять утра.",
+        "я не понимаю",
+        "я немного говорю по-русски",
+        "я обедаю днём.",
+        "я понимаю",
+        "я работаю утром и вечером.",
+        "я ужинаю вечером.",
+        "я хочу сказать тост за …",
+        "я часто звоню людям.",
+        "я юрист"
+      ],
+      "passive_vocab": [
+        "блины",
+        "борщ",
+        "будете",
+        "будете …?",
+        "вам",
+        "вам нравится …?",
+        "водка",
+        "вы",
+        "вы говорите по-русски?",
+        "говорите",
+        "дела",
+        "делал",
+        "день",
+        "ещё",
+        "как",
+        "как вам россия?",
+        "как вы познакомились?",
+        "как дела?",
+        "как там на улице?",
+        "какая",
+        "какая сегодня погода?",
+        "какой",
+        "какой сегодня день недели?",
+        "кем",
+        "кем вы работаете?",
+        "когда",
+        "когда вы обедаете?",
+        "когда вы отдыхаете?",
+        "когда вы работаете?",
+        "когда вы ужинаете?",
+        "на",
+        "недели",
+        "нравится",
+        "обедаете",
+        "оливье",
+        "отдыхаете",
+        "откуда",
+        "откуда вы?",
+        "пельмени",
+        "по",
+        "погода",
+        "познакомились",
+        "работаете",
+        "россия",
+        "русски",
+        "сегодня",
+        "там",
+        "ты",
+        "ужинаете",
+        "улице",
+        "чай",
+        "что",
+        "что ты сегодня делал?"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "discourse:politeness",
+        "grammar:formal_question",
+        "grammar:present_first_person",
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "lexical:days_of_week",
+        "lexical:kinship_terms",
+        "morphology:gendered_short_form",
+        "phrase:calendar_question",
+        "phrase:compliment_food",
+        "phrase:family_affection",
+        "phrase:food_offer",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:host_question",
+        "phrase:introduction",
+        "phrase:personal_origin",
+        "phrase:polite_decline",
+        "phrase:repair",
+        "phrase:routine_answer",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative",
+        "phrase:weather_answer",
+        "phrase:work_identity",
+        "phrase:yes_no",
+        "register:formal_you",
+        "register:name_patronymic",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "gendered_form",
+        "register",
+        "stress"
+      ],
+      "correction_policy": [
+        "Minor error: recast briefly and continue the role-play.",
+        "Repeated error: give one short rule, then return to Russian practice.",
+        "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
+        "Communication-breaking error: clarify in English, provide the verified model, then retry."
+      ],
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: My day mini-story — Tell a short morning-work-evening story using the original guide's Мой день material.\nCurriculum boundary: Lesson 9 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Обычно я встаю рано утром. — Usually I get up early in the morning.\n- Я люблю рано вставать. — I like to get up early.\n- После этого я прихожу домой. — After that I come home.\n- Утром я часто играю на гитаре. — In the morning I often play guitar.\n- После я готовлю кофе для моей жены. — Afterward I make coffee for my wife.\n- Обычно я не завтракаю. — Usually I don't eat breakfast.\n- В десять я начинаю решать проблемы клиентов. — At ten I start solving clients' problems.\n- На работе я делаю много разных вещей. — At work I do many different things.\n- Я часто звоню людям. — I often call people.\n- Часто я хожу в суд. — I often go to court.\n- После работы мы ужинаем. — After work we have dinner.\n- Она говорит, что я должен готовить чаще. — She says that I should cook more often.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
       "id": "tutor_work_business_checkin",
@@ -63221,6 +67630,18 @@ window.CONTENT_DATA = {
         "dail015",
         "dail016",
         "dail017",
+        "dail018",
+        "dail019",
+        "dail020",
+        "dail021",
+        "dail022",
+        "dail023",
+        "dail024",
+        "dail025",
+        "dail026",
+        "dail027",
+        "dail028",
+        "dail029",
         "work001",
         "work002",
         "work003",
@@ -63251,21 +67672,29 @@ window.CONTENT_DATA = {
         "будет",
         "было",
         "в",
+        "в десять я начинаю решать проблемы клиентов.",
         "ваше",
         "вашу",
         "вечер",
         "вечером",
+        "вещей",
         "вкусно",
         "вместе",
         "воскресенье",
         "время",
+        "вставать",
+        "встаю",
         "встречу",
         "вторник",
         "вчера",
         "вчера было солнечно.",
         "выпьем",
         "выходных",
+        "гитаре",
+        "говорит",
         "говорю",
+        "готовить",
+        "готовлю",
         "да",
         "да, немного",
         "да, у меня много дел.",
@@ -63274,11 +67703,13 @@ window.CONTENT_DATA = {
         "давайте выпьем за это!",
         "дедушка",
         "дел",
+        "делаю",
         "день",
         "десяти",
         "десять",
         "дети",
         "джо",
+        "для",
         "дна",
         "днём",
         "до",
@@ -63294,6 +67725,8 @@ window.CONTENT_DATA = {
         "добрый день.",
         "довольны",
         "дождь",
+        "должен",
+        "домой",
         "дочь",
         "едим",
         "есть",
@@ -63314,8 +67747,10 @@ window.CONTENT_DATA = {
         "за хозяйку!",
         "завтра",
         "завтра будет тепло.",
+        "завтракаю",
         "занят",
         "звонил",
+        "звоню",
         "здоровы",
         "здоровье",
         "здравствуйте",
@@ -63323,6 +67758,7 @@ window.CONTENT_DATA = {
         "зовут",
         "зять",
         "и",
+        "играю",
         "идёт",
         "идёт дождь.",
         "идёт снег.",
@@ -63337,8 +67773,10 @@ window.CONTENT_DATA = {
         "клиентом",
         "компания",
         "компьютере",
+        "кофе",
         "люблю",
         "любовь",
+        "людям",
         "мама",
         "меня",
         "меня зовут джо",
@@ -63347,6 +67785,7 @@ window.CONTENT_DATA = {
         "мне очень нравится",
         "много",
         "мной",
+        "моей",
         "можно",
         "можно ещё?",
         "можно чаю?",
@@ -63359,6 +67798,7 @@ window.CONTENT_DATA = {
         "мы работаем вместе.",
         "на",
         "на выходных",
+        "на работе я делаю много разных вещей.",
         "надо",
         "наелся",
         "начинаю",
@@ -63372,8 +67812,12 @@ window.CONTENT_DATA = {
         "обедаю",
         "облачно",
         "обычно",
+        "обычно я встаю рано утром.",
+        "обычно я не завтракаю.",
         "обычно я отдыхаю вечером.",
         "обычно я работаю семь часов.",
+        "она",
+        "она говорит, что я должен готовить чаще.",
         "отдыхаю",
         "отлично",
         "очень",
@@ -63393,13 +67837,19 @@ window.CONTENT_DATA = {
         "понедельник",
         "понимаю",
         "понятно",
+        "после",
+        "после работы мы ужинаем.",
+        "после этого я прихожу домой.",
+        "после я готовлю кофе для моей жены.",
         "представиться",
         "пригласили",
         "приняли",
+        "прихожу",
         "приятно",
         "приятно познакомиться",
         "приятного",
         "приятного аппетита!",
+        "проблемы",
         "простите",
         "пятница",
         "работаем",
@@ -63407,12 +67857,16 @@ window.CONTENT_DATA = {
         "работал",
         "работать",
         "работаю",
+        "работе",
         "работы",
         "рад",
         "рад познакомиться",
+        "разных",
         "разрешите",
         "разрешите представиться",
+        "рано",
         "результатом",
+        "решать",
         "родителей",
         "родители",
         "русски",
@@ -63449,6 +67903,7 @@ window.CONTENT_DATA = {
         "спокойной ночи",
         "среда",
         "суббота",
+        "суд",
         "суде",
         "счастлив",
         "сын",
@@ -63461,12 +67916,15 @@ window.CONTENT_DATA = {
         "у меня есть время до десяти.",
         "у меня много работы.",
         "у меня своя компания.",
+        "ужинаем",
         "ужинаю",
         "утра",
         "утро",
         "утром",
+        "утром я часто играю на гитаре.",
         "учу",
         "хлеб",
+        "хожу",
         "хозяев",
         "хозяйку",
         "холодно",
@@ -63476,6 +67934,9 @@ window.CONTENT_DATA = {
         "хочу",
         "часа",
         "часов",
+        "часто",
+        "часто я хожу в суд.",
+        "чаще",
         "чаю",
         "четверг",
         "четыре",
@@ -63483,6 +67944,7 @@ window.CONTENT_DATA = {
         "штата",
         "шурин",
         "это",
+        "этого",
         "юрист",
         "я",
         "я ещё учу русский",
@@ -63491,6 +67953,7 @@ window.CONTENT_DATA = {
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
+        "я люблю рано вставать.",
         "я наелся",
         "я начинаю работать в десять утра.",
         "я не понимаю",
@@ -63504,6 +67967,7 @@ window.CONTENT_DATA = {
         "я счастлив работать на себя.",
         "я ужинаю вечером.",
         "я хочу сказать тост за …",
+        "я часто звоню людям.",
         "я юрист"
       ],
       "passive_vocab": [
@@ -63858,6 +68322,18 @@ window.CONTENT_DATA = {
         "dail015",
         "dail016",
         "dail017",
+        "dail018",
+        "dail019",
+        "dail020",
+        "dail021",
+        "dail022",
+        "dail023",
+        "dail024",
+        "dail025",
+        "dail026",
+        "dail027",
+        "dail028",
+        "dail029",
         "work001",
         "work002",
         "work003",
@@ -63920,22 +68396,30 @@ window.CONTENT_DATA = {
         "был",
         "было",
         "в",
+        "в десять я начинаю решать проблемы клиентов.",
         "ваше",
         "вашу",
         "вечер",
         "вечером",
+        "вещей",
         "вкусно",
         "вместе",
         "воскресенье",
         "время",
         "всей",
+        "вставать",
+        "встаю",
         "встречу",
         "вторник",
         "вчера",
         "вчера было солнечно.",
         "выпьем",
         "выходных",
+        "гитаре",
+        "говорит",
         "говорю",
+        "готовить",
+        "готовлю",
         "гулять",
         "да",
         "да, немного",
@@ -63945,11 +68429,13 @@ window.CONTENT_DATA = {
         "давайте выпьем за это!",
         "дедушка",
         "дел",
+        "делаю",
         "день",
         "десяти",
         "десять",
         "дети",
         "джо",
+        "для",
         "дна",
         "дней",
         "днём",
@@ -63966,7 +68452,9 @@ window.CONTENT_DATA = {
         "добрый день.",
         "довольны",
         "дождь",
+        "должен",
         "дома",
+        "домой",
         "дочь",
         "едим",
         "есть",
@@ -63987,8 +68475,10 @@ window.CONTENT_DATA = {
         "за хозяйку!",
         "завтра",
         "завтра будет тепло.",
+        "завтракаю",
         "занят",
         "звонил",
+        "звоню",
         "здоровы",
         "здоровье",
         "здравствуйте",
@@ -63996,6 +68486,7 @@ window.CONTENT_DATA = {
         "зовут",
         "зять",
         "и",
+        "играю",
         "идёт",
         "идёт дождь.",
         "идёт снег.",
@@ -64012,9 +68503,11 @@ window.CONTENT_DATA = {
         "клиентом",
         "компания",
         "компьютере",
+        "кофе",
         "лыжах",
         "люблю",
         "любовь",
+        "людям",
         "мама",
         "меня",
         "меня зовут джо",
@@ -64023,6 +68516,7 @@ window.CONTENT_DATA = {
         "мне очень нравится",
         "много",
         "мной",
+        "моей",
         "можно",
         "можно ещё?",
         "можно чаю?",
@@ -64040,6 +68534,7 @@ window.CONTENT_DATA = {
         "на",
         "на выходных",
         "на день благодарения мы ужинали всей семьёй.",
+        "на работе я делаю много разных вещей.",
         "на рождество мы хотим полететь в орегон.",
         "надо",
         "наелся",
@@ -64054,8 +68549,12 @@ window.CONTENT_DATA = {
         "обедаю",
         "облачно",
         "обычно",
+        "обычно я встаю рано утром.",
+        "обычно я не завтракаю.",
         "обычно я отдыхаю вечером.",
         "обычно я работаю семь часов.",
+        "она",
+        "она говорит, что я должен готовить чаще.",
         "орегон",
         "орегоне",
         "отдыхать",
@@ -64080,13 +68579,19 @@ window.CONTENT_DATA = {
         "понедельник",
         "понимаю",
         "понятно",
+        "после",
+        "после работы мы ужинаем.",
+        "после этого я прихожу домой.",
+        "после я готовлю кофе для моей жены.",
         "представиться",
         "пригласили",
         "приняли",
+        "прихожу",
         "приятно",
         "приятно познакомиться",
         "приятного",
         "приятного аппетита!",
+        "проблемы",
         "простите",
         "пятница",
         "пять",
@@ -64095,12 +68600,16 @@ window.CONTENT_DATA = {
         "работал",
         "работать",
         "работаю",
+        "работе",
         "работы",
         "рад",
         "рад познакомиться",
+        "разных",
         "разрешите",
         "разрешите представиться",
+        "рано",
         "результатом",
+        "решать",
         "родителей",
         "родители",
         "рождество",
@@ -64142,6 +68651,7 @@ window.CONTENT_DATA = {
         "спокойной ночи",
         "среда",
         "суббота",
+        "суд",
         "суде",
         "счастлив",
         "сын",
@@ -64155,13 +68665,16 @@ window.CONTENT_DATA = {
         "у меня много работы.",
         "у меня своя компания.",
         "ужин",
+        "ужинаем",
         "ужинали",
         "ужинаю",
         "утра",
         "утро",
         "утром",
+        "утром я часто играю на гитаре.",
         "учу",
         "хлеб",
+        "хожу",
         "хозяев",
         "хозяйку",
         "холодно",
@@ -64172,6 +68685,9 @@ window.CONTENT_DATA = {
         "хочу",
         "часа",
         "часов",
+        "часто",
+        "часто я хожу в суд.",
+        "чаще",
         "чаю",
         "четверг",
         "четыре",
@@ -64180,6 +68696,7 @@ window.CONTENT_DATA = {
         "шурин",
         "это",
         "это был большой ужин.",
+        "этого",
         "юрист",
         "я",
         "я ещё учу русский",
@@ -64188,6 +68705,7 @@ window.CONTENT_DATA = {
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
+        "я люблю рано вставать.",
         "я наелся",
         "я начинаю работать в десять утра.",
         "я не понимаю",
@@ -64201,6 +68719,7 @@ window.CONTENT_DATA = {
         "я счастлив работать на себя.",
         "я ужинаю вечером.",
         "я хочу сказать тост за …",
+        "я часто звоню людям.",
         "я юрист"
       ],
       "passive_vocab": [
@@ -64625,6 +69144,18 @@ window.CONTENT_DATA = {
         "dail015",
         "dail016",
         "dail017",
+        "dail018",
+        "dail019",
+        "dail020",
+        "dail021",
+        "dail022",
+        "dail023",
+        "dail024",
+        "dail025",
+        "dail026",
+        "dail027",
+        "dail028",
+        "dail029",
         "work001",
         "work002",
         "work003",
@@ -64719,11 +69250,13 @@ window.CONTENT_DATA = {
         "был",
         "было",
         "в",
+        "в десять я начинаю решать проблемы клиентов.",
         "в номере есть интернет?",
         "ваше",
         "вашу",
         "вечер",
         "вечером",
+        "вещей",
         "вкусно",
         "вместе",
         "воскресенье",
@@ -64731,6 +69264,8 @@ window.CONTENT_DATA = {
         "вот мой паспорт.",
         "время",
         "всей",
+        "вставать",
+        "встаю",
         "встречу",
         "вторник",
         "вчера",
@@ -64739,8 +69274,12 @@ window.CONTENT_DATA = {
         "выходных",
         "где",
         "где лифт?",
+        "гитаре",
+        "говорит",
         "говорю",
         "город",
+        "готовить",
+        "готовлю",
         "гулять",
         "да",
         "да, немного",
@@ -64750,11 +69289,13 @@ window.CONTENT_DATA = {
         "давайте выпьем за это!",
         "дедушка",
         "дел",
+        "делаю",
         "день",
         "десяти",
         "десять",
         "дети",
         "джо",
+        "для",
         "дна",
         "дней",
         "днём",
@@ -64771,7 +69312,9 @@ window.CONTENT_DATA = {
         "добрый день.",
         "довольны",
         "дождь",
+        "должен",
         "дома",
+        "домой",
         "дочь",
         "едем",
         "едим",
@@ -64793,9 +69336,11 @@ window.CONTENT_DATA = {
         "за хозяйку!",
         "завтра",
         "завтра будет тепло.",
+        "завтракаю",
         "занят",
         "зарегистрироваться",
         "звонил",
+        "звоню",
         "здесь",
         "здоровы",
         "здоровье",
@@ -64804,6 +69349,7 @@ window.CONTENT_DATA = {
         "зовут",
         "зять",
         "и",
+        "играю",
         "идёт",
         "идёт дождь.",
         "идёт снег.",
@@ -64823,12 +69369,14 @@ window.CONTENT_DATA = {
         "ключ, пожалуйста.",
         "компания",
         "компьютере",
+        "кофе",
         "красивое",
         "красивый",
         "лифт",
         "лыжах",
         "люблю",
         "любовь",
+        "людям",
         "мама",
         "меня",
         "меня зовут джо",
@@ -64837,6 +69385,7 @@ window.CONTENT_DATA = {
         "мне очень нравится",
         "много",
         "мной",
+        "моей",
         "можно",
         "можно ещё?",
         "можно такси?",
@@ -64865,6 +69414,7 @@ window.CONTENT_DATA = {
         "на",
         "на выходных",
         "на день благодарения мы ужинали всей семьёй.",
+        "на работе я делаю много разных вещей.",
         "на рождество мы хотим полететь в орегон.",
         "надо",
         "наелся",
@@ -64880,8 +69430,12 @@ window.CONTENT_DATA = {
         "обедаю",
         "облачно",
         "обычно",
+        "обычно я встаю рано утром.",
+        "обычно я не завтракаю.",
         "обычно я отдыхаю вечером.",
         "обычно я работаю семь часов.",
+        "она",
+        "она говорит, что я должен готовить чаще.",
         "орегон",
         "орегоне",
         "отдыхаем",
@@ -64909,14 +69463,20 @@ window.CONTENT_DATA = {
         "понедельник",
         "понимаю",
         "понятно",
+        "после",
+        "после работы мы ужинаем.",
+        "после этого я прихожу домой.",
+        "после я готовлю кофе для моей жены.",
         "поужинать",
         "представиться",
         "пригласили",
         "приняли",
+        "прихожу",
         "приятно",
         "приятно познакомиться",
         "приятного",
         "приятного аппетита!",
+        "проблемы",
         "простите",
         "пятница",
         "пять",
@@ -64925,12 +69485,16 @@ window.CONTENT_DATA = {
         "работал",
         "работать",
         "работаю",
+        "работе",
         "работы",
         "рад",
         "рад познакомиться",
+        "разных",
         "разрешите",
         "разрешите представиться",
+        "рано",
         "результатом",
+        "решать",
         "родителей",
         "родители",
         "рождество",
@@ -64975,6 +69539,7 @@ window.CONTENT_DATA = {
         "старый",
         "старый город очень красивый.",
         "суббота",
+        "суд",
         "суде",
         "счастлив",
         "счёт",
@@ -64992,13 +69557,16 @@ window.CONTENT_DATA = {
         "у меня много работы.",
         "у меня своя компания.",
         "ужин",
+        "ужинаем",
         "ужинали",
         "ужинаю",
         "утра",
         "утро",
         "утром",
+        "утром я часто играю на гитаре.",
         "учу",
         "хлеб",
+        "хожу",
         "хозяев",
         "хозяйку",
         "холодно",
@@ -65009,6 +69577,9 @@ window.CONTENT_DATA = {
         "хочу",
         "часа",
         "часов",
+        "часто",
+        "часто я хожу в суд.",
+        "чаще",
         "чаю",
         "черногории",
         "четверг",
@@ -65018,6 +69589,7 @@ window.CONTENT_DATA = {
         "шурин",
         "это",
         "это был большой ужин.",
+        "этого",
         "юрист",
         "я",
         "я ещё учу русский",
@@ -65026,6 +69598,7 @@ window.CONTENT_DATA = {
         "я из америки",
         "я из штата миссури",
         "я люблю вашу дочь",
+        "я люблю рано вставать.",
         "я наелся",
         "я начинаю работать в десять утра.",
         "я не понимаю",
@@ -65042,6 +69615,7 @@ window.CONTENT_DATA = {
         "я хочу погулять у моря.",
         "я хочу сдать багаж.",
         "я хочу сказать тост за …",
+        "я часто звоню людям.",
         "я юрист"
       ],
       "passive_vocab": [
@@ -66742,6 +71316,10 @@ window.CONTENT_DATA = {
       "label": "answers daily-routine prompts",
       "error_type": "forgot_phrase"
     },
+    "tells_daily_story": {
+      "label": "tells a short daily-routine story",
+      "error_type": "forgot_phrase"
+    },
     "uses_day_parts": {
       "label": "uses morning/day/evening words",
       "error_type": "case_or_inflection"
@@ -67293,6 +71871,33 @@ window.CONTENT_DATA = {
       ],
       "success_criteria": [
         "answers_daily_routine",
+        "uses_day_parts",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9
+    },
+    {
+      "id": "daily_routine_story",
+      "setting": "My day mini-story",
+      "goal": "Tell a short morning-work-evening story using the original guide's Мой день material.",
+      "required_items": [
+        "dail018",
+        "dail019",
+        "dail020",
+        "dail021",
+        "dail022",
+        "dail023",
+        "dail024",
+        "dail025",
+        "dail026",
+        "dail027",
+        "dail028",
+        "dail029"
+      ],
+      "success_criteria": [
+        "tells_daily_story",
         "uses_day_parts",
         "stays_in_russian",
         "uses_repair_lines"

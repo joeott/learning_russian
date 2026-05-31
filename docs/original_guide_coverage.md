@@ -6,7 +6,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 ## Current generated course
 
 - Source of truth: `scripts/build_content.py`
-- Generated content: 218 items across 14 modules, plus 20 generated conjugation drills
+- Generated content: 230 items across 14 modules, plus 20 generated conjugation drills
 - Strongest coverage today:
   - greetings and first contact
   - politeness and repair phrases
@@ -15,7 +15,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
   - food/table compliments and requests
   - common listening questions
   - calendar and weather small talk
-  - daily-routine and time-of-day answers
+  - daily-routine, time-of-day answers, and a short `Мой день` story mode
   - lawyer/work/client small talk
   - legal vocabulary recognition for deeper work questions
   - holiday, celebration, and family-plan recognition
@@ -31,7 +31,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 | Calendar, days, dates | `source/ekaterina_guide.md:303-317`, `source/ekaterina_guide.md:668-679`, `source/ekaterina_guide.md:820-850` | Covered by `calendar_weather` basics | Later: add dates/months only if they support actual travel/family prompts. |
 | Weather and outside conditions | `source/ekaterina_guide.md:840-850`, `source/ekaterina_guide.md:897-910`, `source/ekaterina_guide.md:1799-1803` | Covered by `calendar_weather` basics | Later: add adjective-agreement contrast only if it improves spoken answers. |
 | Budva/Montenegro trip logistics | `source/ekaterina_guide.md:1461-1467`, `source/ekaterina_guide.md:1501`, `source/ekaterina_guide.md:1969`, `source/ekaterina_guide.md:2031-2043`, `source/research/budva_travel.md` | Covered by `travel_budva` basics, including airport arrival and hotel check-in/out variants | Later: add only Kadriya-confirmed local wording or transport-specific variants. |
-| Daily routine and time of day | `source/ekaterina_guide.md:1113-1120`, `source/ekaterina_guide.md:1198-1212`, `source/ekaterina_guide.md:1366-1368`, `source/ekaterina_guide.md:1378-1399`, `source/research/daily_routine.md` | Covered by `daily_routine` basics | Later: add fuller “my day” storytelling only if short-answer drills are already automatic. |
+| Daily routine and time of day | `source/ekaterina_guide.md:1113-1120`, `source/ekaterina_guide.md:1198-1212`, `source/ekaterina_guide.md:1366-1368`, `source/ekaterina_guide.md:1378-1399`, `source/research/daily_routine.md` | Covered by `daily_routine` basics plus a short original-guide `Мой день` story mode | Later: tune the personal cooking joke only after rehearsal with Kadriya. |
 | Work, clients, business | `source/ekaterina_guide.md:820-839`, `source/ekaterina_guide.md:1028-1042`, `source/ekaterina_guide.md:1327-1334`, `source/ekaterina_guide.md:1679-1701`, `source/ekaterina_guide.md:1782-1803`, `source/ekaterina_guide.md:1829-1833`, `source/ekaterina_guide.md:1994-2012`, `source/ekaterina_guide.md:2516-2526`, `source/research/work_business.md`, `source/research/legal_recognition.md` | Covered by `smalltalk`, `work_business`, and recognition-only `legal_recognition` basics | Later: add production legal phrases only if Kadriya confirms one is worth the risk. |
 | Holidays and celebrations | `source/ekaterina_guide.md:889-895`, `source/ekaterina_guide.md:909-927`, `source/ekaterina_guide.md:981-989`, `source/ekaterina_guide.md:1017-1025`, `source/ekaterina_guide.md:1404-1405`, `source/ekaterina_guide.md:2234-2244`, `source/research/celebrations.md` | Covered by `celebrations` basics plus the existing toast module | Later: add recognition-only cultural extras only after mission-critical production phrases are automatic. |
 | Idioms and proverbs | `source/ekaterina_guide.md:582-591`, `source/ekaterina_guide.md:864-881` | Missing | Keep as recognition-only bonus unless Kadriya verifies high value for the visit. |
@@ -41,9 +41,9 @@ iterations can close the real beginner-course gaps without inventing Russian.
 
 ## Priority order for remaining build-out
 
-1. Fuller `daily_routine` story mode if the short answers are already automatic.
-2. Broader verb-pronoun drills only after `я` and formal `вы` are automatic.
-3. Recognition-only bonus deck: idioms, proverbs, and legal jokes after the mission-critical modules are green.
+1. Broader verb-pronoun drills only after `я` and formal `вы` are automatic.
+2. Recognition-only bonus deck: idioms, proverbs, and legal jokes after the mission-critical modules are green.
+3. Family health/baby-readiness questions only if Kadriya confirms they are welcome.
 
 ## Rules for adding each gap
 
