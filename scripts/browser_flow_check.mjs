@@ -130,6 +130,10 @@ async function checkStage(page, baseUrl, stageKey, interact) {
   }
 }
 
+async function checkRepairFocus(page) {
+  await page.waitForFunction(() => document.body.innerText.toLowerCase().includes("repair focus:"));
+}
+
 export async function runFlowCheck(opts) {
   const { chromium } = await importPlaywright();
   await fs.mkdir(opts.out, { recursive: true });
@@ -174,12 +178,14 @@ export async function runFlowCheck(opts) {
     await checkStage(page, opts.url, "cloze", async () => {
       await page.locator("#clozeIn").fill("x");
       await page.getByRole("button", { name: /^Check$/i }).click();
+      await checkRepairFocus(page);
     });
     completed.push("cloze");
 
     await checkStage(page, opts.url, "dictation", async () => {
       await page.locator("#dictIn").fill("x");
       await page.getByRole("button", { name: /^Check$/i }).click();
+      await checkRepairFocus(page);
     });
     completed.push("dictation");
 
@@ -198,6 +204,7 @@ export async function runFlowCheck(opts) {
       await page.getByRole("button", { name: /Hide Russian/i }).click();
       await page.locator("#btRu").fill("x");
       await page.getByRole("button", { name: /^Check$/i }).click();
+      await checkRepairFocus(page);
     });
     completed.push("backtranslate");
 
@@ -209,6 +216,7 @@ export async function runFlowCheck(opts) {
     await checkStage(page, opts.url, "produce", async () => {
       await page.locator("#prodIn").fill("x");
       await page.getByRole("button", { name: /^Check$/i }).click();
+      await checkRepairFocus(page);
     });
     completed.push("produce");
 

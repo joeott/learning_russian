@@ -342,6 +342,12 @@ body {
 .feedback.good { background: rgba(63,125,78,.16); }
 .feedback.bad { background: rgba(181,31,35,.14); }
 .feedback .fb-ru { font-family: var(--font-serif); font-weight:700; font-size: 1.5rem; }
+.repairfocus {
+  display:grid; gap: 4px; margin-top: 12px; padding: 10px 12px;
+  border-left: 3px solid var(--red); background: rgba(243,233,210,.54);
+}
+.repairfocus strong { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.06em; font-size:.74rem; color: var(--red); }
+.repairfocus span { color: var(--ink); font-size:.92rem; }
 .selfrate { display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px; }
 .selfrate .btn { flex: 0 1 auto; }
 .rpcriteria {
