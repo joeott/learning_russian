@@ -75,6 +75,18 @@ def validate_content(data: dict) -> list[str]:
             )
         if not step.get("label"):
             fail(errors, f"listening_ladder {step.get('id')}: label is required")
+    roleplay_criteria = data.get("roleplay_criteria", {})
+    if not roleplay_criteria:
+        fail(errors, "roleplay_criteria is required")
+    error_type_ids = {error.get("id") for error in data.get("error_types", [])}
+    for criterion_id, criterion in roleplay_criteria.items():
+        if not criterion.get("label"):
+            fail(errors, f"roleplay_criteria {criterion_id}: label is required")
+        if criterion.get("error_type") not in error_type_ids:
+            fail(
+                errors,
+                f"roleplay_criteria {criterion_id}: unknown error_type {criterion.get('error_type')}",
+            )
 
     modules = {m.get("id") for m in data.get("modules", [])}
     curriculum = data.get("curriculum", {})
@@ -402,6 +414,12 @@ def validate_content(data: dict) -> list[str]:
                 fail(
                     errors,
                     f"scenario {scenario.get('id')}: item {item_id} outside lesson boundary",
+                )
+        for criterion_id in scenario.get("success_criteria", []):
+            if criterion_id not in roleplay_criteria:
+                fail(
+                    errors,
+                    f"scenario {scenario.get('id')}: unknown success criterion {criterion_id}",
                 )
     scenario_by_id = {
         scenario.get("id"): scenario for scenario in data.get("scenarios", [])

@@ -27,6 +27,7 @@
   const ERROR_BY_ID = Object.fromEntries(ERROR_TYPES.map(e => [e.id, e]));
   const LISTENING_LADDER = DATA.listening_ladder || [];
   const LADDER_BY_ID = Object.fromEntries(LISTENING_LADDER.map(step => [step.id, step]));
+  const ROLEPLAY_CRITERIA = DATA.roleplay_criteria || {};
   const SCENARIOS = DATA.scenarios || [];
   const TUTOR_BY_SCENARIO = Object.fromEntries(TUTOR_CARDS.map(c => [c.scenario_id, c]));
   const STAGE_KEYS = ["recognition", "recall", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"];
@@ -227,9 +228,16 @@
       listenAccuracy: stageAccuracy("listen"),
       productionAccuracy: stageAccuracy("produce"),
       roleplayPass: stageAccuracy("roleplay"),
+      roleplayMisses: roleplayMisses(),
       dictationAccuracy: stageAccuracy("dictation"),
       contrastAccuracy: stageAccuracy("contrast"),
     };
+  }
+  function roleplayMisses() {
+    return stagePool("roleplay").reduce((n, it) => {
+      const st = stageState(it.id, "roleplay");
+      return n + (st && st.last_roleplay_missed ? st.last_roleplay_missed.length : 0);
+    }, 0);
   }
   function repairStageFor(errorType) {
     if (errorType === "listening_misparse") return "dictation";
@@ -289,7 +297,10 @@
     return s ? TUTOR_BY_SCENARIO[s.id] : null;
   }
   function criterionLabel(id) {
-    return CRITERIA_LABELS[id] || id.replace(/_/g, " ");
+    return (ROLEPLAY_CRITERIA[id] && ROLEPLAY_CRITERIA[id].label) || CRITERIA_LABELS[id] || id.replace(/_/g, " ");
+  }
+  function criterionErrorType(id) {
+    return (ROLEPLAY_CRITERIA[id] && ROLEPLAY_CRITERIA[id].error_type) || "forgot_phrase";
   }
   function scenarioCard(it) {
     const s = scenarioForItem(it.id);
@@ -481,6 +492,7 @@
           <div><strong>${a.productionAccuracy}<small>%</small></strong><span>production accuracy</span></div>
           <div><strong>${a.listenAccuracy}<small>%</small></strong><span>listening accuracy</span></div>
           <div><strong>${a.roleplayPass}<small>%</small></strong><span>role-play pass rate</span></div>
+          <div><strong>${a.roleplayMisses}</strong><span>role-play missed criteria</span></div>
           <div><strong>${fragileItems().length}</strong><span>fragile high-priority phrases</span></div>
         </div>
       </div>
@@ -841,6 +853,12 @@
     if (opts.listen_ladder) {
       st.last_ladder_step = opts.listen_ladder.step;
       st.last_assistance = opts.listen_ladder.assistance;
+    }
+    if (opts.roleplay) {
+      st.last_roleplay_scenario = opts.roleplay.scenario_id || "";
+      st.last_roleplay_met = opts.roleplay.met || [];
+      st.last_roleplay_missed = opts.roleplay.missed || [];
+      st.last_roleplay_assisted = !!opts.assisted;
     }
     if (!opts.assisted) st.due_at = nextDue(st, ok);
     save();
@@ -1259,14 +1277,21 @@
     },
     revealRP(id) {
       const it = ITEMS.find(i => i.id === id);
+      const scenario = scenarioForItem(id);
+      const criteria = scenario && scenario.success_criteria ? scenario.success_criteria : [];
+      const checklist = criteria.length ? `<div class="rpcriteria">
+        <div class="rpcriteria__title">Success criteria</div>
+        ${criteria.map(c => `<label><input type="checkbox" class="rpcrit" value="${escapeHtml(c)}" checked> <span>${escapeHtml(criterionLabel(c))}</span></label>`).join("")}
+      </div>` : "";
       $("#rpReveal").innerHTML = `<div class="feedback good rise"><div class="fb-ru">${colorStress(it.ru)}</div>
         ${it.hint ? `<div class="card__hint">🔈 ${escapeHtml(it.hint)}</div>` : ""}
         <div style="margin:10px 0"><button class="iconbtn iconbtn--play" onclick="ZS.sayItem('${it.id}')">▶</button></div>
         <div style="font-family:var(--font-display);text-transform:uppercase;font-size:.78rem;letter-spacing:.06em">How did you do, out loud?</div>
+        ${checklist}
         <div class="selfrate">
-          <button class="btn btn--sm" onclick="ZS.rateRP('${id}',true,false)">😊 Nailed it</button>
-          <button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.rateRP('${id}',true,true)">Close with model</button>
-          <button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.rateRP('${id}',false,false)">😬 Needs work</button>
+          <button class="btn btn--sm" onclick="ZS.rateRP('${id}','criteria',false)">Pass selected</button>
+          <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.rateRP('${id}','criteria',true)">Close with model</button>
+          <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.rateRP('${id}','missed',false)">Needs repair</button>
         </div></div>`;
       speak(it);
     },
@@ -1306,12 +1331,33 @@
         toast("Tutor prompt selected");
       }
     },
-    rateRP(id, ok, assisted) {
+    rateRP(id, mode, assisted) {
       const it = ITEMS.find(i => i.id === id);
-      gradeItem(id, ok, quiz.stageKey, null, { assisted });
+      const scenario = scenarioForItem(id);
+      const criteria = scenario && scenario.success_criteria ? scenario.success_criteria : [];
+      const checked = new Set(Array.from(document.querySelectorAll(".rpcrit:checked")).map(el => el.value));
+      const met = mode === "missed" ? [] : criteria.filter(c => checked.has(c));
+      const missed = mode === "missed" ? criteria.slice() : criteria.filter(c => !checked.has(c));
+      const ok = mode !== "missed" && missed.length === 0;
+      const errorType = missed.length ? criterionErrorType(missed[0]) : null;
+      gradeItem(id, ok, quiz.stageKey, errorType, {
+        assisted,
+        roleplay: {
+          scenario_id: scenario ? scenario.id : "",
+          met,
+          missed,
+        },
+      });
+      missed.slice(1).forEach(c => {
+        const r = rec(id);
+        const err = criterionErrorType(c);
+        r.errors[err] = (r.errors[err] || 0) + 1;
+      });
+      save();
       quiz.answered = true;
       if (ok && !assisted) quiz.correct++;
       if (assisted) toast("Hard role-play review scheduled");
+      if (missed.length) toast("Role-play repair queued");
       ZS.nextQ();
     },
     nextQ() { quiz.i++; quiz.listenHintLevel = 0; quiz.listenStep = "no_text"; quiz.listenAssistance = 0; drawQuestion(); },

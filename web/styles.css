@@ -155,7 +155,7 @@ body {
 }
 .analyticsbox h3 { margin: 0 0 4px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .05em; }
 .analyticsbox p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
-.analyticsgrid { display:grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px; }
+.analyticsgrid { display:grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 8px; }
 .analyticsgrid div { border-left: 2px solid var(--cream-line); padding-left: 9px; }
 .analyticsgrid strong { display:block; font-family: var(--font-display); color: var(--red); font-size: 1.6rem; line-height: 1; }
 .analyticsgrid small { font-size: .82rem; }
@@ -316,6 +316,13 @@ body {
 .feedback .fb-ru { font-family: var(--font-serif); font-weight:700; font-size: 1.5rem; }
 .selfrate { display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px; }
 .selfrate .btn { flex: 0 1 auto; }
+.rpcriteria {
+  display:grid; gap: 7px; margin-top: 12px; padding: 10px 12px;
+  background: rgba(243,233,210,.45); border:1px solid var(--cream-line); border-radius: var(--radius);
+}
+.rpcriteria__title { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.07em; font-size:.7rem; color: var(--red); }
+.rpcriteria label { display:flex; align-items:center; gap: 8px; font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; font-size:.76rem; }
+.rpcriteria input { accent-color: var(--red); }
 .errorpick { display:flex; align-items:center; flex-wrap:wrap; gap: 8px; margin-top: 12px; }
 .errorpick span { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.06em; font-size:.72rem; color: var(--ink-soft); }
 .tutorbox { margin-top: 14px; }

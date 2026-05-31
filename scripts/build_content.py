@@ -114,6 +114,45 @@ LISTENING_LADDER = [
     },
 ]
 
+ROLEPLAY_CRITERIA = {
+    "uses_formal_greeting": {
+        "label": "formal greeting",
+        "error_type": "register",
+    },
+    "introduces_self": {
+        "label": "introduces self",
+        "error_type": "forgot_phrase",
+    },
+    "thanks_hosts": {
+        "label": "thanks hosts",
+        "error_type": "register",
+    },
+    "compliments_food": {
+        "label": "compliments food",
+        "error_type": "forgot_phrase",
+    },
+    "declines_politely": {
+        "label": "declines politely",
+        "error_type": "register",
+    },
+    "uses_correct_male_form": {
+        "label": "male form",
+        "error_type": "gendered_form",
+    },
+    "uses_za_toast_formula": {
+        "label": "safe toast formula",
+        "error_type": "cultural_usage",
+    },
+    "avoids_na_zdorovie_misfire": {
+        "label": "avoids false toast reply",
+        "error_type": "cultural_usage",
+    },
+    "keeps_stress_clear": {
+        "label": "clear stress",
+        "error_type": "stress",
+    },
+}
+
 CONTRAST_SETS = [
     {
         "id": "russian_toast_vs_youre_welcome",
@@ -1382,6 +1421,7 @@ def build():
         "contrast_cards": contrast_cards,
         "error_types": ERROR_TYPES,
         "listening_ladder": LISTENING_LADDER,
+        "roleplay_criteria": ROLEPLAY_CRITERIA,
         "contrast_sets": CONTRAST_SETS,
         "scenarios": scenarios,
     }

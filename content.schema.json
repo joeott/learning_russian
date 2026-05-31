@@ -183,6 +183,7 @@
     },
     "error_types": { "type": "array" },
     "listening_ladder": { "type": "array" },
+    "roleplay_criteria": { "type": "object" },
     "contrast_sets": { "type": "array" },
     "scenarios": { "type": "array" }
   }
