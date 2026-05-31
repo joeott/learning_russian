@@ -39,6 +39,9 @@ class BrowserFlowContractTests(unittest.TestCase):
             "checkRepairFocusState",
             "roleplayCriteriaMissed",
             "AVG RESPONSE TIME",
+            "REPAIR PROFILE",
+            ".repairprofile__row",
+            "repair profile did not render persisted repair-focus history",
             "repair focus:",
             'serviceWorkers: "block"',
         ):
