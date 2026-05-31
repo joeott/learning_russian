@@ -893,6 +893,41 @@ def build_cloze_cards(items: list[dict]) -> list[dict]:
     return cards
 
 
+def build_dictation_cards(items: list[dict]) -> list[dict]:
+    cards = []
+    for item in items:
+        if item["syllables"] < 2:
+            continue
+        cards.append(
+            {
+                "id": f"dict_{item['id']}_01",
+                "item_id": item["id"],
+                "module": item["module"],
+                "lesson_id": item["lesson_id"],
+                "lesson_number": item["lesson_number"],
+                "ru": item["ru"],
+                "ru_plain": item["ru_plain"],
+                "accepted_answers": [item["ru_plain"]],
+                "en": item["en"],
+                "priority": item["priority"],
+                "lexemes": item["lexemes"],
+                "structures": item["structures"],
+                "allowed_error_types": sorted(
+                    set(item["allowed_error_types"]).union(
+                        {"listening_misparse", "stress", "vowel_reduction"}
+                    )
+                ),
+                "error_types": sorted(
+                    set(item["error_types"]).union(
+                        {"listening_misparse", "stress", "vowel_reduction"}
+                    )
+                ),
+                "tags": sorted(set(item.get("tags", []) + ["dictation"])),
+            }
+        )
+    return cards
+
+
 def build():
     course = load_course(os.environ.get("ZASTOLOM_COURSE", DEFAULT_COURSE_ID))
     mod_index = {m[0]: idx for idx, m in enumerate(MODULES)}
@@ -974,6 +1009,7 @@ def build():
             enriched["lesson_number"] = lesson_number
         scenarios.append(enriched)
     cloze_cards = build_cloze_cards(items)
+    dictation_cards = build_dictation_cards(items)
     data = {
         "course": course,
         "meta": {
@@ -990,6 +1026,7 @@ def build():
         "modules": modules,
         "items": items,
         "cloze_cards": cloze_cards,
+        "dictation_cards": dictation_cards,
         "error_types": ERROR_TYPES,
         "contrast_sets": CONTRAST_SETS,
         "scenarios": scenarios,
