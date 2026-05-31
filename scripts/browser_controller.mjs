@@ -38,6 +38,7 @@ function parseArgs(argv) {
     clickTexts: [],
     waitMs: 500,
     strict: false,
+    failOnErrors: false,
   };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
@@ -49,6 +50,7 @@ function parseArgs(argv) {
     else if (a === "--click-text") args.clickTexts.push(argv[++i]);
     else if (a === "--wait-ms") args.waitMs = Number(argv[++i] || args.waitMs);
     else if (a === "--strict") args.strict = true;
+    else if (a === "--fail-on-errors") args.failOnErrors = true;
     else if (a === "--help" || a === "-h") args.help = true;
     else if (!a.startsWith("-")) args.url = a;
     else throw new Error(`Unknown option: ${a}`);
@@ -58,7 +60,7 @@ function parseArgs(argv) {
 
 function help() {
   return `Usage:
-  tools/zastolom browser [url] [--desktop|--mobile|--both] [--click-text TEXT ...] [--strict] [--out DIR]
+  tools/zastolom browser [url] [--desktop|--mobile|--both] [--click-text TEXT ...] [--strict] [--fail-on-errors] [--out DIR]
 
 Examples:
   tools/zastolom browser http://localhost:8000/web/
@@ -286,7 +288,17 @@ export async function runInspection(opts) {
     for (const viewportName of opts.viewports) {
       const page = await browser.newPage({ viewport: VIEWPORTS[viewportName] });
       const logs = [];
-      page.on("console", (msg) => logs.push({ type: msg.type(), text: msg.text() }));
+      page.on("console", (msg) => {
+        const text = msg.text();
+        const type = msg.type();
+        const normalized = String(text || "").toLowerCase();
+        const entryType = type === "error" ? "console.error" : `console.${type}`;
+        if (normalized.includes("error") || type === "error" || type === "warning") {
+          logs.push({ type: entryType, text });
+        } else if (process.env.ZASTOLOM_BROWSER_LOG_ALL === "1") {
+          logs.push({ type: entryType, text });
+        }
+      });
       page.on("pageerror", (err) => logs.push({ type: "pageerror", text: err.message }));
       page.on("requestfailed", (req) => {
         const errorText = req.failure()?.errorText || "failed";
@@ -323,6 +335,17 @@ export async function runInspection(opts) {
         const failures = steps.filter((step) => step.error).length;
         throw new Error(`browser controller strict mode failed: ${failures}/${steps.length} click steps failed`);
       }
+      if (opts.failOnErrors) {
+        const runtimeErrors = logs.some((entry) =>
+          entry.type === "pageerror" ||
+          entry.type === "requestfailed" ||
+          entry.type === "console.error" ||
+          entry.type.startsWith("console.warn")
+        );
+        if (runtimeErrors) {
+          throw new Error(`browser controller error barrier: runtime issue while running ${viewportName}`);
+        }
+      }
       results.push({ viewport: viewportName, url: opts.url, before, steps, after: steps.length ? steps[steps.length - 1].snapshot : null, logs });
       await page.close();
     }
@@ -331,6 +354,17 @@ export async function runInspection(opts) {
   }
   const reportPath = path.join(opts.out, "report.json");
   await fs.writeFile(reportPath, JSON.stringify({ generated_at: new Date().toISOString(), results }, null, 2));
+  const hasAnyRuntimeErrors = results.some((result) =>
+    result.logs.some((entry) =>
+      entry.type === "pageerror" ||
+      entry.type === "requestfailed" ||
+      entry.type === "console.error" ||
+      entry.type.startsWith("console.warn")
+    )
+  );
+  if (opts.failOnErrors && hasAnyRuntimeErrors) {
+    throw new Error(`browser controller completed with runtime errors. report: ${reportPath}`);
+  }
   return { reportPath, results };
 }
 
