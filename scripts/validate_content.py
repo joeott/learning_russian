@@ -211,6 +211,12 @@ def validate_content(data: dict) -> list[str]:
         answer = card.get("answer", "")
         if answer not in source.get("ru_plain", ""):
             fail(errors, f"{card_id}: answer is not present in source phrase")
+        if not card.get("accepted_answers"):
+            fail(errors, f"{card_id}: accepted_answers is required")
+        elif not isinstance(card.get("accepted_answers"), list):
+            fail(errors, f"{card_id}: accepted_answers must be a list")
+        elif answer not in card.get("accepted_answers", []):
+            fail(errors, f"{card_id}: accepted_answers must include answer")
         if "____" not in card.get("prompt_ru", ""):
             fail(errors, f"{card_id}: prompt_ru must contain a blank")
         if card.get("prompt_ru", "").replace("____", answer) != source.get("ru_plain"):

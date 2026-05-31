@@ -5922,6 +5922,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____ вечер",
       "answer": "Добрый",
       "accepted_answers": [
+        "До́брый",
         "Добрый"
       ],
       "en": "Good evening",
@@ -5961,6 +5962,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____ день",
       "answer": "Добрый",
       "accepted_answers": [
+        "До́брый",
         "Добрый"
       ],
       "en": "Good afternoon",
@@ -6000,6 +6002,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____ утро",
       "answer": "Доброе",
       "accepted_answers": [
+        "До́брое",
         "Доброе"
       ],
       "en": "Good morning",
@@ -6039,6 +6042,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Меня ____ Джо",
       "answer": "зовут",
       "accepted_answers": [
+        "зову́т",
         "зовут"
       ],
       "en": "My name is Joe",
@@ -6079,6 +6083,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Очень ____",
       "answer": "приятно",
       "accepted_answers": [
+        "прия́тно",
         "приятно"
       ],
       "en": "Very nice to meet you",
@@ -6118,6 +6123,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Приятно ____",
       "answer": "познакомиться",
       "accepted_answers": [
+        "познако́миться",
         "познакомиться"
       ],
       "en": "Pleased to meet you",
@@ -6157,6 +6163,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Рад ____",
       "answer": "познакомиться",
       "accepted_answers": [
+        "познако́миться",
         "познакомиться"
       ],
       "en": "Glad to meet you",
@@ -6199,6 +6206,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Разрешите ____",
       "answer": "представиться",
       "accepted_answers": [
+        "предста́виться",
         "представиться"
       ],
       "en": "Allow me to introduce myself",
@@ -6238,6 +6246,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Спасибо, что ____",
       "answer": "пригласили",
       "accepted_answers": [
+        "пригласи́ли",
         "пригласили"
       ],
       "en": "Thank you for inviting me",
@@ -6279,6 +6288,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____, что приняли",
       "answer": "Спасибо",
       "accepted_answers": [
+        "Спаси́бо",
         "Спасибо"
       ],
       "en": "Thank you for having me",
@@ -6318,6 +6328,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "До ____",
       "answer": "свидания",
       "accepted_answers": [
+        "свида́ния",
         "свидания"
       ],
       "en": "Goodbye",
@@ -6357,6 +6368,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____ ночи",
       "answer": "Спокойной",
       "accepted_answers": [
+        "Споко́йной",
         "Спокойной"
       ],
       "en": "Good night",
@@ -6396,6 +6408,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____ большое",
       "answer": "Спасибо",
       "accepted_answers": [
+        "Спаси́бо",
         "Спасибо"
       ],
       "en": "Thank you very much",
@@ -6436,6 +6449,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Нет, ____",
       "answer": "спасибо",
       "accepted_answers": [
+        "спаси́бо",
         "спасибо"
       ],
       "en": "No, thank you",
@@ -6476,6 +6490,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Я ещё учу ____",
       "answer": "русский",
       "accepted_answers": [
+        "ру́сский",
         "русский"
       ],
       "en": "I'm still learning Russian",
@@ -6519,6 +6534,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Повторите, ____",
       "answer": "пожалуйста",
       "accepted_answers": [
+        "пожа́луйста",
         "пожалуйста"
       ],
       "en": "Could you repeat, please",
@@ -6560,6 +6576,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____, пожалуйста",
       "answer": "Помедленнее",
       "accepted_answers": [
+        "Поме́дленнее",
         "Помедленнее"
       ],
       "en": "Slower, please",
@@ -6601,6 +6618,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Я не ____",
       "answer": "понимаю",
       "accepted_answers": [
+        "понима́ю",
         "понимаю"
       ],
       "en": "I don't understand",
@@ -6643,6 +6661,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Я ____",
       "answer": "понимаю",
       "accepted_answers": [
+        "понима́ю",
         "понимаю"
       ],
       "en": "I understand",
@@ -6683,6 +6702,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Как по-____ …?",
       "answer": "русски",
       "accepted_answers": [
+        "ру́сски",
         "русски"
       ],
       "en": "How do you say … in Russian?",
@@ -6724,6 +6744,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "За ____!",
       "answer": "встречу",
       "accepted_answers": [
+        "встре́чу",
         "встречу"
       ],
       "en": "To our getting together!",
@@ -6762,6 +6783,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "За ____!",
       "answer": "знакомство",
       "accepted_answers": [
+        "знако́мство",
         "знакомство"
       ],
       "en": "To getting to know each other!",
@@ -6800,6 +6822,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "За ____!",
       "answer": "родителей",
       "accepted_answers": [
+        "роди́телей",
         "родителей"
       ],
       "en": "To the parents!",
@@ -6838,6 +6861,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "За ____!",
       "answer": "хозяйку",
       "accepted_answers": [
+        "хозя́йку",
         "хозяйку"
       ],
       "en": "To the hostess! (who cooked)",
@@ -6876,6 +6900,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "За ____!",
       "answer": "хозяев",
       "accepted_answers": [
+        "хозя́ев",
         "хозяев"
       ],
       "en": "To the hosts!",
@@ -6914,6 +6939,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "За ваше ____!",
       "answer": "здоровье",
       "accepted_answers": [
+        "здоро́вье",
         "здоровье"
       ],
       "en": "To your health! (formal)",
@@ -6953,6 +6979,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "За ____!",
       "answer": "здоровье",
       "accepted_answers": [
+        "здоро́вье",
         "здоровье"
       ],
       "en": "To health!",
@@ -6991,7 +7018,8 @@ window.CONTENT_DATA = {
       "prompt_ru": "За ____!",
       "answer": "семью",
       "accepted_answers": [
-        "семью"
+        "семью",
+        "семью́"
       ],
       "en": "To the family!",
       "priority": 2,
@@ -7029,6 +7057,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "За ____!",
       "answer": "любовь",
       "accepted_answers": [
+        "любо́вь",
         "любовь"
       ],
       "en": "To love!",
@@ -7067,6 +7096,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "За ____!",
       "answer": "молодых",
       "accepted_answers": [
+        "молоды́х",
         "молодых"
       ],
       "en": "To the newlyweds!",
@@ -7105,6 +7135,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Будем ____!",
       "answer": "здоровы",
       "accepted_answers": [
+        "здоро́вы",
         "здоровы"
       ],
       "en": "Let's be healthy! (full toast)",
@@ -7143,6 +7174,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Я хочу ____ тост за …",
       "answer": "сказать",
       "accepted_answers": [
+        "сказа́ть",
         "сказать"
       ],
       "en": "I want to make a toast to …",
@@ -7184,6 +7216,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____ выпьем за это!",
       "answer": "Давайте",
       "accepted_answers": [
+        "Дава́йте",
         "Давайте"
       ],
       "en": "Let's drink to that!",
@@ -7224,7 +7257,8 @@ window.CONTENT_DATA = {
       "prompt_ru": "до ____",
       "answer": "дна",
       "accepted_answers": [
-        "дна"
+        "дна",
+        "дна́"
       ],
       "en": "'to the bottom' (drain the glass)",
       "priority": 3,
@@ -7262,7 +7296,8 @@ window.CONTENT_DATA = {
       "prompt_ru": "____ жены",
       "answer": "сестра",
       "accepted_answers": [
-        "сестра"
+        "сестра",
+        "сестра́"
       ],
       "en": "wife's sister (your sister-in-law)",
       "priority": 3,
@@ -7297,7 +7332,8 @@ window.CONTENT_DATA = {
       "prompt_ru": "Я ____ вашу дочь",
       "answer": "люблю",
       "accepted_answers": [
-        "люблю"
+        "люблю",
+        "люблю́"
       ],
       "en": "I love your daughter",
       "priority": 1,
@@ -7334,6 +7370,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____ аппетита!",
       "answer": "Приятного",
       "accepted_answers": [
+        "Прия́тного",
         "Приятного"
       ],
       "en": "Bon appétit!",
@@ -7370,6 +7407,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Очень ____!",
       "answer": "вкусно",
       "accepted_answers": [
+        "вку́сно",
         "вкусно"
       ],
       "en": "Very tasty!",
@@ -7406,6 +7444,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____, было очень вкусно",
       "answer": "Спасибо",
       "accepted_answers": [
+        "Спаси́бо",
         "Спасибо"
       ],
       "en": "Thank you, it was delicious",
@@ -7444,6 +7483,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Мне очень ____",
       "answer": "нравится",
       "accepted_answers": [
+        "нра́вится",
         "нравится"
       ],
       "en": "I really like it",
@@ -7481,6 +7521,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Я ____",
       "answer": "наелся",
       "accepted_answers": [
+        "нае́лся",
         "наелся"
       ],
       "en": "I'm full (I've eaten my fill)",
@@ -7519,6 +7560,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____ ещё?",
       "answer": "Можно",
       "accepted_answers": [
+        "Мо́жно",
         "Можно"
       ],
       "en": "May I have more?",
@@ -7555,6 +7597,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____, не надо",
       "answer": "Спасибо",
       "accepted_answers": [
+        "Спаси́бо",
         "Спасибо"
       ],
       "en": "Thanks, I'm good (no need)",
@@ -7592,6 +7635,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Передайте, ____, хлеб",
       "answer": "пожалуйста",
       "accepted_answers": [
+        "пожа́луйста",
         "пожалуйста"
       ],
       "en": "Please pass the bread",
@@ -7629,6 +7673,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____ чаю?",
       "answer": "Можно",
       "accepted_answers": [
+        "Мо́жно",
         "Можно"
       ],
       "en": "May I have some tea?",
@@ -7665,6 +7710,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Я ____",
       "answer": "юрист",
       "accepted_answers": [
+        "юри́ст",
         "юрист"
       ],
       "en": "I'm a lawyer (general — use this)",
@@ -7700,6 +7746,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Я из ____",
       "answer": "Америки",
       "accepted_answers": [
+        "Аме́рики",
         "Америки"
       ],
       "en": "I'm from America",
@@ -7736,6 +7783,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Я из штата ____",
       "answer": "Миссури",
       "accepted_answers": [
+        "Миссу́ри",
         "Миссури"
       ],
       "en": "I'm from the state of Missouri",
@@ -7773,6 +7821,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Я живу в ____",
       "answer": "Америке",
       "accepted_answers": [
+        "Аме́рике",
         "Америке"
       ],
       "en": "I live in America",
@@ -7810,6 +7859,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Мы ____ …",
       "answer": "познакомились",
       "accepted_answers": [
+        "познако́мились",
         "познакомились"
       ],
       "en": "We met …",
@@ -7845,6 +7895,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Я ____ говорю по-русски",
       "answer": "немного",
       "accepted_answers": [
+        "немно́го",
         "немного"
       ],
       "en": "I speak a little Russian",
@@ -7883,6 +7934,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Хорошо, ____",
       "answer": "спасибо",
       "accepted_answers": [
+        "спаси́бо",
         "спасибо"
       ],
       "en": "Good, thank you (answer to 'how are you')",
@@ -7918,6 +7970,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Да, ____",
       "answer": "немного",
       "accepted_answers": [
+        "немно́го",
         "немного"
       ],
       "en": "Yes, a little (answer)",
@@ -7953,7 +8006,8 @@ window.CONTENT_DATA = {
       "prompt_ru": "Как ____?",
       "answer": "дела",
       "accepted_answers": [
-        "дела"
+        "дела",
+        "дела́"
       ],
       "en": "How are you?",
       "priority": 1,
@@ -7990,6 +8044,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "____ вы?",
       "answer": "Откуда",
       "accepted_answers": [
+        "Отку́да",
         "Откуда"
       ],
       "en": "Where are you from?",
@@ -8027,6 +8082,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Кем вы ____?",
       "answer": "работаете",
       "accepted_answers": [
+        "рабо́таете",
         "работаете"
       ],
       "en": "What do you do for work?",
@@ -8065,6 +8121,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Вы ____ по-русски?",
       "answer": "говорите",
       "accepted_answers": [
+        "говори́те",
         "говорите"
       ],
       "en": "Do you speak Russian?",
@@ -8104,6 +8161,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Как вам ____?",
       "answer": "Россия",
       "accepted_answers": [
+        "Росси́я",
         "Россия"
       ],
       "en": "How do you like Russia?",
@@ -8142,6 +8200,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Как вы ____?",
       "answer": "познакомились",
       "accepted_answers": [
+        "познако́мились",
         "познакомились"
       ],
       "en": "How did you two meet?",
@@ -8180,6 +8239,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "Вам ____ …?",
       "answer": "нравится",
       "accepted_answers": [
+        "нра́вится",
         "нравится"
       ],
       "en": "Do you like …?",
@@ -8217,6 +8277,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "хочу / ____",
       "answer": "хотите",
       "accepted_answers": [
+        "хоти́те",
         "хотите"
       ],
       "en": "I want / you (pl/formal) want — хоте́ть",
@@ -8252,6 +8313,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "могу / ____",
       "answer": "можете",
       "accepted_answers": [
+        "мо́жете",
         "можете"
       ],
       "en": "I can / you can — мочь",
@@ -8287,6 +8349,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "говорю / ____",
       "answer": "говорите",
       "accepted_answers": [
+        "говори́те",
         "говорите"
       ],
       "en": "I speak / you speak — говори́ть",
@@ -8322,6 +8385,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "понимаю / ____",
       "answer": "понимаете",
       "accepted_answers": [
+        "понима́ете",
         "понимаете"
       ],
       "en": "I understand / you understand — понима́ть",
@@ -8357,6 +8421,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "люблю / ____",
       "answer": "любите",
       "accepted_answers": [
+        "лю́бите",
         "любите"
       ],
       "en": "I love / you love — люби́ть",
@@ -8392,6 +8457,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "работаю / ____",
       "answer": "работаете",
       "accepted_answers": [
+        "рабо́таете",
         "работаете"
       ],
       "en": "I work / you work — рабо́тать",
@@ -8462,6 +8528,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "ем / ____",
       "answer": "едите",
       "accepted_answers": [
+        "еди́те",
         "едите"
       ],
       "en": "I eat / you eat — есть",
@@ -8532,6 +8599,7 @@ window.CONTENT_DATA = {
       "prompt_ru": "знаю / ____",
       "answer": "знаете",
       "accepted_answers": [
+        "зна́ете",
         "знаете"
       ],
       "en": "I know / you know — знать",

@@ -857,9 +857,9 @@ def lexemes_for_phrase(ru_plain: str) -> list[str]:
     return sorted(lexemes)
 
 
-def cloze_answer_for_phrase(ru_plain: str) -> tuple[str, str] | None:
+def cloze_answer_for_phrase(ru_plain: str) -> tuple[str, str, int] | None:
     skip = {"джо"}
-    matches = list(re.finditer(r"[А-Яа-яЁё]+", ru_plain))
+    matches = list(re.finditer(r"[А-Яа-яЁё́]+", ru_plain))
     candidates = [
         m for m in matches if len(m.group(0)) >= 3 and m.group(0).lower() not in skip
     ]
@@ -867,7 +867,22 @@ def cloze_answer_for_phrase(ru_plain: str) -> tuple[str, str] | None:
         return None
     chosen = max(candidates, key=lambda m: (len(m.group(0)), -m.start()))
     prompt = ru_plain[: chosen.start()] + "____" + ru_plain[chosen.end() :]
-    return prompt, chosen.group(0)
+    return prompt, chosen.group(0), matches.index(chosen)
+
+
+def cloze_accepted_answers(ru_plain: str, ru: str, word_index: int) -> list[str]:
+    accepted = set()
+    plain_words = list(re.finditer(r"[А-Яа-яЁё́]+", ru_plain))
+    stressed_words = list(re.finditer(r"[А-Яа-яЁё́]+", ru))
+    if word_index < 0:
+        return []
+    if word_index < len(plain_words):
+        accepted.add(plain_words[word_index].group(0))
+    if len(plain_words) == len(stressed_words) and word_index < len(stressed_words):
+        accepted.add(stressed_words[word_index].group(0))
+    if not accepted:
+        return []
+    return sorted(accepted)
 
 
 def structures_for_item(item: dict) -> list[str]:
@@ -961,7 +976,7 @@ def build_cloze_cards(items: list[dict]) -> list[dict]:
         cloze = cloze_answer_for_phrase(item["ru_plain"])
         if not cloze:
             continue
-        prompt_ru, answer = cloze
+        prompt_ru, answer, word_index = cloze
         cards.append(
             {
                 "id": f"cloze_{item['id']}_01",
@@ -973,7 +988,9 @@ def build_cloze_cards(items: list[dict]) -> list[dict]:
                 "ru_plain": item["ru_plain"],
                 "prompt_ru": prompt_ru,
                 "answer": answer,
-                "accepted_answers": [answer],
+                "accepted_answers": cloze_accepted_answers(
+                    item["ru_plain"], item["ru"], word_index
+                ),
                 "en": item["en"],
                 "priority": item["priority"],
                 "lexemes": item["lexemes"],

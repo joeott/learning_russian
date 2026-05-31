@@ -187,7 +187,7 @@
     }
     return true;
   }
-  function inferBacktranslateErrorType(item, raw) {
+  function inferBacktranslateErrorType(item, raw, stageKey) {
     const allowed = new Set(
       (item && (item.allowed_error_types || item.error_types || [])) || []
     );
@@ -214,7 +214,10 @@
         return allowed.has("case_or_inflection") ? "case_or_inflection" : (allowed.has("word_order") ? "word_order" : "forgot_phrase");
       }
     }
-    return allowed.has("forgot_phrase") ? "forgot_phrase" : null;
+    if (allowed.size === 0) return "forgot_phrase";
+    if (allowed.has("forgot_phrase")) return "forgot_phrase";
+    if (stageKey === "cloze") return allowed.has("register") ? "register" : Array.from(allowed)[0];
+    return Array.from(allowed)[0];
   }
   function stripStress(s) {
     return (s || "").normalize("NFC").replace(new RegExp(ACUTE, "g"), "");
@@ -1428,7 +1431,7 @@
       const val = $("#clozeIn") ? $("#clozeIn").value : "";
       const accepted = it.accepted_answers || [it.answer];
       const ok = accepted.some(answer => normalize(val) === normalize(answer));
-      const errorType = ok ? null : inferredErrorType(it, quiz.stageKey);
+      const errorType = ok ? null : inferBacktranslateErrorType(it, val, quiz.stageKey);
       gradeItem(id, ok, quiz.stageKey, errorType);
       showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; answer: <strong>${escapeHtml(it.answer)}</strong></div>`, errorType);
     },
@@ -1542,7 +1545,7 @@
       const val = $("#btRu") ? $("#btRu").value : "";
       const accepted = it.accepted_answers || [it.ru_plain];
       const ok = accepted.some(answer => normalize(val) === normalize(answer));
-      const errorType = ok ? null : inferBacktranslateErrorType(it, val);
+      const errorType = ok ? null : inferBacktranslateErrorType(it, val, quiz.stageKey);
       gradeItem(id, ok, quiz.stageKey, errorType);
       showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`, errorType);
     },
