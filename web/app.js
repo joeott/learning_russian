@@ -438,7 +438,12 @@
   }
   function scenarioForItem(id) {
     const limit = activeLesson().lesson_number || 99;
-    return SCENARIOS.find(s => (s.lesson_number || 0) <= limit && (s.required_items || []).includes(id));
+    return SCENARIOS.find(s => scenarioLesson(s) <= limit && (s.required_items || []).includes(id));
+  }
+  function scenarioLesson(s) {
+    if (typeof s.lesson_number === "number") return s.lesson_number;
+    const lesson = s.lesson_id ? LESSON_BY_ID[s.lesson_id] : null;
+    return lesson ? lesson.lesson_number : 999;
   }
   function tutorCardForItem(id) {
     const s = scenarioForItem(id);
@@ -492,7 +497,7 @@
   function activeRoleplayItemIds() {
     const n = activeLesson().lesson_number || 99;
     return new Set(
-      SCENARIOS.filter(s => (s.lesson_number || 0) <= n)
+      SCENARIOS.filter(s => scenarioLesson(s) <= n)
         .flatMap(s => s.required_items || [])
     );
   }
