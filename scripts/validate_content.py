@@ -568,6 +568,32 @@ def validate_generated(data: dict) -> list[str]:
     data_rows = max(0, len(anki_rows) - 3)
     if data_rows != len(data["items"]):
         fail(errors, f"anki rows {data_rows} != items {len(data['items'])}")
+    contextual_path = ROOT / "anki" / "russian_family_visit_contextual.txt"
+    if contextual_path.exists():
+        contextual_rows = contextual_path.read_text(encoding="utf-8").splitlines()
+        expected_contextual = sum(
+            len(data.get(key, []))
+            for key in (
+                "cloze_cards",
+                "dictation_cards",
+                "stress_cards",
+                "pronunciation_cards",
+                "backtranslation_cards",
+                "contrast_cards",
+                "tutor_cards",
+            )
+        )
+        contextual_data_rows = max(0, len(contextual_rows) - 3)
+        if contextual_data_rows != expected_contextual:
+            fail(
+                errors,
+                f"contextual anki rows {contextual_data_rows} != generated cards {expected_contextual}",
+            )
+        for line_number, row in enumerate(contextual_rows[3:], start=4):
+            if len(row.split("\t")) != 7:
+                fail(errors, f"contextual anki row {line_number} must have 7 fields")
+    else:
+        fail(errors, "contextual anki deck not built")
     service_worker = (ROOT / "web" / "service-worker.js").read_text(encoding="utf-8")
     for asset in ("./index.html", "./styles.css", "./app.js", "./content.js"):
         if asset not in service_worker:
