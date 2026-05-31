@@ -263,6 +263,23 @@ I hope not to get sick.	<div style="font-size:2em">Я наде́юсь не за
 I'm not sick.	<div style="font-size:2em">Я не боле́ю.</div>[sound:zastolom_heal014.mp3]	[ya nye ba-lyé-yu]		health_feelings p2
 I'm sick.	<div style="font-size:2em">Я боле́ю.</div>[sound:zastolom_heal015.mp3]	[ya ba-lyé-yu]		health_feelings p3
 I root for the Cardinals.	<div style="font-size:2em">Я боле́ю за Кардина́лов.</div>[sound:zastolom_heal016.mp3]	[ya ba-lyé-yu za kar-di-ná-lav]	Same verb as 'be sick', but боле́ть за + team means to root for a team. (focus: understand when heard)	health_feelings p3 recognize
+Where were you last week? (to a man)	<div style="font-size:2em">Где ты был на про́шлой неде́ле?</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_past001.mp3]	[gdye ty byl na prósh-lay ni-dyé-lye]	(focus: understand when heard)	past_events p2 recognize
+Last week I was in Virginia.	<div style="font-size:2em">На про́шлой неде́ле я был в Вирджи́нии.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_past002.mp3]	[na prósh-lay ni-dyé-lye ya byl v vir-dzhi-ni-i]		past_events p2
+What did you do there?	<div style="font-size:2em">Что вы там де́лали?</div>[sound:zastolom_past003.mp3]	[shto vy tam dyé-la-li]	(focus: understand when heard)	past_events p2 recognize
+We talked about business.	<div style="font-size:2em">Мы говори́ли о би́знесе.</div>[sound:zastolom_past004.mp3]	[my ga-va-rí-li a bíz-ni-se]		past_events p2
+We walked and saw the sights.	<div style="font-size:2em">Мы гуля́ли и смотре́ли достопримеча́тельности.</div>[sound:zastolom_past005.mp3]	[my gu-lyá-li i smat-ryé-li da-sta-pri-mi-chá-tyel'-na-sti]		past_events p2
+Where did you fly? (to a man)	<div style="font-size:2em">Куда́ ты лета́л?</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_past006.mp3]	[ku-dá ty li-tál]	(focus: understand when heard)	past_events p2 recognize
+We flew to Richmond and Chicago.	<div style="font-size:2em">Мы лета́ли в Ри́чмонд и в Чика́го.</div>[sound:zastolom_past007.mp3]	[my li-tá-li v rích-mond i v chi-ká-go]		past_events p2
+Was it a good trip?	<div style="font-size:2em">Э́то была́ хоро́шая пое́здка?</div>[sound:zastolom_past008.mp3]	[é-ta by-lá ha-ró-sha-ya pa-yézd-ka]	(focus: understand when heard)	past_events p2 recognize
+The trip was very good.	<div style="font-size:2em">Пое́здка была́ о́чень хоро́шая.</div>[sound:zastolom_past009.mp3]	[pa-yézd-ka by-lá ó-chen' ha-ró-sha-ya]		past_events p2
+We discussed business.	<div style="font-size:2em">Мы обсуди́ли би́знес.</div>[sound:zastolom_past010.mp3]	[my ab-su-dí-li bíz-nes]		past_events p2
+I hope for a good result.	<div style="font-size:2em">Я наде́юсь на хоро́ший результа́т.</div>[sound:zastolom_past011.mp3]	[ya na-dyé-yus' na ha-ró-shiy ri-zul'-tát]		past_events p2
+Good news?	<div style="font-size:2em">Хоро́шие но́вости?</div>[sound:zastolom_past012.mp3]	[ha-ró-shi-ye nó-va-sti]	(focus: understand when heard)	past_events p2 recognize
+Yes, good news from my clients.	<div style="font-size:2em">Да, хоро́шие но́вости от мои́х клие́нтов.</div>[sound:zastolom_past013.mp3]	[da, ha-ró-shi-ye nó-va-sti at ma-íh kli-yén-tav]		past_events p2
+What happened?	<div style="font-size:2em">Что случи́лось?</div>[sound:zastolom_past014.mp3]	[shto slu-chí-las']	(focus: understand when heard)	past_events p2 recognize
+Last week I was at the police station.	<div style="font-size:2em">На про́шлой неде́ле я был в поли́ции.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_past015.mp3]	[na prósh-lay ni-dyé-lye ya byl v pa-lí-tsi-i]		past_events p3
+My wife's car was stolen.	<div style="font-size:2em">У мое́й жены́ укра́ли маши́ну.</div>[sound:zastolom_past016.mp3]	[u ma-yéy zhi-ný u-krá-li ma-shý-nu]	(focus: understand when heard)	past_events p3 recognize
+My wife wrote a police report / statement.	<div style="font-size:2em">Моя́ жена́ написа́ла заявле́ние.</div>[sound:zastolom_past017.mp3]	[ma-yá zhi-ná na-pi-sá-la za-yav-lyé-ni-ye]	(focus: understand when heard)	past_events p3 recognize
 I can dance.	<div style="font-size:2em">Я могу́ танцева́ть.</div>[sound:zastolom_moda001.mp3]	[ya ma-gú tan-tsi-vát']	мочь = can / have the possibility.	modal_ability p3
 I don't know how to dance salsa.	<div style="font-size:2em">Я не уме́ю танцева́ть са́льсу.</div>[sound:zastolom_moda002.mp3]	[ya nye u-myé-yu tan-tsi-vát' sál'-su]	уме́ть = know how / have the skill.	modal_ability p3
 I know how to dance salsa.	<div style="font-size:2em">Я зна́ю, как танцева́ть са́льсу.</div>[sound:zastolom_moda003.mp3]	[ya zná-yu kak tan-tsi-vát' sál'-su]	(focus: understand when heard)	modal_ability p3 recognize

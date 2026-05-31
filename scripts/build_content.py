@@ -301,6 +301,10 @@ ROLEPLAY_CRITERIA = {
         "label": "handles basic health and tiredness check-ins",
         "error_type": "case_or_inflection",
     },
+    "answers_past_week_events": {
+        "label": "answers past-week and trip-event questions",
+        "error_type": "case_or_inflection",
+    },
     "uses_modal_survival": {
         "label": "uses can, know-how, want, need, and permission patterns",
         "error_type": "case_or_inflection",
@@ -962,6 +966,37 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "past_week_events_checkin",
+        "setting": "Past week, trips, and what happened",
+        "goal": "Answer recurring original-guide past-event prompts about last week, weekend, travel, good news, and a simple what-happened story.",
+        "required_items": [
+            "list013",
+            "list014",
+            "past001",
+            "past002",
+            "past003",
+            "past004",
+            "past005",
+            "past006",
+            "past007",
+            "past008",
+            "past009",
+            "past010",
+            "past011",
+            "past012",
+            "past013",
+            "past014",
+            "past015",
+            "past016",
+            "past017",
+        ],
+        "success_criteria": [
+            "answers_past_week_events",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
         "id": "budva_trip_checkin",
         "setting": "Budva family trip",
         "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
@@ -1253,6 +1288,13 @@ MODULES = [
         "🩺",
     ),
     (
+        "past_events",
+        "Past Week & Events",
+        "Original-guide past-tense small talk: last week, weekend, trips, good news, and what happened.",
+        2,
+        "🗓️",
+    ),
+    (
         "modal_ability",
         "Can, Want & Need",
         "Original-guide modal survival: can, know how, want, need, allowed, not allowed, and should.",
@@ -1384,6 +1426,12 @@ MODULE_STRUCTURES = {
         "phrase:health_question",
         "grammar:u_menya_bolit",
         "phrase:tiredness_answer",
+    ],
+    "past_events": [
+        "grammar:past_tense",
+        "phrase:last_week_question",
+        "phrase:trip_story",
+        "phrase:what_happened",
     ],
     "modal_ability": [
         "grammar:modal_verbs",
@@ -3200,6 +3248,158 @@ add(
     recognize=True,
     note="Same verb as 'be sick', but боле́ть за + team means to root for a team.",
     tags=["health", "sports", "contrast", "listening"],
+)
+
+# --- PAST WEEK & EVENTS (source-guide past-tense small talk) ---
+# `Что вы де́лали на выходны́х?` and
+# `Что ты де́лал на про́шлой неде́ле?` already live in listening as list013/list014.
+add(
+    "past_events",
+    "Где ты был на про́шлой неде́ле?",
+    "Where were you last week? (to a man)",
+    "[gdye ty byl na prósh-lay ni-dyé-lye]",
+    2,
+    recognize=True,
+    gender="m",
+    tags=["past", "question", "where", "listening"],
+)
+add(
+    "past_events",
+    "На про́шлой неде́ле я был в Вирджи́нии.",
+    "Last week I was in Virginia.",
+    "[na prósh-lay ni-dyé-lye ya byl v vir-dzhi-ni-i]",
+    2,
+    gender="m",
+    tags=["past", "travel", "place"],
+)
+add(
+    "past_events",
+    "Что вы там де́лали?",
+    "What did you do there?",
+    "[shto vy tam dyé-la-li]",
+    2,
+    recognize=True,
+    tags=["past", "question", "travel", "listening"],
+)
+add(
+    "past_events",
+    "Мы говори́ли о би́знесе.",
+    "We talked about business.",
+    "[my ga-va-rí-li a bíz-ni-se]",
+    2,
+    tags=["past", "business", "travel"],
+)
+add(
+    "past_events",
+    "Мы гуля́ли и смотре́ли достопримеча́тельности.",
+    "We walked and saw the sights.",
+    "[my gu-lyá-li i smat-ryé-li da-sta-pri-mi-chá-tyel'-na-sti]",
+    2,
+    tags=["past", "travel", "sightseeing"],
+)
+add(
+    "past_events",
+    "Куда́ ты лета́л?",
+    "Where did you fly? (to a man)",
+    "[ku-dá ty li-tál]",
+    2,
+    recognize=True,
+    gender="m",
+    tags=["past", "question", "travel", "listening"],
+)
+add(
+    "past_events",
+    "Мы лета́ли в Ри́чмонд и в Чика́го.",
+    "We flew to Richmond and Chicago.",
+    "[my li-tá-li v rích-mond i v chi-ká-go]",
+    2,
+    tags=["past", "travel", "motion"],
+)
+add(
+    "past_events",
+    "Э́то была́ хоро́шая пое́здка?",
+    "Was it a good trip?",
+    "[é-ta by-lá ha-ró-sha-ya pa-yézd-ka]",
+    2,
+    recognize=True,
+    tags=["past", "question", "travel", "listening"],
+)
+add(
+    "past_events",
+    "Пое́здка была́ о́чень хоро́шая.",
+    "The trip was very good.",
+    "[pa-yézd-ka by-lá ó-chen' ha-ró-sha-ya]",
+    2,
+    tags=["past", "travel", "answer"],
+)
+add(
+    "past_events",
+    "Мы обсуди́ли би́знес.",
+    "We discussed business.",
+    "[my ab-su-dí-li bíz-nes]",
+    2,
+    tags=["past", "business", "travel"],
+)
+add(
+    "past_events",
+    "Я наде́юсь на хоро́ший результа́т.",
+    "I hope for a good result.",
+    "[ya na-dyé-yus' na ha-ró-shiy ri-zul'-tát]",
+    2,
+    tags=["past", "business", "hope"],
+)
+add(
+    "past_events",
+    "Хоро́шие но́вости?",
+    "Good news?",
+    "[ha-ró-shi-ye nó-va-sti]",
+    2,
+    recognize=True,
+    tags=["past", "question", "news", "listening"],
+)
+add(
+    "past_events",
+    "Да, хоро́шие но́вости от мои́х клие́нтов.",
+    "Yes, good news from my clients.",
+    "[da, ha-ró-shi-ye nó-va-sti at ma-íh kli-yén-tav]",
+    2,
+    tags=["past", "news", "clients"],
+)
+add(
+    "past_events",
+    "Что случи́лось?",
+    "What happened?",
+    "[shto slu-chí-las']",
+    2,
+    recognize=True,
+    tags=["past", "question", "listening"],
+)
+add(
+    "past_events",
+    "На про́шлой неде́ле я был в поли́ции.",
+    "Last week I was at the police station.",
+    "[na prósh-lay ni-dyé-lye ya byl v pa-lí-tsi-i]",
+    3,
+    gender="m",
+    tags=["past", "police", "sensitive"],
+)
+add(
+    "past_events",
+    "У мое́й жены́ укра́ли маши́ну.",
+    "My wife's car was stolen.",
+    "[u ma-yéy zhi-ný u-krá-li ma-shý-nu]",
+    3,
+    recognize=True,
+    tags=["past", "police", "car", "sensitive", "listening"],
+)
+add(
+    "past_events",
+    "Моя́ жена́ написа́ла заявле́ние.",
+    "My wife wrote a police report / statement.",
+    "[ma-yá zhi-ná na-pi-sá-la za-yav-lyé-ni-ye]",
+    3,
+    recognize=True,
+    tags=["past", "police", "statement", "sensitive", "listening"],
 )
 
 # --- CAN, WANT & NEED (modal survival patterns) ---

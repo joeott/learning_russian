@@ -6,7 +6,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 ## Current generated course
 
 - Source of truth: `scripts/build_content.py`
-- Generated content: 370 items across 21 modules, plus 60 generated conjugation drills
+- Generated content: 387 items across 22 modules, plus 60 generated conjugation drills
 - Strongest coverage today:
   - greetings and first contact
   - politeness and repair phrases
@@ -21,6 +21,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
   - hobbies, music, films, home, cats, sports, cinema, museums, and leisure places
   - physical descriptions for family members: height, eyes, hair, face, smile, and resemblance
   - basic health and feeling-unwell check-ins: headache, back pain, tiredness, sleep, hope, and `болеть`
+  - past-week and event storytelling: where you were, what you did, trips, good news, and what happened
   - modal survival patterns for can, know how, want, need, allowed/not allowed, and should
   - lawyer/work/client small talk
   - legal vocabulary recognition for deeper work questions
@@ -43,6 +44,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 | Hobbies, leisure, and places | `source/ekaterina_guide.md:66-67`, `source/ekaterina_guide.md:87`, `source/ekaterina_guide.md:889-895`, `source/ekaterina_guide.md:1114-1120`, `source/ekaterina_guide.md:1235-1237`, `source/ekaterina_guide.md:1945-1947`, `source/ekaterina_guide.md:2045`, `source/ekaterina_guide.md:2532`, `source/ekaterina_guide.md:2549-2555`, `source/ekaterina_guide.md:2585-2605`, `source/research/leisure_places.md` | Covered by `leisure_places` cards and a dedicated hobbies/places role-play scenario | Later: add only specific family hobbies Joe actually hears. |
 | Physical descriptions and family resemblance | `source/ekaterina_guide.md:2`, `source/ekaterina_guide.md:379-426`, `source/ekaterina_guide.md:723-736`, `source/ekaterina_guide.md:770-775`, `source/research/physical_description.md` | Covered by `physical_description` cards and a dedicated family-description role-play scenario for height, eyes, hair, face, smile, and resemblance | Later: add only accurate descriptions of specific living relatives after Kadriya confirms them. |
 | Health, tiredness, and feeling unwell | `source/ekaterina_guide.md:636-638`, `source/ekaterina_guide.md:1160-1190`, `source/research/health_feelings.md` | Covered by `health_feelings` cards and a dedicated health-check-in role-play scenario for feeling unwell, headache/back pain, tiredness, sleep, hope, and `боле́ть` vs `боле́ть за` | Keep medical detail minimal; add only practical lines Joe expects to need. |
+| Past week, trips, and events | `source/ekaterina_guide.md:686`, `source/ekaterina_guide.md:977`, `source/ekaterina_guide.md:1226-1257`, `source/ekaterina_guide.md:1267-1271`, `source/ekaterina_guide.md:1299-1312`, `source/ekaterina_guide.md:1463`, `source/research/past_events.md` | Covered by `past_events` cards and a dedicated past-week/trip/what-happened role-play scenario | Keep police/car-theft lines low-priority and recognition-first; use the travel/good-news lines for normal family small talk. |
 | Modal ability, want, need, and permission | `source/ekaterina_guide.md:50`, `source/ekaterina_guide.md:723`, `source/ekaterina_guide.md:804-809`, `source/ekaterina_guide.md:836`, `source/ekaterina_guide.md:852`, `source/ekaterina_guide.md:1120`, `source/ekaterina_guide.md:1207-1209`, `source/ekaterina_guide.md:1638`, `source/ekaterina_guide.md:1650`, `source/ekaterina_guide.md:1698-1701`, `source/ekaterina_guide.md:1784`, `source/ekaterina_guide.md:2455`, `source/ekaterina_guide.md:2603-2605`, `source/research/modal_ability.md` | Covered by `modal_ability` cards and a dedicated modal-survival role-play scenario | Later: add only modals tied to actual travel/family prompts. |
 | Work, clients, business | `source/ekaterina_guide.md:820-839`, `source/ekaterina_guide.md:1028-1042`, `source/ekaterina_guide.md:1327-1334`, `source/ekaterina_guide.md:1679-1701`, `source/ekaterina_guide.md:1782-1803`, `source/ekaterina_guide.md:1829-1833`, `source/ekaterina_guide.md:1994-2012`, `source/ekaterina_guide.md:2516-2526`, `source/research/work_business.md`, `source/research/legal_recognition.md` | Covered by `smalltalk`, `work_business`, and recognition-only `legal_recognition` basics | Later: add production legal phrases only if Kadriya confirms one is worth the risk. |
 | Holidays and celebrations | `source/ekaterina_guide.md:889-895`, `source/ekaterina_guide.md:909-927`, `source/ekaterina_guide.md:981-989`, `source/ekaterina_guide.md:1017-1025`, `source/ekaterina_guide.md:1404-1405`, `source/ekaterina_guide.md:2234-2244`, `source/research/celebrations.md` | Covered by `celebrations` basics plus the existing toast module | Later: add only family-specific holiday details Kadriya confirms. |
