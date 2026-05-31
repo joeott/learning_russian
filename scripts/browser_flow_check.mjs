@@ -129,6 +129,11 @@ export async function runFlowCheck(opts) {
     });
     completed.push("recognition");
 
+    await checkStage(page, opts.url, "recall", async () => {
+      await page.locator(".opt").first().click();
+    });
+    completed.push("recall");
+
     await checkStage(page, opts.url, "cloze", async () => {
       await page.locator("#clozeIn").fill("x");
       await page.getByRole("button", { name: /^Check$/i }).click();
@@ -141,6 +146,16 @@ export async function runFlowCheck(opts) {
     });
     completed.push("dictation");
 
+    await checkStage(page, opts.url, "stress", async () => {
+      await page.locator(".opt").first().click();
+    });
+    completed.push("stress");
+
+    await checkStage(page, opts.url, "pronounce", async () => {
+      await page.getByRole("button", { name: /Stress off/i }).click();
+    });
+    completed.push("pronounce");
+
     await checkStage(page, opts.url, "backtranslate", async () => {
       await page.locator("#btEn").fill("rough meaning");
       await page.getByRole("button", { name: /Hide Russian/i }).click();
@@ -148,6 +163,22 @@ export async function runFlowCheck(opts) {
       await page.getByRole("button", { name: /^Check$/i }).click();
     });
     completed.push("backtranslate");
+
+    await checkStage(page, opts.url, "contrast", async () => {
+      await page.locator(".opt").first().click();
+    });
+    completed.push("contrast");
+
+    await checkStage(page, opts.url, "produce", async () => {
+      await page.locator("#prodIn").fill("x");
+      await page.getByRole("button", { name: /^Check$/i }).click();
+    });
+    completed.push("produce");
+
+    await checkStage(page, opts.url, "listen", async () => {
+      await page.locator(".opt").first().click();
+    });
+    completed.push("listen");
 
     await checkStage(page, opts.url, "roleplay", async () => {
       await page.getByRole("button", { name: /Reveal model answer/i }).click();
