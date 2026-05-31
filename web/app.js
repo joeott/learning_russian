@@ -571,6 +571,10 @@
     const s = scenarioForItem(id);
     return s ? TUTOR_BY_SCENARIO[s.id] : null;
   }
+  function tutorCardForScenarioId(scenarioId) {
+    if (!scenarioId) return null;
+    return TUTOR_BY_SCENARIO[scenarioId] || null;
+  }
   function criterionLabel(id) {
     return (ROLEPLAY_CRITERIA[id] && ROLEPLAY_CRITERIA[id].label) || CRITERIA_LABELS[id] || id.replace(/_/g, " ");
   }
@@ -1695,9 +1699,9 @@
         </div></div>`;
       speak(it);
     },
-    openTutor(id) {
+    openTutor(id, scenarioId) {
       const it = ITEMS.find(i => i.id === id);
-      const card = tutorCardForItem(id);
+      const card = tutorCardForScenarioId(scenarioId) || tutorCardForItem(id);
       if (!it || !card) return;
       const r = rec(id);
       r.tutor_prompt_opens = (r.tutor_prompt_opens || 0) + 1;

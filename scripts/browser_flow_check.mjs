@@ -802,6 +802,76 @@ async function assertRoleplayTutorPanel(page, baseUrl) {
   }
 }
 
+async function assertAllRoleplayScenariosHaveTutorPrompts(page) {
+  const results = await page.evaluate(() => {
+    const scenarios = window.CONTENT_DATA.scenarios || [];
+    if (!scenarios.length) {
+      return [{ scenarioId: "(none)", ok: false, reason: "no scenarios in generated content" }];
+    }
+    const itemsById = Object.fromEntries((window.CONTENT_DATA.items || []).map((item) => [item.id, item]));
+    const out = [];
+    for (const scenario of scenarios) {
+      const required = (scenario.required_items || []).filter(Boolean);
+      if (!required.length) {
+        out.push({ scenarioId: scenario.id, ok: false, reason: "scenario has no required_items" });
+        continue;
+      }
+      const itemId = required[0];
+      const item = itemsById[itemId];
+      if (!item) {
+        out.push({ scenarioId: scenario.id, itemId, ok: false, reason: `required item missing: ${itemId}` });
+        continue;
+      }
+      try {
+        window.ZS.openTutor(itemId, scenario.id);
+      } catch (err) {
+        out.push({ scenarioId: scenario.id, itemId, ok: false, reason: `openTutor failed for ${itemId}: ${String(err.message || err)}` });
+        continue;
+      }
+      const panel = document.querySelector("#tutorPanel .tutorbox");
+      const promptEl = document.querySelector("#tutorPromptText");
+      if (!panel || !promptEl) {
+        out.push({ scenarioId: scenario.id, itemId, ok: false, reason: "tutor panel failed to render" });
+        continue;
+      }
+      const panelText = (panel.textContent || "").toLowerCase();
+      const setting = (scenario.setting || "").toLowerCase();
+      const goal = (scenario.goal || "").toLowerCase();
+      const lessonText = String(scenario.lesson_number || "");
+      const promptText = (promptEl.value || "").toLowerCase();
+      const requiredPhrase = item.ru_plain.toLowerCase();
+      const card = (window.CONTENT_DATA.tutor_cards || []).find((candidate) => candidate.scenario_id === scenario.id);
+      const promptCardLesson = String(card?.lesson_number || "");
+
+      const hasPanelContext = (!setting || panelText.includes(setting)) && (!goal || panelText.includes(goal));
+      const hasLessonContext = !lessonText || panelText.includes(`lesson ${lessonText}`) || panelText.includes(`lesson${lessonText}`) || promptText.includes(`lesson ${promptCardLesson}`) || promptText.includes(`lesson${promptCardLesson}`);
+      const hasRequiredPhrase = !requiredPhrase || promptText.includes(requiredPhrase);
+
+      if (!hasPanelContext) {
+        out.push({ scenarioId: scenario.id, itemId, ok: false, reason: "scenario setting/goal missing from tutor panel" });
+        continue;
+      }
+      if (!hasLessonContext) {
+        out.push({ scenarioId: scenario.id, itemId, ok: false, reason: `lesson boundary missing: ${scenario.lesson_number}` });
+        continue;
+      }
+      if (!hasRequiredPhrase) {
+        out.push({ scenarioId: scenario.id, itemId, ok: false, reason: `required phrase ${requiredPhrase} missing from tutor prompt` });
+        continue;
+      }
+
+      out.push({ scenarioId: scenario.id, itemId, ok: true });
+    }
+    return out;
+  });
+
+  const failures = results.filter((row) => !row.ok);
+  if (failures.length) {
+    const first = failures[0];
+    throw new Error(`Role-play tutor coverage incomplete (scenario=${first.scenarioId}: ${first.reason})`);
+  }
+}
+
 async function assertListenLadderSupportsNoise(page, baseUrl) {
   // listening ladder
   await page.goto(withHash(baseUrl, "#/quiz/listen"), { waitUntil: "networkidle" });
@@ -968,6 +1038,22 @@ export async function runFlowCheck(opts) {
       await page.getByRole("button", { name: /Reveal model answer/i }).click();
       await page.getByRole("button", { name: /Needs repair/i }).click();
     });
+    const scenarioSelect = page.locator(".lessonlock select");
+    if (await scenarioSelect.count()) {
+      const currentLesson = (await scenarioSelect.locator("option:checked").getAttribute("value")) || null;
+      const lastLesson = await scenarioSelect.locator("option").last().getAttribute("value");
+      if (lastLesson) {
+        await scenarioSelect.selectOption(lastLesson);
+        await page.waitForTimeout(120);
+      }
+      await assertAllRoleplayScenariosHaveTutorPrompts(page);
+      if (currentLesson) {
+        await scenarioSelect.selectOption(currentLesson);
+        await page.waitForTimeout(120);
+      }
+    } else {
+      await assertAllRoleplayScenariosHaveTutorPrompts(page);
+    }
     if (!(await roleplayCriteriaMissed(page))) {
       throw new Error("roleplay did not persist criterion-level miss history");
     }
