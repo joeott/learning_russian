@@ -257,7 +257,11 @@ export async function runFlowCheck(opts) {
 
     await page.goto(withHash(opts.url, "#/home"), { waitUntil: "networkidle" });
     await assertText(page, "AVG RESPONSE TIME");
+    await assertText(page, "REPAIR PROFILE");
+    const repairProfileRows = await page.locator(".repairprofile__row").count();
+    if (repairProfileRows < 1) throw new Error("repair profile did not render persisted repair-focus history");
     await assertText(page, "ROLE-PLAY FAILURE SIGNALS");
+    await page.waitForTimeout(1900);
     await page.screenshot({ path: path.join(opts.out, "home-after-flow.png"), fullPage: true });
     completed.push("analytics");
 

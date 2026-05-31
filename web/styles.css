@@ -155,7 +155,7 @@ body {
 }
 .analyticsbox h3 { margin: 0 0 4px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .05em; }
 .analyticsbox p { margin: 0; color: var(--ink-soft); font-size: .9rem; }
-.analyticsgrid { display:grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 8px; }
+.analyticsgrid { display:grid; grid-template-columns: repeat(auto-fit, minmax(82px, 1fr)); gap: 10px 8px; }
 .analyticsgrid div { border-left: 2px solid var(--cream-line); padding-left: 9px; }
 .analyticsgrid strong { display:block; font-family: var(--font-display); color: var(--red); font-size: 1.6rem; line-height: 1; }
 .analyticsgrid small { font-size: .82rem; }
@@ -188,6 +188,23 @@ body {
 .signals__row strong { min-width: 0; font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; font-size:.78rem; }
 .signals__row span { min-width: 0; color: var(--ink-soft); font-size:.86rem; }
 .signals__row button { grid-row: 1 / span 2; grid-column: 2; }
+.repairprofile {
+  display:grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.5fr); gap: 16px; align-items:start;
+  background: var(--paper); border:2px solid var(--ink); border-radius: var(--radius);
+  padding: 14px 16px; margin: -10px 0 26px; box-shadow: var(--shadow-sm);
+}
+.repairprofile h3 { margin: 0 0 4px; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .05em; }
+.repairprofile p, .repairprofile__empty { margin: 0; color: var(--ink-soft); font-size: .9rem; }
+.repairprofile__list { display:grid; gap: 8px; }
+.repairprofile__row {
+  display:grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 10px; align-items:center;
+  border-left:2px solid var(--amber); padding-left: 10px;
+}
+.repairprofile__row strong { min-width: 0; font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; font-size:.78rem; }
+.repairprofile__row span { min-width: 0; color: var(--ink-soft); font-size:.86rem; }
+.repairprofile__row div { min-width: 0; display:flex; gap: 5px; flex-wrap: wrap; }
+.repairprofile__row div span { border:1px solid var(--cream-line); background: var(--paper-2); padding: 2px 6px; font-size:.76rem; }
+.repairprofile__row button { grid-row: 1 / span 3; grid-column: 2; }
 
 /* ---------- Module grid ---------- */
 .modgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(248px,1fr)); gap: 16px; }
@@ -451,6 +468,9 @@ body {
   .analyticsgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .trendbox { grid-template-columns: 1fr; }
   .trendgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .repairprofile { grid-template-columns: 1fr; }
+  .repairprofile__row { grid-template-columns: 1fr; }
+  .repairprofile__row button { grid-row: auto; grid-column: auto; justify-self:start; }
   .signals { grid-template-columns: 1fr; }
   .signals__row { grid-template-columns: 1fr; }
   .signals__row button { grid-row: auto; grid-column: auto; justify-self:start; }

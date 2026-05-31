@@ -371,6 +371,42 @@
     });
     return rows.sort((a, b) => b.count - a.count || a.errorType.localeCompare(b.errorType));
   }
+  function repairFocusSummary() {
+    const grouped = {};
+    Object.keys(store).forEach(id => {
+      const it = practiceItem(id);
+      if (!it || (it.lesson_number && it.lesson_number > (activeLesson().lesson_number || 99))) return;
+      const r = migrateRec(store[id]);
+      Object.entries(r.repair_focus_counts || {}).forEach(([errorType, count]) => {
+        if (!ERROR_BY_ID[errorType] || !count) return;
+        grouped[errorType] = grouped[errorType] || { errorType, count: 0, examples: [] };
+        grouped[errorType].count += count;
+        if (grouped[errorType].examples.length < 2) grouped[errorType].examples.push(it);
+      });
+    });
+    return Object.values(grouped)
+      .sort((a, b) => b.count - a.count || a.errorType.localeCompare(b.errorType))
+      .slice(0, 4);
+  }
+  function repairProfileHtml(rows) {
+    const body = rows.length ? rows.map(row => {
+      const e = ERROR_BY_ID[row.errorType];
+      const examples = row.examples.map(it => `<span>${escapeHtml(it.en)}</span>`).join("");
+      return `<div class="repairprofile__row">
+        <strong>${escapeHtml(e.label)}</strong>
+        <span>${row.count} focused miss${row.count === 1 ? "" : "es"}</span>
+        <div>${examples}</div>
+        <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.startRepair('${row.errorType}')">Repair</button>
+      </div>`;
+    }).join("") : `<div class="repairprofile__empty">No focused misses logged yet. Wrong cloze, dictation, back-translation, and production answers will appear here.</div>`;
+    return `<div class="repairprofile rise">
+      <div>
+        <h3>Repair profile</h3>
+        <p>Top error patterns from targeted feedback, constrained to the current lesson boundary.</p>
+      </div>
+      <div class="repairprofile__list">${body}</div>
+    </div>`;
+  }
   function repairQueueHtml() {
     const rows = repairProfile();
     if (!rows.length) {
@@ -608,6 +644,7 @@
     const a = analytics();
     const history = analyticsSnapshot(a);
     const roleSignals = roleplayFailureSignals();
+    const repairFocusRows = repairFocusSummary();
     const d = daysLeft();
     const mods = MODULES.map((m, i) => {
       const p = moduleProgress(m.id);
@@ -656,6 +693,7 @@
           <div><strong>${formatLatency(a.averageResponseMs)}</strong><span>avg response time</span></div>
         </div>
       </div>
+      ${repairProfileHtml(repairFocusRows)}
       ${roleplaySignalsHtml(roleSignals)}
       ${analyticsHistoryHtml(history)}
 
