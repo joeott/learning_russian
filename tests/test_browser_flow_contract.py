@@ -18,6 +18,11 @@ class BrowserFlowContractTests(unittest.TestCase):
         for token in (
             "#/home",
             "#/learn",
+            "#/plan",
+            "assertOfflinePackCachesCore",
+            "zastolom-offline-pack",
+            "core 8/8",
+            "offline-pack",
             "assertLessonLockedRecognition",
             "Practice is constrained to Lesson 1",
             "PHRASES UNLOCKED",

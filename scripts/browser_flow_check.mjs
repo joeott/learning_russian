@@ -110,6 +110,19 @@ async function assertRepairQueueStartsRound(page, baseUrl) {
   }
 }
 
+async function assertOfflinePackCachesCore(page, baseUrl) {
+  await page.goto(withHash(baseUrl, "#/plan"), { waitUntil: "networkidle" });
+  await page.waitForFunction(() => document.body.innerText.toLowerCase().includes("offline packs"));
+  await page.evaluate(async () => {
+    if ("caches" in window) await caches.delete("zastolom-offline-pack");
+  });
+  await page.getByRole("button", { name: /^Core course$/i }).click();
+  await page.waitForFunction(() => {
+    const text = (document.querySelector("#offlineStatus")?.innerText || "").toLowerCase();
+    return text.includes("core 8/8");
+  });
+}
+
 async function assertLessonLockedRecognition(page, baseUrl) {
   await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
   const select = page.locator(".lessonlock select");
@@ -187,6 +200,9 @@ export async function runFlowCheck(opts) {
     await assertText(page, "CURRICULUM LOCK");
     await assertText(page, "PERFORMANCE SIGNALS");
     completed.push("home");
+
+    await assertOfflinePackCachesCore(page, opts.url);
+    completed.push("offline-pack");
 
     await page.goto(withHash(opts.url, "#/learn"), { waitUntil: "networkidle" });
     await assertText(page, "CURRICULUM LOCK");
