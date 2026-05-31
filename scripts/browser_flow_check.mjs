@@ -32,11 +32,13 @@ function parseArgs(argv) {
   const args = {
     url: "http://localhost:8000/web/",
     out: path.join(ROOT, "tmp", "flow-check"),
+    offline: false,
   };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === "--url") args.url = argv[++i];
     else if (a === "--out") args.out = path.resolve(argv[++i]);
+    else if (a === "--offline") args.offline = true;
     else if (a === "--help" || a === "-h") args.help = true;
     else if (!a.startsWith("-")) args.url = a;
     else throw new Error(`Unknown option: ${a}`);
@@ -46,10 +48,11 @@ function parseArgs(argv) {
 
 function help() {
   return `Usage:
-  tools/zastolom flow [url] [--out DIR]
+  tools/zastolom flow [url] [--out DIR] [--offline]
 
 Examples:
   tools/zastolom flow http://localhost:8000/web/
+  tools/zastolom flow http://localhost:8000/web/ --offline
 `;
 }
 
@@ -121,6 +124,65 @@ async function assertOfflinePackCachesCore(page, baseUrl) {
     const text = (document.querySelector("#offlineStatus")?.innerText || "").toLowerCase();
     return text.includes("core 8/8");
   });
+}
+
+  async function assertOfflineFlow(browser, baseUrl) {
+  const offlineContext = await browser.newContext({
+    viewport: { width: 1280, height: 900 },
+    serviceWorkers: "allow",
+  });
+  const offlinePage = await offlineContext.newPage();
+  const offlineLogs = [];
+  offlinePage.on("console", (msg) => {
+    if (msg.type() === "error") offlineLogs.push({ type: msg.type(), text: msg.text() });
+  });
+  offlinePage.on("pageerror", (err) => {
+    offlineLogs.push({ type: "pageerror", text: err.message });
+  });
+
+  try {
+    await offlinePage.goto(withHash(baseUrl, "#/home"), { waitUntil: "networkidle" });
+    await offlinePage.waitForFunction(() => document.body.innerText.toLowerCase().includes("home"));
+    await offlinePage.evaluate(() => localStorage.clear());
+    await offlinePage.reload({ waitUntil: "networkidle" });
+    await assertText(offlinePage, "CURRICULUM LOCK");
+
+    await offlinePage.goto(withHash(baseUrl, "#/plan"), { waitUntil: "networkidle" });
+    await offlinePage.waitForFunction(() => document.body.innerText.toLowerCase().includes("offline packs"));
+    await offlinePage.evaluate(async () => {
+      if ("caches" in window) await caches.delete("zastolom-offline-pack");
+    });
+    await offlinePage.getByRole("button", { name: /^Core course$/i }).click();
+    await offlinePage.waitForFunction(() => {
+      const text = (document.querySelector("#offlineStatus")?.innerText || "").toLowerCase();
+      return (new RegExp("core\\s+\\d+/\\d+")).test(text);
+    });
+
+    await offlineContext.setOffline(true);
+    await offlinePage.reload({ waitUntil: "domcontentloaded" });
+    await offlinePage.waitForTimeout(250);
+
+    await offlinePage.goto(withHash(baseUrl, "#/quiz/recognition"), { waitUntil: "networkidle" });
+    await offlinePage.waitForSelector(".quiz[data-item-id][data-lesson-number]", { timeout: 7000 });
+    await offlinePage.locator(".opt").first().click();
+    const offlineSeen = await offlinePage.evaluate(() => {
+      const ns = window.CONTENT_DATA.course.storage_namespace;
+      const store = JSON.parse(localStorage.getItem(ns) || "{}");
+      return Object.values(store).some((rec) => {
+        const st = rec && rec.stages && rec.stages.recognition;
+        return st && st.seen > 0 && st.latency_count > 0;
+      });
+    });
+    if (!offlineSeen) {
+      throw new Error("Offline recognition exercise did not update mastery state");
+    }
+
+    if (offlineLogs.length) {
+      throw new Error(`Offline flow errors:\n${offlineLogs.map((entry) => `${entry.type}: ${entry.text}`).join("\n")}`);
+    }
+  } finally {
+    await offlineContext.close();
+  }
 }
 
 async function assertLessonLockedRecognition(page, baseUrl) {
@@ -818,6 +880,11 @@ export async function runFlowCheck(opts) {
     await page.waitForTimeout(1900);
     await page.screenshot({ path: path.join(opts.out, "home-after-flow.png"), fullPage: true });
     completed.push("analytics");
+
+    if (opts.offline) {
+      await assertOfflineFlow(browser, opts.url);
+      completed.push("offline");
+    }
 
     if (logs.length) throw new Error(`Browser errors:\n${logs.map((l) => `${l.type}: ${l.text}`).join("\n")}`);
 
