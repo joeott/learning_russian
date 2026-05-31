@@ -31,6 +31,7 @@ class BrowserFlowContractTests(unittest.TestCase):
             "data-lesson-number",
             "dataset.itemId",
             "promptedStage.lessonNumber > expected.lessonNumber",
+            "Lesson source mismatch",
             "Lesson lock violated",
             "adaptive-ordering",
             "adaptive-ordering mismatch",
