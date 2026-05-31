@@ -253,6 +253,14 @@ ROLEPLAY_CRITERIA = {
         "label": "answers profile questions from prompts",
         "error_type": "forgot_phrase",
     },
+    "answers_calendar_weather": {
+        "label": "answers calendar/weather prompts",
+        "error_type": "forgot_phrase",
+    },
+    "uses_time_words": {
+        "label": "uses today/yesterday/tomorrow words",
+        "error_type": "case_or_inflection",
+    },
 }
 
 CONTRAST_SETS = [
@@ -637,6 +645,30 @@ SCENARIOS = [
             "avoids_na_zdorovie_misfire",
         ],
     },
+    {
+        "id": "calendar_weather_checkin",
+        "setting": "Calendar and weather check-in",
+        "goal": "Answer the original-guide day and weather questions as easy table small talk.",
+        "required_items": [
+            "cale001",
+            "cale002",
+            "cale003",
+            "cale004",
+            "cale005",
+            "cale006",
+            "cale009",
+            "cale010",
+            "cale011",
+            "cale018",
+            "cale019",
+        ],
+        "success_criteria": [
+            "answers_calendar_weather",
+            "uses_time_words",
+            "stays_in_russian",
+            "keeps_stress_clear",
+        ],
+    },
 ]
 
 
@@ -709,6 +741,13 @@ MODULES = [
         "👂",
     ),
     (
+        "calendar_weather",
+        "Calendar & Weather",
+        "Original-guide day and weather questions for easy family small talk.",
+        2,
+        "☀️",
+    ),
+    (
         "verbs",
         "Core Verbs (reactivation)",
         "High-frequency verbs from Ekaterina's guide — я / вы forms.",
@@ -755,6 +794,12 @@ MODULE_STRUCTURES = {
         "skill:listening_question_recognition",
         "grammar:formal_question",
         "phrase:host_question",
+    ],
+    "calendar_weather": [
+        "lexical:days_of_week",
+        "phrase:weather_answer",
+        "phrase:calendar_question",
+        "grammar:time_expression",
     ],
     "verbs": [
         "grammar:present_first_person",
@@ -1213,6 +1258,114 @@ add(
     "[bú-dye-tye] — e.g. «Бу́дете чай?»",
     3,
     recognize=True,
+)
+
+# --- CALENDAR & WEATHER (original-guide small-talk lane) ---
+add(
+    "calendar_weather",
+    "Ка́кая сего́дня пого́да?",
+    "What is the weather like today?",
+    "[ká-ka-ya si-vód-nya pa-gó-da]",
+    2,
+    recognize=True,
+    tags=["weather", "calendar"],
+)
+add(
+    "calendar_weather",
+    "Как там на у́лице?",
+    "How is it outside?",
+    "[kak tam na ú-li-tse]",
+    2,
+    recognize=True,
+    tags=["weather", "calendar"],
+)
+add(
+    "calendar_weather",
+    "Сего́дня хо́лодно.",
+    "Today it's cold.",
+    "[si-vód-nya hó-lad-na]",
+    2,
+    tags=["weather"],
+)
+add(
+    "calendar_weather",
+    "Сего́дня тепло́.",
+    "Today it's warm.",
+    "[si-vód-nya tip-ló]",
+    2,
+    tags=["weather"],
+)
+add(
+    "calendar_weather",
+    "Сего́дня со́лнечно.",
+    "Today it's sunny.",
+    "[si-vód-nya sól-nech-na]",
+    2,
+    tags=["weather"],
+)
+add(
+    "calendar_weather",
+    "Сего́дня о́блачно.",
+    "Today it's cloudy.",
+    "[si-vód-nya ób-lach-na]",
+    2,
+    tags=["weather"],
+)
+add(
+    "calendar_weather",
+    "Идёт дождь.",
+    "It's raining.",
+    "[i-dyót doshch]",
+    2,
+    tags=["weather"],
+)
+add(
+    "calendar_weather",
+    "Идёт снег.",
+    "It's snowing.",
+    "[i-dyót snyek]",
+    2,
+    tags=["weather"],
+)
+add(
+    "calendar_weather",
+    "Вчера́ бы́ло со́лнечно.",
+    "It was sunny yesterday.",
+    "[vchi-rá bý-la sól-nech-na]",
+    3,
+    tags=["weather", "time"],
+)
+add(
+    "calendar_weather",
+    "За́втра бу́дет тепло́.",
+    "Tomorrow it will be warm.",
+    "[záf-tra bú-dyet tip-ló]",
+    3,
+    tags=["weather", "time"],
+)
+add(
+    "calendar_weather",
+    "Како́й сего́дня день неде́ли?",
+    "What day of the week is it today?",
+    "[ka-kóy si-vód-nya dyen' ni-dyé-li]",
+    2,
+    recognize=True,
+    tags=["calendar"],
+)
+add("calendar_weather", "понеде́льник", "Monday", "[pa-ni-dyél'-nik]", 3, tags=["day"])
+add("calendar_weather", "вто́рник", "Tuesday", "[ftór-nik]", 3, tags=["day"])
+add("calendar_weather", "среда́", "Wednesday", "[sri-dá]", 3, tags=["day"])
+add("calendar_weather", "четве́рг", "Thursday", "[chit-vyérk]", 3, tags=["day"])
+add("calendar_weather", "пя́тница", "Friday", "[pyát-ni-tsa]", 3, tags=["day"])
+add("calendar_weather", "суббо́та", "Saturday", "[su-bó-ta]", 3, tags=["day"])
+add("calendar_weather", "воскресе́нье", "Sunday", "[vas-kri-syén'-ye]", 3, tags=["day"])
+add(
+    "calendar_weather",
+    "на выходны́х",
+    "on the weekend",
+    "[na vy-had-nýh]",
+    3,
+    tags=["calendar"],
 )
 
 # --- CORE VERBS (reactivation; я / вы present) ---

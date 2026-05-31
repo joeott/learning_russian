@@ -3,7 +3,7 @@
 > **For:** Joe — English speaker, lawyer, reads Cyrillic, rusty from 2020–21 lessons.
 > **Mission:** Be understood and understand at Kadriya's family dinner in St. Petersburg on **June 15, 2026** (secular family, they drink & toast).
 > **What this is:** A reusable script for turning Claude (or any capable AI) into a live speaking partner. Speaking is your bottleneck, not reading — so this protocol is biased hard toward *talking time* and *gentle recasting* over grammar lectures.
-> **Pairs with:** `content/content.json` (109 verified phrases), `schedule/16_day_plan.md` (the tutor days are 1, 4, 8, 9, 11), the Anki deck, and the printable cheat sheet.
+> **Pairs with:** `content/content.json`, `schedule/16_day_plan.md` (the tutor days are 1, 4, 8, 9, 11), the Anki deck, and the printable cheat sheet.
 
 ---
 
@@ -258,6 +258,12 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 **Tutor:** asks quick prompts from toast-building moments (`до дна́`, `бока́л`, `рю́мка`, and toast starters).
 **You produce:** both toast formulas and proper table-item handling words.
 **Success:** You switch between toast wording and glass vocabulary without register or intent errors.
+
+### Scenario 20 — Calendar and weather check-in (id: calendar_weather_checkin)
+**Goal:** Answer the original-guide day and weather questions as simple family small talk.
+**Tutor:** asks `Ка́кая сего́дня пого́да?`, `Как там на у́лице?`, and `Како́й сего́дня день неде́ли?`
+**You produce:** short answers from the `calendar_weather` module: today/yesterday/tomorrow weather, day names, and `на выходны́х`.
+**Success:** You answer in short Russian without switching to English and keep stress clear on `сего́дня`, `пого́да`, and the day names.
 
 ---
 

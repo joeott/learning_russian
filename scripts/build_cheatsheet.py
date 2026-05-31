@@ -44,6 +44,7 @@ def main():
         "food",
         "smalltalk",
         "listening",
+        "calendar_weather",
         "verbs",
     ]
 

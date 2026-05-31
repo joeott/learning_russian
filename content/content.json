@@ -52,9 +52,10 @@
       "food": 16,
       "smalltalk": 9,
       "listening": 9,
+      "calendar_weather": 19,
       "verbs": 10
     },
-    "total_items": 109
+    "total_items": 128
   },
   "curriculum": {
     "model": "lesson_locked_i_plus_1",
@@ -647,6 +648,116 @@
       {
         "lesson_id": "family_visit_008",
         "lesson_number": 8,
+        "module": "calendar_weather",
+        "title": "Calendar & Weather",
+        "introduced_lexemes": [
+          "будет",
+          "было",
+          "воскресенье",
+          "вторник",
+          "вчера",
+          "вчера было солнечно.",
+          "выходных",
+          "день",
+          "дождь",
+          "завтра",
+          "завтра будет тепло.",
+          "идёт",
+          "идёт дождь.",
+          "идёт снег.",
+          "как",
+          "как там на улице?",
+          "какая",
+          "какая сегодня погода?",
+          "какой",
+          "какой сегодня день недели?",
+          "на",
+          "на выходных",
+          "недели",
+          "облачно",
+          "погода",
+          "понедельник",
+          "пятница",
+          "сегодня",
+          "сегодня облачно.",
+          "сегодня солнечно.",
+          "сегодня тепло.",
+          "сегодня холодно.",
+          "снег",
+          "солнечно",
+          "среда",
+          "суббота",
+          "там",
+          "тепло",
+          "улице",
+          "холодно",
+          "четверг"
+        ],
+        "active_vocab": [
+          "будет",
+          "было",
+          "воскресенье",
+          "вторник",
+          "вчера",
+          "вчера было солнечно.",
+          "выходных",
+          "дождь",
+          "завтра",
+          "завтра будет тепло.",
+          "идёт",
+          "идёт дождь.",
+          "идёт снег.",
+          "на",
+          "на выходных",
+          "облачно",
+          "понедельник",
+          "пятница",
+          "сегодня",
+          "сегодня облачно.",
+          "сегодня солнечно.",
+          "сегодня тепло.",
+          "сегодня холодно.",
+          "снег",
+          "солнечно",
+          "среда",
+          "суббота",
+          "тепло",
+          "холодно",
+          "четверг"
+        ],
+        "passive_vocab": [
+          "день",
+          "как",
+          "как там на улице?",
+          "какая",
+          "какая сегодня погода?",
+          "какой",
+          "какой сегодня день недели?",
+          "на",
+          "недели",
+          "погода",
+          "сегодня",
+          "там",
+          "улице"
+        ],
+        "introduced_structures": [
+          "grammar:time_expression",
+          "lexical:days_of_week",
+          "phrase:calendar_question",
+          "phrase:weather_answer",
+          "skill:listening_question_recognition"
+        ],
+        "allowed_error_types": [
+          "listening_misparse",
+          "stress"
+        ],
+        "prerequisites": [
+          "family_visit_007"
+        ]
+      },
+      {
+        "lesson_id": "family_visit_009",
+        "lesson_number": 9,
         "module": "verbs",
         "title": "Core Verbs (reactivation)",
         "introduced_lexemes": [
@@ -723,7 +834,7 @@
           "stress"
         ],
         "prerequisites": [
-          "family_visit_007"
+          "family_visit_008"
         ]
       }
     ]
@@ -786,12 +897,20 @@
       "order": 6
     },
     {
+      "id": "calendar_weather",
+      "title": "Calendar & Weather",
+      "why": "Original-guide day and weather questions for easy family small talk.",
+      "priority": 2,
+      "icon": "☀️",
+      "order": 7
+    },
+    {
       "id": "verbs",
       "title": "Core Verbs (reactivation)",
       "why": "High-frequency verbs from Ekaterina's guide — я / вы forms.",
       "priority": 3,
       "icon": "⚙️",
-      "order": 7
+      "order": 8
     }
   ],
   "items": [
@@ -5459,6 +5578,924 @@
       ]
     },
     {
+      "id": "cale001",
+      "module": "calendar_weather",
+      "ru": "Ка́кая сего́дня пого́да?",
+      "ru_plain": "Какая сегодня погода?",
+      "en": "What is the weather like today?",
+      "hint": "[ká-ka-ya si-vód-nya pa-gó-da]",
+      "priority": 2,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "weather",
+        "calendar"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "какая",
+        "какая сегодня погода?",
+        "погода",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale002",
+      "module": "calendar_weather",
+      "ru": "Как там на у́лице?",
+      "ru_plain": "Как там на улице?",
+      "en": "How is it outside?",
+      "hint": "[kak tam na ú-li-tse]",
+      "priority": 2,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "weather",
+        "calendar"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "как",
+        "как там на улице?",
+        "на",
+        "там",
+        "улице"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale003",
+      "module": "calendar_weather",
+      "ru": "Сего́дня хо́лодно.",
+      "ru_plain": "Сегодня холодно.",
+      "en": "Today it's cold.",
+      "hint": "[si-vód-nya hó-lad-na]",
+      "priority": 2,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "weather"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "сегодня",
+        "сегодня холодно.",
+        "холодно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale004",
+      "module": "calendar_weather",
+      "ru": "Сего́дня тепло́.",
+      "ru_plain": "Сегодня тепло.",
+      "en": "Today it's warm.",
+      "hint": "[si-vód-nya tip-ló]",
+      "priority": 2,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "weather"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "сегодня",
+        "сегодня тепло.",
+        "тепло"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale005",
+      "module": "calendar_weather",
+      "ru": "Сего́дня со́лнечно.",
+      "ru_plain": "Сегодня солнечно.",
+      "en": "Today it's sunny.",
+      "hint": "[si-vód-nya sól-nech-na]",
+      "priority": 2,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "weather"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "сегодня",
+        "сегодня солнечно.",
+        "солнечно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale006",
+      "module": "calendar_weather",
+      "ru": "Сего́дня о́блачно.",
+      "ru_plain": "Сегодня облачно.",
+      "en": "Today it's cloudy.",
+      "hint": "[si-vód-nya ób-lach-na]",
+      "priority": 2,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "weather"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "облачно",
+        "сегодня",
+        "сегодня облачно."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale007",
+      "module": "calendar_weather",
+      "ru": "Идёт дождь.",
+      "ru_plain": "Идёт дождь.",
+      "en": "It's raining.",
+      "hint": "[i-dyót doshch]",
+      "priority": 2,
+      "syllables": 3,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "weather"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "дождь",
+        "идёт",
+        "идёт дождь."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale008",
+      "module": "calendar_weather",
+      "ru": "Идёт снег.",
+      "ru_plain": "Идёт снег.",
+      "en": "It's snowing.",
+      "hint": "[i-dyót snyek]",
+      "priority": 2,
+      "syllables": 3,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "weather"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "идёт",
+        "идёт снег.",
+        "снег"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale009",
+      "module": "calendar_weather",
+      "ru": "Вчера́ бы́ло со́лнечно.",
+      "ru_plain": "Вчера было солнечно.",
+      "en": "It was sunny yesterday.",
+      "hint": "[vchi-rá bý-la sól-nech-na]",
+      "priority": 3,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "weather",
+        "time"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "было",
+        "вчера",
+        "вчера было солнечно.",
+        "солнечно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale010",
+      "module": "calendar_weather",
+      "ru": "За́втра бу́дет тепло́.",
+      "ru_plain": "Завтра будет тепло.",
+      "en": "Tomorrow it will be warm.",
+      "hint": "[záf-tra bú-dyet tip-ló]",
+      "priority": 3,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "weather",
+        "time"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "будет",
+        "завтра",
+        "завтра будет тепло.",
+        "тепло"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale011",
+      "module": "calendar_weather",
+      "ru": "Како́й сего́дня день неде́ли?",
+      "ru_plain": "Какой сегодня день недели?",
+      "en": "What day of the week is it today?",
+      "hint": "[ka-kóy si-vód-nya dyen' ni-dyé-li]",
+      "priority": 2,
+      "syllables": 9,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "calendar"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "день",
+        "какой",
+        "какой сегодня день недели?",
+        "недели",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale012",
+      "module": "calendar_weather",
+      "ru": "понеде́льник",
+      "ru_plain": "понедельник",
+      "en": "Monday",
+      "hint": "[pa-ni-dyél'-nik]",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "day"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "понедельник"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale013",
+      "module": "calendar_weather",
+      "ru": "вто́рник",
+      "ru_plain": "вторник",
+      "en": "Tuesday",
+      "hint": "[ftór-nik]",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "day"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вторник"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale014",
+      "module": "calendar_weather",
+      "ru": "среда́",
+      "ru_plain": "среда",
+      "en": "Wednesday",
+      "hint": "[sri-dá]",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "day"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "среда"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale015",
+      "module": "calendar_weather",
+      "ru": "четве́рг",
+      "ru_plain": "четверг",
+      "en": "Thursday",
+      "hint": "[chit-vyérk]",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "day"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "четверг"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale016",
+      "module": "calendar_weather",
+      "ru": "пя́тница",
+      "ru_plain": "пятница",
+      "en": "Friday",
+      "hint": "[pyát-ni-tsa]",
+      "priority": 3,
+      "syllables": 3,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "day"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "пятница"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale017",
+      "module": "calendar_weather",
+      "ru": "суббо́та",
+      "ru_plain": "суббота",
+      "en": "Saturday",
+      "hint": "[su-bó-ta]",
+      "priority": 3,
+      "syllables": 3,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "day"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "суббота"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale018",
+      "module": "calendar_weather",
+      "ru": "воскресе́нье",
+      "ru_plain": "воскресенье",
+      "en": "Sunday",
+      "hint": "[vas-kri-syén'-ye]",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "day"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "воскресенье"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
+      "id": "cale019",
+      "module": "calendar_weather",
+      "ru": "на выходны́х",
+      "ru_plain": "на выходных",
+      "en": "on the weekend",
+      "hint": "[na vy-had-nýh]",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "calendar"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "выходных",
+        "на",
+        "на выходных"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "prerequisites": [
+        "family_visit_007"
+      ]
+    },
+    {
       "id": "verb001",
       "module": "verbs",
       "ru": "хочу́ / хоти́те",
@@ -5497,10 +6534,10 @@
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "prerequisites": [
-        "family_visit_007"
+        "family_visit_008"
       ]
     },
     {
@@ -5542,10 +6579,10 @@
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "prerequisites": [
-        "family_visit_007"
+        "family_visit_008"
       ]
     },
     {
@@ -5587,10 +6624,10 @@
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "prerequisites": [
-        "family_visit_007"
+        "family_visit_008"
       ]
     },
     {
@@ -5632,10 +6669,10 @@
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "prerequisites": [
-        "family_visit_007"
+        "family_visit_008"
       ]
     },
     {
@@ -5677,10 +6714,10 @@
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "prerequisites": [
-        "family_visit_007"
+        "family_visit_008"
       ]
     },
     {
@@ -5722,10 +6759,10 @@
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "prerequisites": [
-        "family_visit_007"
+        "family_visit_008"
       ]
     },
     {
@@ -5767,10 +6804,10 @@
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "prerequisites": [
-        "family_visit_007"
+        "family_visit_008"
       ]
     },
     {
@@ -5812,10 +6849,10 @@
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "prerequisites": [
-        "family_visit_007"
+        "family_visit_008"
       ]
     },
     {
@@ -5857,10 +6894,10 @@
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "prerequisites": [
-        "family_visit_007"
+        "family_visit_008"
       ]
     },
     {
@@ -5902,10 +6939,10 @@
         "roleplay",
         "maintenance"
       ],
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "prerequisites": [
-        "family_visit_007"
+        "family_visit_008"
       ]
     }
   ],
@@ -8266,11 +9303,485 @@
       ]
     },
     {
+      "id": "cloze_cale001_01",
+      "item_id": "cale001",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Ка́кая сего́дня пого́да?",
+      "ru_plain": "Какая сегодня погода?",
+      "prompt_ru": "Какая ____ погода?",
+      "answer": "сегодня",
+      "accepted_answers": [
+        "сего́дня",
+        "сегодня"
+      ],
+      "en": "What is the weather like today?",
+      "priority": 2,
+      "lexemes": [
+        "какая",
+        "какая сегодня погода?",
+        "погода",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "calendar",
+        "cloze",
+        "weather"
+      ]
+    },
+    {
+      "id": "cloze_cale002_01",
+      "item_id": "cale002",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Как там на у́лице?",
+      "ru_plain": "Как там на улице?",
+      "prompt_ru": "Как там на ____?",
+      "answer": "улице",
+      "accepted_answers": [
+        "у́лице",
+        "улице"
+      ],
+      "en": "How is it outside?",
+      "priority": 2,
+      "lexemes": [
+        "как",
+        "как там на улице?",
+        "на",
+        "там",
+        "улице"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "calendar",
+        "cloze",
+        "weather"
+      ]
+    },
+    {
+      "id": "cloze_cale003_01",
+      "item_id": "cale003",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня хо́лодно.",
+      "ru_plain": "Сегодня холодно.",
+      "prompt_ru": "____ холодно.",
+      "answer": "Сегодня",
+      "accepted_answers": [
+        "Сего́дня",
+        "Сегодня"
+      ],
+      "en": "Today it's cold.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня холодно.",
+        "холодно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "weather"
+      ]
+    },
+    {
+      "id": "cloze_cale004_01",
+      "item_id": "cale004",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня тепло́.",
+      "ru_plain": "Сегодня тепло.",
+      "prompt_ru": "____ тепло.",
+      "answer": "Сегодня",
+      "accepted_answers": [
+        "Сего́дня",
+        "Сегодня"
+      ],
+      "en": "Today it's warm.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня тепло.",
+        "тепло"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "weather"
+      ]
+    },
+    {
+      "id": "cloze_cale005_01",
+      "item_id": "cale005",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня со́лнечно.",
+      "ru_plain": "Сегодня солнечно.",
+      "prompt_ru": "Сегодня ____.",
+      "answer": "солнечно",
+      "accepted_answers": [
+        "со́лнечно",
+        "солнечно"
+      ],
+      "en": "Today it's sunny.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня солнечно.",
+        "солнечно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "weather"
+      ]
+    },
+    {
+      "id": "cloze_cale006_01",
+      "item_id": "cale006",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня о́блачно.",
+      "ru_plain": "Сегодня облачно.",
+      "prompt_ru": "____ облачно.",
+      "answer": "Сегодня",
+      "accepted_answers": [
+        "Сего́дня",
+        "Сегодня"
+      ],
+      "en": "Today it's cloudy.",
+      "priority": 2,
+      "lexemes": [
+        "облачно",
+        "сегодня",
+        "сегодня облачно."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "weather"
+      ]
+    },
+    {
+      "id": "cloze_cale007_01",
+      "item_id": "cale007",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Идёт дождь.",
+      "ru_plain": "Идёт дождь.",
+      "prompt_ru": "Идёт ____.",
+      "answer": "дождь",
+      "accepted_answers": [
+        "дождь"
+      ],
+      "en": "It's raining.",
+      "priority": 2,
+      "lexemes": [
+        "дождь",
+        "идёт",
+        "идёт дождь."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "weather"
+      ]
+    },
+    {
+      "id": "cloze_cale008_01",
+      "item_id": "cale008",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Идёт снег.",
+      "ru_plain": "Идёт снег.",
+      "prompt_ru": "____ снег.",
+      "answer": "Идёт",
+      "accepted_answers": [
+        "Идёт"
+      ],
+      "en": "It's snowing.",
+      "priority": 2,
+      "lexemes": [
+        "идёт",
+        "идёт снег.",
+        "снег"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "weather"
+      ]
+    },
+    {
+      "id": "cloze_cale009_01",
+      "item_id": "cale009",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Вчера́ бы́ло со́лнечно.",
+      "ru_plain": "Вчера было солнечно.",
+      "prompt_ru": "Вчера было ____.",
+      "answer": "солнечно",
+      "accepted_answers": [
+        "со́лнечно",
+        "солнечно"
+      ],
+      "en": "It was sunny yesterday.",
+      "priority": 3,
+      "lexemes": [
+        "было",
+        "вчера",
+        "вчера было солнечно.",
+        "солнечно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "time",
+        "weather"
+      ]
+    },
+    {
+      "id": "cloze_cale010_01",
+      "item_id": "cale010",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "За́втра бу́дет тепло́.",
+      "ru_plain": "Завтра будет тепло.",
+      "prompt_ru": "____ будет тепло.",
+      "answer": "Завтра",
+      "accepted_answers": [
+        "За́втра",
+        "Завтра"
+      ],
+      "en": "Tomorrow it will be warm.",
+      "priority": 3,
+      "lexemes": [
+        "будет",
+        "завтра",
+        "завтра будет тепло.",
+        "тепло"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "time",
+        "weather"
+      ]
+    },
+    {
+      "id": "cloze_cale011_01",
+      "item_id": "cale011",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Како́й сего́дня день неде́ли?",
+      "ru_plain": "Какой сегодня день недели?",
+      "prompt_ru": "Какой ____ день недели?",
+      "answer": "сегодня",
+      "accepted_answers": [
+        "сего́дня",
+        "сегодня"
+      ],
+      "en": "What day of the week is it today?",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "какой",
+        "какой сегодня день недели?",
+        "недели",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "calendar",
+        "cloze"
+      ]
+    },
+    {
+      "id": "cloze_cale019_01",
+      "item_id": "cale019",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "на выходны́х",
+      "ru_plain": "на выходных",
+      "prompt_ru": "на ____",
+      "answer": "выходных",
+      "accepted_answers": [
+        "выходны́х",
+        "выходных"
+      ],
+      "en": "on the weekend",
+      "priority": 3,
+      "lexemes": [
+        "выходных",
+        "на",
+        "на выходных"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "calendar",
+        "cloze"
+      ]
+    },
+    {
       "id": "cloze_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "prompt_ru": "хочу / ____",
@@ -8305,8 +9816,8 @@
       "id": "cloze_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "prompt_ru": "могу / ____",
@@ -8341,8 +9852,8 @@
       "id": "cloze_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "prompt_ru": "говорю / ____",
@@ -8377,8 +9888,8 @@
       "id": "cloze_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "prompt_ru": "понимаю / ____",
@@ -8413,8 +9924,8 @@
       "id": "cloze_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "prompt_ru": "люблю / ____",
@@ -8449,8 +9960,8 @@
       "id": "cloze_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "prompt_ru": "работаю / ____",
@@ -8485,8 +9996,8 @@
       "id": "cloze_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "prompt_ru": "живу / ____",
@@ -8520,8 +10031,8 @@
       "id": "cloze_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "prompt_ru": "ем / ____",
@@ -8556,8 +10067,8 @@
       "id": "cloze_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "prompt_ru": "пью / ____",
@@ -8591,8 +10102,8 @@
       "id": "cloze_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "prompt_ru": "знаю / ____",
@@ -12225,11 +13736,769 @@
       ]
     },
     {
+      "id": "dict_cale001_01",
+      "item_id": "cale001",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Ка́кая сего́дня пого́да?",
+      "ru_plain": "Какая сегодня погода?",
+      "accepted_answers": [
+        "Ка́кая сего́дня пого́да?",
+        "Какая сегодня погода?"
+      ],
+      "en": "What is the weather like today?",
+      "priority": 2,
+      "lexemes": [
+        "какая",
+        "какая сегодня погода?",
+        "погода",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "calendar",
+        "dictation",
+        "weather"
+      ]
+    },
+    {
+      "id": "dict_cale002_01",
+      "item_id": "cale002",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Как там на у́лице?",
+      "ru_plain": "Как там на улице?",
+      "accepted_answers": [
+        "Как там на у́лице?",
+        "Как там на улице?"
+      ],
+      "en": "How is it outside?",
+      "priority": 2,
+      "lexemes": [
+        "как",
+        "как там на улице?",
+        "на",
+        "там",
+        "улице"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "calendar",
+        "dictation",
+        "weather"
+      ]
+    },
+    {
+      "id": "dict_cale003_01",
+      "item_id": "cale003",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня хо́лодно.",
+      "ru_plain": "Сегодня холодно.",
+      "accepted_answers": [
+        "Сего́дня хо́лодно.",
+        "Сегодня холодно."
+      ],
+      "en": "Today it's cold.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня холодно.",
+        "холодно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "weather"
+      ]
+    },
+    {
+      "id": "dict_cale004_01",
+      "item_id": "cale004",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня тепло́.",
+      "ru_plain": "Сегодня тепло.",
+      "accepted_answers": [
+        "Сего́дня тепло́.",
+        "Сегодня тепло."
+      ],
+      "en": "Today it's warm.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня тепло.",
+        "тепло"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "weather"
+      ]
+    },
+    {
+      "id": "dict_cale005_01",
+      "item_id": "cale005",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня со́лнечно.",
+      "ru_plain": "Сегодня солнечно.",
+      "accepted_answers": [
+        "Сего́дня со́лнечно.",
+        "Сегодня солнечно."
+      ],
+      "en": "Today it's sunny.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня солнечно.",
+        "солнечно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "weather"
+      ]
+    },
+    {
+      "id": "dict_cale006_01",
+      "item_id": "cale006",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня о́блачно.",
+      "ru_plain": "Сегодня облачно.",
+      "accepted_answers": [
+        "Сего́дня о́блачно.",
+        "Сегодня облачно."
+      ],
+      "en": "Today it's cloudy.",
+      "priority": 2,
+      "lexemes": [
+        "облачно",
+        "сегодня",
+        "сегодня облачно."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "weather"
+      ]
+    },
+    {
+      "id": "dict_cale007_01",
+      "item_id": "cale007",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Идёт дождь.",
+      "ru_plain": "Идёт дождь.",
+      "accepted_answers": [
+        "Идёт дождь."
+      ],
+      "en": "It's raining.",
+      "priority": 2,
+      "lexemes": [
+        "дождь",
+        "идёт",
+        "идёт дождь."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "weather"
+      ]
+    },
+    {
+      "id": "dict_cale008_01",
+      "item_id": "cale008",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Идёт снег.",
+      "ru_plain": "Идёт снег.",
+      "accepted_answers": [
+        "Идёт снег."
+      ],
+      "en": "It's snowing.",
+      "priority": 2,
+      "lexemes": [
+        "идёт",
+        "идёт снег.",
+        "снег"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "weather"
+      ]
+    },
+    {
+      "id": "dict_cale009_01",
+      "item_id": "cale009",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Вчера́ бы́ло со́лнечно.",
+      "ru_plain": "Вчера было солнечно.",
+      "accepted_answers": [
+        "Вчера было солнечно.",
+        "Вчера́ бы́ло со́лнечно."
+      ],
+      "en": "It was sunny yesterday.",
+      "priority": 3,
+      "lexemes": [
+        "было",
+        "вчера",
+        "вчера было солнечно.",
+        "солнечно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "time",
+        "weather"
+      ]
+    },
+    {
+      "id": "dict_cale010_01",
+      "item_id": "cale010",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "За́втра бу́дет тепло́.",
+      "ru_plain": "Завтра будет тепло.",
+      "accepted_answers": [
+        "За́втра бу́дет тепло́.",
+        "Завтра будет тепло."
+      ],
+      "en": "Tomorrow it will be warm.",
+      "priority": 3,
+      "lexemes": [
+        "будет",
+        "завтра",
+        "завтра будет тепло.",
+        "тепло"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "time",
+        "weather"
+      ]
+    },
+    {
+      "id": "dict_cale011_01",
+      "item_id": "cale011",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Како́й сего́дня день неде́ли?",
+      "ru_plain": "Какой сегодня день недели?",
+      "accepted_answers": [
+        "Како́й сего́дня день неде́ли?",
+        "Какой сегодня день недели?"
+      ],
+      "en": "What day of the week is it today?",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "какой",
+        "какой сегодня день недели?",
+        "недели",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "calendar",
+        "dictation"
+      ]
+    },
+    {
+      "id": "dict_cale012_01",
+      "item_id": "cale012",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "понеде́льник",
+      "ru_plain": "понедельник",
+      "accepted_answers": [
+        "понеде́льник",
+        "понедельник"
+      ],
+      "en": "Monday",
+      "priority": 3,
+      "lexemes": [
+        "понедельник"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "dictation"
+      ]
+    },
+    {
+      "id": "dict_cale013_01",
+      "item_id": "cale013",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "вто́рник",
+      "ru_plain": "вторник",
+      "accepted_answers": [
+        "вто́рник",
+        "вторник"
+      ],
+      "en": "Tuesday",
+      "priority": 3,
+      "lexemes": [
+        "вторник"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "dictation"
+      ]
+    },
+    {
+      "id": "dict_cale014_01",
+      "item_id": "cale014",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "среда́",
+      "ru_plain": "среда",
+      "accepted_answers": [
+        "среда",
+        "среда́"
+      ],
+      "en": "Wednesday",
+      "priority": 3,
+      "lexemes": [
+        "среда"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "dictation"
+      ]
+    },
+    {
+      "id": "dict_cale015_01",
+      "item_id": "cale015",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "четве́рг",
+      "ru_plain": "четверг",
+      "accepted_answers": [
+        "четве́рг",
+        "четверг"
+      ],
+      "en": "Thursday",
+      "priority": 3,
+      "lexemes": [
+        "четверг"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "dictation"
+      ]
+    },
+    {
+      "id": "dict_cale016_01",
+      "item_id": "cale016",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "пя́тница",
+      "ru_plain": "пятница",
+      "accepted_answers": [
+        "пя́тница",
+        "пятница"
+      ],
+      "en": "Friday",
+      "priority": 3,
+      "lexemes": [
+        "пятница"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "dictation"
+      ]
+    },
+    {
+      "id": "dict_cale017_01",
+      "item_id": "cale017",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "суббо́та",
+      "ru_plain": "суббота",
+      "accepted_answers": [
+        "суббо́та",
+        "суббота"
+      ],
+      "en": "Saturday",
+      "priority": 3,
+      "lexemes": [
+        "суббота"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "dictation"
+      ]
+    },
+    {
+      "id": "dict_cale018_01",
+      "item_id": "cale018",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "воскресе́нье",
+      "ru_plain": "воскресенье",
+      "accepted_answers": [
+        "воскресе́нье",
+        "воскресенье"
+      ],
+      "en": "Sunday",
+      "priority": 3,
+      "lexemes": [
+        "воскресенье"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "dictation"
+      ]
+    },
+    {
+      "id": "dict_cale019_01",
+      "item_id": "cale019",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "на выходны́х",
+      "ru_plain": "на выходных",
+      "accepted_answers": [
+        "на выходны́х",
+        "на выходных"
+      ],
+      "en": "on the weekend",
+      "priority": 3,
+      "lexemes": [
+        "выходных",
+        "на",
+        "на выходных"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "calendar",
+        "dictation"
+      ]
+    },
+    {
       "id": "dict_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "accepted_answers": [
@@ -12266,8 +14535,8 @@
       "id": "dict_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "accepted_answers": [
@@ -12304,8 +14573,8 @@
       "id": "dict_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "accepted_answers": [
@@ -12342,8 +14611,8 @@
       "id": "dict_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "accepted_answers": [
@@ -12380,8 +14649,8 @@
       "id": "dict_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "accepted_answers": [
@@ -12418,8 +14687,8 @@
       "id": "dict_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "accepted_answers": [
@@ -12456,8 +14725,8 @@
       "id": "dict_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "accepted_answers": [
@@ -12494,8 +14763,8 @@
       "id": "dict_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "accepted_answers": [
@@ -12532,8 +14801,8 @@
       "id": "dict_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "accepted_answers": [
@@ -12569,8 +14838,8 @@
       "id": "dict_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "accepted_answers": [
@@ -16201,11 +18470,706 @@
       ]
     },
     {
+      "id": "stress_cale001_01",
+      "item_id": "cale001",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Ка́кая сего́дня пого́да?",
+      "ru_plain": "Какая сегодня погода?",
+      "options": [
+        "Ка́кая сего́дня пого́да?",
+        "Ка́кая сегодня погода?",
+        "Кака́я сегодня погода?",
+        "Какая́ сегодня погода?"
+      ],
+      "answer": "Ка́кая сего́дня пого́да?",
+      "en": "What is the weather like today?",
+      "priority": 2,
+      "lexemes": [
+        "какая",
+        "какая сегодня погода?",
+        "погода",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "calendar",
+        "stress_drill",
+        "weather"
+      ]
+    },
+    {
+      "id": "stress_cale002_01",
+      "item_id": "cale002",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Как там на у́лице?",
+      "ru_plain": "Как там на улице?",
+      "options": [
+        "Ка́к там на улице?",
+        "Как та́м на улице?",
+        "Как там на у́лице?",
+        "Как там на́ улице?"
+      ],
+      "answer": "Как там на у́лице?",
+      "en": "How is it outside?",
+      "priority": 2,
+      "lexemes": [
+        "как",
+        "как там на улице?",
+        "на",
+        "там",
+        "улице"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "calendar",
+        "stress_drill",
+        "weather"
+      ]
+    },
+    {
+      "id": "stress_cale003_01",
+      "item_id": "cale003",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня хо́лодно.",
+      "ru_plain": "Сегодня холодно.",
+      "options": [
+        "Се́годня холодно.",
+        "Сего́дня хо́лодно.",
+        "Сего́дня холодно.",
+        "Сегодня́ холодно."
+      ],
+      "answer": "Сего́дня хо́лодно.",
+      "en": "Today it's cold.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня холодно.",
+        "холодно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "stress_drill",
+        "weather"
+      ]
+    },
+    {
+      "id": "stress_cale004_01",
+      "item_id": "cale004",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня тепло́.",
+      "ru_plain": "Сегодня тепло.",
+      "options": [
+        "Се́годня тепло.",
+        "Сего́дня тепло.",
+        "Сего́дня тепло́.",
+        "Сегодня́ тепло."
+      ],
+      "answer": "Сего́дня тепло́.",
+      "en": "Today it's warm.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня тепло.",
+        "тепло"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "stress_drill",
+        "weather"
+      ]
+    },
+    {
+      "id": "stress_cale005_01",
+      "item_id": "cale005",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня со́лнечно.",
+      "ru_plain": "Сегодня солнечно.",
+      "options": [
+        "Се́годня солнечно.",
+        "Сего́дня со́лнечно.",
+        "Сего́дня солнечно.",
+        "Сегодня́ солнечно."
+      ],
+      "answer": "Сего́дня со́лнечно.",
+      "en": "Today it's sunny.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня солнечно.",
+        "солнечно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "stress_drill",
+        "weather"
+      ]
+    },
+    {
+      "id": "stress_cale006_01",
+      "item_id": "cale006",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня о́блачно.",
+      "ru_plain": "Сегодня облачно.",
+      "options": [
+        "Се́годня облачно.",
+        "Сего́дня о́блачно.",
+        "Сего́дня облачно.",
+        "Сегодня́ облачно."
+      ],
+      "answer": "Сего́дня о́блачно.",
+      "en": "Today it's cloudy.",
+      "priority": 2,
+      "lexemes": [
+        "облачно",
+        "сегодня",
+        "сегодня облачно."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "stress_drill",
+        "weather"
+      ]
+    },
+    {
+      "id": "stress_cale009_01",
+      "item_id": "cale009",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Вчера́ бы́ло со́лнечно.",
+      "ru_plain": "Вчера было солнечно.",
+      "options": [
+        "Вче́ра было солнечно.",
+        "Вчера бы́ло солнечно.",
+        "Вчера́ бы́ло со́лнечно.",
+        "Вчера́ было солнечно."
+      ],
+      "answer": "Вчера́ бы́ло со́лнечно.",
+      "en": "It was sunny yesterday.",
+      "priority": 3,
+      "lexemes": [
+        "было",
+        "вчера",
+        "вчера было солнечно.",
+        "солнечно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "stress_drill",
+        "time",
+        "weather"
+      ]
+    },
+    {
+      "id": "stress_cale010_01",
+      "item_id": "cale010",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "За́втра бу́дет тепло́.",
+      "ru_plain": "Завтра будет тепло.",
+      "options": [
+        "За́втра бу́дет тепло́.",
+        "За́втра будет тепло.",
+        "Завтра бу́дет тепло.",
+        "Завтра́ будет тепло."
+      ],
+      "answer": "За́втра бу́дет тепло́.",
+      "en": "Tomorrow it will be warm.",
+      "priority": 3,
+      "lexemes": [
+        "будет",
+        "завтра",
+        "завтра будет тепло.",
+        "тепло"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "stress_drill",
+        "time",
+        "weather"
+      ]
+    },
+    {
+      "id": "stress_cale011_01",
+      "item_id": "cale011",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Како́й сего́дня день неде́ли?",
+      "ru_plain": "Какой сегодня день недели?",
+      "options": [
+        "Ка́кой сегодня день недели?",
+        "Како́й сего́дня день неде́ли?",
+        "Како́й сегодня день недели?",
+        "Какой се́годня день недели?"
+      ],
+      "answer": "Како́й сего́дня день неде́ли?",
+      "en": "What day of the week is it today?",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "какой",
+        "какой сегодня день недели?",
+        "недели",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "calendar",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cale012_01",
+      "item_id": "cale012",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "понеде́льник",
+      "ru_plain": "понедельник",
+      "options": [
+        "по́недельник",
+        "поне́дельник",
+        "понеде́льник",
+        "понедельни́к"
+      ],
+      "answer": "понеде́льник",
+      "en": "Monday",
+      "priority": 3,
+      "lexemes": [
+        "понедельник"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cale013_01",
+      "item_id": "cale013",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "вто́рник",
+      "ru_plain": "вторник",
+      "options": [
+        "вто́рник",
+        "вторни́к"
+      ],
+      "answer": "вто́рник",
+      "en": "Tuesday",
+      "priority": 3,
+      "lexemes": [
+        "вторник"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cale014_01",
+      "item_id": "cale014",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "среда́",
+      "ru_plain": "среда",
+      "options": [
+        "сре́да",
+        "среда́"
+      ],
+      "answer": "среда́",
+      "en": "Wednesday",
+      "priority": 3,
+      "lexemes": [
+        "среда"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cale015_01",
+      "item_id": "cale015",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "четве́рг",
+      "ru_plain": "четверг",
+      "options": [
+        "че́тверг",
+        "четве́рг"
+      ],
+      "answer": "четве́рг",
+      "en": "Thursday",
+      "priority": 3,
+      "lexemes": [
+        "четверг"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cale016_01",
+      "item_id": "cale016",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "пя́тница",
+      "ru_plain": "пятница",
+      "options": [
+        "пя́тница",
+        "пятни́ца",
+        "пятница́"
+      ],
+      "answer": "пя́тница",
+      "en": "Friday",
+      "priority": 3,
+      "lexemes": [
+        "пятница"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cale017_01",
+      "item_id": "cale017",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "суббо́та",
+      "ru_plain": "суббота",
+      "options": [
+        "су́ббота",
+        "суббо́та",
+        "суббота́"
+      ],
+      "answer": "суббо́та",
+      "en": "Saturday",
+      "priority": 3,
+      "lexemes": [
+        "суббота"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cale018_01",
+      "item_id": "cale018",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "воскресе́нье",
+      "ru_plain": "воскресенье",
+      "options": [
+        "во́скресенье",
+        "воскре́сенье",
+        "воскресе́нье",
+        "воскресенье́"
+      ],
+      "answer": "воскресе́нье",
+      "en": "Sunday",
+      "priority": 3,
+      "lexemes": [
+        "воскресенье"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "day",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_cale019_01",
+      "item_id": "cale019",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "на выходны́х",
+      "ru_plain": "на выходных",
+      "options": [
+        "на вы́ходных",
+        "на выхо́дных",
+        "на выходны́х",
+        "на́ выходных"
+      ],
+      "answer": "на выходны́х",
+      "en": "on the weekend",
+      "priority": 3,
+      "lexemes": [
+        "выходных",
+        "на",
+        "на выходных"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "calendar",
+        "stress_drill"
+      ]
+    },
+    {
       "id": "stress_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "options": [
@@ -16243,8 +19207,8 @@
       "id": "stress_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "options": [
@@ -16282,8 +19246,8 @@
       "id": "stress_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "options": [
@@ -16321,8 +19285,8 @@
       "id": "stress_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "options": [
@@ -16360,8 +19324,8 @@
       "id": "stress_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "options": [
@@ -16399,8 +19363,8 @@
       "id": "stress_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "options": [
@@ -16438,8 +19402,8 @@
       "id": "stress_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "options": [
@@ -16477,8 +19441,8 @@
       "id": "stress_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "options": [
@@ -16516,8 +19480,8 @@
       "id": "stress_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "options": [
@@ -20721,11 +23685,891 @@
       ]
     },
     {
+      "id": "pron_cale001_01",
+      "item_id": "cale001",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Ка́кая сего́дня пого́да?",
+      "ru_plain": "Какая сегодня погода?",
+      "en": "What is the weather like today?",
+      "priority": 2,
+      "lexemes": [
+        "какая",
+        "какая сегодня погода?",
+        "погода",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "calendar",
+        "pronunciation",
+        "weather"
+      ]
+    },
+    {
+      "id": "pron_cale002_01",
+      "item_id": "cale002",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Как там на у́лице?",
+      "ru_plain": "Как там на улице?",
+      "en": "How is it outside?",
+      "priority": 2,
+      "lexemes": [
+        "как",
+        "как там на улице?",
+        "на",
+        "там",
+        "улице"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "calendar",
+        "pronunciation",
+        "weather"
+      ]
+    },
+    {
+      "id": "pron_cale003_01",
+      "item_id": "cale003",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня хо́лодно.",
+      "ru_plain": "Сегодня холодно.",
+      "en": "Today it's cold.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня холодно.",
+        "холодно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "weather"
+      ]
+    },
+    {
+      "id": "pron_cale004_01",
+      "item_id": "cale004",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня тепло́.",
+      "ru_plain": "Сегодня тепло.",
+      "en": "Today it's warm.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня тепло.",
+        "тепло"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "weather"
+      ]
+    },
+    {
+      "id": "pron_cale005_01",
+      "item_id": "cale005",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня со́лнечно.",
+      "ru_plain": "Сегодня солнечно.",
+      "en": "Today it's sunny.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня солнечно.",
+        "солнечно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "weather"
+      ]
+    },
+    {
+      "id": "pron_cale006_01",
+      "item_id": "cale006",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня о́блачно.",
+      "ru_plain": "Сегодня облачно.",
+      "en": "Today it's cloudy.",
+      "priority": 2,
+      "lexemes": [
+        "облачно",
+        "сегодня",
+        "сегодня облачно."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "weather"
+      ]
+    },
+    {
+      "id": "pron_cale007_01",
+      "item_id": "cale007",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Идёт дождь.",
+      "ru_plain": "Идёт дождь.",
+      "en": "It's raining.",
+      "priority": 2,
+      "lexemes": [
+        "дождь",
+        "идёт",
+        "идёт дождь."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "weather"
+      ]
+    },
+    {
+      "id": "pron_cale008_01",
+      "item_id": "cale008",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Идёт снег.",
+      "ru_plain": "Идёт снег.",
+      "en": "It's snowing.",
+      "priority": 2,
+      "lexemes": [
+        "идёт",
+        "идёт снег.",
+        "снег"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "weather"
+      ]
+    },
+    {
+      "id": "pron_cale009_01",
+      "item_id": "cale009",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Вчера́ бы́ло со́лнечно.",
+      "ru_plain": "Вчера было солнечно.",
+      "en": "It was sunny yesterday.",
+      "priority": 3,
+      "lexemes": [
+        "было",
+        "вчера",
+        "вчера было солнечно.",
+        "солнечно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "time",
+        "weather"
+      ]
+    },
+    {
+      "id": "pron_cale010_01",
+      "item_id": "cale010",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "За́втра бу́дет тепло́.",
+      "ru_plain": "Завтра будет тепло.",
+      "en": "Tomorrow it will be warm.",
+      "priority": 3,
+      "lexemes": [
+        "будет",
+        "завтра",
+        "завтра будет тепло.",
+        "тепло"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "pronunciation",
+        "time",
+        "weather"
+      ]
+    },
+    {
+      "id": "pron_cale011_01",
+      "item_id": "cale011",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Како́й сего́дня день неде́ли?",
+      "ru_plain": "Какой сегодня день недели?",
+      "en": "What day of the week is it today?",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "какой",
+        "какой сегодня день недели?",
+        "недели",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "calendar",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cale012_01",
+      "item_id": "cale012",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "понеде́льник",
+      "ru_plain": "понедельник",
+      "en": "Monday",
+      "priority": 3,
+      "lexemes": [
+        "понедельник"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cale013_01",
+      "item_id": "cale013",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "вто́рник",
+      "ru_plain": "вторник",
+      "en": "Tuesday",
+      "priority": 3,
+      "lexemes": [
+        "вторник"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cale014_01",
+      "item_id": "cale014",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "среда́",
+      "ru_plain": "среда",
+      "en": "Wednesday",
+      "priority": 3,
+      "lexemes": [
+        "среда"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cale015_01",
+      "item_id": "cale015",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "четве́рг",
+      "ru_plain": "четверг",
+      "en": "Thursday",
+      "priority": 3,
+      "lexemes": [
+        "четверг"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cale016_01",
+      "item_id": "cale016",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "пя́тница",
+      "ru_plain": "пятница",
+      "en": "Friday",
+      "priority": 3,
+      "lexemes": [
+        "пятница"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cale017_01",
+      "item_id": "cale017",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "суббо́та",
+      "ru_plain": "суббота",
+      "en": "Saturday",
+      "priority": 3,
+      "lexemes": [
+        "суббота"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cale018_01",
+      "item_id": "cale018",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "воскресе́нье",
+      "ru_plain": "воскресенье",
+      "en": "Sunday",
+      "priority": 3,
+      "lexemes": [
+        "воскресенье"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "day",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_cale019_01",
+      "item_id": "cale019",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "на выходны́х",
+      "ru_plain": "на выходных",
+      "en": "on the weekend",
+      "priority": 3,
+      "lexemes": [
+        "выходных",
+        "на",
+        "на выходных"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "calendar",
+        "pronunciation"
+      ]
+    },
+    {
       "id": "pron_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "en": "I want / you (pl/formal) want — хоте́ть",
@@ -20768,8 +24612,8 @@
       "id": "pron_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "en": "I can / you can — мочь",
@@ -20812,8 +24656,8 @@
       "id": "pron_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "en": "I speak / you speak — говори́ть",
@@ -20856,8 +24700,8 @@
       "id": "pron_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "en": "I understand / you understand — понима́ть",
@@ -20900,8 +24744,8 @@
       "id": "pron_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "en": "I love / you love — люби́ть",
@@ -20944,8 +24788,8 @@
       "id": "pron_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "en": "I work / you work — рабо́тать",
@@ -20988,8 +24832,8 @@
       "id": "pron_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "en": "I live / you live — жить",
@@ -21032,8 +24876,8 @@
       "id": "pron_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "en": "I eat / you eat — есть",
@@ -21076,8 +24920,8 @@
       "id": "pron_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "en": "I drink / you drink — пить",
@@ -21120,8 +24964,8 @@
       "id": "pron_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "en": "I know / you know — знать",
@@ -24968,11 +28812,813 @@
       ]
     },
     {
+      "id": "back_cale001_01",
+      "item_id": "cale001",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Ка́кая сего́дня пого́да?",
+      "ru_plain": "Какая сегодня погода?",
+      "accepted_answers": [
+        "Ка́кая сего́дня пого́да?",
+        "Какая сегодня погода?"
+      ],
+      "en": "What is the weather like today?",
+      "priority": 2,
+      "lexemes": [
+        "какая",
+        "какая сегодня погода?",
+        "погода",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "calendar",
+        "weather"
+      ]
+    },
+    {
+      "id": "back_cale002_01",
+      "item_id": "cale002",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Как там на у́лице?",
+      "ru_plain": "Как там на улице?",
+      "accepted_answers": [
+        "Как там на у́лице?",
+        "Как там на улице?"
+      ],
+      "en": "How is it outside?",
+      "priority": 2,
+      "lexemes": [
+        "как",
+        "как там на улице?",
+        "на",
+        "там",
+        "улице"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "calendar",
+        "weather"
+      ]
+    },
+    {
+      "id": "back_cale003_01",
+      "item_id": "cale003",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня хо́лодно.",
+      "ru_plain": "Сегодня холодно.",
+      "accepted_answers": [
+        "Сего́дня хо́лодно.",
+        "Сегодня холодно."
+      ],
+      "en": "Today it's cold.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня холодно.",
+        "холодно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "weather"
+      ]
+    },
+    {
+      "id": "back_cale004_01",
+      "item_id": "cale004",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня тепло́.",
+      "ru_plain": "Сегодня тепло.",
+      "accepted_answers": [
+        "Сего́дня тепло́.",
+        "Сегодня тепло."
+      ],
+      "en": "Today it's warm.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня тепло.",
+        "тепло"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "weather"
+      ]
+    },
+    {
+      "id": "back_cale005_01",
+      "item_id": "cale005",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня со́лнечно.",
+      "ru_plain": "Сегодня солнечно.",
+      "accepted_answers": [
+        "Сего́дня со́лнечно.",
+        "Сегодня солнечно."
+      ],
+      "en": "Today it's sunny.",
+      "priority": 2,
+      "lexemes": [
+        "сегодня",
+        "сегодня солнечно.",
+        "солнечно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "weather"
+      ]
+    },
+    {
+      "id": "back_cale006_01",
+      "item_id": "cale006",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Сего́дня о́блачно.",
+      "ru_plain": "Сегодня облачно.",
+      "accepted_answers": [
+        "Сего́дня о́блачно.",
+        "Сегодня облачно."
+      ],
+      "en": "Today it's cloudy.",
+      "priority": 2,
+      "lexemes": [
+        "облачно",
+        "сегодня",
+        "сегодня облачно."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "weather"
+      ]
+    },
+    {
+      "id": "back_cale007_01",
+      "item_id": "cale007",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Идёт дождь.",
+      "ru_plain": "Идёт дождь.",
+      "accepted_answers": [
+        "Идёт дождь."
+      ],
+      "en": "It's raining.",
+      "priority": 2,
+      "lexemes": [
+        "дождь",
+        "идёт",
+        "идёт дождь."
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "weather"
+      ]
+    },
+    {
+      "id": "back_cale008_01",
+      "item_id": "cale008",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Идёт снег.",
+      "ru_plain": "Идёт снег.",
+      "accepted_answers": [
+        "Идёт снег."
+      ],
+      "en": "It's snowing.",
+      "priority": 2,
+      "lexemes": [
+        "идёт",
+        "идёт снег.",
+        "снег"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "weather"
+      ]
+    },
+    {
+      "id": "back_cale009_01",
+      "item_id": "cale009",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Вчера́ бы́ло со́лнечно.",
+      "ru_plain": "Вчера было солнечно.",
+      "accepted_answers": [
+        "Вчера было солнечно.",
+        "Вчера́ бы́ло со́лнечно."
+      ],
+      "en": "It was sunny yesterday.",
+      "priority": 3,
+      "lexemes": [
+        "было",
+        "вчера",
+        "вчера было солнечно.",
+        "солнечно"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "time",
+        "weather"
+      ]
+    },
+    {
+      "id": "back_cale010_01",
+      "item_id": "cale010",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "За́втра бу́дет тепло́.",
+      "ru_plain": "Завтра будет тепло.",
+      "accepted_answers": [
+        "За́втра бу́дет тепло́.",
+        "Завтра будет тепло."
+      ],
+      "en": "Tomorrow it will be warm.",
+      "priority": 3,
+      "lexemes": [
+        "будет",
+        "завтра",
+        "завтра будет тепло.",
+        "тепло"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "time",
+        "weather"
+      ]
+    },
+    {
+      "id": "back_cale011_01",
+      "item_id": "cale011",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "Како́й сего́дня день неде́ли?",
+      "ru_plain": "Какой сегодня день недели?",
+      "accepted_answers": [
+        "Како́й сего́дня день неде́ли?",
+        "Какой сегодня день недели?"
+      ],
+      "en": "What day of the week is it today?",
+      "priority": 2,
+      "lexemes": [
+        "день",
+        "какой",
+        "какой сегодня день недели?",
+        "недели",
+        "сегодня"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "calendar"
+      ]
+    },
+    {
+      "id": "back_cale012_01",
+      "item_id": "cale012",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "понеде́льник",
+      "ru_plain": "понедельник",
+      "accepted_answers": [
+        "понеде́льник",
+        "понедельник"
+      ],
+      "en": "Monday",
+      "priority": 3,
+      "lexemes": [
+        "понедельник"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day"
+      ]
+    },
+    {
+      "id": "back_cale013_01",
+      "item_id": "cale013",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "вто́рник",
+      "ru_plain": "вторник",
+      "accepted_answers": [
+        "вто́рник",
+        "вторник"
+      ],
+      "en": "Tuesday",
+      "priority": 3,
+      "lexemes": [
+        "вторник"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day"
+      ]
+    },
+    {
+      "id": "back_cale014_01",
+      "item_id": "cale014",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "среда́",
+      "ru_plain": "среда",
+      "accepted_answers": [
+        "среда",
+        "среда́"
+      ],
+      "en": "Wednesday",
+      "priority": 3,
+      "lexemes": [
+        "среда"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day"
+      ]
+    },
+    {
+      "id": "back_cale015_01",
+      "item_id": "cale015",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "четве́рг",
+      "ru_plain": "четверг",
+      "accepted_answers": [
+        "четве́рг",
+        "четверг"
+      ],
+      "en": "Thursday",
+      "priority": 3,
+      "lexemes": [
+        "четверг"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day"
+      ]
+    },
+    {
+      "id": "back_cale016_01",
+      "item_id": "cale016",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "пя́тница",
+      "ru_plain": "пятница",
+      "accepted_answers": [
+        "пя́тница",
+        "пятница"
+      ],
+      "en": "Friday",
+      "priority": 3,
+      "lexemes": [
+        "пятница"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day"
+      ]
+    },
+    {
+      "id": "back_cale017_01",
+      "item_id": "cale017",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "суббо́та",
+      "ru_plain": "суббота",
+      "accepted_answers": [
+        "суббо́та",
+        "суббота"
+      ],
+      "en": "Saturday",
+      "priority": 3,
+      "lexemes": [
+        "суббота"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day"
+      ]
+    },
+    {
+      "id": "back_cale018_01",
+      "item_id": "cale018",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "воскресе́нье",
+      "ru_plain": "воскресенье",
+      "accepted_answers": [
+        "воскресе́нье",
+        "воскресенье"
+      ],
+      "en": "Sunday",
+      "priority": 3,
+      "lexemes": [
+        "воскресенье"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "day"
+      ]
+    },
+    {
+      "id": "back_cale019_01",
+      "item_id": "cale019",
+      "module": "calendar_weather",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "ru": "на выходны́х",
+      "ru_plain": "на выходных",
+      "accepted_answers": [
+        "на выходны́х",
+        "на выходных"
+      ],
+      "en": "on the weekend",
+      "priority": 3,
+      "lexemes": [
+        "выходных",
+        "на",
+        "на выходных"
+      ],
+      "structures": [
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "phrase:calendar_question",
+        "phrase:weather_answer"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "calendar"
+      ]
+    },
+    {
       "id": "back_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "хочу́ / хоти́те",
       "ru_plain": "хочу / хотите",
       "accepted_answers": [
@@ -25011,8 +29657,8 @@
       "id": "back_verb002_01",
       "item_id": "verb002",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "могу́ / мо́жете",
       "ru_plain": "могу / можете",
       "accepted_answers": [
@@ -25051,8 +29697,8 @@
       "id": "back_verb003_01",
       "item_id": "verb003",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "говорю́ / говори́те",
       "ru_plain": "говорю / говорите",
       "accepted_answers": [
@@ -25091,8 +29737,8 @@
       "id": "back_verb004_01",
       "item_id": "verb004",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "понима́ю / понима́ете",
       "ru_plain": "понимаю / понимаете",
       "accepted_answers": [
@@ -25131,8 +29777,8 @@
       "id": "back_verb005_01",
       "item_id": "verb005",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "люблю́ / лю́бите",
       "ru_plain": "люблю / любите",
       "accepted_answers": [
@@ -25171,8 +29817,8 @@
       "id": "back_verb006_01",
       "item_id": "verb006",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "рабо́таю / рабо́таете",
       "ru_plain": "работаю / работаете",
       "accepted_answers": [
@@ -25211,8 +29857,8 @@
       "id": "back_verb007_01",
       "item_id": "verb007",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "живу́ / живёте",
       "ru_plain": "живу / живёте",
       "accepted_answers": [
@@ -25251,8 +29897,8 @@
       "id": "back_verb008_01",
       "item_id": "verb008",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "ем / еди́те",
       "ru_plain": "ем / едите",
       "accepted_answers": [
@@ -25291,8 +29937,8 @@
       "id": "back_verb009_01",
       "item_id": "verb009",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "пью / пьёте",
       "ru_plain": "пью / пьёте",
       "accepted_answers": [
@@ -25330,8 +29976,8 @@
       "id": "back_verb010_01",
       "item_id": "verb010",
       "module": "verbs",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "ru": "зна́ю / зна́ете",
       "ru_plain": "знаю / знаете",
       "accepted_answers": [
@@ -29839,8 +34485,8 @@
     {
       "id": "tutor_verb_fluency_check",
       "scenario_id": "verb_fluency_check",
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8,
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9,
       "setting": "Core verb fluency",
       "goal": "Produce core verbs under real interview-style pressure.",
       "learner_role": "guest",
@@ -29932,7 +34578,8 @@
         "family_visit_005",
         "family_visit_006",
         "family_visit_007",
-        "family_visit_008"
+        "family_visit_008",
+        "family_visit_009"
       ],
       "allowed_item_ids": [
         "firs001",
@@ -30034,6 +34681,25 @@
         "list007",
         "list008",
         "list009",
+        "cale001",
+        "cale002",
+        "cale003",
+        "cale004",
+        "cale005",
+        "cale006",
+        "cale007",
+        "cale008",
+        "cale009",
+        "cale010",
+        "cale011",
+        "cale012",
+        "cale013",
+        "cale014",
+        "cale015",
+        "cale016",
+        "cale017",
+        "cale018",
+        "cale019",
         "verb001",
         "verb002",
         "verb003",
@@ -30055,14 +34721,20 @@
         "брат",
         "будем",
         "будем здоровы!",
+        "будет",
         "было",
         "в",
         "ваше",
         "вашу",
         "вечер",
         "вкусно",
+        "воскресенье",
         "встречу",
+        "вторник",
+        "вчера",
+        "вчера было солнечно.",
         "выпьем",
+        "выходных",
         "говорите",
         "говорю",
         "говорю / говорите",
@@ -30083,6 +34755,7 @@
         "добрый",
         "добрый вечер",
         "добрый день",
+        "дождь",
         "дочь",
         "едите",
         "ем",
@@ -30104,6 +34777,8 @@
         "за семью!",
         "за хозяев!",
         "за хозяйку!",
+        "завтра",
+        "завтра будет тепло.",
         "здоровы",
         "здоровье",
         "здравствуйте",
@@ -30113,6 +34788,9 @@
         "знаю / знаете",
         "зовут",
         "зять",
+        "идёт",
+        "идёт дождь.",
+        "идёт снег.",
         "из",
         "извините",
         "как",
@@ -30137,6 +34815,8 @@
         "муж",
         "мы",
         "мы познакомились …",
+        "на",
+        "на выходных",
         "надо",
         "наелся",
         "не",
@@ -30146,6 +34826,7 @@
         "нормально",
         "ночи",
         "нравится",
+        "облачно",
         "отлично",
         "очень",
         "очень вкусно!",
@@ -30161,6 +34842,7 @@
         "познакомиться",
         "помедленнее",
         "помедленнее, пожалуйста",
+        "понедельник",
         "понимаете",
         "понимаю",
         "понимаю / понимаете",
@@ -30176,6 +34858,7 @@
         "пью",
         "пью / пьёте",
         "пьёте",
+        "пятница",
         "работаете",
         "работаю",
         "работаю / работаете",
@@ -30189,11 +34872,18 @@
         "русский",
         "рюмка",
         "свидания",
+        "сегодня",
+        "сегодня облачно.",
+        "сегодня солнечно.",
+        "сегодня тепло.",
+        "сегодня холодно.",
         "семью",
         "семья",
         "сестра",
         "сестра жены",
         "сказать",
+        "снег",
+        "солнечно",
         "спасибо",
         "спасибо большое",
         "спасибо, было очень вкусно",
@@ -30202,7 +34892,10 @@
         "спасибо, что приняли",
         "спокойной",
         "спокойной ночи",
+        "среда",
+        "суббота",
         "сын",
+        "тепло",
         "тесть",
         "тост",
         "тёща",
@@ -30211,12 +34904,14 @@
         "хлеб",
         "хозяев",
         "хозяйку",
+        "холодно",
         "хорошо",
         "хорошо, спасибо",
         "хотите",
         "хочу",
         "хочу / хотите",
         "чаю",
+        "четверг",
         "что",
         "штата",
         "шурин",
@@ -30247,23 +34942,35 @@
         "вы говорите по-русски?",
         "говорите",
         "дела",
+        "день",
         "ещё",
         "как",
         "как вам россия?",
         "как вы познакомились?",
         "как дела?",
+        "как там на улице?",
+        "какая",
+        "какая сегодня погода?",
+        "какой",
+        "какой сегодня день недели?",
         "кем",
         "кем вы работаете?",
+        "на",
+        "недели",
         "нравится",
         "оливье",
         "откуда",
         "откуда вы?",
         "пельмени",
         "по",
+        "погода",
         "познакомились",
         "работаете",
         "россия",
         "русски",
+        "сегодня",
+        "там",
+        "улице",
         "чай"
       ],
       "structures": [
@@ -30272,9 +34979,12 @@
         "grammar:formal_question",
         "grammar:formal_second_person",
         "grammar:present_first_person",
+        "grammar:time_expression",
         "lexical:core_verbs",
+        "lexical:days_of_week",
         "lexical:kinship_terms",
         "morphology:gendered_short_form",
+        "phrase:calendar_question",
         "phrase:compliment_food",
         "phrase:family_affection",
         "phrase:food_offer",
@@ -30287,6 +34997,7 @@
         "phrase:repair",
         "phrase:table_toast",
         "phrase:toast_za_accusative",
+        "phrase:weather_answer",
         "phrase:work_identity",
         "phrase:yes_no",
         "register:formal_you",
@@ -30305,7 +35016,7 @@
         "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
-      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Core verb fluency — Produce core verbs under real interview-style pressure.\nCurriculum boundary: Lesson 8 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- хочу / хотите — I want / you (pl/formal) want — хоте́ть\n- могу / можете — I can / you can — мочь\n- говорю / говорите — I speak / you speak — говори́ть\n- понимаю / понимаете — I understand / you understand — понима́ть\n- люблю / любите — I love / you love — люби́ть\n- работаю / работаете — I work / you work — рабо́тать\n- живу / живёте — I live / you live — жить\n- ем / едите — I eat / you eat — есть\n- пью / пьёте — I drink / you drink — пить\n- знаю / знаете — I know / you know — знать\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Core verb fluency — Produce core verbs under real interview-style pressure.\nCurriculum boundary: Lesson 9 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- хочу / хотите — I want / you (pl/formal) want — хоте́ть\n- могу / можете — I can / you can — мочь\n- говорю / говорите — I speak / you speak — говори́ть\n- понимаю / понимаете — I understand / you understand — понима́ть\n- люблю / любите — I love / you love — люби́ть\n- работаю / работаете — I work / you work — рабо́тать\n- живу / живёте — I live / you live — жить\n- ем / едите — I eat / you eat — есть\n- пью / пьёте — I drink / you drink — пить\n- знаю / знаете — I know / you know — знать\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     },
     {
       "id": "tutor_extended_family_family_tree",
@@ -31314,6 +36025,513 @@
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
       "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Toast mechanics and table flow — Run toast moments and table vocabulary safely from raise-to-clink to closure.\nCurriculum boundary: Lesson 3 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Я хочу сказать тост за … — I want to make a toast to …\n- до дна — 'to the bottom' (drain the glass)\n- бокал — (wine) glass\n- рюмка — shot glass (for vodka)\n- За родителей! — To the parents!\n- За ваше здоровье! — To your health! (formal)\n- За здоровье! — To health!\n- Извините — Excuse me / sorry (formal)\n- Простите — Pardon me / sorry (formal)\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+    },
+    {
+      "id": "tutor_calendar_weather_checkin",
+      "scenario_id": "calendar_weather_checkin",
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8,
+      "setting": "Calendar and weather check-in",
+      "goal": "Answer the original-guide day and weather questions as easy table small talk.",
+      "learner_role": "guest",
+      "tutor_role": "host family member",
+      "required_items": [
+        "cale001",
+        "cale002",
+        "cale003",
+        "cale004",
+        "cale005",
+        "cale006",
+        "cale009",
+        "cale010",
+        "cale011",
+        "cale018",
+        "cale019"
+      ],
+      "required_phrases": [
+        {
+          "id": "cale001",
+          "ru": "Ка́кая сего́дня пого́да?",
+          "ru_plain": "Какая сегодня погода?",
+          "en": "What is the weather like today?"
+        },
+        {
+          "id": "cale002",
+          "ru": "Как там на у́лице?",
+          "ru_plain": "Как там на улице?",
+          "en": "How is it outside?"
+        },
+        {
+          "id": "cale003",
+          "ru": "Сего́дня хо́лодно.",
+          "ru_plain": "Сегодня холодно.",
+          "en": "Today it's cold."
+        },
+        {
+          "id": "cale004",
+          "ru": "Сего́дня тепло́.",
+          "ru_plain": "Сегодня тепло.",
+          "en": "Today it's warm."
+        },
+        {
+          "id": "cale005",
+          "ru": "Сего́дня со́лнечно.",
+          "ru_plain": "Сегодня солнечно.",
+          "en": "Today it's sunny."
+        },
+        {
+          "id": "cale006",
+          "ru": "Сего́дня о́блачно.",
+          "ru_plain": "Сегодня облачно.",
+          "en": "Today it's cloudy."
+        },
+        {
+          "id": "cale009",
+          "ru": "Вчера́ бы́ло со́лнечно.",
+          "ru_plain": "Вчера было солнечно.",
+          "en": "It was sunny yesterday."
+        },
+        {
+          "id": "cale010",
+          "ru": "За́втра бу́дет тепло́.",
+          "ru_plain": "Завтра будет тепло.",
+          "en": "Tomorrow it will be warm."
+        },
+        {
+          "id": "cale011",
+          "ru": "Како́й сего́дня день неде́ли?",
+          "ru_plain": "Какой сегодня день недели?",
+          "en": "What day of the week is it today?"
+        },
+        {
+          "id": "cale018",
+          "ru": "воскресе́нье",
+          "ru_plain": "воскресенье",
+          "en": "Sunday"
+        },
+        {
+          "id": "cale019",
+          "ru": "на выходны́х",
+          "ru_plain": "на выходных",
+          "en": "on the weekend"
+        }
+      ],
+      "success_criteria": [
+        "answers_calendar_weather",
+        "uses_time_words",
+        "stays_in_russian",
+        "keeps_stress_clear"
+      ],
+      "allowed_lesson_ids": [
+        "family_visit_001",
+        "family_visit_002",
+        "family_visit_003",
+        "family_visit_004",
+        "family_visit_005",
+        "family_visit_006",
+        "family_visit_007",
+        "family_visit_008"
+      ],
+      "allowed_item_ids": [
+        "firs001",
+        "firs002",
+        "firs003",
+        "firs004",
+        "firs005",
+        "firs006",
+        "firs007",
+        "firs008",
+        "firs009",
+        "firs010",
+        "firs011",
+        "firs012",
+        "firs013",
+        "poli001",
+        "poli002",
+        "poli003",
+        "poli004",
+        "poli005",
+        "poli006",
+        "poli007",
+        "poli008",
+        "poli009",
+        "poli010",
+        "poli011",
+        "poli012",
+        "poli013",
+        "poli014",
+        "poli015",
+        "poli016",
+        "poli017",
+        "toas001",
+        "toas002",
+        "toas003",
+        "toas004",
+        "toas005",
+        "toas006",
+        "toas007",
+        "toas008",
+        "toas009",
+        "toas010",
+        "toas011",
+        "toas012",
+        "toas013",
+        "toas014",
+        "toas015",
+        "toas016",
+        "fami001",
+        "fami002",
+        "fami003",
+        "fami004",
+        "fami005",
+        "fami006",
+        "fami007",
+        "fami008",
+        "fami009",
+        "fami010",
+        "fami011",
+        "fami012",
+        "fami013",
+        "fami014",
+        "fami015",
+        "fami016",
+        "fami017",
+        "fami018",
+        "fami019",
+        "food001",
+        "food002",
+        "food003",
+        "food004",
+        "food005",
+        "food006",
+        "food007",
+        "food008",
+        "food009",
+        "food010",
+        "food011",
+        "food012",
+        "food013",
+        "food014",
+        "food015",
+        "food016",
+        "smal001",
+        "smal002",
+        "smal003",
+        "smal004",
+        "smal005",
+        "smal006",
+        "smal007",
+        "smal008",
+        "smal009",
+        "list001",
+        "list002",
+        "list003",
+        "list004",
+        "list005",
+        "list006",
+        "list007",
+        "list008",
+        "list009",
+        "cale001",
+        "cale002",
+        "cale003",
+        "cale004",
+        "cale005",
+        "cale006",
+        "cale007",
+        "cale008",
+        "cale009",
+        "cale010",
+        "cale011",
+        "cale012",
+        "cale013",
+        "cale014",
+        "cale015",
+        "cale016",
+        "cale017",
+        "cale018",
+        "cale019"
+      ],
+      "active_vocab": [
+        "америке",
+        "америки",
+        "аппетита",
+        "бабушка",
+        "бокал",
+        "большое",
+        "брат",
+        "будем",
+        "будем здоровы!",
+        "будет",
+        "было",
+        "в",
+        "ваше",
+        "вашу",
+        "вечер",
+        "вкусно",
+        "воскресенье",
+        "встречу",
+        "вторник",
+        "вчера",
+        "вчера было солнечно.",
+        "выпьем",
+        "выходных",
+        "говорю",
+        "да",
+        "да, немного",
+        "давайте",
+        "давайте выпьем за это!",
+        "дедушка",
+        "день",
+        "дети",
+        "джо",
+        "дна",
+        "до",
+        "до дна",
+        "до свидания",
+        "доброе",
+        "доброе утро",
+        "добрый",
+        "добрый вечер",
+        "добрый день",
+        "дождь",
+        "дочь",
+        "ещё",
+        "жена",
+        "жены",
+        "живу",
+        "за",
+        "за ваше здоровье!",
+        "за встречу!",
+        "за здоровье!",
+        "за знакомство!",
+        "за любовь!",
+        "за молодых!",
+        "за родителей!",
+        "за семью!",
+        "за хозяев!",
+        "за хозяйку!",
+        "завтра",
+        "завтра будет тепло.",
+        "здоровы",
+        "здоровье",
+        "здравствуйте",
+        "знакомство",
+        "зовут",
+        "зять",
+        "идёт",
+        "идёт дождь.",
+        "идёт снег.",
+        "из",
+        "извините",
+        "как",
+        "как по-русски …?",
+        "люблю",
+        "любовь",
+        "мама",
+        "меня",
+        "меня зовут джо",
+        "миссури",
+        "мне",
+        "мне очень нравится",
+        "можно",
+        "можно ещё?",
+        "можно чаю?",
+        "молодых",
+        "муж",
+        "мы",
+        "мы познакомились …",
+        "на",
+        "на выходных",
+        "надо",
+        "наелся",
+        "не",
+        "немного",
+        "нет",
+        "нет, спасибо",
+        "нормально",
+        "ночи",
+        "нравится",
+        "облачно",
+        "отлично",
+        "очень",
+        "очень вкусно!",
+        "очень приятно",
+        "папа",
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "по",
+        "повторите",
+        "повторите, пожалуйста",
+        "пожалуйста",
+        "познакомились",
+        "познакомиться",
+        "помедленнее",
+        "помедленнее, пожалуйста",
+        "понедельник",
+        "понимаю",
+        "понятно",
+        "представиться",
+        "пригласили",
+        "приняли",
+        "приятно",
+        "приятно познакомиться",
+        "приятного",
+        "приятного аппетита!",
+        "простите",
+        "пятница",
+        "рад",
+        "рад познакомиться",
+        "разрешите",
+        "разрешите представиться",
+        "родителей",
+        "родители",
+        "русски",
+        "русский",
+        "рюмка",
+        "свидания",
+        "сегодня",
+        "сегодня облачно.",
+        "сегодня солнечно.",
+        "сегодня тепло.",
+        "сегодня холодно.",
+        "семью",
+        "семья",
+        "сестра",
+        "сестра жены",
+        "сказать",
+        "снег",
+        "солнечно",
+        "спасибо",
+        "спасибо большое",
+        "спасибо, было очень вкусно",
+        "спасибо, не надо",
+        "спасибо, что пригласили",
+        "спасибо, что приняли",
+        "спокойной",
+        "спокойной ночи",
+        "среда",
+        "суббота",
+        "сын",
+        "тепло",
+        "тесть",
+        "тост",
+        "тёща",
+        "утро",
+        "учу",
+        "хлеб",
+        "хозяев",
+        "хозяйку",
+        "холодно",
+        "хорошо",
+        "хорошо, спасибо",
+        "хочу",
+        "чаю",
+        "четверг",
+        "что",
+        "штата",
+        "шурин",
+        "это",
+        "юрист",
+        "я",
+        "я ещё учу русский",
+        "я живу в америке",
+        "я из америки",
+        "я из штата миссури",
+        "я люблю вашу дочь",
+        "я наелся",
+        "я не понимаю",
+        "я немного говорю по-русски",
+        "я понимаю",
+        "я хочу сказать тост за …",
+        "я юрист"
+      ],
+      "passive_vocab": [
+        "блины",
+        "борщ",
+        "будете",
+        "будете …?",
+        "вам",
+        "вам нравится …?",
+        "водка",
+        "вы",
+        "вы говорите по-русски?",
+        "говорите",
+        "дела",
+        "день",
+        "ещё",
+        "как",
+        "как вам россия?",
+        "как вы познакомились?",
+        "как дела?",
+        "как там на улице?",
+        "какая",
+        "какая сегодня погода?",
+        "какой",
+        "какой сегодня день недели?",
+        "кем",
+        "кем вы работаете?",
+        "на",
+        "недели",
+        "нравится",
+        "оливье",
+        "откуда",
+        "откуда вы?",
+        "пельмени",
+        "по",
+        "погода",
+        "познакомились",
+        "работаете",
+        "россия",
+        "русски",
+        "сегодня",
+        "там",
+        "улице",
+        "чай"
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "discourse:politeness",
+        "grammar:formal_question",
+        "grammar:present_first_person",
+        "grammar:time_expression",
+        "lexical:days_of_week",
+        "lexical:kinship_terms",
+        "morphology:gendered_short_form",
+        "phrase:calendar_question",
+        "phrase:compliment_food",
+        "phrase:family_affection",
+        "phrase:food_offer",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:host_question",
+        "phrase:introduction",
+        "phrase:personal_origin",
+        "phrase:polite_decline",
+        "phrase:repair",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative",
+        "phrase:weather_answer",
+        "phrase:work_identity",
+        "phrase:yes_no",
+        "register:formal_you",
+        "register:name_patronymic",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "listening_misparse",
+        "register",
+        "stress"
+      ],
+      "correction_policy": [
+        "Minor error: recast briefly and continue the role-play.",
+        "Repeated error: give one short rule, then return to Russian practice.",
+        "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
+        "Communication-breaking error: clarify in English, provide the verified model, then retry."
+      ],
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Calendar and weather check-in — Answer the original-guide day and weather questions as easy table small talk.\nCurriculum boundary: Lesson 8 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Какая сегодня погода? — What is the weather like today?\n- Как там на улице? — How is it outside?\n- Сегодня холодно. — Today it's cold.\n- Сегодня тепло. — Today it's warm.\n- Сегодня солнечно. — Today it's sunny.\n- Сегодня облачно. — Today it's cloudy.\n- Вчера было солнечно. — It was sunny yesterday.\n- Завтра будет тепло. — Tomorrow it will be warm.\n- Какой сегодня день недели? — What day of the week is it today?\n- воскресенье — Sunday\n- на выходных — on the weekend\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     }
   ],
   "contrast_cards": [
@@ -31906,6 +37124,14 @@
     "answers_personalized_questions": {
       "label": "answers profile questions from prompts",
       "error_type": "forgot_phrase"
+    },
+    "answers_calendar_weather": {
+      "label": "answers calendar/weather prompts",
+      "error_type": "forgot_phrase"
+    },
+    "uses_time_words": {
+      "label": "uses today/yesterday/tomorrow words",
+      "error_type": "case_or_inflection"
     }
   },
   "contrast_sets": [
@@ -32292,8 +37518,8 @@
         "answers_personalized_questions",
         "uses_formal_greeting"
       ],
-      "lesson_id": "family_visit_008",
-      "lesson_number": 8
+      "lesson_id": "family_visit_009",
+      "lesson_number": 9
     },
     {
       "id": "extended_family_family_tree",
@@ -32365,6 +37591,32 @@
       ],
       "lesson_id": "family_visit_003",
       "lesson_number": 3
+    },
+    {
+      "id": "calendar_weather_checkin",
+      "setting": "Calendar and weather check-in",
+      "goal": "Answer the original-guide day and weather questions as easy table small talk.",
+      "required_items": [
+        "cale001",
+        "cale002",
+        "cale003",
+        "cale004",
+        "cale005",
+        "cale006",
+        "cale009",
+        "cale010",
+        "cale011",
+        "cale018",
+        "cale019"
+      ],
+      "success_criteria": [
+        "answers_calendar_weather",
+        "uses_time_words",
+        "stays_in_russian",
+        "keeps_stress_clear"
+      ],
+      "lesson_id": "family_visit_008",
+      "lesson_number": 8
     }
   ]
 }
