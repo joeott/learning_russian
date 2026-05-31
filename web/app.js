@@ -180,6 +180,53 @@
     }).length, 0);
     return total ? Math.round(mastered / total * 100) : 0;
   }
+  function repairStageFor(errorType) {
+    if (["listening_misparse", "stress", "vowel_reduction"].includes(errorType)) return "dictation";
+    if (["register", "cultural_usage"].includes(errorType)) return "roleplay";
+    if (["case_or_inflection", "word_order"].includes(errorType)) return "backtranslate";
+    return "produce";
+  }
+  function repairProfile() {
+    const rows = [];
+    Object.keys(store).forEach(id => {
+      const it = practiceItem(id);
+      if (!it || (it.lesson_number && it.lesson_number > (activeLesson().lesson_number || 99))) return;
+      const r = migrateRec(store[id]);
+      Object.entries(r.errors || {}).forEach(([errorType, count]) => {
+        if (!ERROR_BY_ID[errorType] || !count) return;
+        rows.push({ id, item: it, errorType, count });
+      });
+    });
+    return rows.sort((a, b) => b.count - a.count || a.errorType.localeCompare(b.errorType));
+  }
+  function repairQueueHtml() {
+    const rows = repairProfile();
+    if (!rows.length) {
+      return `<div class="repairbox rise">
+        <div><h3>Repair queue</h3><p>No error patterns logged yet. Missed answers will appear here as focused repair work.</p></div>
+      </div>`;
+    }
+    const grouped = {};
+    rows.forEach(row => {
+      grouped[row.errorType] = grouped[row.errorType] || { count: 0, examples: [] };
+      grouped[row.errorType].count += row.count;
+      if (grouped[row.errorType].examples.length < 2) grouped[row.errorType].examples.push(row.item);
+    });
+    const cards = Object.entries(grouped)
+      .sort((a, b) => b[1].count - a[1].count)
+      .slice(0, 4)
+      .map(([errorType, data]) => {
+        const e = ERROR_BY_ID[errorType];
+        const examples = data.examples.map(it => `<span>${escapeHtml(it.en)}</span>`).join("");
+        return `<div class="repaircard">
+          <div class="repaircard__top"><strong>${escapeHtml(e.label)}</strong><span>${data.count}</span></div>
+          <p>${escapeHtml(e.repair)}</p>
+          <div class="repaircard__examples">${examples}</div>
+          <button class="btn btn--sm" onclick="ZS.startRepair('${errorType}')">Repair now</button>
+        </div>`;
+      }).join("");
+    return `<div class="repairbox rise"><div><h3>Repair queue</h3><p>Logged mistakes are grouped into targeted repair drills.</p></div><div class="repairgrid">${cards}</div></div>`;
+  }
   function scenarioForItem(id) {
     return SCENARIOS.find(s => (s.required_items || []).includes(id));
   }
@@ -484,6 +531,7 @@
       ${lessonLockHtml()}
       <div class="mastery rise">${masteryRings()}</div>
       <div class="callout">Each round is 10 questions: due reviews first, fragile high-priority phrases next, new cards only after the review load is under control.</div>
+      ${repairQueueHtml()}
       <div class="stagegrid">${cards}</div>`;
   }
 
@@ -873,6 +921,30 @@
       save();
       const label = (ERROR_BY_ID[errorType] && ERROR_BY_ID[errorType].label) || errorType;
       toast("Repair queued: " + label);
+    },
+    startRepair(errorType) {
+      const stageKey = repairStageFor(errorType);
+      const stage = STAGES.find(s => s.key === stageKey);
+      const erroredIds = new Set(
+        repairProfile()
+          .filter(row => row.errorType === errorType)
+          .map(row => row.id)
+      );
+      const pool = stagePool(stageKey);
+      const candidates = pool.filter(it =>
+        erroredIds.has(it.id) ||
+        erroredIds.has(it.item_id) ||
+        ((it.allowed_error_types || it.error_types || []).includes(errorType))
+      );
+      const q = (candidates.length ? candidates : pool).slice().sort((a, b) => {
+        const as = stageScore(a, stageKey);
+        const bs = stageScore(b, stageKey);
+        for (let i = 0; i < as.length; i++) if (as[i] !== bs[i]) return as[i] - bs[i];
+        return a.id.localeCompare(b.id);
+      });
+      quiz = { stageKey, stage, q: shuffle(q).slice(0, Math.min(10, q.length)), i: 0, correct: 0, answered: false, listenHintLevel: 0, repairErrorType: errorType };
+      history.pushState(null, "", "#/quiz/" + stageKey);
+      drawQuestion();
     },
     revealRP(id) {
       const it = ITEMS.find(i => i.id === id);
