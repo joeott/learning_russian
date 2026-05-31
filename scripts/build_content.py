@@ -257,6 +257,10 @@ ROLEPLAY_CRITERIA = {
         "label": "answers calendar/weather prompts",
         "error_type": "forgot_phrase",
     },
+    "uses_adverbs_adjectives": {
+        "label": "uses practical adverbs and adjectives",
+        "error_type": "case_or_inflection",
+    },
     "uses_time_words": {
         "label": "uses today/yesterday/tomorrow words",
         "error_type": "case_or_inflection",
@@ -714,6 +718,33 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "adverb_adjective_survival",
+        "setting": "Quick descriptions and pace repair",
+        "goal": "Use short adverbs and adjective-agreement weather lines from the original guide.",
+        "required_items": [
+            "adve001",
+            "adve002",
+            "adve003",
+            "adve004",
+            "adve005",
+            "adve006",
+            "adve007",
+            "adve008",
+            "adve009",
+            "adve010",
+            "adve011",
+            "adve012",
+            "adve013",
+            "adve014",
+        ],
+        "success_criteria": [
+            "uses_adverbs_adjectives",
+            "answers_calendar_weather",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
         "id": "budva_trip_checkin",
         "setting": "Budva family trip",
         "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
@@ -963,6 +994,13 @@ MODULES = [
         "☀️",
     ),
     (
+        "adverbs_adjectives",
+        "Adverbs & Descriptions",
+        "Original-guide adverbs and adjective agreement turned into short spoken survival lines.",
+        2,
+        "◒",
+    ),
+    (
         "daily_routine",
         "Daily Routine",
         "Original-guide 'Мой день' phrases: eat, work, rest, homework, and evening plans.",
@@ -1057,6 +1095,12 @@ MODULE_STRUCTURES = {
         "phrase:weather_answer",
         "phrase:calendar_question",
         "grammar:time_expression",
+    ],
+    "adverbs_adjectives": [
+        "lexical:adverbs",
+        "grammar:adjective_agreement",
+        "phrase:short_evaluation",
+        "phrase:pace_repair",
     ],
     "daily_routine": [
         "lexical:day_parts",
@@ -1658,6 +1702,120 @@ add(
     "[na vy-had-nýh]",
     3,
     tags=["calendar"],
+)
+
+# --- ADVERBS & DESCRIPTIONS (original-guide survival grammar) ---
+add(
+    "adverbs_adjectives",
+    "Э́то о́чень интере́сно.",
+    "This is very interesting.",
+    "[é-ta ó-chen' in-ti-ryés-na]",
+    2,
+    tags=["adverb", "evaluation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то немно́го тру́дно.",
+    "This is a little difficult.",
+    "[é-ta nem-nó-ga trúd-na]",
+    2,
+    tags=["adverb", "evaluation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то не тру́дно.",
+    "This is not difficult.",
+    "[é-ta nye trúd-na]",
+    2,
+    tags=["adverb", "evaluation", "negation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то о́чень легко́.",
+    "This is very easy.",
+    "[é-ta ó-chen' lyi-khó]",
+    2,
+    tags=["adverb", "evaluation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то удо́бно.",
+    "This is convenient.",
+    "[é-ta u-dób-na]",
+    2,
+    tags=["adverb", "evaluation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то не о́чень удо́бно.",
+    "This is not very convenient.",
+    "[é-ta nye ó-chen' u-dób-na]",
+    2,
+    tags=["adverb", "evaluation", "negation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то сли́шком бы́стро.",
+    "This is too fast.",
+    "[é-ta slísh-kam bý-stra]",
+    2,
+    tags=["adverb", "pace", "repair"],
+)
+add(
+    "adverbs_adjectives",
+    "Ме́дленно, пожа́луйста.",
+    "Slowly, please.",
+    "[myéd-len-na pa-zhá-luy-sta]",
+    2,
+    tags=["adverb", "pace", "repair"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то ва́жно.",
+    "This is important.",
+    "[é-ta vázh-na]",
+    2,
+    tags=["adverb", "evaluation"],
+)
+add(
+    "adverbs_adjectives",
+    "Э́то не ва́жно.",
+    "This is not important.",
+    "[é-ta nye vázh-na]",
+    3,
+    tags=["adverb", "evaluation", "negation"],
+)
+add(
+    "adverbs_adjectives",
+    "Пого́да хоро́шая.",
+    "The weather is good.",
+    "[pa-gó-da ha-ró-sha-ya]",
+    2,
+    tags=["adjective", "weather"],
+)
+add(
+    "adverbs_adjectives",
+    "Пого́да пло́хая.",
+    "The weather is bad.",
+    "[pa-gó-da pló-ha-ya]",
+    3,
+    tags=["adjective", "weather"],
+)
+add(
+    "adverbs_adjectives",
+    "Пого́да со́лнечная.",
+    "The weather is sunny.",
+    "[pa-gó-da sól-nech-na-ya]",
+    3,
+    tags=["adjective", "weather"],
+)
+add(
+    "adverbs_adjectives",
+    "Пого́да дождли́вая.",
+    "The weather is rainy.",
+    "[pa-gó-da dazhd-lí-va-ya]",
+    3,
+    tags=["adjective", "weather"],
 )
 
 # --- DAILY ROUTINE (original-guide "Мой день" lane) ---

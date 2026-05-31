@@ -6,7 +6,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 ## Current generated course
 
 - Source of truth: `scripts/build_content.py`
-- Generated content: 239 items across 15 modules, plus 60 generated conjugation drills
+- Generated content: 253 items across 16 modules, plus 60 generated conjugation drills
 - Strongest coverage today:
   - greetings and first contact
   - politeness and repair phrases
@@ -15,6 +15,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
   - food/table compliments and requests
   - common listening questions
   - calendar and weather small talk
+  - practical adverbs, pace repair, and weather adjective agreement
   - daily-routine, time-of-day answers, and a short `Мой день` story mode
   - lawyer/work/client small talk
   - legal vocabulary recognition for deeper work questions
@@ -36,15 +37,15 @@ iterations can close the real beginner-course gaps without inventing Russian.
 | Work, clients, business | `source/ekaterina_guide.md:820-839`, `source/ekaterina_guide.md:1028-1042`, `source/ekaterina_guide.md:1327-1334`, `source/ekaterina_guide.md:1679-1701`, `source/ekaterina_guide.md:1782-1803`, `source/ekaterina_guide.md:1829-1833`, `source/ekaterina_guide.md:1994-2012`, `source/ekaterina_guide.md:2516-2526`, `source/research/work_business.md`, `source/research/legal_recognition.md` | Covered by `smalltalk`, `work_business`, and recognition-only `legal_recognition` basics | Later: add production legal phrases only if Kadriya confirms one is worth the risk. |
 | Holidays and celebrations | `source/ekaterina_guide.md:889-895`, `source/ekaterina_guide.md:909-927`, `source/ekaterina_guide.md:981-989`, `source/ekaterina_guide.md:1017-1025`, `source/ekaterina_guide.md:1404-1405`, `source/ekaterina_guide.md:2234-2244`, `source/research/celebrations.md` | Covered by `celebrations` basics plus the existing toast module | Later: add only family-specific holiday details Kadriya confirms. |
 | Idioms and proverbs | `source/ekaterina_guide.md:582-591`, `source/ekaterina_guide.md:864-881`, `source/research/cultural_bonus.md` | Covered by recognition-only `cultural_bonus` cards | Later: only rehearse production if Kadriya says one is worth using live. |
-| Adverbs, adjectives, and grammar notes | `source/ekaterina_guide.md:476-554`, `source/ekaterina_guide.md:1082-1107`, `source/ekaterina_guide.md:1917-1935` | Indirect only | Convert only the parts that improve oral survival: adjective agreement in weather/day phrases and adverbs for simple answers. |
+| Adverbs, adjectives, and grammar notes | `source/ekaterina_guide.md:471-554`, `source/ekaterina_guide.md:1082-1107`, `source/ekaterina_guide.md:1917-1935`, `source/research/adverbs_adjectives.md` | Covered by `adverbs_adjectives` short evaluations, pace repair, and feminine weather adjective lines | Later: add only adverbs that are needed inside real scenarios. |
 | Family/baby questions | `source/ekaterina_guide.md:636-639` | Partial: family module | Add one scenario for family health/baby readiness if Kadriya wants this practiced. Mark uncertain/over-personal items `rehearse=True`. |
 | Anecdotes/legal jokes | `source/ekaterina_guide.md:1979-1983`, `source/research/cultural_bonus.md` | Covered by recognition-only `cultural_bonus` cards | Do not add as core production content; only recognize if heard. |
 
 ## Priority order for remaining build-out
 
 1. Family health/baby-readiness questions only if Kadriya confirms they are welcome.
-2. Convert only useful adverb/adjective grammar into oral survival cards.
-3. New verb drills only for verbs already needed in live family/travel scenarios.
+2. New verb drills only for verbs already needed in live family/travel scenarios.
+3. Family-specific holiday/travel details only after Kadriya confirms wording.
 
 ## Rules for adding each gap
 
