@@ -26,16 +26,19 @@ class ListeningLadderTests(unittest.TestCase):
                 "full_caption",
                 "slow_audio",
                 "table_speed",
+                "room_noise",
             },
         )
         self.assertEqual(by_id["no_text"]["assistance"], 0)
         self.assertEqual(by_id["table_speed"]["assistance"], 0)
+        self.assertEqual(by_id["room_noise"]["assistance"], 0)
         self.assertGreater(
             by_id["full_caption"]["assistance"], by_id["first_letter"]["assistance"]
         )
         self.assertGreater(
             by_id["slow_audio"]["assistance"], by_id["table_speed"]["assistance"]
         )
+        self.assertIn("noise", by_id["room_noise"]["description"].lower())
 
 
 if __name__ == "__main__":

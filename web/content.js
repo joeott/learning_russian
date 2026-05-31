@@ -26233,6 +26233,12 @@ window.CONTENT_DATA = {
       "label": "Table speed",
       "assistance": 0,
       "description": "Replay at a faster conversational rate with no caption."
+    },
+    {
+      "id": "room_noise",
+      "label": "Room noise",
+      "assistance": 0,
+      "description": "Replay with light deterministic room noise to simulate a dinner table."
     }
   ],
   "roleplay_criteria": {

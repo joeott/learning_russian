@@ -62,6 +62,7 @@ def validate_content(data: dict) -> list[str]:
         "full_caption",
         "slow_audio",
         "table_speed",
+        "room_noise",
     }
     if set(ladder_ids) != required_ladder_ids:
         fail(errors, "listening_ladder must define the required listening steps")

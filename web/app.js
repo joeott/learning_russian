@@ -170,7 +170,7 @@
   function listeningHintHtml(it) {
     if (!quiz || quiz.stageKey !== "listen") return "";
     const step = quiz.listenStep || "no_text";
-    if (step === "no_text" || step === "slow_audio" || step === "table_speed") return "";
+    if (step === "no_text" || step === "slow_audio" || step === "table_speed" || step === "room_noise") return "";
     const text = step === "first_letter" ? escapeHtml(firstLetterHint(it.ru)) : step === "cloze" ? escapeHtml(listeningCloze(it.ru)) : colorStress(it.ru);
     return `<div class="listenhint" aria-live="polite"><span>${escapeHtml(ladderLabel(step))}</span><div>${text}</div></div>`;
   }
@@ -448,10 +448,51 @@
   const AUDIO = window.AUDIO || null;
   const AUDIO_IDS = AUDIO ? new Set(AUDIO.ids) : new Set();
   let curAudio = null;
+  let noiseCtx = null;
+  let noiseSource = null;
+  let noiseTimer = null;
+  function stopRoomNoise() {
+    if (noiseTimer) {
+      clearTimeout(noiseTimer);
+      noiseTimer = null;
+    }
+    if (noiseSource) {
+      try { noiseSource.stop(); } catch (e) {}
+      try { noiseSource.disconnect(); } catch (e) {}
+      noiseSource = null;
+    }
+  }
+  function playRoomNoise(item) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+    stopRoomNoise();
+    noiseCtx = noiseCtx || new AudioContext();
+    const seconds = Math.max(2.2, Math.min(4.5, ((item.ru_plain || item.ru || "").length || 20) * 0.095));
+    const sampleRate = noiseCtx.sampleRate;
+    const buffer = noiseCtx.createBuffer(1, Math.floor(sampleRate * seconds), sampleRate);
+    const data = buffer.getChannelData(0);
+    let seed = 1729;
+    for (let i = 0; i < data.length; i++) {
+      seed = (seed * 1664525 + 1013904223) >>> 0;
+      data[i] = ((seed / 4294967295) * 2 - 1) * 0.055;
+    }
+    const source = noiseCtx.createBufferSource();
+    const filter = noiseCtx.createBiquadFilter();
+    const gain = noiseCtx.createGain();
+    filter.type = "lowpass";
+    filter.frequency.value = 1400;
+    gain.gain.value = 0.22;
+    source.buffer = buffer;
+    source.connect(filter).connect(gain).connect(noiseCtx.destination);
+    noiseSource = source;
+    source.start();
+    noiseTimer = setTimeout(stopRoomNoise, seconds * 1000 + 120);
+  }
   function speakTTS(item, opts) {
     if (!("speechSynthesis" in window)) { toast("No audio on this device — use Forvo"); return; }
     opts = opts || {};
     speechSynthesis.cancel();
+    if (opts.noise) playRoomNoise(item);
     const u = new SpeechSynthesisUtterance(item.ru_plain || item.ru);
     u.lang = "ru-RU"; u.rate = opts.rate || 0.85; if (RU_VOICE) u.voice = RU_VOICE;
     if (!RU_VOICE) toast("No Russian voice installed — using default");
@@ -463,9 +504,14 @@
     if (AUDIO && AUDIO_IDS.has(item.id)) {
       try {
         if (curAudio) { curAudio.pause(); }
+        stopRoomNoise();
         if ("speechSynthesis" in window) speechSynthesis.cancel();
         curAudio = new Audio(AUDIO.base + item.id + ".mp3");
         if (opts.rate) curAudio.playbackRate = opts.rate;
+        if (opts.noise) {
+          playRoomNoise(item);
+          curAudio.addEventListener("ended", stopRoomNoise, { once: true });
+        }
         curAudio.play().catch(() => { if (!opts.quiet) speakTTS(item, opts); });
         return;
       } catch (e) { /* fall through */ }
@@ -838,6 +884,7 @@
         <div class="listenactions">
           <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.playListenAudio('${it.id}','slow_audio')">Slow pass</button>
           <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.playListenAudio('${it.id}','table_speed')">Table speed</button>
+          <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.playListenAudio('${it.id}','room_noise')">Room noise</button>
           <button id="listenHintBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.listenHint('${it.id}')">Next hint</button>
         </div>
         <div class="options">${opts.map(o => `<button class="opt" onclick="ZS.answer('${o.id}','${it.id}',this)">${escapeHtml(o.en)}</button>`).join("")}</div>`;
@@ -1302,8 +1349,8 @@
       const it = practiceItem(id);
       quiz.listenStep = stepId;
       quiz.listenAssistance = Math.max(quiz.listenAssistance || 0, ladderAssistance(stepId));
-      const rate = stepId === "slow_audio" ? 0.72 : stepId === "table_speed" ? 1.15 : 1;
-      speak(it, { rate });
+      const rate = stepId === "slow_audio" ? 0.72 : stepId === "table_speed" ? 1.15 : stepId === "room_noise" ? 1.05 : 1;
+      speak(it, { rate, noise: stepId === "room_noise" });
       toast(ladderLabel(stepId));
     },
     markError(id, stageKey, errorType) {
