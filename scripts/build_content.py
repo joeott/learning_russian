@@ -293,6 +293,10 @@ ROLEPLAY_CRITERIA = {
         "label": "talks about hobbies, home, and leisure places",
         "error_type": "forgot_phrase",
     },
+    "uses_modal_survival": {
+        "label": "uses can, know-how, want, need, and permission patterns",
+        "error_type": "case_or_inflection",
+    },
     "uses_day_parts": {
         "label": "uses morning/day/evening words",
         "error_type": "case_or_inflection",
@@ -864,6 +868,34 @@ SCENARIOS = [
         ],
     },
     {
+        "id": "modal_ability_survival",
+        "setting": "Can, know how, want, need, and permission",
+        "goal": "Use the original-guide modal patterns for what Joe can do, wants to do, needs, and is allowed or not allowed to do.",
+        "required_items": [
+            "moda001",
+            "moda002",
+            "moda003",
+            "moda004",
+            "moda005",
+            "moda006",
+            "moda007",
+            "moda008",
+            "moda009",
+            "moda010",
+            "moda011",
+            "moda012",
+            "moda013",
+            "moda014",
+            "moda015",
+            "moda016",
+        ],
+        "success_criteria": [
+            "uses_modal_survival",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
         "id": "budva_trip_checkin",
         "setting": "Budva family trip",
         "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
@@ -1141,6 +1173,13 @@ MODULES = [
         "🎸",
     ),
     (
+        "modal_ability",
+        "Can, Want & Need",
+        "Original-guide modal survival: can, know how, want, need, allowed, not allowed, and should.",
+        2,
+        "🧭",
+    ),
+    (
         "work_business",
         "Work & Clients",
         "Short lawyer/work answers from the guide: clients, cases, court, and being busy.",
@@ -1253,6 +1292,12 @@ MODULE_STRUCTURES = {
         "lexical:places",
         "phrase:leisure_answer",
         "grammar:igrat_v_na",
+    ],
+    "modal_ability": [
+        "grammar:modal_verbs",
+        "grammar:impersonal_modal",
+        "phrase:wants_needs",
+        "phrase:permission",
     ],
     "work_business": [
         "lexical:work_vocab",
@@ -2776,6 +2821,147 @@ add(
     "[my at-dy-há-li i slú-sha-li mú-zy-ku]",
     3,
     tags=["leisure", "music"],
+)
+
+# --- CAN, WANT & NEED (modal survival patterns) ---
+add(
+    "modal_ability",
+    "Я могу́ танцева́ть.",
+    "I can dance.",
+    "[ya ma-gú tan-tsi-vát']",
+    3,
+    note="мочь = can / have the possibility.",
+    tags=["modal", "can", "dance"],
+)
+add(
+    "modal_ability",
+    "Я не уме́ю танцева́ть са́льсу.",
+    "I don't know how to dance salsa.",
+    "[ya nye u-myé-yu tan-tsi-vát' sál'-su]",
+    3,
+    note="уме́ть = know how / have the skill.",
+    tags=["modal", "skill", "dance"],
+)
+add(
+    "modal_ability",
+    "Я зна́ю, как танцева́ть са́льсу.",
+    "I know how to dance salsa.",
+    "[ya zná-yu kak tan-tsi-vát' sál'-su]",
+    3,
+    recognize=True,
+    tags=["modal", "skill", "dance"],
+)
+add(
+    "modal_ability",
+    "Я уме́ю танцева́ть са́льсу.",
+    "I know how to dance salsa.",
+    "[ya u-myé-yu tan-tsi-vát' sál'-su]",
+    3,
+    tags=["modal", "skill", "dance"],
+)
+add(
+    "modal_ability",
+    "Мне ну́жно бо́льше вре́мени.",
+    "I need more time.",
+    "[mnye núzh-na ból'-she vryé-me-ni]",
+    2,
+    tags=["modal", "need", "repair"],
+)
+add(
+    "modal_ability",
+    "Столько, ско́лько ну́жно.",
+    "As much as needed.",
+    "[stól'-ka, skól'-ka núzh-na]",
+    3,
+    recognize=True,
+    tags=["modal", "need", "quantity"],
+)
+add(
+    "modal_ability",
+    "Что тут мо́жно де́лать?",
+    "What is allowed / possible to do here?",
+    "[shto tut mózh-na dyé-lat']",
+    2,
+    recognize=True,
+    tags=["modal", "permission", "question"],
+)
+add(
+    "modal_ability",
+    "Что тут нельзя́ де́лать?",
+    "What is not allowed to do here?",
+    "[shto tut nil'-zyá dyé-lat']",
+    2,
+    recognize=True,
+    tags=["modal", "permission", "question"],
+)
+add(
+    "modal_ability",
+    "Что тут на́до де́лать?",
+    "What needs to be done here?",
+    "[shto tut ná-da dyé-lat']",
+    2,
+    recognize=True,
+    tags=["modal", "need", "question"],
+)
+add(
+    "modal_ability",
+    "Мо́жно не гото́вить до́ма, а пойти́ в рестора́н.",
+    "We can skip cooking at home and go to a restaurant.",
+    "[mózh-na nye ga-tó-vit' dó-ma, a pay-tí v ris-ta-rán]",
+    3,
+    tags=["modal", "permission", "food"],
+)
+add(
+    "modal_ability",
+    "Я хочу́ изуча́ть ру́сский язы́к.",
+    "I want to study the Russian language.",
+    "[ya ha-chú iz-u-chát' rús-kiy ya-zýk]",
+    2,
+    tags=["modal", "want", "russian"],
+)
+add(
+    "modal_ability",
+    "Я хочу́ говори́ть по-ру́сски.",
+    "I want to speak Russian.",
+    "[ya ha-chú ga-va-rít' pa-rús-ki]",
+    2,
+    tags=["modal", "want", "russian"],
+)
+add(
+    "modal_ability",
+    "Я люблю́ изуча́ть ру́сский язы́к.",
+    "I like studying the Russian language.",
+    "[ya lyub-lyú iz-u-chát' rús-kiy ya-zýk]",
+    2,
+    tags=["modal", "like", "russian"],
+)
+add(
+    "modal_ability",
+    "Я люблю́ говори́ть по-ру́сски.",
+    "I like speaking Russian.",
+    "[ya lyub-lyú ga-va-rít' pa-rús-ki]",
+    2,
+    tags=["modal", "like", "russian"],
+)
+add(
+    "modal_ability",
+    "Я о́чень хочу́ есть.",
+    "I'm very hungry.",
+    "[ya ó-chen' ha-chú yest']",
+    2,
+    note="Literal original-guide pattern: 'I very much want to eat.'",
+    tags=["modal", "want", "food"],
+)
+add(
+    "modal_ability",
+    "Я до́лжен гото́вить ча́ще.",
+    "I should cook more often.",
+    "[ya dól-zhen ga-tó-vit' chá-shche]",
+    3,
+    gender="m",
+    rehearse=True,
+    note="Modal-pattern drill from the family joke; rehearse with Kadriya before saying it live.",
+    tags=["modal", "should", "family"],
 )
 
 # --- WORK & CLIENTS (lawyer/business small-talk lane) ---

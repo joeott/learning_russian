@@ -6,7 +6,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 ## Current generated course
 
 - Source of truth: `scripts/build_content.py`
-- Generated content: 320 items across 18 modules, plus 60 generated conjugation drills
+- Generated content: 336 items across 19 modules, plus 60 generated conjugation drills
 - Strongest coverage today:
   - greetings and first contact
   - politeness and repair phrases
@@ -19,6 +19,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
   - practical adverbs, pace repair, and weather adjective agreement
   - daily-routine, time-of-day answers, and a short `Мой день` story mode
   - hobbies, music, films, home, cats, sports, cinema, museums, and leisure places
+  - modal survival patterns for can, know how, want, need, allowed/not allowed, and should
   - lawyer/work/client small talk
   - legal vocabulary recognition for deeper work questions
   - holiday, celebration, and family-plan recognition
@@ -38,6 +39,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 | Budva/Montenegro trip logistics | `source/ekaterina_guide.md:1461-1467`, `source/ekaterina_guide.md:1501`, `source/ekaterina_guide.md:1969`, `source/ekaterina_guide.md:2031-2043`, `source/research/budva_travel.md` | Covered by `travel_budva` basics, including airport arrival and hotel check-in/out variants | Later: add only Kadriya-confirmed local wording or transport-specific variants. |
 | Daily routine and time of day | `source/ekaterina_guide.md:1113-1120`, `source/ekaterina_guide.md:1198-1212`, `source/ekaterina_guide.md:1366-1368`, `source/ekaterina_guide.md:1378-1399`, `source/research/daily_routine.md` | Covered by `daily_routine` basics plus a short original-guide `Мой день` story mode | Later: tune the personal cooking joke only after rehearsal with Kadriya. |
 | Hobbies, leisure, and places | `source/ekaterina_guide.md:66-67`, `source/ekaterina_guide.md:87`, `source/ekaterina_guide.md:889-895`, `source/ekaterina_guide.md:1114-1120`, `source/ekaterina_guide.md:1235-1237`, `source/ekaterina_guide.md:1945-1947`, `source/ekaterina_guide.md:2045`, `source/ekaterina_guide.md:2532`, `source/ekaterina_guide.md:2549-2555`, `source/ekaterina_guide.md:2585-2605`, `source/research/leisure_places.md` | Covered by `leisure_places` cards and a dedicated hobbies/places role-play scenario | Later: add only specific family hobbies Joe actually hears. |
+| Modal ability, want, need, and permission | `source/ekaterina_guide.md:50`, `source/ekaterina_guide.md:723`, `source/ekaterina_guide.md:804-809`, `source/ekaterina_guide.md:836`, `source/ekaterina_guide.md:852`, `source/ekaterina_guide.md:1120`, `source/ekaterina_guide.md:1207-1209`, `source/ekaterina_guide.md:1638`, `source/ekaterina_guide.md:1650`, `source/ekaterina_guide.md:1698-1701`, `source/ekaterina_guide.md:1784`, `source/ekaterina_guide.md:2455`, `source/ekaterina_guide.md:2603-2605`, `source/research/modal_ability.md` | Covered by `modal_ability` cards and a dedicated modal-survival role-play scenario | Later: add only modals tied to actual travel/family prompts. |
 | Work, clients, business | `source/ekaterina_guide.md:820-839`, `source/ekaterina_guide.md:1028-1042`, `source/ekaterina_guide.md:1327-1334`, `source/ekaterina_guide.md:1679-1701`, `source/ekaterina_guide.md:1782-1803`, `source/ekaterina_guide.md:1829-1833`, `source/ekaterina_guide.md:1994-2012`, `source/ekaterina_guide.md:2516-2526`, `source/research/work_business.md`, `source/research/legal_recognition.md` | Covered by `smalltalk`, `work_business`, and recognition-only `legal_recognition` basics | Later: add production legal phrases only if Kadriya confirms one is worth the risk. |
 | Holidays and celebrations | `source/ekaterina_guide.md:889-895`, `source/ekaterina_guide.md:909-927`, `source/ekaterina_guide.md:981-989`, `source/ekaterina_guide.md:1017-1025`, `source/ekaterina_guide.md:1404-1405`, `source/ekaterina_guide.md:2234-2244`, `source/research/celebrations.md` | Covered by `celebrations` basics plus the existing toast module | Later: add only family-specific holiday details Kadriya confirms. |
 | Idioms and proverbs | `source/ekaterina_guide.md:582-591`, `source/ekaterina_guide.md:864-881`, `source/research/cultural_bonus.md` | Covered by recognition-only `cultural_bonus` cards | Later: only rehearse production if Kadriya says one is worth using live. |

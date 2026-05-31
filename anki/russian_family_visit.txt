@@ -229,6 +229,22 @@ This is a museum.	<div style="font-size:2em">Э́то музе́й.</div>[sound:
 There I look at paintings and sculptures.	<div style="font-size:2em">Там я смотрю́ карти́ны и скульпту́ры.</div>[sound:zastolom_leis019.mp3]	[tam ya smat-ryú kar-tí-ny i skul'p-tú-ry]	(focus: understand when heard)	leisure_places p3 recognize
 We walked in the park.	<div style="font-size:2em">Мы гуля́ли в па́рке.</div>[sound:zastolom_leis020.mp3]	[my gu-lyá-li f pár-kye]		leisure_places p3
 We rested and listened to music.	<div style="font-size:2em">Мы отдыха́ли и слу́шали му́зыку.</div>[sound:zastolom_leis021.mp3]	[my at-dy-há-li i slú-sha-li mú-zy-ku]		leisure_places p3
+I can dance.	<div style="font-size:2em">Я могу́ танцева́ть.</div>[sound:zastolom_moda001.mp3]	[ya ma-gú tan-tsi-vát']	мочь = can / have the possibility.	modal_ability p3
+I don't know how to dance salsa.	<div style="font-size:2em">Я не уме́ю танцева́ть са́льсу.</div>[sound:zastolom_moda002.mp3]	[ya nye u-myé-yu tan-tsi-vát' sál'-su]	уме́ть = know how / have the skill.	modal_ability p3
+I know how to dance salsa.	<div style="font-size:2em">Я зна́ю, как танцева́ть са́льсу.</div>[sound:zastolom_moda003.mp3]	[ya zná-yu kak tan-tsi-vát' sál'-su]	(focus: understand when heard)	modal_ability p3 recognize
+I know how to dance salsa.	<div style="font-size:2em">Я уме́ю танцева́ть са́льсу.</div>[sound:zastolom_moda004.mp3]	[ya u-myé-yu tan-tsi-vát' sál'-su]		modal_ability p3
+I need more time.	<div style="font-size:2em">Мне ну́жно бо́льше вре́мени.</div>[sound:zastolom_moda005.mp3]	[mnye núzh-na ból'-she vryé-me-ni]		modal_ability p2
+As much as needed.	<div style="font-size:2em">Столько, ско́лько ну́жно.</div>[sound:zastolom_moda006.mp3]	[stól'-ka, skól'-ka núzh-na]	(focus: understand when heard)	modal_ability p3 recognize
+What is allowed / possible to do here?	<div style="font-size:2em">Что тут мо́жно де́лать?</div>[sound:zastolom_moda007.mp3]	[shto tut mózh-na dyé-lat']	(focus: understand when heard)	modal_ability p2 recognize
+What is not allowed to do here?	<div style="font-size:2em">Что тут нельзя́ де́лать?</div>[sound:zastolom_moda008.mp3]	[shto tut nil'-zyá dyé-lat']	(focus: understand when heard)	modal_ability p2 recognize
+What needs to be done here?	<div style="font-size:2em">Что тут на́до де́лать?</div>[sound:zastolom_moda009.mp3]	[shto tut ná-da dyé-lat']	(focus: understand when heard)	modal_ability p2 recognize
+We can skip cooking at home and go to a restaurant.	<div style="font-size:2em">Мо́жно не гото́вить до́ма, а пойти́ в рестора́н.</div>[sound:zastolom_moda010.mp3]	[mózh-na nye ga-tó-vit' dó-ma, a pay-tí v ris-ta-rán]		modal_ability p3
+I want to study the Russian language.	<div style="font-size:2em">Я хочу́ изуча́ть ру́сский язы́к.</div>[sound:zastolom_moda011.mp3]	[ya ha-chú iz-u-chát' rús-kiy ya-zýk]		modal_ability p2
+I want to speak Russian.	<div style="font-size:2em">Я хочу́ говори́ть по-ру́сски.</div>[sound:zastolom_moda012.mp3]	[ya ha-chú ga-va-rít' pa-rús-ki]		modal_ability p2
+I like studying the Russian language.	<div style="font-size:2em">Я люблю́ изуча́ть ру́сский язы́к.</div>[sound:zastolom_moda013.mp3]	[ya lyub-lyú iz-u-chát' rús-kiy ya-zýk]		modal_ability p2
+I like speaking Russian.	<div style="font-size:2em">Я люблю́ говори́ть по-ру́сски.</div>[sound:zastolom_moda014.mp3]	[ya lyub-lyú ga-va-rít' pa-rús-ki]		modal_ability p2
+I'm very hungry.	<div style="font-size:2em">Я о́чень хочу́ есть.</div>[sound:zastolom_moda015.mp3]	[ya ó-chen' ha-chú yest']	Literal original-guide pattern: 'I very much want to eat.'	modal_ability p2
+I should cook more often.	<div style="font-size:2em">Я до́лжен гото́вить ча́ще.</div><div style="font-size:0.75em;color:#888">(male form)</div>[sound:zastolom_moda016.mp3]	[ya dól-zhen ga-tó-vit' chá-shche]	Modal-pattern drill from the family joke; rehearse with Kadriya before saying it live. ⚠ rehearse with your wife	modal_ability p3
 I have my own company.	<div style="font-size:2em">У меня́ своя́ компа́ния.</div>[sound:zastolom_work001.mp3]	[u mi-nyá sva-yá kam-pá-ni-ya]		work_business p2
 Kadriya works together with me.	<div style="font-size:2em">Кадри́я рабо́тает вме́сте со мной.</div>[sound:zastolom_work002.mp3]	[kad-rí-ya ra-bó-ta-yet vmyés-te sa mnoy]		work_business p2
 We work together.	<div style="font-size:2em">Мы рабо́таем вме́сте.</div>[sound:zastolom_work003.mp3]	[my ra-bó-ta-yem vmyés-te]		work_business p2
