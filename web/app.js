@@ -979,8 +979,8 @@
   }
   function gradeItem(id, ok, stageKey, errorType, opts) {
     opts = opts || {};
-    const r = rec(id);
     const st = stageRec(id, stageKey);
+    const r = store[id];
     const latencyMs = opts.latency_ms || (quiz && quiz.questionStartedAt ? Date.now() - quiz.questionStartedAt : 0);
     const wasDelayedReview = (st.seen || 0) > 0 && isDue(st);
     r.seen++;
@@ -996,6 +996,13 @@
     if (wasDelayedReview) {
       st.delayed_attempts = (st.delayed_attempts || 0) + 1;
       if (ok && !opts.assisted) st.delayed_success = (st.delayed_success || 0) + 1;
+    }
+    if (!ok && errorType) {
+      st.last_repair_focus = errorType;
+      st.repair_focus_counts = st.repair_focus_counts || {};
+      st.repair_focus_counts[errorType] = (st.repair_focus_counts[errorType] || 0) + 1;
+      r.repair_focus_counts = r.repair_focus_counts || {};
+      r.repair_focus_counts[errorType] = (r.repair_focus_counts[errorType] || 0) + 1;
     }
     if (ok && opts.assisted) {
       r.correct++;
