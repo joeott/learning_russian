@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+import os
+from tempfile import NamedTemporaryFile
 import unittest
 from importlib.machinery import SourceFileLoader
 
@@ -45,6 +47,26 @@ class SourceMaterialLoopTests(unittest.TestCase):
             "u", "u", good, ["read", "dictation", "translate"]
         )
         self.assertIn(scored["status"], {"verified", "needs_check"})
+
+    def test_load_canvas_urls_dedupes_normalized(self) -> None:
+        contents = """
+        ## Week 2026-05-31
+        - Source: [Culture.ru](https://www.culture.ru/)
+        - Source: [Culture Mirror](https://www.culture.ru/?utm_source=test)
+        - Source: [RT](http://russian.rt.com/)
+        - Source: [No URL](notes)
+        """
+        with NamedTemporaryFile("w", delete=False, encoding="utf-8") as f:
+            f.write(contents)
+            path = f.name
+        try:
+            urls = zastolom._load_canvas_urls(path)
+            self.assertIn("https://www.culture.ru/", urls)
+            self.assertIn("https://www.culture.ru/?utm_source=test", urls)
+            self.assertIn("http://russian.rt.com/", urls)
+            self.assertNotIn("notes", urls)
+        finally:
+            os.unlink(path)
 
 
 if __name__ == "__main__":
