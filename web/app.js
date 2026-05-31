@@ -426,6 +426,7 @@
           <a class="btn btn--ghost" href="#/plan">See the 16-day plan</a>
         </div>
       </section>
+      ${lessonLockHtml()}
 
       <div class="stats">
         <div class="stat rise"><div class="stat__num">${op.done}<small>/${op.total}</small></div><div class="stat__label">Phrases touched</div>
