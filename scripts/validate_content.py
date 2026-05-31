@@ -53,6 +53,28 @@ def validate_content(data: dict) -> list[str]:
         fail(errors, "course.course_id is required")
     if not course.get("mission", {}).get("target_date"):
         fail(errors, "course.mission.target_date is required")
+    ladder = data.get("listening_ladder", [])
+    ladder_ids = [step.get("id") for step in ladder]
+    required_ladder_ids = {
+        "no_text",
+        "first_letter",
+        "cloze",
+        "full_caption",
+        "slow_audio",
+        "table_speed",
+    }
+    if set(ladder_ids) != required_ladder_ids:
+        fail(errors, "listening_ladder must define the required listening steps")
+    if len(ladder_ids) != len(set(ladder_ids)):
+        fail(errors, "listening_ladder ids must be unique")
+    for step in ladder:
+        if not isinstance(step.get("assistance"), int) or step["assistance"] < 0:
+            fail(
+                errors,
+                f"listening_ladder {step.get('id')}: assistance must be a non-negative integer",
+            )
+        if not step.get("label"):
+            fail(errors, f"listening_ladder {step.get('id')}: label is required")
 
     modules = {m.get("id") for m in data.get("modules", [])}
     curriculum = data.get("curriculum", {})

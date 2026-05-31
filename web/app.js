@@ -25,6 +25,8 @@
   const TARGET = MISSION.target_date ? new Date(MISSION.target_date + "T00:00:00") : new Date(2026, 5, 15);
   const ERROR_TYPES = DATA.error_types || [];
   const ERROR_BY_ID = Object.fromEntries(ERROR_TYPES.map(e => [e.id, e]));
+  const LISTENING_LADDER = DATA.listening_ladder || [];
+  const LADDER_BY_ID = Object.fromEntries(LISTENING_LADDER.map(step => [step.id, step]));
   const SCENARIOS = DATA.scenarios || [];
   const TUTOR_BY_SCENARIO = Object.fromEntries(TUTOR_CARDS.map(c => [c.scenario_id, c]));
   const STAGE_KEYS = ["recognition", "recall", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"];
@@ -135,12 +137,29 @@
       }).join("");
     }).join("");
   }
+  function firstLetterHint(ru) {
+    return stripStress(ru).split(/(\s+)/).map(part => {
+      if (!part.trim()) return part;
+      let shown = false;
+      return Array.from(part).map(ch => {
+        if (!/\p{L}/u.test(ch)) return ch;
+        if (!shown) { shown = true; return ch; }
+        return "_";
+      }).join("");
+    }).join("");
+  }
+  function ladderLabel(stepId) {
+    return (LADDER_BY_ID[stepId] && LADDER_BY_ID[stepId].label) || stepId;
+  }
+  function ladderAssistance(stepId) {
+    return (LADDER_BY_ID[stepId] && LADDER_BY_ID[stepId].assistance) || 0;
+  }
   function listeningHintHtml(it) {
-    if (!quiz || quiz.stageKey !== "listen" || !(quiz.listenHintLevel || 0)) return "";
-    const level = quiz.listenHintLevel || 0;
-    const label = level === 1 ? "Caption hint" : "Full caption";
-    const text = level === 1 ? escapeHtml(listeningCloze(it.ru)) : colorStress(it.ru);
-    return `<div class="listenhint" aria-live="polite"><span>${label}</span><div>${text}</div></div>`;
+    if (!quiz || quiz.stageKey !== "listen") return "";
+    const step = quiz.listenStep || "no_text";
+    if (step === "no_text" || step === "slow_audio" || step === "table_speed") return "";
+    const text = step === "first_letter" ? escapeHtml(firstLetterHint(it.ru)) : step === "cloze" ? escapeHtml(listeningCloze(it.ru)) : colorStress(it.ru);
+    return `<div class="listenhint" aria-live="polite"><span>${escapeHtml(ladderLabel(step))}</span><div>${text}</div></div>`;
   }
   function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));[a[i], a[j]] = [a[j], a[i]]; } return a; }
   function sample(arr, n, exclude) { return shuffle(arr.filter(x => x !== exclude)).slice(0, n); }
@@ -362,11 +381,12 @@
   const AUDIO = window.AUDIO || null;
   const AUDIO_IDS = AUDIO ? new Set(AUDIO.ids) : new Set();
   let curAudio = null;
-  function speakTTS(item) {
+  function speakTTS(item, opts) {
     if (!("speechSynthesis" in window)) { toast("No audio on this device — use Forvo"); return; }
+    opts = opts || {};
     speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(item.ru_plain || item.ru);
-    u.lang = "ru-RU"; u.rate = 0.85; if (RU_VOICE) u.voice = RU_VOICE;
+    u.lang = "ru-RU"; u.rate = opts.rate || 0.85; if (RU_VOICE) u.voice = RU_VOICE;
     if (!RU_VOICE) toast("No Russian voice installed — using default");
     speechSynthesis.speak(u);
   }
@@ -378,11 +398,12 @@
         if (curAudio) { curAudio.pause(); }
         if ("speechSynthesis" in window) speechSynthesis.cancel();
         curAudio = new Audio(AUDIO.base + item.id + ".mp3");
-        curAudio.play().catch(() => { if (!opts.quiet) speakTTS(item); });
+        if (opts.rate) curAudio.playbackRate = opts.rate;
+        curAudio.play().catch(() => { if (!opts.quiet) speakTTS(item, opts); });
         return;
       } catch (e) { /* fall through */ }
     }
-    if (!opts.quiet) speakTTS(item);
+    if (!opts.quiet) speakTTS(item, opts);
   }
 
   /* ---------- badges ---------- */
@@ -614,6 +635,15 @@
   let recordStream = null;
   let recordChunks = [];
   let recordingUrl = "";
+  function listenStepButtons() {
+    const steps = [
+      ["no_text", "No text"],
+      ["first_letter", "First letters"],
+      ["cloze", "Cloze"],
+      ["full_caption", "Full caption"],
+    ];
+    return `<div class="listenladder" aria-label="Listening ladder">${steps.map(([id, label]) => `<button id="listenStep_${id}" class="chip ${quiz.listenStep === id ? "is-on" : ""}" onclick="ZS.setListenStep('${id}')">${label}</button>`).join("")}</div>`;
+  }
   function setPronunciationStatus(message) {
     const status = $("#pronStatus");
     if (status) status.textContent = message;
@@ -648,7 +678,7 @@
         return a.id.localeCompare(b.id);
       });
       const head = ranked.slice(0, 16);
-      quiz = { stageKey, stage, q: shuffle(head).slice(0, Math.min(10, head.length)), i: 0, correct: 0, answered: false, listenHintLevel: 0 };
+      quiz = { stageKey, stage, q: shuffle(head).slice(0, Math.min(10, head.length)), i: 0, correct: 0, answered: false, listenHintLevel: 0, listenStep: "no_text", listenAssistance: 0 };
     }
     drawQuestion();
   }
@@ -658,7 +688,10 @@
     if (quiz.i >= quiz.q.length) return drawSummary();
     const it = quiz.q[quiz.i];
     quiz.answered = false;
-    if (stage.key === "listen") quiz.listenHintLevel = quiz.listenHintLevel || 0;
+    if (stage.key === "listen") {
+      quiz.listenStep = quiz.listenStep || "no_text";
+      quiz.listenAssistance = quiz.listenAssistance || 0;
+    }
     const optionPool = stagePool(stage.key);
     const dots = quiz.q.map((_, k) => `<span class="${k < quiz.i ? "done" : k === quiz.i ? "cur" : ""}"></span>`).join("");
     let promptHtml = "", body = "";
@@ -730,7 +763,12 @@
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru" style="font-size:2.6rem">🔊</div><div id="listenHint">${listeningHintHtml(it)}</div>`;
       const opts = shuffle([it].concat(sample(optionPool, 3, it)));
       body = `<div style="text-align:center;margin-bottom:14px"><button class="iconbtn iconbtn--play" onclick="ZS.sayItem('${it.id}')">▶</button></div>
-        <div class="listenactions"><button id="listenHintBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.listenHint('${it.id}')">Show caption hint</button></div>
+        ${listenStepButtons()}
+        <div class="listenactions">
+          <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.playListenAudio('${it.id}','slow_audio')">Slow pass</button>
+          <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.playListenAudio('${it.id}','table_speed')">Table speed</button>
+          <button id="listenHintBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.listenHint('${it.id}')">Next hint</button>
+        </div>
         <div class="options">${opts.map(o => `<button class="opt" onclick="ZS.answer('${o.id}','${it.id}',this)">${escapeHtml(o.en)}</button>`).join("")}</div>`;
     } else { // roleplay
       promptHtml = `<div class="q-instr">${stage.instr}</div>${scenarioCard(it)}<div class="q-en">${escapeHtml(it.en)}</div>`;
@@ -799,6 +837,10 @@
       st.mastered = false;
       st.last_error_type = errorType || st.last_error_type || "forgot_phrase";
       r.errors[st.last_error_type] = (r.errors[st.last_error_type] || 0) + 1;
+    }
+    if (opts.listen_ladder) {
+      st.last_ladder_step = opts.listen_ladder.step;
+      st.last_assistance = opts.listen_ladder.assistance;
     }
     if (!opts.assisted) st.due_at = nextDue(st, ok);
     save();
@@ -1002,9 +1044,13 @@
         const right = buttons.find(o => normalize(o.textContent) === want);
         if (right) right.classList.add("correct");
       }
-      const assisted = ok && quiz.stageKey === "listen" && (quiz.listenHintLevel || 0) > 0;
-      gradeItem(correctId, ok, quiz.stageKey, null, { assisted });
-      showFeedback(ok, it, assisted ? `<div class="card__hint">Caption used: scheduled as a hard listening review.</div>` : "");
+      const listenAssistance = quiz.stageKey === "listen" ? (quiz.listenAssistance || ladderAssistance(quiz.listenStep || "no_text")) : 0;
+      const assisted = ok && quiz.stageKey === "listen" && listenAssistance > 0;
+      gradeItem(correctId, ok, quiz.stageKey, ok ? null : "listening_misparse", {
+        assisted,
+        listen_ladder: quiz.stageKey === "listen" ? { step: quiz.listenStep || "no_text", assistance: listenAssistance } : null,
+      });
+      showFeedback(ok, it, assisted ? `<div class="card__hint">Listening ladder assistance (${escapeHtml(ladderLabel(quiz.listenStep || "no_text"))}): scheduled as a hard review.</div>` : "");
     },
     checkProd(id) {
       if (quiz.answered) return;
@@ -1147,14 +1193,36 @@
     listenHint(id) {
       if (!quiz || quiz.stageKey !== "listen") return;
       const it = practiceItem(id);
-      quiz.listenHintLevel = Math.min((quiz.listenHintLevel || 0) + 1, 2);
+      const order = ["no_text", "first_letter", "cloze", "full_caption"];
+      const current = Math.max(0, order.indexOf(quiz.listenStep || "no_text"));
+      quiz.listenStep = order[Math.min(current + 1, order.length - 1)];
+      quiz.listenAssistance = Math.max(quiz.listenAssistance || 0, ladderAssistance(quiz.listenStep));
+      ZS.setListenStep(quiz.listenStep);
+      if (it) toast(ladderLabel(quiz.listenStep));
+    },
+    setListenStep(stepId) {
+      if (!quiz || quiz.stageKey !== "listen") return;
+      quiz.listenStep = stepId;
+      quiz.listenAssistance = Math.max(quiz.listenAssistance || 0, ladderAssistance(stepId));
+      const it = quiz.q[quiz.i];
       const el = $("#listenHint");
       if (it && el) el.innerHTML = listeningHintHtml(it);
+      document.querySelectorAll(".listenladder .chip").forEach(btn => btn.classList.toggle("is-on", btn.id === "listenStep_" + stepId));
       const btn = $("#listenHintBtn");
       if (btn) {
-        btn.textContent = quiz.listenHintLevel >= 2 ? "Caption shown" : "Show full caption";
-        if (quiz.listenHintLevel >= 2) btn.setAttribute("disabled", "");
+        btn.textContent = stepId === "full_caption" ? "Caption shown" : "Next hint";
+        if (stepId === "full_caption") btn.setAttribute("disabled", "");
+        else btn.removeAttribute("disabled");
       }
+    },
+    playListenAudio(id, stepId) {
+      if (!quiz || quiz.stageKey !== "listen") return;
+      const it = practiceItem(id);
+      quiz.listenStep = stepId;
+      quiz.listenAssistance = Math.max(quiz.listenAssistance || 0, ladderAssistance(stepId));
+      const rate = stepId === "slow_audio" ? 0.72 : stepId === "table_speed" ? 1.15 : 1;
+      speak(it, { rate });
+      toast(ladderLabel(stepId));
     },
     markError(id, stageKey, errorType) {
       const st = stageRec(id, stageKey);
@@ -1185,7 +1253,7 @@
         for (let i = 0; i < as.length; i++) if (as[i] !== bs[i]) return as[i] - bs[i];
         return a.id.localeCompare(b.id);
       });
-      quiz = { stageKey, stage, q: shuffle(q).slice(0, Math.min(10, q.length)), i: 0, correct: 0, answered: false, listenHintLevel: 0, repairErrorType: errorType };
+      quiz = { stageKey, stage, q: shuffle(q).slice(0, Math.min(10, q.length)), i: 0, correct: 0, answered: false, listenHintLevel: 0, listenStep: "no_text", listenAssistance: 0, repairErrorType: errorType };
       history.pushState(null, "", "#/quiz/" + stageKey);
       drawQuestion();
     },
@@ -1246,7 +1314,7 @@
       if (assisted) toast("Hard role-play review scheduled");
       ZS.nextQ();
     },
-    nextQ() { quiz.i++; quiz.listenHintLevel = 0; drawQuestion(); },
+    nextQ() { quiz.i++; quiz.listenHintLevel = 0; quiz.listenStep = "no_text"; quiz.listenAssistance = 0; drawQuestion(); },
     retry() { const k = location.hash.split("/")[2]; quiz = null; renderQuizRun(k); },
     async updateOfflineStatus() {
       const status = $("#offlineStatus");

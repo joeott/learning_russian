@@ -75,6 +75,45 @@ ERROR_TYPES = [
     },
 ]
 
+LISTENING_LADDER = [
+    {
+        "id": "no_text",
+        "label": "No text",
+        "assistance": 0,
+        "description": "Listen without captions and choose the meaning.",
+    },
+    {
+        "id": "first_letter",
+        "label": "First-letter hint",
+        "assistance": 1,
+        "description": "Show the first letter of each word as a fading caption.",
+    },
+    {
+        "id": "cloze",
+        "label": "Cloze caption",
+        "assistance": 2,
+        "description": "Show a partial target-language caption.",
+    },
+    {
+        "id": "full_caption",
+        "label": "Full caption",
+        "assistance": 3,
+        "description": "Show the full stress-marked target-language phrase.",
+    },
+    {
+        "id": "slow_audio",
+        "label": "Slow pass",
+        "assistance": 2,
+        "description": "Replay native audio more slowly before returning to no-text listening.",
+    },
+    {
+        "id": "table_speed",
+        "label": "Table speed",
+        "assistance": 0,
+        "description": "Replay at a faster conversational rate with no caption.",
+    },
+]
+
 CONTRAST_SETS = [
     {
         "id": "russian_toast_vs_youre_welcome",
@@ -1342,6 +1381,7 @@ def build():
         "tutor_cards": tutor_cards,
         "contrast_cards": contrast_cards,
         "error_types": ERROR_TYPES,
+        "listening_ladder": LISTENING_LADDER,
         "contrast_sets": CONTRAST_SETS,
         "scenarios": scenarios,
     }
