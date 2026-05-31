@@ -1,6 +1,6 @@
 {
   "name": "learning_russian",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Speech-first language-learning PWA and course generator.",
   "private": true,
   "type": "module",
