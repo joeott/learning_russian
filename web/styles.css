@@ -237,6 +237,11 @@ body {
 .quiz__prompt .q-ru .stress { color: var(--amber); }
 .quiz__prompt .q-en { font-family: var(--font-serif); font-style: italic; font-size: 1.4rem; }
 .quiz__prompt .q-instr { font-family: var(--font-display); text-transform:uppercase; letter-spacing:.1em; font-size:.74rem; color: var(--amber); margin-bottom: 12px; }
+.scenario { background: rgba(243,233,210,.12); border:1px solid rgba(243,233,210,.32); padding: 12px; margin: 0 0 14px; text-align:left; }
+.scenario__setting { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.08em; font-size:.72rem; color: var(--amber); }
+.scenario__goal { margin-top: 4px; color: rgba(243,233,210,.9); font-size:.95rem; }
+.scenario__criteria { display:flex; flex-wrap:wrap; gap:6px; margin-top: 10px; }
+.scenario__criteria span { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; font-size:.62rem; border:1px solid rgba(243,233,210,.42); padding:2px 6px; color: var(--paper); }
 .options { display:grid; gap: 10px; }
 .opt {
   font-family: var(--font-serif); font-size: 1.15rem; text-align:left; cursor:pointer;
