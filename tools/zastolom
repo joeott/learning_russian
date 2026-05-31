@@ -22,6 +22,7 @@ COMMANDS
   test                  Run stdlib validation/unit tests
   loop-prompt           Print the local iterative improvement-loop prompt
   source-loop           Show source-sourcing loop prompt or run a future scan pass
+  future-loop           Alias for source-loop with discovery enabled
   stats                 Print content statistics
   help                  Show this help
 
@@ -35,7 +36,8 @@ EXAMPLES
   tools/zastolom browser http://localhost:8000/web/#/quiz/roleplay --mobile --click-text "Reveal model answer" --click-text "Close with model"
   tools/zastolom flow http://localhost:8000/web/
   tools/zastolom verify
-  tools/zastolom source-loop --run       # discover and score candidate source pages
+  tools/zastolom source-loop --run               # discover and score source targets
+  tools/zastolom future-loop --run --write-canvas # discover and score linked candidate pages
   tools/zastolom source-loop               # print the loop prompt only
 
 ELEVENLABS KEY RESOLUTION (first hit wins)
@@ -51,6 +53,7 @@ import re
 import subprocess
 import sys
 import unicodedata
+from urllib.parse import urljoin, urlsplit
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 import urllib.request
@@ -72,6 +75,13 @@ EL_MODEL = "eleven_multilingual_v2"
 EL_FORMAT = "mp3_44100_128"
 DEFAULT_VOICE = "ScaQ3utur72x93jqMMeU"      # Elena — Warm, Calm & Clear (ru, standard)
 DEFAULT_VOICE_NAME = "Elena (Warm, Calm & Clear)"
+DEFAULT_SOURCE_USER_AGENTS = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_4) AppleWebKit/605.1.15 "
+    "(KHTML, like Gecko) Version/16.6 Safari/605.1.15",
+    "zastolom/1.0 (+https://github.com/joeott/learning_russian)",
+]
 
 # ---- pretty ----
 def c(s, code):  # color if tty
@@ -117,6 +127,63 @@ class _VisibleTextParser(HTMLParser):
         return "\n".join(self._chunks)
 
 
+class _AnchorTextParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.links = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() != "a":
+            return
+        href = dict(attrs).get("href")
+        if href:
+            self.links.append(href)
+
+
+def _discover_source_links(seed_url, html_text, target):
+    max_links = int(target.get("discover_limit", 0) or 0)
+    if max_links <= 0:
+        return []
+    path_hints = [token.lower() for token in (target.get("discover_paths") or [])]
+    blacklist = set(target.get("discover_blacklist", []) + [
+        "/search", "/login", "/register", "/account", "/privacy", "/sitemap"
+    ])
+
+    try:
+        seed = urlsplit(seed_url)
+    except Exception:
+        return []
+
+    parser = _AnchorTextParser()
+    parser.feed(html_text)
+    found = []
+    seen = set()
+    for raw in parser.links:
+        try:
+            resolved = urljoin(seed_url, raw)
+            parsed = urlsplit(resolved)
+        except Exception:
+            continue
+        if not parsed.scheme.startswith("http") or parsed.netloc != seed.netloc:
+            continue
+        path = (parsed.path or "/").lower()
+        if path in {"", "/"}:
+            continue
+        if any(block in path for block in blacklist):
+            continue
+        if path_hints and not any(hint in path for hint in path_hints):
+            continue
+        if any(ext in path for ext in [".jpg", ".png", ".gif", ".svg", ".css", ".js", ".pdf", ".zip", ".mp3"]):
+            continue
+        candidate = _normalize_canvas_url(resolved)
+        if candidate and candidate not in seen:
+            seen.add(candidate)
+            found.append(candidate)
+            if len(found) >= max_links:
+                break
+    return found
+
+
 def _extract_visible_text(html_body):
     parser = _VisibleTextParser()
     parser.feed(html_body)
@@ -131,9 +198,22 @@ def _normalize_canvas_url(url):
         path = parsed.path or "/"
         if path != "/":
             path = path.rstrip("/")
-        return urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, path, parsed.query, ""))
+        return urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, path, "", ""))
     except Exception:
         return (url or "").strip().rstrip("/")
+
+
+def _evaluate_source_page(url, entry, is_seed, discovered_from=None):
+    html_text = _fetch_source_page(url)
+    title = _extract_title(html_text)
+    visible = _extract_visible_text(html_text)
+    row = _score_source_text(url, title, visible, entry.get("default_drill"))
+    row["seed_note"] = entry.get("reason")
+    row["seed_name"] = entry.get("name", "")
+    row["seed_url"] = entry.get("url")
+    row["is_seed"] = is_seed
+    row["discovered_from"] = discovered_from
+    return row, html_text
 
 
 def _read_source_targets(path=None):
@@ -146,12 +226,13 @@ def _read_source_targets(path=None):
         targets = []
     if not targets:
         targets = [
-            {"url": "https://russian.rt.com/", "name": "RT Russian", "default_drill": ["read", "dictation", "translate"], "reason": "short news pieces"},
-            {"url": "https://www.culture.ru", "name": "Culture.ru", "default_drill": ["read", "dictation", "translate"], "reason": "editorial interviews/features"},
-            {"url": "https://gramota.ru", "name": "Gramota.ru", "default_drill": ["read", "translate"], "reason": "official language material"},
+            {"url": "https://russian.rt.com/", "name": "RT Russian", "default_drill": ["read", "dictation", "translate"], "reason": "short news pieces", "discover_limit": 4, "discover_paths": ["/news", "/russia", "/world"]},
+            {"url": "https://www.culture.ru", "name": "Culture.ru", "default_drill": ["read", "dictation", "translate"], "reason": "editorial interviews/features", "discover_limit": 4, "discover_paths": ["/ru/news", "/media"]},
+            {"url": "https://gramota.ru", "name": "Gramota.ru", "default_drill": ["read", "translate"], "reason": "official language material", "discover_limit": 4, "discover_paths": ["/spravochnik", "/gramota", "/spravka"]},
             {"url": "https://www.russianpod101.com/welcome", "name": "RussianPod101", "default_drill": ["listen", "dictation", "translate"], "reason": "podcast lessons and transcripts"},
-            {"url": "https://www.youtube.com", "name": "YouTube Russian channels", "default_drill": ["dictation", "shadow"], "reason": "short slow-story channels"},
-            {"url": "https://www.ruslang.ru", "name": "Russian Language Blog", "default_drill": ["read", "translate"], "reason": "easy culture and language prose"},
+            {"url": "https://www.youtube.com", "name": "YouTube Russian channels", "default_drill": ["dictation", "shadow", "translate"], "reason": "captioned short-form storytelling channels"},
+            {"url": "https://www.pushkininstitute.ru/articles", "name": "Pushkin Institute", "default_drill": ["read", "dictation", "translate"], "reason": "authored Russian texts with short practical chunks", "discover_limit": 5, "discover_paths": ["/articles/"]},
+            {"url": "https://www.ruslang.ru/", "name": "Russian Language Blog", "default_drill": ["read", "translate"], "reason": "easy culture and language prose"},
         ]
     return targets
 
@@ -173,16 +254,23 @@ def _load_canvas_urls(path):
 
 
 def _fetch_source_page(url):
-    req = urllib.request.Request(
-        url, headers={
-            "User-Agent": "Mozilla/5.0 (compatible; zastolom/1.0; +https://github.com/joeott/learning_russian)"
-        }
-    )
-    with urllib.request.urlopen(req, timeout=18) as r:
-        raw = r.read()
-    encoding = r.headers.get_content_charset() or "utf-8"
-    text = raw.decode(encoding, errors="replace")
-    return text
+    last_err = None
+    for user_agent in DEFAULT_SOURCE_USER_AGENTS:
+        req = urllib.request.Request(url, headers={"User-Agent": user_agent})
+        try:
+            with urllib.request.urlopen(req, timeout=18) as r:
+                raw = r.read()
+            encoding = r.headers.get_content_charset() or "utf-8"
+            return raw.decode(encoding, errors="replace")
+        except urllib.error.HTTPError as e:
+            if e.code in {403, 429, 500, 502, 503, 504}:
+                last_err = e
+                continue
+            raise
+        except OSError as e:
+            last_err = e
+            continue
+    raise last_err or RuntimeError(f"unable to fetch {url}")
 
 
 def _score_source_text(url, title, text, default_drill):
@@ -211,7 +299,9 @@ def _score_source_text(url, title, text, default_drill):
         trust_score *= 0.4
     composite = round(trust_score * original_score, 3)
     status = "rejected"
-    if composite >= 0.68:
+    if word_count > 420 and composite >= 0.45:
+        status = "needs_check"
+    elif composite >= 0.68:
         status = "verified"
     elif composite >= 0.45:
         status = "needs_check"
@@ -261,25 +351,43 @@ def cmd_source_loop(args):
     if args.limit:
         targets = targets[: args.limit]
     rows = []
+    seen = set()
     for idx, entry in enumerate(targets, 1):
         url = entry.get("url")
         if not url:
             continue
+        normalized = _normalize_canvas_url(url)
+        if not normalized:
+            continue
         try:
-            html_text = _fetch_source_page(url)
-            title = _extract_title(html_text)
-            visible = _extract_visible_text(html_text)
-            row = _score_source_text(url, title, visible, entry.get("default_drill"))
-            row["seed_note"] = entry.get("reason")
-            row["seed_name"] = entry.get("name", "")
+            row, html_text = _evaluate_source_page(normalized, entry, is_seed=True)
             rows.append(row)
+            seen.add(normalized)
             status = row["status"]
-            print(head(f"[{idx}/{len(targets)}] {url}"))
+            print(head(f"[{idx}/{len(targets)}] {row['seed_name']}"))
             print(f"  -> status: {status} | composite: {row['scores']['composite']} | words: {row['scores']['word_count']}")
+
+            if args.future:
+                discovered = _discover_source_links(normalized, html_text, entry)
+                if discovered:
+                    print(f"  -> discovered: {len(discovered)} candidate link(s)")
+                for discovered_url in discovered:
+                    if discovered_url in seen:
+                        continue
+                    try:
+                        child_row, _ = _evaluate_source_page(
+                            discovered_url, entry, is_seed=False, discovered_from=row["url"]
+                        )
+                        child_row["seed_name"] = row["seed_name"]
+                        child_row["seed_url"] = row["url"]
+                        rows.append(child_row)
+                        seen.add(discovered_url)
+                    except Exception:
+                        continue
         except Exception as e:
             msg = f"{type(e).__name__}: {e}"
             rows.append({
-                "url": url,
+                "url": normalized,
                 "title": entry.get("name", ""),
                 "status": "rejected",
                 "scores": {
@@ -291,6 +399,11 @@ def cmd_source_loop(args):
                 "notes": [f"fetch_error: {msg}"],
                 "snippet": "",
                 "suggested_drills": [],
+                "seed_note": entry.get("reason"),
+                "seed_name": entry.get("name", ""),
+                "seed_url": normalized,
+                "is_seed": True,
+                "discovered_from": None,
             })
             print(warn(f"[{idx}/{len(targets)}] {url} → {msg}"))
 
@@ -300,6 +413,7 @@ def cmd_source_loop(args):
         "candidates": rows,
         "summary": {
             "targets": len(rows),
+            "discovered": sum(1 for r in rows if not r.get("is_seed")),
             "verified": sum(1 for r in rows if r["status"] == "verified"),
             "needs_check": sum(1 for r in rows if r["status"] == "needs_check"),
             "rejected": sum(1 for r in rows if r["status"] == "rejected"),
@@ -311,6 +425,8 @@ def cmd_source_loop(args):
 
     if args.write_canvas:
         accepted = [r for r in rows if r["status"] in {"verified", "needs_check"}]
+        if args.future:
+            accepted = [r for r in accepted if not r.get("is_seed")]
         existing = _load_canvas_urls(SOURCE_CANDIDATE_FILE)
         new_candidates = [
             r for r in accepted if (r["url"] or "").strip() and _normalize_canvas_url(r["url"]) not in existing
@@ -323,11 +439,18 @@ def cmd_source_loop(args):
             return
         with open(SOURCE_CANDIDATE_FILE, "a", encoding="utf-8") as f:
             f.write(f"\n## Week {datetime.now(timezone.utc).date().isoformat()}\n")
-            f.write("- Generated by: `tools/zastolom source-loop --run --write-canvas`\n")
+            f.write("- Generated by: `")
+            if args.future:
+                f.write("tools/zastolom future-loop --run --write-canvas")
+            else:
+                f.write("tools/zastolom source-loop --run --write-canvas")
+            f.write("`\n")
             for row in new_candidates:
                 status = row["status"]
                 drill = ", ".join(row["suggested_drills"]) if row["suggested_drills"] else "to review"
                 f.write(f"- Source: [{row['title'] or row['url']}]({row['url']})\n")
+                if row.get("discovered_from"):
+                    f.write(f"- From: {row.get('seed_name') or row.get('seed_url')} -> {row['discovered_from']}\n")
                 f.write(f"- Notes: {', '.join(row['notes']) or 'quick check recommended'}\n")
                 f.write(f"- Level: {'L1-L2' if status == 'verified' else 'L1-L3'}\n")
                 f.write(f"- Use: {drill}\n")
@@ -655,9 +778,15 @@ def main():
     sub.add_parser("loop-prompt")
     sl = sub.add_parser("source-loop")
     sl.add_argument("--run", action="store_true", help="run the scouting scan")
+    sl.add_argument("--future", action="store_true", help="also scan candidate links from each target page")
     sl.add_argument("--limit", type=int, default=0, help="max pages to scan in this run")
     sl.add_argument("--write-canvas", action="store_true", help="append passing candidates to source/candidate_materials.md")
     sl.add_argument("--targets", help="optional JSON target file (defaults to source/source_loop_targets.json)")
+    fl = sub.add_parser("future-loop")
+    fl.add_argument("--run", action="store_true", help="run the discovery scan and follow-up links")
+    fl.add_argument("--limit", type=int, default=0, help="max seed pages to scan in this run")
+    fl.add_argument("--write-canvas", action="store_true", help="append passing candidates to source/candidate_materials.md")
+    fl.add_argument("--targets", help="optional JSON target file (defaults to source/source_loop_targets.json)")
     sub.add_parser("stats")
     sub.add_parser("help")
 
@@ -674,7 +803,11 @@ def main():
     elif args.cmd == "verify": cmd_verify(args)
     elif args.cmd == "test": cmd_test(args)
     elif args.cmd == "loop-prompt": cmd_loop_prompt(args)
-    elif args.cmd == "source-loop": cmd_source_loop(args)
+    elif args.cmd == "future-loop":
+        args.future = True
+        cmd_source_loop(args)
+    elif args.cmd == "source-loop":
+        cmd_source_loop(args)
     elif args.cmd == "stats": cmd_stats(args)
 
 if __name__ == "__main__":

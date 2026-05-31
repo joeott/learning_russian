@@ -4,19 +4,25 @@
       "url": "https://russian.rt.com/",
       "name": "RT Russian",
       "default_drill": ["read", "dictation", "translate"],
-      "reason": "short news snippets with clear, short-form Russian"
+      "reason": "short news snippets with clear, short-form Russian",
+      "discover_limit": 4,
+      "discover_paths": ["/news", "/russia", "/world"]
     },
     {
       "url": "https://www.culture.ru/",
       "name": "Culture.ru",
       "default_drill": ["read", "dictation", "translate"],
-      "reason": "short feature summaries and interview clips"
+      "reason": "short feature summaries and interview clips",
+      "discover_limit": 4,
+      "discover_paths": ["/ru/news", "/media"]
     },
     {
       "url": "https://gramota.ru/",
       "name": "Gramota.ru",
       "default_drill": ["read", "translate"],
-      "reason": "official language and normative references"
+      "reason": "official language and normative references",
+      "discover_limit": 4,
+      "discover_paths": ["/spravochnik", "/gramota", "/spravka"]
     },
     {
       "url": "https://www.russianpod101.com/welcome",
@@ -35,6 +41,14 @@
       "name": "RusLang",
       "default_drill": ["read", "translate"],
       "reason": "easy-reader style Russian learning copy"
+    },
+    {
+      "url": "https://www.pushkininstitute.ru/articles",
+      "name": "Pushkin Institute",
+      "default_drill": ["read", "dictation", "translate"],
+      "reason": "short practical language essays with clear register",
+      "discover_limit": 5,
+      "discover_paths": ["/articles/"]
     }
   ]
 }

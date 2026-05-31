@@ -62,11 +62,31 @@ class SourceMaterialLoopTests(unittest.TestCase):
         try:
             urls = zastolom._load_canvas_urls(path)
             self.assertIn("https://www.culture.ru/", urls)
-            self.assertIn("https://www.culture.ru/?utm_source=test", urls)
             self.assertIn("http://russian.rt.com/", urls)
+            self.assertNotIn("https://www.culture.ru/?utm_source=test", urls)
             self.assertNotIn("notes", urls)
         finally:
             os.unlink(path)
+
+    def test_discover_source_links_filters_and_normalizes(self) -> None:
+        html = """
+        <a href="/news">Новости</a>
+        <a href="/news/politics">Политика</a>
+        <a href="/news?x=1">Новости с query</a>
+        <a href="/world">Мир</a>
+        <a href="/search?q=1">Нельзя</a>
+        <a href="https://example.com/offsite">Внешний источник</a>
+        <a href="/media/file.mp4">Медиа</a>
+        <a href="/news">Дубликат</a>
+        """
+        target = {"discover_limit": 4, "discover_paths": ["/news", "/world"]}
+        links = zastolom._discover_source_links("https://russian.rt.com", html, target)
+        self.assertEqual(len(links), 3)
+        self.assertIn("https://russian.rt.com/news", links)
+        self.assertIn("https://russian.rt.com/news/politics", links)
+        self.assertIn("https://russian.rt.com/world", links)
+        self.assertNotIn("https://russian.rt.com/search", links)
+        self.assertNotIn("https://russian.rt.com/media/file.mp4", links)
 
 
 if __name__ == "__main__":
