@@ -53,6 +53,7 @@
   const KEY = COURSE.storage_namespace || "zastolom.russian_family_visit.v2";
   const LEGACY_KEY = "zastolom.v1";
   const LESSON_KEY = KEY + ".lesson_boundary";
+  const HISTORY_KEY = KEY + ".analytics_history";
   let store = load();
   let activeLessonId = loadLessonBoundary();
   function load() {
@@ -79,6 +80,15 @@
     return CURRICULUM.default_lesson_id || (LESSONS.length ? LESSONS[LESSONS.length - 1].lesson_id : "");
   }
   function saveLessonBoundary() { try { localStorage.setItem(LESSON_KEY, activeLessonId); } catch (e) {} }
+  function loadAnalyticsHistory() {
+    try {
+      const rows = JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
+      return Array.isArray(rows) ? rows : [];
+    } catch (e) { return []; }
+  }
+  function saveAnalyticsHistory(rows) {
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(rows.slice(-14))); } catch (e) {}
+  }
   function emptyRec() { return { seen: 0, correct: 0, known: false, stages: {}, errors: {}, last_seen_at: "" }; }
   function migrateRec(value) {
     const r = Object.assign(emptyRec(), value || {});
@@ -243,6 +253,41 @@
       dictationAccuracy: stageAccuracy("dictation"),
       contrastAccuracy: stageAccuracy("contrast"),
     };
+  }
+  function todayKey() { return new Date().toISOString().slice(0, 10); }
+  function analyticsSnapshot(metrics) {
+    const snapshot = {
+      date: todayKey(),
+      readiness: readiness(),
+      delayedRecall: metrics.delayedRecall,
+      due: metrics.due,
+      overdue: metrics.overdue,
+      roleplayMisses: metrics.roleplayMisses,
+      touched: overallProgress().done,
+    };
+    const rows = loadAnalyticsHistory().filter(row => row && row.date !== snapshot.date);
+    rows.push(snapshot);
+    saveAnalyticsHistory(rows);
+    return rows;
+  }
+  function delta(current, previous, key) {
+    if (!previous || typeof previous[key] !== "number") return "new";
+    const d = current[key] - previous[key];
+    return d === 0 ? "0" : (d > 0 ? "+" : "") + d;
+  }
+  function analyticsHistoryHtml(rows) {
+    const current = rows[rows.length - 1];
+    const previous = rows[rows.length - 2];
+    if (!current) return "";
+    return `<div class="trendbox rise">
+      <div><h3>Readiness trend</h3><p>Daily local snapshot. Stored only in this browser.</p></div>
+      <div class="trendgrid">
+        <div><strong>${current.readiness}<small>%</small></strong><span>readiness</span><em>${delta(current, previous, "readiness")}</em></div>
+        <div><strong>${current.delayedRecall}<small>%</small></strong><span>delayed recall</span><em>${delta(current, previous, "delayedRecall")}</em></div>
+        <div><strong>${current.touched}</strong><span>phrases touched</span><em>${delta(current, previous, "touched")}</em></div>
+        <div><strong>${current.overdue}</strong><span>overdue</span><em>${delta(current, previous, "overdue")}</em></div>
+      </div>
+    </div>`;
   }
   function roleplayMisses() {
     return stagePool("roleplay").reduce((n, it) => {
@@ -461,6 +506,7 @@
   function renderHome() {
     const op = overallProgress();
     const a = analytics();
+    const history = analyticsSnapshot(a);
     const d = daysLeft();
     const mods = MODULES.map((m, i) => {
       const p = moduleProgress(m.id);
@@ -508,6 +554,7 @@
           <div><strong>${fragileItems().length}</strong><span>fragile high-priority phrases</span></div>
         </div>
       </div>
+      ${analyticsHistoryHtml(history)}
 
       <div class="section-head"><span class="section-head__num">★</span><span class="section-head__title">The Table, module by module</span>
         <span class="section-head__sub">Tap a card to study it. Start with the red P1 cards — that's the moment you walk in the door.</span></div>
