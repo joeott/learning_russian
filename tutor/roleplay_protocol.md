@@ -289,6 +289,12 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 **You produce:** one short holiday plan, one family celebration answer, and one Thanksgiving dinner answer from the `celebrations` module.
 **Success:** You keep the story to one or two sentences and recover with repair lines instead of trying a long holiday narrative.
 
+### Scenario 25 — Airport and hotel arrival (id: budva_airport_hotel_checkin)
+**Goal:** Handle airport and hotel arrival basics without switching to English.
+**Tutor:** asks fast practical prompts around `аэропо́рт`, `бага́ж`, passport, baggage claim, hotel reservation, room, key, elevator, and check-out.
+**You produce:** short survival lines from `travel_budva`: `Вот мой па́спорт`, `Я хочу́ сда́ть бага́ж`, `Где выда́ча багажа́?`, `У меня́ есть брони́рование`, `Ключ, пожа́луйста`, and one check-in/check-out question.
+**Success:** You can produce the short requests and recognize receptionist prompts like `Э́то ваш ключ` and `Како́й ваш но́мер?`
+
 ---
 
 ## Session templates

@@ -265,6 +265,10 @@ ROLEPLAY_CRITERIA = {
         "label": "handles travel logistics",
         "error_type": "forgot_phrase",
     },
+    "handles_airport_hotel": {
+        "label": "handles airport and hotel basics",
+        "error_type": "forgot_phrase",
+    },
     "talks_about_budva": {
         "label": "talks about Budva naturally",
         "error_type": "forgot_phrase",
@@ -795,6 +799,33 @@ SCENARIOS = [
         "success_criteria": [
             "answers_holiday_plans",
             "keeps_celebration_story_short",
+            "stays_in_russian",
+            "uses_repair_lines",
+        ],
+    },
+    {
+        "id": "budva_airport_hotel_checkin",
+        "setting": "Airport and hotel arrival",
+        "goal": "Handle airport check-in, luggage, hotel reservation, room, key, elevator, and checkout basics.",
+        "required_items": [
+            "trav015",
+            "trav016",
+            "trav017",
+            "trav018",
+            "trav019",
+            "trav020",
+            "trav021",
+            "trav022",
+            "trav023",
+            "trav024",
+            "trav025",
+            "trav026",
+            "trav027",
+            "trav028",
+        ],
+        "success_criteria": [
+            "handles_airport_hotel",
+            "handles_travel_logistics",
             "stays_in_russian",
             "uses_repair_lines",
         ],
@@ -2206,6 +2237,125 @@ add(
     "[my ha-tím pa-ú-zhi-nat']",
     2,
     tags=["restaurant", "plans"],
+)
+add(
+    "travel_budva",
+    "аэропо́рт",
+    "airport",
+    "[a-e-ra-pórt]",
+    3,
+    recognize=True,
+    tags=["airport", "travel"],
+)
+add(
+    "travel_budva",
+    "бага́ж",
+    "luggage",
+    "[ba-gázh]",
+    3,
+    recognize=True,
+    tags=["airport", "hotel", "travel"],
+)
+add(
+    "travel_budva",
+    "Вот мой па́спорт.",
+    "Here is my passport.",
+    "[vot moy pás-part]",
+    2,
+    tags=["airport", "hotel", "passport"],
+)
+add(
+    "travel_budva",
+    "Я хочу́ зарегистри́роваться.",
+    "I want to check in / register.",
+    "[ya ha-chú za-ri-gi-strí-ra-vat-sa]",
+    2,
+    tags=["airport", "hotel", "checkin"],
+)
+add(
+    "travel_budva",
+    "Я хочу́ сда́ть бага́ж.",
+    "I want to check my luggage.",
+    "[ya ha-chú zdat' ba-gázh]",
+    2,
+    tags=["airport", "luggage"],
+)
+add(
+    "travel_budva",
+    "Где выда́ча багажа́?",
+    "Where is baggage claim?",
+    "[gdye vy-dá-cha ba-ga-zhá]",
+    2,
+    recognize=True,
+    tags=["airport", "luggage"],
+)
+add(
+    "travel_budva",
+    "У меня́ есть брони́рование.",
+    "I have a reservation.",
+    "[u mi-nyá yest' bra-ní-ra-va-ni-ye]",
+    2,
+    tags=["hotel", "checkin"],
+)
+add(
+    "travel_budva",
+    "Ключ, пожа́луйста.",
+    "Key, please.",
+    "[klyuch pa-zhá-luy-sta]",
+    2,
+    tags=["hotel"],
+)
+add(
+    "travel_budva",
+    "Где лифт?",
+    "Where is the elevator?",
+    "[gdye lift]",
+    2,
+    tags=["hotel"],
+)
+add(
+    "travel_budva",
+    "В но́мере есть интерне́т?",
+    "Is there internet in the room?",
+    "[v nó-mi-rye yest' in-ter-nyét]",
+    2,
+    tags=["hotel", "room"],
+)
+add(
+    "travel_budva",
+    "Во ско́лько зае́зд?",
+    "What time is check-in?",
+    "[va skól'-ka za-yézd]",
+    2,
+    recognize=True,
+    tags=["hotel", "checkin", "time"],
+)
+add(
+    "travel_budva",
+    "Во ско́лько вы́езд?",
+    "What time is check-out?",
+    "[va skól'-ka vý-yezd]",
+    2,
+    recognize=True,
+    tags=["hotel", "checkout", "time"],
+)
+add(
+    "travel_budva",
+    "Э́то ваш ключ.",
+    "This is your key.",
+    "[é-ta vash klyuch]",
+    3,
+    recognize=True,
+    tags=["hotel", "listening"],
+)
+add(
+    "travel_budva",
+    "Како́й ваш но́мер?",
+    "What is your room number?",
+    "[ka-kóy vash nó-mer]",
+    3,
+    recognize=True,
+    tags=["hotel", "room", "listening"],
 )
 
 # --- CORE VERBS (reactivation; я / вы present) ---

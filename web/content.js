@@ -58,10 +58,10 @@ window.CONTENT_DATA = {
       "work_business": 16,
       "legal_recognition": 15,
       "celebrations": 14,
-      "travel_budva": 14,
+      "travel_budva": 28,
       "verbs": 10
     },
-    "total_items": 204
+    "total_items": 218
   },
   "curriculum": {
     "model": "lesson_locked_i_plus_1",
@@ -1273,22 +1273,48 @@ window.CONTENT_DATA = {
         "module": "travel_budva",
         "title": "Budva Trip",
         "introduced_lexemes": [
+          "аэропорт",
+          "багаж",
+          "багажа",
+          "бронирование",
           "будве",
           "будву",
           "будем",
           "в",
+          "в номере есть интернет?",
+          "ваш",
+          "во",
+          "во сколько выезд?",
+          "во сколько заезд?",
+          "вот",
+          "вот мой паспорт.",
+          "выдача",
+          "выезд",
           "где",
+          "где выдача багажа?",
+          "где лифт?",
           "где наш отель?",
           "где пляж?",
           "город",
           "до",
           "едем",
+          "есть",
           "ехать",
+          "заезд",
+          "зарегистрироваться",
           "здесь",
+          "интернет",
+          "какой",
+          "какой ваш номер?",
+          "ключ",
+          "ключ, пожалуйста.",
           "красивое",
           "красивый",
+          "лифт",
+          "меня",
           "можно",
           "можно такси?",
+          "мой",
           "море",
           "море очень красивое.",
           "моря",
@@ -1300,15 +1326,19 @@ window.CONTENT_DATA = {
           "мы отдыхаем.",
           "мы хотим поужинать.",
           "наш",
+          "номер",
+          "номере",
           "отдыхаем",
           "отель",
           "отеля",
           "очень",
+          "паспорт",
           "пляж",
           "погулять",
           "пожалуйста",
           "поужинать",
           "с",
+          "сдать",
           "семьёй",
           "сколько",
           "сколько ехать до отеля?",
@@ -1318,24 +1348,44 @@ window.CONTENT_DATA = {
           "счёт, пожалуйста.",
           "такси",
           "у",
+          "у меня есть бронирование.",
           "хотим",
           "хочу",
           "черногории",
+          "это",
+          "это ваш ключ.",
           "я",
-          "я хочу погулять у моря."
+          "я хочу зарегистрироваться.",
+          "я хочу погулять у моря.",
+          "я хочу сдать багаж."
         ],
         "active_vocab": [
+          "багаж",
+          "бронирование",
           "будве",
           "будву",
           "будем",
           "в",
+          "в номере есть интернет?",
+          "вот",
+          "вот мой паспорт.",
+          "где",
+          "где лифт?",
           "город",
           "едем",
+          "есть",
+          "зарегистрироваться",
           "здесь",
+          "интернет",
+          "ключ",
+          "ключ, пожалуйста.",
           "красивое",
           "красивый",
+          "лифт",
+          "меня",
           "можно",
           "можно такси?",
+          "мой",
           "море",
           "море очень красивое.",
           "моря",
@@ -1346,12 +1396,15 @@ window.CONTENT_DATA = {
           "мы здесь с семьёй.",
           "мы отдыхаем.",
           "мы хотим поужинать.",
+          "номере",
           "отдыхаем",
           "очень",
+          "паспорт",
           "погулять",
           "пожалуйста",
           "поужинать",
           "с",
+          "сдать",
           "семьёй",
           "старый",
           "старый город очень красивый.",
@@ -1359,24 +1412,44 @@ window.CONTENT_DATA = {
           "счёт, пожалуйста.",
           "такси",
           "у",
+          "у меня есть бронирование.",
           "хотим",
           "хочу",
           "черногории",
           "я",
-          "я хочу погулять у моря."
+          "я хочу зарегистрироваться.",
+          "я хочу погулять у моря.",
+          "я хочу сдать багаж."
         ],
         "passive_vocab": [
+          "аэропорт",
+          "багаж",
+          "багажа",
+          "ваш",
+          "во",
+          "во сколько выезд?",
+          "во сколько заезд?",
+          "выдача",
+          "выезд",
           "где",
+          "где выдача багажа?",
           "где наш отель?",
           "где пляж?",
           "до",
           "ехать",
+          "заезд",
+          "какой",
+          "какой ваш номер?",
+          "ключ",
           "наш",
+          "номер",
           "отель",
           "отеля",
           "пляж",
           "сколько",
-          "сколько ехать до отеля?"
+          "сколько ехать до отеля?",
+          "это",
+          "это ваш ключ."
         ],
         "introduced_structures": [
           "grammar:prepositional_place",
@@ -11095,6 +11168,726 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "trav015",
+      "module": "travel_budva",
+      "ru": "аэропо́рт",
+      "ru_plain": "аэропорт",
+      "en": "airport",
+      "hint": "[a-e-ra-pórt]",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "airport",
+        "travel"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "аэропорт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav016",
+      "module": "travel_budva",
+      "ru": "бага́ж",
+      "ru_plain": "багаж",
+      "en": "luggage",
+      "hint": "[ba-gázh]",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "airport",
+        "hotel",
+        "travel"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "багаж"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav017",
+      "module": "travel_budva",
+      "ru": "Вот мой па́спорт.",
+      "ru_plain": "Вот мой паспорт.",
+      "en": "Here is my passport.",
+      "hint": "[vot moy pás-part]",
+      "priority": 2,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "airport",
+        "hotel",
+        "passport"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "вот",
+        "вот мой паспорт.",
+        "мой",
+        "паспорт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav018",
+      "module": "travel_budva",
+      "ru": "Я хочу́ зарегистри́роваться.",
+      "ru_plain": "Я хочу зарегистрироваться.",
+      "en": "I want to check in / register.",
+      "hint": "[ya ha-chú za-ri-gi-strí-ra-vat-sa]",
+      "priority": 2,
+      "syllables": 10,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "airport",
+        "hotel",
+        "checkin"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "зарегистрироваться",
+        "хочу",
+        "я",
+        "я хочу зарегистрироваться."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav019",
+      "module": "travel_budva",
+      "ru": "Я хочу́ сда́ть бага́ж.",
+      "ru_plain": "Я хочу сдать багаж.",
+      "en": "I want to check my luggage.",
+      "hint": "[ya ha-chú zdat' ba-gázh]",
+      "priority": 2,
+      "syllables": 6,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "airport",
+        "luggage"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "багаж",
+        "сдать",
+        "хочу",
+        "я",
+        "я хочу сдать багаж."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav020",
+      "module": "travel_budva",
+      "ru": "Где выда́ча багажа́?",
+      "ru_plain": "Где выдача багажа?",
+      "en": "Where is baggage claim?",
+      "hint": "[gdye vy-dá-cha ba-ga-zhá]",
+      "priority": 2,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "airport",
+        "luggage"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "багажа",
+        "выдача",
+        "где",
+        "где выдача багажа?"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav021",
+      "module": "travel_budva",
+      "ru": "У меня́ есть брони́рование.",
+      "ru_plain": "У меня есть бронирование.",
+      "en": "I have a reservation.",
+      "hint": "[u mi-nyá yest' bra-ní-ra-va-ni-ye]",
+      "priority": 2,
+      "syllables": 10,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "hotel",
+        "checkin"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "бронирование",
+        "есть",
+        "меня",
+        "у",
+        "у меня есть бронирование."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav022",
+      "module": "travel_budva",
+      "ru": "Ключ, пожа́луйста.",
+      "ru_plain": "Ключ, пожалуйста.",
+      "en": "Key, please.",
+      "hint": "[klyuch pa-zhá-luy-sta]",
+      "priority": 2,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "hotel"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "ключ",
+        "ключ, пожалуйста.",
+        "пожалуйста"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav023",
+      "module": "travel_budva",
+      "ru": "Где лифт?",
+      "ru_plain": "Где лифт?",
+      "en": "Where is the elevator?",
+      "hint": "[gdye lift]",
+      "priority": 2,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "hotel"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "где",
+        "где лифт?",
+        "лифт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav024",
+      "module": "travel_budva",
+      "ru": "В но́мере есть интерне́т?",
+      "ru_plain": "В номере есть интернет?",
+      "en": "Is there internet in the room?",
+      "hint": "[v nó-mi-rye yest' in-ter-nyét]",
+      "priority": 2,
+      "syllables": 7,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "hotel",
+        "room"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "lexemes": [
+        "в",
+        "в номере есть интернет?",
+        "есть",
+        "интернет",
+        "номере"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav025",
+      "module": "travel_budva",
+      "ru": "Во ско́лько зае́зд?",
+      "ru_plain": "Во сколько заезд?",
+      "en": "What time is check-in?",
+      "hint": "[va skól'-ka za-yézd]",
+      "priority": 2,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "hotel",
+        "checkin",
+        "time"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "во",
+        "во сколько заезд?",
+        "заезд",
+        "сколько"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav026",
+      "module": "travel_budva",
+      "ru": "Во ско́лько вы́езд?",
+      "ru_plain": "Во сколько выезд?",
+      "en": "What time is check-out?",
+      "hint": "[va skól'-ka vý-yezd]",
+      "priority": 2,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "hotel",
+        "checkout",
+        "time"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "во",
+        "во сколько выезд?",
+        "выезд",
+        "сколько"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav027",
+      "module": "travel_budva",
+      "ru": "Э́то ваш ключ.",
+      "ru_plain": "Это ваш ключ.",
+      "en": "This is your key.",
+      "hint": "[é-ta vash klyuch]",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "hotel",
+        "listening"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "ваш",
+        "ключ",
+        "это",
+        "это ваш ключ."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
+      "id": "trav028",
+      "module": "travel_budva",
+      "ru": "Како́й ваш но́мер?",
+      "ru_plain": "Какой ваш номер?",
+      "en": "What is your room number?",
+      "hint": "[ka-kóy vash nó-mer]",
+      "priority": 3,
+      "syllables": 5,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": true,
+      "note": "",
+      "tags": [
+        "hotel",
+        "room",
+        "listening"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "lexemes": [
+        "ваш",
+        "какой",
+        "какой ваш номер?",
+        "номер"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "prerequisites": [
+        "family_visit_012"
+      ]
+    },
+    {
       "id": "verb001",
       "module": "verbs",
       "ru": "хочу́ / хоти́те",
@@ -17041,6 +17834,503 @@ window.CONTENT_DATA = {
         "cloze",
         "plans",
         "restaurant"
+      ]
+    },
+    {
+      "id": "cloze_trav017_01",
+      "item_id": "trav017",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Вот мой па́спорт.",
+      "ru_plain": "Вот мой паспорт.",
+      "prompt_ru": "Вот мой ____.",
+      "answer": "паспорт",
+      "accepted_answers": [
+        "па́спорт",
+        "паспорт"
+      ],
+      "en": "Here is my passport.",
+      "priority": 2,
+      "lexemes": [
+        "вот",
+        "вот мой паспорт.",
+        "мой",
+        "паспорт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "airport",
+        "cloze",
+        "hotel",
+        "passport"
+      ]
+    },
+    {
+      "id": "cloze_trav018_01",
+      "item_id": "trav018",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Я хочу́ зарегистри́роваться.",
+      "ru_plain": "Я хочу зарегистрироваться.",
+      "prompt_ru": "Я хочу ____.",
+      "answer": "зарегистрироваться",
+      "accepted_answers": [
+        "зарегистри́роваться",
+        "зарегистрироваться"
+      ],
+      "en": "I want to check in / register.",
+      "priority": 2,
+      "lexemes": [
+        "зарегистрироваться",
+        "хочу",
+        "я",
+        "я хочу зарегистрироваться."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "airport",
+        "checkin",
+        "cloze",
+        "hotel"
+      ]
+    },
+    {
+      "id": "cloze_trav019_01",
+      "item_id": "trav019",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Я хочу́ сда́ть бага́ж.",
+      "ru_plain": "Я хочу сдать багаж.",
+      "prompt_ru": "Я хочу ____ багаж.",
+      "answer": "сдать",
+      "accepted_answers": [
+        "сда́ть",
+        "сдать"
+      ],
+      "en": "I want to check my luggage.",
+      "priority": 2,
+      "lexemes": [
+        "багаж",
+        "сдать",
+        "хочу",
+        "я",
+        "я хочу сдать багаж."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "airport",
+        "cloze",
+        "luggage"
+      ]
+    },
+    {
+      "id": "cloze_trav020_01",
+      "item_id": "trav020",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Где выда́ча багажа́?",
+      "ru_plain": "Где выдача багажа?",
+      "prompt_ru": "Где ____ багажа?",
+      "answer": "выдача",
+      "accepted_answers": [
+        "выда́ча",
+        "выдача"
+      ],
+      "en": "Where is baggage claim?",
+      "priority": 2,
+      "lexemes": [
+        "багажа",
+        "выдача",
+        "где",
+        "где выдача багажа?"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "airport",
+        "cloze",
+        "luggage"
+      ]
+    },
+    {
+      "id": "cloze_trav021_01",
+      "item_id": "trav021",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "У меня́ есть брони́рование.",
+      "ru_plain": "У меня есть бронирование.",
+      "prompt_ru": "У меня есть ____.",
+      "answer": "бронирование",
+      "accepted_answers": [
+        "брони́рование",
+        "бронирование"
+      ],
+      "en": "I have a reservation.",
+      "priority": 2,
+      "lexemes": [
+        "бронирование",
+        "есть",
+        "меня",
+        "у",
+        "у меня есть бронирование."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "cloze",
+        "hotel"
+      ]
+    },
+    {
+      "id": "cloze_trav022_01",
+      "item_id": "trav022",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Ключ, пожа́луйста.",
+      "ru_plain": "Ключ, пожалуйста.",
+      "prompt_ru": "Ключ, ____.",
+      "answer": "пожалуйста",
+      "accepted_answers": [
+        "пожа́луйста",
+        "пожалуйста"
+      ],
+      "en": "Key, please.",
+      "priority": 2,
+      "lexemes": [
+        "ключ",
+        "ключ, пожалуйста.",
+        "пожалуйста"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "hotel"
+      ]
+    },
+    {
+      "id": "cloze_trav023_01",
+      "item_id": "trav023",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Где лифт?",
+      "ru_plain": "Где лифт?",
+      "prompt_ru": "Где ____?",
+      "answer": "лифт",
+      "accepted_answers": [
+        "лифт"
+      ],
+      "en": "Where is the elevator?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где лифт?",
+        "лифт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "hotel"
+      ]
+    },
+    {
+      "id": "cloze_trav024_01",
+      "item_id": "trav024",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "В но́мере есть интерне́т?",
+      "ru_plain": "В номере есть интернет?",
+      "prompt_ru": "В номере есть ____?",
+      "answer": "интернет",
+      "accepted_answers": [
+        "интерне́т",
+        "интернет"
+      ],
+      "en": "Is there internet in the room?",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "в номере есть интернет?",
+        "есть",
+        "интернет",
+        "номере"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "stress"
+      ],
+      "error_types": [
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "hotel",
+        "room"
+      ]
+    },
+    {
+      "id": "cloze_trav025_01",
+      "item_id": "trav025",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Во ско́лько зае́зд?",
+      "ru_plain": "Во сколько заезд?",
+      "prompt_ru": "Во ____ заезд?",
+      "answer": "сколько",
+      "accepted_answers": [
+        "ско́лько",
+        "сколько"
+      ],
+      "en": "What time is check-in?",
+      "priority": 2,
+      "lexemes": [
+        "во",
+        "во сколько заезд?",
+        "заезд",
+        "сколько"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "cloze",
+        "hotel",
+        "time"
+      ]
+    },
+    {
+      "id": "cloze_trav026_01",
+      "item_id": "trav026",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Во ско́лько вы́езд?",
+      "ru_plain": "Во сколько выезд?",
+      "prompt_ru": "Во ____ выезд?",
+      "answer": "сколько",
+      "accepted_answers": [
+        "ско́лько",
+        "сколько"
+      ],
+      "en": "What time is check-out?",
+      "priority": 2,
+      "lexemes": [
+        "во",
+        "во сколько выезд?",
+        "выезд",
+        "сколько"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkout",
+        "cloze",
+        "hotel",
+        "time"
+      ]
+    },
+    {
+      "id": "cloze_trav027_01",
+      "item_id": "trav027",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Э́то ваш ключ.",
+      "ru_plain": "Это ваш ключ.",
+      "prompt_ru": "Это ваш ____.",
+      "answer": "ключ",
+      "accepted_answers": [
+        "ключ"
+      ],
+      "en": "This is your key.",
+      "priority": 3,
+      "lexemes": [
+        "ваш",
+        "ключ",
+        "это",
+        "это ваш ключ."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "hotel",
+        "listening"
+      ]
+    },
+    {
+      "id": "cloze_trav028_01",
+      "item_id": "trav028",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Како́й ваш но́мер?",
+      "ru_plain": "Какой ваш номер?",
+      "prompt_ru": "____ ваш номер?",
+      "answer": "Какой",
+      "accepted_answers": [
+        "Како́й",
+        "Какой"
+      ],
+      "en": "What is your room number?",
+      "priority": 3,
+      "lexemes": [
+        "ваш",
+        "какой",
+        "какой ваш номер?",
+        "номер"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "cloze",
+        "hotel",
+        "listening",
+        "room"
       ]
     },
     {
@@ -24974,6 +26264,599 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "dict_trav015_01",
+      "item_id": "trav015",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "аэропо́рт",
+      "ru_plain": "аэропорт",
+      "accepted_answers": [
+        "аэропо́рт",
+        "аэропорт"
+      ],
+      "en": "airport",
+      "priority": 3,
+      "lexemes": [
+        "аэропорт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "airport",
+        "dictation",
+        "travel"
+      ]
+    },
+    {
+      "id": "dict_trav016_01",
+      "item_id": "trav016",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "бага́ж",
+      "ru_plain": "багаж",
+      "accepted_answers": [
+        "бага́ж",
+        "багаж"
+      ],
+      "en": "luggage",
+      "priority": 3,
+      "lexemes": [
+        "багаж"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "airport",
+        "dictation",
+        "hotel",
+        "travel"
+      ]
+    },
+    {
+      "id": "dict_trav017_01",
+      "item_id": "trav017",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Вот мой па́спорт.",
+      "ru_plain": "Вот мой паспорт.",
+      "accepted_answers": [
+        "Вот мой па́спорт.",
+        "Вот мой паспорт."
+      ],
+      "en": "Here is my passport.",
+      "priority": 2,
+      "lexemes": [
+        "вот",
+        "вот мой паспорт.",
+        "мой",
+        "паспорт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "airport",
+        "dictation",
+        "hotel",
+        "passport"
+      ]
+    },
+    {
+      "id": "dict_trav018_01",
+      "item_id": "trav018",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Я хочу́ зарегистри́роваться.",
+      "ru_plain": "Я хочу зарегистрироваться.",
+      "accepted_answers": [
+        "Я хочу зарегистрироваться.",
+        "Я хочу́ зарегистри́роваться."
+      ],
+      "en": "I want to check in / register.",
+      "priority": 2,
+      "lexemes": [
+        "зарегистрироваться",
+        "хочу",
+        "я",
+        "я хочу зарегистрироваться."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "airport",
+        "checkin",
+        "dictation",
+        "hotel"
+      ]
+    },
+    {
+      "id": "dict_trav019_01",
+      "item_id": "trav019",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Я хочу́ сда́ть бага́ж.",
+      "ru_plain": "Я хочу сдать багаж.",
+      "accepted_answers": [
+        "Я хочу сдать багаж.",
+        "Я хочу́ сда́ть бага́ж."
+      ],
+      "en": "I want to check my luggage.",
+      "priority": 2,
+      "lexemes": [
+        "багаж",
+        "сдать",
+        "хочу",
+        "я",
+        "я хочу сдать багаж."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "airport",
+        "dictation",
+        "luggage"
+      ]
+    },
+    {
+      "id": "dict_trav020_01",
+      "item_id": "trav020",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Где выда́ча багажа́?",
+      "ru_plain": "Где выдача багажа?",
+      "accepted_answers": [
+        "Где выда́ча багажа́?",
+        "Где выдача багажа?"
+      ],
+      "en": "Where is baggage claim?",
+      "priority": 2,
+      "lexemes": [
+        "багажа",
+        "выдача",
+        "где",
+        "где выдача багажа?"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "airport",
+        "dictation",
+        "luggage"
+      ]
+    },
+    {
+      "id": "dict_trav021_01",
+      "item_id": "trav021",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "У меня́ есть брони́рование.",
+      "ru_plain": "У меня есть бронирование.",
+      "accepted_answers": [
+        "У меня есть бронирование.",
+        "У меня́ есть брони́рование."
+      ],
+      "en": "I have a reservation.",
+      "priority": 2,
+      "lexemes": [
+        "бронирование",
+        "есть",
+        "меня",
+        "у",
+        "у меня есть бронирование."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "dictation",
+        "hotel"
+      ]
+    },
+    {
+      "id": "dict_trav022_01",
+      "item_id": "trav022",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Ключ, пожа́луйста.",
+      "ru_plain": "Ключ, пожалуйста.",
+      "accepted_answers": [
+        "Ключ, пожа́луйста.",
+        "Ключ, пожалуйста."
+      ],
+      "en": "Key, please.",
+      "priority": 2,
+      "lexemes": [
+        "ключ",
+        "ключ, пожалуйста.",
+        "пожалуйста"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "hotel"
+      ]
+    },
+    {
+      "id": "dict_trav023_01",
+      "item_id": "trav023",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Где лифт?",
+      "ru_plain": "Где лифт?",
+      "accepted_answers": [
+        "Где лифт?"
+      ],
+      "en": "Where is the elevator?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где лифт?",
+        "лифт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "hotel"
+      ]
+    },
+    {
+      "id": "dict_trav024_01",
+      "item_id": "trav024",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "В но́мере есть интерне́т?",
+      "ru_plain": "В номере есть интернет?",
+      "accepted_answers": [
+        "В но́мере есть интерне́т?",
+        "В номере есть интернет?"
+      ],
+      "en": "Is there internet in the room?",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "в номере есть интернет?",
+        "есть",
+        "интернет",
+        "номере"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "hotel",
+        "room"
+      ]
+    },
+    {
+      "id": "dict_trav025_01",
+      "item_id": "trav025",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Во ско́лько зае́зд?",
+      "ru_plain": "Во сколько заезд?",
+      "accepted_answers": [
+        "Во ско́лько зае́зд?",
+        "Во сколько заезд?"
+      ],
+      "en": "What time is check-in?",
+      "priority": 2,
+      "lexemes": [
+        "во",
+        "во сколько заезд?",
+        "заезд",
+        "сколько"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "dictation",
+        "hotel",
+        "time"
+      ]
+    },
+    {
+      "id": "dict_trav026_01",
+      "item_id": "trav026",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Во ско́лько вы́езд?",
+      "ru_plain": "Во сколько выезд?",
+      "accepted_answers": [
+        "Во ско́лько вы́езд?",
+        "Во сколько выезд?"
+      ],
+      "en": "What time is check-out?",
+      "priority": 2,
+      "lexemes": [
+        "во",
+        "во сколько выезд?",
+        "выезд",
+        "сколько"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkout",
+        "dictation",
+        "hotel",
+        "time"
+      ]
+    },
+    {
+      "id": "dict_trav027_01",
+      "item_id": "trav027",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Э́то ваш ключ.",
+      "ru_plain": "Это ваш ключ.",
+      "accepted_answers": [
+        "Э́то ваш ключ.",
+        "Это ваш ключ."
+      ],
+      "en": "This is your key.",
+      "priority": 3,
+      "lexemes": [
+        "ваш",
+        "ключ",
+        "это",
+        "это ваш ключ."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "hotel",
+        "listening"
+      ]
+    },
+    {
+      "id": "dict_trav028_01",
+      "item_id": "trav028",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Како́й ваш но́мер?",
+      "ru_plain": "Какой ваш номер?",
+      "accepted_answers": [
+        "Како́й ваш но́мер?",
+        "Какой ваш номер?"
+      ],
+      "en": "What is your room number?",
+      "priority": 3,
+      "lexemes": [
+        "ваш",
+        "какой",
+        "какой ваш номер?",
+        "номер"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "dictation",
+        "hotel",
+        "listening",
+        "room"
+      ]
+    },
+    {
       "id": "dict_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
@@ -32882,6 +34765,585 @@ window.CONTENT_DATA = {
       "tags": [
         "plans",
         "restaurant",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_trav015_01",
+      "item_id": "trav015",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "аэропо́рт",
+      "ru_plain": "аэропорт",
+      "options": [
+        "а́эропорт",
+        "аэ́ропорт",
+        "аэро́порт",
+        "аэропо́рт"
+      ],
+      "answer": "аэропо́рт",
+      "en": "airport",
+      "priority": 3,
+      "lexemes": [
+        "аэропорт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "airport",
+        "stress_drill",
+        "travel"
+      ]
+    },
+    {
+      "id": "stress_trav016_01",
+      "item_id": "trav016",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "бага́ж",
+      "ru_plain": "багаж",
+      "options": [
+        "ба́гаж",
+        "бага́ж"
+      ],
+      "answer": "бага́ж",
+      "en": "luggage",
+      "priority": 3,
+      "lexemes": [
+        "багаж"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "airport",
+        "hotel",
+        "stress_drill",
+        "travel"
+      ]
+    },
+    {
+      "id": "stress_trav017_01",
+      "item_id": "trav017",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Вот мой па́спорт.",
+      "ru_plain": "Вот мой паспорт.",
+      "options": [
+        "Во́т мой паспорт.",
+        "Вот мо́й паспорт.",
+        "Вот мой па́спорт.",
+        "Вот мой паспо́рт."
+      ],
+      "answer": "Вот мой па́спорт.",
+      "en": "Here is my passport.",
+      "priority": 2,
+      "lexemes": [
+        "вот",
+        "вот мой паспорт.",
+        "мой",
+        "паспорт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "airport",
+        "hotel",
+        "passport",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_trav018_01",
+      "item_id": "trav018",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Я хочу́ зарегистри́роваться.",
+      "ru_plain": "Я хочу зарегистрироваться.",
+      "options": [
+        "Я хо́чу зарегистрироваться.",
+        "Я хочу́ зарегистри́роваться.",
+        "Я хочу́ зарегистрироваться.",
+        "Я́ хочу зарегистрироваться."
+      ],
+      "answer": "Я хочу́ зарегистри́роваться.",
+      "en": "I want to check in / register.",
+      "priority": 2,
+      "lexemes": [
+        "зарегистрироваться",
+        "хочу",
+        "я",
+        "я хочу зарегистрироваться."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "airport",
+        "checkin",
+        "hotel",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_trav019_01",
+      "item_id": "trav019",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Я хочу́ сда́ть бага́ж.",
+      "ru_plain": "Я хочу сдать багаж.",
+      "options": [
+        "Я хо́чу сдать багаж.",
+        "Я хочу́ сда́ть бага́ж.",
+        "Я хочу́ сдать багаж.",
+        "Я́ хочу сдать багаж."
+      ],
+      "answer": "Я хочу́ сда́ть бага́ж.",
+      "en": "I want to check my luggage.",
+      "priority": 2,
+      "lexemes": [
+        "багаж",
+        "сдать",
+        "хочу",
+        "я",
+        "я хочу сдать багаж."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "airport",
+        "luggage",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_trav020_01",
+      "item_id": "trav020",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Где выда́ча багажа́?",
+      "ru_plain": "Где выдача багажа?",
+      "options": [
+        "Где вы́дача багажа?",
+        "Где выда́ча багажа?",
+        "Где выда́ча багажа́?",
+        "Где́ выдача багажа?"
+      ],
+      "answer": "Где выда́ча багажа́?",
+      "en": "Where is baggage claim?",
+      "priority": 2,
+      "lexemes": [
+        "багажа",
+        "выдача",
+        "где",
+        "где выдача багажа?"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "airport",
+        "luggage",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_trav021_01",
+      "item_id": "trav021",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "У меня́ есть брони́рование.",
+      "ru_plain": "У меня есть бронирование.",
+      "options": [
+        "У ме́ня есть бронирование.",
+        "У меня́ есть брони́рование.",
+        "У меня́ есть бронирование.",
+        "У́ меня есть бронирование."
+      ],
+      "answer": "У меня́ есть брони́рование.",
+      "en": "I have a reservation.",
+      "priority": 2,
+      "lexemes": [
+        "бронирование",
+        "есть",
+        "меня",
+        "у",
+        "у меня есть бронирование."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "hotel",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_trav022_01",
+      "item_id": "trav022",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Ключ, пожа́луйста.",
+      "ru_plain": "Ключ, пожалуйста.",
+      "options": [
+        "Клю́ч, пожалуйста.",
+        "Ключ, по́жалуйста.",
+        "Ключ, пожа́луйста.",
+        "Ключ, пожалу́йста."
+      ],
+      "answer": "Ключ, пожа́луйста.",
+      "en": "Key, please.",
+      "priority": 2,
+      "lexemes": [
+        "ключ",
+        "ключ, пожалуйста.",
+        "пожалуйста"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "hotel",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_trav024_01",
+      "item_id": "trav024",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "В но́мере есть интерне́т?",
+      "ru_plain": "В номере есть интернет?",
+      "options": [
+        "В но́мере есть интерне́т?",
+        "В но́мере есть интернет?",
+        "В номе́ре есть интернет?",
+        "В номере́ есть интернет?"
+      ],
+      "answer": "В но́мере есть интерне́т?",
+      "en": "Is there internet in the room?",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "в номере есть интернет?",
+        "есть",
+        "интернет",
+        "номере"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress"
+      ],
+      "tags": [
+        "hotel",
+        "room",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_trav025_01",
+      "item_id": "trav025",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Во ско́лько зае́зд?",
+      "ru_plain": "Во сколько заезд?",
+      "options": [
+        "Во ско́лько зае́зд?",
+        "Во ско́лько заезд?",
+        "Во сколько́ заезд?",
+        "Во́ сколько заезд?"
+      ],
+      "answer": "Во ско́лько зае́зд?",
+      "en": "What time is check-in?",
+      "priority": 2,
+      "lexemes": [
+        "во",
+        "во сколько заезд?",
+        "заезд",
+        "сколько"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkin",
+        "hotel",
+        "stress_drill",
+        "time"
+      ]
+    },
+    {
+      "id": "stress_trav026_01",
+      "item_id": "trav026",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Во ско́лько вы́езд?",
+      "ru_plain": "Во сколько выезд?",
+      "options": [
+        "Во ско́лько вы́езд?",
+        "Во ско́лько выезд?",
+        "Во сколько́ выезд?",
+        "Во́ сколько выезд?"
+      ],
+      "answer": "Во ско́лько вы́езд?",
+      "en": "What time is check-out?",
+      "priority": 2,
+      "lexemes": [
+        "во",
+        "во сколько выезд?",
+        "выезд",
+        "сколько"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "checkout",
+        "hotel",
+        "stress_drill",
+        "time"
+      ]
+    },
+    {
+      "id": "stress_trav027_01",
+      "item_id": "trav027",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Э́то ваш ключ.",
+      "ru_plain": "Это ваш ключ.",
+      "options": [
+        "Э́то ваш ключ.",
+        "Это ва́ш ключ.",
+        "Это ваш клю́ч.",
+        "Это́ ваш ключ."
+      ],
+      "answer": "Э́то ваш ключ.",
+      "en": "This is your key.",
+      "priority": 3,
+      "lexemes": [
+        "ваш",
+        "ключ",
+        "это",
+        "это ваш ключ."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "hotel",
+        "listening",
+        "stress_drill"
+      ]
+    },
+    {
+      "id": "stress_trav028_01",
+      "item_id": "trav028",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Како́й ваш но́мер?",
+      "ru_plain": "Какой ваш номер?",
+      "options": [
+        "Ка́кой ваш номер?",
+        "Како́й ваш но́мер?",
+        "Како́й ваш номер?",
+        "Какой ва́ш номер?"
+      ],
+      "answer": "Како́й ваш но́мер?",
+      "en": "What is your room number?",
+      "priority": 3,
+      "lexemes": [
+        "ваш",
+        "какой",
+        "какой ваш номер?",
+        "номер"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress"
+      ],
+      "tags": [
+        "hotel",
+        "listening",
+        "room",
         "stress_drill"
       ]
     },
@@ -42009,6 +44471,698 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "pron_trav015_01",
+      "item_id": "trav015",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "аэропо́рт",
+      "ru_plain": "аэропорт",
+      "en": "airport",
+      "priority": 3,
+      "lexemes": [
+        "аэропорт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "airport",
+        "pronunciation",
+        "travel"
+      ]
+    },
+    {
+      "id": "pron_trav016_01",
+      "item_id": "trav016",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "бага́ж",
+      "ru_plain": "багаж",
+      "en": "luggage",
+      "priority": 3,
+      "lexemes": [
+        "багаж"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "airport",
+        "hotel",
+        "pronunciation",
+        "travel"
+      ]
+    },
+    {
+      "id": "pron_trav017_01",
+      "item_id": "trav017",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Вот мой па́спорт.",
+      "ru_plain": "Вот мой паспорт.",
+      "en": "Here is my passport.",
+      "priority": 2,
+      "lexemes": [
+        "вот",
+        "вот мой паспорт.",
+        "мой",
+        "паспорт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "airport",
+        "hotel",
+        "passport",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_trav018_01",
+      "item_id": "trav018",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Я хочу́ зарегистри́роваться.",
+      "ru_plain": "Я хочу зарегистрироваться.",
+      "en": "I want to check in / register.",
+      "priority": 2,
+      "lexemes": [
+        "зарегистрироваться",
+        "хочу",
+        "я",
+        "я хочу зарегистрироваться."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "airport",
+        "checkin",
+        "hotel",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_trav019_01",
+      "item_id": "trav019",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Я хочу́ сда́ть бага́ж.",
+      "ru_plain": "Я хочу сдать багаж.",
+      "en": "I want to check my luggage.",
+      "priority": 2,
+      "lexemes": [
+        "багаж",
+        "сдать",
+        "хочу",
+        "я",
+        "я хочу сдать багаж."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "airport",
+        "luggage",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_trav020_01",
+      "item_id": "trav020",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Где выда́ча багажа́?",
+      "ru_plain": "Где выдача багажа?",
+      "en": "Where is baggage claim?",
+      "priority": 2,
+      "lexemes": [
+        "багажа",
+        "выдача",
+        "где",
+        "где выдача багажа?"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "airport",
+        "luggage",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_trav021_01",
+      "item_id": "trav021",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "У меня́ есть брони́рование.",
+      "ru_plain": "У меня есть бронирование.",
+      "en": "I have a reservation.",
+      "priority": 2,
+      "lexemes": [
+        "бронирование",
+        "есть",
+        "меня",
+        "у",
+        "у меня есть бронирование."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "hotel",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_trav022_01",
+      "item_id": "trav022",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Ключ, пожа́луйста.",
+      "ru_plain": "Ключ, пожалуйста.",
+      "en": "Key, please.",
+      "priority": 2,
+      "lexemes": [
+        "ключ",
+        "ключ, пожалуйста.",
+        "пожалуйста"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "hotel",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_trav023_01",
+      "item_id": "trav023",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Где лифт?",
+      "ru_plain": "Где лифт?",
+      "en": "Where is the elevator?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где лифт?",
+        "лифт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "hotel",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_trav024_01",
+      "item_id": "trav024",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "В но́мере есть интерне́т?",
+      "ru_plain": "В номере есть интернет?",
+      "en": "Is there internet in the room?",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "в номере есть интернет?",
+        "есть",
+        "интернет",
+        "номере"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "hotel",
+        "pronunciation",
+        "room"
+      ]
+    },
+    {
+      "id": "pron_trav025_01",
+      "item_id": "trav025",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Во ско́лько зае́зд?",
+      "ru_plain": "Во сколько заезд?",
+      "en": "What time is check-in?",
+      "priority": 2,
+      "lexemes": [
+        "во",
+        "во сколько заезд?",
+        "заезд",
+        "сколько"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkin",
+        "hotel",
+        "pronunciation",
+        "time"
+      ]
+    },
+    {
+      "id": "pron_trav026_01",
+      "item_id": "trav026",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Во ско́лько вы́езд?",
+      "ru_plain": "Во сколько выезд?",
+      "en": "What time is check-out?",
+      "priority": 2,
+      "lexemes": [
+        "во",
+        "во сколько выезд?",
+        "выезд",
+        "сколько"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "checkout",
+        "hotel",
+        "pronunciation",
+        "time"
+      ]
+    },
+    {
+      "id": "pron_trav027_01",
+      "item_id": "trav027",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Э́то ваш ключ.",
+      "ru_plain": "Это ваш ключ.",
+      "en": "This is your key.",
+      "priority": 3,
+      "lexemes": [
+        "ваш",
+        "ключ",
+        "это",
+        "это ваш ключ."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "hotel",
+        "listening",
+        "pronunciation"
+      ]
+    },
+    {
+      "id": "pron_trav028_01",
+      "item_id": "trav028",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Како́й ваш но́мер?",
+      "ru_plain": "Какой ваш номер?",
+      "en": "What is your room number?",
+      "priority": 3,
+      "lexemes": [
+        "ваш",
+        "какой",
+        "какой ваш номер?",
+        "номер"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "practice_steps": [
+        "listen_native",
+        "record_self",
+        "playback_compare",
+        "self_rate"
+      ],
+      "feedback_targets": [
+        "stress",
+        "vowel_reduction"
+      ],
+      "allowed_error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "error_types": [
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "vowel_reduction"
+      ],
+      "tags": [
+        "hotel",
+        "listening",
+        "pronunciation",
+        "room"
+      ]
+    },
+    {
       "id": "pron_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
@@ -50479,6 +53633,641 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "back_trav015_01",
+      "item_id": "trav015",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "аэропо́рт",
+      "ru_plain": "аэропорт",
+      "accepted_answers": [
+        "аэропо́рт",
+        "аэропорт"
+      ],
+      "en": "airport",
+      "priority": 3,
+      "lexemes": [
+        "аэропорт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "airport",
+        "back_translation",
+        "travel"
+      ]
+    },
+    {
+      "id": "back_trav016_01",
+      "item_id": "trav016",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "бага́ж",
+      "ru_plain": "багаж",
+      "accepted_answers": [
+        "бага́ж",
+        "багаж"
+      ],
+      "en": "luggage",
+      "priority": 3,
+      "lexemes": [
+        "багаж"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "airport",
+        "back_translation",
+        "hotel",
+        "travel"
+      ]
+    },
+    {
+      "id": "back_trav017_01",
+      "item_id": "trav017",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Вот мой па́спорт.",
+      "ru_plain": "Вот мой паспорт.",
+      "accepted_answers": [
+        "Вот мой па́спорт.",
+        "Вот мой паспорт."
+      ],
+      "en": "Here is my passport.",
+      "priority": 2,
+      "lexemes": [
+        "вот",
+        "вот мой паспорт.",
+        "мой",
+        "паспорт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "airport",
+        "back_translation",
+        "hotel",
+        "passport"
+      ]
+    },
+    {
+      "id": "back_trav018_01",
+      "item_id": "trav018",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Я хочу́ зарегистри́роваться.",
+      "ru_plain": "Я хочу зарегистрироваться.",
+      "accepted_answers": [
+        "Я хочу зарегистрироваться.",
+        "Я хочу́ зарегистри́роваться."
+      ],
+      "en": "I want to check in / register.",
+      "priority": 2,
+      "lexemes": [
+        "зарегистрироваться",
+        "хочу",
+        "я",
+        "я хочу зарегистрироваться."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "airport",
+        "back_translation",
+        "checkin",
+        "hotel"
+      ]
+    },
+    {
+      "id": "back_trav019_01",
+      "item_id": "trav019",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Я хочу́ сда́ть бага́ж.",
+      "ru_plain": "Я хочу сдать багаж.",
+      "accepted_answers": [
+        "Я хочу сдать багаж.",
+        "Я хочу́ сда́ть бага́ж."
+      ],
+      "en": "I want to check my luggage.",
+      "priority": 2,
+      "lexemes": [
+        "багаж",
+        "сдать",
+        "хочу",
+        "я",
+        "я хочу сдать багаж."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "airport",
+        "back_translation",
+        "luggage"
+      ]
+    },
+    {
+      "id": "back_trav020_01",
+      "item_id": "trav020",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Где выда́ча багажа́?",
+      "ru_plain": "Где выдача багажа?",
+      "accepted_answers": [
+        "Где выда́ча багажа́?",
+        "Где выдача багажа?"
+      ],
+      "en": "Where is baggage claim?",
+      "priority": 2,
+      "lexemes": [
+        "багажа",
+        "выдача",
+        "где",
+        "где выдача багажа?"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "airport",
+        "back_translation",
+        "luggage"
+      ]
+    },
+    {
+      "id": "back_trav021_01",
+      "item_id": "trav021",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "У меня́ есть брони́рование.",
+      "ru_plain": "У меня есть бронирование.",
+      "accepted_answers": [
+        "У меня есть бронирование.",
+        "У меня́ есть брони́рование."
+      ],
+      "en": "I have a reservation.",
+      "priority": 2,
+      "lexemes": [
+        "бронирование",
+        "есть",
+        "меня",
+        "у",
+        "у меня есть бронирование."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "checkin",
+        "hotel"
+      ]
+    },
+    {
+      "id": "back_trav022_01",
+      "item_id": "trav022",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Ключ, пожа́луйста.",
+      "ru_plain": "Ключ, пожалуйста.",
+      "accepted_answers": [
+        "Ключ, пожа́луйста.",
+        "Ключ, пожалуйста."
+      ],
+      "en": "Key, please.",
+      "priority": 2,
+      "lexemes": [
+        "ключ",
+        "ключ, пожалуйста.",
+        "пожалуйста"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "hotel"
+      ]
+    },
+    {
+      "id": "back_trav023_01",
+      "item_id": "trav023",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Где лифт?",
+      "ru_plain": "Где лифт?",
+      "accepted_answers": [
+        "Где лифт?"
+      ],
+      "en": "Where is the elevator?",
+      "priority": 2,
+      "lexemes": [
+        "где",
+        "где лифт?",
+        "лифт"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "hotel"
+      ]
+    },
+    {
+      "id": "back_trav024_01",
+      "item_id": "trav024",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "В но́мере есть интерне́т?",
+      "ru_plain": "В номере есть интернет?",
+      "accepted_answers": [
+        "В но́мере есть интерне́т?",
+        "В номере есть интернет?"
+      ],
+      "en": "Is there internet in the room?",
+      "priority": 2,
+      "lexemes": [
+        "в",
+        "в номере есть интернет?",
+        "есть",
+        "интернет",
+        "номере"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "hotel",
+        "room"
+      ]
+    },
+    {
+      "id": "back_trav025_01",
+      "item_id": "trav025",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Во ско́лько зае́зд?",
+      "ru_plain": "Во сколько заезд?",
+      "accepted_answers": [
+        "Во ско́лько зае́зд?",
+        "Во сколько заезд?"
+      ],
+      "en": "What time is check-in?",
+      "priority": 2,
+      "lexemes": [
+        "во",
+        "во сколько заезд?",
+        "заезд",
+        "сколько"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "checkin",
+        "hotel",
+        "time"
+      ]
+    },
+    {
+      "id": "back_trav026_01",
+      "item_id": "trav026",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Во ско́лько вы́езд?",
+      "ru_plain": "Во сколько выезд?",
+      "accepted_answers": [
+        "Во ско́лько вы́езд?",
+        "Во сколько выезд?"
+      ],
+      "en": "What time is check-out?",
+      "priority": 2,
+      "lexemes": [
+        "во",
+        "во сколько выезд?",
+        "выезд",
+        "сколько"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "checkout",
+        "hotel",
+        "time"
+      ]
+    },
+    {
+      "id": "back_trav027_01",
+      "item_id": "trav027",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Э́то ваш ключ.",
+      "ru_plain": "Это ваш ключ.",
+      "accepted_answers": [
+        "Э́то ваш ключ.",
+        "Это ваш ключ."
+      ],
+      "en": "This is your key.",
+      "priority": 3,
+      "lexemes": [
+        "ваш",
+        "ключ",
+        "это",
+        "это ваш ключ."
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "hotel",
+        "listening"
+      ]
+    },
+    {
+      "id": "back_trav028_01",
+      "item_id": "trav028",
+      "module": "travel_budva",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "ru": "Како́й ваш но́мер?",
+      "ru_plain": "Какой ваш номер?",
+      "accepted_answers": [
+        "Како́й ваш но́мер?",
+        "Какой ваш номер?"
+      ],
+      "en": "What is your room number?",
+      "priority": 3,
+      "lexemes": [
+        "ваш",
+        "какой",
+        "какой ваш номер?",
+        "номер"
+      ],
+      "structures": [
+        "grammar:prepositional_place",
+        "lexical:travel_vocab",
+        "phrase:place_description",
+        "phrase:travel_logistics",
+        "skill:listening_question_recognition"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "forgot_phrase",
+        "listening_misparse",
+        "stress",
+        "word_order"
+      ],
+      "tags": [
+        "back_translation",
+        "hotel",
+        "listening",
+        "room"
+      ]
+    },
+    {
       "id": "back_verb001_01",
       "item_id": "verb001",
       "module": "verbs",
@@ -55646,6 +59435,20 @@ window.CONTENT_DATA = {
         "trav012",
         "trav013",
         "trav014",
+        "trav015",
+        "trav016",
+        "trav017",
+        "trav018",
+        "trav019",
+        "trav020",
+        "trav021",
+        "trav022",
+        "trav023",
+        "trav024",
+        "trav025",
+        "trav026",
+        "trav027",
+        "trav028",
         "verb001",
         "verb002",
         "verb003",
@@ -55662,11 +59465,13 @@ window.CONTENT_DATA = {
         "америки",
         "аппетита",
         "бабушка",
+        "багаж",
         "благодарения",
         "бокал",
         "большое",
         "большой",
         "брат",
+        "бронирование",
         "будве",
         "будву",
         "будем",
@@ -55675,6 +59480,7 @@ window.CONTENT_DATA = {
         "был",
         "было",
         "в",
+        "в номере есть интернет?",
         "ваше",
         "вашу",
         "вечер",
@@ -55682,6 +59488,8 @@ window.CONTENT_DATA = {
         "вкусно",
         "вместе",
         "воскресенье",
+        "вот",
+        "вот мой паспорт.",
         "время",
         "всей",
         "встречу",
@@ -55690,6 +59498,8 @@ window.CONTENT_DATA = {
         "вчера было солнечно.",
         "выпьем",
         "выходных",
+        "где",
+        "где лифт?",
         "говорите",
         "говорю",
         "говорю / говорите",
@@ -55752,6 +59562,7 @@ window.CONTENT_DATA = {
         "завтра",
         "завтра будет тепло.",
         "занят",
+        "зарегистрироваться",
         "звонил",
         "здесь",
         "здоровы",
@@ -55769,6 +59580,7 @@ window.CONTENT_DATA = {
         "идёт снег.",
         "из",
         "извините",
+        "интернет",
         "кадрия",
         "кадрия будет гулять и отдыхать.",
         "кадрия работает вместе со мной.",
@@ -55778,10 +59590,13 @@ window.CONTENT_DATA = {
         "клиентам",
         "клиентов",
         "клиентом",
+        "ключ",
+        "ключ, пожалуйста.",
         "компания",
         "компьютере",
         "красивое",
         "красивый",
+        "лифт",
         "лыжах",
         "любите",
         "люблю",
@@ -55803,6 +59618,7 @@ window.CONTENT_DATA = {
         "можно такси?",
         "можно чаю?",
         "моих",
+        "мой",
         "молодых",
         "море",
         "море очень красивое.",
@@ -55833,6 +59649,7 @@ window.CONTENT_DATA = {
         "немного",
         "нет",
         "нет, спасибо",
+        "номере",
         "нормально",
         "ночи",
         "нравится",
@@ -55852,6 +59669,7 @@ window.CONTENT_DATA = {
         "очень вкусно!",
         "очень приятно",
         "папа",
+        "паспорт",
         "передайте",
         "передайте, пожалуйста, хлеб",
         "по",
@@ -55905,6 +59723,7 @@ window.CONTENT_DATA = {
         "с",
         "свидания",
         "своя",
+        "сдать",
         "себя",
         "сегодня",
         "сегодня облачно.",
@@ -55951,6 +59770,7 @@ window.CONTENT_DATA = {
         "тост",
         "тёща",
         "у",
+        "у меня есть бронирование.",
         "у меня есть время до десяти.",
         "у меня много работы.",
         "у меня своя компания.",
@@ -56003,11 +59823,16 @@ window.CONTENT_DATA = {
         "я работаю утром и вечером.",
         "я счастлив работать на себя.",
         "я ужинаю вечером.",
+        "я хочу зарегистрироваться.",
         "я хочу погулять у моря.",
+        "я хочу сдать багаж.",
         "я хочу сказать тост за …",
         "я юрист"
       ],
       "passive_vocab": [
+        "аэропорт",
+        "багаж",
+        "багажа",
         "благодарения",
         "блины",
         "борщ",
@@ -56017,10 +59842,17 @@ window.CONTENT_DATA = {
         "вам",
         "вам нравится …?",
         "вас",
+        "ваш",
+        "во",
+        "во сколько выезд?",
+        "во сколько заезд?",
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выдача",
+        "выезд",
         "где",
+        "где выдача багажа?",
         "где наш отель?",
         "где пляж?",
         "говорите",
@@ -56034,6 +59866,7 @@ window.CONTENT_DATA = {
         "до",
         "ехать",
         "ещё",
+        "заезд",
         "закон",
         "защитник",
         "кадрией",
@@ -56048,6 +59881,7 @@ window.CONTENT_DATA = {
         "какие",
         "какие планы на рождество?",
         "какой",
+        "какой ваш номер?",
         "какой сегодня день недели?",
         "какой сегодня праздник?",
         "кем",
@@ -56055,6 +59889,7 @@ window.CONTENT_DATA = {
         "клевета",
         "клиент",
         "клиентов",
+        "ключ",
         "когда",
         "когда вы обедаете?",
         "когда вы отдыхаете?",
@@ -56066,6 +59901,7 @@ window.CONTENT_DATA = {
         "на",
         "наш",
         "недели",
+        "номер",
         "нравится",
         "обедаете",
         "оливье",
@@ -56113,7 +59949,9 @@ window.CONTENT_DATA = {
         "чай",
         "что",
         "что вы делали на день благодарения?",
-        "что ты сегодня делал?"
+        "что ты сегодня делал?",
+        "это",
+        "это ваш ключ."
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -57996,18 +61834,34 @@ window.CONTENT_DATA = {
         "trav011",
         "trav012",
         "trav013",
-        "trav014"
+        "trav014",
+        "trav015",
+        "trav016",
+        "trav017",
+        "trav018",
+        "trav019",
+        "trav020",
+        "trav021",
+        "trav022",
+        "trav023",
+        "trav024",
+        "trav025",
+        "trav026",
+        "trav027",
+        "trav028"
       ],
       "active_vocab": [
         "америке",
         "америки",
         "аппетита",
         "бабушка",
+        "багаж",
         "благодарения",
         "бокал",
         "большое",
         "большой",
         "брат",
+        "бронирование",
         "будве",
         "будву",
         "будем",
@@ -58016,6 +61870,7 @@ window.CONTENT_DATA = {
         "был",
         "было",
         "в",
+        "в номере есть интернет?",
         "ваше",
         "вашу",
         "вечер",
@@ -58023,6 +61878,8 @@ window.CONTENT_DATA = {
         "вкусно",
         "вместе",
         "воскресенье",
+        "вот",
+        "вот мой паспорт.",
         "время",
         "всей",
         "встречу",
@@ -58031,6 +61888,8 @@ window.CONTENT_DATA = {
         "вчера было солнечно.",
         "выпьем",
         "выходных",
+        "где",
+        "где лифт?",
         "говорю",
         "город",
         "гулять",
@@ -58086,6 +61945,7 @@ window.CONTENT_DATA = {
         "завтра",
         "завтра будет тепло.",
         "занят",
+        "зарегистрироваться",
         "звонил",
         "здесь",
         "здоровы",
@@ -58100,6 +61960,7 @@ window.CONTENT_DATA = {
         "идёт снег.",
         "из",
         "извините",
+        "интернет",
         "кадрия",
         "кадрия будет гулять и отдыхать.",
         "кадрия работает вместе со мной.",
@@ -58109,10 +61970,13 @@ window.CONTENT_DATA = {
         "клиентам",
         "клиентов",
         "клиентом",
+        "ключ",
+        "ключ, пожалуйста.",
         "компания",
         "компьютере",
         "красивое",
         "красивый",
+        "лифт",
         "лыжах",
         "люблю",
         "любовь",
@@ -58129,6 +61993,7 @@ window.CONTENT_DATA = {
         "можно такси?",
         "можно чаю?",
         "моих",
+        "мой",
         "молодых",
         "море",
         "море очень красивое.",
@@ -58159,6 +62024,7 @@ window.CONTENT_DATA = {
         "немного",
         "нет",
         "нет, спасибо",
+        "номере",
         "нормально",
         "ночи",
         "нравится",
@@ -58178,6 +62044,7 @@ window.CONTENT_DATA = {
         "очень вкусно!",
         "очень приятно",
         "папа",
+        "паспорт",
         "передайте",
         "передайте, пожалуйста, хлеб",
         "по",
@@ -58224,6 +62091,7 @@ window.CONTENT_DATA = {
         "с",
         "свидания",
         "своя",
+        "сдать",
         "себя",
         "сегодня",
         "сегодня облачно.",
@@ -58270,6 +62138,7 @@ window.CONTENT_DATA = {
         "тост",
         "тёща",
         "у",
+        "у меня есть бронирование.",
         "у меня есть время до десяти.",
         "у меня много работы.",
         "у меня своя компания.",
@@ -58320,11 +62189,16 @@ window.CONTENT_DATA = {
         "я работаю утром и вечером.",
         "я счастлив работать на себя.",
         "я ужинаю вечером.",
+        "я хочу зарегистрироваться.",
         "я хочу погулять у моря.",
+        "я хочу сдать багаж.",
         "я хочу сказать тост за …",
         "я юрист"
       ],
       "passive_vocab": [
+        "аэропорт",
+        "багаж",
+        "багажа",
         "благодарения",
         "блины",
         "борщ",
@@ -58334,10 +62208,17 @@ window.CONTENT_DATA = {
         "вам",
         "вам нравится …?",
         "вас",
+        "ваш",
+        "во",
+        "во сколько выезд?",
+        "во сколько заезд?",
         "водка",
         "вы",
         "вы говорите по-русски?",
+        "выдача",
+        "выезд",
         "где",
+        "где выдача багажа?",
         "где наш отель?",
         "где пляж?",
         "говорите",
@@ -58351,6 +62232,7 @@ window.CONTENT_DATA = {
         "до",
         "ехать",
         "ещё",
+        "заезд",
         "закон",
         "защитник",
         "кадрией",
@@ -58365,6 +62247,7 @@ window.CONTENT_DATA = {
         "какие",
         "какие планы на рождество?",
         "какой",
+        "какой ваш номер?",
         "какой сегодня день недели?",
         "какой сегодня праздник?",
         "кем",
@@ -58372,6 +62255,7 @@ window.CONTENT_DATA = {
         "клевета",
         "клиент",
         "клиентов",
+        "ключ",
         "когда",
         "когда вы обедаете?",
         "когда вы отдыхаете?",
@@ -58383,6 +62267,7 @@ window.CONTENT_DATA = {
         "на",
         "наш",
         "недели",
+        "номер",
         "нравится",
         "обедаете",
         "оливье",
@@ -58430,7 +62315,9 @@ window.CONTENT_DATA = {
         "чай",
         "что",
         "что вы делали на день благодарения?",
-        "что ты сегодня делал?"
+        "что ты сегодня делал?",
+        "это",
+        "это ваш ключ."
       ],
       "structures": [
         "culture:toast_etiquette",
@@ -60469,6 +64356,877 @@ window.CONTENT_DATA = {
         "Communication-breaking error: clarify in English, provide the verified model, then retry."
       ],
       "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Holiday and family celebration small talk — Answer Christmas/Thanksgiving/family-plan prompts from the original guide in short Russian.\nCurriculum boundary: Lesson 12 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- Скоро Рождество. — Christmas is soon.\n- Как вы с Кадрией отпраздновали Рождество? — How did you and Kadriya celebrate Christmas?\n- Мы отпраздновали Рождество у моих родителей дома. — We celebrated Christmas at my parents' house.\n- Какие планы на Рождество? — What are the plans for Christmas?\n- На Рождество мы хотим полететь в Орегон. — For Christmas we want to fly to Oregon.\n- Сколько дней вы будете в Орегоне? — How many days will you be in Oregon?\n- Мы будем в Орегоне пять дней. — We'll be in Oregon for five days.\n- Что вы делали на День Благодарения? — What did you do for Thanksgiving?\n- На День Благодарения мы ужинали всей семьёй. — For Thanksgiving we had dinner as a whole family.\n- Это был большой ужин. — It was a big dinner.\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
+    },
+    {
+      "id": "tutor_budva_airport_hotel_checkin",
+      "scenario_id": "budva_airport_hotel_checkin",
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13,
+      "setting": "Airport and hotel arrival",
+      "goal": "Handle airport check-in, luggage, hotel reservation, room, key, elevator, and checkout basics.",
+      "learner_role": "guest",
+      "tutor_role": "host family member",
+      "required_items": [
+        "trav015",
+        "trav016",
+        "trav017",
+        "trav018",
+        "trav019",
+        "trav020",
+        "trav021",
+        "trav022",
+        "trav023",
+        "trav024",
+        "trav025",
+        "trav026",
+        "trav027",
+        "trav028"
+      ],
+      "required_phrases": [
+        {
+          "id": "trav015",
+          "ru": "аэропо́рт",
+          "ru_plain": "аэропорт",
+          "en": "airport"
+        },
+        {
+          "id": "trav016",
+          "ru": "бага́ж",
+          "ru_plain": "багаж",
+          "en": "luggage"
+        },
+        {
+          "id": "trav017",
+          "ru": "Вот мой па́спорт.",
+          "ru_plain": "Вот мой паспорт.",
+          "en": "Here is my passport."
+        },
+        {
+          "id": "trav018",
+          "ru": "Я хочу́ зарегистри́роваться.",
+          "ru_plain": "Я хочу зарегистрироваться.",
+          "en": "I want to check in / register."
+        },
+        {
+          "id": "trav019",
+          "ru": "Я хочу́ сда́ть бага́ж.",
+          "ru_plain": "Я хочу сдать багаж.",
+          "en": "I want to check my luggage."
+        },
+        {
+          "id": "trav020",
+          "ru": "Где выда́ча багажа́?",
+          "ru_plain": "Где выдача багажа?",
+          "en": "Where is baggage claim?"
+        },
+        {
+          "id": "trav021",
+          "ru": "У меня́ есть брони́рование.",
+          "ru_plain": "У меня есть бронирование.",
+          "en": "I have a reservation."
+        },
+        {
+          "id": "trav022",
+          "ru": "Ключ, пожа́луйста.",
+          "ru_plain": "Ключ, пожалуйста.",
+          "en": "Key, please."
+        },
+        {
+          "id": "trav023",
+          "ru": "Где лифт?",
+          "ru_plain": "Где лифт?",
+          "en": "Where is the elevator?"
+        },
+        {
+          "id": "trav024",
+          "ru": "В но́мере есть интерне́т?",
+          "ru_plain": "В номере есть интернет?",
+          "en": "Is there internet in the room?"
+        },
+        {
+          "id": "trav025",
+          "ru": "Во ско́лько зае́зд?",
+          "ru_plain": "Во сколько заезд?",
+          "en": "What time is check-in?"
+        },
+        {
+          "id": "trav026",
+          "ru": "Во ско́лько вы́езд?",
+          "ru_plain": "Во сколько выезд?",
+          "en": "What time is check-out?"
+        },
+        {
+          "id": "trav027",
+          "ru": "Э́то ваш ключ.",
+          "ru_plain": "Это ваш ключ.",
+          "en": "This is your key."
+        },
+        {
+          "id": "trav028",
+          "ru": "Како́й ваш но́мер?",
+          "ru_plain": "Какой ваш номер?",
+          "en": "What is your room number?"
+        }
+      ],
+      "success_criteria": [
+        "handles_airport_hotel",
+        "handles_travel_logistics",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "allowed_lesson_ids": [
+        "family_visit_001",
+        "family_visit_002",
+        "family_visit_003",
+        "family_visit_004",
+        "family_visit_005",
+        "family_visit_006",
+        "family_visit_007",
+        "family_visit_008",
+        "family_visit_009",
+        "family_visit_010",
+        "family_visit_011",
+        "family_visit_012",
+        "family_visit_013"
+      ],
+      "allowed_item_ids": [
+        "firs001",
+        "firs002",
+        "firs003",
+        "firs004",
+        "firs005",
+        "firs006",
+        "firs007",
+        "firs008",
+        "firs009",
+        "firs010",
+        "firs011",
+        "firs012",
+        "firs013",
+        "poli001",
+        "poli002",
+        "poli003",
+        "poli004",
+        "poli005",
+        "poli006",
+        "poli007",
+        "poli008",
+        "poli009",
+        "poli010",
+        "poli011",
+        "poli012",
+        "poli013",
+        "poli014",
+        "poli015",
+        "poli016",
+        "poli017",
+        "toas001",
+        "toas002",
+        "toas003",
+        "toas004",
+        "toas005",
+        "toas006",
+        "toas007",
+        "toas008",
+        "toas009",
+        "toas010",
+        "toas011",
+        "toas012",
+        "toas013",
+        "toas014",
+        "toas015",
+        "toas016",
+        "fami001",
+        "fami002",
+        "fami003",
+        "fami004",
+        "fami005",
+        "fami006",
+        "fami007",
+        "fami008",
+        "fami009",
+        "fami010",
+        "fami011",
+        "fami012",
+        "fami013",
+        "fami014",
+        "fami015",
+        "fami016",
+        "fami017",
+        "fami018",
+        "fami019",
+        "food001",
+        "food002",
+        "food003",
+        "food004",
+        "food005",
+        "food006",
+        "food007",
+        "food008",
+        "food009",
+        "food010",
+        "food011",
+        "food012",
+        "food013",
+        "food014",
+        "food015",
+        "food016",
+        "smal001",
+        "smal002",
+        "smal003",
+        "smal004",
+        "smal005",
+        "smal006",
+        "smal007",
+        "smal008",
+        "smal009",
+        "list001",
+        "list002",
+        "list003",
+        "list004",
+        "list005",
+        "list006",
+        "list007",
+        "list008",
+        "list009",
+        "cale001",
+        "cale002",
+        "cale003",
+        "cale004",
+        "cale005",
+        "cale006",
+        "cale007",
+        "cale008",
+        "cale009",
+        "cale010",
+        "cale011",
+        "cale012",
+        "cale013",
+        "cale014",
+        "cale015",
+        "cale016",
+        "cale017",
+        "cale018",
+        "cale019",
+        "dail001",
+        "dail002",
+        "dail003",
+        "dail004",
+        "dail005",
+        "dail006",
+        "dail007",
+        "dail008",
+        "dail009",
+        "dail010",
+        "dail011",
+        "dail012",
+        "dail013",
+        "dail014",
+        "dail015",
+        "dail016",
+        "dail017",
+        "work001",
+        "work002",
+        "work003",
+        "work004",
+        "work005",
+        "work006",
+        "work007",
+        "work008",
+        "work009",
+        "work010",
+        "work011",
+        "work012",
+        "work013",
+        "work014",
+        "work015",
+        "work016",
+        "lega001",
+        "lega002",
+        "lega003",
+        "lega004",
+        "lega005",
+        "lega006",
+        "lega007",
+        "lega008",
+        "lega009",
+        "lega010",
+        "lega011",
+        "lega012",
+        "lega013",
+        "lega014",
+        "lega015",
+        "cele001",
+        "cele002",
+        "cele003",
+        "cele004",
+        "cele005",
+        "cele006",
+        "cele007",
+        "cele008",
+        "cele009",
+        "cele010",
+        "cele011",
+        "cele012",
+        "cele013",
+        "cele014",
+        "trav001",
+        "trav002",
+        "trav003",
+        "trav004",
+        "trav005",
+        "trav006",
+        "trav007",
+        "trav008",
+        "trav009",
+        "trav010",
+        "trav011",
+        "trav012",
+        "trav013",
+        "trav014",
+        "trav015",
+        "trav016",
+        "trav017",
+        "trav018",
+        "trav019",
+        "trav020",
+        "trav021",
+        "trav022",
+        "trav023",
+        "trav024",
+        "trav025",
+        "trav026",
+        "trav027",
+        "trav028"
+      ],
+      "active_vocab": [
+        "америке",
+        "америки",
+        "аппетита",
+        "бабушка",
+        "багаж",
+        "благодарения",
+        "бокал",
+        "большое",
+        "большой",
+        "брат",
+        "бронирование",
+        "будве",
+        "будву",
+        "будем",
+        "будем здоровы!",
+        "будет",
+        "был",
+        "было",
+        "в",
+        "в номере есть интернет?",
+        "ваше",
+        "вашу",
+        "вечер",
+        "вечером",
+        "вкусно",
+        "вместе",
+        "воскресенье",
+        "вот",
+        "вот мой паспорт.",
+        "время",
+        "всей",
+        "встречу",
+        "вторник",
+        "вчера",
+        "вчера было солнечно.",
+        "выпьем",
+        "выходных",
+        "где",
+        "где лифт?",
+        "говорю",
+        "город",
+        "гулять",
+        "да",
+        "да, немного",
+        "да, у меня много дел.",
+        "да, у меня много клиентов.",
+        "давайте",
+        "давайте выпьем за это!",
+        "дедушка",
+        "дел",
+        "день",
+        "десяти",
+        "десять",
+        "дети",
+        "джо",
+        "дна",
+        "дней",
+        "днём",
+        "до",
+        "до дна",
+        "до свидания",
+        "доброе",
+        "доброе утро",
+        "доброе утро.",
+        "добрый",
+        "добрый вечер",
+        "добрый вечер.",
+        "добрый день",
+        "добрый день.",
+        "довольны",
+        "дождь",
+        "дома",
+        "дочь",
+        "едем",
+        "едим",
+        "есть",
+        "ещё",
+        "жена",
+        "жены",
+        "живу",
+        "за",
+        "за ваше здоровье!",
+        "за встречу!",
+        "за здоровье!",
+        "за знакомство!",
+        "за любовь!",
+        "за молодых!",
+        "за родителей!",
+        "за семью!",
+        "за хозяев!",
+        "за хозяйку!",
+        "завтра",
+        "завтра будет тепло.",
+        "занят",
+        "зарегистрироваться",
+        "звонил",
+        "здесь",
+        "здоровы",
+        "здоровье",
+        "здравствуйте",
+        "знакомство",
+        "зовут",
+        "зять",
+        "и",
+        "идёт",
+        "идёт дождь.",
+        "идёт снег.",
+        "из",
+        "извините",
+        "интернет",
+        "кадрия",
+        "кадрия будет гулять и отдыхать.",
+        "кадрия работает вместе со мной.",
+        "как",
+        "как по-русски …?",
+        "кататься",
+        "клиентам",
+        "клиентов",
+        "клиентом",
+        "ключ",
+        "ключ, пожалуйста.",
+        "компания",
+        "компьютере",
+        "красивое",
+        "красивый",
+        "лифт",
+        "лыжах",
+        "люблю",
+        "любовь",
+        "мама",
+        "меня",
+        "меня зовут джо",
+        "миссури",
+        "мне",
+        "мне очень нравится",
+        "много",
+        "мной",
+        "можно",
+        "можно ещё?",
+        "можно такси?",
+        "можно чаю?",
+        "моих",
+        "мой",
+        "молодых",
+        "море",
+        "море очень красивое.",
+        "моря",
+        "муж",
+        "мы",
+        "мы будем в будве.",
+        "мы будем в орегоне пять дней.",
+        "мы будем в черногории.",
+        "мы довольны результатом.",
+        "мы едем в будву.",
+        "мы едим и смотрим телевизор.",
+        "мы здесь с семьёй.",
+        "мы отдыхаем.",
+        "мы отпраздновали рождество у моих родителей дома.",
+        "мы познакомились …",
+        "мы работаем вместе.",
+        "мы хотим кататься на лыжах.",
+        "мы хотим поужинать.",
+        "на",
+        "на выходных",
+        "на день благодарения мы ужинали всей семьёй.",
+        "на рождество мы хотим полететь в орегон.",
+        "надо",
+        "наелся",
+        "начинаю",
+        "не",
+        "немного",
+        "нет",
+        "нет, спасибо",
+        "номере",
+        "нормально",
+        "ночи",
+        "нравится",
+        "обедаю",
+        "облачно",
+        "обычно",
+        "обычно я отдыхаю вечером.",
+        "обычно я работаю семь часов.",
+        "орегон",
+        "орегоне",
+        "отдыхаем",
+        "отдыхать",
+        "отдыхаю",
+        "отлично",
+        "отпраздновали",
+        "очень",
+        "очень вкусно!",
+        "очень приятно",
+        "папа",
+        "паспорт",
+        "передайте",
+        "передайте, пожалуйста, хлеб",
+        "по",
+        "повторите",
+        "повторите, пожалуйста",
+        "погулять",
+        "пожалуйста",
+        "познакомились",
+        "познакомиться",
+        "полететь",
+        "помедленнее",
+        "помедленнее, пожалуйста",
+        "понедельник",
+        "понимаю",
+        "понятно",
+        "поужинать",
+        "представиться",
+        "пригласили",
+        "приняли",
+        "приятно",
+        "приятно познакомиться",
+        "приятного",
+        "приятного аппетита!",
+        "простите",
+        "пятница",
+        "пять",
+        "работаем",
+        "работает",
+        "работал",
+        "работать",
+        "работаю",
+        "работы",
+        "рад",
+        "рад познакомиться",
+        "разрешите",
+        "разрешите представиться",
+        "результатом",
+        "родителей",
+        "родители",
+        "рождество",
+        "русски",
+        "русский",
+        "рюмка",
+        "с",
+        "свидания",
+        "своя",
+        "сдать",
+        "себя",
+        "сегодня",
+        "сегодня облачно.",
+        "сегодня рождество.",
+        "сегодня солнечно.",
+        "сегодня тепло.",
+        "сегодня холодно.",
+        "сегодня я работал с клиентом.",
+        "сегодня я работал четыре часа.",
+        "семь",
+        "семью",
+        "семья",
+        "семьёй",
+        "сестра",
+        "сестра жены",
+        "сказать",
+        "скоро",
+        "скоро рождество.",
+        "смотрим",
+        "снег",
+        "со",
+        "солнечно",
+        "спасибо",
+        "спасибо большое",
+        "спасибо, было очень вкусно",
+        "спасибо, не надо",
+        "спасибо, что пригласили",
+        "спасибо, что приняли",
+        "спокойной",
+        "спокойной ночи",
+        "среда",
+        "старый",
+        "старый город очень красивый.",
+        "суббота",
+        "суде",
+        "счастлив",
+        "счёт",
+        "счёт, пожалуйста.",
+        "сын",
+        "такси",
+        "телевизор",
+        "тепло",
+        "тесть",
+        "тост",
+        "тёща",
+        "у",
+        "у меня есть бронирование.",
+        "у меня есть время до десяти.",
+        "у меня много работы.",
+        "у меня своя компания.",
+        "ужин",
+        "ужинали",
+        "ужинаю",
+        "утра",
+        "утро",
+        "утром",
+        "учу",
+        "хлеб",
+        "хозяев",
+        "хозяйку",
+        "холодно",
+        "хорошо",
+        "хорошо, спасибо",
+        "хорошо. я много работаю.",
+        "хотим",
+        "хочу",
+        "часа",
+        "часов",
+        "чаю",
+        "черногории",
+        "четверг",
+        "четыре",
+        "что",
+        "штата",
+        "шурин",
+        "это",
+        "это был большой ужин.",
+        "юрист",
+        "я",
+        "я ещё учу русский",
+        "я живу в америке",
+        "я звонил клиентам.",
+        "я из америки",
+        "я из штата миссури",
+        "я люблю вашу дочь",
+        "я наелся",
+        "я начинаю работать в десять утра.",
+        "я не понимаю",
+        "я немного говорю по-русски",
+        "я обедаю днём.",
+        "я очень занят.",
+        "я понимаю",
+        "я работал на компьютере.",
+        "я работаю в суде.",
+        "я работаю утром и вечером.",
+        "я счастлив работать на себя.",
+        "я ужинаю вечером.",
+        "я хочу зарегистрироваться.",
+        "я хочу погулять у моря.",
+        "я хочу сдать багаж.",
+        "я хочу сказать тост за …",
+        "я юрист"
+      ],
+      "passive_vocab": [
+        "аэропорт",
+        "багаж",
+        "багажа",
+        "благодарения",
+        "блины",
+        "борщ",
+        "будете",
+        "будете …?",
+        "в",
+        "вам",
+        "вам нравится …?",
+        "вас",
+        "ваш",
+        "во",
+        "во сколько выезд?",
+        "во сколько заезд?",
+        "водка",
+        "вы",
+        "вы говорите по-русски?",
+        "выдача",
+        "выезд",
+        "где",
+        "где выдача багажа?",
+        "где наш отель?",
+        "где пляж?",
+        "говорите",
+        "дел",
+        "дела",
+        "делал",
+        "делали",
+        "дело",
+        "день",
+        "дней",
+        "до",
+        "ехать",
+        "ещё",
+        "заезд",
+        "закон",
+        "защитник",
+        "кадрией",
+        "как",
+        "как вам россия?",
+        "как вы познакомились?",
+        "как вы с кадрией отпраздновали рождество?",
+        "как дела?",
+        "как там на улице?",
+        "какая",
+        "какая сегодня погода?",
+        "какие",
+        "какие планы на рождество?",
+        "какой",
+        "какой ваш номер?",
+        "какой сегодня день недели?",
+        "какой сегодня праздник?",
+        "кем",
+        "кем вы работаете?",
+        "клевета",
+        "клиент",
+        "клиентов",
+        "ключ",
+        "когда",
+        "когда вы обедаете?",
+        "когда вы отдыхаете?",
+        "когда вы работаете?",
+        "когда вы ужинаете?",
+        "мирное",
+        "мирное соглашение",
+        "много",
+        "на",
+        "наш",
+        "недели",
+        "номер",
+        "нравится",
+        "обедаете",
+        "оливье",
+        "орегоне",
+        "отдыхаете",
+        "отель",
+        "отеля",
+        "откуда",
+        "откуда вы?",
+        "отпраздновали",
+        "пельмени",
+        "планы",
+        "пляж",
+        "по",
+        "повестка",
+        "погода",
+        "познакомились",
+        "право",
+        "праздник",
+        "прокурор",
+        "работаете",
+        "рождество",
+        "россия",
+        "русски",
+        "с",
+        "сегодня",
+        "сколько",
+        "сколько дней вы будете в орегоне?",
+        "сколько ехать до отеля?",
+        "слушание",
+        "соглашение",
+        "страховка",
+        "суд",
+        "судебное",
+        "судебное дело",
+        "судья",
+        "там",
+        "травма",
+        "ты",
+        "у",
+        "у вас много дел?",
+        "у вас много клиентов?",
+        "ужинаете",
+        "улице",
+        "чай",
+        "что",
+        "что вы делали на день благодарения?",
+        "что ты сегодня делал?",
+        "это",
+        "это ваш ключ."
+      ],
+      "structures": [
+        "culture:toast_etiquette",
+        "discourse:politeness",
+        "grammar:formal_question",
+        "grammar:future_plan",
+        "grammar:past_masculine_work",
+        "grammar:prepositional_place",
+        "grammar:present_first_person",
+        "grammar:time_expression",
+        "grammar:when_question",
+        "lexical:day_parts",
+        "lexical:days_of_week",
+        "lexical:holiday_vocab",
+        "lexical:kinship_terms",
+        "lexical:legal_vocab",
+        "lexical:travel_vocab",
+        "lexical:work_vocab",
+        "morphology:gendered_short_form",
+        "phrase:calendar_question",
+        "phrase:client_case_answer",
+        "phrase:compliment_food",
+        "phrase:family_affection",
+        "phrase:family_celebration",
+        "phrase:food_offer",
+        "phrase:greeting",
+        "phrase:guest_gratitude",
+        "phrase:holiday_plan",
+        "phrase:host_question",
+        "phrase:introduction",
+        "phrase:personal_origin",
+        "phrase:place_description",
+        "phrase:polite_decline",
+        "phrase:repair",
+        "phrase:routine_answer",
+        "phrase:table_toast",
+        "phrase:toast_za_accusative",
+        "phrase:travel_logistics",
+        "phrase:weather_answer",
+        "phrase:work_identity",
+        "phrase:yes_no",
+        "register:formal_you",
+        "register:name_patronymic",
+        "skill:listening_question_recognition",
+        "strategy:recognition_only"
+      ],
+      "allowed_error_types": [
+        "cultural_usage",
+        "forgot_phrase",
+        "listening_misparse",
+        "register",
+        "stress"
+      ],
+      "correction_policy": [
+        "Minor error: recast briefly and continue the role-play.",
+        "Repeated error: give one short rule, then return to Russian practice.",
+        "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
+        "Communication-breaking error: clarify in English, provide the verified model, then retry."
+      ],
+      "prompt": "You are the AI tutor for Russian for Kadriya's Family.\nScenario: Airport and hotel arrival — Handle airport check-in, luggage, hotel reservation, room, key, elevator, and checkout basics.\nCurriculum boundary: Lesson 13 only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.\nUse short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.\nVerified target phrases for this scenario:\n- аэропорт — airport\n- багаж — luggage\n- Вот мой паспорт. — Here is my passport.\n- Я хочу зарегистрироваться. — I want to check in / register.\n- Я хочу сдать багаж. — I want to check my luggage.\n- Где выдача багажа? — Where is baggage claim?\n- У меня есть бронирование. — I have a reservation.\n- Ключ, пожалуйста. — Key, please.\n- Где лифт? — Where is the elevator?\n- В номере есть интернет? — Is there internet in the room?\n- Во сколько заезд? — What time is check-in?\n- Во сколько выезд? — What time is check-out?\n- Это ваш ключ. — This is your key.\n- Какой ваш номер? — What is your room number?\nCorrection policy:\n- Minor error: recast briefly and continue the role-play.\n- Repeated error: give one short rule, then return to Russian practice.\n- High-stakes cultural, register, gender, or toast mistake: correct immediately.\n- Communication-breaking error: clarify in English, provide the verified model, then retry.\nIf you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases."
     }
   ],
   "contrast_cards": [
@@ -61972,6 +66730,10 @@ window.CONTENT_DATA = {
       "label": "handles travel logistics",
       "error_type": "forgot_phrase"
     },
+    "handles_airport_hotel": {
+      "label": "handles airport and hotel basics",
+      "error_type": "forgot_phrase"
+    },
     "talks_about_budva": {
       "label": "talks about Budva naturally",
       "error_type": "forgot_phrase"
@@ -62590,6 +67352,35 @@ window.CONTENT_DATA = {
       ],
       "lesson_id": "family_visit_012",
       "lesson_number": 12
+    },
+    {
+      "id": "budva_airport_hotel_checkin",
+      "setting": "Airport and hotel arrival",
+      "goal": "Handle airport check-in, luggage, hotel reservation, room, key, elevator, and checkout basics.",
+      "required_items": [
+        "trav015",
+        "trav016",
+        "trav017",
+        "trav018",
+        "trav019",
+        "trav020",
+        "trav021",
+        "trav022",
+        "trav023",
+        "trav024",
+        "trav025",
+        "trav026",
+        "trav027",
+        "trav028"
+      ],
+      "success_criteria": [
+        "handles_airport_hotel",
+        "handles_travel_logistics",
+        "stays_in_russian",
+        "uses_repair_lines"
+      ],
+      "lesson_id": "family_visit_013",
+      "lesson_number": 13
     }
   ]
 };
