@@ -12,6 +12,7 @@
   const ITEMS = DATA.items;
   const CLOZE_CARDS = DATA.cloze_cards || [];
   const DICTATION_CARDS = DATA.dictation_cards || [];
+  const STRESS_CARDS = DATA.stress_cards || [];
   const BACKTRANSLATION_CARDS = DATA.backtranslation_cards || [];
   const TUTOR_CARDS = DATA.tutor_cards || [];
   const CONTRAST_CARDS = DATA.contrast_cards || [];
@@ -25,7 +26,7 @@
   const ERROR_BY_ID = Object.fromEntries(ERROR_TYPES.map(e => [e.id, e]));
   const SCENARIOS = DATA.scenarios || [];
   const TUTOR_BY_SCENARIO = Object.fromEntries(TUTOR_CARDS.map(c => [c.scenario_id, c]));
-  const STAGE_KEYS = ["recognition", "recall", "cloze", "dictation", "backtranslate", "contrast", "produce", "listen", "roleplay"];
+  const STAGE_KEYS = ["recognition", "recall", "cloze", "dictation", "stress", "backtranslate", "contrast", "produce", "listen", "roleplay"];
   const LEGACY_STAGE = { production: "produce", listening: "listen" };
   const CRITERIA_LABELS = {
     uses_formal_greeting: "formal greeting",
@@ -305,6 +306,10 @@
     const n = activeLesson().lesson_number || 99;
     return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
   }
+  function unlockedStressCards(cards) {
+    const n = activeLesson().lesson_number || 99;
+    return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
+  }
   function unlockedBacktranslationCards(cards) {
     const n = activeLesson().lesson_number || 99;
     return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
@@ -314,7 +319,7 @@
     return cards.filter(c => !c.lesson_number || c.lesson_number <= n);
   }
   function practiceItem(id) {
-    return ITEMS.find(i => i.id === id) || CLOZE_CARDS.find(c => c.id === id) || DICTATION_CARDS.find(c => c.id === id) || BACKTRANSLATION_CARDS.find(c => c.id === id) || CONTRAST_CARDS.find(c => c.id === id);
+    return ITEMS.find(i => i.id === id) || CLOZE_CARDS.find(c => c.id === id) || DICTATION_CARDS.find(c => c.id === id) || STRESS_CARDS.find(c => c.id === id) || BACKTRANSLATION_CARDS.find(c => c.id === id) || CONTRAST_CARDS.find(c => c.id === id);
   }
   function lessonLockHtml() {
     if (!LESSONS.length) return "";
@@ -322,6 +327,7 @@
     const count = unlockedItems(ITEMS).length;
     const clozeCount = unlockedClozeCards(CLOZE_CARDS).length;
     const dictationCount = unlockedDictationCards(DICTATION_CARDS).length;
+    const stressCount = unlockedStressCards(STRESS_CARDS).length;
     const backCount = unlockedBacktranslationCards(BACKTRANSLATION_CARDS).length;
     const contrastCount = unlockedContrastCards(CONTRAST_CARDS).length;
     const options = LESSONS.map(l => `<option value="${escapeHtml(l.lesson_id)}" ${l.lesson_id === lesson.lesson_id ? "selected" : ""}>${String(l.lesson_number).padStart(2, "0")} · ${escapeHtml(l.title)}</option>`).join("");
@@ -331,7 +337,7 @@
         <p>Practice is constrained to Lesson ${lesson.lesson_number}: ${escapeHtml(lesson.title)} and everything before it.</p>
       </div>
       <label><span>Unlocked through</span><select onchange="ZS.setLesson(this.value)">${options}</select></label>
-      <div class="lessonlock__meta">${count}/${ITEMS.length} phrases unlocked · ${clozeCount}/${CLOZE_CARDS.length} cloze · ${dictationCount}/${DICTATION_CARDS.length} dictation · ${backCount}/${BACKTRANSLATION_CARDS.length} back-translation · ${contrastCount}/${CONTRAST_CARDS.length} contrast · ${(lesson.introduced_structures || []).length} structures in this lesson</div>
+      <div class="lessonlock__meta">${count}/${ITEMS.length} phrases unlocked · ${clozeCount}/${CLOZE_CARDS.length} cloze · ${dictationCount}/${DICTATION_CARDS.length} dictation · ${stressCount}/${STRESS_CARDS.length} stress · ${backCount}/${BACKTRANSLATION_CARDS.length} back-translation · ${contrastCount}/${CONTRAST_CARDS.length} contrast · ${(lesson.introduced_structures || []).length} structures in this lesson</div>
     </div>`;
   }
 
@@ -437,9 +443,10 @@
         <div class="stat rise"><div class="stat__num">${d}</div><div class="stat__label">Days to ${escapeHtml(targetLabel())}</div></div>
       </div>
       <div class="analyticsbox rise">
-        <div><h3>Performance signals</h3><p>Readiness now includes cloze, dictation, back-translation, contrast, production, listening, and role-play mastery.</p></div>
+        <div><h3>Performance signals</h3><p>Readiness now includes cloze, dictation, stress, back-translation, contrast, production, listening, and role-play mastery.</p></div>
         <div class="analyticsgrid">
           <div><strong>${a.dictationAccuracy}<small>%</small></strong><span>dictation accuracy</span></div>
+          <div><strong>${stageAccuracy("stress")}<small>%</small></strong><span>stress accuracy</span></div>
           <div><strong>${a.contrastAccuracy}<small>%</small></strong><span>contrast accuracy</span></div>
           <div><strong>${a.productionAccuracy}<small>%</small></strong><span>production accuracy</span></div>
           <div><strong>${a.listenAccuracy}<small>%</small></strong><span>listening accuracy</span></div>
@@ -522,16 +529,18 @@
     { n: 2, key: "recall", title: "Recall", desc: "See English → choose the Russian.", instr: "Pick the Russian" },
     { n: 3, key: "cloze", title: "Cloze", desc: "Fill the missing Russian word in context.", instr: "Fill the blank" },
     { n: 4, key: "dictation", title: "Dictation", desc: "Hear Russian audio → type the Cyrillic phrase.", instr: "Type what you hear" },
-    { n: 5, key: "backtranslate", title: "Back-translate", desc: "Translate to English, then rebuild the Russian.", instr: "Translate, hide, rebuild" },
-    { n: 6, key: "contrast", title: "Contrast", desc: "Choose the culturally safe phrase in context.", instr: "Choose the right phrase" },
-    { n: 7, key: "produce", title: "Produce", desc: "See English → type the Russian (stress optional).", instr: "Type it in Russian" },
-    { n: 8, key: "listen", title: "Listen", desc: "Hear it → choose the meaning. No text.", instr: "What did you hear?" },
-    { n: 9, key: "roleplay", title: "Role-play", desc: "A table prompt → say it, then self-rate.", instr: "Say it out loud" },
+    { n: 5, key: "stress", title: "Stress", desc: "Choose the correct stressed Cyrillic form.", instr: "Where is the stress?" },
+    { n: 6, key: "backtranslate", title: "Back-translate", desc: "Translate to English, then rebuild the Russian.", instr: "Translate, hide, rebuild" },
+    { n: 7, key: "contrast", title: "Contrast", desc: "Choose the culturally safe phrase in context.", instr: "Choose the right phrase" },
+    { n: 8, key: "produce", title: "Produce", desc: "See English → type the Russian (stress optional).", instr: "Type it in Russian" },
+    { n: 9, key: "listen", title: "Listen", desc: "Hear it → choose the meaning. No text.", instr: "What did you hear?" },
+    { n: 10, key: "roleplay", title: "Role-play", desc: "A table prompt → say it, then self-rate.", instr: "Say it out loud" },
   ];
   function stagePool(stageKey) {
     const items = unlockedItems(ITEMS);
     if (stageKey === "cloze") return unlockedClozeCards(CLOZE_CARDS);
     if (stageKey === "dictation") return unlockedDictationCards(DICTATION_CARDS);
+    if (stageKey === "stress") return unlockedStressCards(STRESS_CARDS);
     if (stageKey === "backtranslate") return unlockedBacktranslationCards(BACKTRANSLATION_CARDS);
     if (stageKey === "contrast") return unlockedContrastCards(CONTRAST_CARDS);
     if (stageKey === "listen") return items.filter(i => i.syllables >= 1);
@@ -556,6 +565,7 @@
       ["recall", "Recall"],
       ["cloze", "Fill"],
       ["dictation", "Write"],
+      ["stress", "Stress"],
       ["backtranslate", "Rebuild"],
       ["contrast", "Choose"],
       ["listen", "Hear"],
@@ -571,7 +581,7 @@
     const cards = STAGES.map(s => {
       const p = stageProgress(s.key);
       return `<button class="stagecard rise" onclick="location.hash='#/quiz/${s.key}'">
-        <div class="stagecard__n">0${s.n}</div>
+        <div class="stagecard__n">${String(s.n).padStart(2, "0")}</div>
         <div class="stagecard__t">${s.title}</div>
         <div class="stagecard__d">${escapeHtml(s.desc)}</div>
         <div class="stagecard__bar"><span style="width:${p.pct}%"></span></div>
@@ -579,7 +589,7 @@
     }).join("");
     view.innerHTML = `
       <div class="section-head"><span class="section-head__num">03</span><span class="section-head__title">Drill</span>
-        <span class="section-head__sub">Graduated difficulty: recognise → recall → contrast → produce → listen → role-play. Retrieval practice beats re-reading.</span></div>
+        <span class="section-head__sub">Graduated difficulty: recognise → recall → stress → contrast → produce → listen → role-play. Retrieval practice beats re-reading.</span></div>
       ${lessonLockHtml()}
       <div class="mastery rise">${masteryRings()}</div>
       <div class="callout">Each round is 10 questions: due reviews first, fragile high-priority phrases next, new cards only after the review load is under control.</div>
@@ -634,6 +644,10 @@
         <div class="answerbox"><input id="dictIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Печатайте по-русски…" />
         <button class="btn btn--red" onclick="ZS.checkDictation('${it.id}')">Check</button></div>
         <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>`;
+    } else if (stage.key === "stress") {
+      promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru">${escapeHtml(it.ru_plain)}</div><div class="q-en">${escapeHtml(it.en)}</div>`;
+      const opts = shuffle(it.options || []);
+      body = `<div class="options">${opts.map(o => `<button class="opt" onclick="ZS.checkStress('${it.id}','${escapeHtml(o)}',this)">${colorStress(o)}</button>`).join("")}</div>`;
     } else if (stage.key === "backtranslate") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru" id="btSource">${colorStress(it.ru)}</div>`;
       body = `<div id="btStep1">
@@ -672,7 +686,7 @@
     }
 
     $("#view").innerHTML = `
-      <div class="section-head"><span class="section-head__num">0${stage.n}</span><span class="section-head__title">${stage.title}</span>
+      <div class="section-head"><span class="section-head__num">${String(stage.n).padStart(2, "0")}</span><span class="section-head__title">${stage.title}</span>
         <span class="section-head__sub"><a href="#/quiz" style="color:var(--red)">← all drills</a></span></div>
       <div class="quiz">
         <div class="quiz__progress">${dots}</div>
@@ -740,6 +754,7 @@
       recall: ["forgot_phrase", "word_order", "register"],
       cloze: ["forgot_phrase", "case_or_inflection", "word_order", "register"],
       dictation: ["listening_misparse", "stress", "vowel_reduction", "forgot_phrase"],
+      stress: ["stress", "vowel_reduction", "forgot_phrase"],
       backtranslate: ["forgot_phrase", "case_or_inflection", "word_order", "register"],
       contrast: ["cultural_usage", "register", "forgot_phrase"],
       produce: ["forgot_phrase", "stress", "gendered_form", "case_or_inflection", "word_order"],
@@ -773,7 +788,7 @@
     const pct = Math.round(quiz.correct / quiz.q.length * 100);
     const msg = pct >= 80 ? "Отли́чно! That'll land at the table." : pct >= 50 ? "Хорошо́ — solid. Run it again to lock it in." : "Keep going — review these in Learn, then retry.";
     $("#view").innerHTML = `
-      <div class="section-head"><span class="section-head__num">0${quiz.stage.n}</span><span class="section-head__title">${quiz.stage.title} — done</span></div>
+      <div class="section-head"><span class="section-head__num">${String(quiz.stage.n).padStart(2, "0")}</span><span class="section-head__title">${quiz.stage.title} — done</span></div>
       <div class="hero rise"><h1>${quiz.correct}<em>/${quiz.q.length}</em></h1><p>${msg}</p>
         <div class="hero__row">
           <button class="btn" onclick="ZS.retry()">Again</button>
@@ -934,6 +949,20 @@
       const ok = accepted.some(answer => normalize(val) === normalize(answer));
       gradeItem(id, ok, quiz.stageKey, ok ? null : "listening_misparse");
       showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`);
+    },
+    checkStress(id, chosen, btn) {
+      if (quiz.answered) return;
+      const it = practiceItem(id);
+      const ok = chosen === it.answer;
+      const buttons = Array.from(document.querySelectorAll(".opt"));
+      buttons.forEach(o => o.setAttribute("disabled", ""));
+      btn.classList.add(ok ? "correct" : "wrong");
+      if (!ok) {
+        const right = buttons.find(o => normalize(o.textContent) === normalize(it.answer));
+        if (right) right.classList.add("correct");
+      }
+      gradeItem(id, ok, quiz.stageKey, ok ? null : "stress");
+      showFeedback(ok, it, ok ? `<div class="card__hint">Stress locked: <strong>${colorStress(it.answer)}</strong></div>` : `<div class="card__hint">Correct stress: <strong>${colorStress(it.answer)}</strong></div>`);
     },
     startBack(id) {
       if (quiz.answered) return;
