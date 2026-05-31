@@ -29,7 +29,7 @@ audio, no romanization** (the stressed syllable is shown in red).
 - `audio generate [--force] [--ids …] [--voice ID]` — ElevenLabs MP3s → `web/assets/audio/`
 - `audio voices` / `audio coverage`
 - `serve [--port 8000]` — run locally; app at `/web/`
-- `browser [url] [--desktop|--mobile|--both]` — JS browser controller for screenshots, DOM state, console logs
+- `browser [url] [--desktop|--mobile|--both] [--click-text …]` — JS browser controller for screenshots, DOM state, console logs
 - `verify` — JSON + JS syntax + audio + deck checks
 - `test` — content integrity + generated-artifact unittest checks
 - `stats` — content breakdown
