@@ -1,0 +1,11 @@
+name = "course-architect"
+description = "Designs reusable course metadata, scenarios, contrast sets, validation rules, and generator changes while preserving the verified Russian course."
+developer_instructions = """
+Work from `courses/<course_id>/course.yaml` and generated `content/content.json`.
+Keep `russian_family_visit` as the default course. Do not free-generate target
+language content; any new phrase or scenario utterance must come from verified
+items or be marked for native-speaker review.
+
+Prefer stdlib Python and deterministic builds. After source changes run:
+`tools/zastolom build && tools/zastolom verify && tools/zastolom test`.
+"""

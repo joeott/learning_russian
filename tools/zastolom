@@ -17,6 +17,8 @@ COMMANDS
   audio coverage        Report which phrases have audio
   serve                 Serve the repo over HTTP and print the app URL
   verify                Run all health checks (JSON, JS syntax, audio coverage)
+  test                  Run stdlib validation/unit tests
+  loop-prompt           Print the local iterative improvement-loop prompt
   stats                 Print content statistics
   help                  Show this help
 
@@ -103,22 +105,25 @@ def el_request(method, path, key, data=None, headers=None, timeout=90):
     return urllib.request.urlopen(req, timeout=timeout)
 
 # ============================================================ BUILD
-def run_script(name):
+def run_script(name, env=None):
     p = os.path.join(ROOT, "scripts", name)
     print(f"  → python3 scripts/{name}")
-    r = subprocess.run([sys.executable, p], cwd=ROOT)
+    r = subprocess.run([sys.executable, p], cwd=ROOT, env=env)
     if r.returncode != 0:
         sys.exit(r.returncode)
 
 def cmd_build(args):
     target = args.target or "all"
     print(head(f"build: {target}"))
+    env = os.environ.copy()
+    if getattr(args, "course", None):
+        env["ZASTOLOM_COURSE"] = args.course
     if target in ("content", "all"):
-        run_script("build_content.py")
+        run_script("build_content.py", env=env)
     if target in ("anki", "all"):
-        run_script("build_anki.py")
+        run_script("build_anki.py", env=env)
     if target in ("cheatsheet", "all"):
-        run_script("build_cheatsheet.py")
+        run_script("build_cheatsheet.py", env=env)
     print(ok("build complete"))
 
 # ============================================================ AUDIO
@@ -270,6 +275,25 @@ def cmd_verify(args):
     print(ok("verify passed") if not fails else err(f"verify FAILED ({fails})"))
     sys.exit(1 if fails else 0)
 
+def cmd_test(args):
+    print(head("test"))
+    commands = [
+        [sys.executable, "scripts/validate_content.py"],
+        [sys.executable, "-m", "unittest", "discover", "-s", "tests"],
+    ]
+    for command in commands:
+        print("  → " + " ".join(command))
+        r = subprocess.run(command, cwd=ROOT)
+        if r.returncode != 0:
+            print(err("test failed"))
+            sys.exit(r.returncode)
+    print(ok("test passed"))
+
+def cmd_loop_prompt(args):
+    path = os.path.join(ROOT, "prompts", "improve-loop.md")
+    with open(path, encoding="utf-8") as f:
+        print(f.read())
+
 def cmd_stats(args):
     d = load_content()
     print(head(d["meta"]["title"]))
@@ -298,13 +322,13 @@ def main():
                                 description="Agentic CLI for the За столо́м Russian study system.")
     sub = p.add_subparsers(dest="cmd")
 
-    b = sub.add_parser("build"); b.add_argument("target", nargs="?", choices=["content", "anki", "cheatsheet", "all"])
+    b = sub.add_parser("build"); b.add_argument("target", nargs="?", choices=["content", "anki", "cheatsheet", "all"]); b.add_argument("--course")
     a = sub.add_parser("audio"); asub = a.add_subparsers(dest="acmd")
     g = asub.add_parser("generate")
     g.add_argument("--force", action="store_true"); g.add_argument("--ids"); g.add_argument("--voice"); g.add_argument("--limit", type=int)
     asub.add_parser("voices"); asub.add_parser("coverage")
     s = sub.add_parser("serve"); s.add_argument("--port", type=int, default=8000)
-    sub.add_parser("verify"); sub.add_parser("stats")
+    sub.add_parser("verify"); sub.add_parser("test"); sub.add_parser("loop-prompt"); sub.add_parser("stats")
     sub.add_parser("help")
 
     args = p.parse_args()
@@ -316,6 +340,8 @@ def main():
          "coverage": cmd_audio_coverage}.get(args.acmd, lambda a: print(__doc__))(args)
     elif args.cmd == "serve": cmd_serve(args)
     elif args.cmd == "verify": cmd_verify(args)
+    elif args.cmd == "test": cmd_test(args)
+    elif args.cmd == "loop-prompt": cmd_loop_prompt(args)
     elif args.cmd == "stats": cmd_stats(args)
 
 if __name__ == "__main__":

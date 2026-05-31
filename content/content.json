@@ -1,8 +1,44 @@
 {
+  "course": {
+    "course_id": "russian_family_visit",
+    "title": "Russian for Kadriya's Family",
+    "target_language": "ru",
+    "learner_language": "en",
+    "script": "cyrillic",
+    "storage_namespace": "zastolom.russian_family_visit.v2",
+    "mission": {
+      "scenario": "family dinner",
+      "target_date": "2026-06-15",
+      "performance_goal": "survive and participate politely at the table"
+    },
+    "learner_profile": {
+      "known_languages": [
+        "en"
+      ],
+      "pain_points": [
+        "stress",
+        "listening speed",
+        "gendered forms"
+      ]
+    },
+    "outputs": {
+      "web": true,
+      "anki": true,
+      "cheat_sheet": true,
+      "tutor_protocol": true
+    },
+    "audio": {
+      "model": "eleven_multilingual_v2",
+      "format": "mp3_44100_128",
+      "preferred_voice": "ScaQ3utur72x93jqMMeU",
+      "preferred_voice_name": "Elena (Warm, Calm & Clear)"
+    }
+  },
   "meta": {
-    "title": "Russian for Meeting Kadriya's Family",
-    "goal": "Be understood and understand at a St. Petersburg family dinner on June 15.",
+    "title": "Russian for Kadriya's Family",
+    "goal": "survive and participate politely at the table",
     "generated_from": "scripts/build_content.py",
+    "course_source": "courses/russian_family_visit/course.yaml",
     "source": "source/research/verified_phrases.md",
     "stress_marks": "Unicode combining acute U+0301; ru_plain is stress-stripped for TTS.",
     "counts": {
@@ -100,6 +136,18 @@
       "note": "",
       "tags": [
         "greeting"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -118,6 +166,18 @@
       "note": "",
       "tags": [
         "greeting"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -136,6 +196,18 @@
       "note": "",
       "tags": [
         "greeting"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -154,6 +226,18 @@
       "note": "",
       "tags": [
         "greeting"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -172,6 +256,18 @@
       "note": "",
       "tags": [
         "intro"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -190,6 +286,18 @@
       "note": "",
       "tags": [
         "intro"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -208,6 +316,18 @@
       "note": "",
       "tags": [
         "intro"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -226,6 +346,19 @@
       "note": "",
       "tags": [
         "intro"
+      ],
+      "error_types": [
+        "gendered_form",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -244,6 +377,18 @@
       "note": "",
       "tags": [
         "intro"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -263,6 +408,18 @@
       "tags": [
         "intro",
         "politeness"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -279,7 +436,19 @@
       "rehearse": false,
       "recognize": false,
       "note": "Idiomatic guest gratitude — Russians thank the hosts for receiving them.",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "firs012",
@@ -297,6 +466,18 @@
       "note": "",
       "tags": [
         "greeting"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -315,6 +496,18 @@
       "note": "",
       "tags": [
         "greeting"
+      ],
+      "error_types": [
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -331,7 +524,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "poli002",
@@ -347,7 +553,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "poli003",
@@ -363,7 +582,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "poli004",
@@ -379,7 +611,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "poli005",
@@ -395,7 +640,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "poli006",
@@ -411,7 +669,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "poli007",
@@ -427,7 +698,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "poli008",
@@ -443,7 +727,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "poli009",
@@ -461,6 +758,19 @@
       "note": "",
       "tags": [
         "rescue"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -479,6 +789,19 @@
       "note": "",
       "tags": [
         "rescue"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -497,6 +820,19 @@
       "note": "",
       "tags": [
         "rescue"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -515,6 +851,19 @@
       "note": "",
       "tags": [
         "rescue"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -531,7 +880,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "poli014",
@@ -547,7 +909,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "poli015",
@@ -563,7 +938,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "poli016",
@@ -579,7 +967,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "poli017",
@@ -595,7 +996,20 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "cultural_usage",
+        "register",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "toas001",
@@ -613,6 +1027,18 @@
       "note": "",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -631,6 +1057,18 @@
       "note": "",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -649,6 +1087,18 @@
       "note": "",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -667,6 +1117,18 @@
       "note": "",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -685,6 +1147,18 @@
       "note": "",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -703,6 +1177,18 @@
       "note": "",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -721,6 +1207,18 @@
       "note": "NOT «На здоровье» — that is a reply to thanks, not a toast.",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -739,6 +1237,18 @@
       "note": "",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -757,6 +1267,18 @@
       "note": "",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -775,6 +1297,18 @@
       "note": "",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -793,6 +1327,18 @@
       "note": "",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -811,6 +1357,18 @@
       "note": "",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -829,6 +1387,18 @@
       "note": "",
       "tags": [
         "toast"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -847,6 +1417,18 @@
       "note": "",
       "tags": [
         "toast-vocab"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -865,6 +1447,18 @@
       "note": "",
       "tags": [
         "toast-vocab"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -883,6 +1477,18 @@
       "note": "",
       "tags": [
         "toast-vocab"
+      ],
+      "error_types": [
+        "cultural_usage",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
       ]
     },
     {
@@ -899,7 +1505,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami002",
@@ -915,7 +1532,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami003",
@@ -931,7 +1559,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami004",
@@ -947,7 +1586,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "Referential term; address him by name+patronymic, not 'тесть'.",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami005",
@@ -963,7 +1613,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "Referential; address her by name+patronymic.",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami006",
@@ -979,7 +1640,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami007",
@@ -995,7 +1667,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami008",
@@ -1011,7 +1694,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami009",
@@ -1027,7 +1721,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami010",
@@ -1043,7 +1748,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami011",
@@ -1059,7 +1775,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami012",
@@ -1075,7 +1802,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami013",
@@ -1091,7 +1829,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami014",
@@ -1107,7 +1856,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami015",
@@ -1123,7 +1883,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami016",
@@ -1139,7 +1910,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami017",
@@ -1155,7 +1937,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami018",
@@ -1171,7 +1964,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "fami019",
@@ -1187,7 +1991,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food001",
@@ -1203,7 +2018,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food002",
@@ -1219,7 +2045,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food003",
@@ -1235,7 +2072,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food004",
@@ -1251,7 +2099,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food005",
@@ -1267,7 +2126,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food006",
@@ -1283,7 +2153,19 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "gendered_form",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food007",
@@ -1299,7 +2181,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food008",
@@ -1315,7 +2208,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food009",
@@ -1331,7 +2235,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food010",
@@ -1347,7 +2262,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food011",
@@ -1363,7 +2289,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food012",
@@ -1379,7 +2317,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food013",
@@ -1395,7 +2345,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food014",
@@ -1411,7 +2373,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food015",
@@ -1427,7 +2401,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "food016",
@@ -1443,7 +2429,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "smal001",
@@ -1459,7 +2457,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "адвокат = courtroom/bar advocate, narrower.",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "smal002",
@@ -1475,7 +2484,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "smal003",
@@ -1491,7 +2511,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "smal004",
@@ -1507,7 +2538,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "smal005",
@@ -1523,7 +2565,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "smal006",
@@ -1539,7 +2592,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "smal007",
@@ -1555,7 +2619,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "smal008",
@@ -1571,7 +2646,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "smal009",
@@ -1587,7 +2673,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "list001",
@@ -1603,7 +2700,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "list002",
@@ -1619,7 +2728,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "list003",
@@ -1635,7 +2756,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "list004",
@@ -1651,7 +2784,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "list005",
@@ -1667,7 +2812,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "list006",
@@ -1683,7 +2840,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "list007",
@@ -1699,7 +2868,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "list008",
@@ -1715,7 +2896,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "list009",
@@ -1731,7 +2924,19 @@
       "rehearse": false,
       "recognize": true,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "listening_misparse",
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "verb001",
@@ -1747,7 +2952,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "verb002",
@@ -1763,7 +2979,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "verb003",
@@ -1779,7 +3006,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "verb004",
@@ -1795,7 +3033,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "verb005",
@@ -1811,7 +3060,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "verb006",
@@ -1827,7 +3087,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "verb007",
@@ -1843,7 +3114,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "verb008",
@@ -1859,7 +3141,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "verb009",
@@ -1875,7 +3168,18 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
     },
     {
       "id": "verb010",
@@ -1891,7 +3195,151 @@
       "rehearse": false,
       "recognize": false,
       "note": "",
-      "tags": []
+      "tags": [],
+      "error_types": [
+        "stress"
+      ],
+      "stages": [
+        "recognition",
+        "recall",
+        "listening",
+        "production",
+        "roleplay",
+        "maintenance"
+      ]
+    }
+  ],
+  "error_types": [
+    {
+      "id": "stress",
+      "label": "Stress",
+      "repair": "Replay native audio, mark the stressed vowel, then say it twice."
+    },
+    {
+      "id": "vowel_reduction",
+      "label": "Vowel reduction",
+      "repair": "Shadow the phrase slowly, then at table speed."
+    },
+    {
+      "id": "gendered_form",
+      "label": "Gendered form",
+      "repair": "Contrast the male/female form and produce the speaker-appropriate one."
+    },
+    {
+      "id": "case_or_inflection",
+      "label": "Case / inflection",
+      "repair": "Recall the whole verified phrase rather than assembling it word by word."
+    },
+    {
+      "id": "register",
+      "label": "Register",
+      "repair": "Choose the formal/polite option for elders and hosts."
+    },
+    {
+      "id": "word_order",
+      "label": "Word order",
+      "repair": "Repeat the complete model answer and compare chunks."
+    },
+    {
+      "id": "listening_misparse",
+      "label": "Listening misparse",
+      "repair": "Listen with full text, then keyword hints, then no text."
+    },
+    {
+      "id": "cultural_usage",
+      "label": "Cultural usage",
+      "repair": "Review the usage note and choose the phrase in context."
+    },
+    {
+      "id": "forgot_phrase",
+      "label": "Forgot phrase",
+      "repair": "Do cued recall, then production, then a role-play prompt."
+    }
+  ],
+  "contrast_sets": [
+    {
+      "id": "russian_toast_vs_youre_welcome",
+      "title": "Toast vs. you're welcome",
+      "items": [
+        "toas007",
+        "poli003"
+      ],
+      "risk": "high",
+      "usage_note": "Use «За здоро́вье!» for a toast. Use «Пожа́луйста» for please / you're welcome.",
+      "drill_type": "choose_in_context"
+    },
+    {
+      "id": "formal_elder_address",
+      "title": "Formal elder address",
+      "items": [
+        "firs001",
+        "poli010",
+        "poli011"
+      ],
+      "risk": "high",
+      "usage_note": "Use formal «вы» forms and polite repair phrases with parents and elders.",
+      "drill_type": "choose_in_context"
+    },
+    {
+      "id": "male_speaker_forms",
+      "title": "Joe's male speaker forms",
+      "items": [
+        "firs008",
+        "food006"
+      ],
+      "risk": "high",
+      "usage_note": "Joe should keep male forms like «рад» and «наелся».",
+      "drill_type": "contrast_say_aloud"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "doorway_greeting",
+      "setting": "Doorway",
+      "goal": "Greet the family formally and introduce yourself.",
+      "required_items": [
+        "firs001",
+        "firs005",
+        "firs006",
+        "firs010"
+      ],
+      "success_criteria": [
+        "uses_formal_greeting",
+        "introduces_self",
+        "thanks_hosts"
+      ]
+    },
+    {
+      "id": "dinner_table_food_offer",
+      "setting": "Dinner table",
+      "goal": "Accept, decline, and compliment food politely.",
+      "required_items": [
+        "food002",
+        "food006",
+        "food008",
+        "food009"
+      ],
+      "success_criteria": [
+        "compliments_food",
+        "declines_politely",
+        "uses_correct_male_form"
+      ]
+    },
+    {
+      "id": "first_toast",
+      "setting": "Dinner table toast",
+      "goal": "Raise a safe warm toast without using the wrong formula.",
+      "required_items": [
+        "toas001",
+        "toas002",
+        "toas006",
+        "toas007"
+      ],
+      "success_criteria": [
+        "uses_za_toast_formula",
+        "avoids_na_zdorovie_misfire",
+        "keeps_stress_clear"
+      ]
     }
   ]
 }
