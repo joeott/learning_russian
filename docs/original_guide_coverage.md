@@ -6,7 +6,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 ## Current generated course
 
 - Source of truth: `scripts/build_content.py`
-- Generated content: 230 items across 14 modules, plus 20 generated conjugation drills
+- Generated content: 230 items across 14 modules, plus 60 generated conjugation drills
 - Strongest coverage today:
   - greetings and first contact
   - politeness and repair phrases
@@ -26,7 +26,7 @@ iterations can close the real beginner-course gaps without inventing Russian.
 
 | Original guide area | Evidence in source | Current coverage | Gap / next course work |
 | --- | --- | --- | --- |
-| Verb reactivation and conjugation | `source/ekaterina_guide.md:23`, `source/ekaterina_guide.md:120-220`, `source/ekaterina_guide.md:1289-1293`, `source/ekaterina_guide.md:1670-1675`, `source/ekaterina_guide.md:2031-2062`, `source/research/verb_drills.md` | Covered by `verbs` plus 20 generated `conjugate` drill cards | Later: add broader pronouns only if `я` and formal `вы` forms are automatic. |
+| Verb reactivation and conjugation | `source/ekaterina_guide.md:23`, `source/ekaterina_guide.md:120-220`, `source/ekaterina_guide.md:1289-1293`, `source/ekaterina_guide.md:1670-1675`, `source/ekaterina_guide.md:2031-2062`, `source/research/verb_drills.md` | Covered by `verbs` plus 60 generated `conjugate` drill cards across `я`, `ты`, `он/она`, `мы`, `вы`, and `они` | Later: add new verbs only when they come from mission-critical production phrases. |
 | Greetings and lesson check-ins | `source/ekaterina_guide.md:840-848`, `source/ekaterina_guide.md:891-897`, `source/ekaterina_guide.md:1792-1803` | Partial: greetings plus several listening questions | Add more native-speed recognition drills for day, weather, week, and "what did you do" prompts. |
 | Calendar, days, dates | `source/ekaterina_guide.md:303-317`, `source/ekaterina_guide.md:668-679`, `source/ekaterina_guide.md:820-850` | Covered by `calendar_weather` basics | Later: add dates/months only if they support actual travel/family prompts. |
 | Weather and outside conditions | `source/ekaterina_guide.md:840-850`, `source/ekaterina_guide.md:897-910`, `source/ekaterina_guide.md:1799-1803` | Covered by `calendar_weather` basics | Later: add adjective-agreement contrast only if it improves spoken answers. |
@@ -41,9 +41,9 @@ iterations can close the real beginner-course gaps without inventing Russian.
 
 ## Priority order for remaining build-out
 
-1. Broader verb-pronoun drills only after `я` and formal `вы` are automatic.
-2. Recognition-only bonus deck: idioms, proverbs, and legal jokes after the mission-critical modules are green.
-3. Family health/baby-readiness questions only if Kadriya confirms they are welcome.
+1. Recognition-only bonus deck: idioms, proverbs, and legal jokes after the mission-critical modules are green.
+2. Family health/baby-readiness questions only if Kadriya confirms they are welcome.
+3. New verb drills only for verbs already needed in live family/travel scenarios.
 
 ## Rules for adding each gap
 

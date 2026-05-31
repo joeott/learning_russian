@@ -26,10 +26,13 @@ forms on flashcards.
 
 - The generated `verb_drill_cards` derive from the existing verified `verbs`
   module rather than introducing new Russian.
-- Each core verb creates two typed conjugation cards: `я + infinitive` and
-  `вы + infinitive`.
+- Each core verb now creates six typed conjugation cards: `я`, `ты`,
+  `он/она`, `мы`, formal `вы`, and `они` + infinitive.
 - The app now has a separate `Conjugate` drill stage so `case_or_inflection`
   misses route to real verb-form repair practice.
+- The first expansion deliberately stays inside the existing 10 core verbs:
+  `хоте́ть`, `мочь`, `говори́ть`, `понима́ть`, `люби́ть`, `рабо́тать`,
+  `жить`, `есть`, `пить`, and `знать`.
 
 ## Verification notes
 
@@ -37,3 +40,7 @@ forms on flashcards.
   because the learner may type plain Cyrillic.
 - This is a drill-card layer, not new phrase content; it should not change the
   phrase count or Anki row count.
+- The saved guide's conjugation tables and exercises provide the pronoun ladder
+  (`я`, `ты`, `он/она`, `мы`, `вы`, `они`) and several direct form examples;
+  remaining forms are limited to the same core verbs already accepted into the
+  course.

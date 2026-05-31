@@ -70217,6 +70217,141 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "conj_verb001_ty",
+      "item_id": "verb001",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "хо́чешь",
+      "ru_plain": "хочешь",
+      "en": "ты + хоте́ть: you want",
+      "prompt": "ты + хоте́ть",
+      "answer": "хочешь",
+      "accepted_answers": [
+        "хо́чешь",
+        "хочешь"
+      ],
+      "hint": "Source verb card: хочу́ / хоти́те",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "ty",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "хочешь"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb001_on_ona",
+      "item_id": "verb001",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "хо́чет",
+      "ru_plain": "хочет",
+      "en": "он/она + хоте́ть: he/she wants",
+      "prompt": "он/она + хоте́ть",
+      "answer": "хочет",
+      "accepted_answers": [
+        "хо́чет",
+        "хочет"
+      ],
+      "hint": "Source verb card: хочу́ / хоти́те",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "on_ona",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "хочет"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb001_my",
+      "item_id": "verb001",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "хоти́м",
+      "ru_plain": "хотим",
+      "en": "мы + хоте́ть: we want",
+      "prompt": "мы + хоте́ть",
+      "answer": "хотим",
+      "accepted_answers": [
+        "хоти́м",
+        "хотим"
+      ],
+      "hint": "Source verb card: хочу́ / хоти́те",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "my",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "хотим"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
       "id": "conj_verb001_vy",
       "item_id": "verb001",
       "module": "verbs",
@@ -70224,7 +70359,7 @@ window.CONTENT_DATA = {
       "lesson_number": 14,
       "ru": "хоти́те",
       "ru_plain": "хотите",
-      "en": "вы + хоте́ть: you (pl",
+      "en": "вы + хоте́ть: you want",
       "prompt": "вы + хоте́ть",
       "answer": "хотите",
       "accepted_answers": [
@@ -70253,6 +70388,51 @@ window.CONTENT_DATA = {
       ],
       "lexemes": [
         "хотите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb001_oni",
+      "item_id": "verb001",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "хотя́т",
+      "ru_plain": "хотят",
+      "en": "они + хоте́ть: they want",
+      "prompt": "они + хоте́ть",
+      "answer": "хотят",
+      "accepted_answers": [
+        "хотя́т",
+        "хотят"
+      ],
+      "hint": "Source verb card: хочу́ / хоти́те",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "oni",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "хотят"
       ],
       "structures": [
         "grammar:formal_second_person",
@@ -70307,6 +70487,141 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "conj_verb002_ty",
+      "item_id": "verb002",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "мо́жешь",
+      "ru_plain": "можешь",
+      "en": "ты + мочь: you can",
+      "prompt": "ты + мочь",
+      "answer": "можешь",
+      "accepted_answers": [
+        "мо́жешь",
+        "можешь"
+      ],
+      "hint": "Source verb card: могу́ / мо́жете",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "ty",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "можешь"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb002_on_ona",
+      "item_id": "verb002",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "мо́жет",
+      "ru_plain": "может",
+      "en": "он/она + мочь: he/she can",
+      "prompt": "он/она + мочь",
+      "answer": "может",
+      "accepted_answers": [
+        "мо́жет",
+        "может"
+      ],
+      "hint": "Source verb card: могу́ / мо́жете",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "on_ona",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "может"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb002_my",
+      "item_id": "verb002",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "мо́жем",
+      "ru_plain": "можем",
+      "en": "мы + мочь: we can",
+      "prompt": "мы + мочь",
+      "answer": "можем",
+      "accepted_answers": [
+        "мо́жем",
+        "можем"
+      ],
+      "hint": "Source verb card: могу́ / мо́жете",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "my",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "можем"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
       "id": "conj_verb002_vy",
       "item_id": "verb002",
       "module": "verbs",
@@ -70343,6 +70658,51 @@ window.CONTENT_DATA = {
       ],
       "lexemes": [
         "можете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb002_oni",
+      "item_id": "verb002",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "мо́гут",
+      "ru_plain": "могут",
+      "en": "они + мочь: they can",
+      "prompt": "они + мочь",
+      "answer": "могут",
+      "accepted_answers": [
+        "мо́гут",
+        "могут"
+      ],
+      "hint": "Source verb card: могу́ / мо́жете",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "oni",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "могут"
       ],
       "structures": [
         "grammar:formal_second_person",
@@ -70397,6 +70757,141 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "conj_verb003_ty",
+      "item_id": "verb003",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "говори́шь",
+      "ru_plain": "говоришь",
+      "en": "ты + говори́ть: you speak",
+      "prompt": "ты + говори́ть",
+      "answer": "говоришь",
+      "accepted_answers": [
+        "говори́шь",
+        "говоришь"
+      ],
+      "hint": "Source verb card: говорю́ / говори́те",
+      "priority": 3,
+      "syllables": 3,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "ty",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "говоришь"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb003_on_ona",
+      "item_id": "verb003",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "говори́т",
+      "ru_plain": "говорит",
+      "en": "он/она + говори́ть: he/she speaks",
+      "prompt": "он/она + говори́ть",
+      "answer": "говорит",
+      "accepted_answers": [
+        "говори́т",
+        "говорит"
+      ],
+      "hint": "Source verb card: говорю́ / говори́те",
+      "priority": 3,
+      "syllables": 3,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "on_ona",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "говорит"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb003_my",
+      "item_id": "verb003",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "говори́м",
+      "ru_plain": "говорим",
+      "en": "мы + говори́ть: we speak",
+      "prompt": "мы + говори́ть",
+      "answer": "говорим",
+      "accepted_answers": [
+        "говори́м",
+        "говорим"
+      ],
+      "hint": "Source verb card: говорю́ / говори́те",
+      "priority": 3,
+      "syllables": 3,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "my",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "говорим"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
       "id": "conj_verb003_vy",
       "item_id": "verb003",
       "module": "verbs",
@@ -70433,6 +70928,51 @@ window.CONTENT_DATA = {
       ],
       "lexemes": [
         "говорите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb003_oni",
+      "item_id": "verb003",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "говоря́т",
+      "ru_plain": "говорят",
+      "en": "они + говори́ть: they speak",
+      "prompt": "они + говори́ть",
+      "answer": "говорят",
+      "accepted_answers": [
+        "говоря́т",
+        "говорят"
+      ],
+      "hint": "Source verb card: говорю́ / говори́те",
+      "priority": 3,
+      "syllables": 3,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "oni",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "говорят"
       ],
       "structures": [
         "grammar:formal_second_person",
@@ -70487,6 +71027,141 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "conj_verb004_ty",
+      "item_id": "verb004",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "понима́ешь",
+      "ru_plain": "понимаешь",
+      "en": "ты + понима́ть: you understand",
+      "prompt": "ты + понима́ть",
+      "answer": "понимаешь",
+      "accepted_answers": [
+        "понима́ешь",
+        "понимаешь"
+      ],
+      "hint": "Source verb card: понима́ю / понима́ете",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "ty",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "понимаешь"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb004_on_ona",
+      "item_id": "verb004",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "понима́ет",
+      "ru_plain": "понимает",
+      "en": "он/она + понима́ть: he/she understands",
+      "prompt": "он/она + понима́ть",
+      "answer": "понимает",
+      "accepted_answers": [
+        "понима́ет",
+        "понимает"
+      ],
+      "hint": "Source verb card: понима́ю / понима́ете",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "on_ona",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "понимает"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb004_my",
+      "item_id": "verb004",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "понима́ем",
+      "ru_plain": "понимаем",
+      "en": "мы + понима́ть: we understand",
+      "prompt": "мы + понима́ть",
+      "answer": "понимаем",
+      "accepted_answers": [
+        "понима́ем",
+        "понимаем"
+      ],
+      "hint": "Source verb card: понима́ю / понима́ете",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "my",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "понимаем"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
       "id": "conj_verb004_vy",
       "item_id": "verb004",
       "module": "verbs",
@@ -70523,6 +71198,51 @@ window.CONTENT_DATA = {
       ],
       "lexemes": [
         "понимаете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb004_oni",
+      "item_id": "verb004",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "понима́ют",
+      "ru_plain": "понимают",
+      "en": "они + понима́ть: they understand",
+      "prompt": "они + понима́ть",
+      "answer": "понимают",
+      "accepted_answers": [
+        "понима́ют",
+        "понимают"
+      ],
+      "hint": "Source verb card: понима́ю / понима́ете",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "oni",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "понимают"
       ],
       "structures": [
         "grammar:formal_second_person",
@@ -70577,6 +71297,141 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "conj_verb005_ty",
+      "item_id": "verb005",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "лю́бишь",
+      "ru_plain": "любишь",
+      "en": "ты + люби́ть: you love",
+      "prompt": "ты + люби́ть",
+      "answer": "любишь",
+      "accepted_answers": [
+        "лю́бишь",
+        "любишь"
+      ],
+      "hint": "Source verb card: люблю́ / лю́бите",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "ty",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "любишь"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb005_on_ona",
+      "item_id": "verb005",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "лю́бит",
+      "ru_plain": "любит",
+      "en": "он/она + люби́ть: he/she loves",
+      "prompt": "он/она + люби́ть",
+      "answer": "любит",
+      "accepted_answers": [
+        "лю́бит",
+        "любит"
+      ],
+      "hint": "Source verb card: люблю́ / лю́бите",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "on_ona",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "любит"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb005_my",
+      "item_id": "verb005",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "лю́бим",
+      "ru_plain": "любим",
+      "en": "мы + люби́ть: we love",
+      "prompt": "мы + люби́ть",
+      "answer": "любим",
+      "accepted_answers": [
+        "лю́бим",
+        "любим"
+      ],
+      "hint": "Source verb card: люблю́ / лю́бите",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "my",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "любим"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
       "id": "conj_verb005_vy",
       "item_id": "verb005",
       "module": "verbs",
@@ -70613,6 +71468,51 @@ window.CONTENT_DATA = {
       ],
       "lexemes": [
         "любите"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb005_oni",
+      "item_id": "verb005",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "лю́бят",
+      "ru_plain": "любят",
+      "en": "они + люби́ть: they love",
+      "prompt": "они + люби́ть",
+      "answer": "любят",
+      "accepted_answers": [
+        "лю́бят",
+        "любят"
+      ],
+      "hint": "Source verb card: люблю́ / лю́бите",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "oni",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "любят"
       ],
       "structures": [
         "grammar:formal_second_person",
@@ -70667,6 +71567,141 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "conj_verb006_ty",
+      "item_id": "verb006",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "рабо́таешь",
+      "ru_plain": "работаешь",
+      "en": "ты + рабо́тать: you work",
+      "prompt": "ты + рабо́тать",
+      "answer": "работаешь",
+      "accepted_answers": [
+        "рабо́таешь",
+        "работаешь"
+      ],
+      "hint": "Source verb card: рабо́таю / рабо́таете",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "ty",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "работаешь"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb006_on_ona",
+      "item_id": "verb006",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "рабо́тает",
+      "ru_plain": "работает",
+      "en": "он/она + рабо́тать: he/she works",
+      "prompt": "он/она + рабо́тать",
+      "answer": "работает",
+      "accepted_answers": [
+        "рабо́тает",
+        "работает"
+      ],
+      "hint": "Source verb card: рабо́таю / рабо́таете",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "on_ona",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "работает"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb006_my",
+      "item_id": "verb006",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "рабо́таем",
+      "ru_plain": "работаем",
+      "en": "мы + рабо́тать: we work",
+      "prompt": "мы + рабо́тать",
+      "answer": "работаем",
+      "accepted_answers": [
+        "рабо́таем",
+        "работаем"
+      ],
+      "hint": "Source verb card: рабо́таю / рабо́таете",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "my",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "работаем"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
       "id": "conj_verb006_vy",
       "item_id": "verb006",
       "module": "verbs",
@@ -70703,6 +71738,51 @@ window.CONTENT_DATA = {
       ],
       "lexemes": [
         "работаете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb006_oni",
+      "item_id": "verb006",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "рабо́тают",
+      "ru_plain": "работают",
+      "en": "они + рабо́тать: they work",
+      "prompt": "они + рабо́тать",
+      "answer": "работают",
+      "accepted_answers": [
+        "рабо́тают",
+        "работают"
+      ],
+      "hint": "Source verb card: рабо́таю / рабо́таете",
+      "priority": 3,
+      "syllables": 4,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "oni",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "работают"
       ],
       "structures": [
         "grammar:formal_second_person",
@@ -70757,6 +71837,138 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "conj_verb007_ty",
+      "item_id": "verb007",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "живёшь",
+      "ru_plain": "живёшь",
+      "en": "ты + жить: you live",
+      "prompt": "ты + жить",
+      "answer": "живёшь",
+      "accepted_answers": [
+        "живёшь"
+      ],
+      "hint": "Source verb card: живу́ / живёте",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "ty",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "живёшь"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb007_on_ona",
+      "item_id": "verb007",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "живёт",
+      "ru_plain": "живёт",
+      "en": "он/она + жить: he/she lives",
+      "prompt": "он/она + жить",
+      "answer": "живёт",
+      "accepted_answers": [
+        "живёт"
+      ],
+      "hint": "Source verb card: живу́ / живёте",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "on_ona",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "живёт"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb007_my",
+      "item_id": "verb007",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "живём",
+      "ru_plain": "живём",
+      "en": "мы + жить: we live",
+      "prompt": "мы + жить",
+      "answer": "живём",
+      "accepted_answers": [
+        "живём"
+      ],
+      "hint": "Source verb card: живу́ / живёте",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "my",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "живём"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
       "id": "conj_verb007_vy",
       "item_id": "verb007",
       "module": "verbs",
@@ -70801,6 +72013,51 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "conj_verb007_oni",
+      "item_id": "verb007",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "живу́т",
+      "ru_plain": "живут",
+      "en": "они + жить: they live",
+      "prompt": "они + жить",
+      "answer": "живут",
+      "accepted_answers": [
+        "живу́т",
+        "живут"
+      ],
+      "hint": "Source verb card: живу́ / живёте",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "oni",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "живут"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
       "id": "conj_verb008_ya",
       "item_id": "verb008",
       "module": "verbs",
@@ -70836,6 +72093,139 @@ window.CONTENT_DATA = {
       ],
       "lexemes": [
         "ем"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb008_ty",
+      "item_id": "verb008",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "ешь",
+      "ru_plain": "ешь",
+      "en": "ты + есть: you eat",
+      "prompt": "ты + есть",
+      "answer": "ешь",
+      "accepted_answers": [
+        "ешь"
+      ],
+      "hint": "Source verb card: ем / еди́те",
+      "priority": 3,
+      "syllables": 1,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "ty",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "ешь"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb008_on_ona",
+      "item_id": "verb008",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "ест",
+      "ru_plain": "ест",
+      "en": "он/она + есть: he/she eats",
+      "prompt": "он/она + есть",
+      "answer": "ест",
+      "accepted_answers": [
+        "ест"
+      ],
+      "hint": "Source verb card: ем / еди́те",
+      "priority": 3,
+      "syllables": 1,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "on_ona",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "ест"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb008_my",
+      "item_id": "verb008",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "еди́м",
+      "ru_plain": "едим",
+      "en": "мы + есть: we eat",
+      "prompt": "мы + есть",
+      "answer": "едим",
+      "accepted_answers": [
+        "еди́м",
+        "едим"
+      ],
+      "hint": "Source verb card: ем / еди́те",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "my",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "едим"
       ],
       "structures": [
         "grammar:formal_second_person",
@@ -70890,6 +72280,51 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "conj_verb008_oni",
+      "item_id": "verb008",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "едя́т",
+      "ru_plain": "едят",
+      "en": "они + есть: they eat",
+      "prompt": "они + есть",
+      "answer": "едят",
+      "accepted_answers": [
+        "едя́т",
+        "едят"
+      ],
+      "hint": "Source verb card: ем / еди́те",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "oni",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "едят"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
       "id": "conj_verb009_ya",
       "item_id": "verb009",
       "module": "verbs",
@@ -70934,6 +72369,138 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "conj_verb009_ty",
+      "item_id": "verb009",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "пьёшь",
+      "ru_plain": "пьёшь",
+      "en": "ты + пить: you drink",
+      "prompt": "ты + пить",
+      "answer": "пьёшь",
+      "accepted_answers": [
+        "пьёшь"
+      ],
+      "hint": "Source verb card: пью / пьёте",
+      "priority": 3,
+      "syllables": 1,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "ty",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "пьёшь"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb009_on_ona",
+      "item_id": "verb009",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "пьёт",
+      "ru_plain": "пьёт",
+      "en": "он/она + пить: he/she drinks",
+      "prompt": "он/она + пить",
+      "answer": "пьёт",
+      "accepted_answers": [
+        "пьёт"
+      ],
+      "hint": "Source verb card: пью / пьёте",
+      "priority": 3,
+      "syllables": 1,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "on_ona",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "пьёт"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb009_my",
+      "item_id": "verb009",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "пьём",
+      "ru_plain": "пьём",
+      "en": "мы + пить: we drink",
+      "prompt": "мы + пить",
+      "answer": "пьём",
+      "accepted_answers": [
+        "пьём"
+      ],
+      "hint": "Source verb card: пью / пьёте",
+      "priority": 3,
+      "syllables": 1,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "my",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "пьём"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
       "id": "conj_verb009_vy",
       "item_id": "verb009",
       "module": "verbs",
@@ -70969,6 +72536,50 @@ window.CONTENT_DATA = {
       ],
       "lexemes": [
         "пьёте"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb009_oni",
+      "item_id": "verb009",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "пьют",
+      "ru_plain": "пьют",
+      "en": "они + пить: they drink",
+      "prompt": "они + пить",
+      "answer": "пьют",
+      "accepted_answers": [
+        "пьют"
+      ],
+      "hint": "Source verb card: пью / пьёте",
+      "priority": 3,
+      "syllables": 1,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "oni",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "пьют"
       ],
       "structures": [
         "grammar:formal_second_person",
@@ -71023,6 +72634,141 @@ window.CONTENT_DATA = {
       ]
     },
     {
+      "id": "conj_verb010_ty",
+      "item_id": "verb010",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "зна́ешь",
+      "ru_plain": "знаешь",
+      "en": "ты + знать: you know",
+      "prompt": "ты + знать",
+      "answer": "знаешь",
+      "accepted_answers": [
+        "зна́ешь",
+        "знаешь"
+      ],
+      "hint": "Source verb card: зна́ю / зна́ете",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "ty",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "знаешь"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb010_on_ona",
+      "item_id": "verb010",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "зна́ет",
+      "ru_plain": "знает",
+      "en": "он/она + знать: he/she knows",
+      "prompt": "он/она + знать",
+      "answer": "знает",
+      "accepted_answers": [
+        "зна́ет",
+        "знает"
+      ],
+      "hint": "Source verb card: зна́ю / зна́ете",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "on_ona",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "знает"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb010_my",
+      "item_id": "verb010",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "зна́ем",
+      "ru_plain": "знаем",
+      "en": "мы + знать: we know",
+      "prompt": "мы + знать",
+      "answer": "знаем",
+      "accepted_answers": [
+        "зна́ем",
+        "знаем"
+      ],
+      "hint": "Source verb card: зна́ю / зна́ете",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "my",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "знаем"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
       "id": "conj_verb010_vy",
       "item_id": "verb010",
       "module": "verbs",
@@ -71059,6 +72805,51 @@ window.CONTENT_DATA = {
       ],
       "lexemes": [
         "знаете"
+      ],
+      "structures": [
+        "grammar:formal_second_person",
+        "grammar:present_first_person",
+        "grammar:verb_conjugation",
+        "lexical:core_verbs"
+      ]
+    },
+    {
+      "id": "conj_verb010_oni",
+      "item_id": "verb010",
+      "module": "verbs",
+      "lesson_id": "family_visit_014",
+      "lesson_number": 14,
+      "ru": "зна́ют",
+      "ru_plain": "знают",
+      "en": "они + знать: they know",
+      "prompt": "они + знать",
+      "answer": "знают",
+      "accepted_answers": [
+        "зна́ют",
+        "знают"
+      ],
+      "hint": "Source verb card: зна́ю / зна́ете",
+      "priority": 3,
+      "syllables": 2,
+      "conf": "high",
+      "gender": null,
+      "rehearse": false,
+      "recognize": false,
+      "note": "",
+      "tags": [
+        "oni",
+        "verb_drill"
+      ],
+      "error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "allowed_error_types": [
+        "case_or_inflection",
+        "stress"
+      ],
+      "lexemes": [
+        "знают"
       ],
       "structures": [
         "grammar:formal_second_person",

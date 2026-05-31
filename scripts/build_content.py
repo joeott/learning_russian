@@ -3021,31 +3021,105 @@ def build_contrast_cards(contrast_sets: list[dict], items: list[dict]) -> list[d
     return cards
 
 
+VERB_DRILL_FORMS = {
+    "хотеть": [
+        ("ya", "я", "хочу́", "I want"),
+        ("ty", "ты", "хо́чешь", "you want"),
+        ("on_ona", "он/она", "хо́чет", "he/she wants"),
+        ("my", "мы", "хоти́м", "we want"),
+        ("vy", "вы", "хоти́те", "you want"),
+        ("oni", "они", "хотя́т", "they want"),
+    ],
+    "мочь": [
+        ("ya", "я", "могу́", "I can"),
+        ("ty", "ты", "мо́жешь", "you can"),
+        ("on_ona", "он/она", "мо́жет", "he/she can"),
+        ("my", "мы", "мо́жем", "we can"),
+        ("vy", "вы", "мо́жете", "you can"),
+        ("oni", "они", "мо́гут", "they can"),
+    ],
+    "говори́ть": [
+        ("ya", "я", "говорю́", "I speak"),
+        ("ty", "ты", "говори́шь", "you speak"),
+        ("on_ona", "он/она", "говори́т", "he/she speaks"),
+        ("my", "мы", "говори́м", "we speak"),
+        ("vy", "вы", "говори́те", "you speak"),
+        ("oni", "они", "говоря́т", "they speak"),
+    ],
+    "понима́ть": [
+        ("ya", "я", "понима́ю", "I understand"),
+        ("ty", "ты", "понима́ешь", "you understand"),
+        ("on_ona", "он/она", "понима́ет", "he/she understands"),
+        ("my", "мы", "понима́ем", "we understand"),
+        ("vy", "вы", "понима́ете", "you understand"),
+        ("oni", "они", "понима́ют", "they understand"),
+    ],
+    "люби́ть": [
+        ("ya", "я", "люблю́", "I love"),
+        ("ty", "ты", "лю́бишь", "you love"),
+        ("on_ona", "он/она", "лю́бит", "he/she loves"),
+        ("my", "мы", "лю́бим", "we love"),
+        ("vy", "вы", "лю́бите", "you love"),
+        ("oni", "они", "лю́бят", "they love"),
+    ],
+    "рабо́тать": [
+        ("ya", "я", "рабо́таю", "I work"),
+        ("ty", "ты", "рабо́таешь", "you work"),
+        ("on_ona", "он/она", "рабо́тает", "he/she works"),
+        ("my", "мы", "рабо́таем", "we work"),
+        ("vy", "вы", "рабо́таете", "you work"),
+        ("oni", "они", "рабо́тают", "they work"),
+    ],
+    "жить": [
+        ("ya", "я", "живу́", "I live"),
+        ("ty", "ты", "живёшь", "you live"),
+        ("on_ona", "он/она", "живёт", "he/she lives"),
+        ("my", "мы", "живём", "we live"),
+        ("vy", "вы", "живёте", "you live"),
+        ("oni", "они", "живу́т", "they live"),
+    ],
+    "есть": [
+        ("ya", "я", "ем", "I eat"),
+        ("ty", "ты", "ешь", "you eat"),
+        ("on_ona", "он/она", "ест", "he/she eats"),
+        ("my", "мы", "еди́м", "we eat"),
+        ("vy", "вы", "еди́те", "you eat"),
+        ("oni", "они", "едя́т", "they eat"),
+    ],
+    "пить": [
+        ("ya", "я", "пью", "I drink"),
+        ("ty", "ты", "пьёшь", "you drink"),
+        ("on_ona", "он/она", "пьёт", "he/she drinks"),
+        ("my", "мы", "пьём", "we drink"),
+        ("vy", "вы", "пьёте", "you drink"),
+        ("oni", "они", "пьют", "they drink"),
+    ],
+    "знать": [
+        ("ya", "я", "зна́ю", "I know"),
+        ("ty", "ты", "зна́ешь", "you know"),
+        ("on_ona", "он/она", "зна́ет", "he/she knows"),
+        ("my", "мы", "зна́ем", "we know"),
+        ("vy", "вы", "зна́ете", "you know"),
+        ("oni", "они", "зна́ют", "they know"),
+    ],
+}
+
+
 def build_verb_drill_cards(items: list[dict]) -> list[dict]:
     cards = []
     for item in items:
         if item["module"] != "verbs":
             continue
-        forms = [part.strip() for part in item["ru"].split("/")]
-        plain_forms = [strip_stress(part) for part in forms]
         infinitive = ""
         if "—" in item["en"]:
             infinitive = item["en"].split("—", 1)[1].strip()
-        if len(forms) < 2 or not infinitive:
+        if not infinitive:
             continue
-        meanings = item["en"].split("—", 1)[0].split("/")
-        meanings = [meaning.strip() for meaning in meanings]
-        prompts = [
-            ("ya", "я", forms[0], plain_forms[0], meanings[0] if meanings else ""),
-            (
-                "vy",
-                "вы",
-                forms[1],
-                plain_forms[1],
-                meanings[1] if len(meanings) > 1 else "",
-            ),
-        ]
-        for pronoun_key, pronoun, answer, plain_answer, meaning in prompts:
+        prompts = VERB_DRILL_FORMS.get(infinitive) or VERB_DRILL_FORMS.get(
+            strip_stress(infinitive), []
+        )
+        for pronoun_key, pronoun, answer, meaning in prompts:
+            plain_answer = strip_stress(answer)
             cards.append(
                 {
                     "id": f"conj_{item['id']}_{pronoun_key}",
