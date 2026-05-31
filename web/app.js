@@ -798,6 +798,7 @@
     { n: 11, key: "roleplay", title: "Role-play", desc: "A table prompt → say it, then self-rate.", instr: "Say it out loud" },
   ];
   function stagePool(stageKey) {
+    const n = activeLesson().lesson_number || 99;
     const items = unlockedItems(ITEMS);
     if (stageKey === "cloze") return unlockedClozeCards(CLOZE_CARDS);
     if (stageKey === "dictation") return unlockedDictationCards(DICTATION_CARDS);
@@ -805,7 +806,7 @@
     if (stageKey === "pronounce") return unlockedPronunciationCards(PRONUNCIATION_CARDS);
     if (stageKey === "backtranslate") return unlockedBacktranslationCards(BACKTRANSLATION_CARDS);
     if (stageKey === "contrast") return unlockedContrastCards(CONTRAST_CARDS);
-    if (stageKey === "listen") return items.filter(i => i.syllables >= 1);
+    if (stageKey === "listen") return items.filter(i => i.lesson_number <= n && i.syllables >= 1);
     if (stageKey === "roleplay" && SCENARIOS.length) {
       const scenarioIds = activeRoleplayItemIds();
       return items.filter(i => scenarioIds.has(i.id));
