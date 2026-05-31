@@ -231,6 +231,8 @@ body {
 .learnbar .spacer { flex: 1; }
 .chip { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; font-size:.74rem; font-weight:500; padding:6px 11px; border:2px solid var(--ink); border-radius:20px; background:var(--paper-2); cursor:pointer; }
 .chip.is-on { background: var(--ink); color: var(--paper); }
+.chip--tight { padding:5px 9px; }
+.speedctl { display:flex; gap: 5px; align-items:center; }
 
 .card {
   position: relative; background: var(--paper); border: 3px solid var(--ink); border-radius: var(--radius);
@@ -261,6 +263,28 @@ body {
 .iconbtn { width: 52px; height: 52px; border-radius: 50%; border:2px solid var(--ink); background: var(--paper-2); cursor:pointer; font-size: 1.3rem; box-shadow: var(--shadow-sm); transition: transform .08s; }
 .iconbtn:hover { transform: translateY(-2px); }
 .iconbtn--play { background: var(--red); color: var(--paper); }
+.learnvoice { display:flex; align-items:center; justify-content:center; gap: 8px; flex-wrap:wrap; margin-top: 14px; }
+.learnvoice .btn.is-on { background: var(--ink); color: var(--paper); }
+.conjpanel {
+  margin-top: 16px; border: 2px solid var(--ink); background: var(--paper-2);
+  border-radius: var(--radius); padding: 12px;
+}
+.conjpanel__head { display:flex; align-items:baseline; justify-content:space-between; gap: 10px; font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; }
+.conjpanel__head span { color: var(--ink-soft); font-size:.78rem; }
+.conjgrid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }
+.conjgrid div { border:1px solid var(--cream-line); background: var(--paper); padding: 10px; }
+.conjgrid span { display:block; color: var(--red); font-family: var(--font-display); text-transform: uppercase; margin-bottom: 4px; }
+.conjgrid strong { font-size: 1.25rem; }
+.voicelab {
+  margin-top: 16px; border: 2px solid var(--ink); background: #15110f; color: var(--paper);
+  border-radius: var(--radius); padding: 12px; display:grid; gap: 10px;
+}
+.voicelab__head { display:flex; align-items:center; justify-content:space-between; gap: 10px; }
+.voicelab__head strong { display:block; font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; }
+.voicelab__head span, .voicelab__status { color: rgba(249,239,210,.74); font-size:.84rem; }
+.sonorow { display:grid; grid-template-columns: 56px minmax(0, 1fr); align-items:center; gap: 8px; }
+.sonorow > span { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; color: rgba(249,239,210,.82); }
+.sonorow canvas { width: 100%; height: 150px; border: 1px solid rgba(249,239,210,.68); background:#050403; }
 
 /* ---------- Quiz ---------- */
 .stagegrid { display:grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 14px; }

@@ -68,6 +68,7 @@
   const LEGACY_KEY = "zastolom.v1";
   const LESSON_KEY = KEY + ".lesson_boundary";
   const HISTORY_KEY = KEY + ".analytics_history";
+  const LEARN_RATE_KEY = KEY + ".learn_audio_rate";
   let store = load();
   let activeLessonId = loadLessonBoundary();
   function load() {
@@ -105,6 +106,15 @@
   }
   function saveAnalyticsHistory(rows) {
     try { localStorage.setItem(HISTORY_KEY, JSON.stringify(rows.slice(-14))); } catch (e) {}
+  }
+  function loadLearnRate() {
+    try {
+      const value = Number(localStorage.getItem(LEARN_RATE_KEY));
+      return [0.75, 1, 1.15].includes(value) ? value : 1;
+    } catch (e) { return 1; }
+  }
+  function saveLearnRate(value) {
+    try { localStorage.setItem(LEARN_RATE_KEY, String(value)); } catch (e) {}
   }
   function emptyRec() { return { seen: 0, correct: 0, known: false, stages: {}, errors: {}, last_seen_at: "" }; }
   function migrateRec(value) {
@@ -777,6 +787,7 @@
     const activeRoute = route === "drill" ? "quiz" : (route || "home");
     document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("is-active", a.dataset.tab === activeRoute));
     view.scrollTop = 0; window.scrollTo(0, 0);
+    if (activeRoute !== "learn") cleanupLearnRecording();
     if (activeRoute === "learn") renderLearn(arg);
     else if (activeRoute === "quiz") arg ? renderQuizRun(arg) : renderQuizMenu();
     else if (activeRoute === "plan") renderPlan();
@@ -858,7 +869,22 @@
   /* ====================================================================
      LEARN  (flashcards)
      ==================================================================== */
-  let learnState = { module: "all", priority: 0, idx: 0, list: [], hideEn: false };
+  let learnState = {
+    module: "all",
+    priority: 0,
+    idx: 0,
+    list: [],
+    hideEn: false,
+    audioRate: loadLearnRate(),
+    showVoiceLab: false,
+    showConjugation: false,
+  };
+  let learnRecorder = null;
+  let learnRecordStream = null;
+  let learnRecordChunks = [];
+  let learnRecordingUrl = "";
+  let learnRecordingItemId = "";
+  let learnSpectrogramToken = 0;
   function buildLearnList() {
     let list = unlockedItems(ITEMS);
     if (learnState.module !== "all") list = list.filter(i => i.module === learnState.module);
@@ -866,6 +892,166 @@
     list.sort((a, b) => a.priority - b.priority);
     learnState.list = list;
     if (learnState.idx >= list.length) learnState.idx = 0;
+  }
+  function cleanupLearnRecording() {
+    const activeRecorder = learnRecorder;
+    learnRecorder = null;
+    if (activeRecorder && activeRecorder.state !== "inactive") {
+      activeRecorder.onstop = null;
+      try { activeRecorder.stop(); } catch (e) {}
+    }
+    if (learnRecordStream) {
+      learnRecordStream.getTracks().forEach(track => track.stop());
+      learnRecordStream = null;
+    }
+    if (learnRecordingUrl) {
+      URL.revokeObjectURL(learnRecordingUrl);
+      learnRecordingUrl = "";
+    }
+    learnRecordChunks = [];
+    learnRecordingItemId = "";
+  }
+  function setLearnStatus(message) {
+    const el = $("#learnRecordStatus");
+    if (el) el.textContent = message;
+  }
+  function activeLearnItem() {
+    return learnState.list[learnState.idx] || null;
+  }
+  function speedControlsHtml() {
+    return [0.75, 1, 1.15].map(rate =>
+      `<button class="chip chip--tight ${learnState.audioRate === rate ? "is-on" : ""}" onclick="ZS.setLearnRate(${rate})">${rate}x</button>`
+    ).join("");
+  }
+  function verbConjugationFor(it) {
+    if (!it || it.module !== "verbs") return null;
+    const forms = (it.ru || "").split("/").map(s => s.trim()).filter(Boolean);
+    if (forms.length < 2) return null;
+    const infinitive = (it.en || "").split("—").pop().trim();
+    return {
+      infinitive: infinitive && infinitive !== it.en ? infinitive : "",
+      first: forms[0],
+      formal: forms[1],
+    };
+  }
+  function conjugationPanelHtml(it) {
+    const data = verbConjugationFor(it);
+    if (!data || !learnState.showConjugation) return "";
+    return `<div class="conjpanel">
+      <div class="conjpanel__head"><strong>Conjugation</strong>${data.infinitive ? `<span>${escapeHtml(data.infinitive)}</span>` : ""}</div>
+      <div class="conjgrid">
+        <div><span>я</span><strong>${colorStress(data.first)}</strong></div>
+        <div><span>вы</span><strong>${colorStress(data.formal)}</strong></div>
+      </div>
+    </div>`;
+  }
+  function voiceLabHtml(it) {
+    if (!learnState.showVoiceLab) return "";
+    const mineReady = learnRecordingUrl && learnRecordingItemId === it.id;
+    return `<div class="voicelab">
+      <div class="voicelab__head">
+        <div><strong>Voice sonograph</strong><span>Compare native audio with your attempt.</span></div>
+        <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.renderLearnSpectrograms()">Refresh</button>
+      </div>
+      <div class="sonorow"><span>Native</span><canvas id="nativeSpectrogram" width="620" height="150"></canvas></div>
+      <div class="sonorow"><span>Mine</span><canvas id="mineSpectrogram" width="620" height="150"></canvas></div>
+      <div id="learnRecordStatus" class="voicelab__status">${mineReady ? "Recording ready. Play yours or record again." : "Record yourself to compare against the native model."}</div>
+    </div>`;
+  }
+  function drawEmptySpectrogram(canvas, message) {
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const w = canvas.width;
+    const h = canvas.height;
+    ctx.fillStyle = "#0d0b09";
+    ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = "rgba(249,239,210,.6)";
+    ctx.strokeRect(0.5, 0.5, w - 1, h - 1);
+    ctx.fillStyle = "rgba(249,239,210,.76)";
+    ctx.font = "13px sans-serif";
+    ctx.fillText(message, 14, Math.round(h / 2));
+  }
+  async function audioBufferFromUrl(url) {
+    const response = await fetch(url);
+    const data = await response.arrayBuffer();
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    const ctx = new AudioContext();
+    try {
+      return await ctx.decodeAudioData(data.slice(0));
+    } finally {
+      if (ctx.close) ctx.close();
+    }
+  }
+  function drawSpectrogramFromBuffer(canvas, buffer) {
+    if (!canvas || !buffer) return;
+    const ctx = canvas.getContext("2d");
+    const w = canvas.width;
+    const h = canvas.height;
+    const samples = buffer.getChannelData(0);
+    const sampleRate = buffer.sampleRate;
+    const cols = Math.min(w, 240);
+    const bins = 52;
+    const windowSize = 512;
+    const maxHz = 5200;
+    ctx.fillStyle = "#050403";
+    ctx.fillRect(0, 0, w, h);
+    const step = Math.max(1, Math.floor(samples.length / cols));
+    for (let x = 0; x < cols; x++) {
+      const start = Math.max(0, Math.min(samples.length - windowSize, x * step));
+      for (let b = 0; b < bins; b++) {
+        const hz = 90 + (b / bins) * maxHz;
+        let re = 0;
+        let im = 0;
+        for (let n = 0; n < windowSize; n++) {
+          const sample = samples[start + n] || 0;
+          const win = 0.5 - 0.5 * Math.cos((2 * Math.PI * n) / (windowSize - 1));
+          const angle = 2 * Math.PI * hz * n / sampleRate;
+          re += sample * win * Math.cos(angle);
+          im -= sample * win * Math.sin(angle);
+        }
+        const mag = Math.min(1, Math.log10(1 + Math.sqrt(re * re + im * im) * 9));
+        const y = h - 18 - Math.round((b / bins) * (h - 30));
+        const red = Math.round(24 + mag * 40);
+        const green = Math.round(70 + mag * 180);
+        const blue = Math.round(130 + mag * 125);
+        ctx.fillStyle = `rgb(${red},${green},${blue})`;
+        ctx.fillRect(Math.floor(x * w / cols), y, Math.ceil(w / cols), Math.max(2, Math.ceil((h - 30) / bins)));
+      }
+    }
+    ctx.strokeStyle = "rgba(249,239,210,.75)";
+    ctx.strokeRect(0.5, 0.5, w - 1, h - 1);
+    ctx.fillStyle = "rgba(249,239,210,.82)";
+    ctx.font = "11px sans-serif";
+    ctx.fillText("kHz", 8, 14);
+    ctx.fillText("sec", w - 30, h - 8);
+  }
+  async function renderLearnSpectrograms() {
+    if (!learnState.showVoiceLab) return;
+    const token = ++learnSpectrogramToken;
+    const it = activeLearnItem();
+    const nativeCanvas = $("#nativeSpectrogram");
+    const mineCanvas = $("#mineSpectrogram");
+    if (!it) return;
+    drawEmptySpectrogram(nativeCanvas, "Rendering native model...");
+    try {
+      const src = AUDIO && AUDIO_IDS.has(it.id) ? AUDIO.base + it.id + ".mp3" : "";
+      if (!src) throw new Error("No native audio file");
+      const buffer = await audioBufferFromUrl(src);
+      if (token === learnSpectrogramToken) drawSpectrogramFromBuffer(nativeCanvas, buffer);
+    } catch (e) {
+      drawEmptySpectrogram(nativeCanvas, "Native spectrogram unavailable on this device.");
+    }
+    if (learnRecordingUrl && learnRecordingItemId === it.id) {
+      drawEmptySpectrogram(mineCanvas, "Rendering your recording...");
+      try {
+        const buffer = await audioBufferFromUrl(learnRecordingUrl);
+        if (token === learnSpectrogramToken) drawSpectrogramFromBuffer(mineCanvas, buffer);
+      } catch (e) {
+        drawEmptySpectrogram(mineCanvas, "Recording spectrogram unavailable.");
+      }
+    } else {
+      drawEmptySpectrogram(mineCanvas, "Record yourself to render this row.");
+    }
   }
   function renderLearn(modArg) {
     if (modArg && MOD_BY_ID[modArg]) learnState.module = modArg;
@@ -880,6 +1066,7 @@
       ${lessonLockHtml()}
       <div class="learnbar learnbar--scroll">${modChips}</div>
       <div class="learnbar learnbar--tools">${priChips}<span class="spacer"></span>
+        <div class="speedctl" aria-label="Learn audio speed">${speedControlsHtml()}</div>
         <button class="chip ${learnState.hideEn ? "is-on" : ""}" onclick="ZS.toggleEn()">🙈 Hide English</button></div>
       <div id="cardslot"></div>
     `;
@@ -892,6 +1079,7 @@
     const it = list[learnState.idx];
     rec(it.id).seen++;
     save();
+    const hasConjugation = !!verbConjugationFor(it);
     slot.innerHTML = `
       <div class="card rise ${learnState.hideEn ? "hidden-en" : ""}">
         <div class="card__meta"><span class="card__mod">${MOD_BY_ID[it.module].icon} ${escapeHtml(MOD_BY_ID[it.module].title)}</span>
@@ -901,6 +1089,8 @@
         ${it.hint ? `<div class="card__hint">🔈 ${escapeHtml(it.hint)}</div>` : ""}
         ${it.note ? `<div class="card__note">${escapeHtml(it.note)}</div>` : ""}
         <div class="card__foot">${badges(it)}</div>
+        ${conjugationPanelHtml(it)}
+        ${voiceLabHtml(it)}
       </div>
       <div class="cardnav">
         <button class="iconbtn" onclick="ZS.prev()" aria-label="Previous">‹</button>
@@ -908,8 +1098,16 @@
         <span class="cardnav__count">${learnState.idx + 1} / ${list.length}</span>
         <button class="iconbtn" onclick="ZS.known()" aria-label="Mark known" title="Mark as stuck">✓</button>
         <button class="iconbtn" onclick="ZS.next()" aria-label="Next">›</button>
+      </div>
+      <div class="learnvoice">
+        <button id="learnRecordBtn" class="btn btn--sm btn--red" onclick="ZS.startLearnRecording()">Record</button>
+        <button id="learnStopRecordBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.stopLearnRecording()" disabled>Stop</button>
+        <button id="learnPlayRecordBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.playLearnRecording()" ${learnRecordingUrl && learnRecordingItemId === it.id ? "" : "disabled"}>Play mine</button>
+        <button class="btn btn--sm btn--ghost ghost-dark ${learnState.showVoiceLab ? "is-on" : ""}" onclick="ZS.toggleVoiceLab()">Sonograph</button>
+        ${hasConjugation ? `<button class="btn btn--sm btn--ghost ghost-dark ${learnState.showConjugation ? "is-on" : ""}" onclick="ZS.toggleConjugation()">Conjugate</button>` : ""}
       </div>`;
-    speak(it, { quiet: true }); // try native audio, but do not show autoplay-blocked TTS warnings
+    speak(it, { quiet: true, rate: learnState.audioRate }); // try native audio, but do not show autoplay-blocked TTS warnings
+    if (learnState.showVoiceLab) setTimeout(renderLearnSpectrograms, 0);
   }
 
   /* ====================================================================
@@ -1409,10 +1607,11 @@
      public handlers (referenced from inline onclick)
      ==================================================================== */
   window.ZS = {
-    setMod(m) { learnState.module = m; learnState.idx = 0; renderLearn(); },
-    setPri(p) { learnState.priority = p; learnState.idx = 0; renderLearn(); },
+    setMod(m) { cleanupLearnRecording(); learnState.module = m; learnState.idx = 0; renderLearn(); },
+    setPri(p) { cleanupLearnRecording(); learnState.priority = p; learnState.idx = 0; renderLearn(); },
     setLesson(id) {
       if (!LESSON_BY_ID[id]) return;
+      cleanupLearnRecording();
       activeLessonId = id;
       learnState.idx = 0;
       quiz = null;
@@ -1420,13 +1619,88 @@
       router();
     },
     toggleEn() { learnState.hideEn = !learnState.hideEn; renderLearn(); },
-    next() { learnState.idx = (learnState.idx + 1) % learnState.list.length; renderCard(); },
-    prev() { learnState.idx = (learnState.idx - 1 + learnState.list.length) % learnState.list.length; renderCard(); },
-    say() { speak(learnState.list[learnState.idx]); },
+    setLearnRate(rate) {
+      if (![0.75, 1, 1.15].includes(rate)) return;
+      learnState.audioRate = rate;
+      saveLearnRate(rate);
+      renderLearn();
+    },
+    toggleVoiceLab() {
+      learnState.showVoiceLab = !learnState.showVoiceLab;
+      renderCard();
+    },
+    toggleConjugation() {
+      learnState.showConjugation = !learnState.showConjugation;
+      renderCard();
+    },
+    next() { cleanupLearnRecording(); learnState.idx = (learnState.idx + 1) % learnState.list.length; renderCard(); },
+    prev() { cleanupLearnRecording(); learnState.idx = (learnState.idx - 1 + learnState.list.length) % learnState.list.length; renderCard(); },
+    say() { speak(learnState.list[learnState.idx], { rate: learnState.audioRate }); },
     sayItem(id) {
       const it = practiceItem(id);
       speak(it && it.item_id ? ITEMS.find(i => i.id === it.item_id) : it);
     },
+    async startLearnRecording() {
+      const it = activeLearnItem();
+      if (!it) return;
+      if (!navigator.mediaDevices || !window.MediaRecorder) {
+        setLearnStatus("Recording is not available in this browser.");
+        return;
+      }
+      cleanupLearnRecording();
+      try {
+        learnRecordStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const activeRecorder = new MediaRecorder(learnRecordStream);
+        learnRecorder = activeRecorder;
+        learnRecordChunks = [];
+        learnRecordingItemId = it.id;
+        activeRecorder.ondataavailable = event => {
+          if (event.data && event.data.size) learnRecordChunks.push(event.data);
+        };
+        activeRecorder.onstop = () => {
+          if (learnRecordingUrl) URL.revokeObjectURL(learnRecordingUrl);
+          const blob = new Blob(learnRecordChunks, { type: activeRecorder.mimeType || "audio/webm" });
+          learnRecordingUrl = URL.createObjectURL(blob);
+          learnRecorder = null;
+          if (learnRecordStream) {
+            learnRecordStream.getTracks().forEach(track => track.stop());
+            learnRecordStream = null;
+          }
+          const playBtn = $("#learnPlayRecordBtn");
+          if (playBtn) playBtn.removeAttribute("disabled");
+          const recordBtn = $("#learnRecordBtn");
+          const stopBtn = $("#learnStopRecordBtn");
+          if (recordBtn) recordBtn.removeAttribute("disabled");
+          if (stopBtn) stopBtn.setAttribute("disabled", "");
+          setLearnStatus("Recording ready. Play yours or open the sonograph comparison.");
+          if (learnState.showVoiceLab) renderLearnSpectrograms();
+        };
+        activeRecorder.start();
+        const recordBtn = $("#learnRecordBtn");
+        const stopBtn = $("#learnStopRecordBtn");
+        const playBtn = $("#learnPlayRecordBtn");
+        if (recordBtn) recordBtn.setAttribute("disabled", "");
+        if (stopBtn) stopBtn.removeAttribute("disabled");
+        if (playBtn) playBtn.setAttribute("disabled", "");
+        setLearnStatus("Recording... keep it short and natural.");
+      } catch (e) {
+        setLearnStatus("Microphone permission was not available.");
+      }
+    },
+    stopLearnRecording() {
+      if (!learnRecorder || learnRecorder.state === "inactive") return;
+      const activeRecorder = learnRecorder;
+      activeRecorder.stop();
+    },
+    playLearnRecording() {
+      if (!learnRecordingUrl || learnRecordingItemId !== (activeLearnItem() || {}).id) {
+        setLearnStatus("Record yourself first.");
+        return;
+      }
+      const audio = new Audio(learnRecordingUrl);
+      audio.play().catch(() => setLearnStatus("Playback was blocked. Tap Play mine again."));
+    },
+    renderLearnSpectrograms,
     known() {
       const it = learnState.list[learnState.idx];
       const r = rec(it.id);
