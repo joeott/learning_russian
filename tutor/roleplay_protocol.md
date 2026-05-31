@@ -183,6 +183,26 @@ Run them in order over your study days. Each says: **Goal · the Russian the tut
 **You produce:** the full arc — greet (S1) → introduce + "still learning" (S2) → eat & compliment (S3) → answer questions (S5) → tell the story (S6) → toast (S4) → recover from the curveball (S7) → `Спаси́бо, бы́ло о́чень вку́сно` and `До свида́ния` (`food004`, `firs012`).
 **Success:** You get through the whole dinner in **~80% Russian**, correct register/forms, at least one warm toast and one specific compliment, and you recover from the curveball without panic.
 
+### Scenario 9 — Lawyer / Missouri small talk
+**Goal:** Handle common biographical questions confidently without saying awkward terms.
+**Tutor:** `А чем вы занимаетесь? Откуда вы приехали?`
+**You produce:**
+- `Я юри́ст` — `smal001`
+- `Я из Аме́рики` — `smal002`
+- `Я из шта́та Миссу́ри` — `smal003`
+- `Я о́чень рад быть здесь` — `firs011`
+**Success:** Your biography is clear, correct, and natural; if asked a follow-up, recover with a repair line and continue.
+
+### Scenario 10 — Noisy-table recovery drill
+**Goal:** Stay usable when speech gets fast and noisy.
+**Tutor:** asks short questions from `listening` with short interleaved noise phrases.
+**You produce:**
+- `Повтори́те, пожа́луйста` — `poli010`
+- `Поме́дленнее, пожа́луйста` — `poli011`
+- `Я не понимаю́` — `poli012`
+- Topic answers from `listening` and `smalltalk` (e.g., `Откуда вы?`, `Как вы говорите по-русски?`, `Как вы познакомились?`).
+**Success:** You recover into Russian instead of freezing, and still answer at least one question correctly under speed/noise.
+
 ---
 
 ## Session templates

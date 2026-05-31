@@ -657,6 +657,8 @@ def cmd_flow(args):
     command = ["node", script]
     if args.url:
         command.append(args.url)
+    if args.offline:
+        command += ["--offline"]
     if args.out:
         command += ["--out", args.out]
     print(head("flow"), flush=True)
@@ -686,7 +688,9 @@ def cmd_preflight(args):
     _run_subcommand(["verify"])
     _run_subcommand(["test"])
     _run_subcommand(
-        ["flow", args.url] + (["--out", args.out] if args.out else [])
+        ["flow", args.url]
+        + (["--offline"] if args.offline else [])
+        + (["--out", args.out] if args.out else [])
     )
 
 def cmd_verify(args):
@@ -798,9 +802,11 @@ def main():
     fl = sub.add_parser("flow")
     fl.add_argument("url", nargs="?", default="http://localhost:8000/web/")
     fl.add_argument("--out")
+    fl.add_argument("--offline", action="store_true", help="run offline replay checks")
     pr = sub.add_parser("preflight")
     pr.add_argument("url", nargs="?", default="http://localhost:8000/web/")
     pr.add_argument("--out")
+    pr.add_argument("--offline", action="store_true", help="run flow offline replay checks")
     sub.add_parser("verify")
     sub.add_parser("test")
     sub.add_parser("loop-prompt")
