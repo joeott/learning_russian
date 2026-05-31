@@ -599,6 +599,7 @@
       <div class="section-head"><span class="section-head__num">04</span><span class="section-head__title">The 16-day plan</span>
         <span class="section-head__sub">Risk-first, evidence-based, oral. ${d} days left.</span></div>
       <div class="callout"><strong>If you only have 10 minutes:</strong> (1) clear your Anki reviews to protect the spacing curve, (2) listen to one audio/podcast passively. <em>No new material on 10-minute days — protect the foundation.</em></div>
+      ${renderOfflinePanel()}
       <div class="prose"><table>
         <thead><tr><th>Day</th><th>Date</th><th></th><th>Budget</th><th>Focus</th></tr></thead>
         <tbody>${rows}</tbody></table></div>
@@ -610,7 +611,6 @@
         <a class="btn" href="../RESOURCES.md" target="_blank">🔗 Videos, podcasts & apps</a>
         <a class="btn" href="../anki/README.md" target="_blank">📱 Phone deck (Anki)</a>
       </div>
-      ${renderOfflinePanel()}
       <div class="footer-note">Open links work when the app is served (e.g. <code>python3 -m http.server</code> from the repo root, then open <code>/web/</code>).</div>`;
   }
   function renderOfflinePanel() {

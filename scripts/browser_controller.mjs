@@ -78,6 +78,7 @@ export async function inspectPage(page, name, outDir) {
     const selector = [
       "button", "a", "input", ".card", ".stagecard", ".ring", ".stat",
       ".quiz__prompt", ".feedback", ".listenhint", ".scenario", ".opt",
+      ".offlinebox", ".offlinebox__status",
     ].join(",");
     const rects = [...document.querySelectorAll(selector)].slice(0, 120).map((el) => {
       const r = el.getBoundingClientRect();
