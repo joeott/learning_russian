@@ -298,8 +298,11 @@
   function roleplayFailureSignals() {
     const counts = {};
     stagePool("roleplay").forEach(it => {
+      const r = store[it.id] || {};
+      const historical = r.roleplay_criteria_misses || null;
       const st = stageState(it.id, "roleplay");
-      (st && st.last_roleplay_missed ? st.last_roleplay_missed : []).forEach(criterionId => {
+      const missed = historical ? Object.keys(historical) : (st && st.last_roleplay_missed ? st.last_roleplay_missed : []);
+      missed.forEach(criterionId => {
         const criterion = ROLEPLAY_CRITERIA[criterionId] || {};
         const key = criterionId;
         counts[key] = counts[key] || {
@@ -308,7 +311,7 @@
           errorType: criterion.error_type || "forgot_phrase",
           count: 0,
         };
-        counts[key].count += 1;
+        counts[key].count += historical ? historical[criterionId] : 1;
       });
     });
     return Object.values(counts)
@@ -1495,6 +1498,13 @@
           missed,
         },
       });
+      if (missed.length) {
+        const r = rec(id);
+        r.roleplay_criteria_misses = r.roleplay_criteria_misses || {};
+        missed.forEach(c => {
+          r.roleplay_criteria_misses[c] = (r.roleplay_criteria_misses[c] || 0) + 1;
+        });
+      }
       missed.slice(1).forEach(c => {
         const r = rec(id);
         const err = criterionErrorType(c);
