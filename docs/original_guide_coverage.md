@@ -6,12 +6,12 @@ iterations can close the real beginner-course gaps without inventing Russian.
 ## Current generated course
 
 - Source of truth: `scripts/build_content.py`
-- Generated content: 262 items across 16 modules, plus 60 generated conjugation drills
+- Generated content: 271 items across 16 modules, plus 60 generated conjugation drills
 - Strongest coverage today:
   - greetings and first contact
   - politeness and repair phrases
   - toasts
-  - family and in-law vocabulary
+  - family and in-law vocabulary, including sensitive baby/health recognition
   - food/table compliments and requests
   - common and native-speed family check-in questions
   - calendar and weather small talk
@@ -38,14 +38,14 @@ iterations can close the real beginner-course gaps without inventing Russian.
 | Holidays and celebrations | `source/ekaterina_guide.md:889-895`, `source/ekaterina_guide.md:909-927`, `source/ekaterina_guide.md:981-989`, `source/ekaterina_guide.md:1017-1025`, `source/ekaterina_guide.md:1404-1405`, `source/ekaterina_guide.md:2234-2244`, `source/research/celebrations.md` | Covered by `celebrations` basics plus the existing toast module | Later: add only family-specific holiday details Kadriya confirms. |
 | Idioms and proverbs | `source/ekaterina_guide.md:582-591`, `source/ekaterina_guide.md:864-881`, `source/research/cultural_bonus.md` | Covered by recognition-only `cultural_bonus` cards | Later: only rehearse production if Kadriya says one is worth using live. |
 | Adverbs, adjectives, and grammar notes | `source/ekaterina_guide.md:471-554`, `source/ekaterina_guide.md:1082-1107`, `source/ekaterina_guide.md:1917-1935`, `source/research/adverbs_adjectives.md` | Covered by `adverbs_adjectives` short evaluations, pace repair, and feminine weather adjective lines | Later: add only adverbs that are needed inside real scenarios. |
-| Family/baby questions | `source/ekaterina_guide.md:636-639` | Partial: family module | Add one scenario for family health/baby readiness if Kadriya wants this practiced. Mark uncertain/over-personal items `rehearse=True`. |
+| Family/baby questions | `source/ekaterina_guide.md:634`, `source/ekaterina_guide.md:636-639`, `source/ekaterina_guide.md:705`, `source/research/family_health_baby.md` | Covered by `family` recognition/rehearsal cards plus a sensitive family-health scenario | Later: use these live only after Kadriya confirms they are welcome/current. |
 | Anecdotes/legal jokes | `source/ekaterina_guide.md:1979-1983`, `source/research/cultural_bonus.md` | Covered by recognition-only `cultural_bonus` cards | Do not add as core production content; only recognize if heard. |
 
 ## Priority order for remaining build-out
 
-1. Family health/baby-readiness questions only if Kadriya confirms they are welcome.
-2. New verb drills only for verbs already needed in live family/travel scenarios.
-3. Family-specific holiday/travel details only after Kadriya confirms wording.
+1. New verb drills only for verbs already needed in live family/travel scenarios.
+2. Family-specific holiday/travel details only after Kadriya confirms wording.
+3. Any new baby/health production lines only after Kadriya confirms wording and timing.
 
 ## Rules for adding each gap
 

@@ -313,6 +313,10 @@ ROLEPLAY_CRITERIA = {
         "label": "recognizes fast family check-ins",
         "error_type": "listening_misparse",
     },
+    "handles_sensitive_family": {
+        "label": "handles sensitive family and baby questions carefully",
+        "error_type": "register",
+    },
 }
 
 CONTRAST_SETS = [
@@ -692,6 +696,27 @@ SCENARIOS = [
         ],
         "success_criteria": [
             "recognizes_fast_checkins",
+            "uses_repair_lines",
+            "stays_in_russian",
+        ],
+    },
+    {
+        "id": "sensitive_family_health",
+        "setting": "Sensitive family health and baby-readiness check-in",
+        "goal": "Recognize family health and baby-readiness prompts from the original guide without overproducing.",
+        "required_items": [
+            "fami020",
+            "fami021",
+            "fami022",
+            "fami023",
+            "fami024",
+            "fami025",
+            "fami026",
+            "fami027",
+            "fami028",
+        ],
+        "success_criteria": [
+            "handles_sensitive_family",
             "uses_repair_lines",
             "stays_in_russian",
         ],
@@ -1477,6 +1502,93 @@ add(
     "I love your daughter",
     "the line that wins the table: [ya lyu-blyú vá-shu doch']",
     1,
+)
+add("family", "малы́ш", "baby / little one", "[ma-lýsh]", 3, recognize=True)
+add(
+    "family",
+    "Как себя́ чу́вствует Кадри́я?",
+    "How is Kadriya feeling?",
+    "[kak se-byá chúv-stvu-yet ka-drí-ya]",
+    2,
+    recognize=True,
+    rehearse=True,
+    note="Sensitive family-health question from the original guide; rehearse with Kadriya before using.",
+    tags=["family", "health", "baby", "sensitive"],
+)
+add(
+    "family",
+    "Она́ о́чень уста́ла.",
+    "She is very tired.",
+    "[a-ná ó-chen' u-stá-la]",
+    2,
+    recognize=True,
+    rehearse=True,
+    note="Sensitive family-health answer from the original guide; use only with Kadriya's approval.",
+    tags=["family", "health", "baby", "sensitive"],
+)
+add(
+    "family",
+    "Немно́го боли́т спина́.",
+    "Her back hurts a little.",
+    "[nem-nó-ga ba-lít spi-ná]",
+    3,
+    recognize=True,
+    rehearse=True,
+    note="Health detail from the original guide; recognition-first, not casual small talk.",
+    tags=["family", "health", "baby", "sensitive"],
+)
+add(
+    "family",
+    "Вы гото́вы к рожде́нию малы́ша?",
+    "Are you ready for the baby's birth?",
+    "[vy ga-tó-vy k razh-dyé-ni-yu ma-lý-sha]",
+    2,
+    recognize=True,
+    rehearse=True,
+    note="Personal baby-readiness question from the original guide; practice as recognition unless Kadriya confirms.",
+    tags=["family", "baby", "sensitive"],
+)
+add(
+    "family",
+    "Да, мы гото́вы.",
+    "Yes, we are ready.",
+    "[da, my ga-tó-vy]",
+    2,
+    rehearse=True,
+    note="Short answer to the baby-readiness prompt; rehearse with Kadriya.",
+    tags=["family", "baby", "sensitive"],
+)
+add(
+    "family",
+    "Ты возьмёшь о́тпуск?",
+    "Will you take leave?",
+    "[ty vaz'-myósh ót-pusk]",
+    2,
+    recognize=True,
+    rehearse=True,
+    note="Original-guide family leave question; recognition-first because plans may change.",
+    tags=["family", "baby", "work", "sensitive"],
+)
+add(
+    "family",
+    "Я не зна́ю, смогу́ ли я взять о́тпуск.",
+    "I don't know whether I will be able to take leave.",
+    "[ya ne zná-yu, sma-gú li ya vzyat' ót-pusk]",
+    2,
+    rehearse=True,
+    note="Original-guide answer about leave; use only if it is still true.",
+    tags=["family", "baby", "work", "sensitive"],
+)
+add(
+    "family",
+    "Когда́ у вас роди́тся ребёнок?",
+    "When will your child be born?",
+    "[kag-dá u vas ra-dí-tsa re-byó-nak]",
+    3,
+    recognize=True,
+    rehearse=True,
+    note="Original-guide baby question; may be time-sensitive, so practice as recognition.",
+    tags=["family", "baby", "sensitive"],
 )
 
 # --- FOOD ---
