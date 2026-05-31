@@ -963,6 +963,118 @@ def build_backtranslation_cards(items: list[dict]) -> list[dict]:
     return cards
 
 
+def lesson_boundary_snapshot(
+    curriculum: dict, items: list[dict], lesson_number: int
+) -> dict:
+    unlocked_lessons = [
+        lesson
+        for lesson in curriculum.get("lessons", [])
+        if lesson.get("lesson_number", 0) <= lesson_number
+    ]
+    return {
+        "lesson_ids": [lesson["lesson_id"] for lesson in unlocked_lessons],
+        "item_ids": [
+            item["id"]
+            for item in items
+            if item.get("lesson_number", 0) <= lesson_number
+        ],
+        "active_vocab": sorted(
+            set().union(
+                *(set(lesson.get("active_vocab", [])) for lesson in unlocked_lessons)
+            )
+        ),
+        "passive_vocab": sorted(
+            set().union(
+                *(set(lesson.get("passive_vocab", [])) for lesson in unlocked_lessons)
+            )
+        ),
+        "structures": sorted(
+            set().union(
+                *(
+                    set(lesson.get("introduced_structures", []))
+                    for lesson in unlocked_lessons
+                )
+            )
+        ),
+    }
+
+
+def build_tutor_cards(
+    scenarios: list[dict], items: list[dict], curriculum: dict, course: dict
+) -> list[dict]:
+    item_by_id = {item["id"]: item for item in items}
+    cards = []
+    correction_policy = [
+        "Minor error: recast briefly and continue the role-play.",
+        "Repeated error: give one short rule, then return to Russian practice.",
+        "High-stakes cultural, register, gender, or toast mistake: correct immediately.",
+        "Communication-breaking error: clarify in English, provide the verified model, then retry.",
+    ]
+    for scenario in scenarios:
+        required = [
+            item_by_id[item_id] for item_id in scenario.get("required_items", [])
+        ]
+        if not required:
+            continue
+        boundary = lesson_boundary_snapshot(
+            curriculum, items, scenario["lesson_number"]
+        )
+        required_phrase_lines = [
+            f"- {item['ru_plain']} — {item['en']}" for item in required
+        ]
+        error_types = sorted(
+            set().union(
+                *(set(item.get("allowed_error_types", [])) for item in required)
+            )
+            | {"forgot_phrase", "register", "cultural_usage"}
+        )
+        prompt = "\n".join(
+            [
+                f"You are the AI tutor for {course['title']}.",
+                f"Scenario: {scenario['setting']} — {scenario['goal']}",
+                f"Curriculum boundary: Lesson {scenario['lesson_number']} only. Do not introduce Russian outside the unlocked vocabulary, structures, or verified phrases.",
+                "Use short, warm Russian turns. Keep Joe speaking. Avoid long grammar lectures.",
+                "Verified target phrases for this scenario:",
+                *required_phrase_lines,
+                "Correction policy:",
+                *[f"- {rule}" for rule in correction_policy],
+                "If you need a word outside the lesson boundary, say it in English and guide Joe back to one of the verified phrases.",
+            ]
+        )
+        cards.append(
+            {
+                "id": f"tutor_{scenario['id']}",
+                "scenario_id": scenario["id"],
+                "lesson_id": scenario["lesson_id"],
+                "lesson_number": scenario["lesson_number"],
+                "setting": scenario["setting"],
+                "goal": scenario["goal"],
+                "learner_role": "guest",
+                "tutor_role": "host family member",
+                "required_items": scenario.get("required_items", []),
+                "required_phrases": [
+                    {
+                        "id": item["id"],
+                        "ru": item["ru"],
+                        "ru_plain": item["ru_plain"],
+                        "en": item["en"],
+                    }
+                    for item in required
+                ],
+                "success_criteria": scenario.get("success_criteria", []),
+                "allowed_lesson_ids": boundary["lesson_ids"],
+                "allowed_item_ids": boundary["item_ids"],
+                "active_vocab": boundary["active_vocab"],
+                "passive_vocab": boundary["passive_vocab"],
+                "structures": boundary["structures"],
+                "allowed_error_types": error_types,
+                "correction_policy": correction_policy,
+                "prompt": prompt,
+            }
+        )
+    return cards
+
+
 def build():
     course = load_course(os.environ.get("ZASTOLOM_COURSE", DEFAULT_COURSE_ID))
     mod_index = {m[0]: idx for idx, m in enumerate(MODULES)}
@@ -1046,6 +1158,7 @@ def build():
     cloze_cards = build_cloze_cards(items)
     dictation_cards = build_dictation_cards(items)
     backtranslation_cards = build_backtranslation_cards(items)
+    tutor_cards = build_tutor_cards(scenarios, items, curriculum, course)
     data = {
         "course": course,
         "meta": {
@@ -1064,6 +1177,7 @@ def build():
         "cloze_cards": cloze_cards,
         "dictation_cards": dictation_cards,
         "backtranslation_cards": backtranslation_cards,
+        "tutor_cards": tutor_cards,
         "error_types": ERROR_TYPES,
         "contrast_sets": CONTRAST_SETS,
         "scenarios": scenarios,

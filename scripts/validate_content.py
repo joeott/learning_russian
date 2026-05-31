@@ -295,6 +295,85 @@ def validate_content(data: dict) -> list[str]:
                     errors,
                     f"scenario {scenario.get('id')}: item {item_id} outside lesson boundary",
                 )
+    scenario_by_id = {
+        scenario.get("id"): scenario for scenario in data.get("scenarios", [])
+    }
+    for card in data.get("tutor_cards", []):
+        card_id = card.get("id", "")
+        scenario = scenario_by_id.get(card.get("scenario_id"))
+        if not scenario:
+            fail(errors, f"{card_id}: unknown scenario_id {card.get('scenario_id')}")
+            continue
+        if card.get("lesson_id") != scenario.get("lesson_id"):
+            fail(errors, f"{card_id}: lesson_id does not match scenario")
+        if card.get("lesson_number") != scenario.get("lesson_number"):
+            fail(errors, f"{card_id}: lesson_number does not match scenario")
+        if set(card.get("required_items", [])) != set(
+            scenario.get("required_items", [])
+        ):
+            fail(errors, f"{card_id}: required_items do not match scenario")
+        try:
+            boundary = lesson_boundary(data, card.get("lesson_id"))
+            locked_items = set(card.get("allowed_item_ids", [])) - boundary["item_ids"]
+            if locked_items:
+                fail(
+                    errors,
+                    f"{card_id}: allowed_item_ids outside lesson boundary: {sorted(locked_items)[:8]}",
+                )
+            missing_required = set(card.get("required_items", [])) - set(
+                card.get("allowed_item_ids", [])
+            )
+            if missing_required:
+                fail(
+                    errors,
+                    f"{card_id}: required items missing from allowed_item_ids: {sorted(missing_required)}",
+                )
+            locked_vocab = (
+                set(card.get("active_vocab", []))
+                - boundary["active_vocab"]
+                - boundary["passive_vocab"]
+            )
+            if locked_vocab:
+                fail(
+                    errors,
+                    f"{card_id}: active_vocab outside lesson boundary: {sorted(locked_vocab)[:8]}",
+                )
+            locked_structures = set(card.get("structures", [])) - boundary["structures"]
+            if locked_structures:
+                fail(
+                    errors,
+                    f"{card_id}: structures outside lesson boundary: {sorted(locked_structures)}",
+                )
+        except KeyError as exc:
+            fail(errors, f"{card_id}: {exc}")
+        phrase_ids = {phrase.get("id") for phrase in card.get("required_phrases", [])}
+        if phrase_ids != set(card.get("required_items", [])):
+            fail(errors, f"{card_id}: required_phrases must mirror required_items")
+        for phrase in card.get("required_phrases", []):
+            source = item_by_id.get(phrase.get("id"))
+            if not source:
+                fail(errors, f"{card_id}: unknown required phrase {phrase.get('id')}")
+                continue
+            if phrase.get("ru_plain") != source.get("ru_plain"):
+                fail(errors, f"{card_id}: required phrase ru_plain mismatch")
+            if source.get("ru_plain") not in card.get("prompt", ""):
+                fail(
+                    errors,
+                    f"{card_id}: prompt missing verified phrase {source.get('id')}",
+                )
+        for rule in (
+            "Minor error",
+            "Repeated error",
+            "High-stakes",
+            "Communication-breaking",
+        ):
+            if rule not in "\n".join(card.get("correction_policy", [])):
+                fail(errors, f"{card_id}: correction policy missing {rule}")
+        if "Do not introduce Russian outside" not in card.get("prompt", ""):
+            fail(errors, f"{card_id}: prompt missing lesson-boundary guardrail")
+        for error_type in card.get("allowed_error_types", []):
+            if error_type not in error_types:
+                fail(errors, f"{card_id}: unknown allowed_error_type {error_type}")
     for contrast in data.get("contrast_sets", []):
         if contrast.get("risk") == "high" and not contrast.get("usage_note"):
             fail(errors, f"contrast {contrast.get('id')}: high risk needs usage_note")

@@ -98,6 +98,29 @@
         ]
       }
     },
+    "tutor_cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "scenario_id",
+          "lesson_id",
+          "lesson_number",
+          "setting",
+          "goal",
+          "required_items",
+          "required_phrases",
+          "allowed_lesson_ids",
+          "allowed_item_ids",
+          "active_vocab",
+          "structures",
+          "allowed_error_types",
+          "correction_policy",
+          "prompt"
+        ]
+      }
+    },
     "error_types": { "type": "array" },
     "contrast_sets": { "type": "array" },
     "scenarios": { "type": "array" }

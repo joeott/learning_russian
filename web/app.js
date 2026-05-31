@@ -13,6 +13,7 @@
   const CLOZE_CARDS = DATA.cloze_cards || [];
   const DICTATION_CARDS = DATA.dictation_cards || [];
   const BACKTRANSLATION_CARDS = DATA.backtranslation_cards || [];
+  const TUTOR_CARDS = DATA.tutor_cards || [];
   const MODULES = DATA.modules;
   const CURRICULUM = DATA.curriculum || {};
   const LESSONS = (CURRICULUM.lessons || []).slice().sort((a, b) => a.lesson_number - b.lesson_number);
@@ -22,6 +23,7 @@
   const ERROR_TYPES = DATA.error_types || [];
   const ERROR_BY_ID = Object.fromEntries(ERROR_TYPES.map(e => [e.id, e]));
   const SCENARIOS = DATA.scenarios || [];
+  const TUTOR_BY_SCENARIO = Object.fromEntries(TUTOR_CARDS.map(c => [c.scenario_id, c]));
   const STAGE_KEYS = ["recognition", "recall", "produce", "listen", "roleplay"];
   const LEGACY_STAGE = { production: "produce", listening: "listen" };
   const CRITERIA_LABELS = {
@@ -180,6 +182,10 @@
   }
   function scenarioForItem(id) {
     return SCENARIOS.find(s => (s.required_items || []).includes(id));
+  }
+  function tutorCardForItem(id) {
+    const s = scenarioForItem(id);
+    return s ? TUTOR_BY_SCENARIO[s.id] : null;
   }
   function criterionLabel(id) {
     return CRITERIA_LABELS[id] || id.replace(/_/g, " ");
@@ -554,7 +560,11 @@
         <div class="options">${opts.map(o => `<button class="opt" onclick="ZS.answer('${o.id}','${it.id}',this)">${escapeHtml(o.en)}</button>`).join("")}</div>`;
     } else { // roleplay
       promptHtml = `<div class="q-instr">${stage.instr}</div>${scenarioCard(it)}<div class="q-en">${escapeHtml(it.en)}</div>`;
-      body = `<div style="text-align:center"><button class="btn" onclick="ZS.revealRP('${it.id}')">Reveal model answer</button></div><div id="rpReveal"></div>`;
+      const tutor = tutorCardForItem(it.id);
+      body = `<div style="text-align:center;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        ${tutor ? `<button class="btn btn--red" onclick="ZS.openTutor('${it.id}')">Tutor setup</button>` : ""}
+        <button class="btn" onclick="ZS.revealRP('${it.id}')">Reveal model answer</button>
+      </div><div id="tutorPanel"></div><div id="rpReveal"></div>`;
     }
 
     $("#view").innerHTML = `
@@ -876,6 +886,42 @@
           <button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.rateRP('${id}',false,false)">😬 Needs work</button>
         </div></div>`;
       speak(it);
+    },
+    openTutor(id) {
+      const it = ITEMS.find(i => i.id === id);
+      const card = tutorCardForItem(id);
+      if (!it || !card) return;
+      const r = rec(id);
+      r.tutor_prompt_opens = (r.tutor_prompt_opens || 0) + 1;
+      r.last_seen_at = new Date().toISOString();
+      save();
+      const phrases = (card.required_phrases || []).map(p => `<li><span class="phrase-ru">${colorStress(p.ru)}</span><span>${escapeHtml(p.en)}</span></li>`).join("");
+      $("#tutorPanel").innerHTML = `<div class="tutorbox feedback good rise">
+        <div class="tutorbox__head">
+          <div>
+            <div class="tutorbox__eyebrow">Lesson-constrained AI tutor</div>
+            <h3>${escapeHtml(card.setting)} · Lesson ${card.lesson_number}</h3>
+          </div>
+          <button class="btn btn--sm" onclick="ZS.copyTutorPrompt()">Copy prompt</button>
+        </div>
+        <p>${escapeHtml(card.goal)}</p>
+        <ul class="tutorbox__phrases">${phrases}</ul>
+        <textarea id="tutorPromptText" readonly>${escapeHtml(card.prompt)}</textarea>
+      </div>`;
+      $("#tutorPanel").scrollIntoView({ behavior: "smooth", block: "nearest" });
+    },
+    async copyTutorPrompt() {
+      const el = $("#tutorPromptText");
+      if (!el) return;
+      try {
+        await navigator.clipboard.writeText(el.value);
+        toast("Tutor prompt copied");
+      } catch (e) {
+        el.focus();
+        el.select();
+        document.execCommand("copy");
+        toast("Tutor prompt selected");
+      }
     },
     rateRP(id, ok, assisted) {
       const it = ITEMS.find(i => i.id === id);

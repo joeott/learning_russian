@@ -277,6 +277,19 @@ body {
 .selfrate .btn { flex: 0 1 auto; }
 .errorpick { display:flex; align-items:center; flex-wrap:wrap; gap: 8px; margin-top: 12px; }
 .errorpick span { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.06em; font-size:.72rem; color: var(--ink-soft); }
+.tutorbox { margin-top: 14px; }
+.tutorbox__head { display:flex; align-items:flex-start; justify-content:space-between; gap: 12px; margin-bottom: 8px; }
+.tutorbox__eyebrow { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; color: var(--red); }
+.tutorbox h3 { margin: 0; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .04em; font-size: 1.05rem; }
+.tutorbox p { margin: 6px 0 10px; color: var(--ink-soft); }
+.tutorbox__phrases { display:grid; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
+.tutorbox__phrases li { display:grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; padding: 7px 9px; border:1px solid var(--cream-line); background: rgba(243,233,210,.45); }
+.phrase-ru { font-family: var(--font-serif); font-weight: 700; }
+.phrase-ru .stress { color: var(--red); }
+.tutorbox textarea {
+  width: 100%; min-height: 190px; resize: vertical; border:2px solid var(--ink); border-radius: var(--radius);
+  background: var(--paper); color: var(--ink); padding: 10px 12px; font: .9rem/1.45 var(--font-body);
+}
 
 /* ---------- Plan / generic prose ---------- */
 .prose { max-width: 760px; }
@@ -355,6 +368,8 @@ body {
   }
   .mastery .ring { min-width: 0; }
   .lessonlock { grid-template-columns: 1fr; }
+  .tutorbox__head { display:grid; }
+  .tutorbox__phrases li { grid-template-columns: 1fr; }
   .offlinebox { grid-template-columns: 1fr; }
   .offlinebox__actions { justify-content:flex-start; }
 }
