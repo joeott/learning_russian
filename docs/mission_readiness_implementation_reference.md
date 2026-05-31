@@ -15,6 +15,7 @@ generalization.
 1. **Scenario coverage first**
    - Ensure all protocol scenarios stay represented as structured `SCENARIOS` entries.
    - Keep required items, success criteria, and lesson boundaries present for each.
+   - Use `docs/original_guide_coverage.md` to choose the next missing original-guide lane.
 2. **Small, high-impact fixes only**
    - No generalization work unless it directly improves a June 15 use-case.
 3. **Preflight every patch**
@@ -25,7 +26,7 @@ generalization.
      cache core/P1 audio, reboot with airplane mode, open at least one drill, and run one scenario.
 5. **Manual source capture only when it converts directly**
    - Keep source scouting for spoken material when it creates immediate dinner-readiness drills:
-     `tools/zastolom future-loop --spoken --run --limit 3 --write-canvas`
+     `tools/zastolom future-loop --spoken --easy --run --limit 3 --write-canvas`
    - Prefer clips/passages that map straight to role-play recovery or stress drills.
 
 ## Key files touched
@@ -35,6 +36,7 @@ generalization.
 - `tools/zastolom` (preflight + flow flags)
 - `scripts/browser_flow_check.mjs` (offline-flow preflight)
 - `tutor/roleplay_protocol.md` (scenario reference)
+- `docs/original_guide_coverage.md` (original-guide gap map)
 
 ## Repeatable improvement loop
 
