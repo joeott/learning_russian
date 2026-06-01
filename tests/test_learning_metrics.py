@@ -100,6 +100,30 @@ class LearningMetricsTests(unittest.TestCase):
         self.assertGreaterEqual(out["confidence"], 0)
         self.assertLessEqual(out["confidence"], 4)
 
+    def test_cefr_calibration_and_recommendation_sorting(self) -> None:
+        out = self.run_node(
+            """
+            const m = require('./scripts/learning_metrics.cjs');
+            const band = m.proficiencyBand(1500);
+            const calibration = m.calibration({ difficulty: 1710, attempts: 12 });
+            const rescue = m.recommendationSortKey({ expected_success: 0.42, lapses: 1, attempts: 3, difficulty: 1700 });
+            const growth = m.recommendationSortKey({ expected_success: 0.68, lapses: 0, attempts: 6, difficulty: 1650 });
+            console.log(JSON.stringify({
+              band,
+              calibration,
+              challenge: m.challengeScore(0.68),
+              rescueFirst: rescue[0] < growth[0],
+              labels: m.CEFR_BANDS.map(row => row.level)
+            }));
+            """
+        )
+        self.assertEqual(out["band"]["level"], "A1")
+        self.assertEqual(out["calibration"]["cefr"], "A2")
+        self.assertEqual(out["calibration"]["evidence"], "medium")
+        self.assertGreater(out["challenge"], 0.99)
+        self.assertTrue(out["rescueFirst"])
+        self.assertIn("B1", out["labels"])
+
 
 if __name__ == "__main__":
     unittest.main()

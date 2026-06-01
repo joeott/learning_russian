@@ -13,6 +13,18 @@
   const STRUCTURE_PREFIX = "structure:";
   const STAGE_PREFIX = "stage:";
   const MISSION_PREFIX = "mission:";
+  const TARGET_MID = (TARGET_LOW + TARGET_HIGH) / 2;
+
+  const CEFR_BANDS = [
+    { level: "Pre-A1", min: MIN_RATING, max: 1375, actfl: "Novice Low", descriptor: "memorized words and rehearsed chunks" },
+    { level: "A1", min: 1375, max: 1550, actfl: "Novice Mid", descriptor: "familiar phrases in predictable exchanges" },
+    { level: "A1+", min: 1550, max: 1650, actfl: "Novice High", descriptor: "short answers with repair support" },
+    { level: "A2", min: 1650, max: 1775, actfl: "Intermediate Low", descriptor: "simple exchanges on familiar topics" },
+    { level: "A2+", min: 1775, max: 1900, actfl: "Intermediate Mid", descriptor: "connected routine conversation" },
+    { level: "B1", min: 1900, max: 2050, actfl: "Intermediate High", descriptor: "handles complications in familiar situations" },
+    { level: "B1+", min: 2050, max: 2200, actfl: "Advanced Low", descriptor: "sustained narration and explanation" },
+    { level: "B2", min: 2200, max: MAX_RATING + 1, actfl: "Advanced Mid", descriptor: "extended interaction with control" },
+  ];
 
   const STAGE_WEIGHT = {
     recognition: 0.75,
@@ -84,6 +96,48 @@
 
   function confidence(attempts) {
     return clamp((attempts || 0) / 30, 0, 1);
+  }
+
+  function proficiencyBand(rating) {
+    const value = clamp(Number(rating) || DEFAULT_RATING, MIN_RATING, MAX_RATING);
+    return CEFR_BANDS.find(row => value >= row.min && value < row.max) || CEFR_BANDS[1];
+  }
+
+  function evidenceLevel(attempts) {
+    const n = attempts || 0;
+    if (n >= 30) return "high";
+    if (n >= 12) return "medium";
+    if (n >= 4) return "low";
+    return "thin";
+  }
+
+  function calibration(row) {
+    const attempts = Number(row && row.attempts || 0);
+    const difficulty = Number(row && row.difficulty || row && row.rating || DEFAULT_RATING);
+    const band = proficiencyBand(difficulty);
+    return {
+      cefr: band.level,
+      actfl: band.actfl,
+      descriptor: band.descriptor,
+      evidence: evidenceLevel(attempts),
+      confidence: confidence(attempts),
+    };
+  }
+
+  function challengeScore(expected) {
+    const value = Number(expected);
+    if (!Number.isFinite(value) || value <= 0) return 0;
+    return clamp(1 - Math.abs(value - TARGET_MID) / TARGET_MID, 0, 1);
+  }
+
+  function recommendationSortKey(row) {
+    const expected = Number(row && row.expected_success || row && row.last_expected_success || 0);
+    const bucketId = bucket(expected);
+    const bucketRank = { rescue: 0, "n+1": 1, consolidate: 2, too_easy: 3 }[bucketId] ?? 4;
+    const lapses = Number(row && row.lapses || 0);
+    const attempts = Number(row && row.attempts || 0);
+    const difficulty = Number(row && row.difficulty || DEFAULT_RATING);
+    return [bucketRank, -lapses, -challengeScore(expected), attempts, -difficulty];
   }
 
   function targetLatency(stageKey) {
@@ -194,13 +248,19 @@
       return n + (Number.isFinite(value) ? value : 0);
     }, 0) / rows.length : 0;
     const missionRows = [get(MISSION_PREFIX + "core"), get(MISSION_PREFIX + "listening"), get(MISSION_PREFIX + "production")];
+    const missionRating = avg(missionRows);
+    const grammarRating = avg(grammarRows);
     const bottlenecks = Object.values(skills)
       .filter(row => (row.attempts || 0) >= 2)
       .sort((a, b) => (a.rating || DEFAULT_RATING) - (b.rating || DEFAULT_RATING))
       .slice(0, 5);
     return {
-      missionAbility: Math.round(avg(missionRows)),
-      grammarControl: Math.round(avg(grammarRows)),
+      missionAbility: Math.round(missionRating),
+      missionCefr: proficiencyBand(missionRating).level,
+      missionActfl: proficiencyBand(missionRating).actfl,
+      grammarControl: Math.round(grammarRating),
+      grammarCefr: proficiencyBand(grammarRating).level,
+      grammarActfl: proficiencyBand(grammarRating).actfl,
       listeningDiscrimination: Math.round(get(MISSION_PREFIX + "listening").rating || DEFAULT_RATING),
       productionControl: Math.round(get(MISSION_PREFIX + "production").rating || DEFAULT_RATING),
       confidence: Math.round(avgConfidence(missionRows) * 100),
@@ -215,15 +275,21 @@
     STRUCTURE_PREFIX,
     STAGE_PREFIX,
     MISSION_PREFIX,
+    CEFR_BANDS,
     baseDifficulty,
     bucket,
     bucketLabel,
+    calibration,
+    challengeScore,
     confidence,
     emptyRatings,
+    evidenceLevel,
     eventSkillKeys,
     expectedSuccess,
     metricSnapshot,
     outcomeScore,
+    proficiencyBand,
+    recommendationSortKey,
     stageWeight,
     targetLatency,
     updateDifficulty,

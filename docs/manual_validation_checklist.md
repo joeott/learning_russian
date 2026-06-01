@@ -73,8 +73,8 @@ open http://localhost:8000/web/#/learn
 - [ ] During live roleplay, confirm the timer/cost/turn meter updates and `Finish & get feedback` clearly ends the conversation before debrief.
 - [ ] Click a live transcript row and confirm English translation appears without exposing `OPENAI_API_KEY`.
 - [ ] In DevTools, set `localStorage.setItem("zastolom.russian_family_visit.v2.sync_api", "http://127.0.0.1:8787")`, reload, complete a card, and confirm `/api/learning/state?learner_id=joe` returns the event-backed state.
-- [ ] Confirm `/api/learning/metrics?learner_id=joe` returns `missionAbility`, `grammarControl`, `nPlusOneFit`, and rating rows.
-- [ ] Confirm `/api/learning/recommendations?learner_id=joe&limit=20` returns item/stage recommendations with `rescue`, `n+1`, `consolidate`, or `too_easy` buckets.
+- [ ] Confirm `/api/learning/metrics?learner_id=joe` returns `missionAbility`, `missionCefr`, `grammarControl`, `grammarCefr`, `nPlusOneFit`, and rating rows.
+- [ ] Confirm `/api/learning/recommendations?learner_id=joe&limit=20` returns item/stage recommendations with `rescue`, `n+1`, `consolidate`, or `too_easy` buckets plus `cefr`, `evidence`, and `challenge_score`.
 - [ ] Confirm no microphone recordings, base64 audio payloads, or sonograph buffers are persisted to Postgres; only transcript/score/verdict metadata appears under `speech_eval`.
 - [ ] After a live roleplay `Finish & get feedback`, confirm `roleplay_conversation_passes` has one row for the event with transcript text, met/missed criteria, `stage_complete`, `n_plus_one_ready`, `estimated_cost_usd`, `duration_ms`, and `ended_reason` fields populated.
 
@@ -82,7 +82,7 @@ open http://localhost:8000/web/#/learn
 
 - [ ] Open `#/learn`, then set the browser offline.
 - [ ] Reload and confirm the app shell, content, audio manifest, and existing progress still load.
-- [ ] Confirm the service worker reports `zastolom-v8` and fetches app JS/CSS/content network-first so stale versions are replaced after restart.
+- [ ] Confirm the service worker reports `zastolom-v9` and fetches app JS/CSS/content network-first so stale versions are replaced after restart.
 - [ ] Confirm install prompt/PWA installability is available in Chrome.
 
 ## Content And Study Coverage

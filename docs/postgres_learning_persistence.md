@@ -130,6 +130,29 @@ The target growth band is `0.58–0.78` predicted success. The app treats that a
 the operational version of `n+1`: still mostly comprehensible, but just above
 the learner's current automatic control.
 
+Difficulty labels are internal estimates mapped onto familiar CEFR/ACTFL
+vocabulary. They are calibrated from the Elo-style item/stage difficulty and
+the amount of evidence collected so far:
+
+- `cefr` / `actfl`: approximate band labels such as `A1`, `A2`, or
+  `Novice High`
+- `evidence`: `thin`, `low`, `medium`, or `high`, based on attempt count
+- `challenge_score`: closeness to the 68% target point inside the n+1 band
+
+These labels are for conditioning practice and ranking questions by difficulty;
+they are not official proficiency certifications. The calibration is grounded
+in CEFR's can-do level vocabulary, ACTFL's speaking proficiency categories, and
+standard Elo/IRT-style adaptive-practice logic.
+
+Reference sources:
+
+- Council of Europe, CEFR level descriptions:
+  https://www.coe.int/en/web/common-european-framework-reference-languages/level-descriptions
+- ACTFL Proficiency Guidelines:
+  https://www.actfl.org/educator-resources/actfl-proficiency-guidelines
+- Elo-style / IRT adaptive practice background:
+  https://educationaldatamining.org/EDM2011/wp-content/uploads/proc/edm2011_paper8_full_Klinkenberg.pdf
+
 ## Active analysis engine
 
 The browser keeps a local analysis engine active while the app is open. It runs
@@ -151,7 +174,9 @@ The published metrics are internal learning signals, not official CEFR/ACTFL
 certifications:
 
 - `missionAbility`: weighted ability across mission-critical structures
+- `missionCefr` / `missionActfl`: approximate external-reference labels
 - `grammarControl`: rating across grammar and verb structures
+- `grammarCefr` / `grammarActfl`: approximate external-reference labels
 - `listeningDiscrimination`: listening/dictation ability
 - `productionControl`: produce/back-translate/role-play ability
 - `nPlusOneFit`: share of recent attempts in the target growth band

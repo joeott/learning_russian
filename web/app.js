@@ -657,10 +657,16 @@
       const st = stageState(it.id, stageKey);
       const adaptive = adaptiveItemState(it.id, stageKey);
       const due = isDue(st);
-      const bucketRank = { rescue: 0, "n+1": 1, consolidate: 2, too_easy: 3 }[adaptive.bucket] || 4;
       const dueRank = due ? 0 : 1;
       const priority = it.priority || adaptive.meta.priority || 3;
-      return { item: it, stageKey, st, adaptive, due, sort: [dueRank, bucketRank, priority, Math.abs(adaptive.expected - 0.68)] };
+      const evidence = METRICS.calibration({ attempts: adaptive.item.attempts, difficulty: adaptive.difficulty });
+      const sort = [dueRank].concat(METRICS.recommendationSortKey({
+        expected_success: adaptive.expected,
+        lapses: adaptive.item.lapses,
+        attempts: adaptive.item.attempts,
+        difficulty: adaptive.difficulty,
+      }), [priority]);
+      return { item: it, stageKey, st, adaptive, due, evidence, sort };
     }));
     return rows.sort((a, b) => {
       for (let i = 0; i < a.sort.length; i++) if (a.sort[i] !== b.sort[i]) return a.sort[i] - b.sort[i];
@@ -671,10 +677,10 @@
     const recs = adaptiveRecommendations(4);
     const bottleneck = stats.bottlenecks && stats.bottlenecks.length ? skillLabel(stats.bottlenecks[0].skill_key) : "not enough attempts yet";
     return `<div class="analyticsbox rise adaptivebox">
-      <div><h3>Adaptive progress model</h3><p>Elo-style ability and item difficulty estimates choose practice in the n+1 band: hard enough to grow, not so hard it collapses.</p></div>
+      <div><h3>Adaptive progress model</h3><p>Elo-style ability and item difficulty estimates choose practice in the n+1 band. CEFR/ACTFL labels are internal estimates, not certifications.</p></div>
       <div class="analyticsgrid">
-        <div><strong>${stats.missionAbility}</strong><span>mission ability</span></div>
-        <div><strong>${stats.grammarControl}</strong><span>grammar control</span></div>
+        <div><strong>${stats.missionAbility}</strong><span>mission ability · ${escapeHtml(stats.missionCefr || "A1")}</span></div>
+        <div><strong>${stats.grammarControl}</strong><span>grammar control · ${escapeHtml(stats.grammarCefr || "A1")}</span></div>
         <div><strong>${stats.nPlusOneFit}<small>%</small></strong><span>n+1 fit</span></div>
         <div><strong>${stats.frictionIndex}<small>%</small></strong><span>friction index</span></div>
         <div><strong>${stats.listeningDiscrimination}</strong><span>listening rating</span></div>
@@ -682,7 +688,7 @@
       </div>
       <div class="adaptivebox__next">
         <strong>Current bottleneck:</strong> ${escapeHtml(bottleneck)}
-        ${recs.length ? `<div class="adaptivequeue">${recs.map(row => `<button onclick="location.hash='#/quiz/${row.stageKey}'"><span>${escapeHtml(METRICS.bucketLabel(row.adaptive.bucket))} · ${Math.round(row.adaptive.expected * 100)}%</span>${escapeHtml(row.item.en || row.item.title || row.item.id)}</button>`).join("")}</div>` : ""}
+        ${recs.length ? `<div class="adaptivequeue">${recs.map(row => `<button onclick="location.hash='#/quiz/${row.stageKey}'"><span>${escapeHtml(METRICS.bucketLabel(row.adaptive.bucket))} · ${Math.round(row.adaptive.expected * 100)}% · ${escapeHtml(row.evidence.cefr)} · ${escapeHtml(row.evidence.evidence)} evidence</span>${escapeHtml(row.item.en || row.item.title || row.item.id)}</button>`).join("")}</div>` : ""}
       </div>
     </div>`;
   }
@@ -722,7 +728,11 @@
         label: next.item.en || next.item.title || next.item.id,
         bucket: next.adaptive.bucket,
         expected_success: Math.round(next.adaptive.expected * 100),
-        reason: next.due ? "due adaptive review" : "best n+1 fit inside current lesson lock",
+        challenge_score: METRICS ? METRICS.challengeScore(next.adaptive.expected) : 0,
+        cefr: next.evidence.cefr,
+        evidence: next.evidence.evidence,
+        difficulty: Math.round(next.adaptive.difficulty),
+        reason: next.due ? "due adaptive review" : "best evidence-weighted n+1 fit inside current practice scope",
       } : null,
     };
     saveAnalysisState();
@@ -753,7 +763,7 @@
       </div>
       <div class="analysisengine__next">
         <strong>Next action:</strong>
-        ${action ? `<button onclick="location.hash='#/quiz/${escapeHtml(action.stage_key)}'"><span>${escapeHtml(action.bucket)} · ${action.expected_success}%</span>${escapeHtml(action.stage_key)}: ${escapeHtml(action.label)}</button>` : "collect the first attempt"}
+        ${action ? `<button onclick="location.hash='#/quiz/${escapeHtml(action.stage_key)}'"><span>${escapeHtml(action.bucket)} · ${action.expected_success}% · ${escapeHtml(action.cefr || "A1")} · ${escapeHtml(action.evidence || "thin")} evidence</span>${escapeHtml(action.stage_key)}: ${escapeHtml(action.label)}</button>` : "collect the first attempt"}
       </div>
       <div class="analysisengine__flags">${(state.flags || []).map(flag => `<span>${escapeHtml(flag)}</span>`).join("")}</div>
     </div>`;
@@ -1090,10 +1100,12 @@
       const row = adaptiveRatings.skills && adaptiveRatings.skills[key];
       return sum + (row ? row.rating : METRICS.DEFAULT_RATING);
     }, 0) / skillKeys.length : (METRICS ? METRICS.DEFAULT_RATING : 1500);
-    const difficulty = itemRating ? itemRating.difficulty : (METRICS ? METRICS.baseDifficulty(stageKey, meta.priority) : 1500);
+    const defaultDifficulty = METRICS ? METRICS.baseDifficulty(stageKey, meta.priority) : 1500;
+    const difficulty = itemRating ? itemRating.difficulty : defaultDifficulty;
     const expected = METRICS ? METRICS.expectedSuccess(ability, difficulty) : 0.5;
     const bucket = METRICS ? METRICS.bucket(expected) : "n+1";
-    return { meta, itemKey, skillKeys, ability, difficulty, expected, bucket };
+    const item = itemRating || { difficulty: defaultDifficulty, attempts: 0, lapses: 0, last_expected_success: expected };
+    return { meta, itemKey, skillKeys, ability, difficulty, expected, bucket, item };
   }
   function applyAdaptiveAttempt(id, stageKey, ok, opts, latencyMs) {
     if (!METRICS) return null;

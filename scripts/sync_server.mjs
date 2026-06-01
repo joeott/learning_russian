@@ -319,6 +319,28 @@ function metricRollup(ratings, recentAttempts) {
   });
 }
 
+function ratedItemDto(row) {
+  const expected = Number(row.last_expected_success || row.expected_success || 0);
+  const difficulty = Number(row.difficulty);
+  const attempts = Number(row.attempts || 0);
+  const calibration = METRICS.calibration({ difficulty, attempts });
+  return {
+    item_id: row.item_id,
+    stage_key: row.stage_key,
+    difficulty,
+    cefr: calibration.cefr,
+    actfl: calibration.actfl,
+    evidence: calibration.evidence,
+    confidence: calibration.confidence,
+    attempts,
+    lapses: Number(row.lapses || 0),
+    expected_success: expected,
+    challenge_score: METRICS.challengeScore(expected),
+    bucket: METRICS.bucket(expected),
+    updated_at: row.updated_at,
+  };
+}
+
 async function processAttemptRatings(learnerId, events) {
   if (!events.length) return { processed: 0 };
   const client = await pool.connect();
@@ -586,7 +608,7 @@ async function metrics(req, res) {
       learner_id: learnerId,
       metrics: rollup,
       skills: Object.values(ratings.skills || {}).sort((a, b) => a.rating - b.rating).slice(0, 50),
-      items: Object.values(ratings.items || {}).sort((a, b) => b.difficulty - a.difficulty).slice(0, 50),
+      items: Object.values(ratings.items || {}).sort((a, b) => b.difficulty - a.difficulty).slice(0, 50).map(ratedItemDto),
     });
   } finally {
     client.release();
@@ -613,18 +635,15 @@ async function recommendations(req, res) {
      LIMIT $2`,
     [learnerId, limit]
   );
+  const recommendations = rows.rows.map(ratedItemDto).sort((a, b) => {
+    const as = METRICS.recommendationSortKey(a);
+    const bs = METRICS.recommendationSortKey(b);
+    for (let i = 0; i < as.length; i++) if (as[i] !== bs[i]) return as[i] - bs[i];
+    return a.item_id.localeCompare(b.item_id);
+  });
   json(res, 200, {
     learner_id: learnerId,
-    recommendations: rows.rows.map(row => ({
-      item_id: row.item_id,
-      stage_key: row.stage_key,
-      difficulty: Number(row.difficulty),
-      attempts: Number(row.attempts || 0),
-      lapses: Number(row.lapses || 0),
-      expected_success: Number(row.last_expected_success || 0),
-      bucket: METRICS.bucket(Number(row.last_expected_success || 0)),
-      updated_at: row.updated_at,
-    })),
+    recommendations,
   });
 }
 

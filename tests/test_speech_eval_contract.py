@@ -183,7 +183,7 @@ class SpeechEvalContractTests(unittest.TestCase):
             "convfilters",
             "n_plus_one",
             "NETWORK_FIRST",
-            "zastolom-v8",
+            "zastolom-v9",
         ):
             self.assertIn(token, self.app + styles + index + service_worker)
 

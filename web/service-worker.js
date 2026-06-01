@@ -1,5 +1,5 @@
 /* За столо́м — offline app shell cache */
-const CACHE = "zastolom-v8";
+const CACHE = "zastolom-v9";
 const ASSETS = [
   "./",
   "./index.html",
