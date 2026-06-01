@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "browser": "node scripts/browser_controller.mjs",
-    "check:js": "node --check web/app.js && node --check web/learning_metrics.js && node --check scripts/learning_metrics.cjs && node --check web/service-worker.js && node --check scripts/browser_controller.mjs && node --check scripts/browser_flow_check.mjs && node --check scripts/sync_server.mjs && node --check scripts/db_migrate.mjs",
+    "check:js": "node --check web/app.js && node --check web/learning_metrics.js && node --check scripts/learning_metrics.cjs && node --check web/service-worker.js && node --check scripts/browser_controller.mjs && node --check scripts/browser_flow_check.mjs && node --check scripts/sync_server.mjs && node --check scripts/db_migrate.mjs && node --check scripts/secrets.mjs && node --check scripts/speech_eval.mjs && node --check scripts/speech_transcription.mjs",
     "db:migrate": "node scripts/db_migrate.mjs",
     "sync:serve": "node scripts/sync_server.mjs"
   },

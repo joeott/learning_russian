@@ -29,6 +29,7 @@ open http://localhost:8000/web/#/learn
 - [ ] Confirm the selected speed survives a page reload.
 - [ ] On a core verb card, click `Conjugate` and confirm the conjugation panel opens and closes.
 - [ ] Click `Record`, allow microphone permission, say the phrase, click `Stop`, then `Play mine`.
+- [ ] With the sync server configured, click `Analyze` and confirm the app shows transcript, target, score, and `Correct`/`Close`/`Needs repair`.
 - [ ] Click `Sonograph` and confirm the native row renders; after recording, confirm the `Mine` row renders.
 - [ ] Change cards and confirm the old recording is cleared for the new card.
 
@@ -38,9 +39,18 @@ open http://localhost:8000/web/#/learn
 - [ ] Verify all 12 stages are visible: recognition, recall, conjugate, cloze, dictation, stress, pronounce, back-translation, contrast, produce, listen, role-play.
 - [ ] Run one recognition card and confirm progress/analytics update.
 - [ ] Run one conjugation card and confirm incorrect answers produce a repair focus.
-- [ ] Run one pronunciation card: native audio, record, play mine, self-rate.
+- [ ] On `conjugate`, `cloze`, `dictation`, `produce`, and back-translation's Russian rebuild step, click `Speak answer`, record Russian, analyze, and confirm the transcript is scored without typing.
+- [ ] Run one pronunciation card: native audio, record, play mine, analyze speech, accept or mark repair, then confirm scoring advances.
 - [ ] Run one listening ladder card: captioned pass, slow audio, table speed, room-noise pass.
 - [ ] Run one role-play card and self-rate at least one criterion as missed; confirm Home shows a repair signal.
+
+## Review Screen
+
+- [ ] Open `#/review`.
+- [ ] Confirm the card shows Russian first with stress marks and no English answer visible.
+- [ ] Click the card or `Flip to English` and confirm the English answer appears.
+- [ ] Use previous/next, play audio, module filters, priority filters, and shuffle.
+- [ ] Confirm no typing is required in this review lane.
 
 ## Persistence And Statistics
 
@@ -51,10 +61,11 @@ open http://localhost:8000/web/#/learn
 - [ ] Complete one drill card and confirm DevTools localStorage key `zastolom.russian_family_visit.v2.analysis_state` updates `cycle`, `last_run_at`, and `next_action`.
 - [ ] Open `#/drill`, click `Adaptive next drill`, and confirm it routes to the recommended stage.
 - [ ] Optional Postgres sync: start Postgres, run `npm run db:migrate`, then `npm run sync:serve`.
+- [ ] Optional speech setup: store API keys with `tools/zastolom secrets put`, verify AWS CLI credentials are active, and confirm `/api/speech/evaluate` does not expose keys.
 - [ ] In DevTools, set `localStorage.setItem("zastolom.russian_family_visit.v2.sync_api", "http://127.0.0.1:8787")`, reload, complete a card, and confirm `/api/learning/state?learner_id=joe` returns the event-backed state.
 - [ ] Confirm `/api/learning/metrics?learner_id=joe` returns `missionAbility`, `grammarControl`, `nPlusOneFit`, and rating rows.
 - [ ] Confirm `/api/learning/recommendations?learner_id=joe&limit=20` returns item/stage recommendations with `rescue`, `n+1`, `consolidate`, or `too_easy` buckets.
-- [ ] Confirm no microphone recordings or sonograph buffers are persisted to Postgres.
+- [ ] Confirm no microphone recordings, base64 audio payloads, or sonograph buffers are persisted to Postgres; only transcript/score/verdict metadata appears under `speech_eval`.
 
 ## Offline And Installability
 
