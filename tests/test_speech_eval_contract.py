@@ -40,10 +40,12 @@ class SpeechEvalContractTests(unittest.TestCase):
         ):
             self.assertIn(token, self.server)
 
-    def test_openai_key_comes_from_aws_secrets_manager(self) -> None:
+    def test_openai_key_comes_from_local_env_or_aws_secrets_manager(self) -> None:
         for token in (
             "ZASTOLOM_API_KEYS_SECRET_ID",
             "/zastolom/dev/api-keys",
+            "loadDotenvSecrets",
+            'path.join(ROOT, ".env")',
             "aws",
             "secretsmanager",
             "get-secret-value",
