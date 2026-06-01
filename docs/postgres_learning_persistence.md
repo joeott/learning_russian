@@ -77,6 +77,8 @@ location.reload();
 - `GET /api/learning/recommendations?learner_id=joe&limit=20`
 - `POST /api/learning/snapshots`
 - `POST /api/speech/evaluate`
+- `POST /api/realtime/session`
+- `POST /api/realtime/call`
 
 Events are idempotent by `event_id`, so retrying a failed sync is safe.
 
@@ -88,6 +90,13 @@ derived transcript, normalized target/transcript, similarity score,
 `correct|close|repair` verdict, provider, and suggested error type. The request
 audio is passed to the transcription provider only for that request and is not
 written to Postgres.
+
+`POST /api/realtime/session` creates an OpenAI Realtime ephemeral client secret
+for live browser role-play. `POST /api/realtime/call` accepts browser WebRTC SDP,
+adds the role-play session configuration server-side, and returns the OpenAI SDP
+answer. The live role-play default model is `gpt-realtime-2` with
+`audio.output.voice` set to `marin`. The browser never receives the long-lived
+OpenAI API key.
 
 ## Adaptive metrics
 

@@ -142,6 +142,38 @@ class SpeechEvalContractTests(unittest.TestCase):
                 + (ROOT / "web" / "styles.css").read_text(encoding="utf-8"),
             )
 
+    def test_live_roleplay_uses_ga_realtime_contract(self) -> None:
+        for token in (
+            'OPENAI_REALTIME_MODEL || "gpt-realtime-2"',
+            'OPENAI_REALTIME_VOICE || "marin"',
+            '"/api/realtime/session"',
+            '"/api/realtime/call"',
+            "https://api.openai.com/v1/realtime/client_secrets",
+            "https://api.openai.com/v1/realtime/calls",
+            'type: "realtime"',
+            "audio: {",
+            "submit_roleplay_score",
+            "OpenAI-Safety-Identifier",
+            "runtimeSecret",
+        ):
+            self.assertIn(token, self.server)
+
+    def test_roleplay_ui_streams_and_scores_live_conversation(self) -> None:
+        for token in (
+            "liveRoleplayPanelHtml",
+            "startLiveRoleplay",
+            "RTCPeerConnection",
+            "oai-events",
+            "response.function_call_arguments.delta",
+            "response.output_item.done",
+            "input_audio_transcription",
+            "End + score",
+            "live_realtime",
+            "missed_phrases",
+            "replay_prompt",
+        ):
+            self.assertIn(token, self.app)
+
     def test_speech_scorer_has_correct_close_repair_thresholds(self) -> None:
         for token in (
             "normalizeSpeech",

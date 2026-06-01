@@ -1,15 +1,23 @@
 #!/usr/bin/env node
+import crypto from "node:crypto";
+import fs from "node:fs";
 import http from "node:http";
+import path from "node:path";
 import pg from "pg";
 import { createRequire } from "node:module";
+import { fileURLToPath } from "node:url";
 import { compareSpeech } from "./speech_eval.mjs";
+import { runtimeSecret } from "./secrets.mjs";
 import { transcribeRussianAudio } from "./speech_transcription.mjs";
 
+const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const PORT = Number(process.env.ZASTOLOM_SYNC_PORT || 8787);
 const LEARNER_ID = process.env.ZASTOLOM_LEARNER_ID || "joe";
 const DATABASE_URL = process.env.DATABASE_URL;
 const require = createRequire(import.meta.url);
 const METRICS = require("./learning_metrics.cjs");
+const REALTIME_MODEL = process.env.OPENAI_REALTIME_MODEL || "gpt-realtime-2";
+const REALTIME_VOICE = process.env.OPENAI_REALTIME_VOICE || "marin";
 
 if (!DATABASE_URL) {
   console.error("DATABASE_URL is required");
@@ -35,6 +43,12 @@ async function readJson(req) {
   return JSON.parse(Buffer.concat(chunks).toString("utf8"));
 }
 
+async function readText(req) {
+  const chunks = [];
+  for await (const chunk of req) chunks.push(chunk);
+  return Buffer.concat(chunks).toString("utf8");
+}
+
 function validateSpeechBody(body) {
   const itemId = body.item_id || "";
   const target = body.target_ru_plain || body.target_ru || "";
@@ -42,6 +56,140 @@ function validateSpeechBody(body) {
   if (!target) return "target_ru_plain is required";
   if (body.audio_base64 && String(body.audio_base64).length > 10 * 1024 * 1024) return "audio payload is too large";
   return "";
+}
+
+let contentCache = null;
+function contentData() {
+  if (!contentCache) {
+    contentCache = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "content.json"), "utf8"));
+  }
+  return contentCache;
+}
+
+function roleplayContext(itemId, scenarioId) {
+  const data = contentData();
+  const items = data.items || [];
+  const scenarios = data.scenarios || [];
+  const tutorCards = data.tutor_cards || [];
+  const criteria = data.roleplay_criteria || {};
+  const item = items.find((row) => row.id === itemId);
+  const scenario = scenarios.find((row) => row.id === scenarioId) ||
+    scenarios.find((row) => (row.required_items || []).includes(itemId));
+  const tutor = tutorCards.find((row) => scenario && row.scenario_id === scenario.id) ||
+    tutorCards.find((row) => (row.required_items || []).includes(itemId));
+  if (!item) return { error: "unknown item_id" };
+  if (!scenario && !tutor) return { error: "unknown scenario_id" };
+  return { item, scenario: scenario || null, tutor: tutor || null, criteria };
+}
+
+function criterionRows(ids, criteria) {
+  return (ids || []).map((id) => ({
+    id,
+    label: criteria[id] && criteria[id].label ? criteria[id].label : id,
+    error_type: criteria[id] && criteria[id].error_type ? criteria[id].error_type : "forgot_phrase",
+  }));
+}
+
+function realtimeInstructions(ctx) {
+  const item = ctx.item;
+  const scenario = ctx.scenario || {};
+  const tutor = ctx.tutor || {};
+  const phrases = (tutor.required_phrases || []).map((p) => `- ${p.ru_plain || p.ru}: ${p.en}`).join("\n");
+  const criteria = criterionRows(tutor.success_criteria || scenario.success_criteria || [], ctx.criteria)
+    .map((c) => `- ${c.id}: ${c.label} (${c.error_type})`).join("\n");
+  return `You are Joe's live Russian speaking tutor for the За столом family-visit course.
+
+Run a two-phase roleplay.
+
+Conversation mode:
+- Stay mostly in Russian. Keep turns short and natural.
+- You are playing: ${tutor.tutor_role || "host family member"}.
+- Joe is: ${tutor.learner_role || "guest"}.
+- Setting: ${tutor.setting || scenario.setting || "family dinner"}.
+- Goal: ${tutor.goal || scenario.goal || item.en}.
+- Start in character with one short Russian line and wait for Joe.
+- Minimize interruption. Recast small errors naturally and continue.
+- Explicitly correct only high-stakes errors: wrong register, feminine forms for Joe, or using На здоровье as a toast.
+- If Joe is lost, prompt him to use a Russian repair phrase.
+- Use only vocabulary from the current lesson when possible.
+
+Required phrase target:
+${phrases || `- ${item.ru_plain}: ${item.en}`}
+
+Success criteria:
+${criteria || "- stays_in_russian: stays in Russian"}
+
+Debrief mode:
+- When Joe says he is done, or the app asks for scoring, switch to brief English/Russian feedback.
+- Then call submit_roleplay_score exactly once.
+- Include missed phrases, pronunciation issues, one repair drill, and one replay prompt.
+- Do not claim criteria were met unless Joe actually produced evidence in the conversation.`;
+}
+
+function realtimeTools(ctx) {
+  const allowedCriteria = (ctx.tutor && ctx.tutor.success_criteria) ||
+    (ctx.scenario && ctx.scenario.success_criteria) || [];
+  const allowedErrorTypes = (ctx.tutor && ctx.tutor.allowed_error_types) ||
+    (ctx.item && ctx.item.allowed_error_types) || ["forgot_phrase"];
+  return [{
+    type: "function",
+    name: "submit_roleplay_score",
+    description: "Submit the final roleplay score after the live conversation debrief.",
+    parameters: {
+      type: "object",
+      additionalProperties: false,
+      properties: {
+        met: { type: "array", items: { type: "string", enum: allowedCriteria.length ? allowedCriteria : ["stays_in_russian"] } },
+        missed: { type: "array", items: { type: "string", enum: allowedCriteria.length ? allowedCriteria : ["stays_in_russian"] } },
+        summary: { type: "string" },
+        pronunciation_issues: { type: "array", items: { type: "string" } },
+        missed_phrases: { type: "array", items: { type: "string" } },
+        repair_focus: { type: "string", enum: allowedErrorTypes.length ? allowedErrorTypes : ["forgot_phrase"] },
+        replay_prompt: { type: "string" },
+      },
+      required: ["met", "missed", "summary", "pronunciation_issues", "missed_phrases", "repair_focus", "replay_prompt"],
+    },
+  }];
+}
+
+function realtimeSessionConfig(ctx) {
+  return {
+    type: "realtime",
+    model: REALTIME_MODEL,
+    output_modalities: ["audio"],
+    instructions: realtimeInstructions(ctx),
+    audio: {
+      input: {
+        transcription: { model: "gpt-4o-mini-transcribe", language: "ru" },
+        turn_detection: {
+          type: "server_vad",
+          threshold: 0.5,
+          prefix_padding_ms: 300,
+          silence_duration_ms: 500,
+          create_response: true,
+          interrupt_response: true,
+        },
+      },
+      output: {
+        voice: REALTIME_VOICE,
+        speed: 0.9,
+      },
+    },
+    tools: realtimeTools(ctx),
+    tool_choice: "auto",
+    truncation: "auto",
+  };
+}
+
+function safetyIdentifier(body) {
+  const raw = `${body.learner_id || LEARNER_ID}:${body.device_id || "browser"}`;
+  return crypto.createHash("sha256").update(raw).digest("hex");
+}
+
+async function openaiKey() {
+  const key = await runtimeSecret("OPENAI_API_KEY");
+  if (!key) throw new Error("OPENAI_API_KEY is not configured");
+  return key;
 }
 
 async function ensureDevice(client, learnerId, deviceId, userAgent) {
@@ -475,6 +623,88 @@ async function speechEvaluate(req, res) {
   }));
 }
 
+async function realtimeSession(req, res) {
+  const body = await readJson(req);
+  const ctx = roleplayContext(body.item_id || "", body.scenario_id || "");
+  if (ctx.error) return json(res, 400, { error: ctx.error });
+  let key = "";
+  try {
+    key = await openaiKey();
+  } catch (error) {
+    return json(res, 503, { error: error.message });
+  }
+  const session = realtimeSessionConfig(ctx);
+  const response = await fetch("https://api.openai.com/v1/realtime/client_secrets", {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${key}`,
+      "content-type": "application/json",
+      "OpenAI-Safety-Identifier": safetyIdentifier(body),
+    },
+    body: JSON.stringify({
+      expires_after: { anchor: "created_at", seconds: 600 },
+      session,
+    }),
+  });
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const message = payload.error && payload.error.message ? payload.error.message : `Realtime client secret failed (${response.status})`;
+    return json(res, response.status, { error: message });
+  }
+  json(res, 200, {
+    value: payload.value || (payload.client_secret && payload.client_secret.value) || "",
+    expires_at: payload.expires_at || (payload.client_secret && payload.client_secret.expires_at) || 0,
+    session: payload.session || session,
+    model: session.model,
+    voice: session.audio.output.voice,
+    scenario_id: (ctx.scenario && ctx.scenario.id) || (ctx.tutor && ctx.tutor.scenario_id) || "",
+  });
+}
+
+async function realtimeCall(req, res) {
+  const url = new URL(req.url, `http://${req.headers.host || "127.0.0.1"}`);
+  const itemId = url.searchParams.get("item_id") || "";
+  const scenarioId = url.searchParams.get("scenario_id") || "";
+  const deviceId = url.searchParams.get("device_id") || "";
+  const learnerId = url.searchParams.get("learner_id") || LEARNER_ID;
+  const ctx = roleplayContext(itemId, scenarioId);
+  if (ctx.error) return json(res, 400, { error: ctx.error });
+  const sdp = await readText(req);
+  if (!sdp.trim()) return json(res, 400, { error: "SDP body is required" });
+  let key = "";
+  try {
+    key = await openaiKey();
+  } catch (error) {
+    return json(res, 503, { error: error.message });
+  }
+  const fd = new FormData();
+  const session = realtimeSessionConfig(ctx);
+  fd.set("sdp", sdp);
+  fd.set("session", JSON.stringify(session));
+  const response = await fetch("https://api.openai.com/v1/realtime/calls", {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${key}`,
+      "OpenAI-Safety-Identifier": safetyIdentifier({ learner_id: learnerId, device_id: deviceId }),
+    },
+    body: fd,
+  });
+  const answer = await response.text();
+  if (!response.ok) {
+    let message = answer;
+    try {
+      const payload = JSON.parse(answer);
+      message = payload.error && payload.error.message ? payload.error.message : message;
+    } catch (error) {}
+    return json(res, response.status, { error: message || `Realtime call failed (${response.status})` });
+  }
+  res.writeHead(200, {
+    "content-type": "application/sdp",
+    "access-control-allow-origin": "*",
+  });
+  res.end(answer);
+}
+
 const server = http.createServer(async (req, res) => {
   try {
     if (req.method === "OPTIONS") return json(res, 200, { ok: true });
@@ -482,6 +712,8 @@ const server = http.createServer(async (req, res) => {
     if (req.method === "POST" && req.url === "/api/learning/events") return insertEvents(req, res);
     if (req.method === "POST" && req.url === "/api/learning/snapshots") return insertSnapshot(req, res);
     if (req.method === "POST" && req.url === "/api/speech/evaluate") return speechEvaluate(req, res);
+    if (req.method === "POST" && req.url === "/api/realtime/session") return realtimeSession(req, res);
+    if (req.method === "POST" && req.url.startsWith("/api/realtime/call")) return realtimeCall(req, res);
     if (req.method === "GET" && req.url.startsWith("/api/learning/state")) return state(req, res);
     if (req.method === "GET" && req.url.startsWith("/api/learning/metrics")) return metrics(req, res);
     if (req.method === "GET" && req.url.startsWith("/api/learning/recommendations")) return recommendations(req, res);
