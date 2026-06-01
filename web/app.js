@@ -59,6 +59,18 @@
     recovers_curveball: "recovers from curveball",
     mentions_host_or_food: "mentions host or food",
   };
+  const RESCUE_PHRASES = [
+    { ru: "Повтори́те, пожа́луйста.", en: "Please repeat." },
+    { ru: "Поме́дленнее, пожа́луйста.", en: "Slower, please." },
+    { ru: "Я не понима́ю.", en: "I don't understand." },
+    { ru: "Я ещё учу́ ру́сский.", en: "I'm still learning Russian." },
+  ];
+  const GUIDED_ROLEPLAY_MODES = [
+    ["shadow", "Shadow"],
+    ["prompted", "Prompted"],
+    ["supported", "Supported"],
+    ["live", "Live"],
+  ];
 
   const ACUTE = "́";
   const $ = (sel, el = document) => el.querySelector(sel);
@@ -71,6 +83,7 @@
   const LESSON_KEY = KEY + ".lesson_boundary";
   const HISTORY_KEY = KEY + ".analytics_history";
   const LEARN_RATE_KEY = KEY + ".learn_audio_rate";
+  const REVIEW_KEY = KEY + ".review_sessions";
   const ADAPTIVE_KEY = KEY + ".adaptive_ratings";
   const ANALYSIS_KEY = KEY + ".analysis_state";
   const SYNC_QUEUE_KEY = KEY + ".sync_queue";
@@ -81,6 +94,7 @@
   let store = load();
   let adaptiveRatings = loadAdaptiveRatings();
   let analysisState = loadAnalysisState();
+  let reviewSessionStore = loadReviewSessionState();
   let analysisTimer = 0;
   let activeLessonId = loadLessonBoundary();
   function load() {
@@ -127,6 +141,20 @@
   }
   function saveLearnRate(value) {
     try { localStorage.setItem(LEARN_RATE_KEY, String(value)); } catch (e) {}
+  }
+  function loadReviewSessionState() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(REVIEW_KEY)) || {};
+      return {
+        daily_completed_at: parsed.daily_completed_at || "",
+        last_session_at: parsed.last_session_at || "",
+      };
+    } catch (e) {
+      return { daily_completed_at: "", last_session_at: "" };
+    }
+  }
+  function saveReviewSessionState(value) {
+    try { localStorage.setItem(REVIEW_KEY, JSON.stringify(value || {})); } catch (e) {}
   }
   function loadAdaptiveRatings() {
     try {
@@ -211,6 +239,7 @@
     });
     STAGE_KEYS.forEach(k => { if (typeof r.stages[k] === "number") r.stages[k] = stageSeed(r.stages[k]); });
     r.errors = r.errors || {};
+    r.review = r.review || {};
     return r;
   }
   function stageSeed(count) {
@@ -1182,6 +1211,45 @@
   /* ====================================================================
      HOME
      ==================================================================== */
+  function dueReviewItems() {
+    const now = Date.now();
+    return unlockedItems(ITEMS).filter(it => {
+      const due = rec(it.id).review && rec(it.id).review.due_at;
+      return !due || new Date(due).getTime() <= now;
+    });
+  }
+  function todayPracticeHtml() {
+    const due = dueReviewItems().length;
+    const speech = adaptiveRecommendations(1).find(row => row.stageKey === "pronounce") || adaptiveRecommendations(1)[0];
+    const speechLabel = speech && speech.item ? speech.item.en : "a high-priority phrase";
+    const completedToday = (reviewSessionStore.daily_completed_at || "").slice(0, 10) === new Date().toISOString().slice(0, 10);
+    return `<section class="todaylane rise" aria-label="Today practice lane">
+      <div class="todaylane__head">
+        <div>
+          <span class="todaylane__eyebrow">Today practice</span>
+          <h2>Review, speak, then try the table.</h2>
+        </div>
+        <span class="todaylane__date">${escapeHtml(todayLabel())}</span>
+      </div>
+      <div class="todaylane__grid">
+        <a class="todaytask" href="#/review">
+          <span class="todaytask__step">1</span>
+          <strong>Review cards</strong>
+          <span>${due} due now${completedToday ? " · daily set done" : ""}</span>
+        </a>
+        <button class="todaytask" onclick="ZS.startTodaySpeak()">
+          <span class="todaytask__step">2</span>
+          <strong>Speak one phrase</strong>
+          <span>${escapeHtml(speechLabel)}</span>
+        </button>
+        <button class="todaytask todaytask--strong" onclick="ZS.startGuidedRoleplay()">
+          <span class="todaytask__step">3</span>
+          <strong>Try guided roleplay</strong>
+          <span>Start supported; go live only when ready.</span>
+        </button>
+      </div>
+    </section>`;
+  }
   function renderHome() {
     const op = overallProgress();
     const a = analytics();
@@ -1213,6 +1281,7 @@
         </div>
       </section>
       ${lessonLockHtml()}
+      ${todayPracticeHtml()}
 
       <div class="stats">
         <div class="stat rise"><div class="stat__num">${op.done}<small>/${op.total}</small></div><div class="stat__label">Phrases touched</div>
@@ -1658,14 +1727,76 @@
     list: [],
     flipped: false,
     audioRate: loadLearnRate(),
+    sessionLimit: 5,
+    sessionQueue: [],
+    sessionStarted: false,
+    sessionDone: false,
+    ratings: { know: 0, almost: 0, forgot: 0 },
+    repeatCounts: {},
   };
+  function reviewDueTime(it) {
+    const due = rec(it.id).review && rec(it.id).review.due_at;
+    return due ? new Date(due).getTime() : 0;
+  }
+  function reviewRank(a, b) {
+    const now = Date.now();
+    const ad = reviewDueTime(a);
+    const bd = reviewDueTime(b);
+    const aDue = !ad || ad <= now;
+    const bDue = !bd || bd <= now;
+    if (aDue !== bDue) return aDue ? -1 : 1;
+    if (ad !== bd) return ad - bd;
+    if (a.priority !== b.priority) return a.priority - b.priority;
+    return a.id.localeCompare(b.id);
+  }
   function buildReviewList() {
     let list = unlockedItems(ITEMS);
     if (reviewState.module !== "all") list = list.filter(i => i.module === reviewState.module);
     if (reviewState.priority) list = list.filter(i => i.priority === reviewState.priority);
-    reviewState.list = list;
-    if (reviewState.idx >= list.length) reviewState.idx = 0;
-    return list;
+    list = list.slice().sort(reviewRank);
+    if (reviewState.sessionStarted) {
+      const byId = Object.fromEntries(list.map(it => [it.id, it]));
+      reviewState.list = reviewState.sessionQueue.map(id => byId[id]).filter(Boolean);
+    } else {
+      reviewState.list = list;
+    }
+    if (reviewState.idx >= reviewState.list.length) reviewState.idx = 0;
+    return reviewState.list;
+  }
+  function startReviewSession(limit) {
+    reviewState.sessionLimit = limit;
+    reviewState.sessionStarted = true;
+    reviewState.sessionDone = false;
+    reviewState.flipped = false;
+    reviewState.idx = 0;
+    reviewState.ratings = { know: 0, almost: 0, forgot: 0 };
+    reviewState.repeatCounts = {};
+    let base = unlockedItems(ITEMS);
+    if (reviewState.module !== "all") base = base.filter(i => i.module === reviewState.module);
+    if (reviewState.priority) base = base.filter(i => i.priority === reviewState.priority);
+    base = base.slice().sort(reviewRank);
+    if (!limit) {
+      const now = Date.now();
+      base = base.filter(it => {
+        const due = reviewDueTime(it);
+        return !due || due <= now;
+      });
+    }
+    const count = limit ? Math.min(limit, base.length) : base.length;
+    reviewState.sessionQueue = base.slice(0, count).map(it => it.id);
+    buildReviewList();
+  }
+  function reviewSessionControlsHtml() {
+    const due = dueReviewItems().length;
+    const buttons = [
+      [5, "5 cards"],
+      [10, "10 cards"],
+      [0, "All due"],
+    ].map(([limit, label]) => `<button class="chip ${reviewState.sessionLimit === limit ? "is-on" : ""}" onclick="ZS.setReviewSessionLimit(${limit})">${label}</button>`).join("");
+    return `<div class="reviewsession">
+      <div><strong>Flashcard session</strong><span>${due} cards due; Forgotten cards repeat before the session closes.</span></div>
+      <div class="reviewsession__actions">${buttons}<button class="chip chip--dark" onclick="ZS.startReviewSession()">Start session</button></div>
+    </div>`;
   }
   function renderReview(modArg) {
     if (modArg && MOD_BY_ID[modArg]) reviewState.module = modArg;
@@ -1681,8 +1812,10 @@
       <div class="learnbar learnbar--tools">${priChips}<span class="spacer"></span>
         <div class="speedctl" aria-label="Review audio speed">${reviewSpeedControlsHtml()}</div>
         <button class="chip" onclick="ZS.shuffleReview()">Shuffle</button></div>
+      ${reviewSessionControlsHtml()}
       <div id="reviewslot"></div>
     `;
+    if (!reviewState.sessionStarted) startReviewSession(reviewState.sessionLimit);
     renderReviewCard();
   }
   function reviewSpeedControlsHtml() {
@@ -1695,8 +1828,23 @@
     const list = reviewState.list;
     if (!slot) return;
     if (!list.length) { slot.innerHTML = '<div class="reviewcard"><p>No review cards match this filter.</p></div>'; return; }
+    if (reviewState.sessionDone) {
+      slot.innerHTML = `<div class="reviewdone rise">
+        <div class="reviewdone__mark">✓</div>
+        <h3>Review session complete</h3>
+        <p>Known ${reviewState.ratings.know} · Almost ${reviewState.ratings.almost} · Forgot ${reviewState.ratings.forgot}</p>
+        <div class="selfrate">
+          <button class="btn" onclick="ZS.startReviewSession()">Start another set</button>
+          <a class="btn btn--ghost ghost-dark" href="#/quiz/roleplay">Try guided roleplay</a>
+        </div>
+      </div>`;
+      return;
+    }
     const it = list[reviewState.idx];
     const module = MOD_BY_ID[it.module] || {};
+    const review = rec(it.id).review || {};
+    const due = review.due_at ? new Date(review.due_at) : null;
+    const dueLabel = due && due.getTime() > Date.now() ? `Next due ${due.toLocaleDateString()}` : "Due now";
     slot.innerHTML = `
       <button class="reviewcard rise ${reviewState.flipped ? "is-flipped" : ""}" onclick="ZS.flipReview()" aria-label="Flip review card">
         <div class="reviewcard__meta"><span>${module.icon || ""} ${escapeHtml(module.title || it.module)}</span><span class="pill pill--p${it.priority}">P${it.priority}</span></div>
@@ -1711,12 +1859,21 @@
           ${it.note ? `<div class="reviewcard__note">${escapeHtml(it.note)}</div>` : ""}
         </div>
       </button>
+      <div class="reviewmeta">
+        <span>${reviewState.sessionStarted ? `Card ${reviewState.idx + 1} of ${list.length}` : `${reviewState.idx + 1} / ${list.length}`}</span>
+        <span>${escapeHtml(dueLabel)}</span>
+      </div>
       <div class="cardnav">
         <button class="iconbtn" onclick="ZS.prevReview()" aria-label="Previous review card">‹</button>
         <button class="iconbtn iconbtn--play" onclick="ZS.sayReview()" aria-label="Play review audio">▶</button>
         <span class="cardnav__count">${reviewState.idx + 1} / ${list.length}</span>
         <button class="btn btn--sm" onclick="ZS.flipReview()">${reviewState.flipped ? "Show Russian" : "Flip to English"}</button>
         <button class="iconbtn" onclick="ZS.nextReview()" aria-label="Next review card">›</button>
+      </div>
+      <div class="reviewrate" aria-label="Rate this flashcard">
+        <button class="btn btn--sm" onclick="ZS.rateReviewCard('know')">Know it</button>
+        <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.rateReviewCard('almost')">Almost</button>
+        <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.rateReviewCard('forgot')">Forgot</button>
       </div>`;
   }
 
@@ -1894,17 +2051,86 @@
       <div id="typedSpeechEvalResult"></div>
     </div>`;
   }
+  function rescueButtonsHtml(id) {
+    return `<div class="rescuelines" aria-label="Rescue phrases">${RESCUE_PHRASES.map((p, idx) => `
+      <button class="chip" onclick="ZS.insertRescuePhrase('${id}',${idx})">
+        <span class="phrase-ru">${colorStress(p.ru)}</span>
+        <small>${escapeHtml(p.en)}</small>
+      </button>`).join("")}</div>`;
+  }
+  function guidedRoleplayPanelHtml(id, scenarioId, mode) {
+    const it = ITEMS.find(i => i.id === id);
+    const scenario = scenarioForItem(id);
+    const card = tutorCardForScenarioId(scenarioId) || tutorCardForItem(id);
+    const criteria = scenario && scenario.success_criteria ? scenario.success_criteria : [];
+    const phrases = card && card.required_phrases && card.required_phrases.length ? card.required_phrases : [{ ru: it.ru, en: it.en }];
+    const modeChips = GUIDED_ROLEPLAY_MODES.map(([key, label]) =>
+      `<button class="chip ${mode === key ? "is-on" : ""}" onclick="ZS.showGuidedRoleplay('${id}','${scenarioId || ""}','${key}')">${label}</button>`
+    ).join("");
+    const targetRows = phrases.map(p => `<li><span class="phrase-ru">${colorStress(p.ru)}</span><span>${escapeHtml(p.en)}</span></li>`).join("");
+    const criteriaRows = criteria.length ? criteria.map(c => `<span>${escapeHtml(criterionLabel(c))}</span>`).join("") : "<span>stay in Russian</span><span>recover calmly</span>";
+    const modeCopy = {
+      shadow: ["Shadow", "Listen first, read the model line aloud, then mark it repeated."],
+      prompted: ["Prompted", "See the English goal first; reveal the Russian only after trying it aloud."],
+      supported: ["Supported", "Use rescue phrases freely. Assisted recovery counts as useful practice."],
+      live: ["Live", "Start the streaming conversation when the target line feels reachable."],
+    }[mode] || ["Prompted", "Try the phrase with light support."];
+    const target = phrases[0] || { ru: it.ru, en: it.en };
+    return `<div class="guidedplay rise">
+      <div class="guidedplay__head">
+        <div><strong>Guided roleplay</strong><span>${escapeHtml(modeCopy[1])}</span></div>
+        <div class="guidedplay__modes">${modeChips}</div>
+      </div>
+      <div class="guidedplay__scenario">
+        <div><span>Role</span><strong>${escapeHtml((card && card.setting) || (scenario && scenario.title) || "Family table")}</strong></div>
+        <div><span>Goal</span><strong>${escapeHtml((card && card.goal) || it.en)}</strong></div>
+        <div><span>Success</span><div class="guidedplay__criteria">${criteriaRows}</div></div>
+      </div>
+      <ul class="tutorbox__phrases">${targetRows}</ul>
+      ${mode === "shadow" ? `<div class="guidedplay__practice">
+        <span>Model line</span>
+        <div class="guidedplay__ru">${colorStress(target.ru)}</div>
+        <div class="selfrate">
+          <button class="iconbtn iconbtn--play" onclick="ZS.sayItem('${it.id}')" aria-label="Play model audio">▶</button>
+          <button class="btn" onclick="ZS.rateRP('${id}','criteria',true)">I repeated it</button>
+        </div>
+      </div>` : ""}
+      ${mode === "prompted" ? `<div class="guidedplay__practice">
+        <span>Try aloud first</span>
+        <div class="guidedplay__en">${escapeHtml(target.en)}</div>
+        <div class="selfrate">
+          <button class="btn btn--ghost ghost-dark" onclick="ZS.revealRP('${id}')">Reveal model answer</button>
+          <button class="btn" onclick="ZS.rateRP('${id}','criteria',false)">I could say it</button>
+        </div>
+      </div>` : ""}
+      ${mode === "supported" ? `<div class="guidedplay__practice">
+        <span>Repair lines</span>
+        ${rescueButtonsHtml(id)}
+        <div class="selfrate">
+          <button class="btn" onclick="ZS.rateRP('${id}','criteria',true)">Recovered with support</button>
+          <button class="btn btn--red" onclick="ZS.showLiveRoleplay('${id}','${scenarioId || ""}')">Start live conversation</button>
+        </div>
+      </div>` : ""}
+      ${mode === "live" ? `<div class="guidedplay__practice">
+        <span>Ready for live</span>
+        <div class="guidedplay__en">Keep it short. Use a rescue line if the tutor surprises you.</div>
+        <div class="selfrate"><button class="btn btn--red" onclick="ZS.showLiveRoleplay('${id}','${scenarioId || ""}')">Start live conversation</button></div>
+      </div>` : ""}
+      <div id="guidedRescueStatus" class="guidedplay__status"></div>
+    </div>`;
+  }
   function liveRoleplayPanelHtml(id, scenarioId) {
     return `<div id="liveRoleplayPanel" class="liveplay">
       <div class="liveplay__head">
-        <div><strong>Live tutor</strong><span id="liveRoleplayStatus">Ready for streaming role-play.</span></div>
+        <div><strong>Live conversation</strong><span id="liveRoleplayStatus">Ready for streaming role-play.</span></div>
         <div class="liveplay__actions">
-          <button id="liveRoleplayStartBtn" class="btn btn--sm btn--red" onclick="ZS.startLiveRoleplay('${id}','${scenarioId || ""}')">Connect</button>
+          <button id="liveRoleplayStartBtn" class="btn btn--sm btn--red" onclick="ZS.startLiveRoleplay('${id}','${scenarioId || ""}')">Start conversation</button>
           <button id="liveRoleplayMuteBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.toggleLiveRoleplayMute()" disabled>Mute</button>
-          <button id="liveRoleplayEndBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.endLiveRoleplay()" disabled>End + score</button>
+          <button id="liveRoleplayEndBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.endLiveRoleplay()" disabled>Finish & get feedback</button>
           <button id="liveRoleplayDisconnectBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.disconnectLiveRoleplay()" disabled>Disconnect</button>
         </div>
       </div>
+      ${rescueButtonsHtml(id)}
       <div id="liveRoleplayTranscript" class="liveplay__transcript"><p class="liveplay__empty">Conversation transcript will appear here.</p></div>
       <div id="liveRoleplayDebrief" class="liveplay__debrief"></div>
     </div>`;
@@ -1975,14 +2201,15 @@
     const ok = criteria.length ? missed.length === 0 && met.length > 0 : !missed.length;
     const errorType = missed.length ? criterionErrorType(missed[0]) : (args.repair_focus || null);
     gradeItem(id, ok, "roleplay", ok ? null : errorType, {
-      roleplay: {
-        scenario_id: scenario ? scenario.id : "",
-        met,
-        missed,
-        live_realtime: true,
-        summary: args.summary || "",
-        pronunciation_issues: args.pronunciation_issues || [],
-        missed_phrases: args.missed_phrases || [],
+        roleplay: {
+          scenario_id: scenario ? scenario.id : "",
+          met,
+          missed,
+          live_realtime: true,
+          assisted_rescue: !!liveRoleplay.assisted,
+          summary: args.summary || "",
+          pronunciation_issues: args.pronunciation_issues || [],
+          missed_phrases: args.missed_phrases || [],
         replay_prompt: args.replay_prompt || "",
       },
     });
@@ -1995,12 +2222,23 @@
     }
     const debrief = $("#liveRoleplayDebrief");
     if (debrief) {
-      debrief.innerHTML = `<div class="feedback ${ok ? "good" : "close"} rise">
-        <div style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem">${ok ? "Live role-play passed" : "Live role-play repair"}</div>
-        <p>${escapeHtml(args.summary || "Role-play scored.")}</p>
-        ${(args.missed_phrases || []).length ? `<div class="card__hint"><strong>Missed phrases:</strong> ${escapeHtml(args.missed_phrases.join(", "))}</div>` : ""}
-        ${(args.pronunciation_issues || []).length ? `<div class="card__hint"><strong>Pronunciation:</strong> ${escapeHtml(args.pronunciation_issues.join(", "))}</div>` : ""}
-        ${args.replay_prompt ? `<div class="card__hint"><strong>Replay:</strong> ${escapeHtml(args.replay_prompt)}</div>` : ""}
+      const landed = met.length ? met.map(criterionLabel).join(", ") : (ok ? "You kept the exchange moving." : "You stayed in the task.");
+      const broke = missed.length ? missed.map(criterionLabel).join(", ") : "No major criteria missed.";
+      const pronunciation = (args.pronunciation_issues || []).join(", ") || "Keep stress clear and vowels relaxed.";
+      const repair = (args.missed_phrases || [args.replay_prompt || "Повтори́те, пожа́луйста."]).filter(Boolean)[0];
+      debrief.innerHTML = `<div class="feedback ${ok ? "good" : "close"} rise roledebrief">
+        <div class="roledebrief__title">${ok ? "Live role-play passed" : "Live role-play repair"}</div>
+        <div class="roledebrief__grid">
+          <div><strong>What landed</strong><span>${escapeHtml(landed)}</span></div>
+          <div><strong>What broke</strong><span>${escapeHtml(broke)}</span></div>
+          <div><strong>Pronunciation target</strong><span>${escapeHtml(pronunciation)}</span></div>
+          <div><strong>One repair drill</strong><span>${escapeHtml(repair)}</span></div>
+          <div><strong>Replay this next</strong><span>${escapeHtml(args.replay_prompt || "Run the same scene once more with one rescue line ready.")}</span></div>
+        </div>
+        <div class="selfrate">
+          <button class="btn btn--sm" onclick="ZS.showGuidedRoleplay('${id}','${scenario ? scenario.id : ""}','prompted')">Replay easier</button>
+          <button class="btn btn--sm btn--red" onclick="ZS.showLiveRoleplay('${id}','${scenario ? scenario.id : ""}')">Replay live</button>
+        </div>
       </div>`;
     }
     quiz.answered = true;
@@ -2224,10 +2462,11 @@
       promptHtml = `<div class="q-instr">${stage.instr}</div>${scenarioCard(it)}<div class="q-en">${escapeHtml(it.en)}</div>`;
       const tutor = tutorCardForItem(it.id);
       body = `<div style="text-align:center;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-        <button class="btn btn--red" onclick="ZS.showLiveRoleplay('${it.id}','${scenario ? scenario.id : ""}')">Live tutor</button>
+        <button class="btn btn--red" onclick="ZS.showGuidedRoleplay('${it.id}','${scenario ? scenario.id : ""}','prompted')">Guided roleplay</button>
+        <button class="btn btn--ghost ghost-dark" onclick="ZS.showLiveRoleplay('${it.id}','${scenario ? scenario.id : ""}')">Live conversation</button>
         ${tutor ? `<button class="btn btn--red" onclick="ZS.openTutor('${it.id}','${scenario ? scenario.id : ""}')">Tutor setup</button>` : ""}
         <button class="btn" onclick="ZS.revealRP('${it.id}')">Reveal model answer</button>
-      </div><div id="tutorPanel"></div><div id="liveRoleplayMount"></div><div id="rpReveal"></div>`;
+      </div><div id="guidedRoleplayMount"></div><div id="tutorPanel"></div><div id="liveRoleplayMount"></div><div id="rpReveal"></div>`;
     }
 
     $("#view").innerHTML = `
@@ -2246,6 +2485,10 @@
     if (stage.key === "cloze") setTimeout(() => { const el = $("#clozeIn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkCloze(it.id); }); } }, 50);
     if (stage.key === "dictation") setTimeout(() => { const el = $("#dictIn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.checkDictation(it.id); }); } }, 50);
     if (stage.key === "backtranslate") setTimeout(() => { const el = $("#btEn"); if (el) { el.focus(); el.addEventListener("keydown", e => { if (e.key === "Enter") ZS.startBack(it.id); }); } }, 50);
+    if (stage.key === "roleplay" && sessionStorage.getItem(KEY + ".open_guided_roleplay") === "1") {
+      sessionStorage.removeItem(KEY + ".open_guided_roleplay");
+      setTimeout(() => ZS.showGuidedRoleplay(it.id, scenario ? scenario.id : "", "prompted"), 0);
+    }
   }
 
   function nextDue(st, ok) {
@@ -2583,6 +2826,13 @@
       const rec = adaptiveRecommendations(1)[0];
       location.hash = rec ? `#/quiz/${rec.stageKey}` : "#/quiz/recognition";
     },
+    startTodaySpeak() {
+      location.hash = "#/quiz/pronounce";
+    },
+    startGuidedRoleplay() {
+      sessionStorage.setItem(KEY + ".open_guided_roleplay", "1");
+      location.hash = "#/quiz/roleplay";
+    },
     toggleEn() { learnState.hideEn = !learnState.hideEn; renderLearn(); },
     setLearnRate(rate) {
       if (![0.65, 0.85, 1, 1.15, 1.3].includes(rate)) return;
@@ -2601,8 +2851,17 @@
     next() { cleanupLearnRecording(); learnState.idx = (learnState.idx + 1) % learnState.list.length; renderCard(); },
     prev() { cleanupLearnRecording(); learnState.idx = (learnState.idx - 1 + learnState.list.length) % learnState.list.length; renderCard(); },
     say() { speak(learnState.list[learnState.idx], { rate: learnState.audioRate }); },
-    setReviewMod(m) { reviewState.module = m; reviewState.idx = 0; reviewState.flipped = false; renderReview(); },
-    setReviewPri(p) { reviewState.priority = p; reviewState.idx = 0; reviewState.flipped = false; renderReview(); },
+    setReviewMod(m) { reviewState.module = m; reviewState.idx = 0; reviewState.flipped = false; reviewState.sessionStarted = false; renderReview(); },
+    setReviewPri(p) { reviewState.priority = p; reviewState.idx = 0; reviewState.flipped = false; reviewState.sessionStarted = false; renderReview(); },
+    setReviewSessionLimit(limit) {
+      reviewState.sessionLimit = limit;
+      startReviewSession(limit);
+      renderReview();
+    },
+    startReviewSession() {
+      startReviewSession(reviewState.sessionLimit);
+      renderReviewCard();
+    },
     setReviewRate(rate) {
       if (![0.65, 0.85, 1, 1.15, 1.3].includes(rate)) return;
       reviewState.audioRate = rate;
@@ -2624,7 +2883,47 @@
     sayReview() { speak(reviewState.list[reviewState.idx], { rate: reviewState.audioRate }); },
     shuffleReview() {
       reviewState.list = shuffle(reviewState.list.slice());
+      reviewState.sessionQueue = reviewState.list.map(it => it.id);
       reviewState.idx = 0;
+      reviewState.flipped = false;
+      renderReviewCard();
+    },
+    rateReviewCard(grade) {
+      if (!reviewState.list.length || reviewState.sessionDone) return;
+      const it = reviewState.list[reviewState.idx];
+      const r = rec(it.id);
+      const now = new Date().toISOString();
+      const dueMs = grade === "know" ? 3 * 86400000 : grade === "almost" ? 86400000 : 10 * 60000;
+      r.review = Object.assign({}, r.review || {}, {
+        last_grade: grade,
+        last_seen_at: now,
+        due_at: new Date(Date.now() + dueMs).toISOString(),
+        confidence: grade === "know" ? 1 : grade === "almost" ? 0.55 : 0.15,
+        review_count: ((r.review && r.review.review_count) || 0) + 1,
+      });
+      reviewState.ratings[grade] = (reviewState.ratings[grade] || 0) + 1;
+      if (grade === "forgot") {
+        reviewState.repeatCounts[it.id] = (reviewState.repeatCounts[it.id] || 0) + 1;
+        if (reviewState.repeatCounts[it.id] <= 1) reviewState.sessionQueue.push(it.id);
+      }
+      reviewState.sessionQueue.splice(reviewState.idx, 1);
+      save();
+      queueSyncEvent({
+        item_id: it.id,
+        stage_key: "flashcard_review",
+        ok: grade === "know",
+        lesson_id: it.lesson_id || "",
+        payload: { review_grade: grade, due_at: r.review.due_at, confidence: r.review.confidence },
+      });
+      buildReviewList();
+      if (!reviewState.list.length) {
+        reviewState.sessionDone = true;
+        reviewSessionStore = Object.assign({}, reviewSessionStore, {
+          daily_completed_at: now,
+          last_session_at: now,
+        });
+        saveReviewSessionState(reviewSessionStore);
+      }
       reviewState.flipped = false;
       renderReviewCard();
     },
@@ -3075,6 +3374,41 @@
       showFeedback(ok, it, `<div class="card__hint">${escapeHtml(it.usage_note || "")}</div>`, errorType);
     },
     giveUp(id) { const it = practiceItem(id); const errorType = inferredErrorType(it, quiz.stageKey); gradeItem(id, false, quiz.stageKey, errorType); showFeedback(false, it, "", errorType); },
+    showGuidedRoleplay(id, scenarioId, mode) {
+      const mount = $("#guidedRoleplayMount");
+      if (!mount) return;
+      if (mode === "live") {
+        mount.innerHTML = guidedRoleplayPanelHtml(id, scenarioId, "live");
+      } else {
+        mount.innerHTML = guidedRoleplayPanelHtml(id, scenarioId, mode || "prompted");
+      }
+      mount.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    },
+    insertRescuePhrase(id, index) {
+      const phrase = RESCUE_PHRASES[index];
+      if (!phrase) return;
+      const status = $("#guidedRescueStatus");
+      if (status) status.innerHTML = `<strong>Assisted rescue:</strong> <span class="phrase-ru">${colorStress(phrase.ru)}</span> · ${escapeHtml(phrase.en)}`;
+      appendLiveTranscript("user", phrase.ru, false);
+      if (liveRoleplay) liveRoleplay.assisted = true;
+      liveSend({
+        type: "conversation.item.create",
+        item: {
+          type: "message",
+          role: "user",
+          content: [{ type: "input_text", text: phrase.ru }],
+        },
+      });
+      if (liveRoleplay && liveRoleplay.dataChannel && liveRoleplay.dataChannel.readyState === "open") liveRequestResponse();
+      queueSyncEvent({
+        item_id: id,
+        stage_key: "roleplay_rescue",
+        ok: true,
+        lesson_id: (ITEMS_BY_ID[id] && ITEMS_BY_ID[id].lesson_id) || "",
+        payload: { rescue_phrase: phrase.ru, assisted: true },
+      });
+      toast("Rescue line ready");
+    },
     listenHint(id) {
       if (!quiz || quiz.stageKey !== "listen") return;
       const it = practiceItem(id);
@@ -3303,12 +3637,13 @@
       const it = ITEMS.find(i => i.id === id);
       const scenario = scenarioForItem(id);
       const criteria = scenario && scenario.success_criteria ? scenario.success_criteria : [];
+      const boxes = Array.from(document.querySelectorAll(".rpcrit"));
       const checked = new Set(Array.from(document.querySelectorAll(".rpcrit:checked")).map(el => el.value));
-      const met = mode === "missed" ? [] : criteria.filter(c => checked.has(c));
-      const missed = mode === "missed" ? criteria.slice() : criteria.filter(c => !checked.has(c));
+      const met = mode === "missed" ? [] : (boxes.length ? criteria.filter(c => checked.has(c)) : criteria.slice());
+      const missed = mode === "missed" ? criteria.slice() : (boxes.length ? criteria.filter(c => !checked.has(c)) : []);
       const ok = mode !== "missed" && missed.length === 0;
       const errorType = missed.length ? criterionErrorType(missed[0]) : null;
-      gradeItem(id, ok, quiz.stageKey, errorType, {
+      gradeItem(id, ok, (quiz && quiz.stageKey) || "roleplay", errorType, {
         assisted,
         roleplay: {
           scenario_id: scenario ? scenario.id : "",
@@ -3327,7 +3662,7 @@
         if (missErrorTypes.length) {
           const extras = missErrorTypes.filter((_, idx) => idx > 0);
           if (extras.length) {
-            recordRepairFocus(id, quiz.stageKey, extras);
+            recordRepairFocus(id, (quiz && quiz.stageKey) || "roleplay", extras);
           }
         }
       }
