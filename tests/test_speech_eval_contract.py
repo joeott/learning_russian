@@ -20,6 +20,9 @@ class SpeechEvalContractTests(unittest.TestCase):
             encoding="utf-8"
         )
         self.cli = (ROOT / "tools" / "zastolom").read_text(encoding="utf-8")
+        self.roleplay_sql = (
+            ROOT / "db" / "migrations" / "003_roleplay_conversation_passes.sql"
+        ).read_text(encoding="utf-8")
 
     def test_server_exposes_speech_evaluation_endpoint(self) -> None:
         for token in (
@@ -214,6 +217,7 @@ class SpeechEvalContractTests(unittest.TestCase):
             "startLiveRoleplay",
             "RTCPeerConnection",
             "oai-events",
+            "currentLiveTranscriptRows",
             "response.function_call_arguments.delta",
             "response.output_item.done",
             "input_audio_transcription",
@@ -223,10 +227,34 @@ class SpeechEvalContractTests(unittest.TestCase):
             "What landed",
             "Replay easier",
             "live_realtime",
+            "stage_complete",
+            "transcript",
             "missed_phrases",
             "replay_prompt",
         ):
             self.assertIn(token, self.app)
+
+    def test_live_roleplay_transcript_passes_persist_to_postgres(self) -> None:
+        for token in (
+            "CREATE TABLE IF NOT EXISTS roleplay_conversation_passes",
+            "transcript JSONB NOT NULL",
+            "transcript_text TEXT",
+            "stage_complete BOOLEAN NOT NULL",
+            "n_plus_one_ready BOOLEAN NOT NULL",
+            "met_criteria TEXT[]",
+            "missed_criteria TEXT[]",
+        ):
+            self.assertIn(token, self.roleplay_sql)
+        for token in (
+            "persistRoleplayConversationPass",
+            "compactTranscript",
+            "transcriptText",
+            "roleplay.live_realtime",
+            "stageComplete",
+            "nPlusOneReady",
+            "roleplay_conversation_passes",
+        ):
+            self.assertIn(token, self.server)
 
     def test_speech_scorer_has_correct_close_repair_thresholds(self) -> None:
         for token in (
