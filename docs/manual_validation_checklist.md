@@ -71,6 +71,7 @@ open http://localhost:8000/web/#/learn
 - [ ] Confirm `/api/learning/metrics?learner_id=joe` returns `missionAbility`, `grammarControl`, `nPlusOneFit`, and rating rows.
 - [ ] Confirm `/api/learning/recommendations?learner_id=joe&limit=20` returns item/stage recommendations with `rescue`, `n+1`, `consolidate`, or `too_easy` buckets.
 - [ ] Confirm no microphone recordings, base64 audio payloads, or sonograph buffers are persisted to Postgres; only transcript/score/verdict metadata appears under `speech_eval`.
+- [ ] After a live roleplay `Finish & get feedback`, confirm `roleplay_conversation_passes` has one row for the event with transcript text, met/missed criteria, `stage_complete`, and `n_plus_one_ready` fields populated.
 
 ## Offline And Installability
 

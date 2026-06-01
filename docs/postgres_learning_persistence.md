@@ -17,9 +17,13 @@ learning.
 - daily metric snapshots for mission ability, grammar control, n+1 fit, and friction
 - speech-evaluation transcript, score, verdict, provider, and suggested repair
   type when pronunciation or spoken Russian text-entry analysis is accepted
+- live role-play transcript passes in `roleplay_conversation_passes`, including
+  transcript text/turns, criteria met/missed, stage-complete flags, and
+  n+1-readiness flags
 
 Audio recordings, base64 audio payloads, and sonograph data are intentionally
-not persisted.
+not persisted. Live role-play stores text transcript turns and derived scoring
+only; it does not store WebRTC audio.
 
 ## Local setup
 
@@ -97,6 +101,12 @@ adds the role-play session configuration server-side, and returns the OpenAI SDP
 answer. The live role-play default model is `gpt-realtime-2` with
 `audio.output.voice` set to `marin`. The browser never receives the long-lived
 OpenAI API key.
+
+Live role-play scoring is also mirrored from `POST /api/learning/events` into
+`roleplay_conversation_passes` when the event payload contains
+`roleplay.live_realtime`. That table is the queryable record of conversation
+passes, including whether the current stage is complete and whether the learner
+is ready for n+1 pressure on that scenario.
 
 ## Adaptive metrics
 

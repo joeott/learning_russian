@@ -396,6 +396,94 @@ async function processAttemptRatings(learnerId, events) {
   }
 }
 
+function textArray(value) {
+  return Array.isArray(value) ? value.filter((row) => typeof row === "string" && row.trim()).map((row) => row.trim()) : [];
+}
+
+function compactTranscript(value) {
+  if (!Array.isArray(value)) return [];
+  return value.slice(-80).map((row) => ({
+    role: row && row.role === "assistant" ? "assistant" : row && row.role === "system" ? "system" : "user",
+    text: String((row && row.text) || "").slice(0, 1000),
+    at: String((row && row.at) || ""),
+  })).filter((row) => row.text);
+}
+
+function transcriptText(rows) {
+  return compactTranscript(rows)
+    .map((row) => `${row.role}: ${row.text}`)
+    .join("\n")
+    .slice(0, 20000);
+}
+
+async function persistRoleplayConversationPass(client, learnerId, deviceId, event) {
+  if (event.stage_key !== "roleplay") return;
+  const payload = event.payload || {};
+  const roleplay = payload.roleplay || {};
+  if (!roleplay || !roleplay.live_realtime) return;
+  const met = textArray(roleplay.met);
+  const missed = textArray(roleplay.missed);
+  const transcript = compactTranscript(roleplay.transcript);
+  const assisted = !!event.assisted || !!roleplay.assisted_rescue;
+  const ok = !!event.ok;
+  const stageComplete = ok && missed.length === 0 && met.length > 0 && !assisted;
+  const nPlusOneReady = stageComplete && Number(payload.adaptive && payload.adaptive.expected_success || 0) >= 0.78;
+  try {
+    await client.query(
+      `INSERT INTO roleplay_conversation_passes (
+      event_id, learner_id, device_id, course_id, item_id, stage_key,
+      scenario_id, lesson_id, ok, assisted, stage_complete, n_plus_one_ready,
+      met_criteria, missed_criteria, summary, transcript, transcript_text,
+      pronunciation_issues, missed_phrases, repair_focus, replay_prompt,
+      payload, client_created_at
+    )
+    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23)
+    ON CONFLICT (event_id) DO UPDATE SET
+      ok = EXCLUDED.ok,
+      assisted = EXCLUDED.assisted,
+      stage_complete = EXCLUDED.stage_complete,
+      n_plus_one_ready = EXCLUDED.n_plus_one_ready,
+      met_criteria = EXCLUDED.met_criteria,
+      missed_criteria = EXCLUDED.missed_criteria,
+      summary = EXCLUDED.summary,
+      transcript = EXCLUDED.transcript,
+      transcript_text = EXCLUDED.transcript_text,
+      pronunciation_issues = EXCLUDED.pronunciation_issues,
+      missed_phrases = EXCLUDED.missed_phrases,
+      repair_focus = EXCLUDED.repair_focus,
+      replay_prompt = EXCLUDED.replay_prompt,
+      payload = EXCLUDED.payload`,
+    [
+      event.event_id,
+      learnerId,
+      deviceId,
+      event.course_id || "russian_family_visit",
+      event.item_id,
+      event.stage_key,
+      event.scenario_id || roleplay.scenario_id || null,
+      event.lesson_id || null,
+      ok,
+      assisted,
+      stageComplete,
+      nPlusOneReady,
+      met,
+      missed,
+      roleplay.summary || "",
+      JSON.stringify(transcript),
+      transcriptText(transcript),
+      textArray(roleplay.pronunciation_issues),
+      textArray(roleplay.missed_phrases),
+      roleplay.repair_focus || "",
+      roleplay.replay_prompt || "",
+      JSON.stringify(payload),
+      event.client_created_at || new Date().toISOString(),
+    ]
+    );
+  } catch (error) {
+    if (error.code !== "42P01") throw error;
+  }
+}
+
 async function insertEvents(req, res) {
   const body = await readJson(req);
   const learnerId = body.learner_id || LEARNER_ID;
@@ -437,7 +525,11 @@ async function insertEvents(req, res) {
         ]
       );
       inserted += result.rowCount;
-      if (result.rowCount) insertedEvents.push(Object.assign({}, event, { course_id: event.course_id || "russian_family_visit" }));
+      if (result.rowCount) {
+        const insertedEvent = Object.assign({}, event, { course_id: event.course_id || "russian_family_visit" });
+        insertedEvents.push(insertedEvent);
+        await persistRoleplayConversationPass(client, learnerId, deviceId, insertedEvent);
+      }
     }
     await client.query(
       `INSERT INTO sync_cursors (learner_id, device_id, last_event_id)

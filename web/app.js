@@ -2146,7 +2146,7 @@
     const empty = box.querySelector(".liveplay__empty");
     if (empty) empty.remove();
     const cls = role === "assistant" ? "assistant" : role === "system" ? "system" : "user";
-    let row = isDelta ? box.querySelector(`.liveplay__row.${cls}.is-delta:last-child`) : null;
+    let row = isDelta ? box.querySelector(`.liveplay__row.${cls}.is-delta:last-child`) : box.querySelector(`.liveplay__row.${cls}.is-delta:last-child`);
     if (!row) {
       row = document.createElement("div");
       row.className = `liveplay__row ${cls}${isDelta ? " is-delta" : ""}`;
@@ -2156,7 +2156,19 @@
     const span = row.querySelector("span");
     span.textContent = isDelta ? span.textContent + text : text;
     if (!isDelta) row.classList.remove("is-delta");
+    if (liveRoleplay) {
+      liveRoleplay.transcript = currentLiveTranscriptRows();
+    }
     box.scrollTop = box.scrollHeight;
+  }
+  function currentLiveTranscriptRows() {
+    const box = $("#liveRoleplayTranscript");
+    if (!box) return [];
+    return Array.from(box.querySelectorAll(".liveplay__row")).map(row => {
+      const role = row.classList.contains("assistant") ? "assistant" : row.classList.contains("system") ? "system" : "user";
+      const span = row.querySelector("span");
+      return { role, text: (span && span.textContent || "").trim(), at: new Date().toISOString() };
+    }).filter(row => row.text).slice(-80);
   }
   function cleanupLiveRoleplay() {
     const state = liveRoleplay;
@@ -2200,17 +2212,24 @@
     const missed = (args.missed || []).filter(c => criteria.includes(c) && !met.includes(c));
     const ok = criteria.length ? missed.length === 0 && met.length > 0 : !missed.length;
     const errorType = missed.length ? criterionErrorType(missed[0]) : (args.repair_focus || null);
+    const transcript = currentLiveTranscriptRows();
+    const assisted = !!liveRoleplay.assisted;
+    const stageComplete = ok && !assisted && missed.length === 0 && met.length > 0;
     gradeItem(id, ok, "roleplay", ok ? null : errorType, {
-        roleplay: {
-          scenario_id: scenario ? scenario.id : "",
-          met,
-          missed,
-          live_realtime: true,
-          assisted_rescue: !!liveRoleplay.assisted,
-          summary: args.summary || "",
-          pronunciation_issues: args.pronunciation_issues || [],
-          missed_phrases: args.missed_phrases || [],
+      assisted,
+      roleplay: {
+        scenario_id: scenario ? scenario.id : "",
+        met,
+        missed,
+        live_realtime: true,
+        assisted_rescue: assisted,
+        stage_complete: stageComplete,
+        summary: args.summary || "",
+        pronunciation_issues: args.pronunciation_issues || [],
+        missed_phrases: args.missed_phrases || [],
+        repair_focus: args.repair_focus || errorType || "",
         replay_prompt: args.replay_prompt || "",
+        transcript,
       },
     });
     if (missed.length) {
@@ -2575,6 +2594,12 @@
       st.last_roleplay_met = opts.roleplay.met || [];
       st.last_roleplay_missed = opts.roleplay.missed || [];
       st.last_roleplay_assisted = !!opts.assisted;
+      st.last_roleplay_stage_complete = !!opts.roleplay.stage_complete;
+      st.last_roleplay_transcript_turns = Array.isArray(opts.roleplay.transcript) ? opts.roleplay.transcript.length : 0;
+      if (opts.roleplay.stage_complete) {
+        st.mastered = true;
+        st.n_plus_one_ready = true;
+      }
     }
     if (opts.speech_eval) {
       st.last_speech_transcript = opts.speech_eval.transcript || "";
@@ -3503,7 +3528,7 @@
         peer.ontrack = event => { audio.srcObject = event.streams[0]; };
         stream.getAudioTracks().forEach(track => peer.addTrack(track, stream));
         const dataChannel = peer.createDataChannel("oai-events");
-        liveRoleplay = { itemId: id, scenarioId, peer, stream, dataChannel, muted: false, scoring: false, scored: false, functionArgs: "" };
+        liveRoleplay = { itemId: id, scenarioId, peer, stream, dataChannel, muted: false, scoring: false, scored: false, functionArgs: "", transcript: [] };
         dataChannel.addEventListener("open", () => {
           setLiveStatus("Live. Speak Russian; the tutor will answer aloud.");
           liveSetConnected(true);
