@@ -1169,6 +1169,7 @@
     document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("is-active", a.dataset.tab === activeRoute));
     view.scrollTop = 0; window.scrollTo(0, 0);
     if (activeRoute !== "learn") cleanupLearnRecording();
+    if (activeRoute !== "quiz") cleanupLiveRoleplay();
     if (activeRoute === "learn") renderLearn(arg);
     else if (activeRoute === "quiz") arg ? renderQuizRun(arg) : renderQuizMenu();
     else if (activeRoute === "review") renderReview(arg);
@@ -1824,6 +1825,7 @@
   let typedRecordingUrl = "";
   let typedSpeechEval = null;
   let typedSpeechInputId = "";
+  let liveRoleplay = null;
   function listenStepButtons() {
     const steps = [
       ["no_text", "No text"],
@@ -1891,6 +1893,144 @@
       <div id="typedSpeechStatus" class="speechanswer__status">Speak instead of typing; the transcript will be checked against the Russian target.</div>
       <div id="typedSpeechEvalResult"></div>
     </div>`;
+  }
+  function liveRoleplayPanelHtml(id, scenarioId) {
+    return `<div id="liveRoleplayPanel" class="liveplay">
+      <div class="liveplay__head">
+        <div><strong>Live tutor</strong><span id="liveRoleplayStatus">Ready for streaming role-play.</span></div>
+        <div class="liveplay__actions">
+          <button id="liveRoleplayStartBtn" class="btn btn--sm btn--red" onclick="ZS.startLiveRoleplay('${id}','${scenarioId || ""}')">Connect</button>
+          <button id="liveRoleplayMuteBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.toggleLiveRoleplayMute()" disabled>Mute</button>
+          <button id="liveRoleplayEndBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.endLiveRoleplay()" disabled>End + score</button>
+          <button id="liveRoleplayDisconnectBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.disconnectLiveRoleplay()" disabled>Disconnect</button>
+        </div>
+      </div>
+      <div id="liveRoleplayTranscript" class="liveplay__transcript"><p class="liveplay__empty">Conversation transcript will appear here.</p></div>
+      <div id="liveRoleplayDebrief" class="liveplay__debrief"></div>
+    </div>`;
+  }
+  function setLiveStatus(message) {
+    const el = $("#liveRoleplayStatus");
+    if (el) el.textContent = message;
+  }
+  function appendLiveTranscript(role, text, isDelta) {
+    if (!text) return;
+    const box = $("#liveRoleplayTranscript");
+    if (!box) return;
+    const empty = box.querySelector(".liveplay__empty");
+    if (empty) empty.remove();
+    const cls = role === "assistant" ? "assistant" : role === "system" ? "system" : "user";
+    let row = isDelta ? box.querySelector(`.liveplay__row.${cls}.is-delta:last-child`) : null;
+    if (!row) {
+      row = document.createElement("div");
+      row.className = `liveplay__row ${cls}${isDelta ? " is-delta" : ""}`;
+      row.innerHTML = `<strong>${cls === "assistant" ? "Tutor" : cls === "system" ? "System" : "Joe"}</strong><span></span>`;
+      box.appendChild(row);
+    }
+    const span = row.querySelector("span");
+    span.textContent = isDelta ? span.textContent + text : text;
+    if (!isDelta) row.classList.remove("is-delta");
+    box.scrollTop = box.scrollHeight;
+  }
+  function cleanupLiveRoleplay() {
+    const state = liveRoleplay;
+    liveRoleplay = null;
+    if (!state) return;
+    try { if (state.dataChannel) state.dataChannel.close(); } catch (e) {}
+    try { if (state.peer) state.peer.close(); } catch (e) {}
+    if (state.stream) state.stream.getTracks().forEach(track => track.stop());
+    const audio = $("#liveRoleplayAudio");
+    if (audio) audio.remove();
+  }
+  function liveApiBase() {
+    return SYNC_API || "http://127.0.0.1:8787";
+  }
+  function liveSetConnected(connected) {
+    const start = $("#liveRoleplayStartBtn");
+    const mute = $("#liveRoleplayMuteBtn");
+    const end = $("#liveRoleplayEndBtn");
+    const disconnect = $("#liveRoleplayDisconnectBtn");
+    if (start) start.disabled = connected;
+    if (mute) mute.disabled = !connected;
+    if (end) end.disabled = !connected;
+    if (disconnect) disconnect.disabled = !connected;
+  }
+  function liveSend(event) {
+    if (!liveRoleplay || !liveRoleplay.dataChannel || liveRoleplay.dataChannel.readyState !== "open") return false;
+    liveRoleplay.dataChannel.send(JSON.stringify(event));
+    return true;
+  }
+  function liveRequestResponse(extra) {
+    liveSend({ type: "response.create", response: Object.assign({ modalities: ["audio", "text"] }, extra || {}) });
+  }
+  function liveHandleScore(args) {
+    if (!liveRoleplay || liveRoleplay.scored) return;
+    liveRoleplay.scored = true;
+    const id = liveRoleplay.itemId;
+    const it = ITEMS.find(i => i.id === id);
+    const scenario = scenarioForItem(id);
+    const criteria = scenario && scenario.success_criteria ? scenario.success_criteria : [];
+    const met = (args.met || []).filter(c => criteria.includes(c));
+    const missed = (args.missed || []).filter(c => criteria.includes(c) && !met.includes(c));
+    const ok = criteria.length ? missed.length === 0 && met.length > 0 : !missed.length;
+    const errorType = missed.length ? criterionErrorType(missed[0]) : (args.repair_focus || null);
+    gradeItem(id, ok, "roleplay", ok ? null : errorType, {
+      roleplay: {
+        scenario_id: scenario ? scenario.id : "",
+        met,
+        missed,
+        live_realtime: true,
+        summary: args.summary || "",
+        pronunciation_issues: args.pronunciation_issues || [],
+        missed_phrases: args.missed_phrases || [],
+        replay_prompt: args.replay_prompt || "",
+      },
+    });
+    if (missed.length) {
+      const r = rec(id);
+      r.roleplay_criteria_misses = r.roleplay_criteria_misses || {};
+      missed.forEach(c => { r.roleplay_criteria_misses[c] = (r.roleplay_criteria_misses[c] || 0) + 1; });
+      recordRepairFocus(id, "roleplay", missed.map(c => criterionErrorType(c)));
+      save();
+    }
+    const debrief = $("#liveRoleplayDebrief");
+    if (debrief) {
+      debrief.innerHTML = `<div class="feedback ${ok ? "good" : "close"} rise">
+        <div style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem">${ok ? "Live role-play passed" : "Live role-play repair"}</div>
+        <p>${escapeHtml(args.summary || "Role-play scored.")}</p>
+        ${(args.missed_phrases || []).length ? `<div class="card__hint"><strong>Missed phrases:</strong> ${escapeHtml(args.missed_phrases.join(", "))}</div>` : ""}
+        ${(args.pronunciation_issues || []).length ? `<div class="card__hint"><strong>Pronunciation:</strong> ${escapeHtml(args.pronunciation_issues.join(", "))}</div>` : ""}
+        ${args.replay_prompt ? `<div class="card__hint"><strong>Replay:</strong> ${escapeHtml(args.replay_prompt)}</div>` : ""}
+      </div>`;
+    }
+    quiz.answered = true;
+    if (ok) quiz.correct++;
+    setLiveStatus(ok ? "Debrief complete. Role-play passed." : "Debrief complete. Repair scheduled.");
+  }
+  function liveHandleEvent(event) {
+    if (!event || !event.type) return;
+    const type = event.type;
+    if (type === "error") {
+      setLiveStatus(event.error && event.error.message ? event.error.message : "Realtime error.");
+      return;
+    }
+    if (type.includes("input_audio_transcription") && type.endsWith(".delta")) appendLiveTranscript("user", event.delta || "", true);
+    if (type.includes("input_audio_transcription") && (type.endsWith(".completed") || type.endsWith(".done"))) appendLiveTranscript("user", event.transcript || event.text || "", false);
+    if ((type.includes("audio_transcript") || type.includes("output_text")) && type.endsWith(".delta")) appendLiveTranscript("assistant", event.delta || "", true);
+    if ((type.includes("audio_transcript") || type.includes("output_text")) && (type.endsWith(".done") || type.endsWith(".completed"))) appendLiveTranscript("assistant", event.transcript || event.text || "", false);
+    if (type === "response.function_call_arguments.delta") {
+      liveRoleplay.functionArgs = (liveRoleplay.functionArgs || "") + (event.delta || "");
+    }
+    if (type === "response.function_call_arguments.done") {
+      try { liveHandleScore(JSON.parse(event.arguments || liveRoleplay.functionArgs || "{}")); } catch (e) { setLiveStatus("Could not parse role-play score."); }
+    }
+    if (type === "response.output_item.done" && event.item && event.item.type === "function_call" && event.item.name === "submit_roleplay_score") {
+      try { liveHandleScore(JSON.parse(event.item.arguments || "{}")); } catch (e) { setLiveStatus("Could not parse role-play score."); }
+    }
+    if (type === "response.done") {
+      if (liveRoleplay && liveRoleplay.scored) return;
+      setLiveStatus(liveRoleplay && liveRoleplay.scoring ? "Waiting for score..." : "Listening.");
+    }
   }
   function acceptedAnswersForTypedStage(it, stageKey) {
     if (stageKey === "cloze") return it.accepted_answers || [it.answer];
@@ -2084,9 +2224,10 @@
       promptHtml = `<div class="q-instr">${stage.instr}</div>${scenarioCard(it)}<div class="q-en">${escapeHtml(it.en)}</div>`;
       const tutor = tutorCardForItem(it.id);
       body = `<div style="text-align:center;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn--red" onclick="ZS.showLiveRoleplay('${it.id}','${scenario ? scenario.id : ""}')">Live tutor</button>
         ${tutor ? `<button class="btn btn--red" onclick="ZS.openTutor('${it.id}','${scenario ? scenario.id : ""}')">Tutor setup</button>` : ""}
         <button class="btn" onclick="ZS.revealRP('${it.id}')">Reveal model answer</button>
-      </div><div id="tutorPanel"></div><div id="rpReveal"></div>`;
+      </div><div id="tutorPanel"></div><div id="liveRoleplayMount"></div><div id="rpReveal"></div>`;
     }
 
     $("#view").innerHTML = `
@@ -3000,6 +3141,107 @@
       quiz = { stageKey, stage, q: shuffle(q).slice(0, Math.min(10, q.length)), i: 0, correct: 0, answered: false, listenHintLevel: 0, listenStep: "no_text", listenAssistance: 0, repairErrorType: errorType };
       history.pushState(null, "", "#/quiz/" + stageKey);
       drawQuestion();
+    },
+    showLiveRoleplay(id, scenarioId) {
+      const mount = $("#liveRoleplayMount");
+      if (!mount) return;
+      mount.innerHTML = liveRoleplayPanelHtml(id, scenarioId);
+      mount.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    },
+    async startLiveRoleplay(id, scenarioId) {
+      if (!window.RTCPeerConnection || !navigator.mediaDevices) {
+        setLiveStatus("Live role-play needs WebRTC and microphone support.");
+        return;
+      }
+      cleanupLiveRoleplay();
+      ZS.showLiveRoleplay(id, scenarioId);
+      liveSetConnected(false);
+      const startBtn = $("#liveRoleplayStartBtn");
+      if (startBtn) startBtn.disabled = true;
+      try {
+        setLiveStatus("Requesting microphone...");
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const peer = new RTCPeerConnection();
+        const audio = document.createElement("audio");
+        audio.id = "liveRoleplayAudio";
+        audio.autoplay = true;
+        document.body.appendChild(audio);
+        peer.ontrack = event => { audio.srcObject = event.streams[0]; };
+        stream.getAudioTracks().forEach(track => peer.addTrack(track, stream));
+        const dataChannel = peer.createDataChannel("oai-events");
+        liveRoleplay = { itemId: id, scenarioId, peer, stream, dataChannel, muted: false, scoring: false, scored: false, functionArgs: "" };
+        dataChannel.addEventListener("open", () => {
+          setLiveStatus("Live. Speak Russian; the tutor will answer aloud.");
+          liveSetConnected(true);
+          liveSend({
+            type: "conversation.item.create",
+            item: {
+              type: "message",
+              role: "user",
+              content: [{ type: "input_text", text: "Begin the role-play now. Start in character with one short Russian line." }],
+            },
+          });
+          liveRequestResponse();
+        });
+        dataChannel.addEventListener("message", event => {
+          try { liveHandleEvent(JSON.parse(event.data)); } catch (e) {}
+        });
+        dataChannel.addEventListener("close", () => setLiveStatus("Disconnected."));
+        setLiveStatus("Connecting to OpenAI Realtime...");
+        const offer = await peer.createOffer();
+        await peer.setLocalDescription(offer);
+        const params = new URLSearchParams({ item_id: id, scenario_id: scenarioId || "", learner_id: LEARNER_ID, device_id: deviceId() });
+        const response = await fetch(`${liveApiBase()}/api/realtime/call?${params.toString()}`, {
+          method: "POST",
+          headers: { "content-type": "application/sdp" },
+          body: offer.sdp,
+        });
+        const sdp = await response.text();
+        if (!response.ok) {
+          let message = sdp;
+          try {
+            const payload = JSON.parse(sdp);
+            message = payload.error || message;
+          } catch (e) {}
+          throw new Error(message || "Realtime connection failed.");
+        }
+        await peer.setRemoteDescription({ type: "answer", sdp });
+      } catch (e) {
+        cleanupLiveRoleplay();
+        liveSetConnected(false);
+        const btn = $("#liveRoleplayStartBtn");
+        if (btn) btn.disabled = false;
+        setLiveStatus(e.message || "Live role-play failed.");
+      }
+    },
+    toggleLiveRoleplayMute() {
+      if (!liveRoleplay || !liveRoleplay.stream) return;
+      liveRoleplay.muted = !liveRoleplay.muted;
+      liveRoleplay.stream.getAudioTracks().forEach(track => { track.enabled = !liveRoleplay.muted; });
+      const btn = $("#liveRoleplayMuteBtn");
+      if (btn) btn.textContent = liveRoleplay.muted ? "Unmute" : "Mute";
+      setLiveStatus(liveRoleplay.muted ? "Muted." : "Live. Speak Russian; the tutor will answer aloud.");
+    },
+    endLiveRoleplay() {
+      if (!liveRoleplay) return;
+      liveRoleplay.scoring = true;
+      setLiveStatus("Asking tutor for debrief and score...");
+      liveSend({
+        type: "conversation.item.create",
+        item: {
+          type: "message",
+          role: "user",
+          content: [{ type: "input_text", text: "End the live role-play now. Switch to debrief mode, give brief feedback, then call submit_roleplay_score with the final criteria." }],
+        },
+      });
+      liveRequestResponse({ tool_choice: "auto" });
+    },
+    disconnectLiveRoleplay() {
+      cleanupLiveRoleplay();
+      liveSetConnected(false);
+      setLiveStatus("Disconnected.");
+      const btn = $("#liveRoleplayStartBtn");
+      if (btn) btn.disabled = false;
     },
     revealRP(id) {
       const it = ITEMS.find(i => i.id === id);

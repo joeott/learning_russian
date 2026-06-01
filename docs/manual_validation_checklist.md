@@ -43,6 +43,9 @@ open http://localhost:8000/web/#/learn
 - [ ] Run one pronunciation card: native audio, record, play mine, analyze speech, accept or mark repair, then confirm scoring advances.
 - [ ] Run one listening ladder card: captioned pass, slow audio, table speed, room-noise pass.
 - [ ] Run one role-play card and self-rate at least one criterion as missed; confirm Home shows a repair signal.
+- [ ] On a role-play card, click `Live tutor`, allow microphone access, confirm the tutor speaks aloud over WebRTC, and confirm the transcript updates while you talk.
+- [ ] Click `End + score` and confirm the two-phase debrief appears with missed phrases, pronunciation notes, repair focus, and a replay prompt.
+- [ ] Confirm the live role-play debrief persists derived role-play criteria only, not raw audio.
 
 ## Review Screen
 
@@ -62,6 +65,8 @@ open http://localhost:8000/web/#/learn
 - [ ] Open `#/drill`, click `Adaptive next drill`, and confirm it routes to the recommended stage.
 - [ ] Optional Postgres sync: start Postgres, run `npm run db:migrate`, then `npm run sync:serve`.
 - [ ] Optional speech setup: store API keys with `tools/zastolom secrets put`, verify AWS CLI credentials are active, and confirm `/api/speech/evaluate` does not expose keys.
+- [ ] Optional live roleplay setup: confirm `/api/realtime/session` uses `gpt-realtime-2`, `audio.output.voice=marin`, and returns only an ephemeral credential.
+- [ ] Optional live roleplay setup: confirm `/api/realtime/call` accepts browser SDP and returns an SDP answer without exposing `OPENAI_API_KEY`.
 - [ ] In DevTools, set `localStorage.setItem("zastolom.russian_family_visit.v2.sync_api", "http://127.0.0.1:8787")`, reload, complete a card, and confirm `/api/learning/state?learner_id=joe` returns the event-backed state.
 - [ ] Confirm `/api/learning/metrics?learner_id=joe` returns `missionAbility`, `grammarControl`, `nPlusOneFit`, and rating rows.
 - [ ] Confirm `/api/learning/recommendations?learner_id=joe&limit=20` returns item/stage recommendations with `rescue`, `n+1`, `consolidate`, or `too_easy` buckets.
