@@ -142,6 +142,56 @@ class SpeechEvalContractTests(unittest.TestCase):
                 + (ROOT / "web" / "styles.css").read_text(encoding="utf-8"),
             )
 
+    def test_today_lane_prioritizes_review_speak_roleplay(self) -> None:
+        styles = (ROOT / "web" / "styles.css").read_text(encoding="utf-8")
+        for token in (
+            "todayPracticeHtml",
+            "Today practice",
+            "Review cards",
+            "Speak one phrase",
+            "Try guided roleplay",
+            "startTodaySpeak",
+            "startGuidedRoleplay",
+            "todaylane",
+        ):
+            self.assertIn(token, self.app + styles)
+
+    def test_review_sessions_have_spaced_ratings(self) -> None:
+        for token in (
+            "REVIEW_KEY",
+            "reviewSessionControlsHtml",
+            "setReviewSessionLimit",
+            "startReviewSession",
+            "rateReviewCard",
+            "Know it",
+            "Almost",
+            "Forgot",
+            "flashcard_review",
+            "daily_completed_at",
+            "Forgotten cards repeat",
+        ):
+            self.assertIn(token, self.app)
+
+    def test_guided_roleplay_ladder_and_rescue_controls(self) -> None:
+        styles = (ROOT / "web" / "styles.css").read_text(encoding="utf-8")
+        for token in (
+            "guidedRoleplayPanelHtml",
+            "showGuidedRoleplay",
+            "insertRescuePhrase",
+            "Guided roleplay",
+            "Shadow",
+            "Prompted",
+            "Supported",
+            "Live",
+            "Повтори́те, пожа́луйста.",
+            "Поме́дленнее, пожа́луйста.",
+            "Я не понима́ю.",
+            "Я ещё учу́ ру́сский.",
+            "guidedplay",
+            "rescuelines",
+        ):
+            self.assertIn(token, self.app + styles)
+
     def test_live_roleplay_uses_ga_realtime_contract(self) -> None:
         for token in (
             'OPENAI_REALTIME_MODEL || "gpt-realtime-2"',
@@ -167,7 +217,11 @@ class SpeechEvalContractTests(unittest.TestCase):
             "response.function_call_arguments.delta",
             "response.output_item.done",
             "input_audio_transcription",
-            "End + score",
+            "Finish & get feedback",
+            "Live conversation",
+            "Start conversation",
+            "What landed",
+            "Replay easier",
             "live_realtime",
             "missed_phrases",
             "replay_prompt",
