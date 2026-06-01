@@ -67,11 +67,13 @@ open http://localhost:8000/web/#/learn
 - [ ] Optional speech setup: store API keys with `tools/zastolom secrets put`, verify AWS CLI credentials are active, and confirm `/api/speech/evaluate` does not expose keys.
 - [ ] Optional live roleplay setup: confirm `/api/realtime/session` uses `gpt-realtime-2`, `audio.output.voice=marin`, and returns only an ephemeral credential.
 - [ ] Optional live roleplay setup: confirm `/api/realtime/call` accepts browser SDP and returns an SDP answer without exposing `OPENAI_API_KEY`.
+- [ ] During live roleplay, confirm the timer/cost/turn meter updates and `Finish & get feedback` clearly ends the conversation before debrief.
+- [ ] Click a live transcript row and confirm English translation appears without exposing `OPENAI_API_KEY`.
 - [ ] In DevTools, set `localStorage.setItem("zastolom.russian_family_visit.v2.sync_api", "http://127.0.0.1:8787")`, reload, complete a card, and confirm `/api/learning/state?learner_id=joe` returns the event-backed state.
 - [ ] Confirm `/api/learning/metrics?learner_id=joe` returns `missionAbility`, `grammarControl`, `nPlusOneFit`, and rating rows.
 - [ ] Confirm `/api/learning/recommendations?learner_id=joe&limit=20` returns item/stage recommendations with `rescue`, `n+1`, `consolidate`, or `too_easy` buckets.
 - [ ] Confirm no microphone recordings, base64 audio payloads, or sonograph buffers are persisted to Postgres; only transcript/score/verdict metadata appears under `speech_eval`.
-- [ ] After a live roleplay `Finish & get feedback`, confirm `roleplay_conversation_passes` has one row for the event with transcript text, met/missed criteria, `stage_complete`, and `n_plus_one_ready` fields populated.
+- [ ] After a live roleplay `Finish & get feedback`, confirm `roleplay_conversation_passes` has one row for the event with transcript text, met/missed criteria, `stage_complete`, `n_plus_one_ready`, `estimated_cost_usd`, `duration_ms`, and `ended_reason` fields populated.
 
 ## Offline And Installability
 
