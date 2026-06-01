@@ -1961,7 +1961,7 @@
     return true;
   }
   function liveRequestResponse(extra) {
-    liveSend({ type: "response.create", response: Object.assign({ modalities: ["audio", "text"] }, extra || {}) });
+    liveSend({ type: "response.create", response: Object.assign({ output_modalities: ["audio"] }, extra || {}) });
   }
   function liveHandleScore(args) {
     if (!liveRoleplay || liveRoleplay.scored) return;
