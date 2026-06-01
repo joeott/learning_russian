@@ -2,6 +2,8 @@
 import http from "node:http";
 import pg from "pg";
 import { createRequire } from "node:module";
+import { compareSpeech } from "./speech_eval.mjs";
+import { transcribeRussianAudio } from "./speech_transcription.mjs";
 
 const PORT = Number(process.env.ZASTOLOM_SYNC_PORT || 8787);
 const LEARNER_ID = process.env.ZASTOLOM_LEARNER_ID || "joe";
@@ -31,6 +33,15 @@ async function readJson(req) {
   for await (const chunk of req) chunks.push(chunk);
   if (!chunks.length) return {};
   return JSON.parse(Buffer.concat(chunks).toString("utf8"));
+}
+
+function validateSpeechBody(body) {
+  const itemId = body.item_id || "";
+  const target = body.target_ru_plain || body.target_ru || "";
+  if (!itemId) return "item_id is required";
+  if (!target) return "target_ru_plain is required";
+  if (body.audio_base64 && String(body.audio_base64).length > 10 * 1024 * 1024) return "audio payload is too large";
+  return "";
 }
 
 async function ensureDevice(client, learnerId, deviceId, userAgent) {
@@ -435,12 +446,42 @@ async function state(req, res) {
   json(res, 200, { learner_id: learnerId, attempts: rows.rowCount, items });
 }
 
+async function speechEvaluate(req, res) {
+  const body = await readJson(req);
+  const invalid = validateSpeechBody(body);
+  if (invalid) return json(res, 400, { error: invalid });
+  let transcription = { provider: "unavailable", transcript: "", confidence: 0, error: "audio transcription unavailable" };
+  if (body.audio_base64) {
+    transcription = await transcribeRussianAudio({
+      audio_base64: body.audio_base64,
+      mime_type: body.mime_type || "audio/webm",
+      filename: body.filename || `${body.item_id}.webm`,
+      prompt: body.target_ru_plain || body.target_ru || "",
+    });
+  } else if (body.transcript) {
+    transcription = { provider: "client", transcript: body.transcript, confidence: 0.75 };
+  }
+  const score = compareSpeech({
+    transcript: transcription.transcript || "",
+    target: body.target_ru_plain || body.target_ru || "",
+    confidence: transcription.confidence || 0,
+  });
+  json(res, 200, Object.assign(score, {
+    provider: transcription.provider,
+    model: transcription.model || "",
+    error: transcription.error || "",
+    item_id: body.item_id,
+    stage_key: body.stage_key || "pronounce",
+  }));
+}
+
 const server = http.createServer(async (req, res) => {
   try {
     if (req.method === "OPTIONS") return json(res, 200, { ok: true });
     if (req.method === "GET" && req.url === "/api/health") return json(res, 200, { ok: true });
     if (req.method === "POST" && req.url === "/api/learning/events") return insertEvents(req, res);
     if (req.method === "POST" && req.url === "/api/learning/snapshots") return insertSnapshot(req, res);
+    if (req.method === "POST" && req.url === "/api/speech/evaluate") return speechEvaluate(req, res);
     if (req.method === "GET" && req.url.startsWith("/api/learning/state")) return state(req, res);
     if (req.method === "GET" && req.url.startsWith("/api/learning/metrics")) return metrics(req, res);
     if (req.method === "GET" && req.url.startsWith("/api/learning/recommendations")) return recommendations(req, res);

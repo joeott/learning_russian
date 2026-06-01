@@ -15,8 +15,11 @@ learning.
 - adaptive Elo-style learner skill ratings
 - adaptive item/stage difficulty ratings
 - daily metric snapshots for mission ability, grammar control, n+1 fit, and friction
+- speech-evaluation transcript, score, verdict, provider, and suggested repair
+  type when pronunciation or spoken Russian text-entry analysis is accepted
 
-Audio recordings and sonograph data are intentionally not persisted.
+Audio recordings, base64 audio payloads, and sonograph data are intentionally
+not persisted.
 
 ## Local setup
 
@@ -32,6 +35,23 @@ The sync API listens on `http://127.0.0.1:8787` by default. Override with:
 ```bash
 export ZASTOLOM_SYNC_PORT=8790
 export ZASTOLOM_LEARNER_ID=joe
+```
+
+Speech transcription uses server-side OpenAI credentials loaded from AWS
+Secrets Manager through the system AWS CLI credentials. Store the required API
+keys once with:
+
+```bash
+export OPENAI_API_KEY=...
+export ELEVENLABS_API_KEY=...
+tools/zastolom secrets put --secret-id /zastolom/dev/api-keys
+```
+
+At runtime the server reads `$OPENAI_API_KEY` first, then
+`$ZASTOLOM_API_KEYS_SECRET_ID` or `/zastolom/dev/api-keys` via:
+
+```bash
+aws secretsmanager get-secret-value --secret-id /zastolom/dev/api-keys
 ```
 
 The CLI wrapper is:
@@ -56,8 +76,18 @@ location.reload();
 - `GET /api/learning/metrics?learner_id=joe`
 - `GET /api/learning/recommendations?learner_id=joe&limit=20`
 - `POST /api/learning/snapshots`
+- `POST /api/speech/evaluate`
 
 Events are idempotent by `event_id`, so retrying a failed sync is safe.
+
+`POST /api/speech/evaluate` accepts a short recorded audio payload as
+`audio_base64` plus `item_id`, `stage_key`, `target_ru`, and `target_ru_plain`.
+It is used by pronunciation plus the Russian text-entry stages (`cloze`,
+`conjugate`, `dictation`, `produce`, and back-translation rebuild). It returns a
+derived transcript, normalized target/transcript, similarity score,
+`correct|close|repair` verdict, provider, and suggested error type. The request
+audio is passed to the transcription provider only for that request and is not
+written to Postgres.
 
 ## Adaptive metrics
 

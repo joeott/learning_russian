@@ -299,6 +299,38 @@
     }
     return true;
   }
+  function answerSimilarity(a, b) {
+    const aa = normalize(a);
+    const bb = normalize(b);
+    const longest = Math.max(aa.length, bb.length);
+    if (!longest) return 1;
+    return Math.max(0, 1 - (levenshtein(aa, bb) / longest));
+  }
+  function typedAnswerAssessment(value, accepted) {
+    const rawNorm = normalize(value || "");
+    const candidates = (accepted || []).filter(Boolean);
+    let best = { ok: false, close: false, bestAnswer: candidates[0] || "", similarity: 0 };
+    if (!rawNorm || !candidates.length) return best;
+    for (const candidate of candidates) {
+      const candNorm = normalize(candidate);
+      const similarity = answerSimilarity(rawNorm, candNorm);
+      if (similarity > best.similarity) {
+        best = { ok: false, close: false, bestAnswer: candidate, similarity };
+      }
+      if (rawNorm === candNorm) return { ok: true, close: false, bestAnswer: candidate, similarity: 1 };
+    }
+    for (const candidate of candidates) {
+      const candNorm = normalize(candidate);
+      const userTokens = tokenizeAnswer(rawNorm);
+      const answerTokens = tokenizeAnswer(candNorm);
+      const tokenClose = userTokens.length > 0 && nearTokenMatch(userTokens, answerTokens);
+      const similarity = answerSimilarity(rawNorm, candNorm);
+      if (tokenClose || similarity >= 0.72) {
+        return { ok: false, close: true, bestAnswer: candidate, similarity };
+      }
+    }
+    return best;
+  }
   function inferBacktranslateErrorType(item, raw, stageKey) {
     const allowed = new Set(
       (item && (item.allowed_error_types || item.error_types || [])) || []
@@ -463,6 +495,58 @@
       contrastAccuracy: stageAccuracy("contrast"),
       averageResponseMs: averageResponseMs(),
     };
+  }
+  function speechAnswerStats() {
+    const states = STAGE_KEYS.flatMap(stageKey =>
+      stagePool(stageKey).map(it => stageState(it.id, stageKey)).filter(Boolean)
+    );
+    const totals = states.reduce((acc, st) => {
+      acc.count += st.speech_eval_count || 0;
+      acc.correct += st.speech_eval_success || 0;
+      acc.close += st.close_guesses || 0;
+      return acc;
+    }, { count: 0, correct: 0, close: 0 });
+    totals.successRate = totals.count ? Math.round(totals.correct / totals.count * 100) : 0;
+    return totals;
+  }
+  function oralAdvancementPlan(perf, adaptive) {
+    const speech = speechAnswerStats();
+    const rows = [];
+    if (perf.listenAccuracy < 70) {
+      rows.push({ label: "Decode hosts", route: "listen", why: "Run listening until you can pick the meaning from audio first." });
+    }
+    if (stageAccuracy("pronounce") < 70 || speech.successRate < 70) {
+      rows.push({ label: "Say it aloud", route: "pronounce", why: "Use record, play mine, and analyze before relying on any typed answer." });
+    }
+    if (perf.roleplayPass < 70) {
+      rows.push({ label: "Use it at the table", route: "roleplay", why: "Role-play is the closest signal to the actual family visit." });
+    }
+    if (adaptive.frictionIndex >= 35) {
+      rows.push({ label: "Repair weak spots", route: "adaptive", why: "The model sees misses or slow answers; stay in the n+1 drill." });
+    }
+    if (!rows.length) {
+      rows.push({ label: "Advance one notch", route: "adaptive", why: "Your oral signals are stable enough to take the next adaptive item." });
+    }
+    return rows.slice(0, 3);
+  }
+  function oralAdvancementHtml(perf, adaptive) {
+    const speech = speechAnswerStats();
+    const rows = oralAdvancementPlan(perf, adaptive);
+    return `<div class="oraladvance rise">
+      <div>
+        <h3>How to advance</h3>
+        <p>Prioritize oral readiness: understand audio, say the phrase, then use it in a role-play. Typing is just a fallback for checking an answer.</p>
+      </div>
+      <div class="oraladvance__metrics">
+        <div><strong>${perf.listenAccuracy}<small>%</small></strong><span>listening</span></div>
+        <div><strong>${stageAccuracy("pronounce")}<small>%</small></strong><span>pronunciation</span></div>
+        <div><strong>${speech.successRate}<small>%</small></strong><span>speech checks</span></div>
+        <div><strong>${perf.roleplayPass}<small>%</small></strong><span>role-play</span></div>
+      </div>
+      <div class="oraladvance__queue">
+        ${rows.map(row => `<button onclick="${row.route === "adaptive" ? "ZS.startAdaptive()" : `location.hash='#/quiz/${row.route}'`}"><strong>${escapeHtml(row.label)}</strong><span>${escapeHtml(row.why)}</span></button>`).join("")}
+      </div>
+    </div>`;
   }
   function adaptiveStats() {
     if (!METRICS) return {
@@ -1087,6 +1171,7 @@
     if (activeRoute !== "learn") cleanupLearnRecording();
     if (activeRoute === "learn") renderLearn(arg);
     else if (activeRoute === "quiz") arg ? renderQuizRun(arg) : renderQuizMenu();
+    else if (activeRoute === "review") renderReview(arg);
     else if (activeRoute === "plan") renderPlan();
     else renderHome();
     view.focus({ preventScroll: true });
@@ -1153,6 +1238,7 @@
         </div>
       </div>
       ${analysisPanelHtml(analysis)}
+      ${oralAdvancementHtml(a, adaptive)}
       ${adaptivePanelHtml(adaptive)}
       ${repairProfileHtml(repairFocusRows)}
       ${roleplaySignalsHtml(roleSignals)}
@@ -1184,7 +1270,9 @@
   let learnRecordStream = null;
   let learnRecordChunks = [];
   let learnRecordingUrl = "";
+  let learnRecordingBlob = null;
   let learnRecordingItemId = "";
+  let learnSpeechEval = null;
   let learnSpectrogramToken = 0;
   function buildLearnList() {
     let list = unlockedItems(ITEMS);
@@ -1209,12 +1297,152 @@
       URL.revokeObjectURL(learnRecordingUrl);
       learnRecordingUrl = "";
     }
+    learnRecordingBlob = null;
     learnRecordChunks = [];
     learnRecordingItemId = "";
+    learnSpeechEval = null;
   }
   function setLearnStatus(message) {
     const el = $("#learnRecordStatus");
     if (el) el.textContent = message;
+  }
+  async function blobToBase64(blob) {
+    const dataUrl = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result || ""));
+      reader.onerror = () => reject(reader.error || new Error("Unable to read recording"));
+      reader.readAsDataURL(blob);
+    });
+    return dataUrl.split(",", 2)[1] || "";
+  }
+  function speechTokenDiff(targetTokens, transcriptTokens) {
+    const used = new Set();
+    const rows = targetTokens.map(target => {
+      let bestIndex = -1;
+      let bestDistance = Infinity;
+      transcriptTokens.forEach((token, index) => {
+        if (used.has(index)) return;
+        const distance = levenshtein(target, token);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          bestIndex = index;
+        }
+      });
+      if (bestIndex >= 0 && bestDistance <= Math.max(1, Math.ceil(target.length * 0.34))) {
+        used.add(bestIndex);
+        return { target, heard: transcriptTokens[bestIndex], ok: bestDistance === 0, distance: bestDistance };
+      }
+      return { target, heard: "", ok: false, missing: true };
+    });
+    transcriptTokens.forEach((token, index) => {
+      if (!used.has(index)) rows.push({ target: "", heard: token, ok: false, extra: true });
+    });
+    return rows;
+  }
+  function normalizeSpeechText(value) {
+    return normalize(value).replace(/[ё]/g, "е").replace(/[^\p{Letter}\p{Number}\s-]+/gu, " ").replace(/\b(э|эм|ну|а)\b/giu, " ").replace(/\s+/g, " ").trim();
+  }
+  function compareSpeechTranscript(transcript, target) {
+    const normalizedTranscript = normalizeSpeechText(transcript);
+    const targetNormalized = normalizeSpeechText(target);
+    const distance = levenshtein(normalizedTranscript, targetNormalized);
+    const maxLen = Math.max(normalizedTranscript.length, targetNormalized.length, 1);
+    const charSimilarity = Math.max(0, 1 - distance / maxLen);
+    const targetTokens = targetNormalized.split(/\s+/).filter(Boolean);
+    const transcriptTokens = normalizedTranscript.split(/\s+/).filter(Boolean);
+    const diffTokens = speechTokenDiff(targetTokens, transcriptTokens);
+    const matched = diffTokens.filter(row => row.target && row.heard && row.distance <= Math.max(1, Math.ceil(row.target.length * 0.34))).length;
+    const tokenSimilarity = targetTokens.length ? matched / targetTokens.length : 0;
+    const textSimilarity = Math.round(((charSimilarity * 0.55) + (tokenSimilarity * 0.45)) * 1000) / 1000;
+    const verdict = normalizedTranscript && normalizedTranscript === targetNormalized ? "correct" : textSimilarity >= 0.72 ? "close" : "repair";
+    return {
+      transcript: transcript || "",
+      normalized_transcript: normalizedTranscript,
+      target_normalized: targetNormalized,
+      text_similarity: textSimilarity,
+      sample_match_score: textSimilarity,
+      verdict,
+      suggested_error_type: verdict === "repair" ? "forgot_phrase" : verdict === "close" ? "stress" : "",
+      diff_tokens: diffTokens,
+      confidence: 0.7,
+      provider: "browser",
+    };
+  }
+  function browserRecognizeRussian(statusFn) {
+    const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!Recognition) return Promise.resolve(null);
+    return new Promise((resolve) => {
+      const rec = new Recognition();
+      let settled = false;
+      rec.lang = "ru-RU";
+      rec.interimResults = false;
+      rec.maxAlternatives = 1;
+      rec.onresult = event => {
+        settled = true;
+        const result = event.results && event.results[0] && event.results[0][0];
+        resolve({ transcript: result ? result.transcript : "", confidence: result ? result.confidence || 0.7 : 0.4 });
+      };
+      rec.onerror = () => { if (!settled) resolve(null); };
+      rec.onend = () => { if (!settled) resolve(null); };
+      if (statusFn) statusFn("Listening again for browser transcription...");
+      try { rec.start(); } catch (e) { resolve(null); }
+    });
+  }
+  async function evaluateSpeech(opts) {
+    const item = opts.item;
+    const target = opts.targetOverride || item.ru_plain || stripStress(item.ru || "");
+    if (SYNC_API && opts.blob) {
+      if (opts.statusFn) opts.statusFn("Analyzing Russian speech...");
+      const response = await fetch(`${SYNC_API}/api/speech/evaluate`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          learner_id: LEARNER_ID,
+          device_id: deviceId(),
+          item_id: item.item_id || item.id,
+          stage_key: opts.stageKey || "pronounce",
+          target_ru: opts.targetRu || item.ru || target,
+          target_ru_plain: target,
+          mime_type: opts.blob.type || "audio/webm",
+          filename: `${item.item_id || item.id || "zastolom"}.webm`,
+          audio_base64: await blobToBase64(opts.blob),
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Speech analysis failed");
+      if (result.provider !== "unavailable") return result;
+    }
+    const heard = await browserRecognizeRussian(opts.statusFn);
+    if (heard && heard.transcript) {
+      return Object.assign(compareSpeechTranscript(heard.transcript, target), { confidence: heard.confidence || 0.7 });
+    }
+    return Object.assign(compareSpeechTranscript("", target), {
+      provider: "unavailable",
+      confidence: 0,
+      error: "Transcription unavailable. Start the sync server with AWS-backed OPENAI_API_KEY, or use manual self-rating.",
+    });
+  }
+  function speechEvalHtml(result, applyId) {
+    if (!result) return "";
+    const pct = Math.round((result.text_similarity || 0) * 100);
+    const title = result.verdict === "correct" ? "Correct" : result.verdict === "close" ? "Close" : "Needs repair";
+    const diff = (result.diff_tokens || []).slice(0, 10).map(row => {
+      const cls = row.ok ? "ok" : row.missing ? "missing" : row.extra ? "extra" : "near";
+      const text = row.ok ? row.target : row.missing ? `-${row.target}` : row.extra ? `+${row.heard}` : `${row.target}→${row.heard}`;
+      return `<span class="${cls}">${escapeHtml(text)}</span>`;
+    }).join("");
+    const actions = applyId ? `<div class="speecheval__actions">
+      <button class="btn btn--sm" onclick="ZS.applySpeechVerdict('${applyId}',${result.verdict === "correct"})">Accept ${escapeHtml(title)}</button>
+      <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.applySpeechVerdict('${applyId}',false,'${escapeHtml(result.suggested_error_type || "forgot_phrase")}')">Mark repair</button>
+    </div>` : "";
+    return `<div class="speecheval speecheval--${escapeHtml(result.verdict || "repair")}">
+      <div class="speecheval__top"><strong>${escapeHtml(title)}</strong><span>${pct}% · ${escapeHtml(result.provider || "unknown")}</span></div>
+      <div><span>Heard</span><p>${escapeHtml(result.transcript || "—")}</p></div>
+      <div><span>Target</span><p>${escapeHtml(result.target_normalized || "")}</p></div>
+      ${diff ? `<div class="speecheval__diff">${diff}</div>` : ""}
+      ${result.error ? `<div class="speecheval__error">${escapeHtml(result.error)}</div>` : ""}
+      ${actions}
+    </div>`;
   }
   function activeLearnItem() {
     return learnState.list[learnState.idx] || null;
@@ -1263,6 +1491,7 @@
       <div class="sonorow"><span>Native</span><canvas id="nativeSpectrogram" width="620" height="150"></canvas></div>
       <div class="sonorow"><span>Mine</span><canvas id="mineSpectrogram" width="620" height="150"></canvas></div>
       <div id="learnRecordStatus" class="voicelab__status">${mineReady ? "Recording ready. Play yours or record again." : "Record yourself to compare against the native model."}</div>
+      <div id="learnSpeechEvalResult">${learnSpeechEval && learnRecordingItemId === it.id ? speechEvalHtml(learnSpeechEval, "") : ""}</div>
     </div>`;
   }
   function drawEmptySpectrogram(canvas, message) {
@@ -1410,11 +1639,84 @@
         <button id="learnRecordBtn" class="btn btn--sm btn--red" title="Record your pronunciation for this card" onclick="ZS.startLearnRecording()">Record</button>
         <button id="learnStopRecordBtn" class="btn btn--sm btn--ghost ghost-dark" title="Stop recording" onclick="ZS.stopLearnRecording()" disabled>Stop</button>
         <button id="learnPlayRecordBtn" class="btn btn--sm btn--ghost ghost-dark" title="Play your latest recording for this card" onclick="ZS.playLearnRecording()" ${learnRecordingUrl && learnRecordingItemId === it.id ? "" : "disabled"}>Play mine</button>
+        <button id="learnAnalyzeBtn" class="btn btn--sm btn--ghost ghost-dark" title="Transcribe and check your Russian" onclick="ZS.analyzeLearnSpeech()" ${learnRecordingUrl && learnRecordingItemId === it.id ? "" : "disabled"}>Analyze</button>
         <button class="btn btn--sm btn--ghost ghost-dark ${learnState.showVoiceLab ? "is-on" : ""}" title="Show native and self-recorded spectrograms" onclick="ZS.toggleVoiceLab()">Sonograph</button>
         ${hasConjugation ? `<button class="btn btn--sm btn--ghost ghost-dark ${learnState.showConjugation ? "is-on" : ""}" title="Show the core verb forms for this card" onclick="ZS.toggleConjugation()">Conjugate</button>` : ""}
       </div>`;
     speak(it, { quiet: true, rate: learnState.audioRate }); // try native audio, but do not show autoplay-blocked TTS warnings
     if (learnState.showVoiceLab) setTimeout(renderLearnSpectrograms, 0);
+  }
+
+  /* ====================================================================
+     REVIEW  (simple flip cards)
+     ==================================================================== */
+  let reviewState = {
+    module: "all",
+    priority: 0,
+    idx: 0,
+    list: [],
+    flipped: false,
+    audioRate: loadLearnRate(),
+  };
+  function buildReviewList() {
+    let list = unlockedItems(ITEMS);
+    if (reviewState.module !== "all") list = list.filter(i => i.module === reviewState.module);
+    if (reviewState.priority) list = list.filter(i => i.priority === reviewState.priority);
+    reviewState.list = list;
+    if (reviewState.idx >= list.length) reviewState.idx = 0;
+    return list;
+  }
+  function renderReview(modArg) {
+    if (modArg && MOD_BY_ID[modArg]) reviewState.module = modArg;
+    buildReviewList();
+    const modChips = ['<button class="chip ' + (reviewState.module === "all" ? "is-on" : "") + '" onclick="ZS.setReviewMod(\'all\')">All</button>']
+      .concat(MODULES.map(m => `<button class="chip ${reviewState.module === m.id ? "is-on" : ""}" onclick="ZS.setReviewMod('${m.id}')">${m.icon} ${escapeHtml(m.title)}</button>`)).join("");
+    const priChips = [0, 1, 2, 3].map(p => `<button class="chip ${reviewState.priority === p ? "is-on" : ""}" onclick="ZS.setReviewPri(${p})">${p ? "P" + p : "Any P"}</button>`).join("");
+    view.innerHTML = `
+      <div class="section-head"><span class="section-head__num">04</span><span class="section-head__title">Review</span>
+        <span class="section-head__sub">Simple flip cards: Russian first, then English. No typing required.</span></div>
+      ${lessonLockHtml()}
+      <div class="learnbar learnbar--scroll">${modChips}</div>
+      <div class="learnbar learnbar--tools">${priChips}<span class="spacer"></span>
+        <div class="speedctl" aria-label="Review audio speed">${reviewSpeedControlsHtml()}</div>
+        <button class="chip" onclick="ZS.shuffleReview()">Shuffle</button></div>
+      <div id="reviewslot"></div>
+    `;
+    renderReviewCard();
+  }
+  function reviewSpeedControlsHtml() {
+    return [0.65, 0.85, 1, 1.15, 1.3].map(rate =>
+      `<button class="chip chip--tight ${reviewState.audioRate === rate ? "is-on" : ""}" title="${rate}x readback" aria-label="review readback speed ${rate}x" onclick="ZS.setReviewRate(${rate})">${rate}x</button>`
+    ).join("");
+  }
+  function renderReviewCard() {
+    const slot = $("#reviewslot");
+    const list = reviewState.list;
+    if (!slot) return;
+    if (!list.length) { slot.innerHTML = '<div class="reviewcard"><p>No review cards match this filter.</p></div>'; return; }
+    const it = list[reviewState.idx];
+    const module = MOD_BY_ID[it.module] || {};
+    slot.innerHTML = `
+      <button class="reviewcard rise ${reviewState.flipped ? "is-flipped" : ""}" onclick="ZS.flipReview()" aria-label="Flip review card">
+        <div class="reviewcard__meta"><span>${module.icon || ""} ${escapeHtml(module.title || it.module)}</span><span class="pill pill--p${it.priority}">P${it.priority}</span></div>
+        <div class="reviewcard__front">
+          <div class="reviewcard__label">Russian</div>
+          <div class="reviewcard__ru">${colorStress(it.ru)}</div>
+          ${it.hint ? `<div class="reviewcard__hint">${escapeHtml(it.hint)}</div>` : ""}
+        </div>
+        <div class="reviewcard__back">
+          <div class="reviewcard__label">English</div>
+          <div class="reviewcard__en">${escapeHtml(it.en)}</div>
+          ${it.note ? `<div class="reviewcard__note">${escapeHtml(it.note)}</div>` : ""}
+        </div>
+      </button>
+      <div class="cardnav">
+        <button class="iconbtn" onclick="ZS.prevReview()" aria-label="Previous review card">‹</button>
+        <button class="iconbtn iconbtn--play" onclick="ZS.sayReview()" aria-label="Play review audio">▶</button>
+        <span class="cardnav__count">${reviewState.idx + 1} / ${list.length}</span>
+        <button class="btn btn--sm" onclick="ZS.flipReview()">${reviewState.flipped ? "Show Russian" : "Flip to English"}</button>
+        <button class="iconbtn" onclick="ZS.nextReview()" aria-label="Next review card">›</button>
+      </div>`;
   }
 
   /* ====================================================================
@@ -1496,6 +1798,7 @@
         <span class="section-head__sub">Graduated difficulty: recognise → recall → conjugate → stress → pronounce → contrast → produce → listen → role-play. Retrieval practice beats re-reading.</span></div>
       ${lessonLockHtml()}
       <div class="mastery rise">${masteryRings()}</div>
+      ${oralAdvancementHtml(analytics(), adaptiveStats())}
       <div class="callout">Each round is 10 questions: due reviews first, fragile high-priority phrases next, new cards only after the review load is under control.</div>
       <button class="stagecard stagecard--adaptive rise" onclick="ZS.startAdaptive()">
         <div class="stagecard__n">n+1</div>
@@ -1512,6 +1815,15 @@
   let recordStream = null;
   let recordChunks = [];
   let recordingUrl = "";
+  let recordingBlob = null;
+  let pronunciationSpeechEval = null;
+  let typedRecorder = null;
+  let typedRecordStream = null;
+  let typedRecordChunks = [];
+  let typedRecordingBlob = null;
+  let typedRecordingUrl = "";
+  let typedSpeechEval = null;
+  let typedSpeechInputId = "";
   function listenStepButtons() {
     const steps = [
       ["no_text", "No text"],
@@ -1540,7 +1852,97 @@
       URL.revokeObjectURL(recordingUrl);
       recordingUrl = "";
     }
+    recordingBlob = null;
+    pronunciationSpeechEval = null;
     recordChunks = [];
+  }
+  function cleanupTypedRecording() {
+    const activeRecorder = typedRecorder;
+    typedRecorder = null;
+    if (activeRecorder && activeRecorder.state !== "inactive") {
+      activeRecorder.onstop = null;
+      try { activeRecorder.stop(); } catch (e) {}
+    }
+    if (typedRecordStream) {
+      typedRecordStream.getTracks().forEach(track => track.stop());
+      typedRecordStream = null;
+    }
+    if (typedRecordingUrl) {
+      URL.revokeObjectURL(typedRecordingUrl);
+      typedRecordingUrl = "";
+    }
+    typedRecordChunks = [];
+    typedRecordingBlob = null;
+    typedSpeechEval = null;
+    typedSpeechInputId = "";
+  }
+  function setTypedSpeechStatus(message) {
+    const status = $("#typedSpeechStatus");
+    if (status) status.textContent = message;
+  }
+  function typedSpeechControlsHtml(id, inputId) {
+    return `<div class="speechanswer">
+      <div class="speechanswer__row">
+        <button id="typedSpeechRecordBtn" class="btn btn--sm btn--red" onclick="ZS.startTypedSpeech('${id}','${inputId}')">Speak answer</button>
+        <button id="typedSpeechStopBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.stopTypedSpeech()" disabled>Stop</button>
+        <button id="typedSpeechPlayBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.playTypedSpeech()" disabled>Play mine</button>
+        <button id="typedSpeechAnalyzeBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.analyzeTypedSpeech('${id}','${inputId}')" disabled>Analyze</button>
+      </div>
+      <div id="typedSpeechStatus" class="speechanswer__status">Speak instead of typing; the transcript will be checked against the Russian target.</div>
+      <div id="typedSpeechEvalResult"></div>
+    </div>`;
+  }
+  function acceptedAnswersForTypedStage(it, stageKey) {
+    if (stageKey === "cloze") return it.accepted_answers || [it.answer];
+    if (stageKey === "conjugate") return it.accepted_answers || [it.answer || it.ru_plain];
+    return it.accepted_answers || [it.ru_plain || stripStress(it.ru || "")];
+  }
+  function typedSpeechTarget(it, stageKey) {
+    const accepted = acceptedAnswersForTypedStage(it, stageKey).filter(Boolean);
+    return accepted[0] || it.ru_plain || stripStress(it.ru || "");
+  }
+  function typedSpeechErrorType(it, value, stageKey) {
+    if (stageKey === "dictation") return "listening_misparse";
+    if (stageKey === "conjugate") return "case_or_inflection";
+    if (stageKey === "cloze" || stageKey === "backtranslate") return inferBacktranslateErrorType(it, value, stageKey);
+    return inferredErrorType(it, stageKey);
+  }
+  function closeGuessErrorType(it, stageKey, fallback) {
+    const allowed = new Set((it && (it.allowed_error_types || it.error_types || [])) || []);
+    const preferred = {
+      cloze: ["case_or_inflection", "word_order", "register", "forgot_phrase"],
+      backtranslate: ["case_or_inflection", "word_order", "register", "forgot_phrase"],
+      conjugate: ["case_or_inflection", "stress", "forgot_phrase"],
+      dictation: ["listening_misparse", "stress", "vowel_reduction", "forgot_phrase"],
+      produce: ["case_or_inflection", "word_order", "gendered_form", "stress", "forgot_phrase"],
+    }[stageKey] || ["case_or_inflection", "forgot_phrase"];
+    for (const id of preferred) {
+      if (id === "forgot_phrase" || id === "case_or_inflection" || allowed.has(id)) return id;
+    }
+    return fallback || inferredErrorType(it, stageKey);
+  }
+  function closeGuessHint(value, target, prefix) {
+    return `<div class="card__hint"><strong>Close guess:</strong> ${escapeHtml(prefix || "You wrote")}: <em>${escapeHtml(value || "—")}</em>; target: <strong>${escapeHtml(target || "—")}</strong></div>`;
+  }
+  function gradeTypedSpeech(id, inputId, result) {
+    if (quiz.answered) return;
+    const it = practiceItem(id);
+    const transcript = result.transcript || "";
+    const input = $("#" + inputId);
+    if (input) input.value = transcript;
+    const accepted = acceptedAnswersForTypedStage(it, quiz.stageKey);
+    const assessment = typedAnswerAssessment(transcript, accepted);
+    const ok = assessment.ok || result.verdict === "correct";
+    const close = !ok && (assessment.close || result.verdict === "close");
+    const errorType = ok ? null : close ? closeGuessErrorType(it, quiz.stageKey, result.suggested_error_type) : typedSpeechErrorType(it, transcript, quiz.stageKey);
+    gradeItem(id, ok, quiz.stageKey, errorType, { speech_eval: result, close_guess: close, answer_similarity: assessment.similarity || result.text_similarity || 0 });
+    const target = typedSpeechTarget(it, quiz.stageKey);
+    const hint = ok
+      ? speechEvalHtml(result, "")
+      : speechEvalHtml(result, "") + (close
+        ? closeGuessHint(transcript, assessment.bestAnswer || target, "Heard")
+        : `<div class="card__hint">Heard: <em>${escapeHtml(transcript || "—")}</em>; target: <strong>${escapeHtml(target)}</strong></div>`);
+    showFeedback(ok, it, hint, errorType, close ? { close: true, label: "≈ Close guess" } : null);
   }
   function renderQuizRun(stageKey) {
     if (stageKey === "adaptive") {
@@ -1574,6 +1976,7 @@
   }
   function drawQuestion() {
     cleanupRecording();
+    cleanupTypedRecording();
     const { stage } = quiz;
     if (quiz.i >= quiz.q.length) return drawSummary();
     const it = quiz.q[quiz.i];
@@ -1601,17 +2004,20 @@
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru">${escapeHtml(it.prompt_ru)}</div><div class="q-en">${escapeHtml(it.en)}</div>`;
       body = `<div class="answerbox"><input id="clozeIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Missing word…" />
         <button class="btn btn--red" onclick="ZS.checkCloze('${it.id}')">Check</button></div>
+        ${typedSpeechControlsHtml(it.id, "clozeIn")}
         <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>`;
     } else if (stage.key === "conjugate") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-en">${escapeHtml(it.prompt)}</div><div class="card__hint">${escapeHtml(it.en)}</div>`;
       body = `<div class="answerbox"><input id="conjIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Verb form…" />
         <button class="btn btn--red" onclick="ZS.checkConjugate('${it.id}')">Check</button></div>
+        ${typedSpeechControlsHtml(it.id, "conjIn")}
         <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>`;
     } else if (stage.key === "dictation") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru" style="font-size:2.6rem">🔊</div><div class="q-en">${escapeHtml(it.en)}</div>`;
       body = `<div style="text-align:center;margin-bottom:14px"><button class="iconbtn iconbtn--play" onclick="ZS.sayItem('${it.id}')">▶</button></div>
         <div class="answerbox"><input id="dictIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Печатайте по-русски…" />
         <button class="btn btn--red" onclick="ZS.checkDictation('${it.id}')">Check</button></div>
+        ${typedSpeechControlsHtml(it.id, "dictIn")}
         <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>`;
     } else if (stage.key === "stress") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru">${escapeHtml(it.ru_plain)}</div><div class="q-en">${escapeHtml(it.en)}</div>`;
@@ -1625,8 +2031,10 @@
           <button id="recordBtn" class="btn btn--red" onclick="ZS.startPronunciation('${it.id}')">Record</button>
           <button id="stopRecordBtn" class="btn btn--ghost ghost-dark" onclick="ZS.stopPronunciation()" disabled>Stop</button>
           <button id="playRecordBtn" class="btn btn--ghost ghost-dark" onclick="ZS.playPronunciation()" disabled>Play mine</button>
+          <button id="analyzeSpeechBtn" class="btn btn--ghost ghost-dark" onclick="ZS.analyzePronunciation('${it.id}')" disabled>Analyze</button>
         </div>
         <div id="pronStatus" class="pronbox__status">Play the native audio, record yourself, then compare stress and vowel reduction.</div>
+        <div id="speechEvalResult"></div>
         <div class="pronbox__targets">${(it.feedback_targets || []).map(t => `<span>${escapeHtml((ERROR_BY_ID[t] && ERROR_BY_ID[t].label) || t)}</span>`).join("")}</div>
         <div class="selfrate">
           <button class="btn btn--sm" onclick="ZS.ratePronunciation('${it.id}',true,false)">Close enough</button>
@@ -1646,6 +2054,7 @@
         <div class="q-en" id="btNote" style="margin-bottom:10px"></div>
         <div class="answerbox"><input id="btRu" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Rebuild in Russian…" />
         <button class="btn btn--red" onclick="ZS.checkBack('${it.id}')">Check</button></div>
+        ${typedSpeechControlsHtml(it.id, "btRu")}
         <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>
       </div>`;
     } else if (stage.key === "contrast") {
@@ -1656,6 +2065,7 @@
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-en">${escapeHtml(it.en)}</div>`;
       body = `<div class="answerbox"><input id="prodIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Печатайте по-русски…" />
         <button class="btn btn--red" onclick="ZS.checkProd('${it.id}')">Check</button></div>
+        ${typedSpeechControlsHtml(it.id, "prodIn")}
         <div style="margin-top:8px"><button class="btn btn--sm btn--ghost" style="color:var(--ink);border-color:var(--ink)" onclick="ZS.giveUp('${it.id}')">Show answer</button></div>`;
   } else if (stage.key === "listen") {
       promptHtml = `<div class="q-instr">${stage.instr}</div><div class="q-ru" style="font-size:2.6rem">🔊</div><div id="listenHint">${listeningHintHtml(it)}</div>`;
@@ -1748,6 +2158,19 @@
       st.retrievability = 0.95;
       st.last_grade = "good";
       st.mastered = st.success_sessions >= 2;
+    } else if (opts.close_guess) {
+      st.lapses = (st.lapses || 0) + 1;
+      st.close_guesses = (st.close_guesses || 0) + 1;
+      r.close_guesses = (r.close_guesses || 0) + 1;
+      st.success_sessions = 0;
+      st.stability = Math.max(0.5, (st.stability || 1) * 0.8);
+      st.difficulty = Math.min(10, (st.difficulty || 5) + 0.3);
+      st.retrievability = 0.45;
+      st.last_grade = "close";
+      st.mastered = false;
+      st.last_answer_similarity = opts.answer_similarity || 0;
+      st.last_error_type = errorType || st.last_error_type || "case_or_inflection";
+      r.errors[st.last_error_type] = (r.errors[st.last_error_type] || 0) + 1;
     } else {
       st.lapses = (st.lapses || 0) + 1;
       st.success_sessions = 0;
@@ -1768,6 +2191,13 @@
       st.last_roleplay_met = opts.roleplay.met || [];
       st.last_roleplay_missed = opts.roleplay.missed || [];
       st.last_roleplay_assisted = !!opts.assisted;
+    }
+    if (opts.speech_eval) {
+      st.last_speech_transcript = opts.speech_eval.transcript || "";
+      st.last_speech_score = opts.speech_eval.text_similarity || 0;
+      st.last_speech_verdict = opts.speech_eval.verdict || "";
+      st.speech_eval_count = (st.speech_eval_count || 0) + 1;
+      if (opts.speech_eval.verdict === "correct") st.speech_eval_success = (st.speech_eval_success || 0) + 1;
     }
     if (!opts.assisted) st.due_at = nextDue(st, ok);
     save();
@@ -1795,6 +2225,19 @@
         assistance_level: opts.listen_ladder ? opts.listen_ladder.assistance : (opts.assisted ? 1 : 0),
         listen_ladder: opts.listen_ladder || null,
         roleplay: opts.roleplay || null,
+        close_guess: !!opts.close_guess,
+        answer_similarity: opts.answer_similarity || 0,
+        speech_eval: opts.speech_eval ? {
+          transcript: opts.speech_eval.transcript || "",
+          normalized_transcript: opts.speech_eval.normalized_transcript || "",
+          target_normalized: opts.speech_eval.target_normalized || "",
+          text_similarity: opts.speech_eval.text_similarity || 0,
+          sample_match_score: opts.speech_eval.sample_match_score || 0,
+          verdict: opts.speech_eval.verdict || "",
+          provider: opts.speech_eval.provider || "",
+          confidence: opts.speech_eval.confidence || 0,
+          suggested_error_type: opts.speech_eval.suggested_error_type || "",
+        } : null,
         repair_focus: st.last_repair_focus || "",
         last_grade: st.last_grade || "",
       },
@@ -1841,12 +2284,15 @@
     if (!e) return "";
     return `<div class="repairfocus"><strong>Repair focus: ${escapeHtml(e.label)}</strong><span>${escapeHtml(e.repair)}</span></div>`;
   }
-  function showFeedback(ok, it, extra, errorType) {
+  function showFeedback(ok, it, extra, errorType, opts) {
+    opts = opts || {};
     quiz.answered = true;
     if (ok) quiz.correct++;
     const repair = ok ? "" : repairFocusHtml(errorType || inferredErrorType(it, quiz.stageKey));
-    $("#qfeedback").innerHTML = `<div class="feedback ${ok ? "good" : "bad"} rise">
-        <div style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem">${ok ? "✓ Correct" : "✗ Not quite"}</div>
+    const tone = ok ? "good" : opts.close ? "close" : "bad";
+    const label = opts.label || (ok ? "✓ Correct" : "✗ Not quite");
+    $("#qfeedback").innerHTML = `<div class="feedback ${tone} rise">
+        <div style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem">${escapeHtml(label)}</div>
         <div class="fb-ru">${colorStress(it.ru)}</div>
         <div style="font-style:italic;font-family:var(--font-serif)">${escapeHtml(it.en)}</div>
         ${it.hint ? `<div class="card__hint">🔈 ${escapeHtml(it.hint)}</div>` : ""}
@@ -2014,6 +2460,33 @@
     next() { cleanupLearnRecording(); learnState.idx = (learnState.idx + 1) % learnState.list.length; renderCard(); },
     prev() { cleanupLearnRecording(); learnState.idx = (learnState.idx - 1 + learnState.list.length) % learnState.list.length; renderCard(); },
     say() { speak(learnState.list[learnState.idx], { rate: learnState.audioRate }); },
+    setReviewMod(m) { reviewState.module = m; reviewState.idx = 0; reviewState.flipped = false; renderReview(); },
+    setReviewPri(p) { reviewState.priority = p; reviewState.idx = 0; reviewState.flipped = false; renderReview(); },
+    setReviewRate(rate) {
+      if (![0.65, 0.85, 1, 1.15, 1.3].includes(rate)) return;
+      reviewState.audioRate = rate;
+      renderReview();
+    },
+    flipReview() { reviewState.flipped = !reviewState.flipped; renderReviewCard(); },
+    nextReview() {
+      if (!reviewState.list.length) return;
+      reviewState.idx = (reviewState.idx + 1) % reviewState.list.length;
+      reviewState.flipped = false;
+      renderReviewCard();
+    },
+    prevReview() {
+      if (!reviewState.list.length) return;
+      reviewState.idx = (reviewState.idx - 1 + reviewState.list.length) % reviewState.list.length;
+      reviewState.flipped = false;
+      renderReviewCard();
+    },
+    sayReview() { speak(reviewState.list[reviewState.idx], { rate: reviewState.audioRate }); },
+    shuffleReview() {
+      reviewState.list = shuffle(reviewState.list.slice());
+      reviewState.idx = 0;
+      reviewState.flipped = false;
+      renderReviewCard();
+    },
     sayItem(id) {
       const it = practiceItem(id);
       speak(it && it.item_id ? ITEMS.find(i => i.id === it.item_id) : it);
@@ -2038,6 +2511,8 @@
         activeRecorder.onstop = () => {
           if (learnRecordingUrl) URL.revokeObjectURL(learnRecordingUrl);
           const blob = new Blob(learnRecordChunks, { type: activeRecorder.mimeType || "audio/webm" });
+          learnRecordingBlob = blob;
+          learnSpeechEval = null;
           learnRecordingUrl = URL.createObjectURL(blob);
           learnRecorder = null;
           if (learnRecordStream) {
@@ -2046,6 +2521,8 @@
           }
           const playBtn = $("#learnPlayRecordBtn");
           if (playBtn) playBtn.removeAttribute("disabled");
+          const analyzeBtn = $("#learnAnalyzeBtn");
+          if (analyzeBtn) analyzeBtn.removeAttribute("disabled");
           const recordBtn = $("#learnRecordBtn");
           const stopBtn = $("#learnStopRecordBtn");
           if (recordBtn) recordBtn.removeAttribute("disabled");
@@ -2057,9 +2534,11 @@
         const recordBtn = $("#learnRecordBtn");
         const stopBtn = $("#learnStopRecordBtn");
         const playBtn = $("#learnPlayRecordBtn");
+        const analyzeBtn = $("#learnAnalyzeBtn");
         if (recordBtn) recordBtn.setAttribute("disabled", "");
         if (stopBtn) stopBtn.removeAttribute("disabled");
         if (playBtn) playBtn.setAttribute("disabled", "");
+        if (analyzeBtn) analyzeBtn.setAttribute("disabled", "");
         setLearnStatus("Recording... keep it short and natural.");
       } catch (e) {
         setLearnStatus("Microphone permission was not available.");
@@ -2077,6 +2556,31 @@
       }
       const audio = new Audio(learnRecordingUrl);
       audio.play().catch(() => setLearnStatus("Playback was blocked. Tap Play mine again."));
+    },
+    async analyzeLearnSpeech() {
+      const it = activeLearnItem();
+      if (!it || !learnRecordingBlob || learnRecordingItemId !== it.id) {
+        setLearnStatus("Record yourself first.");
+        return;
+      }
+      const btn = $("#learnAnalyzeBtn");
+      if (btn) btn.setAttribute("disabled", "");
+      try {
+        learnSpeechEval = await evaluateSpeech({
+          blob: learnRecordingBlob,
+          item: it,
+          stageKey: "pronounce",
+          statusFn: setLearnStatus,
+        });
+        if (!learnState.showVoiceLab) learnState.showVoiceLab = true;
+        renderCard();
+        setLearnStatus(learnSpeechEval.verdict === "correct" ? "Speech check: correct." : learnSpeechEval.verdict === "close" ? "Speech check: close." : "Speech check: needs repair.");
+      } catch (e) {
+        setLearnStatus(e.message || "Speech analysis failed.");
+      } finally {
+        const nextBtn = $("#learnAnalyzeBtn");
+        if (nextBtn) nextBtn.removeAttribute("disabled");
+      }
     },
     renderLearnSpectrograms,
     known() {
@@ -2126,40 +2630,45 @@
       if (quiz.answered) return;
       const it = practiceItem(id);
       const val = $("#prodIn") ? $("#prodIn").value : "";
-      const ok = normalize(val) === normalize(it.ru);
-      const errorType = ok ? null : inferredErrorType(it, quiz.stageKey);
-      gradeItem(id, ok, quiz.stageKey, errorType);
-      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em></div>`, errorType);
+      const accepted = acceptedAnswersForTypedStage(it, quiz.stageKey);
+      const assessment = typedAnswerAssessment(val, accepted);
+      const ok = assessment.ok;
+      const errorType = ok ? null : assessment.close ? closeGuessErrorType(it, quiz.stageKey) : inferredErrorType(it, quiz.stageKey);
+      gradeItem(id, ok, quiz.stageKey, errorType, { close_guess: assessment.close, answer_similarity: assessment.similarity });
+      showFeedback(ok, it, ok ? "" : assessment.close ? closeGuessHint(val, assessment.bestAnswer || typedSpeechTarget(it, quiz.stageKey)) : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em></div>`, errorType, assessment.close ? { close: true, label: "≈ Close guess" } : null);
     },
     checkCloze(id) {
       if (quiz.answered) return;
       const it = practiceItem(id);
       const val = $("#clozeIn") ? $("#clozeIn").value : "";
       const accepted = it.accepted_answers || [it.answer];
-      const ok = accepted.some(answer => normalize(val) === normalize(answer));
-      const errorType = ok ? null : inferBacktranslateErrorType(it, val, quiz.stageKey);
-      gradeItem(id, ok, quiz.stageKey, errorType);
-      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; answer: <strong>${escapeHtml(it.answer)}</strong></div>`, errorType);
+      const assessment = typedAnswerAssessment(val, accepted);
+      const ok = assessment.ok;
+      const errorType = ok ? null : assessment.close ? closeGuessErrorType(it, quiz.stageKey) : inferBacktranslateErrorType(it, val, quiz.stageKey);
+      gradeItem(id, ok, quiz.stageKey, errorType, { close_guess: assessment.close, answer_similarity: assessment.similarity });
+      showFeedback(ok, it, ok ? "" : assessment.close ? closeGuessHint(val, assessment.bestAnswer || it.answer) : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; answer: <strong>${escapeHtml(it.answer)}</strong></div>`, errorType, assessment.close ? { close: true, label: "≈ Close guess" } : null);
     },
     checkConjugate(id) {
       if (quiz.answered) return;
       const it = practiceItem(id);
       const val = $("#conjIn") ? $("#conjIn").value : "";
       const accepted = it.accepted_answers || [it.answer || it.ru_plain];
-      const ok = accepted.some(answer => normalize(val) === normalize(answer));
+      const assessment = typedAnswerAssessment(val, accepted);
+      const ok = assessment.ok;
       const errorType = ok ? null : "case_or_inflection";
-      gradeItem(id, ok, quiz.stageKey, errorType);
-      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; answer: <strong>${colorStress(it.ru)}</strong></div>`, errorType);
+      gradeItem(id, ok, quiz.stageKey, errorType, { close_guess: assessment.close, answer_similarity: assessment.similarity });
+      showFeedback(ok, it, ok ? "" : assessment.close ? closeGuessHint(val, assessment.bestAnswer || typedSpeechTarget(it, quiz.stageKey)) : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; answer: <strong>${colorStress(it.ru)}</strong></div>`, errorType, assessment.close ? { close: true, label: "≈ Close guess" } : null);
     },
     checkDictation(id) {
       if (quiz.answered) return;
       const it = practiceItem(id);
       const val = $("#dictIn") ? $("#dictIn").value : "";
       const accepted = it.accepted_answers || [it.ru_plain];
-      const ok = accepted.some(answer => normalize(val) === normalize(answer));
+      const assessment = typedAnswerAssessment(val, accepted);
+      const ok = assessment.ok;
       const errorType = ok ? null : "listening_misparse";
-      gradeItem(id, ok, quiz.stageKey, errorType);
-      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`, errorType);
+      gradeItem(id, ok, quiz.stageKey, errorType, { close_guess: assessment.close, answer_similarity: assessment.similarity });
+      showFeedback(ok, it, ok ? "" : assessment.close ? closeGuessHint(val, assessment.bestAnswer || typedSpeechTarget(it, quiz.stageKey)) : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`, errorType, assessment.close ? { close: true, label: "≈ Close guess" } : null);
     },
     checkStress(id, chosen, btn) {
       if (quiz.answered) return;
@@ -2194,10 +2703,14 @@
         activeRecorder.onstop = () => {
           if (recordingUrl) URL.revokeObjectURL(recordingUrl);
           const blob = new Blob(recordChunks, { type: activeRecorder.mimeType || "audio/webm" });
+          recordingBlob = blob;
+          pronunciationSpeechEval = null;
           recordingUrl = URL.createObjectURL(blob);
           const playBtn = $("#playRecordBtn");
           if (playBtn) playBtn.removeAttribute("disabled");
-          setPronunciationStatus("Recording ready. Play yours, compare to native audio, then self-rate.");
+          const analyzeBtn = $("#analyzeSpeechBtn");
+          if (analyzeBtn) analyzeBtn.removeAttribute("disabled");
+          setPronunciationStatus("Recording ready. Play yours, analyze it, then accept or self-rate.");
           if (recordStream) {
             recordStream.getTracks().forEach(track => track.stop());
             recordStream = null;
@@ -2206,8 +2719,12 @@
         activeRecorder.start();
         const startBtn = $("#recordBtn");
         const stopBtn = $("#stopRecordBtn");
+        const playBtn = $("#playRecordBtn");
+        const analyzeBtn = $("#analyzeSpeechBtn");
         if (startBtn) startBtn.setAttribute("disabled", "");
         if (stopBtn) stopBtn.removeAttribute("disabled");
+        if (playBtn) playBtn.setAttribute("disabled", "");
+        if (analyzeBtn) analyzeBtn.setAttribute("disabled", "");
         setPronunciationStatus("Recording... keep it short and natural.");
       } catch (e) {
         setPronunciationStatus("Microphone permission was not available. Say it aloud and self-rate manually.");
@@ -2231,11 +2748,146 @@
       const audio = new Audio(recordingUrl);
       audio.play().catch(() => setPronunciationStatus("Playback was blocked. Tap Play mine again."));
     },
+    async startTypedSpeech(id, inputId) {
+      if (quiz.answered) return;
+      if (!navigator.mediaDevices || !window.MediaRecorder) {
+        setTypedSpeechStatus("Recording is not available in this browser. Type the answer instead.");
+        return;
+      }
+      cleanupTypedRecording();
+      typedSpeechInputId = inputId;
+      try {
+        typedRecordStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const activeRecorder = new MediaRecorder(typedRecordStream);
+        typedRecorder = activeRecorder;
+        typedRecordChunks = [];
+        activeRecorder.ondataavailable = event => {
+          if (event.data && event.data.size) typedRecordChunks.push(event.data);
+        };
+        activeRecorder.onstop = () => {
+          if (typedRecordingUrl) URL.revokeObjectURL(typedRecordingUrl);
+          typedRecordingBlob = new Blob(typedRecordChunks, { type: activeRecorder.mimeType || "audio/webm" });
+          typedRecordingUrl = URL.createObjectURL(typedRecordingBlob);
+          typedRecorder = null;
+          if (typedRecordStream) {
+            typedRecordStream.getTracks().forEach(track => track.stop());
+            typedRecordStream = null;
+          }
+          const recordBtn = $("#typedSpeechRecordBtn");
+          const stopBtn = $("#typedSpeechStopBtn");
+          const playBtn = $("#typedSpeechPlayBtn");
+          const analyzeBtn = $("#typedSpeechAnalyzeBtn");
+          if (recordBtn) recordBtn.removeAttribute("disabled");
+          if (stopBtn) stopBtn.setAttribute("disabled", "");
+          if (playBtn) playBtn.removeAttribute("disabled");
+          if (analyzeBtn) analyzeBtn.removeAttribute("disabled");
+          setTypedSpeechStatus("Recording ready. Analyze it to fill and check the Russian answer.");
+        };
+        activeRecorder.start();
+        const recordBtn = $("#typedSpeechRecordBtn");
+        const stopBtn = $("#typedSpeechStopBtn");
+        const playBtn = $("#typedSpeechPlayBtn");
+        const analyzeBtn = $("#typedSpeechAnalyzeBtn");
+        if (recordBtn) recordBtn.setAttribute("disabled", "");
+        if (stopBtn) stopBtn.removeAttribute("disabled");
+        if (playBtn) playBtn.setAttribute("disabled", "");
+        if (analyzeBtn) analyzeBtn.setAttribute("disabled", "");
+        setTypedSpeechStatus("Recording... say only the Russian answer.");
+      } catch (e) {
+        setTypedSpeechStatus("Microphone permission was not available. Type the answer instead.");
+      }
+    },
+    stopTypedSpeech() {
+      if (!typedRecorder || typedRecorder.state === "inactive") return;
+      const activeRecorder = typedRecorder;
+      typedRecorder = null;
+      activeRecorder.stop();
+      const recordBtn = $("#typedSpeechRecordBtn");
+      const stopBtn = $("#typedSpeechStopBtn");
+      if (recordBtn) recordBtn.removeAttribute("disabled");
+      if (stopBtn) stopBtn.setAttribute("disabled", "");
+    },
+    playTypedSpeech() {
+      if (!typedRecordingUrl) {
+        setTypedSpeechStatus("Record yourself first.");
+        return;
+      }
+      const audio = new Audio(typedRecordingUrl);
+      audio.play().catch(() => setTypedSpeechStatus("Playback was blocked. Tap Play mine again."));
+    },
+    async analyzeTypedSpeech(id, inputId) {
+      if (quiz.answered) return;
+      const it = practiceItem(id);
+      if (!typedRecordingBlob) {
+        setTypedSpeechStatus("Record yourself first.");
+        return;
+      }
+      const btn = $("#typedSpeechAnalyzeBtn");
+      if (btn) btn.setAttribute("disabled", "");
+      try {
+        const target = typedSpeechTarget(it, quiz.stageKey);
+        typedSpeechEval = await evaluateSpeech({
+          blob: typedRecordingBlob,
+          item: it,
+          stageKey: quiz.stageKey,
+          targetOverride: target,
+          targetRu: target,
+          statusFn: setTypedSpeechStatus,
+        });
+        const input = $("#" + inputId);
+        if (input) input.value = typedSpeechEval.transcript || "";
+        const result = $("#typedSpeechEvalResult");
+        if (result) result.innerHTML = speechEvalHtml(typedSpeechEval, "");
+        setTypedSpeechStatus(typedSpeechEval.verdict === "correct" ? "Speech check: correct. Scoring this answer." : typedSpeechEval.verdict === "close" ? "Speech check: close. Scoring this as a repair." : "Speech check: needs repair.");
+        gradeTypedSpeech(id, inputId, typedSpeechEval);
+      } catch (e) {
+        setTypedSpeechStatus(e.message || "Speech analysis failed.");
+      } finally {
+        const nextBtn = $("#typedSpeechAnalyzeBtn");
+        if (nextBtn) nextBtn.removeAttribute("disabled");
+      }
+    },
+    async analyzePronunciation(id) {
+      if (quiz.answered) return;
+      const it = practiceItem(id);
+      if (!recordingBlob) {
+        setPronunciationStatus("Record yourself first.");
+        return;
+      }
+      const btn = $("#analyzeSpeechBtn");
+      if (btn) btn.setAttribute("disabled", "");
+      try {
+        pronunciationSpeechEval = await evaluateSpeech({
+          blob: recordingBlob,
+          item: it,
+          stageKey: "pronounce",
+          statusFn: setPronunciationStatus,
+        });
+        const target = $("#speechEvalResult");
+        if (target) target.innerHTML = speechEvalHtml(pronunciationSpeechEval, id);
+        setPronunciationStatus(pronunciationSpeechEval.verdict === "correct" ? "Speech check: correct. Accept it to score this card." : pronunciationSpeechEval.verdict === "close" ? "Speech check: close. Accept or mark repair." : "Speech check: needs repair.");
+      } catch (e) {
+        setPronunciationStatus(e.message || "Speech analysis failed.");
+      } finally {
+        const nextBtn = $("#analyzeSpeechBtn");
+        if (nextBtn) nextBtn.removeAttribute("disabled");
+      }
+    },
+    applySpeechVerdict(id, ok, errorType) {
+      if (quiz.answered) return;
+      const it = practiceItem(id);
+      const inferred = ok ? null : (errorType || (pronunciationSpeechEval && pronunciationSpeechEval.suggested_error_type) || "forgot_phrase");
+      gradeItem(id, ok, quiz.stageKey, inferred, {
+        assisted: false,
+        speech_eval: pronunciationSpeechEval || null,
+      });
+      showFeedback(ok, it, speechEvalHtml(pronunciationSpeechEval, ""), inferred);
+    },
     ratePronunciation(id, ok, assisted, errorType) {
       if (quiz.answered) return;
       const it = practiceItem(id);
       const inferred = ok ? null : (errorType || "stress");
-      gradeItem(id, ok, quiz.stageKey, inferred, { assisted });
+      gradeItem(id, ok, quiz.stageKey, inferred, { assisted, speech_eval: pronunciationSpeechEval || null });
       showFeedback(ok, it, assisted ? `<div class="card__hint">Used the model during comparison: scheduled as a hard pronunciation review.</div>` : `<div class="card__hint">Target: compare stress placement and unstressed vowel reduction against the native audio.</div>`, inferred);
     },
     startBack(id) {
@@ -2260,10 +2912,11 @@
       const it = practiceItem(id);
       const val = $("#btRu") ? $("#btRu").value : "";
       const accepted = it.accepted_answers || [it.ru_plain];
-      const ok = accepted.some(answer => normalize(val) === normalize(answer));
-      const errorType = ok ? null : inferBacktranslateErrorType(it, val, quiz.stageKey);
-      gradeItem(id, ok, quiz.stageKey, errorType);
-      showFeedback(ok, it, ok ? "" : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`, errorType);
+      const assessment = typedAnswerAssessment(val, accepted);
+      const ok = assessment.ok;
+      const errorType = ok ? null : assessment.close ? closeGuessErrorType(it, quiz.stageKey) : inferBacktranslateErrorType(it, val, quiz.stageKey);
+      gradeItem(id, ok, quiz.stageKey, errorType, { close_guess: assessment.close, answer_similarity: assessment.similarity });
+      showFeedback(ok, it, ok ? "" : assessment.close ? closeGuessHint(val, assessment.bestAnswer || typedSpeechTarget(it, quiz.stageKey)) : `<div class="card__hint">You wrote: <em>${escapeHtml(val || "—")}</em>; target: <strong>${colorStress(it.ru)}</strong></div>`, errorType, assessment.close ? { close: true, label: "≈ Close guess" } : null);
     },
     checkContrast(id, chosenId, btn) {
       if (quiz.answered) return;

@@ -20,6 +20,7 @@ COMMANDS
   flow                  Run browser-verified learner flow assertions
   preflight             Run build + verify + test + flow
   sync-server           Run the local Postgres learning sync API
+  secrets put           Persist API keys to AWS Secrets Manager via system AWS CLI credentials
   verify                Run all health checks (JSON, JS syntax, audio coverage)
   test                  Run stdlib validation/unit tests
   loop-prompt           Print the local iterative improvement-loop prompt
@@ -46,8 +47,8 @@ EXAMPLES
   tools/zastolom future-loop --spoken --run --write-canvas # build spoken canvas candidates only
   tools/zastolom source-loop               # print the loop prompt only
 
-ELEVENLABS KEY RESOLUTION (first hit wins)
-  $ELEVENLABS_API_KEY  →  <repo>/.env  →  ~/Projects/ott_law_redesign/.env  →  ~/Projects/.env
+API KEY RESOLUTION (first hit wins)
+  $KEY_NAME  →  AWS Secrets Manager /zastolom/dev/api-keys  →  .env fallback where supported
 VOICE: $ZASTOLOM_VOICE or --voice (default: Elena «Warm, Calm & Clear» ScaQ3utur72x93jqMMeU)
 """
 import argparse
@@ -82,6 +83,7 @@ EL_MODEL = "eleven_multilingual_v2"
 EL_FORMAT = "mp3_44100_128"
 DEFAULT_VOICE = "ScaQ3utur72x93jqMMeU"      # Elena — Warm, Calm & Clear (ru, standard)
 DEFAULT_VOICE_NAME = "Elena (Warm, Calm & Clear)"
+DEFAULT_API_KEYS_SECRET_ID = "/zastolom/dev/api-keys"
 DEFAULT_SOURCE_USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
@@ -563,17 +565,54 @@ def _read_env_file(path, var):
         return None
     return None
 
-def resolve_key():
-    if os.environ.get("ELEVENLABS_API_KEY"):
-        return os.environ["ELEVENLABS_API_KEY"]
+def aws_api_keys_secret_id():
+    return os.environ.get("ZASTOLOM_API_KEYS_SECRET_ID") or DEFAULT_API_KEYS_SECRET_ID
+
+def _load_aws_api_keys():
+    if not which("aws"):
+        return {}
+    try:
+        r = subprocess.run(
+            [
+                "aws", "secretsmanager", "get-secret-value",
+                "--secret-id", aws_api_keys_secret_id(),
+                "--query", "SecretString",
+                "--output", "text",
+            ],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            timeout=15,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return {}
+    if r.returncode != 0 or not r.stdout.strip():
+        return {}
+    try:
+        parsed = json.loads(r.stdout.strip())
+        return parsed if isinstance(parsed, dict) else {}
+    except json.JSONDecodeError:
+        return {}
+
+def resolve_api_key(var, env_fallback=True):
+    if os.environ.get(var):
+        return os.environ[var]
+    secret = _load_aws_api_keys()
+    if secret.get(var):
+        return str(secret[var])
+    if not env_fallback:
+        return None
     home = os.path.expanduser("~")
     for p in (os.path.join(ROOT, ".env"),
               os.path.join(home, "Projects", "ott_law_redesign", ".env"),
               os.path.join(home, "Projects", ".env")):
-        v = _read_env_file(p, "ELEVENLABS_API_KEY")
+        v = _read_env_file(p, var)
         if v:
             return v
     return None
+
+def resolve_key():
+    return resolve_api_key("ELEVENLABS_API_KEY")
 
 def el_request(method, path, key, data=None, headers=None, timeout=90):
     h = {"xi-api-key": key}
@@ -875,7 +914,7 @@ def cmd_verify(args):
         fails += 1; print(err("web/content.js missing — run `zastolom build content`"))
     # 3 JS syntax (node if available)
     if which("node"):
-        for f in ("web/app.js", "web/service-worker.js", "scripts/browser_controller.mjs", "scripts/browser_flow_check.mjs"):
+        for f in ("web/app.js", "web/service-worker.js", "scripts/browser_controller.mjs", "scripts/browser_flow_check.mjs", "scripts/sync_server.mjs", "scripts/secrets.mjs", "scripts/speech_eval.mjs", "scripts/speech_transcription.mjs"):
             r = subprocess.run(["node", "--check", os.path.join(ROOT, f)], capture_output=True)
             if r.returncode == 0:
                 print(ok(f"{f} syntax OK"))
@@ -943,6 +982,51 @@ def cmd_sync_server(args):
     print("  → " + " ".join(cmd))
     os.execvp(cmd[0], cmd)
 
+def cmd_secrets(args):
+    if args.scmd != "put":
+        print(__doc__)
+        return
+    if not which("aws"):
+        print(err("aws CLI not found — install/configure AWS CLI first"))
+        sys.exit(2)
+    keys = {}
+    missing = []
+    for name in ("OPENAI_API_KEY", "ELEVENLABS_API_KEY"):
+        value = os.environ.get(name)
+        if value:
+            keys[name] = value
+        else:
+            missing.append(name)
+    if missing:
+        print(err("missing required environment variables: " + ", ".join(missing)))
+        print(warn("export the keys in this shell, then run `tools/zastolom secrets put`"))
+        sys.exit(2)
+    secret_id = args.secret_id or aws_api_keys_secret_id()
+    payload = json.dumps(keys, separators=(",", ":"))
+    update = [
+        "aws", "secretsmanager", "put-secret-value",
+        "--secret-id", secret_id,
+        "--secret-string", payload,
+    ]
+    print(head("secrets:put"))
+    print(f"  → aws secretsmanager put-secret-value --secret-id {secret_id} --secret-string [redacted]")
+    r = subprocess.run(update, cwd=ROOT, capture_output=True, text=True)
+    if r.returncode != 0 and ("ResourceNotFoundException" in r.stderr or "ResourceNotFoundException" in r.stdout):
+        create = [
+            "aws", "secretsmanager", "create-secret",
+            "--name", secret_id,
+            "--secret-string", payload,
+        ]
+        print(f"  → aws secretsmanager create-secret --name {secret_id} --secret-string [redacted]")
+        r = subprocess.run(create, cwd=ROOT, capture_output=True, text=True)
+    if r.returncode != 0:
+        print(err("failed to write AWS secret"))
+        detail = (r.stderr or r.stdout or "").strip().splitlines()
+        if detail:
+            print(err(detail[-1][:220]))
+        sys.exit(r.returncode)
+    print(ok(f"stored API key bundle in {secret_id}"))
+
 def which(prog):
     from shutil import which as w
     return w(prog)
@@ -990,6 +1074,10 @@ def main():
     sub.add_parser("verify")
     sub.add_parser("test")
     sub.add_parser("sync-server")
+    sec = sub.add_parser("secrets")
+    secsub = sec.add_subparsers(dest="scmd")
+    put = secsub.add_parser("put")
+    put.add_argument("--secret-id", default=DEFAULT_API_KEYS_SECRET_ID)
     sub.add_parser("loop-prompt")
     sl = sub.add_parser("source-loop")
     sl.add_argument("--run", action="store_true", help="run the scouting scan")
@@ -1023,6 +1111,7 @@ def main():
     elif args.cmd == "verify": cmd_verify(args)
     elif args.cmd == "test": cmd_test(args)
     elif args.cmd == "sync-server": cmd_sync_server(args)
+    elif args.cmd == "secrets": cmd_secrets(args)
     elif args.cmd == "loop-prompt": cmd_loop_prompt(args)
     elif args.cmd == "future-loop":
         args.future = True
