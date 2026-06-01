@@ -71,6 +71,18 @@
     ["supported", "Supported"],
     ["live", "Live"],
   ];
+  const LIVE_ROLEPLAY_LIMIT_MS = 6 * 60 * 1000;
+  const LIVE_ROLEPLAY_SOFT_LIMIT_MS = 4 * 60 * 1000;
+  const LIVE_ROLEPLAY_COST_WARN_USD = 0.25;
+  const LIVE_ROLEPLAY_COST_STOP_USD = 0.5;
+  const REALTIME_MODEL_COSTS = {
+    "gpt-realtime-2": {
+      input_per_1m: 4,
+      output_per_1m: 16,
+      audio_input_per_1m: 32,
+      audio_output_per_1m: 64,
+    },
+  };
 
   const ACUTE = "́";
   const $ = (sel, el = document) => el.querySelector(sel);
@@ -222,7 +234,10 @@
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ learner_id: LEARNER_ID, device_id: deviceId(), events: rows }),
       });
-      if (response.ok) saveSyncQueue([]);
+      if (response.ok) {
+        saveSyncQueue([]);
+        setLiveSaved("Saved to local sync database. Transcript text and cost metadata are stored; raw audio is not.");
+      }
     } catch (e) {
       // Offline-first: keep the queue for the next reachable sync server.
     } finally {
@@ -2130,10 +2145,23 @@
           <button id="liveRoleplayDisconnectBtn" class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.disconnectLiveRoleplay()" disabled>Disconnect</button>
         </div>
       </div>
+      <div class="liveplay__meter">
+        <div><strong id="liveRoleplayTimer">0:00</strong><span>time</span></div>
+        <div><strong id="liveRoleplayCost">$0.000</strong><span>estimated cost</span></div>
+        <div><strong id="liveRoleplayTurns">0</strong><span>stored turns</span></div>
+      </div>
+      <div class="liveplay__endcap">
+        <strong>When you are done, tap Finish & get feedback.</strong>
+        <span>The app will stop the microphone, ask for the final score, save the transcript pass, and show the estimated API cost.</span>
+      </div>
       ${rescueButtonsHtml(id)}
-      <div id="liveRoleplayTranscript" class="liveplay__transcript"><p class="liveplay__empty">Conversation transcript will appear here.</p></div>
+      <div id="liveRoleplayTranscript" class="liveplay__transcript"><p class="liveplay__empty">Conversation transcript will appear here. Click any turn for English.</p></div>
       <div id="liveRoleplayDebrief" class="liveplay__debrief"></div>
     </div>`;
+  }
+  function setLiveSaved(message) {
+    const cap = document.querySelector(".liveplay__endcap span");
+    if (cap) cap.textContent = message;
   }
   function setLiveStatus(message) {
     const el = $("#liveRoleplayStatus");
@@ -2150,7 +2178,15 @@
     if (!row) {
       row = document.createElement("div");
       row.className = `liveplay__row ${cls}${isDelta ? " is-delta" : ""}`;
-      row.innerHTML = `<strong>${cls === "assistant" ? "Tutor" : cls === "system" ? "System" : "Joe"}</strong><span></span>`;
+      row.innerHTML = `<strong>${cls === "assistant" ? "Tutor" : cls === "system" ? "System" : "Joe"}</strong><span></span><button class="liveplay__translate" type="button" title="Translate this turn" aria-label="Translate this turn">EN</button><em></em>`;
+      row.addEventListener("click", event => {
+        if (event.target && event.target.closest(".liveplay__translate")) return;
+        ZS.translateLiveTurn(row);
+      });
+      row.querySelector(".liveplay__translate").addEventListener("click", event => {
+        event.stopPropagation();
+        ZS.translateLiveTurn(row);
+      });
       box.appendChild(row);
     }
     const span = row.querySelector("span");
@@ -2167,13 +2203,71 @@
     return Array.from(box.querySelectorAll(".liveplay__row")).map(row => {
       const role = row.classList.contains("assistant") ? "assistant" : row.classList.contains("system") ? "system" : "user";
       const span = row.querySelector("span");
-      return { role, text: (span && span.textContent || "").trim(), at: new Date().toISOString() };
+      const tr = row.querySelector("em");
+      return { role, text: (span && span.textContent || "").trim(), translation: (tr && tr.textContent || "").trim(), at: new Date().toISOString() };
     }).filter(row => row.text).slice(-80);
+  }
+  function durationLabel(ms) {
+    const seconds = Math.max(0, Math.round(ms / 1000));
+    return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
+  }
+  function usageNumber(obj, keys) {
+    for (const key of keys) {
+      const value = obj && obj[key];
+      if (Number.isFinite(Number(value))) return Number(value);
+    }
+    return 0;
+  }
+  function liveUsageCost(usage, model) {
+    const rates = REALTIME_MODEL_COSTS[model || "gpt-realtime-2"] || REALTIME_MODEL_COSTS["gpt-realtime-2"];
+    const inputText = usageNumber(usage, ["input_text_tokens", "text_input_tokens"]);
+    const outputText = usageNumber(usage, ["output_text_tokens", "text_output_tokens"]);
+    const inputAudio = usageNumber(usage, ["input_audio_tokens", "audio_input_tokens"]);
+    const outputAudio = usageNumber(usage, ["output_audio_tokens", "audio_output_tokens"]);
+    return ((inputText * rates.input_per_1m) + (outputText * rates.output_per_1m) + (inputAudio * rates.audio_input_per_1m) + (outputAudio * rates.audio_output_per_1m)) / 1000000;
+  }
+  function liveCostSummary() {
+    if (!liveRoleplay) return { cost: 0, source: "client_estimate", usage: {}, duration_ms: 0, model: "gpt-realtime-2" };
+    const durationMs = Math.max(0, Date.now() - (liveRoleplay.startedAt || Date.now()));
+    const model = liveRoleplay.model || "gpt-realtime-2";
+    const usage = liveRoleplay.usage || {};
+    const usageCost = liveUsageCost(usage, model);
+    const hasUsage = Object.keys(usage).length > 0;
+    const fallbackCost = (durationMs / 60000) * 0.04;
+    return {
+      cost: Math.max(usageCost, hasUsage ? 0 : fallbackCost),
+      source: hasUsage ? "openai_usage" : "client_estimate",
+      usage,
+      duration_ms: durationMs,
+      model,
+    };
+  }
+  function updateLiveMeter() {
+    if (!liveRoleplay) return;
+    const cost = liveCostSummary();
+    const timer = $("#liveRoleplayTimer");
+    const costEl = $("#liveRoleplayCost");
+    const turns = $("#liveRoleplayTurns");
+    if (timer) timer.textContent = durationLabel(cost.duration_ms);
+    if (costEl) costEl.textContent = `$${cost.cost.toFixed(3)}`;
+    if (turns) turns.textContent = String((liveRoleplay.transcript || []).length);
+    if (!liveRoleplay.scoring && cost.duration_ms >= LIVE_ROLEPLAY_LIMIT_MS) {
+      ZS.endLiveRoleplay("time_limit");
+    } else if (!liveRoleplay.warnedTime && cost.duration_ms >= LIVE_ROLEPLAY_SOFT_LIMIT_MS) {
+      liveRoleplay.warnedTime = true;
+      setLiveStatus("Four-minute mark. Wrap up or tap Finish & get feedback.");
+    } else if (!liveRoleplay.warnedCost && cost.cost >= LIVE_ROLEPLAY_COST_WARN_USD) {
+      liveRoleplay.warnedCost = true;
+      setLiveStatus("Cost warning. Finish soon to avoid extra spend.");
+    } else if (!liveRoleplay.scoring && cost.cost >= LIVE_ROLEPLAY_COST_STOP_USD) {
+      ZS.endLiveRoleplay("cost_limit");
+    }
   }
   function cleanupLiveRoleplay() {
     const state = liveRoleplay;
     liveRoleplay = null;
     if (!state) return;
+    if (state.timer) clearInterval(state.timer);
     try { if (state.dataChannel) state.dataChannel.close(); } catch (e) {}
     try { if (state.peer) state.peer.close(); } catch (e) {}
     if (state.stream) state.stream.getTracks().forEach(track => track.stop());
@@ -2215,6 +2309,7 @@
     const transcript = currentLiveTranscriptRows();
     const assisted = !!liveRoleplay.assisted;
     const stageComplete = ok && !assisted && missed.length === 0 && met.length > 0;
+    const cost = liveCostSummary();
     gradeItem(id, ok, "roleplay", ok ? null : errorType, {
       assisted,
       roleplay: {
@@ -2230,6 +2325,12 @@
         repair_focus: args.repair_focus || errorType || "",
         replay_prompt: args.replay_prompt || "",
         transcript,
+        realtime_model: cost.model,
+        usage: cost.usage,
+        estimated_cost_usd: Number(cost.cost.toFixed(6)),
+        cost_source: cost.source,
+        duration_ms: Math.round(cost.duration_ms),
+        ended_reason: liveRoleplay.endedReason || "user_finished",
       },
     });
     if (missed.length) {
@@ -2253,6 +2354,7 @@
           <div><strong>Pronunciation target</strong><span>${escapeHtml(pronunciation)}</span></div>
           <div><strong>One repair drill</strong><span>${escapeHtml(repair)}</span></div>
           <div><strong>Replay this next</strong><span>${escapeHtml(args.replay_prompt || "Run the same scene once more with one rescue line ready.")}</span></div>
+          <div><strong>API cost</strong><span>${escapeHtml(`$${cost.cost.toFixed(3)} · ${cost.source.replace("_", " ")} · ${durationLabel(cost.duration_ms)}`)}</span></div>
         </div>
         <div class="selfrate">
           <button class="btn btn--sm" onclick="ZS.showGuidedRoleplay('${id}','${scenario ? scenario.id : ""}','prompted')">Replay easier</button>
@@ -2271,6 +2373,7 @@
       setLiveStatus(event.error && event.error.message ? event.error.message : "Realtime error.");
       return;
     }
+    if (event.usage && liveRoleplay) liveRoleplay.usage = Object.assign({}, liveRoleplay.usage || {}, event.usage);
     if (type.includes("input_audio_transcription") && type.endsWith(".delta")) appendLiveTranscript("user", event.delta || "", true);
     if (type.includes("input_audio_transcription") && (type.endsWith(".completed") || type.endsWith(".done"))) appendLiveTranscript("user", event.transcript || event.text || "", false);
     if ((type.includes("audio_transcript") || type.includes("output_text")) && type.endsWith(".delta")) appendLiveTranscript("assistant", event.delta || "", true);
@@ -2285,6 +2388,8 @@
       try { liveHandleScore(JSON.parse(event.item.arguments || "{}")); } catch (e) { setLiveStatus("Could not parse role-play score."); }
     }
     if (type === "response.done") {
+      if (event.response && event.response.usage && liveRoleplay) liveRoleplay.usage = Object.assign({}, liveRoleplay.usage || {}, event.response.usage);
+      updateLiveMeter();
       if (liveRoleplay && liveRoleplay.scored) return;
       setLiveStatus(liveRoleplay && liveRoleplay.scoring ? "Waiting for score..." : "Listening.");
     }
@@ -3528,7 +3633,8 @@
         peer.ontrack = event => { audio.srcObject = event.streams[0]; };
         stream.getAudioTracks().forEach(track => peer.addTrack(track, stream));
         const dataChannel = peer.createDataChannel("oai-events");
-        liveRoleplay = { itemId: id, scenarioId, peer, stream, dataChannel, muted: false, scoring: false, scored: false, functionArgs: "", transcript: [] };
+        liveRoleplay = { itemId: id, scenarioId, peer, stream, dataChannel, muted: false, scoring: false, scored: false, functionArgs: "", transcript: [], usage: {}, model: "gpt-realtime-2", startedAt: Date.now(), endedReason: "", timer: null };
+        liveRoleplay.timer = setInterval(updateLiveMeter, 1000);
         dataChannel.addEventListener("open", () => {
           setLiveStatus("Live. Speak Russian; the tutor will answer aloud.");
           liveSetConnected(true);
@@ -3581,10 +3687,17 @@
       if (btn) btn.textContent = liveRoleplay.muted ? "Unmute" : "Mute";
       setLiveStatus(liveRoleplay.muted ? "Muted." : "Live. Speak Russian; the tutor will answer aloud.");
     },
-    endLiveRoleplay() {
+    endLiveRoleplay(reason) {
       if (!liveRoleplay) return;
+      if (liveRoleplay.scoring) return;
       liveRoleplay.scoring = true;
-      setLiveStatus("Asking tutor for debrief and score...");
+      liveRoleplay.endedReason = reason || "user_finished";
+      if (liveRoleplay.stream) liveRoleplay.stream.getAudioTracks().forEach(track => { track.enabled = false; });
+      const endBtn = $("#liveRoleplayEndBtn");
+      const muteBtn = $("#liveRoleplayMuteBtn");
+      if (endBtn) endBtn.disabled = true;
+      if (muteBtn) muteBtn.disabled = true;
+      setLiveStatus("Conversation ended. Getting final feedback and cost...");
       liveSend({
         type: "conversation.item.create",
         item: {
@@ -3594,6 +3707,32 @@
         },
       });
       liveRequestResponse({ tool_choice: "auto" });
+    },
+    async translateLiveTurn(row) {
+      if (!row) return;
+      const text = (row.querySelector("span") && row.querySelector("span").textContent || "").trim();
+      const out = row.querySelector("em");
+      if (!text || !out) return;
+      if (out.textContent && out.dataset.ready === "1") {
+        out.hidden = !out.hidden;
+        return;
+      }
+      out.hidden = false;
+      out.textContent = "Translating...";
+      try {
+        const response = await fetch(`${liveApiBase()}/api/translate`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ text, source_lang: "ru", target_lang: "en" }),
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error || "Translation failed");
+        out.textContent = payload.translation || "";
+        out.dataset.ready = "1";
+      } catch (e) {
+        out.textContent = e.message || "Translation unavailable.";
+      }
+      if (liveRoleplay) liveRoleplay.transcript = currentLiveTranscriptRows();
     },
     disconnectLiveRoleplay() {
       cleanupLiveRoleplay();

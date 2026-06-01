@@ -570,6 +570,16 @@ body {
 .liveplay__head strong { display:block; font-family: var(--font-display); text-transform: uppercase; letter-spacing:.06em; color: var(--red); }
 .liveplay__head span { display:block; color: var(--ink-soft); font-size:.9rem; }
 .liveplay__actions { display:flex; flex-wrap:wrap; justify-content:flex-end; gap: 8px; }
+.liveplay__meter {
+  display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 12px;
+}
+.liveplay__meter div, .liveplay__endcap {
+  border:1px solid var(--cream-line); background: rgba(243,233,210,.5); padding: 8px 10px;
+}
+.liveplay__meter strong { display:block; font-family:var(--font-display); color:var(--red); }
+.liveplay__meter span, .liveplay__endcap span { display:block; color:var(--ink-soft); font-size:.82rem; }
+.liveplay__endcap { margin-top: 8px; border-left:4px solid var(--red); }
+.liveplay__endcap strong { display:block; font-family:var(--font-display); text-transform:uppercase; letter-spacing:.05em; font-size:.78rem; }
 .liveplay__transcript {
   margin-top: 12px;
   max-height: 280px;
@@ -581,11 +591,13 @@ body {
   gap: 8px;
 }
 .liveplay__empty { margin:0; color: var(--ink-soft); font-size:.9rem; }
-.liveplay__row { display:grid; grid-template-columns: 62px minmax(0, 1fr); gap: 8px; align-items:start; }
+.liveplay__row { display:grid; grid-template-columns: 62px minmax(0, 1fr) auto; gap: 8px; align-items:start; cursor:pointer; }
 .liveplay__row strong { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; font-size:.72rem; color: var(--red); }
 .liveplay__row span { overflow-wrap:anywhere; }
 .liveplay__row.assistant span { font-family: var(--font-serif); }
 .liveplay__row.system span { color: var(--ink-soft); }
+.liveplay__row em { grid-column: 2 / 4; color: var(--ink-soft); font-style: normal; border-left:2px solid var(--amber); padding-left: 8px; }
+.liveplay__translate { border:1px solid var(--ink); background:var(--paper); font-family:var(--font-display); font-size:.68rem; cursor:pointer; }
 .liveplay__debrief { margin-top: 12px; }
 .roledebrief__grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; margin-top: 10px; }
 .roledebrief__grid div { border:1px solid var(--cream-line); background:rgba(243,233,210,.45); padding: 9px; }
@@ -706,6 +718,10 @@ body {
   .guidedplay__head { display:grid; }
   .guidedplay__modes { justify-content:flex-start; }
   .guidedplay__scenario { grid-template-columns: 1fr; }
+  .liveplay__head { display:grid; }
+  .liveplay__actions { justify-content:flex-start; }
+  .liveplay__meter { grid-template-columns: 1fr; }
+  .liveplay__row { grid-template-columns: 52px minmax(0, 1fr) auto; }
   .roledebrief__grid { grid-template-columns: 1fr; }
   .oraladvance { grid-template-columns: 1fr; }
   .trendbox { grid-template-columns: 1fr; }

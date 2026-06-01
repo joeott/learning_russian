@@ -106,7 +106,13 @@ Live role-play scoring is also mirrored from `POST /api/learning/events` into
 `roleplay_conversation_passes` when the event payload contains
 `roleplay.live_realtime`. That table is the queryable record of conversation
 passes, including whether the current stage is complete and whether the learner
-is ready for n+1 pressure on that scenario.
+is ready for n+1 pressure on that scenario. It also stores the Realtime model,
+usage payload when OpenAI reports it, client-side cost estimate, duration, and
+ending reason so each conversation has an auditable spend record.
+
+Transcript turns remain Russian-first in the UI. Click any live transcript turn
+to call `POST /api/translate` for a concise English translation. That endpoint
+uses the server-side OpenAI key and returns text only.
 
 ## Adaptive metrics
 

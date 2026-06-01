@@ -23,6 +23,9 @@ class SpeechEvalContractTests(unittest.TestCase):
         self.roleplay_sql = (
             ROOT / "db" / "migrations" / "003_roleplay_conversation_passes.sql"
         ).read_text(encoding="utf-8")
+        self.roleplay_cost_sql = (
+            ROOT / "db" / "migrations" / "004_roleplay_conversation_costs.sql"
+        ).read_text(encoding="utf-8")
 
     def test_server_exposes_speech_evaluation_endpoint(self) -> None:
         for token in (
@@ -224,6 +227,10 @@ class SpeechEvalContractTests(unittest.TestCase):
             "Finish & get feedback",
             "Live conversation",
             "Start conversation",
+            "Conversation ended. Getting final feedback and cost",
+            "liveRoleplayTimer",
+            "LIVE_ROLEPLAY_LIMIT_MS",
+            "estimated_cost_usd",
             "What landed",
             "Replay easier",
             "live_realtime",
@@ -233,6 +240,18 @@ class SpeechEvalContractTests(unittest.TestCase):
             "replay_prompt",
         ):
             self.assertIn(token, self.app)
+
+    def test_live_transcript_turns_can_translate_without_exposing_key(self) -> None:
+        for token in (
+            "translateLiveTurn",
+            "Click any turn for English",
+            '"/api/translate"',
+            "translateText",
+            "OPENAI_TRANSLATION_MODEL",
+            "Return only the translation",
+            "runtimeSecret",
+        ):
+            self.assertIn(token, self.app + self.server)
 
     def test_live_roleplay_transcript_passes_persist_to_postgres(self) -> None:
         for token in (
@@ -252,9 +271,19 @@ class SpeechEvalContractTests(unittest.TestCase):
             "roleplay.live_realtime",
             "stageComplete",
             "nPlusOneReady",
+            "estimated_cost_usd",
+            "duration_ms",
             "roleplay_conversation_passes",
         ):
             self.assertIn(token, self.server)
+        for token in (
+            "estimated_cost_usd",
+            "cost_source",
+            "duration_ms",
+            "ended_reason",
+            "usage JSONB",
+        ):
+            self.assertIn(token, self.roleplay_cost_sql)
 
     def test_speech_scorer_has_correct_close_repair_thresholds(self) -> None:
         for token in (

@@ -416,6 +416,10 @@ function transcriptText(rows) {
     .slice(0, 20000);
 }
 
+function usagePayload(value) {
+  return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+}
+
 async function persistRoleplayConversationPass(client, learnerId, deviceId, event) {
   if (event.stage_key !== "roleplay") return;
   const payload = event.payload || {};
@@ -428,6 +432,7 @@ async function persistRoleplayConversationPass(client, learnerId, deviceId, even
   const ok = !!event.ok;
   const stageComplete = ok && missed.length === 0 && met.length > 0 && !assisted;
   const nPlusOneReady = stageComplete && Number(payload.adaptive && payload.adaptive.expected_success || 0) >= 0.78;
+  const usage = usagePayload(roleplay.usage);
   try {
     await client.query(
       `INSERT INTO roleplay_conversation_passes (
@@ -435,9 +440,10 @@ async function persistRoleplayConversationPass(client, learnerId, deviceId, even
       scenario_id, lesson_id, ok, assisted, stage_complete, n_plus_one_ready,
       met_criteria, missed_criteria, summary, transcript, transcript_text,
       pronunciation_issues, missed_phrases, repair_focus, replay_prompt,
-      payload, client_created_at
+      payload, client_created_at, realtime_model, usage, estimated_cost_usd,
+      cost_source, duration_ms, ended_reason
     )
-    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23)
+    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26,$27,$28,$29)
     ON CONFLICT (event_id) DO UPDATE SET
       ok = EXCLUDED.ok,
       assisted = EXCLUDED.assisted,
@@ -452,7 +458,13 @@ async function persistRoleplayConversationPass(client, learnerId, deviceId, even
       missed_phrases = EXCLUDED.missed_phrases,
       repair_focus = EXCLUDED.repair_focus,
       replay_prompt = EXCLUDED.replay_prompt,
-      payload = EXCLUDED.payload`,
+      payload = EXCLUDED.payload,
+      realtime_model = EXCLUDED.realtime_model,
+      usage = EXCLUDED.usage,
+      estimated_cost_usd = EXCLUDED.estimated_cost_usd,
+      cost_source = EXCLUDED.cost_source,
+      duration_ms = EXCLUDED.duration_ms,
+      ended_reason = EXCLUDED.ended_reason`,
     [
       event.event_id,
       learnerId,
@@ -477,6 +489,12 @@ async function persistRoleplayConversationPass(client, learnerId, deviceId, even
       roleplay.replay_prompt || "",
       JSON.stringify(payload),
       event.client_created_at || new Date().toISOString(),
+      roleplay.realtime_model || "",
+      JSON.stringify(usage),
+      Number(roleplay.estimated_cost_usd || 0),
+      roleplay.cost_source || "client_estimate",
+      Math.max(0, Math.round(Number(roleplay.duration_ms || event.latency_ms || 0))),
+      roleplay.ended_reason || "",
     ]
     );
   } catch (error) {
@@ -797,6 +815,50 @@ async function realtimeCall(req, res) {
   res.end(answer);
 }
 
+async function translateText(req, res) {
+  const body = await readJson(req);
+  const text = String(body.text || "").trim();
+  if (!text) return json(res, 400, { error: "text is required" });
+  if (text.length > 1200) return json(res, 400, { error: "text is too long" });
+  let key = "";
+  try {
+    key = await openaiKey();
+  } catch (error) {
+    return json(res, 503, { error: error.message });
+  }
+  const response = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${key}`,
+      "content-type": "application/json",
+      "OpenAI-Safety-Identifier": safetyIdentifier(body),
+    },
+    body: JSON.stringify({
+      model: process.env.OPENAI_TRANSLATION_MODEL || "gpt-4.1-mini",
+      input: [
+        {
+          role: "system",
+          content: "Translate Russian family-table roleplay transcript turns into concise natural English. Return only the translation.",
+        },
+        { role: "user", content: text },
+      ],
+      max_output_tokens: 120,
+    }),
+  });
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    const message = payload.error && payload.error.message ? payload.error.message : `Translation failed (${response.status})`;
+    return json(res, response.status, { error: message });
+  }
+  const translation = payload.output_text ||
+    (payload.output || []).flatMap((item) => item.content || []).map((part) => part.text || "").join("").trim();
+  json(res, 200, {
+    translation,
+    model: payload.model || process.env.OPENAI_TRANSLATION_MODEL || "gpt-4.1-mini",
+    usage: payload.usage || {},
+  });
+}
+
 const server = http.createServer(async (req, res) => {
   try {
     if (req.method === "OPTIONS") return json(res, 200, { ok: true });
@@ -804,6 +866,7 @@ const server = http.createServer(async (req, res) => {
     if (req.method === "POST" && req.url === "/api/learning/events") return insertEvents(req, res);
     if (req.method === "POST" && req.url === "/api/learning/snapshots") return insertSnapshot(req, res);
     if (req.method === "POST" && req.url === "/api/speech/evaluate") return speechEvaluate(req, res);
+    if (req.method === "POST" && req.url === "/api/translate") return translateText(req, res);
     if (req.method === "POST" && req.url === "/api/realtime/session") return realtimeSession(req, res);
     if (req.method === "POST" && req.url.startsWith("/api/realtime/call")) return realtimeCall(req, res);
     if (req.method === "GET" && req.url.startsWith("/api/learning/state")) return state(req, res);
