@@ -100,6 +100,8 @@
   const KEY = COURSE.storage_namespace || "zastolom.russian_family_visit.v2";
   const LEGACY_KEY = "zastolom.v1";
   const LESSON_KEY = KEY + ".lesson_boundary";
+  const LESSON_SCOPE_MIGRATION_KEY = KEY + ".lesson_scope_all_units_v1";
+  const ALL_UNITS = "all_units";
   const HISTORY_KEY = KEY + ".analytics_history";
   const LEARN_RATE_KEY = KEY + ".learn_audio_rate";
   const REVIEW_KEY = KEY + ".review_sessions";
@@ -135,14 +137,23 @@
   function loadLessonBoundary() {
     try {
       const saved = localStorage.getItem(LESSON_KEY);
+      const migrated = localStorage.getItem(LESSON_SCOPE_MIGRATION_KEY);
+      if (saved && LESSON_BY_ID[saved] && !migrated) {
+        localStorage.setItem(LESSON_SCOPE_MIGRATION_KEY, "1");
+        localStorage.setItem(LESSON_KEY, ALL_UNITS);
+        return ALL_UNITS;
+      }
+      if (saved === ALL_UNITS) return ALL_UNITS;
       if (saved && LESSON_BY_ID[saved]) return saved;
     } catch (e) {}
-    if (CURRICULUM.default_lesson_id && LESSON_BY_ID[CURRICULUM.default_lesson_id]) {
-      return CURRICULUM.default_lesson_id;
-    }
-    return LESSONS.length ? LESSONS[0].lesson_id : "";
+    return ALL_UNITS;
   }
-  function saveLessonBoundary() { try { localStorage.setItem(LESSON_KEY, activeLessonId); } catch (e) {} }
+  function saveLessonBoundary() {
+    try {
+      localStorage.setItem(LESSON_SCOPE_MIGRATION_KEY, "1");
+      localStorage.setItem(LESSON_KEY, activeLessonId);
+    } catch (e) {}
+  }
   function loadAnalyticsHistory() {
     try {
       const rows = JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
@@ -862,7 +873,7 @@
     const rows = [];
     Object.keys(store).forEach(id => {
       const it = practiceItem(id);
-      if (!it || (it.lesson_number && it.lesson_number > (activeLesson().lesson_number || 99))) return;
+      if (!it || (it.lesson_number && it.lesson_number > practiceScopeNumber())) return;
       const r = migrateRec(store[id]);
       Object.entries(r.errors || {}).forEach(([errorType, count]) => {
         if (!ERROR_BY_ID[errorType] || !count) return;
@@ -875,7 +886,7 @@
     const grouped = {};
     Object.keys(store).forEach(id => {
       const it = practiceItem(id);
-      if (!it || (it.lesson_number && it.lesson_number > (activeLesson().lesson_number || 99))) return;
+      if (!it || (it.lesson_number && it.lesson_number > practiceScopeNumber())) return;
       const r = migrateRec(store[id]);
       Object.entries(r.repair_focus_counts || {}).forEach(([errorType, count]) => {
         if (!ERROR_BY_ID[errorType] || !count) return;
@@ -936,7 +947,7 @@
     return `<div class="repairbox rise"><div><h3>Repair queue</h3><p>Logged mistakes are grouped into targeted repair drills.</p></div><div class="repairgrid">${cards}</div></div>`;
   }
   function scenarioForItem(id) {
-    const limit = activeLesson().lesson_number || 99;
+    const limit = practiceScopeNumber();
     const candidates = SCENARIOS.filter(s => scenarioLesson(s) <= limit && (s.required_items || []).includes(id));
     if (!candidates.length) return null;
     const lessonFor = (s) => (Number.isFinite(scenarioLesson(s)) ? scenarioLesson(s) : 99);
@@ -990,15 +1001,21 @@
     const done = items.filter(i => { const r = store[i.id]; return r && (r.known || (r.stages && Object.keys(r.stages).length)); }).length;
     return { done, total: items.length, pct: items.length ? Math.round((done / items.length) * 100) : 0 };
   }
+  function isAllUnitsScope() {
+    return activeLessonId === ALL_UNITS || !LESSON_BY_ID[activeLessonId];
+  }
   function activeLesson() {
     return LESSON_BY_ID[activeLessonId] || LESSONS[LESSONS.length - 1] || { lesson_number: 99, title: "All lessons" };
   }
+  function practiceScopeNumber() {
+    return isAllUnitsScope() ? Infinity : (activeLesson().lesson_number || 99);
+  }
   function unlockedItems(items) {
-    const n = activeLesson().lesson_number || 99;
+    const n = practiceScopeNumber();
     return items.filter(i => !i.lesson_number || i.lesson_number <= n);
   }
   function activeLessonStageCards(cards) {
-    const n = activeLesson().lesson_number || 99;
+    const n = practiceScopeNumber();
     return cards.filter((card) => {
       if (!card || !card.item_id) return false;
       const source = ITEMS_BY_ID[card.item_id];
@@ -1008,7 +1025,7 @@
     });
   }
   function activeRoleplayItemIds() {
-    const n = activeLesson().lesson_number || 99;
+    const n = practiceScopeNumber();
     return new Set(
       SCENARIOS.filter(s => scenarioLesson(s) <= n)
         .flatMap(s => s.required_items || [])
@@ -1030,7 +1047,7 @@
     return activeLessonStageCards(cards);
   }
   function unlockedContrastCards(cards) {
-    const n = activeLesson().lesson_number || 99;
+    const n = practiceScopeNumber();
     return cards.filter((card) => {
       const item = ITEMS_BY_ID[card.item_id];
       const lessonNumber = card.lesson_number != null ? card.lesson_number : (item && item.lesson_number);
@@ -1097,6 +1114,7 @@
   function lessonLockHtml() {
     if (!LESSONS.length) return "";
     const lesson = activeLesson();
+    const allUnits = isAllUnitsScope();
     const count = unlockedItems(ITEMS).length;
     const clozeCount = unlockedClozeCards(CLOZE_CARDS).length;
     const dictationCount = unlockedDictationCards(DICTATION_CARDS).length;
@@ -1105,14 +1123,19 @@
     const backCount = unlockedBacktranslationCards(BACKTRANSLATION_CARDS).length;
     const contrastCount = unlockedContrastCards(CONTRAST_CARDS).length;
     const verbDrillCount = unlockedVerbDrillCards(VERB_DRILL_CARDS).length;
-    const options = LESSONS.map(l => `<option value="${escapeHtml(l.lesson_id)}" ${l.lesson_id === lesson.lesson_id ? "selected" : ""}>${String(l.lesson_number).padStart(2, "0")} · ${escapeHtml(l.title)}</option>`).join("");
+    const unitOptions = LESSONS.map(l => `<option value="${escapeHtml(l.lesson_id)}" ${!allUnits && l.lesson_id === lesson.lesson_id ? "selected" : ""}>${String(l.lesson_number).padStart(2, "0")} · ${escapeHtml(l.title)}</option>`).join("");
+    const options = `<option value="${ALL_UNITS}" ${allUnits ? "selected" : ""}>All units · Everything from the Ekaterina guide</option>${unitOptions}`;
+    const scopeCopy = allUnits
+      ? "Everything from the Ekaterina guide is available. Use the dropdown only when you want to focus practice on a smaller unit range."
+      : `Practice is limited to Unit ${lesson.lesson_number}: ${escapeHtml(lesson.title)} and everything before it.`;
+    const structureCopy = allUnits ? "all structures" : `${(lesson.introduced_structures || []).length} structures in this unit`;
     return `<div class="lessonlock rise">
       <div>
-        <h3>Curriculum lock</h3>
-        <p>Practice is constrained to Lesson ${lesson.lesson_number}: ${escapeHtml(lesson.title)} and everything before it.</p>
+        <h3>Practice scope</h3>
+        <p>${scopeCopy}</p>
       </div>
-      <label><span>Unlocked through</span><select onchange="ZS.setLesson(this.value)">${options}</select></label>
-      <div class="lessonlock__meta">${count}/${ITEMS.length} phrases unlocked · ${clozeCount}/${CLOZE_CARDS.length} cloze · ${dictationCount}/${DICTATION_CARDS.length} dictation · ${stressCount}/${STRESS_CARDS.length} stress · ${pronunciationCount}/${PRONUNCIATION_CARDS.length} pronounce · ${backCount}/${BACKTRANSLATION_CARDS.length} back-translation · ${contrastCount}/${CONTRAST_CARDS.length} contrast · ${verbDrillCount}/${VERB_DRILL_CARDS.length} conjugation · ${(lesson.introduced_structures || []).length} structures in this lesson</div>
+      <label><span>Limit to unit</span><select onchange="ZS.setLesson(this.value)">${options}</select></label>
+      <div class="lessonlock__meta">${count}/${ITEMS.length} phrases available · ${clozeCount}/${CLOZE_CARDS.length} cloze · ${dictationCount}/${DICTATION_CARDS.length} dictation · ${stressCount}/${STRESS_CARDS.length} stress · ${pronunciationCount}/${PRONUNCIATION_CARDS.length} pronounce · ${backCount}/${BACKTRANSLATION_CARDS.length} back-translation · ${contrastCount}/${CONTRAST_CARDS.length} contrast · ${verbDrillCount}/${VERB_DRILL_CARDS.length} conjugation · ${structureCopy}</div>
     </div>`;
   }
 
@@ -1374,6 +1397,16 @@
     list.sort((a, b) => a.priority - b.priority);
     learnState.list = list;
     if (learnState.idx >= list.length) learnState.idx = 0;
+  }
+  function learnEmptyHtml() {
+    const moduleItems = learnState.module === "all" ? ITEMS : ITEMS.filter(i => i.module === learnState.module);
+    const hiddenByUnitScope = !isAllUnitsScope() && moduleItems.length && !unlockedItems(moduleItems).length;
+    const moduleTitle = learnState.module === "all" ? "this filter" : ((MOD_BY_ID[learnState.module] || {}).title || learnState.module);
+    if (hiddenByUnitScope) {
+      return `<div class="card"><p>This unit limit hides ${escapeHtml(moduleTitle)}.</p>
+        <div class="card__foot"><button class="btn btn--red" onclick="ZS.setLesson('${ALL_UNITS}')">Show all units</button></div></div>`;
+    }
+    return '<div class="card"><p>No cards match this filter.</p></div>';
   }
   function cleanupLearnRecording() {
     const activeRecorder = learnRecorder;
@@ -1704,7 +1737,7 @@
   function renderCard() {
     const slot = $("#cardslot");
     const list = learnState.list;
-    if (!list.length) { slot.innerHTML = '<div class="card"><p>No cards match this filter.</p></div>'; return; }
+    if (!list.length) { slot.innerHTML = learnEmptyHtml(); return; }
     const it = list[learnState.idx];
     rec(it.id).seen++;
     save();
@@ -1919,7 +1952,7 @@
     return id ? ITEMS_BY_ID[id] : null;
   }
   function scenarioUnlocked(s) {
-    return scenarioLesson(s) <= (activeLesson().lesson_number || 99);
+    return scenarioLesson(s) <= practiceScopeNumber();
   }
   function scenarioPassState(s) {
     const rows = (s.required_items || []).map(id => stageState(id, "roleplay")).filter(Boolean);
@@ -1959,7 +1992,7 @@
           const disabled = !unlocked || (level === "n_plus_one" && pass !== "complete");
           return `<button class="chip chip--tight ${disabled ? "is-disabled" : ""}" ${disabled ? "disabled" : ""} onclick="ZS.openConversationScenario('${s.id}','${level}')">${escapeHtml(label)}</button>`;
         }).join("")}</div>
-        ${primary ? `<button class="btn btn--sm ${unlocked ? "btn--red" : "btn--ghost ghost-dark"}" ${unlocked ? "" : "disabled"} onclick="ZS.openConversationScenario('${s.id}','${levels.includes("supported") ? "supported" : levels[0]}')">${unlocked ? "Open conversation" : "Locked until lesson " + escapeHtml(String(scenarioLesson(s)))}</button>` : ""}
+        ${primary ? `<button class="btn btn--sm ${unlocked ? "btn--red" : "btn--ghost ghost-dark"}" ${unlocked ? "" : "disabled"} onclick="ZS.openConversationScenario('${s.id}','${levels.includes("supported") ? "supported" : levels[0]}')">${unlocked ? "Open conversation" : "Hidden by unit limit"}</button>` : ""}
       </article>`;
     }).join("");
   }
@@ -2017,10 +2050,10 @@
       .concat(CONVERSATION_LEVELS.map(([level, label]) => `<button class="chip ${conversationState.level === level ? "is-on" : ""}" onclick="ZS.setConversationLevel('${level}')">${escapeHtml(label)}</button>`)).join("");
     view.innerHTML = `
       <div class="section-head"><span class="section-head__num">05</span><span class="section-head__title">Live conversations</span>
-        <span class="section-head__sub">Ekaterina-guide scenarios, lesson-gated and graduated from shadowing to N+1.</span></div>
+        <span class="section-head__sub">Ekaterina-guide scenarios, optionally unit-limited and graduated from shadowing to N+1.</span></div>
       ${lessonLockHtml()}
       <div class="convfilters rise"><div>${topicChips}</div><div>${levelChips}</div></div>
-      <div class="convsummary rise"><strong>${list.filter(scenarioUnlocked).length}</strong><span>unlocked of ${SCENARIOS.length} conversations · ${topics.length} topics from the Ekaterina guide</span></div>
+      <div class="convsummary rise"><strong>${list.filter(scenarioUnlocked).length}</strong><span>available of ${SCENARIOS.length} conversations · ${topics.length} topics from the Ekaterina guide</span></div>
       <div class="convgrid">${scenarioCardsHtml(list)}</div>`;
   }
 
@@ -2042,7 +2075,7 @@
     { n: 12, key: "roleplay", title: "Role-play", desc: "A table prompt → say it, then self-rate.", instr: "Say it out loud" },
   ];
   function stagePool(stageKey) {
-    const n = activeLesson().lesson_number || 99;
+    const n = practiceScopeNumber();
     const items = unlockedItems(ITEMS);
     if (stageKey === "cloze") return unlockedClozeCards(CLOZE_CARDS);
     if (stageKey === "dictation") return unlockedDictationCards(DICTATION_CARDS);
@@ -3069,7 +3102,7 @@
     setMod(m) { cleanupLearnRecording(); learnState.module = m; learnState.idx = 0; renderLearn(); },
     setPri(p) { cleanupLearnRecording(); learnState.priority = p; learnState.idx = 0; renderLearn(); },
     setLesson(id) {
-      if (!LESSON_BY_ID[id]) return;
+      if (id !== ALL_UNITS && !LESSON_BY_ID[id]) return;
       cleanupLearnRecording();
       activeLessonId = id;
       learnState.idx = 0;
@@ -3080,7 +3113,7 @@
         stage_key: "lesson_boundary",
         ok: true,
         lesson_id: id,
-        payload: { active_lesson_id: id },
+        payload: { active_lesson_id: id, practice_scope: id },
       });
       router();
     },

@@ -183,9 +183,24 @@ class SpeechEvalContractTests(unittest.TestCase):
             "convfilters",
             "n_plus_one",
             "NETWORK_FIRST",
-            "zastolom-v7",
+            "zastolom-v8",
         ):
             self.assertIn(token, self.app + styles + index + service_worker)
+
+    def test_practice_scope_defaults_to_all_units_with_optional_limits(self) -> None:
+        styles = (ROOT / "web" / "styles.css").read_text(encoding="utf-8")
+        for token in (
+            "ALL_UNITS",
+            "lesson_scope_all_units_v1",
+            "Practice scope",
+            "Everything from the Ekaterina guide is available",
+            "Limit to unit",
+            "phrases available",
+            "Show all units",
+            "This unit limit hides",
+            "practiceScopeNumber",
+        ):
+            self.assertIn(token, self.app + styles)
 
     def test_review_sessions_have_spaced_ratings(self) -> None:
         for token in (

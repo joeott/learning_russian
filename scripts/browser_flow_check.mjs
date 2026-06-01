@@ -153,7 +153,7 @@ async function assertOfflineFlow(browser, baseUrl, opts) {
     await offlinePage.waitForFunction(() => document.body.innerText.toLowerCase().includes("home"));
     await offlinePage.evaluate(() => localStorage.clear());
     await offlinePage.reload({ waitUntil: "networkidle" });
-    await assertText(offlinePage, "CURRICULUM LOCK");
+    await assertText(offlinePage, "PRACTICE SCOPE");
 
     await offlinePage.goto(withHash(baseUrl, "#/plan"), { waitUntil: "networkidle" });
     await offlinePage.waitForFunction(() => document.body.innerText.toLowerCase().includes("offline packs"));
@@ -193,11 +193,15 @@ async function assertOfflineFlow(browser, baseUrl, opts) {
   }
 }
 
-async function assertLessonLockedRecognition(page, baseUrl) {
+async function assertPracticeScopeRecognition(page, baseUrl) {
   await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
   const select = page.locator(".lessonlock select");
-  await select.selectOption({ index: 0 });
-  const firstValue = await page.locator(".lessonlock select option").first().getAttribute("value");
+  await assertText(page, "PRACTICE SCOPE");
+  await assertText(page, "Everything from the Ekaterina guide is available");
+  await assertText(page, "452/452 PHRASES AVAILABLE");
+  const allValue = await page.locator(".lessonlock select option").first().getAttribute("value");
+  if (allValue !== "all_units") throw new Error(`Expected all_units as the default practice scope, got ${allValue}`);
+  const firstValue = await page.locator(".lessonlock select option").nth(1).getAttribute("value");
   const lessonSummaryById = async (lessonId) => await page.evaluate((lessonId) => {
     const { items = [], cloze_cards = [], dictation_cards = [], stress_cards = [], pronunciation_cards = [], backtranslation_cards = [], contrast_cards = [], verb_drill_cards = [], scenarios = [] } = window.CONTENT_DATA;
     const { lessons = [] } = window.CONTENT_DATA.curriculum || {};
@@ -238,53 +242,54 @@ async function assertLessonLockedRecognition(page, baseUrl) {
     };
   }, lessonId);
 
-  await assertText(page, "Practice is constrained to Lesson 1");
   const expected = await lessonSummaryById(firstValue);
-  await assertText(page, `${expected.phrasesUnlocked}/${expected.phrasesTotal} PHRASES UNLOCKED`);
+  await select.selectOption(firstValue);
+  await assertText(page, `Practice is limited to Unit ${expected.lessonNumber}`);
+  await assertText(page, `${expected.phrasesUnlocked}/${expected.phrasesTotal} PHRASES AVAILABLE`);
 
   const metaText = (await page.locator(".lessonlock__meta").innerText()).toLowerCase();
-  if (!metaText.includes(`${expected.phrasesUnlocked}/${expected.phrasesTotal} phrases unlocked`)) {
-    throw new Error(`Lesson lock meta mismatch: phrases unlocked expected ${expected.phrasesUnlocked}/${expected.phrasesTotal}`);
+  if (!metaText.includes(`${expected.phrasesUnlocked}/${expected.phrasesTotal} phrases available`)) {
+    throw new Error(`Practice scope meta mismatch: phrases available expected ${expected.phrasesUnlocked}/${expected.phrasesTotal}`);
   }
   if (!metaText.includes(`${expected.cloze}/${expected.totals.cloze} cloze`)) {
-    throw new Error(`Lesson lock meta mismatch: cloze unlocked expected ${expected.cloze}/${expected.totals.cloze}`);
+    throw new Error(`Practice scope meta mismatch: cloze expected ${expected.cloze}/${expected.totals.cloze}`);
   }
   if (!metaText.includes(`${expected.dictation}/${expected.totals.dictation} dictation`)) {
-    throw new Error(`Lesson lock meta mismatch: dictation unlocked expected ${expected.dictation}/${expected.totals.dictation}`);
+    throw new Error(`Practice scope meta mismatch: dictation expected ${expected.dictation}/${expected.totals.dictation}`);
   }
   if (!metaText.includes(`${expected.stress}/${expected.totals.stress} stress`)) {
-    throw new Error(`Lesson lock meta mismatch: stress unlocked expected ${expected.stress}/${expected.totals.stress}`);
+    throw new Error(`Practice scope meta mismatch: stress expected ${expected.stress}/${expected.totals.stress}`);
   }
   if (!metaText.includes(`${expected.pronounce}/${expected.totals.pronounce} pronounce`)) {
-    throw new Error(`Lesson lock meta mismatch: pronounce unlocked expected ${expected.pronounce}/${expected.totals.pronounce}`);
+    throw new Error(`Practice scope meta mismatch: pronounce expected ${expected.pronounce}/${expected.totals.pronounce}`);
   }
   if (!metaText.includes(`${expected.backtranslate}/${expected.totals.backtranslate} back-translation`)) {
-    throw new Error(`Lesson lock meta mismatch: back-translation unlocked expected ${expected.backtranslate}/${expected.totals.backtranslate}`);
+    throw new Error(`Practice scope meta mismatch: back-translation expected ${expected.backtranslate}/${expected.totals.backtranslate}`);
   }
   if (!metaText.includes(`${expected.contrast}/${expected.totals.contrast} contrast`)) {
-    throw new Error(`Lesson lock meta mismatch: contrast unlocked expected ${expected.contrast}/${expected.totals.contrast}`);
+    throw new Error(`Practice scope meta mismatch: contrast expected ${expected.contrast}/${expected.totals.contrast}`);
   }
   if (!metaText.includes(`${expected.conjugate}/${expected.totals.conjugate} conjugation`)) {
-    throw new Error(`Lesson lock meta mismatch: conjugation unlocked expected ${expected.conjugate}/${expected.totals.conjugate}`);
+    throw new Error(`Practice scope meta mismatch: conjugation expected ${expected.conjugate}/${expected.totals.conjugate}`);
   }
   const optionCount = await page.locator(".lessonlock select option").count();
-  if (optionCount > 1) {
-    const secondValue = await page.locator(".lessonlock select option").nth(1).getAttribute("value");
+  if (optionCount > 2) {
+    const secondValue = await page.locator(".lessonlock select option").nth(2).getAttribute("value");
     await select.selectOption(secondValue);
     const second = await lessonSummaryById(secondValue);
     const secondMetaText = (await page.locator(".lessonlock__meta").innerText()).toLowerCase();
-    if (!secondMetaText.includes(`${second.phrasesUnlocked}/${second.phrasesTotal} phrases unlocked`)) {
-      throw new Error(`Lesson lock meta mismatch: lesson ${second.lessonNumber} expected ${second.phrasesUnlocked}/${second.phrasesTotal}`);
+    if (!secondMetaText.includes(`${second.phrasesUnlocked}/${second.phrasesTotal} phrases available`)) {
+      throw new Error(`Practice scope meta mismatch: unit ${second.lessonNumber} expected ${second.phrasesUnlocked}/${second.phrasesTotal}`);
     }
     if (second.phrasesUnlocked < expected.phrasesUnlocked) {
-      throw new Error(`Lesson boundary regression: lesson ${second.lessonNumber} unlocked ${second.phrasesUnlocked} < lesson ${expected.lessonNumber} ${expected.phrasesUnlocked}`);
+      throw new Error(`Practice scope regression: unit ${second.lessonNumber} available ${second.phrasesUnlocked} < unit ${expected.lessonNumber} ${expected.phrasesUnlocked}`);
     }
-    await assertText(page, `Practice is constrained to Lesson ${second.lessonNumber}`);
+    await assertText(page, `Practice is limited to Unit ${second.lessonNumber}`);
     await select.selectOption(firstValue);
-    await assertText(page, `Practice is constrained to Lesson ${expected.lessonNumber}`);
+    await assertText(page, `Practice is limited to Unit ${expected.lessonNumber}`);
     const resetMetaText = (await page.locator(".lessonlock__meta").innerText()).toLowerCase();
-    if (!resetMetaText.includes(`${expected.phrasesUnlocked}/${expected.phrasesTotal} phrases unlocked`)) {
-      throw new Error(`Lesson lock meta mismatch after reset: phrases unlocked expected ${expected.phrasesUnlocked}/${expected.phrasesTotal}`);
+    if (!resetMetaText.includes(`${expected.phrasesUnlocked}/${expected.phrasesTotal} phrases available`)) {
+      throw new Error(`Practice scope meta mismatch after reset: phrases available expected ${expected.phrasesUnlocked}/${expected.phrasesTotal}`);
     }
   }
 
@@ -304,11 +309,11 @@ async function assertLessonLockedRecognition(page, baseUrl) {
     });
     if (fallback) Object.assign(prompted, fallback);
     if (!fallback) {
-      throw new Error("Could not map lesson-locked recognition prompt to a content item");
+      throw new Error("Could not map unit-limited recognition prompt to a content item");
     }
   }
   if (prompted.lessonNumber > expected.lessonNumber) {
-    throw new Error(`Lesson lock violated: ${prompted.id} is lesson ${prompted.lessonNumber}, expected <= ${expected.lessonNumber}`);
+    throw new Error(`Practice scope violated: ${prompted.id} is lesson ${prompted.lessonNumber}, expected <= ${expected.lessonNumber}`);
   }
   for (const stageKey of ["recognition", "recall", "conjugate", "cloze", "dictation", "stress", "pronounce", "backtranslate", "contrast", "produce", "listen", "roleplay"]) {
     const available = expected[stageKey];
@@ -326,7 +331,7 @@ async function assertLessonLockedRecognition(page, baseUrl) {
       throw new Error(`Expected ${stageKey} stage, got ${promptedStage.stage}`);
     }
     if (promptedStage.lessonNumber > expected.lessonNumber) {
-      throw new Error(`Lesson lock violated: ${promptedStage.id} in ${stageKey} is lesson ${promptedStage.lessonNumber}, expected <= ${expected.lessonNumber}`);
+      throw new Error(`Practice scope violated: ${promptedStage.id} in ${stageKey} is lesson ${promptedStage.lessonNumber}, expected <= ${expected.lessonNumber}`);
     }
     const sourceLesson = await page.evaluate(({ stage, itemId }) => {
       const DATA = window.CONTENT_DATA;
@@ -359,15 +364,10 @@ async function assertLessonLockedRecognition(page, baseUrl) {
   }
 
   await page.goto(withHash(baseUrl, "#/quiz"), { waitUntil: "networkidle" });
-  const lastValue = await page.locator(".lessonlock select option").last().getAttribute("value");
-  await select.selectOption(lastValue);
-  const terminal = await lessonSummaryById(lastValue);
+  await select.selectOption("all_units");
   const terminalMetaText = (await page.locator(".lessonlock__meta").innerText()).toLowerCase();
-  if (!terminalMetaText.includes(`${terminal.phrasesUnlocked}/${terminal.phrasesTotal} phrases unlocked`)) {
-    throw new Error(`Lesson lock terminal meta mismatch: phrases unlocked expected ${terminal.phrasesUnlocked}/${terminal.phrasesTotal}`);
-  }
-  if (terminal.phrasesUnlocked !== terminal.phrasesTotal) {
-    throw new Error(`Terminal lesson should unlock all phrases at selected boundary ${terminal.lessonNumber}, got ${terminal.phrasesUnlocked}/${terminal.phrasesTotal}`);
+  if (!terminalMetaText.includes("452/452 phrases available")) {
+    throw new Error("All-units practice scope should expose all phrases");
   }
   return {
     id: prompted.id || "",
@@ -654,7 +654,7 @@ async function assertDueFirstOrdering(page, baseUrl, { stageKey, dueItemId }) {
 
   try {
     const select = page.locator(".lessonlock select");
-    await select.selectOption({ index: 0 });
+    await select.selectOption({ index: 1 });
     await page.reload({ waitUntil: "networkidle" });
     await page.evaluate(() => {
       if (!window.__orderedRandom) {
@@ -960,7 +960,7 @@ export async function runFlowCheck(opts) {
     await page.goto(withHash(opts.url, "#/home"), { waitUntil: "networkidle" });
     await page.evaluate(() => localStorage.clear());
     await page.reload({ waitUntil: "networkidle" });
-    await assertText(page, "CURRICULUM LOCK");
+    await assertText(page, "PRACTICE SCOPE");
     await assertText(page, "PERFORMANCE SIGNALS");
     completed.push("home");
 
@@ -968,11 +968,11 @@ export async function runFlowCheck(opts) {
     completed.push("offline-pack");
 
     await page.goto(withHash(opts.url, "#/learn"), { waitUntil: "networkidle" });
-    await assertText(page, "CURRICULUM LOCK");
+    await assertText(page, "PRACTICE SCOPE");
     completed.push("learn");
 
-    await assertLessonLockedRecognition(page, opts.url);
-    completed.push("lesson-lock");
+    await assertPracticeScopeRecognition(page, opts.url);
+    completed.push("practice-scope");
     await assertDueFirstOrdering(page, opts.url, { stageKey: "recognition", dueItemId: "firs002" });
     completed.push("adaptive-ordering");
 

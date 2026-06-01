@@ -19,7 +19,7 @@ open http://localhost:8000/web/#/learn
 
 ## Learn Screen
 
-- [ ] Open `#/learn` and confirm the curriculum lock shows 452 total phrases across 26 modules.
+- [ ] Open `#/learn` and confirm the Practice scope defaults to all units and shows 452 total phrases across 26 modules.
 - [ ] Select `Pronouns & Possession` and confirm 16 cards are available.
 - [ ] Select `Winter & Seasonal Activities` and confirm 16 cards are available.
 - [ ] Select `Question Words & Connectors` and confirm 16 cards are available.
@@ -82,7 +82,7 @@ open http://localhost:8000/web/#/learn
 
 - [ ] Open `#/learn`, then set the browser offline.
 - [ ] Reload and confirm the app shell, content, audio manifest, and existing progress still load.
-- [ ] Confirm the service worker reports `zastolom-v7` and fetches app JS/CSS/content network-first so stale versions are replaced after restart.
+- [ ] Confirm the service worker reports `zastolom-v8` and fetches app JS/CSS/content network-first so stale versions are replaced after restart.
 - [ ] Confirm install prompt/PWA installability is available in Chrome.
 
 ## Content And Study Coverage
