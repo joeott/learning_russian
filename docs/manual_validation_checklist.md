@@ -67,6 +67,9 @@ open http://localhost:8000/web/#/learn
 - [ ] Optional speech setup: store API keys with `tools/zastolom secrets put`, verify AWS CLI credentials are active, and confirm `/api/speech/evaluate` does not expose keys.
 - [ ] Optional live roleplay setup: confirm `/api/realtime/session` uses `gpt-realtime-2`, `audio.output.voice=marin`, and returns only an ephemeral credential.
 - [ ] Optional live roleplay setup: confirm `/api/realtime/call` accepts browser SDP and returns an SDP answer without exposing `OPENAI_API_KEY`.
+- [ ] Open `#/conversations`, confirm topic and level filters render, and spot-check Food, Dates & weather, Games & leisure, and Budva topic selections.
+- [ ] Open one Supported conversation and confirm the guided panel appears with target phrases from the selected scenario.
+- [ ] Open one Live conversation and confirm the Live Tutor panel starts from the selected scenario, not a random drill card.
 - [ ] During live roleplay, confirm the timer/cost/turn meter updates and `Finish & get feedback` clearly ends the conversation before debrief.
 - [ ] Click a live transcript row and confirm English translation appears without exposing `OPENAI_API_KEY`.
 - [ ] In DevTools, set `localStorage.setItem("zastolom.russian_family_visit.v2.sync_api", "http://127.0.0.1:8787")`, reload, complete a card, and confirm `/api/learning/state?learner_id=joe` returns the event-backed state.
@@ -79,7 +82,7 @@ open http://localhost:8000/web/#/learn
 
 - [ ] Open `#/learn`, then set the browser offline.
 - [ ] Reload and confirm the app shell, content, audio manifest, and existing progress still load.
-- [ ] Confirm the service worker reports cached app assets in DevTools.
+- [ ] Confirm the service worker reports `zastolom-v7` and fetches app JS/CSS/content network-first so stale versions are replaced after restart.
 - [ ] Confirm install prompt/PWA installability is available in Chrome.
 
 ## Content And Study Coverage

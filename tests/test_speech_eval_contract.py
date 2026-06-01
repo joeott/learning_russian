@@ -150,6 +150,7 @@ class SpeechEvalContractTests(unittest.TestCase):
 
     def test_today_lane_prioritizes_review_speak_roleplay(self) -> None:
         styles = (ROOT / "web" / "styles.css").read_text(encoding="utf-8")
+        index = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
         for token in (
             "todayPracticeHtml",
             "Today practice",
@@ -158,9 +159,33 @@ class SpeechEvalContractTests(unittest.TestCase):
             "Try guided roleplay",
             "startTodaySpeak",
             "startGuidedRoleplay",
+            "#/conversations",
             "todaylane",
         ):
-            self.assertIn(token, self.app + styles)
+            self.assertIn(token, self.app + styles + index)
+
+    def test_live_conversation_library_surfaces_graded_scenarios(self) -> None:
+        styles = (ROOT / "web" / "styles.css").read_text(encoding="utf-8")
+        index = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
+        service_worker = (ROOT / "web" / "service-worker.js").read_text(
+            encoding="utf-8"
+        )
+        for token in (
+            "#/conversations",
+            "renderConversations",
+            "openConversationScenario",
+            "setConversationTopic",
+            "setConversationLevel",
+            "CONVERSATION_LEVELS",
+            "Live conversations",
+            "Ekaterina-guide scenarios",
+            "convcard",
+            "convfilters",
+            "n_plus_one",
+            "NETWORK_FIRST",
+            "zastolom-v7",
+        ):
+            self.assertIn(token, self.app + styles + index + service_worker)
 
     def test_review_sessions_have_spaced_ratings(self) -> None:
         for token in (

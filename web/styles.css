@@ -303,6 +303,7 @@ body {
 .chip { font-family: var(--font-display); text-transform: uppercase; letter-spacing:.05em; font-size:.74rem; font-weight:500; padding:6px 11px; border:2px solid var(--ink); border-radius:20px; background:var(--paper-2); cursor:pointer; }
 .chip.is-on { background: var(--ink); color: var(--paper); }
 .chip--tight { padding:5px 9px; }
+.chip.is-disabled, .chip:disabled { opacity: .45; cursor: not-allowed; }
 .speedctl { display:flex; gap: 5px; align-items:center; }
 .learnbar--scroll {
   flex-wrap: nowrap;
@@ -404,6 +405,43 @@ body {
 .reviewdone__mark { width:58px; height:58px; margin:0 auto 10px; display:grid; place-items:center; border:3px solid var(--ink); border-radius:50%; background:var(--ok); color:var(--paper); font-size:1.6rem; }
 .reviewdone h3 { margin:0 0 4px; font-family:var(--font-display); text-transform:uppercase; letter-spacing:.04em; }
 .reviewdone p { margin:0; color:var(--ink-soft); }
+
+/* ---------- Live Conversations ---------- */
+.convfilters {
+  display:grid; gap: 10px; margin: 0 0 12px;
+  background: rgba(243,233,210,.45); border:2px solid var(--ink); border-radius: var(--radius);
+  padding: 12px 14px; box-shadow: var(--shadow-sm);
+}
+.convfilters > div { display:flex; flex-wrap:wrap; gap: 8px; }
+.convsummary {
+  display:flex; align-items:center; gap: 10px; margin: 0 0 14px;
+  font-family: var(--font-display); text-transform: uppercase; letter-spacing: .05em; color: var(--ink-soft);
+}
+.convsummary strong { color: var(--red); font-size: 1.5rem; line-height: 1; }
+.convgrid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.convcard {
+  min-height: 252px; display:grid; gap: 10px; align-content:start;
+  background: var(--paper); border:2px solid var(--ink); border-radius: var(--radius);
+  padding: 14px; box-shadow: var(--shadow-sm);
+}
+.convcard.is-locked { opacity: .62; }
+.convcard__top, .convcard__meta, .convcard__levels { display:flex; flex-wrap:wrap; gap: 7px; align-items:center; }
+.convcard__top { justify-content:space-between; }
+.convcard__top > span:first-child, .convdetail__head span {
+  font-family: var(--font-display); text-transform: uppercase; letter-spacing: .07em; color: var(--red); font-size: .72rem;
+}
+.convcard h3 { margin: 0; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .03em; font-size: 1.1rem; }
+.convcard p { margin: 0; color: var(--ink); }
+.convcard__meta { color: var(--ink-soft); font-size: .78rem; }
+.convcard__meta span { border:1px solid var(--cream-line); background: rgba(243,233,210,.38); padding: 2px 6px; }
+.convdetail {
+  max-width: 880px; margin: 0 auto 16px; background: var(--paper); border:2px solid var(--ink);
+  border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 16px;
+}
+.convdetail__head { display:grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items:start; }
+.convdetail__head h2 { margin: 4px 0 0; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .03em; }
+.convdetail__levels, .convdetail__actions { display:flex; flex-wrap:wrap; gap: 8px; justify-content:flex-end; }
+.convdetail__actions { border-top:2px solid var(--ink); margin-top: 12px; padding-top: 12px; }
 
 /* ---------- Quiz ---------- */
 .stagegrid { display:grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 10px; }
@@ -715,6 +753,10 @@ body {
   .reviewsession { display:grid; }
   .reviewsession__actions { justify-content:flex-start; }
   .reviewmeta { display:grid; }
+  .convsummary { align-items:flex-start; }
+  .convgrid { grid-template-columns: 1fr; }
+  .convdetail__head { grid-template-columns: 1fr; }
+  .convdetail__levels, .convdetail__actions { justify-content:flex-start; }
   .guidedplay__head { display:grid; }
   .guidedplay__modes { justify-content:flex-start; }
   .guidedplay__scenario { grid-template-columns: 1fr; }
