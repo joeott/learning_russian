@@ -1,5 +1,5 @@
 /* За столо́м — offline app shell cache */
-const CACHE = "zastolom-v6";
+const CACHE = "zastolom-v7";
 const ASSETS = [
   "./",
   "./index.html",
@@ -10,6 +10,15 @@ const ASSETS = [
   "./audio.js",
   "./manifest.webmanifest",
   "./assets/icon.svg",
+];
+const NETWORK_FIRST = [
+  "/web/",
+  "/web/index.html",
+  "/web/styles.css",
+  "/web/app.js",
+  "/web/learning_metrics.js",
+  "/web/content.js",
+  "/web/audio.js",
 ];
 // MP3 phrase audio (assets/audio/*.mp3) is cached on-demand by the fetch
 // handler below the first time each clip plays, so it works offline thereafter.
@@ -24,9 +33,23 @@ self.addEventListener("activate", (e) => {
   );
 });
 
-// cache-first for app shell; network fallback for the rest
+function isNetworkFirst(request) {
+  const url = new URL(request.url);
+  return url.origin === location.origin && NETWORK_FIRST.some((path) => url.pathname.endsWith(path));
+}
+
+// network-first for mutable app files; cache fallback for offline use
 self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET") return;
+  if (isNetworkFirst(e.request)) {
+    e.respondWith(
+      fetch(e.request).then((res) => {
+        if (res.ok) caches.open(CACHE).then((c) => c.put(e.request, res.clone()));
+        return res;
+      }).catch(() => caches.match(e.request).then((hit) => hit || caches.match("./index.html")))
+    );
+    return;
+  }
   e.respondWith(
     caches.match(e.request).then((hit) => hit || fetch(e.request).then((res) => {
       // opportunistically cache same-origin GETs

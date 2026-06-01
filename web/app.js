@@ -71,6 +71,13 @@
     ["supported", "Supported"],
     ["live", "Live"],
   ];
+  const CONVERSATION_LEVELS = [
+    ["shadow", "Shadow"],
+    ["prompted", "Prompted"],
+    ["supported", "Supported"],
+    ["live", "Live"],
+    ["n_plus_one", "N+1"],
+  ];
   const LIVE_ROLEPLAY_LIMIT_MS = 6 * 60 * 1000;
   const LIVE_ROLEPLAY_SOFT_LIMIT_MS = 4 * 60 * 1000;
   const LIVE_ROLEPLAY_COST_WARN_USD = 0.25;
@@ -1217,6 +1224,7 @@
     if (activeRoute === "learn") renderLearn(arg);
     else if (activeRoute === "quiz") arg ? renderQuizRun(arg) : renderQuizMenu();
     else if (activeRoute === "review") renderReview(arg);
+    else if (activeRoute === "conversations") renderConversations(arg);
     else if (activeRoute === "plan") renderPlan();
     else renderHome();
     view.focus({ preventScroll: true });
@@ -1260,7 +1268,7 @@
         <button class="todaytask todaytask--strong" onclick="ZS.startGuidedRoleplay()">
           <span class="todaytask__step">3</span>
           <strong>Try guided roleplay</strong>
-          <span>Start supported; go live only when ready.</span>
+          <span>Pick a family-table conversation by topic.</span>
         </button>
       </div>
     </section>`;
@@ -1890,6 +1898,130 @@
         <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.rateReviewCard('almost')">Almost</button>
         <button class="btn btn--sm btn--ghost ghost-dark" onclick="ZS.rateReviewCard('forgot')">Forgot</button>
       </div>`;
+  }
+
+  /* ====================================================================
+     LIVE CONVERSATIONS
+     ==================================================================== */
+  let conversationState = { topic: "all", level: "all" };
+  function scenarioTopic(s) {
+    return s.topic || "general";
+  }
+  function scenarioTopicLabel(s) {
+    return s.topic_label || scenarioTopic(s).replace(/_/g, " ");
+  }
+  function scenarioLevels(s) {
+    const levels = Array.isArray(s.levels) && s.levels.length ? s.levels : ["prompted", "supported", "live"];
+    return levels.filter(level => CONVERSATION_LEVELS.some(([id]) => id === level));
+  }
+  function scenarioPrimaryItem(s) {
+    const id = (s.required_items || []).find(itemId => ITEMS_BY_ID[itemId]);
+    return id ? ITEMS_BY_ID[id] : null;
+  }
+  function scenarioUnlocked(s) {
+    return scenarioLesson(s) <= (activeLesson().lesson_number || 99);
+  }
+  function scenarioPassState(s) {
+    const rows = (s.required_items || []).map(id => stageState(id, "roleplay")).filter(Boolean);
+    const completed = rows.some(st => st.last_roleplay_scenario === s.id && st.last_roleplay_stage_complete);
+    const live = rows.some(st => st.last_roleplay_scenario === s.id && st.last_roleplay_met && st.last_roleplay_met.length);
+    return completed ? "complete" : live ? "started" : "new";
+  }
+  function scenarioTopics() {
+    const seen = new Map();
+    SCENARIOS.forEach(s => {
+      const topic = scenarioTopic(s);
+      if (!seen.has(topic)) seen.set(topic, scenarioTopicLabel(s));
+    });
+    return Array.from(seen.entries()).sort((a, b) => a[1].localeCompare(b[1]));
+  }
+  function scenarioCardsHtml(list) {
+    return list.map(s => {
+      const unlocked = scenarioUnlocked(s);
+      const primary = scenarioPrimaryItem(s);
+      const levels = scenarioLevels(s);
+      const pass = scenarioPassState(s);
+      const source = (s.source_refs || []).slice(0, 2).join(" · ") || "source/ekaterina_guide.md";
+      return `<article class="convcard rise ${unlocked ? "" : "is-locked"}">
+        <div class="convcard__top">
+          <span>${escapeHtml(scenarioTopicLabel(s))}</span>
+          <span class="pill ${pass === "complete" ? "pill--p1" : pass === "started" ? "pill--p2" : "pill--p3"}">${pass}</span>
+        </div>
+        <h3>${escapeHtml(s.setting || s.id)}</h3>
+        <p>${escapeHtml(s.goal || "")}</p>
+        <div class="convcard__meta">
+          <span>Lesson ${escapeHtml(String(scenarioLesson(s)))}</span>
+          <span>${escapeHtml((s.required_items || []).length + " phrases")}</span>
+          <span>${escapeHtml(source)}</span>
+        </div>
+        <div class="convcard__levels">${levels.map(level => {
+          const label = (CONVERSATION_LEVELS.find(([id]) => id === level) || [level, level])[1];
+          const disabled = !unlocked || (level === "n_plus_one" && pass !== "complete");
+          return `<button class="chip chip--tight ${disabled ? "is-disabled" : ""}" ${disabled ? "disabled" : ""} onclick="ZS.openConversationScenario('${s.id}','${level}')">${escapeHtml(label)}</button>`;
+        }).join("")}</div>
+        ${primary ? `<button class="btn btn--sm ${unlocked ? "btn--red" : "btn--ghost ghost-dark"}" ${unlocked ? "" : "disabled"} onclick="ZS.openConversationScenario('${s.id}','${levels.includes("supported") ? "supported" : levels[0]}')">${unlocked ? "Open conversation" : "Locked until lesson " + escapeHtml(String(scenarioLesson(s)))}</button>` : ""}
+      </article>`;
+    }).join("");
+  }
+  function renderConversationDetail(scenarioId, level) {
+    const s = SCENARIOS.find(row => row.id === scenarioId);
+    if (!s) { renderConversations(); return; }
+    const primary = scenarioPrimaryItem(s);
+    if (!primary) { renderConversations(); return; }
+    const mode = level === "n_plus_one" ? "live" : level || "supported";
+    const phrases = (s.required_items || []).map(id => ITEMS_BY_ID[id]).filter(Boolean).slice(0, 8)
+      .map(it => `<li><span class="phrase-ru">${colorStress(it.ru)}</span><span>${escapeHtml(it.en)}</span></li>`).join("");
+    view.innerHTML = `
+      <div class="section-head"><span class="section-head__num">05</span><span class="section-head__title">${escapeHtml(s.setting || "Conversation")}</span>
+        <span class="section-head__sub"><a href="#/conversations" style="color:var(--red)">← all conversations</a></span></div>
+      <div class="convdetail rise">
+        <div class="convdetail__head">
+          <div><span>${escapeHtml(scenarioTopicLabel(s))} · Lesson ${escapeHtml(String(scenarioLesson(s)))}</span><h2>${escapeHtml(s.goal || "")}</h2></div>
+          <div class="convdetail__levels">${CONVERSATION_LEVELS.map(([id, label]) => {
+            const available = scenarioLevels(s).includes(id);
+            const lockedN1 = id === "n_plus_one" && scenarioPassState(s) !== "complete";
+            return `<button class="chip ${mode === id || (id === "n_plus_one" && level === "n_plus_one") ? "is-on" : ""} ${!available || lockedN1 ? "is-disabled" : ""}" ${!available || lockedN1 ? "disabled" : ""} onclick="ZS.openConversationScenario('${s.id}','${id}')">${escapeHtml(label)}</button>`;
+          }).join("")}</div>
+        </div>
+        <ul class="tutorbox__phrases">${phrases}</ul>
+        <div class="convdetail__actions">
+          <button class="btn btn--red" onclick="ZS.showGuidedRoleplay('${primary.id}','${s.id}','${mode}')">Start ${escapeHtml(mode === "live" ? "live" : mode)} practice</button>
+          <button class="btn btn--ghost ghost-dark" onclick="ZS.showLiveRoleplay('${primary.id}','${s.id}')">Live conversation</button>
+        </div>
+      </div>
+      <div id="guidedRoleplayMount"></div><div id="liveRoleplayMount"></div><div id="rpReveal"></div>`;
+    setTimeout(() => {
+      if (mode === "live") ZS.showLiveRoleplay(primary.id, s.id);
+      else ZS.showGuidedRoleplay(primary.id, s.id, mode);
+    }, 0);
+  }
+  function renderConversations(arg) {
+    if (arg) {
+      const requested = sessionStorage.getItem(KEY + ".conversation_level") || "supported";
+      renderConversationDetail(arg, requested);
+      return;
+    }
+    const topics = scenarioTopics();
+    let list = SCENARIOS.slice();
+    if (conversationState.topic !== "all") list = list.filter(s => scenarioTopic(s) === conversationState.topic);
+    if (conversationState.level !== "all") list = list.filter(s => scenarioLevels(s).includes(conversationState.level));
+    list.sort((a, b) => {
+      const au = scenarioUnlocked(a) ? 0 : 1;
+      const bu = scenarioUnlocked(b) ? 0 : 1;
+      if (au !== bu) return au - bu;
+      return scenarioLesson(a) - scenarioLesson(b) || (SCENARIO_INDEX[a.id] || 0) - (SCENARIO_INDEX[b.id] || 0);
+    });
+    const topicChips = [`<button class="chip ${conversationState.topic === "all" ? "is-on" : ""}" onclick="ZS.setConversationTopic('all')">All</button>`]
+      .concat(topics.map(([topic, label]) => `<button class="chip ${conversationState.topic === topic ? "is-on" : ""}" onclick="ZS.setConversationTopic('${topic}')">${escapeHtml(label)}</button>`)).join("");
+    const levelChips = [`<button class="chip ${conversationState.level === "all" ? "is-on" : ""}" onclick="ZS.setConversationLevel('all')">Any level</button>`]
+      .concat(CONVERSATION_LEVELS.map(([level, label]) => `<button class="chip ${conversationState.level === level ? "is-on" : ""}" onclick="ZS.setConversationLevel('${level}')">${escapeHtml(label)}</button>`)).join("");
+    view.innerHTML = `
+      <div class="section-head"><span class="section-head__num">05</span><span class="section-head__title">Live conversations</span>
+        <span class="section-head__sub">Ekaterina-guide scenarios, lesson-gated and graduated from shadowing to N+1.</span></div>
+      ${lessonLockHtml()}
+      <div class="convfilters rise"><div>${topicChips}</div><div>${levelChips}</div></div>
+      <div class="convsummary rise"><strong>${list.filter(scenarioUnlocked).length}</strong><span>unlocked of ${SCENARIOS.length} conversations · ${topics.length} topics from the Ekaterina guide</span></div>
+      <div class="convgrid">${scenarioCardsHtml(list)}</div>`;
   }
 
   /* ====================================================================
@@ -2960,8 +3092,19 @@
       location.hash = "#/quiz/pronounce";
     },
     startGuidedRoleplay() {
-      sessionStorage.setItem(KEY + ".open_guided_roleplay", "1");
-      location.hash = "#/quiz/roleplay";
+      location.hash = "#/conversations";
+    },
+    setConversationTopic(topic) {
+      conversationState.topic = topic || "all";
+      renderConversations();
+    },
+    setConversationLevel(level) {
+      conversationState.level = level || "all";
+      renderConversations();
+    },
+    openConversationScenario(scenarioId, level) {
+      sessionStorage.setItem(KEY + ".conversation_level", level || "supported");
+      location.hash = `#/conversations/${scenarioId}`;
     },
     toggleEn() { learnState.hideEn = !learnState.hideEn; renderLearn(); },
     setLearnRate(rate) {

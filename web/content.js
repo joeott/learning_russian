@@ -120099,6 +120099,17 @@ window.CONTENT_DATA = {
       "lesson_number": 1,
       "setting": "Doorway",
       "goal": "Greet the family formally and introduce yourself.",
+      "topic": "doorway",
+      "topic_label": "Doorway",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/ekaterina_guide.md:840-850"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -120222,6 +120233,17 @@ window.CONTENT_DATA = {
       "lesson_number": 2,
       "setting": "Introduction + learning safety",
       "goal": "Introduce yourself clearly and set the safety expectation.",
+      "topic": "doorway",
+      "topic_label": "Doorway",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/ekaterina_guide.md:1197-1211"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -120395,6 +120417,17 @@ window.CONTENT_DATA = {
       "lesson_number": 5,
       "setting": "Dinner table",
       "goal": "Accept, decline, and compliment food politely.",
+      "topic": "food",
+      "topic_label": "Food",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -120766,6 +120799,16 @@ window.CONTENT_DATA = {
       "lesson_number": 3,
       "setting": "Dinner table toast",
       "goal": "Raise a safe warm toast without using the wrong formula.",
+      "topic": "toasts",
+      "topic_label": "Toasts",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -120995,6 +121038,16 @@ window.CONTENT_DATA = {
       "lesson_number": 7,
       "setting": "Rapid host questions",
       "goal": "Catch fast family questions and answer in short Russian sentences.",
+      "topic": "questions",
+      "topic_label": "Questions",
+      "levels": [
+        "supported",
+        "live",
+        "n_plus_one"
+      ],
+      "source_refs": [
+        "source/ekaterina_guide.md:977-981"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -121521,6 +121574,16 @@ window.CONTENT_DATA = {
       "lesson_number": 6,
       "setting": "How we met",
       "goal": "Tell a short, confident story and answer one follow-up.",
+      "topic": "family",
+      "topic_label": "Family",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/russian_relatives.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -121917,6 +121980,17 @@ window.CONTENT_DATA = {
       "lesson_number": 2,
       "setting": "Off-script recovery",
       "goal": "Recover calmly when asked something unexpected.",
+      "topic": "recovery",
+      "topic_label": "Recovery",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -122104,6 +122178,16 @@ window.CONTENT_DATA = {
       "lesson_number": 7,
       "setting": "Full dinner simulation",
       "goal": "Hold together the full dinner flow from greeting through close.",
+      "topic": "full_dinner",
+      "topic_label": "Full dinner",
+      "levels": [
+        "supported",
+        "live",
+        "n_plus_one"
+      ],
+      "source_refs": [
+        "tutor/roleplay_protocol.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -122631,6 +122715,17 @@ window.CONTENT_DATA = {
       "lesson_number": 6,
       "setting": "Lawyer / Missouri small talk",
       "goal": "Answer profile questions naturally and keep the lawyer details safe.",
+      "topic": "work",
+      "topic_label": "Work",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/work_business.md",
+        "source/research/legal_recognition.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -123034,6 +123129,16 @@ window.CONTENT_DATA = {
       "lesson_number": 7,
       "setting": "Noisy table role-play",
       "goal": "Recover and keep confidence when relatives speak quickly around table noise.",
+      "topic": "recovery",
+      "topic_label": "Recovery",
+      "levels": [
+        "supported",
+        "live",
+        "n_plus_one"
+      ],
+      "source_refs": [
+        "tutor/roleplay_protocol.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -123533,6 +123638,16 @@ window.CONTENT_DATA = {
       "lesson_number": 2,
       "setting": "Greetings and farewells",
       "goal": "Use polite Russian greetings and closings in social flow.",
+      "topic": "doorway",
+      "topic_label": "Doorway",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported"
+      ],
+      "source_refs": [
+        "source/ekaterina_guide.md:840-850"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -123734,6 +123849,16 @@ window.CONTENT_DATA = {
       "lesson_number": 2,
       "setting": "Politeness baseline",
       "goal": "Keep every request/response in a safe polite register.",
+      "topic": "recovery",
+      "topic_label": "Recovery",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -123949,6 +124074,16 @@ window.CONTENT_DATA = {
       "lesson_number": 3,
       "setting": "Toast repertoire recall",
       "goal": "Choose a safe toast quickly for different table moments.",
+      "topic": "toasts",
+      "topic_label": "Toasts",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -124262,6 +124397,16 @@ window.CONTENT_DATA = {
       "lesson_number": 4,
       "setting": "Family context practice",
       "goal": "Identify family relations and respond naturally during introductions.",
+      "topic": "family",
+      "topic_label": "Family",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/russian_relatives.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -124614,6 +124759,16 @@ window.CONTENT_DATA = {
       "lesson_number": 5,
       "setting": "Dinner navigation",
       "goal": "Request, decline, and appreciate food while sounding natural at table pace.",
+      "topic": "food",
+      "topic_label": "Food",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -125062,6 +125217,15 @@ window.CONTENT_DATA = {
       "lesson_number": 26,
       "setting": "Core verb fluency",
       "goal": "Produce core verbs under real interview-style pressure.",
+      "topic": "grammar",
+      "topic_label": "Grammar",
+      "levels": [
+        "prompted",
+        "supported"
+      ],
+      "source_refs": [
+        "source/research/verb_drills.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -126814,6 +126978,16 @@ window.CONTENT_DATA = {
       "lesson_number": 4,
       "setting": "Family tree and kinship vocabulary",
       "goal": "Use extended family terms naturally when introducing relationships.",
+      "topic": "family",
+      "topic_label": "Family",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/russian_relatives.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -127201,6 +127375,16 @@ window.CONTENT_DATA = {
       "lesson_number": 7,
       "setting": "Family mini-check-in",
       "goal": "Respond naturally to short routine check-ins and keep the exchange warm.",
+      "topic": "family",
+      "topic_label": "Family",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/ekaterina_guide.md:636-639"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -127692,6 +127876,16 @@ window.CONTENT_DATA = {
       "lesson_number": 7,
       "setting": "Native-speed check-in questions",
       "goal": "Recognize recurring original-guide check-in questions at family speed.",
+      "topic": "questions",
+      "topic_label": "Questions",
+      "levels": [
+        "supported",
+        "live",
+        "n_plus_one"
+      ],
+      "source_refs": [
+        "source/research/native_speed_checkins.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -128205,6 +128399,15 @@ window.CONTENT_DATA = {
       "lesson_number": 4,
       "setting": "Sensitive family health and baby-readiness check-in",
       "goal": "Recognize family health and baby-readiness prompts from the original guide without overproducing.",
+      "topic": "health",
+      "topic_label": "Health",
+      "levels": [
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/family_health_baby.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -128565,6 +128768,16 @@ window.CONTENT_DATA = {
       "lesson_number": 3,
       "setting": "Toast mechanics and table flow",
       "goal": "Run toast moments and table vocabulary safely from raise-to-clink to closure.",
+      "topic": "toasts",
+      "topic_label": "Toasts",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -128830,6 +129043,18 @@ window.CONTENT_DATA = {
       "lesson_number": 8,
       "setting": "Calendar and weather check-in",
       "goal": "Answer the original-guide day and weather questions as easy table small talk.",
+      "topic": "dates",
+      "topic_label": "Dates & weather",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/ekaterina_guide.md:303-317",
+        "source/ekaterina_guide.md:840-850"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -129417,6 +129642,16 @@ window.CONTENT_DATA = {
       "lesson_number": 9,
       "setting": "Winter words and seasonal activities",
       "goal": "Recognize original-guide winter words and answer simple questions about sledding, skating, skiing, snowboarding, and walks in the snow.",
+      "topic": "games_leisure",
+      "topic_label": "Games & leisure",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/winter_activities.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -130091,6 +130326,16 @@ window.CONTENT_DATA = {
       "lesson_number": 10,
       "setting": "Question words and connector words",
       "goal": "Recognize the original-guide glue words that make fast family questions understandable: who, what, where, why, here/there, because, therefore, and quantity modifiers.",
+      "topic": "questions",
+      "topic_label": "Questions",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported"
+      ],
+      "source_refs": [
+        "source/research/question_words_connectors.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -130805,6 +131050,16 @@ window.CONTENT_DATA = {
       "lesson_number": 11,
       "setting": "Numbers, prices, months, and quantities",
       "goal": "Recognize and answer original-guide quantity questions about time, cost, months, people, hours, and years.",
+      "topic": "dates",
+      "topic_label": "Dates & weather",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/numbers_quantities.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -131615,6 +131870,15 @@ window.CONTENT_DATA = {
       "lesson_number": 12,
       "setting": "Quick descriptions and pace repair",
       "goal": "Use short adverbs and adjective-agreement weather lines from the original guide.",
+      "topic": "grammar",
+      "topic_label": "Grammar",
+      "levels": [
+        "prompted",
+        "supported"
+      ],
+      "source_refs": [
+        "source/research/adverbs_adjectives.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -132456,6 +132720,16 @@ window.CONTENT_DATA = {
       "lesson_number": 14,
       "setting": "Hobbies, home, and leisure places",
       "goal": "Answer dinner-safe questions about music, films, cats, parks, stadiums, museums, and what you do when not working.",
+      "topic": "games_leisure",
+      "topic_label": "Games & leisure",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/leisure_places.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -133553,6 +133827,16 @@ window.CONTENT_DATA = {
       "lesson_number": 20,
       "setting": "Can, know how, want, need, and permission",
       "goal": "Use the original-guide modal patterns for what Joe can do, wants to do, needs, and is allowed or not allowed to do.",
+      "topic": "grammar",
+      "topic_label": "Grammar",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/modal_ability.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -135013,6 +135297,15 @@ window.CONTENT_DATA = {
       "lesson_number": 15,
       "setting": "Describing family members",
       "goal": "Answer simple questions about what someone looks like using height, eyes, hair, face, smile, and resemblance phrases from the original guide.",
+      "topic": "family",
+      "topic_label": "Family",
+      "levels": [
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/physical_description.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -136163,6 +136456,15 @@ window.CONTENT_DATA = {
       "lesson_number": 16,
       "setting": "Health, tiredness, and feeling unwell",
       "goal": "Recognize basic health prompts and answer briefly when Joe feels tired, has a headache, or hopes not to get sick.",
+      "topic": "health",
+      "topic_label": "Health",
+      "levels": [
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/health_feelings.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -137355,6 +137657,16 @@ window.CONTENT_DATA = {
       "lesson_number": 17,
       "setting": "Past week, trips, and what happened",
       "goal": "Answer recurring original-guide past-event prompts about last week, weekend, travel, good news, and a simple what-happened story.",
+      "topic": "past_events",
+      "topic_label": "Past events",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/past_events.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -138643,6 +138955,16 @@ window.CONTENT_DATA = {
       "lesson_number": 18,
       "setting": "Home, chores, homework, and shopping",
       "goal": "Answer simple original-guide questions about cleaning at home, dishes/trash/cats, homework time, shopping, and asking for help.",
+      "topic": "home",
+      "topic_label": "Home",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/home_chores_shopping.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -139988,6 +140310,15 @@ window.CONTENT_DATA = {
       "lesson_number": 19,
       "setting": "Pronouns, possession, and who has what",
       "goal": "Use original-guide personal and possessive pronouns in short family/home/travel answers without overexplaining the grammar.",
+      "topic": "grammar",
+      "topic_label": "Grammar",
+      "levels": [
+        "prompted",
+        "supported"
+      ],
+      "source_refs": [
+        "source/research/pronouns_possession.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -141391,6 +141722,16 @@ window.CONTENT_DATA = {
       "lesson_number": 25,
       "setting": "Budva family trip",
       "goal": "Talk about arriving in Budva, the hotel, the sea, and simple plans.",
+      "topic": "budva",
+      "topic_label": "Budva",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/budva_travel.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -143117,6 +143458,16 @@ window.CONTENT_DATA = {
       "lesson_number": 13,
       "setting": "Everyday family check-in",
       "goal": "Answer simple questions about eating, working, resting, and the evening routine.",
+      "topic": "daily_routine",
+      "topic_label": "Daily routine",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/daily_routine.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -144064,6 +144415,16 @@ window.CONTENT_DATA = {
       "lesson_number": 13,
       "setting": "My day mini-story",
       "goal": "Tell a short morning-work-evening story using the original guide's Мой день material.",
+      "topic": "daily_routine",
+      "topic_label": "Daily routine",
+      "levels": [
+        "supported",
+        "live",
+        "n_plus_one"
+      ],
+      "source_refs": [
+        "source/research/daily_routine.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -145011,6 +145372,15 @@ window.CONTENT_DATA = {
       "lesson_number": 21,
       "setting": "Lawyer work small talk",
       "goal": "Answer predictable questions about clients, cases, court, and being busy without overexplaining.",
+      "topic": "work",
+      "topic_label": "Work",
+      "levels": [
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/work_business.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -146502,6 +146872,15 @@ window.CONTENT_DATA = {
       "lesson_number": 23,
       "setting": "Holiday and family celebration small talk",
       "goal": "Answer Christmas/Thanksgiving/family-plan prompts from the original guide in short Russian.",
+      "topic": "celebrations",
+      "topic_label": "Celebrations",
+      "levels": [
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/celebrations.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -148065,6 +148444,15 @@ window.CONTENT_DATA = {
       "lesson_number": 24,
       "setting": "Recognition-only cultural extras",
       "goal": "Recognize source-guide proverbs and lawyer jokes without trying to perform them.",
+      "topic": "culture",
+      "topic_label": "Culture",
+      "levels": [
+        "shadow",
+        "prompted"
+      ],
+      "source_refs": [
+        "source/research/cultural_bonus.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -149679,6 +150067,16 @@ window.CONTENT_DATA = {
       "lesson_number": 25,
       "setting": "Airport and hotel arrival",
       "goal": "Handle airport check-in, luggage, hotel reservation, room, key, elevator, and checkout basics.",
+      "topic": "budva",
+      "topic_label": "Budva",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/budva_travel.md"
+      ],
       "learner_role": "guest",
       "tutor_role": "host family member",
       "required_items": [
@@ -154857,6 +155255,17 @@ window.CONTENT_DATA = {
         "introduces_self",
         "thanks_hosts"
       ],
+      "topic": "doorway",
+      "topic_label": "Doorway",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/ekaterina_guide.md:840-850"
+      ],
       "lesson_id": "family_visit_001",
       "lesson_number": 1
     },
@@ -154873,6 +155282,17 @@ window.CONTENT_DATA = {
       "success_criteria": [
         "introduces_self",
         "uses_learning_safety_line"
+      ],
+      "topic": "doorway",
+      "topic_label": "Doorway",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/ekaterina_guide.md:1197-1211"
       ],
       "lesson_id": "family_visit_002",
       "lesson_number": 2
@@ -154892,6 +155312,17 @@ window.CONTENT_DATA = {
         "declines_politely",
         "uses_correct_male_form"
       ],
+      "topic": "food",
+      "topic_label": "Food",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
+      ],
       "lesson_id": "family_visit_005",
       "lesson_number": 5
     },
@@ -154909,6 +155340,16 @@ window.CONTENT_DATA = {
         "uses_za_toast_formula",
         "avoids_na_zdorovie_misfire",
         "keeps_stress_clear"
+      ],
+      "topic": "toasts",
+      "topic_label": "Toasts",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
       ],
       "lesson_id": "family_visit_003",
       "lesson_number": 3
@@ -154935,6 +155376,16 @@ window.CONTENT_DATA = {
         "mentions_host_or_food",
         "uses_repair_lines"
       ],
+      "topic": "questions",
+      "topic_label": "Questions",
+      "levels": [
+        "supported",
+        "live",
+        "n_plus_one"
+      ],
+      "source_refs": [
+        "source/ekaterina_guide.md:977-981"
+      ],
       "lesson_id": "family_visit_007",
       "lesson_number": 7
     },
@@ -154951,6 +155402,16 @@ window.CONTENT_DATA = {
         "tells_short_story",
         "handles_follow_up",
         "uses_correct_male_form"
+      ],
+      "topic": "family",
+      "topic_label": "Family",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/russian_relatives.md"
       ],
       "lesson_id": "family_visit_006",
       "lesson_number": 6
@@ -154971,6 +155432,17 @@ window.CONTENT_DATA = {
         "uses_repair_lines",
         "recovers_from_unknown",
         "stays_in_russian"
+      ],
+      "topic": "recovery",
+      "topic_label": "Recovery",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
       ],
       "lesson_id": "family_visit_002",
       "lesson_number": 2
@@ -154998,6 +155470,16 @@ window.CONTENT_DATA = {
         "recovers_curveball",
         "keeps_stress_clear"
       ],
+      "topic": "full_dinner",
+      "topic_label": "Full dinner",
+      "levels": [
+        "supported",
+        "live",
+        "n_plus_one"
+      ],
+      "source_refs": [
+        "tutor/roleplay_protocol.md"
+      ],
       "lesson_id": "family_visit_007",
       "lesson_number": 7
     },
@@ -155015,6 +155497,17 @@ window.CONTENT_DATA = {
         "answers_host_questions",
         "handles_follow_up",
         "uses_repair_lines"
+      ],
+      "topic": "work",
+      "topic_label": "Work",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/work_business.md",
+        "source/research/legal_recognition.md"
       ],
       "lesson_id": "family_visit_006",
       "lesson_number": 6
@@ -155038,6 +155531,16 @@ window.CONTENT_DATA = {
         "recovers_from_unknown",
         "uses_repair_lines"
       ],
+      "topic": "recovery",
+      "topic_label": "Recovery",
+      "levels": [
+        "supported",
+        "live",
+        "n_plus_one"
+      ],
+      "source_refs": [
+        "tutor/roleplay_protocol.md"
+      ],
       "lesson_id": "family_visit_007",
       "lesson_number": 7
     },
@@ -155059,6 +155562,16 @@ window.CONTENT_DATA = {
         "uses_formal_greeting",
         "uses_time_greeting",
         "uses_social_exit"
+      ],
+      "topic": "doorway",
+      "topic_label": "Doorway",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported"
+      ],
+      "source_refs": [
+        "source/ekaterina_guide.md:840-850"
       ],
       "lesson_id": "family_visit_002",
       "lesson_number": 2
@@ -155083,6 +155596,16 @@ window.CONTENT_DATA = {
         "uses_polite_basics",
         "uses_quick_responses",
         "uses_positive_ack"
+      ],
+      "topic": "recovery",
+      "topic_label": "Recovery",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
       ],
       "lesson_id": "family_visit_002",
       "lesson_number": 2
@@ -155114,6 +155637,16 @@ window.CONTENT_DATA = {
         "uses_toast_context",
         "avoids_na_zdorovie_misfire"
       ],
+      "topic": "toasts",
+      "topic_label": "Toasts",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
+      ],
       "lesson_id": "family_visit_003",
       "lesson_number": 3
     },
@@ -155135,6 +155668,16 @@ window.CONTENT_DATA = {
         "uses_family_terms",
         "uses_respectful_reference",
         "stays_in_russian"
+      ],
+      "topic": "family",
+      "topic_label": "Family",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/russian_relatives.md"
       ],
       "lesson_id": "family_visit_004",
       "lesson_number": 4
@@ -155165,6 +155708,16 @@ window.CONTENT_DATA = {
         "passes_dishes",
         "appreciates_food"
       ],
+      "topic": "food",
+      "topic_label": "Food",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
+      ],
       "lesson_id": "family_visit_005",
       "lesson_number": 5
     },
@@ -155188,6 +155741,15 @@ window.CONTENT_DATA = {
         "produces_present_forms",
         "answers_personalized_questions",
         "uses_formal_greeting"
+      ],
+      "topic": "grammar",
+      "topic_label": "Grammar",
+      "levels": [
+        "prompted",
+        "supported"
+      ],
+      "source_refs": [
+        "source/research/verb_drills.md"
       ],
       "lesson_id": "family_visit_026",
       "lesson_number": 26
@@ -155216,6 +155778,16 @@ window.CONTENT_DATA = {
         "uses_respectful_reference",
         "stays_in_russian"
       ],
+      "topic": "family",
+      "topic_label": "Family",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/russian_relatives.md"
+      ],
       "lesson_id": "family_visit_004",
       "lesson_number": 4
     },
@@ -155235,6 +155807,16 @@ window.CONTENT_DATA = {
         "uses_quick_responses",
         "stays_in_russian",
         "uses_repair_lines"
+      ],
+      "topic": "family",
+      "topic_label": "Family",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/ekaterina_guide.md:636-639"
       ],
       "lesson_id": "family_visit_007",
       "lesson_number": 7
@@ -155259,6 +155841,16 @@ window.CONTENT_DATA = {
         "uses_repair_lines",
         "stays_in_russian"
       ],
+      "topic": "questions",
+      "topic_label": "Questions",
+      "levels": [
+        "supported",
+        "live",
+        "n_plus_one"
+      ],
+      "source_refs": [
+        "source/research/native_speed_checkins.md"
+      ],
       "lesson_id": "family_visit_007",
       "lesson_number": 7
     },
@@ -155281,6 +155873,15 @@ window.CONTENT_DATA = {
         "handles_sensitive_family",
         "uses_repair_lines",
         "stays_in_russian"
+      ],
+      "topic": "health",
+      "topic_label": "Health",
+      "levels": [
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/family_health_baby.md"
       ],
       "lesson_id": "family_visit_004",
       "lesson_number": 4
@@ -155305,6 +155906,16 @@ window.CONTENT_DATA = {
         "uses_toast_context",
         "uses_social_exit",
         "avoids_na_zdorovie_misfire"
+      ],
+      "topic": "toasts",
+      "topic_label": "Toasts",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/verified_phrases.md"
       ],
       "lesson_id": "family_visit_003",
       "lesson_number": 3
@@ -155331,6 +155942,18 @@ window.CONTENT_DATA = {
         "uses_time_words",
         "stays_in_russian",
         "keeps_stress_clear"
+      ],
+      "topic": "dates",
+      "topic_label": "Dates & weather",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/ekaterina_guide.md:303-317",
+        "source/ekaterina_guide.md:840-850"
       ],
       "lesson_id": "family_visit_008",
       "lesson_number": 8
@@ -155363,6 +155986,16 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
+      "topic": "games_leisure",
+      "topic_label": "Games & leisure",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/winter_activities.md"
+      ],
       "lesson_id": "family_visit_009",
       "lesson_number": 9
     },
@@ -155392,6 +156025,16 @@ window.CONTENT_DATA = {
         "recognizes_question_words_connectors",
         "stays_in_russian",
         "uses_repair_lines"
+      ],
+      "topic": "questions",
+      "topic_label": "Questions",
+      "levels": [
+        "shadow",
+        "prompted",
+        "supported"
+      ],
+      "source_refs": [
+        "source/research/question_words_connectors.md"
       ],
       "lesson_id": "family_visit_010",
       "lesson_number": 10
@@ -155423,6 +156066,16 @@ window.CONTENT_DATA = {
         "uses_repair_lines",
         "stays_in_russian"
       ],
+      "topic": "dates",
+      "topic_label": "Dates & weather",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/numbers_quantities.md"
+      ],
       "lesson_id": "family_visit_011",
       "lesson_number": 11
     },
@@ -155451,6 +156104,15 @@ window.CONTENT_DATA = {
         "answers_calendar_weather",
         "stays_in_russian",
         "uses_repair_lines"
+      ],
+      "topic": "grammar",
+      "topic_label": "Grammar",
+      "levels": [
+        "prompted",
+        "supported"
+      ],
+      "source_refs": [
+        "source/research/adverbs_adjectives.md"
       ],
       "lesson_id": "family_visit_012",
       "lesson_number": 12
@@ -155487,6 +156149,16 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
+      "topic": "games_leisure",
+      "topic_label": "Games & leisure",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/leisure_places.md"
+      ],
       "lesson_id": "family_visit_014",
       "lesson_number": 14
     },
@@ -155516,6 +156188,16 @@ window.CONTENT_DATA = {
         "uses_modal_survival",
         "stays_in_russian",
         "uses_repair_lines"
+      ],
+      "topic": "grammar",
+      "topic_label": "Grammar",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/modal_ability.md"
       ],
       "lesson_id": "family_visit_020",
       "lesson_number": 20
@@ -155549,6 +156231,15 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
+      "topic": "family",
+      "topic_label": "Family",
+      "levels": [
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/physical_description.md"
+      ],
       "lesson_id": "family_visit_015",
       "lesson_number": 15
     },
@@ -155578,6 +156269,15 @@ window.CONTENT_DATA = {
         "handles_health_checkin",
         "stays_in_russian",
         "uses_repair_lines"
+      ],
+      "topic": "health",
+      "topic_label": "Health",
+      "levels": [
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/health_feelings.md"
       ],
       "lesson_id": "family_visit_016",
       "lesson_number": 16
@@ -155612,6 +156312,16 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
+      "topic": "past_events",
+      "topic_label": "Past events",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/past_events.md"
+      ],
       "lesson_id": "family_visit_017",
       "lesson_number": 17
     },
@@ -155643,6 +156353,16 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
+      "topic": "home",
+      "topic_label": "Home",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/home_chores_shopping.md"
+      ],
       "lesson_id": "family_visit_018",
       "lesson_number": 18
     },
@@ -155673,6 +156393,15 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
+      "topic": "grammar",
+      "topic_label": "Grammar",
+      "levels": [
+        "prompted",
+        "supported"
+      ],
+      "source_refs": [
+        "source/research/pronouns_possession.md"
+      ],
       "lesson_id": "family_visit_019",
       "lesson_number": 19
     },
@@ -155698,6 +156427,16 @@ window.CONTENT_DATA = {
         "talks_about_budva",
         "stays_in_russian",
         "uses_repair_lines"
+      ],
+      "topic": "budva",
+      "topic_label": "Budva",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/budva_travel.md"
       ],
       "lesson_id": "family_visit_025",
       "lesson_number": 25
@@ -155726,6 +156465,16 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
+      "topic": "daily_routine",
+      "topic_label": "Daily routine",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/daily_routine.md"
+      ],
       "lesson_id": "family_visit_013",
       "lesson_number": 13
     },
@@ -155752,6 +156501,16 @@ window.CONTENT_DATA = {
         "uses_day_parts",
         "stays_in_russian",
         "uses_repair_lines"
+      ],
+      "topic": "daily_routine",
+      "topic_label": "Daily routine",
+      "levels": [
+        "supported",
+        "live",
+        "n_plus_one"
+      ],
+      "source_refs": [
+        "source/research/daily_routine.md"
       ],
       "lesson_id": "family_visit_013",
       "lesson_number": 13
@@ -155781,6 +156540,15 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
+      "topic": "work",
+      "topic_label": "Work",
+      "levels": [
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/work_business.md"
+      ],
       "lesson_id": "family_visit_021",
       "lesson_number": 21
     },
@@ -155806,6 +156574,15 @@ window.CONTENT_DATA = {
         "stays_in_russian",
         "uses_repair_lines"
       ],
+      "topic": "celebrations",
+      "topic_label": "Celebrations",
+      "levels": [
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/celebrations.md"
+      ],
       "lesson_id": "family_visit_023",
       "lesson_number": 23
     },
@@ -155828,6 +156605,15 @@ window.CONTENT_DATA = {
         "recognizes_cultural_bonus",
         "stays_in_russian",
         "uses_repair_lines"
+      ],
+      "topic": "culture",
+      "topic_label": "Culture",
+      "levels": [
+        "shadow",
+        "prompted"
+      ],
+      "source_refs": [
+        "source/research/cultural_bonus.md"
       ],
       "lesson_id": "family_visit_024",
       "lesson_number": 24
@@ -155857,6 +156643,16 @@ window.CONTENT_DATA = {
         "handles_travel_logistics",
         "stays_in_russian",
         "uses_repair_lines"
+      ],
+      "topic": "budva",
+      "topic_label": "Budva",
+      "levels": [
+        "prompted",
+        "supported",
+        "live"
+      ],
+      "source_refs": [
+        "source/research/budva_travel.md"
       ],
       "lesson_id": "family_visit_025",
       "lesson_number": 25

@@ -7,6 +7,9 @@ iterations can close the real beginner-course gaps without inventing Russian.
 
 - Source of truth: `scripts/build_content.py`
 - Generated content: 452 items across 26 modules, 40 role-play scenarios, plus 60 generated conjugation drills
+- Live conversation library: the same 40 Ekaterina-guide scenarios are exposed
+  across 18 topics with Shadow, Prompted, Supported, Live, and N+1 entry points
+  gated by the active lesson and prior completion.
 - Strongest coverage today:
   - greetings and first contact
   - politeness and repair phrases

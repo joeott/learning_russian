@@ -36,6 +36,18 @@ class TutorCardTests(unittest.TestCase):
                 set(card["required_items"]), set(card["allowed_item_ids"])
             )
             self.assertLessEqual(set(card["structures"]), boundary["structures"])
+            self.assertEqual(card["topic"], scenario["topic"])
+            self.assertEqual(card["topic_label"], scenario["topic_label"])
+            self.assertTrue(card["levels"])
+            self.assertLessEqual(
+                set(card["levels"]),
+                {"shadow", "prompted", "supported", "live", "n_plus_one"},
+            )
+            self.assertTrue(
+                any(
+                    ref.startswith(("source/", "tutor/")) for ref in card["source_refs"]
+                )
+            )
         missing = [
             sid
             for sid in scenario_ids

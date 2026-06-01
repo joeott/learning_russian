@@ -1299,6 +1299,267 @@ SCENARIOS = [
     },
 ]
 
+SCENARIO_META = {
+    "doorway_greeting": {
+        "topic": "doorway",
+        "topic_label": "Doorway",
+        "levels": ["shadow", "prompted", "supported", "live"],
+        "source_refs": ["source/ekaterina_guide.md:840-850"],
+    },
+    "introduce_and_learning_safety": {
+        "topic": "doorway",
+        "topic_label": "Doorway",
+        "levels": ["shadow", "prompted", "supported", "live"],
+        "source_refs": ["source/ekaterina_guide.md:1197-1211"],
+    },
+    "dinner_table_food_offer": {
+        "topic": "food",
+        "topic_label": "Food",
+        "levels": ["shadow", "prompted", "supported", "live"],
+        "source_refs": ["source/research/verified_phrases.md"],
+    },
+    "first_toast": {
+        "topic": "toasts",
+        "topic_label": "Toasts",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/verified_phrases.md"],
+    },
+    "rapid_host_questions": {
+        "topic": "questions",
+        "topic_label": "Questions",
+        "levels": ["supported", "live", "n_plus_one"],
+        "source_refs": ["source/ekaterina_guide.md:977-981"],
+    },
+    "how_we_met": {
+        "topic": "family",
+        "topic_label": "Family",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/russian_relatives.md"],
+    },
+    "off_script_recovery": {
+        "topic": "recovery",
+        "topic_label": "Recovery",
+        "levels": ["shadow", "prompted", "supported", "live"],
+        "source_refs": ["source/research/verified_phrases.md"],
+    },
+    "full_dinner_simulation": {
+        "topic": "full_dinner",
+        "topic_label": "Full dinner",
+        "levels": ["supported", "live", "n_plus_one"],
+        "source_refs": ["tutor/roleplay_protocol.md"],
+    },
+    "lawyer_small_talk": {
+        "topic": "work",
+        "topic_label": "Work",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": [
+            "source/research/work_business.md",
+            "source/research/legal_recognition.md",
+        ],
+    },
+    "noisy_table": {
+        "topic": "recovery",
+        "topic_label": "Recovery",
+        "levels": ["supported", "live", "n_plus_one"],
+        "source_refs": ["tutor/roleplay_protocol.md"],
+    },
+    "greeting_daypart_and_farewell": {
+        "topic": "doorway",
+        "topic_label": "Doorway",
+        "levels": ["shadow", "prompted", "supported"],
+        "source_refs": ["source/ekaterina_guide.md:840-850"],
+    },
+    "politeness_baseline": {
+        "topic": "recovery",
+        "topic_label": "Recovery",
+        "levels": ["shadow", "prompted", "supported"],
+        "source_refs": ["source/research/verified_phrases.md"],
+    },
+    "toast_repertoire_recall": {
+        "topic": "toasts",
+        "topic_label": "Toasts",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/verified_phrases.md"],
+    },
+    "family_context_practice": {
+        "topic": "family",
+        "topic_label": "Family",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/russian_relatives.md"],
+    },
+    "dinner_navigation": {
+        "topic": "food",
+        "topic_label": "Food",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/verified_phrases.md"],
+    },
+    "verb_fluency_check": {
+        "topic": "grammar",
+        "topic_label": "Grammar",
+        "levels": ["prompted", "supported"],
+        "source_refs": ["source/research/verb_drills.md"],
+    },
+    "extended_family_family_tree": {
+        "topic": "family",
+        "topic_label": "Family",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/russian_relatives.md"],
+    },
+    "family_mini_checkin": {
+        "topic": "family",
+        "topic_label": "Family",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/ekaterina_guide.md:636-639"],
+    },
+    "native_speed_checkins": {
+        "topic": "questions",
+        "topic_label": "Questions",
+        "levels": ["supported", "live", "n_plus_one"],
+        "source_refs": ["source/research/native_speed_checkins.md"],
+    },
+    "sensitive_family_health": {
+        "topic": "health",
+        "topic_label": "Health",
+        "levels": ["supported", "live"],
+        "source_refs": ["source/research/family_health_baby.md"],
+    },
+    "toast_mechanics_and_table_flow": {
+        "topic": "toasts",
+        "topic_label": "Toasts",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/verified_phrases.md"],
+    },
+    "calendar_weather_checkin": {
+        "topic": "dates",
+        "topic_label": "Dates & weather",
+        "levels": ["shadow", "prompted", "supported", "live"],
+        "source_refs": [
+            "source/ekaterina_guide.md:303-317",
+            "source/ekaterina_guide.md:840-850",
+        ],
+    },
+    "winter_activities_checkin": {
+        "topic": "games_leisure",
+        "topic_label": "Games & leisure",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/winter_activities.md"],
+    },
+    "question_words_connectors_checkin": {
+        "topic": "questions",
+        "topic_label": "Questions",
+        "levels": ["shadow", "prompted", "supported"],
+        "source_refs": ["source/research/question_words_connectors.md"],
+    },
+    "numbers_quantities_checkin": {
+        "topic": "dates",
+        "topic_label": "Dates & weather",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/numbers_quantities.md"],
+    },
+    "adverb_adjective_survival": {
+        "topic": "grammar",
+        "topic_label": "Grammar",
+        "levels": ["prompted", "supported"],
+        "source_refs": ["source/research/adverbs_adjectives.md"],
+    },
+    "leisure_places_checkin": {
+        "topic": "games_leisure",
+        "topic_label": "Games & leisure",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/leisure_places.md"],
+    },
+    "modal_ability_survival": {
+        "topic": "grammar",
+        "topic_label": "Grammar",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/modal_ability.md"],
+    },
+    "physical_description_family": {
+        "topic": "family",
+        "topic_label": "Family",
+        "levels": ["supported", "live"],
+        "source_refs": ["source/research/physical_description.md"],
+    },
+    "health_feelings_checkin": {
+        "topic": "health",
+        "topic_label": "Health",
+        "levels": ["supported", "live"],
+        "source_refs": ["source/research/health_feelings.md"],
+    },
+    "past_week_events_checkin": {
+        "topic": "past_events",
+        "topic_label": "Past events",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/past_events.md"],
+    },
+    "home_chores_shopping_checkin": {
+        "topic": "home",
+        "topic_label": "Home",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/home_chores_shopping.md"],
+    },
+    "pronouns_possession_checkin": {
+        "topic": "grammar",
+        "topic_label": "Grammar",
+        "levels": ["prompted", "supported"],
+        "source_refs": ["source/research/pronouns_possession.md"],
+    },
+    "budva_trip_checkin": {
+        "topic": "budva",
+        "topic_label": "Budva",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/budva_travel.md"],
+    },
+    "daily_routine_checkin": {
+        "topic": "daily_routine",
+        "topic_label": "Daily routine",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/daily_routine.md"],
+    },
+    "daily_routine_story": {
+        "topic": "daily_routine",
+        "topic_label": "Daily routine",
+        "levels": ["supported", "live", "n_plus_one"],
+        "source_refs": ["source/research/daily_routine.md"],
+    },
+    "work_business_checkin": {
+        "topic": "work",
+        "topic_label": "Work",
+        "levels": ["supported", "live"],
+        "source_refs": ["source/research/work_business.md"],
+    },
+    "holiday_celebration_checkin": {
+        "topic": "celebrations",
+        "topic_label": "Celebrations",
+        "levels": ["supported", "live"],
+        "source_refs": ["source/research/celebrations.md"],
+    },
+    "cultural_bonus_recognition": {
+        "topic": "culture",
+        "topic_label": "Culture",
+        "levels": ["shadow", "prompted"],
+        "source_refs": ["source/research/cultural_bonus.md"],
+    },
+    "budva_airport_hotel_checkin": {
+        "topic": "budva",
+        "topic_label": "Budva",
+        "levels": ["prompted", "supported", "live"],
+        "source_refs": ["source/research/budva_travel.md"],
+    },
+}
+
+
+def scenario_meta(scenario_id: str) -> dict:
+    return SCENARIO_META.get(
+        scenario_id,
+        {
+            "topic": "general",
+            "topic_label": "General",
+            "levels": ["prompted", "supported", "live"],
+            "source_refs": ["source/ekaterina_guide.md"],
+        },
+    )
+
 
 def infer_error_types(item):
     tags = set(item.get("tags", []))
@@ -5445,6 +5706,10 @@ def build_tutor_cards(
                 "lesson_number": scenario["lesson_number"],
                 "setting": scenario["setting"],
                 "goal": scenario["goal"],
+                "topic": scenario.get("topic", "general"),
+                "topic_label": scenario.get("topic_label", "General"),
+                "levels": scenario.get("levels", ["prompted", "supported", "live"]),
+                "source_refs": scenario.get("source_refs", []),
                 "learner_role": "guest",
                 "tutor_role": "host family member",
                 "required_items": scenario.get("required_items", []),
@@ -5742,6 +6007,7 @@ def build():
     scenarios = []
     for scenario in SCENARIOS:
         enriched = dict(scenario)
+        enriched.update(scenario_meta(scenario["id"]))
         required = [
             item_by_id[item_id] for item_id in scenario.get("required_items", [])
         ]
