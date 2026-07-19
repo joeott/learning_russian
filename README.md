@@ -75,6 +75,11 @@ tools/zastolom source-loop         # source-scouting prompt for reading/dictatio
 tools/zastolom future-loop         # discover linked Russian sources and append candidates to candidate_materials.md
 ```
 
+Learning progress uses the isolated `zastolom-db` PostgreSQL 16 container on
+`127.0.0.1:55433`. Configure `.env` from `.env.example`, run
+`docker compose up -d db`, then apply migrations with `npm run db:migrate`.
+This runtime is intentionally separate from financial databases.
+
 ```
 courses/        course metadata; default = russian_family_visit/course.yaml
 content/        built content contract (109 items, stress-marked)
