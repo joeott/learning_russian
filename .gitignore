@@ -8,5 +8,6 @@ tmp/
 # secrets — never commit
 .env
 .env.*
+!.env.example
 # regenerable copy of web/assets/audio (rebuilt by `zastolom build anki`)
 anki/media/

@@ -28,8 +28,10 @@ only; it does not store WebRTC audio.
 ## Local setup
 
 ```bash
-createdb zastolom
-export DATABASE_URL=postgres://localhost/zastolom
+cp .env.example .env
+# Set one long random value in both variables, then:
+docker compose up -d db
+export DATABASE_URL="$(sed -n 's/^DATABASE_URL=//p' .env)"
 npm run db:migrate
 npm run sync:serve
 ```
@@ -61,7 +63,7 @@ aws secretsmanager get-secret-value --secret-id /zastolom/dev/api-keys
 The CLI wrapper is:
 
 ```bash
-DATABASE_URL=postgres://localhost/zastolom tools/zastolom sync-server
+DATABASE_URL="$(sed -n 's/^DATABASE_URL=//p' .env)" tools/zastolom sync-server
 ```
 
 The browser does not contact Postgres by default during demos or offline
